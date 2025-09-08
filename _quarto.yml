@@ -1,0 +1,28 @@
+project:
+  type: website
+
+website:
+  title: "Übungen - VL: Statistik I"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Übungen
+      - href: about.qmd
+        text: Hilfe & Kontakt
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - text: "Übung 1"
+        href: exercise1.qmd
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+
+editor: visual
+

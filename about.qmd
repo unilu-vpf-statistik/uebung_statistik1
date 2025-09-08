@@ -1,0 +1,24 @@
+---
+title: "Hilfe & Kontakt"
+---
+
+Falls Sie probleme mit den Übungen für die Vorlesung "Statistik I" haben, fragen Sie bitte zuerst ihre Mitstudierenden um Hilfe und klären Sie ob auch andere Studierende ähnliche probleme mit den Übungen haben. Sie können zum Beispiel eine Frage im Q&A Forum auf OLAT stellen. 
+
+Sollten Sie gemeinsam keine Lösung finden und mehrere Studierende ein Problem mit den Online implementierten Übungen haben, dann wenden Sie sich per Mail an:
+gidon.frischkorn@unilu.ch
+
+## Tipps um Hilfe mit R & RStudio zu finden
+
+Das Internet bietet viele verschiedene Möglichkeiten um Hilfe bei der Arbeit mit R & RStudio zu bekommen. Hier finden Sie einige Vorschläge wie sie Probleme mit R und RStudio mit Hilfe aus dem Internet lösen können
+
+### Suchmaschinen
+
+Der einfachste Weg um Hilfe mit R oder RStudio zu bekommen ist ihr Probleme unter in einer Suchmaschine einzugeben. Fügen Sie dabei hinzu, dass sie das Problem in R lösen wollen. Wenn Sie zum Beispiel eine Fehlermeldung bekommen, dann kopierenen sie die Nachricht der Fehlermeldung in die Suchzeile ein und fügen "in R" hinzu, damit die Suche Lösungen für R findet.
+
+
+### YouTube
+
+
+### LLM Chats
+
+

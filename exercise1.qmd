@@ -1,0 +1,11 @@
+---
+title: "coglab"
+format: html
+filters:
+  - webr
+---
+
+```{webr-r}
+1 + 1
+```
+
