@@ -21,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -192,6 +158,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Übungen - VL: Statistik I</h1>
+<p class="subtitle lead">HS 2025</p>
 </div>
 
 
@@ -220,17 +187,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="einrichtung-von-r-rstudio-auf-ihrem-pc-laptop">Einrichtung von R &amp; RStudio auf ihrem PC / Laptop</h2>
 <section id="r" class="level3">
 <h3 class="anchored" data-anchor-id="r">R</h3>
-<p>Ich empfehle Ihnen direkt zum Start des Semester die Statistiksoftware R auf Ihrem PC oder Laptop zu installieren. Für Windows folgen sie dafür bitte diesem Link: <a href="https://cran.r-project.org/bin/windows/base/" class="uri">https://cran.r-project.org/bin/windows/base/</a> und für Mac bitte diesem Link: <a href="https://cran.r-project.org/bin/macosx/" class="uri">https://cran.r-project.org/bin/macosx/</a>. Auf neueren Mac Rechnern müssen sie in der Regel die ARM-Version für Mac installieren. Diese ist für Chipsätze der M-Generations (M1 / M2 / M2 Pro / etc.) optimiert.</p>
+<p>Ich empfehle Ihnen direkt zum Start des Semester die Statistik-Software R auf Ihrem PC oder Laptop zu installieren. Für Windows folgen sie dafür bitte diesem Link: <a href="https://cran.r-project.org/bin/windows/base/" class="uri">https://cran.r-project.org/bin/windows/base/</a> und für Mac bitte diesem Link: <a href="https://cran.r-project.org/bin/macosx/" class="uri">https://cran.r-project.org/bin/macosx/</a>. Auf neueren Mac Rechnern müssen sie in der Regel die ARM-Version für Mac installieren. Diese ist für Chipsätze der M-Generationen (M1 / M2 / M2 Pro / etc.) optimiert.</p>
+<p>R selbst ist keine Software sondern eine Programmiersprache ähnlich wie C, C++, oder JavaScript. Die üblichen R Pakete installieren zwar auch ein Graphical User Interfance (GUI) zur Nutzung von R. Dennoch ist die Verwendung einer Integrated Developer Environment (IDE) empfehlenswert um effizient und strukturiert mit R arbeiten zu können.</p>
 </section>
 <section id="r-studio" class="level3">
 <h3 class="anchored" data-anchor-id="r-studio">R Studio</h3>
-<p>Nachdem Sie R installiert haben, empfehle ich Ihnen R Studio als “Integrated Developer Environment” (IDE) zu installieren. Eine IDE verbindet verschiedene Funktionen, die Ihnen dabei hilft möglichst effizient und strukturiert mit R zu arbeiten. R Studio können sie unter dem folgenden Link herunterladen: <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
+<p>Nachdem Sie R installiert haben, empfehle ich Ihnen R Studio als “Integrated Developer Environment” (IDE) zu installieren. R Studio können sie unter dem folgenden Link herunterladen: <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a></p>
 
 
 </section>

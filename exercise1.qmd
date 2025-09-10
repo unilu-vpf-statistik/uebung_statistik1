@@ -1,11 +1,22 @@
 ---
-title: "coglab"
-format: html
+title: "Übung 1"
+format: live-html
 filters:
   - webr
+live:
+  show-hints: false
+  show-solutions: false
 ---
 
-```{webr-r}
-1 + 1
+Filter the `starwars` dataset so that only the droid characters are included.
+
+```{webr}
+#| setup: true
+#| exercise: ex_3
+library(dplyr)
 ```
 
+```{webr}
+#| exercise: ex_3
+starwars |> ______
+```
