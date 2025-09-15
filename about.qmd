@@ -3,7 +3,9 @@ title: "Hilfe & Kontakt"
 author: "Gidon Frischkorn"
 ---
 
-Falls Sie Probleme mit den Übungen für die Vorlesung "Statistik I" haben, folgen Sie den folgenden Schritten:
+Falls Sie **Probleme mit der Installation von R und R-Studio** haben, dann schauen Sie sich dieses YouTube Video an, dass zeigt wie sie R und RStudio auf Ihrem Rechner installieren können: <https://www.youtube.com/watch?v=X_Mxya2Fis0>
+
+Falls Sie **Probleme mit den Übungen** für die Vorlesung "Statistik I" haben, folgen Sie den folgenden Schritten:
 
 1.  Versuchen Sie selbst nach einer Lösung mit Hilfe der unten stehenden Tools zu suchen
 2.  Fragen Sie Ihre Mitstudierenden um Hilfe & klären Sie ob auch andere Studierende ähnliche Probleme haben

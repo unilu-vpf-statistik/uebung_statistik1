@@ -18,7 +18,7 @@
     "href": "exercise1.html",
     "title": "Übung 1",
     "section": "",
-    "text": "Filter the starwars dataset so that only the droid characters are included.",
+    "text": "In dieser Übung sollen Sie einen ersten Einstieg in die Programmiersprache R und RStudio bekommen. Dazu werden Sie zwei kurze Videos auf YouTube schauen.\n\n\n\nSchauen Sie sich das folgenden YouTube Video an, dass einen kurzen Überblick zum Aufbau von RStudio bietet: https://www.youtube.com/watch?v=tyvEHQszZJs\nSchauen Sie sich das folgende YouTube Vide an, dass eine Übersicht zu den unterschiedlichen Datentypen in R gibt: https://www.youtube.com/watch?v=qOVhiOu_ARs\n\nNehmen Sie sich Zeit für die beiden Videos und machen Sie sich Notizen zu Inhalten, die für Sie kompliziert sind. Das Tempo der Videos ist relativ hoch. Stoppen und wiederholen Sie Abschnitte, wenn Ihnen Inhalte unklar sind.",
     "crumbs": [
       "Übungen",
       "Übung 1"
@@ -37,5 +37,16 @@
     "title": "Hilfe & Kontakt",
     "section": "Tipps um Hilfe mit R & RStudio zu finden",
     "text": "Tipps um Hilfe mit R & RStudio zu finden\nDas Internet bietet viele verschiedene Möglichkeiten um Hilfe bei der Arbeit mit R & RStudio zu bekommen. Hier finden Sie einige Vorschläge wie sie Probleme mit R und RStudio mit Hilfe aus dem Internet lösen können\n\nSuchmaschinen\nDer einfachste Weg um Hilfe mit R oder RStudio zu bekommen ist ihr Probleme unter in einer Suchmaschine einzugeben. Fügen Sie dabei hinzu, dass sie das Problem in R lösen wollen. Wenn Sie zum Beispiel eine Fehlermeldung bekommen, dann kopieren sie die Nachricht der Fehlermeldung in die Suchzeile ein und fügen “in R” hinzu, damit die Suche Lösungen für R findet.\nTipp: Suchen Sie auf Englisch nach einer Lösung für Ihr Problem, dann werden Sie mehr Ergebnisse bekommen und finden leichter eine Lösung die Sie nachvollziehen und für sich nutzen können.\n\n# Beispiel Code der eine Warnung erzeugt\ndata &lt;- c(1,4,3,2,\"hallo\")\nmean(data)\n\nWarning in mean.default(data): argument is not numeric or logical: returning NA\n\n\n[1] NA\n\n\n\n\n\nYouTube\nNeben der Nutzung von Suchmaschinen finden Sie auf YouTube eine Vielzahl an Erklärvideos zur Nutzung von R und spezifischen Analysen beziehungsweise Programmieraufgaben. Ich empfehle Ihnen dabei vor allem nach Englischen Videos zu suchen, da sie damit eine grössere Chance haben ein Video zu finden, dass Ihnen für Ihr konkretes Problem weiter hilft.\nEinige Kanäle die eine breite Menge an Themen abdecken sind:\n\nR Programming 101 (über 180 Videos zu verschiedenen R Themen)\nDataDaft (nicht nur Videos für R)\n\n\n\nLLM Chats\nIm Laufe der letzten Jahre sind vermehrt Chats mit Large Language Modellen (LLMs) - wie zum Beispiel ChatGPT, Claude Sonnet 4 oder Gemini - als weitere Möglichkeit zur Problemlösung von Programmierfragen genutzt worden. Viele LLMs können direkt Code vorschlagen, mit dem Sie gezielt bestimmte Probleme lösen können.\nSeien Sie sich jedoch bewusst, dass der Output der LLMs nicht immer korrekt sein muss, so dass Sie die Ergebnisse immer selbst überprüfen müssen. Ausserdem bekommen Sie durch LLMs häufig Code mit fortgeschrittenen Programmiertechniken vorgeschlagen, die für Sie als Anfänger schwieriger nachzuvollziehen ist. (Auch wir als Dozierende können somit relativ einfach nachvollziehen, ob sie bei der Lösung einer Aufgabe LLMs verwendet haben).\nGrundsätzlich werden Sie das Programmieren und Analysieren von Daten mit R und RStudio schneller und nachhaltiger lernen, wenn Sie Code selbst schreiben, Fehlermeldungen nachvollziehen, und eigenständig nach Lösungen im Internet suchen und diese selbst für Ihren Code anpassen. Darüber hinaus wird Ihnen das auch dabei helfen ein besseres konzeptuelles Verständnis der Analysen und Programmierschritte zu erlangen."
+  },
+  {
+    "objectID": "exercise1.html#erste-schritte-mit-r-rstudio",
+    "href": "exercise1.html#erste-schritte-mit-r-rstudio",
+    "title": "Übung 1",
+    "section": "",
+    "text": "In dieser Übung sollen Sie einen ersten Einstieg in die Programmiersprache R und RStudio bekommen. Dazu werden Sie zwei kurze Videos auf YouTube schauen.\n\n\n\nSchauen Sie sich das folgenden YouTube Video an, dass einen kurzen Überblick zum Aufbau von RStudio bietet: https://www.youtube.com/watch?v=tyvEHQszZJs\nSchauen Sie sich das folgende YouTube Vide an, dass eine Übersicht zu den unterschiedlichen Datentypen in R gibt: https://www.youtube.com/watch?v=qOVhiOu_ARs\n\nNehmen Sie sich Zeit für die beiden Videos und machen Sie sich Notizen zu Inhalten, die für Sie kompliziert sind. Das Tempo der Videos ist relativ hoch. Stoppen und wiederholen Sie Abschnitte, wenn Ihnen Inhalte unklar sind.",
+    "crumbs": [
+      "Übungen",
+      "Übung 1"
+    ]
   }
 ]

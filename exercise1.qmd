@@ -8,15 +8,16 @@ live:
   show-solutions: false
 ---
 
-Filter the `starwars` dataset so that only the droid characters are included.
+## Erste Schritte mit R & RStudio
 
-```{webr}
-#| setup: true
-#| exercise: ex_3
-library(dplyr)
-```
+In dieser Übung sollen Sie einen ersten **Einstieg in die Programmiersprache R** und RStudio bekommen. Dazu werden Sie zwei kurze Videos auf YouTube schauen.
 
-```{webr}
-#| exercise: ex_3
-starwars |> ______
-```
+### Aufgaben
+
+1.  Schauen Sie sich das folgenden YouTube Video an, dass einen kurzen Überblick zum Aufbau von RStudio bietet: <https://www.youtube.com/watch?v=tyvEHQszZJs>
+
+2.  Schauen Sie sich das folgende YouTube Vide an, dass eine Übersicht zu den unterschiedlichen Datentypen in R gibt: <https://www.youtube.com/watch?v=qOVhiOu_ARs>
+
+Nehmen Sie sich **Zeit** für die beiden Videos und **machen Sie sich Notizen** zu Inhalten, die für Sie kompliziert sind. Das Tempo der Videos ist relativ hoch. **Stoppen und wiederholen** Sie Abschnitte, wenn Ihnen Inhalte unklar sind.
+
+### Übungen
