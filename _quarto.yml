@@ -16,6 +16,11 @@ website:
     contents:
       - text: "Übung 1"
         href: exercise1.qmd
+  page-footer:
+    left: "Copyright 2025, Gidon Frischkorn"
+    right:
+      - icon: github
+        href: https://github.com/GidonFrischkorn
 
 format:
   html:

@@ -40,3 +40,6 @@ Nehmen Sie sich **Zeit** für die beiden Videos und **machen Sie sich Notizen** 
 exams2forms(shuffeld_questions)
 ```
 
+------------------------------------------------------------------------
+
+[![](images/Logo_UniLu.png){fig-align="center" width="300"}](https://www.unilu.ch/fakultaeten/vpf/uebersicht/)

@@ -19,3 +19,7 @@ R selbst ist keine Software sondern eine Programmiersprache ähnlich wie C, C++,
 ### R Studio
 
 Nachdem Sie R installiert haben, empfehle ich Ihnen R Studio als "Integrated Developer Environment" (IDE) zu installieren. R Studio können sie unter dem folgenden Link herunterladen: <https://posit.co/download/rstudio-desktop/>
+
+------------------------------------------------------------------------
+
+[![](images/Logo_UniLu.png){fig-align="center" width="300"}](https://www.unilu.ch/fakultaeten/vpf/uebersicht/)
