@@ -41,6 +41,8 @@ Einige Kanäle die eine breite Menge an Themen abdecken sind:
 
 -   [DataDaft](https://www.youtube.com/@DataDaft) (nicht nur Videos für R)
 
+-   [Statistik am PC](https://www.youtube.com/@StatistikamPC_BjoernWalther) (Videos auf Deutsch, nicht nur für R)
+
 ### LLM Chats
 
 Im Laufe der letzten Jahre sind vermehrt Chats mit Large Language Modellen (LLMs) - wie zum Beispiel [ChatGPT](https://chatgpt.com/), [Claude Sonnet 4](https://www.anthropic.com/claude/sonnet) oder [Gemini](https://gemini.google.com/?hl=de) - als weitere Möglichkeit zur Problemlösung von Programmierfragen genutzt worden. Viele LLMs können direkt Code vorschlagen, mit dem Sie gezielt bestimmte Probleme lösen können.

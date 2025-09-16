@@ -1,12 +1,18 @@
 ---
 title: "Übung 1"
-format: live-html
-filters:
-  - webr
-live:
-  show-hints: false
-  show-solutions: false
+format:
+  html:
+    css: styles.css
+    include-after-body: webex.js
 ---
+
+```{r}
+#| include: false
+library(exams)
+library(exams2forms)
+library(here)
+```
+
 
 ## Erste Schritte mit R & RStudio
 
@@ -16,8 +22,18 @@ In dieser Übung sollen Sie einen ersten **Einstieg in die Programmiersprache R*
 
 1.  Schauen Sie sich das folgenden YouTube Video an, dass einen kurzen Überblick zum Aufbau von RStudio bietet: <https://www.youtube.com/watch?v=tyvEHQszZJs>
 
-2.  Schauen Sie sich das folgende YouTube Vide an, dass eine Übersicht zu den unterschiedlichen Datentypen in R gibt: <https://www.youtube.com/watch?v=qOVhiOu_ARs>
+2.  Schauen Sie sich das folgende YouTube Video an, dass eine Übersicht zu den unterschiedlichen Datentypen in R gibt: <https://www.youtube.com/watch?v=VtUVQWl0aRA>
+
+Das zweite Video ist auf Englisch. Wenn Sie Schwierigkeiten mit dem englischen Video haben, dann nutzen Sie die automatisch generierten Untertitel und deren Übersetzung auf Deutsch. Gewöhnen Sie sich jedoch daran, dass Sie immer wieder mit englischen Materialien Arbeiten werden. 
 
 Nehmen Sie sich **Zeit** für die beiden Videos und **machen Sie sich Notizen** zu Inhalten, die für Sie kompliziert sind. Das Tempo der Videos ist relativ hoch. **Stoppen und wiederholen** Sie Abschnitte, wenn Ihnen Inhalte unklar sind.
 
 ### Übungen
+
+```{r}
+#| echo: false
+#| message: false
+#| results: "asis"
+exams2forms(list.files(here("questions_uebung1"), full.names = TRUE))
+```
+

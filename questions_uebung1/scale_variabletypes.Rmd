@@ -1,0 +1,18 @@
+Question
+========
+Mit welchen der folgenden Variablentypen in R kodiert man sinnvollerweise eine nominal skalierte Variable? (Mehrfachantworten Möglich)
+
+Answerlist
+--------------------
+* character
+* logical
+* numeric
+* integer
+* factor
+
+Meta-information
+===============
+exname: scale_variabletypes
+extype: mchoice
+exsolution: 10001
+exshuffle: TRUE

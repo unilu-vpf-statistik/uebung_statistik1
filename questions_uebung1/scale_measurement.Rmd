@@ -1,0 +1,18 @@
+Question
+============
+Welche Aspekte bei der Messung von Merkmalen bestimmen das Skalenniveau der resultierenden Variable?
+
+Answerlist
+------------
+* Das Merkmal selbst (z.Bsp. Grösse, Alter, Geschlecht)
+* Die Art der Messung bzw. die Messmethode
+* Die Transformationen die ich mit der Variable nach der Messung durchführe
+* Die Zahlen des numerischen Relativs die sich aus der Messmethode ergeben
+* Die Merkmalsausprägungen der empirischen Beobachtungen
+
+Meta-information
+===============
+exname: scale_measurement
+extype: mchoice
+exsolution: 11100
+exshuffle: TRUE

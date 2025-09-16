@@ -1,0 +1,45 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Übung 1\"\n",
+        "format: live-html\n",
+        "filters:\n",
+        "  - webr\n",
+        "live:\n",
+        "  show-hints: false\n",
+        "  show-solutions: false\n",
+        "---\n",
+        "\n",
+        "\n",
+        "Filter the `starwars` dataset so that only the droid characters are included.\n",
+        "\n",
+        "\n",
+        "```{webr}\n",
+        "#| setup: true\n",
+        "#| exercise: ex_3\n",
+        "library(dplyr)\n",
+        "```\n",
+        "\n",
+        "```{webr}\n",
+        "#| exercise: ex_3\n",
+        "starwars |> ______\n",
+        "```"
+      ],
+      "id": "3c1d53c5"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/Users/frischkg/Library/Python/3.9/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

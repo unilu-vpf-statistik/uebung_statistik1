@@ -1,0 +1,17 @@
+Question
+========
+Welche der folgenden Merkmale würde am ehesten auf einer Nominalskala gemessen?
+
+Answerlist
+--------------------
+* Datum
+* Grösse
+* Geschlecht
+* Höchster Schulabschluss
+
+Meta-information
+===============
+exname: scale_nominal
+extype: schoice
+exsolution: 0010
+exshuffle: TRUE
