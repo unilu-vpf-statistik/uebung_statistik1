@@ -3,15 +3,19 @@ Question
 Welche der folgenden Merkmale würde am ehesten auf einer Nominalskala gemessen?
 
 Answerlist
---------------------
+--------
 * Datum
 * Grösse
 * Geschlecht
 * Höchster Schulabschluss
 
+Solution
+========
+Das Merkmal Geschlecht hat unterschiedlichen Kategorien, die sich nicht ordnen lassen und sollte deshalb unabhängig von der konkreten Messmethode bei der Messung in einer nominal skalierten Variable resultieren.
+
 Meta-information
-===============
-exname: scale_nominal
-extype: schoice
-exsolution: 0010
+========
+exname: scale_nominal 
+extype: schoice 
+exsolution: 0010 
 exshuffle: TRUE

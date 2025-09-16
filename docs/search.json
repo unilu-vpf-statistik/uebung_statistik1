@@ -18,7 +18,7 @@
     "href": "exercise1.html",
     "title": "Übung 1",
     "section": "",
-    "text": "In dieser Übung sollen Sie einen ersten Einstieg in die Programmiersprache R und RStudio bekommen. Dazu werden Sie zwei kurze Videos auf YouTube schauen.\n\n\n\nSchauen Sie sich das folgenden YouTube Video an, dass einen kurzen Überblick zum Aufbau von RStudio bietet: https://www.youtube.com/watch?v=tyvEHQszZJs\nSchauen Sie sich das folgende YouTube Video an, dass eine Übersicht zu den unterschiedlichen Datentypen in R gibt: https://www.youtube.com/watch?v=VtUVQWl0aRA\n\nDas zweite Video ist auf Englisch. Wenn Sie Schwierigkeiten mit dem englischen Video haben, dann nutzen Sie die automatisch generierten Untertitel und deren Übersetzung auf Deutsch. Gewöhnen Sie sich jedoch daran, dass Sie immer wieder mit englischen Materialien Arbeiten werden.\nNehmen Sie sich Zeit für die beiden Videos und machen Sie sich Notizen zu Inhalten, die für Sie kompliziert sind. Das Tempo der Videos ist relativ hoch. Stoppen und wiederholen Sie Abschnitte, wenn Ihnen Inhalte unklar sind.\n\n\n\n\n\nWelche Aspekte bei der Messung von Merkmalen bestimmen das Skalenniveau der resultierenden Variable?\n\nDas Merkmal selbst (z.Bsp. Grösse, Alter, Geschlecht)Die Art der Messung bzw. die MessmethodeDie Transformationen die ich mit der Variable nach der Messung durchführeDie Zahlen des numerischen Relativs die sich aus der Messmethode ergebenDie Merkmalsausprägungen der empirischen Beobachtungen\n\n\n\n\n\nWelche der folgenden Merkmale würde am ehesten auf einer Nominalskala gemessen?\n\nGrösseGeschlechtDatumHöchster Schulabschluss\n\n\n\n\n\nMit welchen der folgenden Variablentypen in R kodiert man sinnvollerweise eine nominal skalierte Variable? (Mehrfachantworten Möglich)\n\ncharacterlogicalintegernumericfactor",
+    "text": "In dieser Übung sollen Sie einen ersten Einstieg in die Programmiersprache R und RStudio bekommen. Dazu werden Sie zwei kurze Videos auf YouTube schauen.\n\n\n\nSchauen Sie sich das folgenden YouTube Video an, dass einen kurzen Überblick zum Aufbau von RStudio bietet: https://www.youtube.com/watch?v=tyvEHQszZJs\nSchauen Sie sich das folgende YouTube Video an, dass eine Übersicht zu den unterschiedlichen Datentypen in R gibt: https://www.youtube.com/watch?v=VtUVQWl0aRA\n\nDas zweite Video ist auf Englisch. Wenn Sie Schwierigkeiten mit dem englischen Video haben, dann nutzen Sie die automatisch generierten Untertitel und deren Übersetzung auf Deutsch. Gewöhnen Sie sich jedoch daran, dass Sie immer wieder mit englischen Materialien Arbeiten werden.\nNehmen Sie sich Zeit für die beiden Videos und machen Sie sich Notizen zu Inhalten, die für Sie kompliziert sind. Das Tempo der Videos ist relativ hoch. Stoppen und wiederholen Sie Abschnitte, wenn Ihnen Inhalte unklar sind.\n\n\n\n\n\nWelche Aspekte bei der Messung von Merkmalen bestimmen das Skalenniveau der resultierenden Variable?\n\nDie Art der Messung bzw. die MessmethodeDas Merkmal selbst (z.Bsp. Grösse, Alter, Geschlecht)Die Transformationen die ich mit der Variable nach der Messung durchführeDie Merkmalsausprägungen der empirischen BeobachtungenDie Zahlen des numerischen Relativs die sich aus der Messmethode ergeben\n\n\n\nFür das Skalenniveau einer Variable sind die folgenden drei Aspekte der Messung relevant:\n\nDas Merkmal das gemessen wird: Zu einem gewissen Grad bestimmt das Merkmal welche Ausprägungen durch die Messung sinnvoll erfasst werden können und bestimmt damit das Skalenniveau\nDie Art der Messung bzw. Messmethode: Wie im Beispiel aus der Vorlesung (Messung von Wassertemperatur) können unterschiedliche Messmethoden in Variablen mit unterschiedlichen Skalenniveaus resultieren\nWenn nach der Messung noch Transformationen mit der gemessenen Variable durchgeführt werden, dann kann sich je nach gewählter Transformation das Skalenniveau ändern.\n\n\n\n\n\nWelche der folgenden Merkmale würde am ehesten auf einer Nominalskala gemessen?\n\nGeschlechtGrösseHöchster SchulabschlussDatum\n\n\n\nDas Merkmal Geschlecht hat unterschiedlichen Kategorien, die sich nicht ordnen lassen und sollte deshalb unabhängig von der konkreten Messmethode bei der Messung in einer nominal skalierten Variable resultieren.\n\n\n\n\nMit welchen der folgenden Variablentypen in R kodiert man sinnvollerweise eine nominal skalierte Variable? (Mehrfachantworten Möglich)\n\nintegercharacterfactornumericlogical\n\n\n\nDie Variablentypen character und factor eignen sich am ehesten um nominal skalierte Variablen zu kodieren. Dabei werden die Variablen zwar nicht direkt als numerische Werte gespeichert, aber die einzelnen Merkmalsausprägungen können so in den zugehörigen Kategorien gespeichert werden.",
     "crumbs": [
       "Übungen",
       "Übung 1"
@@ -43,10 +43,52 @@
     "href": "exercise1.html#erste-schritte-mit-r-rstudio",
     "title": "Übung 1",
     "section": "",
-    "text": "In dieser Übung sollen Sie einen ersten Einstieg in die Programmiersprache R und RStudio bekommen. Dazu werden Sie zwei kurze Videos auf YouTube schauen.\n\n\n\nSchauen Sie sich das folgenden YouTube Video an, dass einen kurzen Überblick zum Aufbau von RStudio bietet: https://www.youtube.com/watch?v=tyvEHQszZJs\nSchauen Sie sich das folgende YouTube Video an, dass eine Übersicht zu den unterschiedlichen Datentypen in R gibt: https://www.youtube.com/watch?v=VtUVQWl0aRA\n\nDas zweite Video ist auf Englisch. Wenn Sie Schwierigkeiten mit dem englischen Video haben, dann nutzen Sie die automatisch generierten Untertitel und deren Übersetzung auf Deutsch. Gewöhnen Sie sich jedoch daran, dass Sie immer wieder mit englischen Materialien Arbeiten werden.\nNehmen Sie sich Zeit für die beiden Videos und machen Sie sich Notizen zu Inhalten, die für Sie kompliziert sind. Das Tempo der Videos ist relativ hoch. Stoppen und wiederholen Sie Abschnitte, wenn Ihnen Inhalte unklar sind.\n\n\n\n\n\nWelche Aspekte bei der Messung von Merkmalen bestimmen das Skalenniveau der resultierenden Variable?\n\nDas Merkmal selbst (z.Bsp. Grösse, Alter, Geschlecht)Die Art der Messung bzw. die MessmethodeDie Transformationen die ich mit der Variable nach der Messung durchführeDie Zahlen des numerischen Relativs die sich aus der Messmethode ergebenDie Merkmalsausprägungen der empirischen Beobachtungen\n\n\n\n\n\nWelche der folgenden Merkmale würde am ehesten auf einer Nominalskala gemessen?\n\nGrösseGeschlechtDatumHöchster Schulabschluss\n\n\n\n\n\nMit welchen der folgenden Variablentypen in R kodiert man sinnvollerweise eine nominal skalierte Variable? (Mehrfachantworten Möglich)\n\ncharacterlogicalintegernumericfactor",
+    "text": "In dieser Übung sollen Sie einen ersten Einstieg in die Programmiersprache R und RStudio bekommen. Dazu werden Sie zwei kurze Videos auf YouTube schauen.\n\n\n\nSchauen Sie sich das folgenden YouTube Video an, dass einen kurzen Überblick zum Aufbau von RStudio bietet: https://www.youtube.com/watch?v=tyvEHQszZJs\nSchauen Sie sich das folgende YouTube Video an, dass eine Übersicht zu den unterschiedlichen Datentypen in R gibt: https://www.youtube.com/watch?v=VtUVQWl0aRA\n\nDas zweite Video ist auf Englisch. Wenn Sie Schwierigkeiten mit dem englischen Video haben, dann nutzen Sie die automatisch generierten Untertitel und deren Übersetzung auf Deutsch. Gewöhnen Sie sich jedoch daran, dass Sie immer wieder mit englischen Materialien Arbeiten werden.\nNehmen Sie sich Zeit für die beiden Videos und machen Sie sich Notizen zu Inhalten, die für Sie kompliziert sind. Das Tempo der Videos ist relativ hoch. Stoppen und wiederholen Sie Abschnitte, wenn Ihnen Inhalte unklar sind.\n\n\n\n\n\nWelche Aspekte bei der Messung von Merkmalen bestimmen das Skalenniveau der resultierenden Variable?\n\nDie Art der Messung bzw. die MessmethodeDas Merkmal selbst (z.Bsp. Grösse, Alter, Geschlecht)Die Transformationen die ich mit der Variable nach der Messung durchführeDie Merkmalsausprägungen der empirischen BeobachtungenDie Zahlen des numerischen Relativs die sich aus der Messmethode ergeben\n\n\n\nFür das Skalenniveau einer Variable sind die folgenden drei Aspekte der Messung relevant:\n\nDas Merkmal das gemessen wird: Zu einem gewissen Grad bestimmt das Merkmal welche Ausprägungen durch die Messung sinnvoll erfasst werden können und bestimmt damit das Skalenniveau\nDie Art der Messung bzw. Messmethode: Wie im Beispiel aus der Vorlesung (Messung von Wassertemperatur) können unterschiedliche Messmethoden in Variablen mit unterschiedlichen Skalenniveaus resultieren\nWenn nach der Messung noch Transformationen mit der gemessenen Variable durchgeführt werden, dann kann sich je nach gewählter Transformation das Skalenniveau ändern.\n\n\n\n\n\nWelche der folgenden Merkmale würde am ehesten auf einer Nominalskala gemessen?\n\nGeschlechtGrösseHöchster SchulabschlussDatum\n\n\n\nDas Merkmal Geschlecht hat unterschiedlichen Kategorien, die sich nicht ordnen lassen und sollte deshalb unabhängig von der konkreten Messmethode bei der Messung in einer nominal skalierten Variable resultieren.\n\n\n\n\nMit welchen der folgenden Variablentypen in R kodiert man sinnvollerweise eine nominal skalierte Variable? (Mehrfachantworten Möglich)\n\nintegercharacterfactornumericlogical\n\n\n\nDie Variablentypen character und factor eignen sich am ehesten um nominal skalierte Variablen zu kodieren. Dabei werden die Variablen zwar nicht direkt als numerische Werte gespeichert, aber die einzelnen Merkmalsausprägungen können so in den zugehörigen Kategorien gespeichert werden.",
     "crumbs": [
       "Übungen",
       "Übung 1"
     ]
+  },
+  {
+    "objectID": "questions_uebung1/scale_nominal.html",
+    "href": "questions_uebung1/scale_nominal.html",
+    "title": "Question",
+    "section": "",
+    "text": "Welche der folgenden Merkmale würde am ehesten auf einer Nominalskala gemessen?\n\n\n\nDatum\nGrösse\nGeschlecht\nHöchster Schulabschluss"
+  },
+  {
+    "objectID": "questions_uebung1/scale_nominal.html#answerlist",
+    "href": "questions_uebung1/scale_nominal.html#answerlist",
+    "title": "Question",
+    "section": "",
+    "text": "Datum\nGrösse\nGeschlecht\nHöchster Schulabschluss"
+  },
+  {
+    "objectID": "questions_uebung1/scale_variabletypes.html",
+    "href": "questions_uebung1/scale_variabletypes.html",
+    "title": "Question",
+    "section": "",
+    "text": "Mit welchen der folgenden Variablentypen in R kodiert man sinnvollerweise eine nominal skalierte Variable? (Mehrfachantworten Möglich)\n\n\n\ncharacter\nlogical\nnumeric\ninteger\nfactor"
+  },
+  {
+    "objectID": "questions_uebung1/scale_variabletypes.html#answerlist",
+    "href": "questions_uebung1/scale_variabletypes.html#answerlist",
+    "title": "Question",
+    "section": "",
+    "text": "character\nlogical\nnumeric\ninteger\nfactor"
+  },
+  {
+    "objectID": "questions_uebung1/scale_measurement.html",
+    "href": "questions_uebung1/scale_measurement.html",
+    "title": "Question",
+    "section": "",
+    "text": "Welche Aspekte bei der Messung von Merkmalen bestimmen das Skalenniveau der resultierenden Variable?\n\n\n\nDas Merkmal selbst (z.Bsp. Grösse, Alter, Geschlecht)\nDie Art der Messung bzw. die Messmethode\nDie Transformationen die ich mit der Variable nach der Messung durchführe\nDie Zahlen des numerischen Relativs die sich aus der Messmethode ergeben\nDie Merkmalsausprägungen der empirischen Beobachtungen"
+  },
+  {
+    "objectID": "questions_uebung1/scale_measurement.html#answerlist",
+    "href": "questions_uebung1/scale_measurement.html#answerlist",
+    "title": "Question",
+    "section": "",
+    "text": "Das Merkmal selbst (z.Bsp. Grösse, Alter, Geschlecht)\nDie Art der Messung bzw. die Messmethode\nDie Transformationen die ich mit der Variable nach der Messung durchführe\nDie Zahlen des numerischen Relativs die sich aus der Messmethode ergeben\nDie Merkmalsausprägungen der empirischen Beobachtungen"
   }
 ]

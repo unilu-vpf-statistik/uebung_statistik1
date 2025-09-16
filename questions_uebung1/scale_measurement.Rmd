@@ -1,18 +1,27 @@
 Question
-============
+========
 Welche Aspekte bei der Messung von Merkmalen bestimmen das Skalenniveau der resultierenden Variable?
 
 Answerlist
-------------
+--------
 * Das Merkmal selbst (z.Bsp. Grösse, Alter, Geschlecht)
 * Die Art der Messung bzw. die Messmethode
 * Die Transformationen die ich mit der Variable nach der Messung durchführe
 * Die Zahlen des numerischen Relativs die sich aus der Messmethode ergeben
 * Die Merkmalsausprägungen der empirischen Beobachtungen
 
+Solution
+=======
+Für das Skalenniveau einer Variable sind die folgenden drei Aspekte der Messung relevant:
+
+1) Das Merkmal das gemessen wird: Zu einem gewissen Grad bestimmt das Merkmal welche Ausprägungen durch die Messung sinnvoll erfasst werden können und bestimmt damit das Skalenniveau
+2) Die Art der Messung bzw. Messmethode: Wie im Beispiel aus der Vorlesung (Messung von Wassertemperatur) können unterschiedliche Messmethoden in Variablen mit unterschiedlichen Skalenniveaus resultieren
+3) Wenn nach der Messung noch Transformationen mit der gemessenen Variable durchgeführt werden, dann kann sich je nach gewählter Transformation das Skalenniveau ändern.
+
+
 Meta-information
-===============
-exname: scale_measurement
-extype: mchoice
-exsolution: 11100
+========
+exname: scale_measurement 
+extype: mchoice 
+exsolution: 11100 
 exshuffle: TRUE
