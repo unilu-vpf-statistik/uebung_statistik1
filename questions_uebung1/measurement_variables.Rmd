@@ -1,0 +1,28 @@
+Question
+=======
+Welche der folgenden Varriablen ist eine stetige quantitative Variable?
+
+Answerlist
+--------
+* Anzahl korrekt gelöster Aufgaben in einem IQ-Test
+* Körpergrösse in cm
+* Hautfarbe
+* Reaktionszeit in Sekunden
+* Rangplatz auf einer Bewerberliste
+
+Solution
+=======
+Die Variablen haben folgende Typen:
+
+1) Anzahl korrekt gelöster Aufgaben in einem IQ-Test: diskrete quantitative Variable
+2) Körpergrösse in cm: stetige quantitative Variable
+3) Hautfarbe: diskrete qualitative Variable
+4) Reaktionszeit in Sekunden: stetige quantitative Variable
+5) Rangplatz auf einer Bewerberliste: diskrete quantitative Variable
+
+Meta-information
+======
+exname: continous_variables
+extype: mchoice
+exsolution: 01010
+exshuffle: true

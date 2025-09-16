@@ -1,0 +1,27 @@
+Question
+=======
+In einer empirischen Untersuchung haben Sie Reaktionszeiten in Millisekunden gemessen. Zur Auswertung hat
+ihr Kollege die Variablen in Sekunden transformiert und die minimal erlaubte Reaktionszeit von 300 Millisekunden
+von den gemessenen Variablen abgezogen. Welchen Einfluss hat die Transformation auf das Skalenniveau der resultierenden
+Variable?
+
+Answerlist
+--------
+* Die Transformation hat keinen Einfluss auf das Skalenniveau, bei Reaktionszeiten handelt es sich um absolut skalierte Variablen
+* Wegen der Transformation kann ich die Variable grundsätzlich nicht mehr sinnvoll interpretieren
+* Die Variable ist intervall skaliert statt der ursprünglich absolut skalierten Variable vor der Transformation
+* Variablen sollten grundsätzlich nicht transformiert werden
+
+Solution
+=======
+Die Transformation ist eine positiv lineare Transformation. Konkret ergibt sich die endgültige Variable aus der Formel:
+`Y = 1/1000 * (RTms - 300)`. Diese Transformation ist für intervall skalierte Variablen sinnvoll, durch die Subtraktion
+der minimalen Reaktionszeit verliert die Variable den absoluten Nullpunkt und ist deshalb noch intervall skaliert, statt
+der ursprünglichen absolut skalierten Reaktionszeit in Millisekunden.
+
+Meta-information
+========
+exname: transformations
+exsolution: 0010
+extype: schoice
+exshuffle: true

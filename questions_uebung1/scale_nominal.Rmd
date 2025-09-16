@@ -6,16 +6,18 @@ Answerlist
 --------
 * Datum
 * Grösse
-* Geschlecht
+* PLZ
 * Höchster Schulabschluss
+* Lieblingsfarbe
+* Anzahl Stunden Schlaf in der letzten Nacht
 
 Solution
 ========
-Das Merkmal Geschlecht hat unterschiedlichen Kategorien, die sich nicht ordnen lassen und sollte deshalb unabhängig von der konkreten Messmethode bei der Messung in einer nominal skalierten Variable resultieren.
+Das Merkmal PLZ und Lieblingsfarbe hat klar unterschiedlichen Kategorien, die sich nicht ordnen lassen und sollte deshalb unabhängig von der konkreten Messmethode bei der Messung in einer nominal skalierten Variable resultieren.
 
 Meta-information
 ========
 exname: scale_nominal 
-extype: schoice 
-exsolution: 0010 
+extype: mchoice 
+exsolution: 001010 
 exshuffle: TRUE

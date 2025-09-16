@@ -11,6 +11,9 @@ format:
 library(exams)
 library(exams2forms)
 library(here)
+
+exam_files <- list.files(here("questions_uebung1"), full.names = TRUE)
+shuffeld_questions <- sample(exam_files)
 ```
 
 
@@ -34,6 +37,6 @@ Nehmen Sie sich **Zeit** für die beiden Videos und **machen Sie sich Notizen** 
 #| echo: false
 #| message: false
 #| results: "asis"
-exams2forms(list.files(here("questions_uebung1"), full.names = TRUE))
+exams2forms(shuffeld_questions)
 ```
 

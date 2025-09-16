@@ -1,0 +1,21 @@
+Question
+========
+Auf welchen Skalenniveaus können wir den Unterschied zwischen A und B sinnvoll mit dem Unterschied von B und C vergleichen
+
+Answerlist
+---------
+-   Nominalskala
+-   Ordinalskala
+-   Intervallskala
+-   Absolutskala
+
+Solution
+=======
+Die Differenzen zwischen Merkmalsausprägungen können ab dem Intervallskalen Niveau sinnvoll miteinander verglichen werden. Da alle Eigenschaften von niedrigeren Skalenniveaus auch für höhere Skalenniveaus gelten, können wir die Differenzen auch auf der Absolutskala interpretieren.
+
+Meta-information
+========
+exname: interpreting_differences
+extype: mchoice
+exsolution: 0011
+exshuffle: true
