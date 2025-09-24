@@ -77,7 +77,7 @@ head(semester_data)
 
 ```
 
-Nutzen Sie eine Suchmaschine, wenn Sie nicht wissen welche Funktionen Ihnen ein bestimmtes Ergebnis liefern. Ausserdem können Sie in R immer die Hilfe einer Funktion aufrufen, indem sie vor den Namen der Funktion ein Fragezeichen schreiben, z. Bsp `?median` zum Aufrufen der Hilfe für den Median
+Nutzen Sie eine [Suchmaschine](https://unilu-vpf-statistik.github.io/uebung_statistik1/about.html#suchmaschinen), wenn Sie nicht wissen welche Funktionen Ihnen ein bestimmtes Ergebnis liefern. Ausserdem können Sie in R immer die [Hilfe](https://www.r-project.org/help.html) einer Funktion aufrufen, indem sie vor den Namen der Funktion ein Fragezeichen schreiben, z. Bsp `?median` oder die Hilfe-Funktion `help()` mit dem jeweligen Funktionsbefehl ausführen: `help(median)`.
 
 ```{r}
 #| echo: false

@@ -1,24 +1,27 @@
 Question
 =======
-Was ist der Modus der Häufigkeitsverteilung der Wohnorte im Datensatz `semester_data`?
+Wie hoch liegt der Anteil an Frauen und Männern in den Daten in Prozent?
 
 Answerlist
 --------
-* Luzern
-* Bern
-* Basel
-* Zuerich
-* St. Gallen
+* 82.5% Frauen
+* 73.8% Frauen
+* 17.5% Männer
+* 26.2% Männer
+* 88.1% Frauen
+* 11.9% Männer
 
 Solution
 ========
-Wenn sie eine Häufigkeitsverteilung für den Wohnort generieren: `table(semester_data$wohnort)`, dann können Sie entweder direkt aus der Tabelle ablesen, welche Kategorie die häufigste ist, oder Sie können die Tabelle zusätzlich sortieren lassen `sort(table(semester_data$wohnort))`. Standardmässig sortiert die Funktion `sort()` Werte in aufsteigender Reihenfolge, wenn sie die Werte in absteigender Reihenfolge sortieren wollen, dann können sie zusätzlich das argument `decreasing = TRUE`  setzen.
+Um die relative Häufigkeitsverteilung von Frauen und Männern zu erlangen erstellen wir als erstes eine reguläre Häufigkeitsverteilung `table(semester_data$geschlecht)`. 
 
-Wenn Sie diese Funktionen nutzen, dann sollten Sie zu dem Ergebnis kommen, dass Bern mit 64 Personen in der Kategorie die häufigste Kategorie der Variable `wohnort` ist.
+Um die absoluten Häufigkeiten in Prozentwerte umzurechnen müssen wir diese durch die Gesamtzahl an beobachtungen Teilen. Diese können Sie entweder erlangen, in dem sie die Summe der absoluten Häufigkeiten in der Häufigkeitstabelle berechnen: `sum(table(semester_data$geschlecht))` oder indem sie einfach die Zeilen des Datensatzes zählen: `nrow(semester_data)`
+
+Die relative Häufigkeitstabelle multiplizieren wir dann noch mit 100 um Prozentwerte zu erlangen. Mit dieser Lösung sollten Sie heraus finden können das 82.5 % Frauen und 17.5% Männer in der Stichprobe enthalten sind
 
 Meta-information
 =========
 exname: scale_variabletypes 
-extype: schoice 
-exsolution: 01000 
+extype: mchoice 
+exsolution: 101000 
 exshuffle: TRUE
