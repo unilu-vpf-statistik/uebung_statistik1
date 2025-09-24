@@ -36,18 +36,18 @@ write.csv(semester_data, "semester_data.csv", row.names = FALSE, quote = FALSE)
 
 In dieser Übung sollen Sie sich mit dem Arbeiten von Variablen, Vektoren und Datensätzen - so genannten `data.frame` Objekten - in R vertraut machen. Das Ziel ist, dass sie wissen wie sie einer Variablen einen Wert zu weisen, wie sie einen Vektor mit unterschiedlichen Werten erstellen können, und wie sie auf Variablen in einem `data.frame` zugreifen können, um damit einfach Berechnungen durchzuführen.
 
-Um sich mit der Zuweisung von Werten zu Variablen, Vektoren und `data.frame` Objekten vertraut zu machen, schauen Sie bitte die folgenden Videos auf YouTube an:
+Um sich mit der Zuweisung von Werten zu Variablen, Vektoren und `data.frame` Objekten vertraut zu machen, schauen Sie bitte die folgenden kurzen (ca. 5 Minuten langen) Videos auf YouTube an:
 
-1. 
-2. 
-
+1. Ein [Video zur Erstellung & Bennenung von Vektoren](https://www.youtube.com/watch?v=w5dOALbZ9HE&list=PLjgj6kdf_snYBkIsWQYcYtUZiDpam7ygg&index=3)
+2. Ein [Video zur Erstellung & Benennung von Matrizen](https://www.youtube.com/watch?v=O7KL17QZNqg&list=PLjgj6kdf_snYBkIsWQYcYtUZiDpam7ygg&index=6)
+3. Ein [Video zur Erstellung & Benennung von Listen](https://www.youtube.com/watch?v=Px9VNWHja4M&list=PLjgj6kdf_snYBkIsWQYcYtUZiDpam7ygg&index=10)
+4. Ein [Video zu den Grundlagen von `data.frame` Objekten](https://www.youtube.com/watch?v=9f2g7RN5N0I&list=PLjgj6kdf_snYBkIsWQYcYtUZiDpam7ygg&index=12)
 
 ## Übungen
 
-Wir werden in den folgenden Übungen mit einem simulierten Datensatz von fiktiven Daten eines Erstsemester-Jahrgangs von Psychologie-Studierenden arbeiten. Sie können Sich den Datensatz auf ihren eigenen Rechner herunterladen: [semester_data.csv](semester_data.csv)
-Alternativ können Sie hier auf der Website direkt R Code mit Hilfe der `webr` Erweiterung ausführen um die Aufgaben zu lösen. 
+In den folgenden Übungen werden Sie mit einem simulierten Datensatz von fiktiven Daten eines Erstsemester-Jahrgangs von Psychologie-Studierenden arbeiten. Sie können Sich den Datensatz auf ihren eigenen Rechner herunterladen: [semester_data.csv](semester_data.csv)
 
-Der Datensatz enthält die gleichen Variablen, wie die Beispiele in der Vorlesung: `geschlecht`, `wohnort`, `alter` und `wissen_statistik`. Unten sehen sie die ersten Zeilen des simulierten Datensatzes.
+Alternativ können Sie hier auf der Website direkt R Code mit Hilfe der `webr` Erweiterung ausführen um die Aufgaben zu lösen. Der Datensatz enthält die gleichen Variablen, wie die Beispiele in der Vorlesung: `geschlecht`, `wohnort`, `alter` und `wissen_statistik`, die Werte sind jedoch anders. Unten sehen sie die ersten Zeilen des simulierten Datensatzes.
 
 ```{r}
 head(semester_data)
