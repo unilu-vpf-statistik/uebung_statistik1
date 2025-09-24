@@ -1,5 +1,6 @@
 ---
 title: "Übung 2"
+subtitle: "HS 2025"
 format:
   html:
     css: styles.css
