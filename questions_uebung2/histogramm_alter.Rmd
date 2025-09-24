@@ -1,24 +1,26 @@
 Question
 =======
-Was ist das mittlere Alter der Frauen und in Männer (gerundet auf eine Nachkommastelle) im Datensatz `semester_data`? 
+Mit welcher Funktion können Sie ein Histogramm der Altersverteilung der Variable `alter` im Datensatz `semeseter_data` erstellen?
 
 Answerlist
 --------
-* M(weiblich) = 23.2
-* M(männlich) = 23.0
-* M(weiblich) = 23.0
-* M(männlich) = 22.1
+* `hist(semester_data$alter)`
+* `plot(semester_data$alter`
+* `pie(semester_data$alter)`
+* `barplot(semester_data$alter)`
+* `histogram(semester_data$alter)`
 
 Solution
 ========
-Für diese Aufgabe müssen sie die Werte der variablen `alter` nach den Merkmalsausprägungen in der Variable `geschlecht` trennen. Dafür gibt es zwei Möglichkeiten:
+Die Funktion `hist()` erstellt ein histogramm einer Variablen, die der Funktion übergeben wird. Um ein Histogram der Altersverteilung zu erstellen müssen sie also folgenden Befehl ausführen: `hist(semester_data$alter)`
 
-1. Sie können logische Indizierung nutzen, indem sie eine logische Variable `is_weiblich <- semester_data$geschlecht == "weiblich"` definieren und mit dieser nur die Werte der Frauen bzw. Männer auswählen: `semester_data$alter[is_weiblich]` bzw. `semester_data$alter[!is_weiblich]`
-2. Es gibt in R einen Befehl zur Aggregation von Daten `aggregate()`, der Funktionen wie `mean` oder `median` auch für Variablenausprägungen gruppiert berechnen kann. Damit können Sie mit einer einzelnen Funktion die Mittelwerte für Frauen und Männer berechnen: `aggregate(semester_data$alter, list(semester_data$geschlecht), FUN = mean)`
+Wenn Sie diese Funktion ausführen, dann wird das Histogramm direkt ausgegeben. Sie erhalten jedoch keine weiteren Informationen zu der sekundären Häufigkeitsverteilung, die dem Histogram zu Grunde liegt. Um diese Information zu erhalten, können Sie sich das Ergebniss der Funktion in einer neue Variable speichern: `Sek_Häufigkeiten_Alter <- hist(semester_data$alter)`.
+
+Die Intervallgrenzen der sekundären Häufigkeitsverteilung können Sie mit `Sek_Häufigkeiten_Alter$breaks` erhalten. Die absoluten Häufigkeiten in den einzelnen Intervallen erhalten Sie mit `Sek_Häufigkeiten_Alter$counts`. Ebenso können Sie die Mitte der Intervalle mit `Sek_Häufigkeiten_Alter$mids` erhalten.
 
 Meta-information
 =========
 exname: scale_variabletypes 
-extype: mchoice 
-exsolution: 1100
+extype: schoice 
+exsolution: 10000
 exshuffle: TRUE
