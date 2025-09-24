@@ -1,0 +1,24 @@
+Question
+=======
+Was ist das mittlere Alter der Frauen und in Männer (gerundet auf eine Nachkommastelle) im Datensatz `semester_data`? 
+
+Answerlist
+--------
+* M(weiblich) = 23.2
+* M(männlich) = 23.0
+* M(weiblich) = 23.0
+* M(männlich) = 22.1
+
+Solution
+========
+Für diese Aufgabe müssen sie die Werte der variablen `alter` nach den Merkmalsausprägungen in der Variable `geschlecht` trennen. Dafür gibt es zwei Möglichkeiten:
+
+1. Sie können logische Indizierung nutzen, indem sie eine logische Variable `is_weiblich <- semester_data$geschlecht == "weiblich"` definieren und mit dieser nur die Werte der Frauen bzw. Männer auswählen: `semester_data$alter[is_weiblich]` bzw. `semester_data$alter[!is_weiblich]`
+2. Es gibt in R einen Befehl zur Aggregation von Daten `aggregate()`, der Funktionen wie `mean` oder `median` auch für Variablenausprägungen gruppiert berechnen kann. Damit können Sie mit einer einzelnen Funktion die Mittelwerte für Frauen und Männer berechnen: `aggregate(semester_data$alter, list(semester_data$geschlecht), FUN = mean)`
+
+Meta-information
+=========
+exname: scale_variabletypes 
+extype: mchoice 
+exsolution: 1100
+exshuffle: TRUE

@@ -16,6 +16,8 @@ website:
     contents:
       - text: "Übung 1"
         href: exercise1.qmd
+      #- text: "Übung 2"
+      #  href: exercise2.qmd
   page-footer:
     left: "Copyright 2025, Gidon Frischkorn"
     right:

@@ -77,3 +77,15 @@ head(semester_data)
 
 ```
 
+Nutzen Sie eine Suchmaschine, wenn Sie nicht wissen welche Funktionen Ihnen ein bestimmtes Ergebnis liefern. Ausserdem können Sie in R immer die Hilfe einer Funktion aufrufen, indem sie vor den Namen der Funktion ein Fragezeichen schreiben, z. Bsp `?median` zum Aufrufen der Hilfe für den Median
+
+```{r}
+#| echo: false
+#| message: false
+#| results: "asis"
+exams2forms(shuffeld_questions)
+```
+
+------------------------------------------------------------------------
+
+[![](images/Logo_UniLu.png){fig-align="center" width="300"}](https://www.unilu.ch/fakultaeten/vpf/uebersicht/)
