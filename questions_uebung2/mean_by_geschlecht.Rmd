@@ -20,7 +20,7 @@ Für diese Aufgabe müssen sie die Werte der variablen `alter` nach den Merkmals
 
 Meta-information
 =========
-exname: scale_variabletypes 
+exname: mean_by_geschlecht 
 extype: mchoice 
 exsolution: 001010 
 exshuffle: TRUE

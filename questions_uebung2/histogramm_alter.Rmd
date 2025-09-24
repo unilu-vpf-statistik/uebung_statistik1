@@ -20,7 +20,7 @@ Die Intervallgrenzen der sekundären Häufigkeitsverteilung können Sie mit `Sek
 
 Meta-information
 =========
-exname: scale_variabletypes 
+exname: histogram_alter 
 extype: schoice 
 exsolution: 10000
 exshuffle: TRUE

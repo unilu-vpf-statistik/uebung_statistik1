@@ -21,7 +21,7 @@ Die relative Häufigkeitstabelle multiplizieren wir dann noch mit 100 um Prozent
 
 Meta-information
 =========
-exname: scale_variabletypes 
+exname: percent_gender 
 extype: mchoice 
 exsolution: 101000 
 exshuffle: TRUE

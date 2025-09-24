@@ -18,7 +18,7 @@ Wenn Sie diese Funktionen nutzen, dann sollten Sie zu dem Ergebnis kommen, dass 
 
 Meta-information
 =========
-exname: scale_variabletypes 
+exname: modus_wohnort 
 extype: schoice 
 exsolution: 01000 
 exshuffle: TRUE

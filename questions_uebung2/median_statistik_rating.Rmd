@@ -18,6 +18,6 @@ Mit Hilfe dieser Funktionen sollten Sie eine relative Häufigkeit von `17.5 %` f
 
 Meta-information
 =========
-exname: scale_variabletypes 
+exname: median_rating 
 extype: schoice 
 exsolution: 00100 
