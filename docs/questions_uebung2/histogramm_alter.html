@@ -134,6 +134,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Übung 1</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../exercise2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Übung 2</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -161,25 +167,27 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="question" class="level1">
 <h1>Question</h1>
-<p>Mit welcher Funktion können Sie in R ein Histogramm der Variable <code>alter</code> im Datensatz <code>semester_data</code> machen?</p>
+<p>Mit welcher Funktion können Sie ein Histogramm der Altersverteilung der Variable <code>alter</code> im Datensatz <code>semeseter_data</code> erstellen?</p>
 <section id="answerlist" class="level2">
 <h2 class="anchored" data-anchor-id="answerlist">Answerlist</h2>
 <ul>
-<li><code>plot(semester_data$alter)</code></li>
-<li><code>barplot(semester_data$alter)</code></li>
 <li><code>hist(semester_data$alter)</code></li>
+<li><code>plot(semester_data$alter</code></li>
 <li><code>pie(semester_data$alter)</code></li>
-<li><code>table(semester_data$alter)</code></li>
+<li><code>barplot(semester_data$alter)</code></li>
+<li><code>histogram(semester_data$alter)</code></li>
 </ul>
 </section>
 </section>
 <section id="solution" class="level1">
 <h1>Solution</h1>
-<p>Ein Histogramm erstellen Sie mit der R Funktion <code>hist</code>. Beim Ausführen der Funktion wird dabei direkt ein Histogramm erstellt. Wenn Sie noch weitere Informationen über die sekundäre Häufigkeitsverteilung hinter dem Histogramm bekommen wollen, dann können sie das Ergebniss der Funktion auch einer Variablen zuweisen <code>mein_histogramm &lt;- hist(semester_data$alter)</code>. In diesem Objekt finden Sie dann auch weitere Informationen zu den Intervallgrenzen, sowie der Anzahl an Werten in den jeweiligen Intervallen.</p>
+<p>Die Funktion <code>hist()</code> erstellt ein histogramm einer Variablen, die der Funktion übergeben wird. Um ein Histogram der Altersverteilung zu erstellen müssen sie also folgenden Befehl ausführen: <code>hist(semester_data$alter)</code></p>
+<p>Wenn Sie diese Funktion ausführen, dann wird das Histogramm direkt ausgegeben. Sie erhalten jedoch keine weiteren Informationen zu der sekundären Häufigkeitsverteilung, die dem Histogram zu Grunde liegt. Um diese Information zu erhalten, können Sie sich das Ergebniss der Funktion in einer neue Variable speichern: <code>Sek_Häufigkeiten_Alter &lt;- hist(semester_data$alter)</code>.</p>
+<p>Die Intervallgrenzen der sekundären Häufigkeitsverteilung können Sie mit <code>Sek_Häufigkeiten_Alter$breaks</code> erhalten. Die absoluten Häufigkeiten in den einzelnen Intervallen erhalten Sie mit <code>Sek_Häufigkeiten_Alter$counts</code>. Ebenso können Sie die Mitte der Intervalle mit <code>Sek_Häufigkeiten_Alter$mids</code> erhalten.</p>
 </section>
 <section id="meta-information" class="level1">
 <h1>Meta-information</h1>
-<p>exname: scale_variabletypes extype: schoice exsolution: 00100 exshuffle: TRUE</p>
+<p>exname: histogram_alter extype: schoice exsolution: 10000 exshuffle: TRUE</p>
 
 
 </section>

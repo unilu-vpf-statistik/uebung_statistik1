@@ -1,5 +1,5 @@
 ---
-title: "Übung 1"
+title: "Übung 1 - Skalenniveaus"
 subtitle: "HS 2025"
 author: "Gidon Frischkorn"
 format:

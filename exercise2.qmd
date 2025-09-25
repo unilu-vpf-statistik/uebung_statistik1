@@ -1,5 +1,5 @@
 ---
-title: "Übung 2"
+title: "Übung 2 - Häufigkeitstabellen & Masse der zentralen Tendenz"
 subtitle: "HS 2025"
 author: "Gidon Frischkorn"
 format:
