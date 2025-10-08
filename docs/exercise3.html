@@ -8,7 +8,7 @@
 
 <meta name="author" content="Gidon Frischkorn">
 
-<title>Übung 2 - Häufigkeitstabellen &amp; Masse der zentralen Tendenz – Übungen - VL: Statistik I</title>
+<title>Übung 3 - Dispersionsmasse – Übungen - VL: Statistik I</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -403,7 +403,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"# Herunterladen der Daten um sie lokal verfügbar zu machen\nurl <- \"https://unilu-vpf-statistik.github.io/uebung_statistik1/semester_data.csv\"\ndownload.file(url, \"semester_data.csv\")\n\n# Laden des Datensatzes\nsemester_data <- read.csv(\"semester_data.csv\")\n\n# Anzeigen der ersten Zeilen des Datensatzes\nhead(semester_data)\n\n# Schreiben Sie hier ihren Code um die Aufgaben zu lösen\n\n\n","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"# Herunterladen der Daten um sie lokal verfügbar zu machen\nurl <- \"https://unilu-vpf-statistik.github.io/uebung_statistik1/semester_data2.csv\"\ndownload.file(url, \"semester_data2.csv\")\n\n# Laden des Datensatzes\nsemester_data2 <- read.csv(\"semester_data2.csv\")\n\n# Anzeigen der ersten Zeilen des Datensatzes\nhead(semester_data2)\n\n# Schreiben Sie hier ihren Code um die Aufgaben zu lösen\n\n\n","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1697,7 +1697,7 @@ globalThis.qwebrExecuteCode = async function (
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./exercise2.html">Übung 2</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Übung 3 - Dispersionsmasse</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -1725,7 +1725,7 @@ globalThis.qwebrExecuteCode = async function (
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercise2.html" class="sidebar-item-text sidebar-link active">
+  <a href="./exercise2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Übung 2</span></a>
   </div>
 </li>
@@ -2033,7 +2033,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Übung 2 - Häufigkeitstabellen &amp; Masse der zentralen Tendenz</h1>
+<h1 class="title">Übung 3 - Dispersionsmasse</h1>
 <p class="subtitle lead">HS 2025</p>
 </div>
 
@@ -2059,29 +2059,28 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <section id="arbeiten-mit-variablen-vektoren-und-data.frames-in-r" class="level2">
 <h2 class="anchored" data-anchor-id="arbeiten-mit-variablen-vektoren-und-data.frames-in-r">Arbeiten mit Variablen, Vektoren und data.frames in R</h2>
-<p>In dieser Übung sollen Sie sich mit dem Arbeiten von Variablen, Vektoren und Datensätzen - so genannten <code>data.frame</code> Objekten - in R vertraut machen. Das Ziel ist, dass sie wissen wie sie einer Variablen einen Wert zu weisen, wie sie einen Vektor mit unterschiedlichen Werten erstellen können, und wie sie auf Variablen in einem <code>data.frame</code> zugreifen können, um damit einfach Berechnungen durchzuführen.</p>
-<p>Um sich mit der Zuweisung von Werten zu Variablen, Vektoren und <code>data.frame</code> Objekten vertraut zu machen, schauen Sie bitte die folgenden kurzen (ca. 5 Minuten langen) Videos auf YouTube an:</p>
+<p>In dieser Übung werden Sie weiter mit Variablen, Vektoren und Datensätzen in R arbeiten. Vor allem werden wir neben der Vertiefung der Dispersionsmasse, die in der Vorlesung behandelt wurden, mit relationalen und logischen Operatoren arbeiten und sehen wie diese Operatoren genutzt werden können um bestimmte Werte einer Variable auszuwählen.</p>
+<p>Um sich mit relationalen und logischen Operatoren und dem Indizieren von Werten auseinander zu setzen schauen Sie bitte die folgenden Videos:</p>
 <ol type="1">
-<li>Ein <a href="https://www.youtube.com/watch?v=w5dOALbZ9HE&amp;list=PLjgj6kdf_snYBkIsWQYcYtUZiDpam7ygg&amp;index=3">Video zur Erstellung &amp; Bennenung von Vektoren</a></li>
-<li>Ein <a href="https://www.youtube.com/watch?v=O7KL17QZNqg&amp;list=PLjgj6kdf_snYBkIsWQYcYtUZiDpam7ygg&amp;index=6">Video zur Erstellung &amp; Benennung von Matrizen</a></li>
-<li>Ein <a href="https://www.youtube.com/watch?v=Px9VNWHja4M&amp;list=PLjgj6kdf_snYBkIsWQYcYtUZiDpam7ygg&amp;index=10">Video zur Erstellung &amp; Benennung von Listen</a></li>
-<li>Ein <a href="https://www.youtube.com/watch?v=9f2g7RN5N0I&amp;list=PLjgj6kdf_snYBkIsWQYcYtUZiDpam7ygg&amp;index=12">Video zu den Grundlagen von <code>data.frame</code> Objekten</a></li>
+<li>Ein <a href="https://www.youtube.com/watch?v=ZJ7H-3j_-mE">Video zu Relationalen Operatoren</a></li>
+<li>Ein <a href="https://www.youtube.com/watch?v=6PpQS-YLWDQ&amp;t=2s">Video zu Logischen Operatoren</a></li>
+<li>Ein <a href="https://www.youtube.com/watch?v=o_ldRKmgvHo&amp;list=PLjgj6kdf_snYBkIsWQYcYtUZiDpam7ygg&amp;index=5">Video zur Indzierung von Vekoren</a></li>
 </ol>
 </section>
 <section id="übungen" class="level2">
 <h2 class="anchored" data-anchor-id="übungen">Übungen</h2>
-<p>In den folgenden Übungen werden Sie mit einem simulierten Datensatz von fiktiven Daten eines Erstsemester-Jahrgangs von Psychologie-Studierenden arbeiten. Sie können Sich den Datensatz auf ihren eigenen Rechner herunterladen: <a href="semester_data.csv">semester_data.csv</a></p>
-<p>Alternativ können Sie hier auf der Website direkt R Code mit Hilfe der <code>webr</code> Erweiterung ausführen um die Aufgaben zu lösen. Der Datensatz enthält die gleichen Variablen, wie die Beispiele in der Vorlesung: <code>geschlecht</code>, <code>wohnort</code>, <code>alter</code> und <code>wissen_statistik</code>, die Werte sind jedoch anders. Unten sehen sie die ersten Zeilen des simulierten Datensatzes.</p>
+<p>In den folgenden Übungen werden Sie wieder mit einem simulierten Datensatz von fiktiven Daten eines Erstsemester-Jahrgangs von Psychologie-Studierenden arbeiten. Sie können Sich den Datensatz auf ihren eigenen PC herunterladen: <a href="semester_data2.csv">semester_data2.csv</a></p>
+<p>Alternativ können Sie hier auf der Website direkt R Code mit Hilfe der <code>webr</code> Erweiterung ausführen um die Aufgaben zu lösen. Der Datensatz enthält wiederum die gleichen Variablen, wie die Beispiele in der Vorlesung und der letzten Übung: <code>geschlecht</code>, <code>wohnort</code>, <code>alter</code> und <code>wissen_statistik</code>, die Werte sind jedoch anders. Unten sehen sie die ersten Zeilen des simulierten Datensatzes.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(semester_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(semester_data2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  geschlecht    wohnort alter wissen_statistik
-1   weiblich       Bern  23.2                3
-2   weiblich       Bern  29.3                2
-3   weiblich St. Gallen  21.7                2
-4   weiblich       Bern  21.7                4
-5   weiblich     Luzern  18.8                3
-6   weiblich St. Gallen  22.7                4</code></pre>
+<pre><code>  geschlecht nationalität    wohnort alter wissen_statistik
+1   weiblich      Schweiz     Luzern  21.9                3
+2   weiblich   Frankreich       Bern  24.0                2
+3   weiblich      Schweiz        Zug  21.2                3
+4   weiblich   Frankreich    Zuerich  27.0                2
+5   weiblich       andere St. Gallen  17.7                4
+6   weiblich      Schweiz       Bern  22.0                3</code></pre>
 </div>
 </div>
 <p>Hier finden Sie die <code>webr</code> Konsole, die Ihnen das schreiben und durchführen von R Code direkt auf der Website ermöglicht. Wenn viele Studierenden die Übungen parallel machen, dann kann es sein, dass <code>webr</code> sehr langsam wird.</p>
@@ -2090,71 +2089,6 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>Nutzen Sie eine <a href="https://unilu-vpf-statistik.github.io/uebung_statistik1/about.html#suchmaschinen">Suchmaschine</a>, wenn Sie nicht wissen welche Funktionen Ihnen ein bestimmtes Ergebnis liefern. Ausserdem können Sie in R immer die <a href="https://www.r-project.org/help.html">Hilfe</a> einer Funktion aufrufen, indem sie vor den Namen der Funktion ein Fragezeichen schreiben, z. Bsp <code>?median</code> oder die Hilfe-Funktion <code>help()</code> mit dem jeweligen Funktionsbefehl ausführen: <code>help(median)</code>.</p>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Was ist das mittlere Alter der Frauen und in Männer (gerundet auf eine Nachkommastelle) im Datensatz <code>semester_data</code>?</p>
-<div id="webex-87fa8bdaec12a70d19e396d2f978b4ac" class="webex-checkboxgroup" data-answer="YwdKURRSSFBJUx0DPA==">
-<label><input type="checkbox" autocomplete="off" name="87fa8bdaec12a70d19e396d2f978b4ac"><span>M(männlich) = 22.1</span></label><label><input type="checkbox" autocomplete="off" name="87fa8bdaec12a70d19e396d2f978b4ac"><span>M(männlich) = 23.0</span></label><label><input type="checkbox" autocomplete="off" name="87fa8bdaec12a70d19e396d2f978b4ac"><span>M(weiblich) = 22.1</span></label><label><input type="checkbox" autocomplete="off" name="87fa8bdaec12a70d19e396d2f978b4ac"><span>M(männlich) = 23.2</span></label><label><input type="checkbox" autocomplete="off" name="87fa8bdaec12a70d19e396d2f978b4ac"><span>M(weiblich) = 23.2</span></label><label><input type="checkbox" autocomplete="off" name="87fa8bdaec12a70d19e396d2f978b4ac"><span>M(weiblich) = 23.0</span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Für diese Aufgabe müssen sie die Werte der variablen <code>alter</code> nach den Merkmalsausprägungen in der Variable <code>geschlecht</code> trennen. Dafür gibt es zwei Möglichkeiten:</p>
-<ol type="1">
-<li>Sie können logische Indizierung nutzen, indem sie eine logische Variable <code>is_weiblich &lt;- semester_data$geschlecht == "weiblich"</code> definieren und mit dieser nur die Werte der Frauen bzw. Männer auswählen: <code>semester_data$alter[is_weiblich]</code> bzw. <code>semester_data$alter[!is_weiblich]</code></li>
-<li>Es gibt in R einen Befehl zur Aggregation von Daten <code>aggregate()</code>, der Funktionen wie <code>mean</code> oder <code>median</code> auch für Variablenausprägungen gruppiert berechnen kann. Damit können Sie mit einer einzelnen Funktion die Mittelwerte für Frauen und Männer berechnen: <code>aggregate(semester_data$alter, list(semester_data$geschlecht), FUN = mean)</code></li>
-</ol>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Wie hoch liegt der Anteil an Frauen und Männern in den Daten in Prozent?</p>
-<div id="webex-1ac006bdda3f940a41407c3fca1edbc5" class="webex-checkboxgroup" data-answer="alFPARwHTlRIUR9WZA==">
-<label><input type="checkbox" autocomplete="off" name="1ac006bdda3f940a41407c3fca1edbc5"><span>26.2% Männer</span></label><label><input type="checkbox" autocomplete="off" name="1ac006bdda3f940a41407c3fca1edbc5"><span>17.5% Männer</span></label><label><input type="checkbox" autocomplete="off" name="1ac006bdda3f940a41407c3fca1edbc5"><span>82.5% Frauen</span></label><label><input type="checkbox" autocomplete="off" name="1ac006bdda3f940a41407c3fca1edbc5"><span>11.9% Männer</span></label><label><input type="checkbox" autocomplete="off" name="1ac006bdda3f940a41407c3fca1edbc5"><span>88.1% Frauen</span></label><label><input type="checkbox" autocomplete="off" name="1ac006bdda3f940a41407c3fca1edbc5"><span>73.8% Frauen</span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Um die relative Häufigkeitsverteilung von Frauen und Männern zu erlangen erstellen wir als erstes eine reguläre Häufigkeitsverteilung <code>table(semester_data$geschlecht)</code>.</p>
-<p>Um die absoluten Häufigkeiten in Prozentwerte umzurechnen müssen wir diese durch die Gesamtzahl an beobachtungen Teilen. Diese können Sie entweder erlangen, in dem sie die Summe der absoluten Häufigkeiten in der Häufigkeitstabelle berechnen: <code>sum(table(semester_data$geschlecht))</code> oder indem sie einfach die Zeilen des Datensatzes zählen: <code>nrow(semester_data)</code></p>
-<p>Die relative Häufigkeitstabelle multiplizieren wir dann noch mit 100 um Prozentwerte zu erlangen. Mit dieser Lösung sollten Sie heraus finden können das 82.5 % Frauen und 17.5% Männer in der Stichprobe enthalten sind</p>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Mit welcher Funktion können Sie ein Histogramm der Altersverteilung der Variable <code>alter</code> im Datensatz <code>semeseter_data</code> erstellen?</p>
-<div id="webex-54149a21539419e7826848ca639f82a1" class="webex-radiogroup" data-answer="bgQdBRVRHgEZA2Q=">
-<label><input type="radio" autocomplete="off" name="54149a21539419e7826848ca639f82a1"><span><code>barplot(semester_data$alter)</code></span></label><label><input type="radio" autocomplete="off" name="54149a21539419e7826848ca639f82a1"><span><code>hist(semester_data$alter)</code></span></label><label><input type="radio" autocomplete="off" name="54149a21539419e7826848ca639f82a1"><span><code>histogram(semester_data$alter)</code></span></label><label><input type="radio" autocomplete="off" name="54149a21539419e7826848ca639f82a1"><span><code>pie(semester_data$alter)</code></span></label><label><input type="radio" autocomplete="off" name="54149a21539419e7826848ca639f82a1"><span><code>plot(semester_data$alter</code></span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Die Funktion <code>hist()</code> erstellt ein histogramm einer Variablen, die der Funktion übergeben wird. Um ein Histogram der Altersverteilung zu erstellen müssen sie also folgenden Befehl ausführen: <code>hist(semester_data$alter)</code></p>
-<p>Wenn Sie diese Funktion ausführen, dann wird das Histogramm direkt ausgegeben. Sie erhalten jedoch keine weiteren Informationen zu der sekundären Häufigkeitsverteilung, die dem Histogram zu Grunde liegt. Um diese Information zu erhalten, können Sie sich das Ergebniss der Funktion in einer neue Variable speichern: <code>Sek_Häufigkeiten_Alter &lt;- hist(semester_data$alter)</code>.</p>
-<p>Die Intervallgrenzen der sekundären Häufigkeitsverteilung können Sie mit <code>Sek_Häufigkeiten_Alter$breaks</code> erhalten. Die absoluten Häufigkeiten in den einzelnen Intervallen erhalten Sie mit <code>Sek_Häufigkeiten_Alter$counts</code>. Ebenso können Sie die Mitte der Intervalle mit <code>Sek_Häufigkeiten_Alter$mids</code> erhalten.</p>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>In der Variable <code>wissen_statistik</code> sollten die Studierenden zu Beginn der VL einschätzen, wie sie ihr Grundlagenwissen im Bereich Statistik einschätzen. Wie viel Prozent (gerundet) schätzen Ihr Wissen gleich oder besser als das Rating 4 ein?</p>
-<div id="webex-192432d0b7ec2f55dfae9e51660bbc97" class="webex-radiogroup" data-answer="agkeBB8DSABOBzg=">
-<label><input type="radio" autocomplete="off" name="192432d0b7ec2f55dfae9e51660bbc97"><span>8 %</span></label><label><input type="radio" autocomplete="off" name="192432d0b7ec2f55dfae9e51660bbc97"><span>15 %</span></label><label><input type="radio" autocomplete="off" name="192432d0b7ec2f55dfae9e51660bbc97"><span>26 %</span></label><label><input type="radio" autocomplete="off" name="192432d0b7ec2f55dfae9e51660bbc97"><span>32 %</span></label><label><input type="radio" autocomplete="off" name="192432d0b7ec2f55dfae9e51660bbc97"><span>60 %</span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Um die kumulierten Prozente über die Rating-Kategorien zu erlangen, erstellen wir als erstes eine Häufigkeitstabelle <code>table(semester_data$wissen_statistik)</code>, wenn wir die Werte dieser Tabelle durch die Gesamtzahl an Beobachtungen <code>sum(table(semester_data$wissen_statistik))</code>, dann bekommen wir eine relative Häufigkeitstabelle. Nun müssen wir die Werte für die Ratings 4 und 5 aufsummieren. Alternative können wir auch die kumlativen relativen Häufigkeiten für die Ratings mit hilfe der kumulativen Summenfunktion <code>cumsum()</code> berechnen.</p>
-<p>Mit Hilfe dieser Funktionen sollten Sie eine relative Häufigkeit von <code>17.5 %</code> für ein Rating von 4 und von <code>8.1 %</code> für ein Rating von 5 erhalten. Addiert ergibt das ein gerundetes Rating von <code>26%</code> für ein Rating von 4 oder höher.</p>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Was ist der Modus der Häufigkeitsverteilung der Wohnorte im Datensatz <code>semester_data</code>?</p>
-<div id="webex-9352f1551f19342eafc94d5fb9181f3d" class="webex-radiogroup" data-answer="YgMZA0oBGQUdVmw=">
-<label><input type="radio" autocomplete="off" name="9352f1551f19342eafc94d5fb9181f3d"><span>St.&nbsp;Gallen</span></label><label><input type="radio" autocomplete="off" name="9352f1551f19342eafc94d5fb9181f3d"><span>Bern</span></label><label><input type="radio" autocomplete="off" name="9352f1551f19342eafc94d5fb9181f3d"><span>Zuerich</span></label><label><input type="radio" autocomplete="off" name="9352f1551f19342eafc94d5fb9181f3d"><span>Luzern</span></label><label><input type="radio" autocomplete="off" name="9352f1551f19342eafc94d5fb9181f3d"><span>Basel</span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Wenn sie eine Häufigkeitsverteilung für den Wohnort generieren: <code>table(semester_data$wohnort)</code>, dann können Sie entweder direkt aus der Tabelle ablesen, welche Kategorie die häufigste ist, oder Sie können die Tabelle zusätzlich sortieren lassen <code>sort(table(semester_data$wohnort))</code>. Standardmässig sortiert die Funktion <code>sort()</code> Werte in aufsteigender Reihenfolge, wenn sie die Werte in absteigender Reihenfolge sortieren wollen, dann können sie zusätzlich das argument <code>decreasing = TRUE</code> setzen.</p>
-<p>Wenn Sie diese Funktionen nutzen, dann sollten Sie zu dem Ergebnis kommen, dass Bern mit 64 Personen in der Kategorie die häufigste Kategorie der Variable <code>wohnort</code> ist.</p>
-</div>
-</div>
 <hr>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
