@@ -8,7 +8,7 @@
 
 <meta name="author" content="Gidon Frischkorn">
 
-<title>Hilfe &amp; Kontakt – Übungen - VL: Statistik I</title>
+<title>Formelsammlung – Übungen - VL: Statistik I</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -104,6 +69,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -130,11 +124,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Übungen</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Formelsammlung.html"> 
+    <a class="nav-link active" href="./Formelsammlung.html" aria-current="page"> 
 <span class="menu-text">Formelsammlung</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">Hilfe &amp; Kontakt</span></a>
   </li>  
 </ul>
@@ -148,7 +142,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Hilfe &amp; Kontakt</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Formelsammlung</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -180,6 +174,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Übung 2</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exercise3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Übung 3</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -190,11 +190,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#tipps-um-hilfe-mit-r-rstudio-zu-finden" id="toc-tipps-um-hilfe-mit-r-rstudio-zu-finden" class="nav-link active" data-scroll-target="#tipps-um-hilfe-mit-r-rstudio-zu-finden">Tipps um Hilfe mit R &amp; RStudio zu finden</a>
+  <li><a href="#formelsammlung-vl-statistik-1" id="toc-formelsammlung-vl-statistik-1" class="nav-link active" data-scroll-target="#formelsammlung-vl-statistik-1">Formelsammlung: VL Statistik 1</a>
   <ul class="collapse">
-  <li><a href="#suchmaschinen" id="toc-suchmaschinen" class="nav-link" data-scroll-target="#suchmaschinen">Suchmaschinen</a></li>
-  <li><a href="#youtube" id="toc-youtube" class="nav-link" data-scroll-target="#youtube">YouTube</a></li>
-  <li><a href="#llm-chats" id="toc-llm-chats" class="nav-link" data-scroll-target="#llm-chats">LLM Chats</a></li>
+  <li><a href="#grundlegenden-rechenoperatoren" id="toc-grundlegenden-rechenoperatoren" class="nav-link" data-scroll-target="#grundlegenden-rechenoperatoren">Grundlegenden Rechenoperatoren</a>
+  <ul class="collapse">
+  <li><a href="#summe" id="toc-summe" class="nav-link" data-scroll-target="#summe">Summe</a></li>
+  </ul></li>
+  <li><a href="#deskriptive-statistik" id="toc-deskriptive-statistik" class="nav-link" data-scroll-target="#deskriptive-statistik">Deskriptive Statistik</a>
+  <ul class="collapse">
+  <li><a href="#häufigkeitsverteilung" id="toc-häufigkeitsverteilung" class="nav-link" data-scroll-target="#häufigkeitsverteilung">Häufigkeitsverteilung</a></li>
+  <li><a href="#masse-der-zentralen-tendenz" id="toc-masse-der-zentralen-tendenz" class="nav-link" data-scroll-target="#masse-der-zentralen-tendenz">Masse der zentralen Tendenz</a></li>
+  <li><a href="#dispersionsmasse" id="toc-dispersionsmasse" class="nav-link" data-scroll-target="#dispersionsmasse">Dispersionsmasse</a></li>
+  </ul></li>
+  <li><a href="#wahrscheinlichkeitstheorie" id="toc-wahrscheinlichkeitstheorie" class="nav-link" data-scroll-target="#wahrscheinlichkeitstheorie">Wahrscheinlichkeitstheorie</a></li>
+  <li><a href="#inferenzstatistik-definitionen" id="toc-inferenzstatistik-definitionen" class="nav-link" data-scroll-target="#inferenzstatistik-definitionen">Inferenzstatistik: Definitionen</a></li>
+  <li><a href="#gruppenvergleiche" id="toc-gruppenvergleiche" class="nav-link" data-scroll-target="#gruppenvergleiche">Gruppenvergleiche</a></li>
+  <li><a href="#fehler-fragen" id="toc-fehler-fragen" class="nav-link" data-scroll-target="#fehler-fragen">Fehler &amp; Fragen</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -204,7 +215,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Hilfe &amp; Kontakt</h1>
+<h1 class="title">Formelsammlung</h1>
 <p class="subtitle lead">HS 2025</p>
 </div>
 
@@ -228,55 +239,134 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Falls Sie <strong>Probleme mit der Installation von R und R-Studio</strong> haben, dann schauen Sie sich dieses YouTube Video an, dass zeigt wie sie R und RStudio auf Ihrem Rechner installieren können: <a href="https://www.youtube.com/watch?v=X_Mxya2Fis0" class="uri">https://www.youtube.com/watch?v=X_Mxya2Fis0</a></p>
-<p>Falls Sie <strong>Probleme mit den Übungen</strong> für die Vorlesung “Statistik I” haben, folgen Sie den folgenden Schritten:</p>
-<ol type="1">
-<li>Versuchen Sie selbst nach einer Lösung mit Hilfe der unten stehenden Tools zu suchen</li>
-<li>Fragen Sie Ihre Mitstudierenden um Hilfe &amp; klären Sie ob auch andere Studierende ähnliche Probleme haben</li>
-<li>Diskutieren Sie das Problem im Q&amp;A Forum auf OLAT</li>
-</ol>
-<p>Sollten Sie nach all diesen Schritten gemeinsam keine Lösung finden und mehrere Studierende ein Problem mit den Online implementierten Übungen haben, dann können Sie sich per Mail an mich wenden: <a href="mailto:gidon.frischkorn@unilu.ch">gidon.frischkorn@unilu.ch</a></p>
-<section id="tipps-um-hilfe-mit-r-rstudio-zu-finden" class="level2">
-<h2 class="anchored" data-anchor-id="tipps-um-hilfe-mit-r-rstudio-zu-finden">Tipps um Hilfe mit R &amp; RStudio zu finden</h2>
-<p>Das Internet bietet viele verschiedene Möglichkeiten um Hilfe bei der Arbeit mit R &amp; RStudio zu bekommen. Hier finden Sie einige Vorschläge wie sie Probleme mit R und RStudio mit Hilfe aus dem Internet lösen können</p>
-<section id="suchmaschinen" class="level3">
-<h3 class="anchored" data-anchor-id="suchmaschinen">Suchmaschinen</h3>
-<p>Der einfachste Weg um Hilfe mit R oder RStudio zu bekommen ist ihr Probleme unter in einer Suchmaschine einzugeben. Fügen Sie dabei hinzu, dass sie das Problem in R lösen wollen. Wenn Sie zum Beispiel eine Fehlermeldung bekommen, dann kopieren sie die Nachricht der Fehlermeldung in die Suchzeile ein und fügen “in R” hinzu, damit die Suche Lösungen für R findet.</p>
-<p><strong>Tipp:</strong> Suchen Sie auf Englisch nach einer Lösung für Ihr Problem, dann werden Sie mehr Ergebnisse bekommen und finden leichter eine Lösung die Sie nachvollziehen und für sich nutzen können.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel Code der eine Warnung erzeugt</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="st">"hallo"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in mean.default(data): argument is not numeric or logical: returning NA</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] NA</code></pre>
-</div>
-</div>
-<p><img src="images/clipboard-2862428818.png" class="img-fluid"></p>
+<section id="formelsammlung-vl-statistik-1" class="level1">
+<h1>Formelsammlung: VL Statistik 1</h1>
+<p>Die folgenden Formelsammlung gibt eine Übersicht über die mathematischen Formeln und Definitionen, die im Rahmen der Vorlesung “Statistik 1” eingeführt und behandelt wurden.</p>
+<p>Es wird erwartet, dass Sie mit den in der Formelsammlung aufgelisteten Formeln und Definitionen einfache Rechnungen durchführen können und diese mit Hilfe der Statistiksoftware R &amp; RStudio, oder einem der für die Prüfung zugelassenen Taschenrechner auf einfach Rechenbeispiele wie in den Übungen anwenden können.</p>
+<p>Im Laufe des Semesters werden Schritt für Schritt weitere Formeln hinzugefügt werden.</p>
+<section id="grundlegenden-rechenoperatoren" class="level2">
+<h2 class="anchored" data-anchor-id="grundlegenden-rechenoperatoren">Grundlegenden Rechenoperatoren</h2>
+<section id="summe" class="level3">
+<h3 class="anchored" data-anchor-id="summe">Summe</h3>
+<p><span class="math display">\[
+\sum_{i = 1}^j x_j = x_1 + x_2 + x_3 + \cdots + x_j
+\]</span></p>
+<p>Die Summe alle Werte der Variablen <span class="math inline">\(x\)</span> begonnen ab dem Startwert <span class="math inline">\(i = 1\)</span> bis zu dem Endwert <span class="math inline">\(j\)</span>.</p>
 </section>
-<section id="youtube" class="level3">
-<h3 class="anchored" data-anchor-id="youtube">YouTube</h3>
-<p>Neben der Nutzung von Suchmaschinen finden Sie auf YouTube eine Vielzahl an Erklärvideos zur Nutzung von R und spezifischen Analysen beziehungsweise Programmieraufgaben. Ich empfehle Ihnen dabei vor allem nach Englischen Videos zu suchen, da sie damit eine grössere Chance haben ein Video zu finden, dass Ihnen für Ihr konkretes Problem weiter hilft.</p>
-<p>Einige Kanäle die eine breite Menge an Themen abdecken sind:</p>
-<ul>
-<li><p><a href="https://www.youtube.com/channel/UCfJyQ3P2k_SuqfxVdqIEQNw">R Programming 101</a> (über 180 Videos zu verschiedenen R Themen)</p></li>
-<li><p><a href="https://www.youtube.com/@DataDaft">DataDaft</a> (nicht nur Videos für R)</p></li>
-<li><p><a href="https://www.youtube.com/@StatistikamPC_BjoernWalther">Statistik am PC</a> (Videos auf Deutsch, nicht nur für R)</p></li>
-</ul>
 </section>
-<section id="llm-chats" class="level3">
-<h3 class="anchored" data-anchor-id="llm-chats">LLM Chats</h3>
-<p>Im Laufe der letzten Jahre sind vermehrt Chats mit Large Language Modellen (LLMs) - wie zum Beispiel <a href="https://chatgpt.com/">ChatGPT</a>, <a href="https://www.anthropic.com/claude/sonnet">Claude Sonnet 4</a> oder <a href="https://gemini.google.com/?hl=de">Gemini</a> - als weitere Möglichkeit zur Problemlösung von Programmierfragen genutzt worden. Viele LLMs können direkt Code vorschlagen, mit dem Sie gezielt bestimmte Probleme lösen können.</p>
-<p>Seien Sie sich jedoch bewusst, dass der Output der <a href="https://posit.co/blog/r-llm-evaluation/">LLMs nicht immer korrekt</a> sein muss, so dass Sie die Ergebnisse immer selbst überprüfen müssen. Ausserdem bekommen Sie durch LLMs häufig Code mit fortgeschrittenen Programmiertechniken vorgeschlagen, die für Sie als Anfänger schwieriger nachzuvollziehen ist. (Auch wir als Dozierende können somit relativ einfach nachvollziehen, ob sie bei der Lösung einer Aufgabe LLMs verwendet haben).</p>
-<p>Grundsätzlich werden Sie das Programmieren und Analysieren von Daten mit R und RStudio schneller und nachhaltiger lernen, wenn Sie Code selbst schreiben, Fehlermeldungen nachvollziehen, und eigenständig nach Lösungen im Internet suchen und diese selbst für Ihren Code anpassen. Darüber hinaus wird Ihnen das auch dabei helfen ein besseres konzeptuelles Verständnis der Analysen und Programmierschritte zu erlangen.</p>
-<hr>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://www.unilu.ch/fakultaeten/vpf/uebersicht/"><img src="images/Logo_UniLu.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300"></a></p>
-</figure>
-</div>
+<section id="deskriptive-statistik" class="level2">
+<h2 class="anchored" data-anchor-id="deskriptive-statistik">Deskriptive Statistik</h2>
+<section id="häufigkeitsverteilung" class="level3">
+<h3 class="anchored" data-anchor-id="häufigkeitsverteilung">Häufigkeitsverteilung</h3>
+<section id="absolute-häufigkeit" class="level4">
+<h4 class="anchored" data-anchor-id="absolute-häufigkeit">Absolute Häufigkeit</h4>
+<p><span class="math inline">\(n_j =\)</span> absolute Häufigkeit einer Kategorie <span class="math inline">\(j\)</span> wird mit, wobei: <span class="math inline">\(\sum_{j=1}^k n_j = n\)</span> die Gesamtzahl an Beobachtungen <span class="math inline">\(n\)</span> für eine Menge von <span class="math inline">\(k\)</span> Kategorien ergibt</p>
+</section>
+<section id="relative-häufigkeit" class="level4">
+<h4 class="anchored" data-anchor-id="relative-häufigkeit">Relative Häufigkeit</h4>
+<p><span class="math display">\[
+h_j = \frac{n_j}{n}
+\]</span></p>
+<p>mit der absoluten Häufigkeit <span class="math inline">\(n_j\)</span> der Kategorie <span class="math inline">\(j\)</span> und der Gesamtzahl an Beobachtungen <span class="math inline">\(n\)</span></p>
+</section>
+<section id="kumulierte-häufigkeiten" class="level4">
+<h4 class="anchored" data-anchor-id="kumulierte-häufigkeiten">Kumulierte Häufigkeiten</h4>
+<p><span class="math display">\[
+kn_j = \sum_{i=1}^j n_i
+\]</span></p>
+<p>Summe der absoluten Häufigkeiten <span class="math inline">\(n_i\)</span> von der kleinsten Kategorie <span class="math inline">\(i = 1\)</span> bis zur Kategorie <span class="math inline">\(j\)</span>.</p>
+<p>diese Summe kann analog auch für relative Häufikeiten berechnet werden:</p>
+<p><span class="math display">\[
+kh_j = \sum_{i=1}^j h_i = \frac{kn_j}{n} = \frac{\sum_{i=1}^j n_i}{n}
+\]</span></p>
+</section>
+</section>
+<section id="masse-der-zentralen-tendenz" class="level3">
+<h3 class="anchored" data-anchor-id="masse-der-zentralen-tendenz">Masse der zentralen Tendenz</h3>
+<section id="modus" class="level4">
+<h4 class="anchored" data-anchor-id="modus">Modus</h4>
+<p>Der <strong>Modus</strong> (engl. Mode) ist der <em>häufigste</em> Werte einer primären Häufigkeitsverteilung.</p>
+<p>Für kontinuierliche (metrische) Variablen ist der <strong>Modus</strong> das <em>Maximum</em> der Häufigkeitsdichte</p>
+</section>
+<section id="median" class="level4">
+<h4 class="anchored" data-anchor-id="median">Median</h4>
+</section>
+<section id="mittelwert" class="level4">
+<h4 class="anchored" data-anchor-id="mittelwert">Mittelwert</h4>
+<p><span class="math display">\[
+\overline{x} = \frac{\sum_{m = 1}^{n} x_m}{n} = M
+\]</span> mit eine Gesamtzahl von <span class="math inline">\(n\)</span> Messweten <span class="math inline">\(x_m\)</span></p>
+</section>
+</section>
+<section id="dispersionsmasse" class="level3">
+<h3 class="anchored" data-anchor-id="dispersionsmasse">Dispersionsmasse</h3>
+<section id="relativer-informationsgehalt" class="level4">
+<h4 class="anchored" data-anchor-id="relativer-informationsgehalt">Relativer Informationsgehalt</h4>
+<p><span class="math display">\[
+H = - \frac{1}{\ln{k}} \cdot \sum_{j = 1}^{k} h_j \cdot \ln{h_j}
+\]</span></p>
+<p>für eine Häufigkeitsverteilung mit <span class="math inline">\(k\)</span> unterschiedlichen Kategorien und den relativen Häufigkeiten <span class="math inline">\(h_j\)</span> für jede einzelne Kategorie <span class="math inline">\(j\)</span></p>
+</section>
+<section id="interquartilsabstand-bzw.-interquartilerange-iqr" class="level4">
+<h4 class="anchored" data-anchor-id="interquartilsabstand-bzw.-interquartilerange-iqr">Interquartilsabstand (bzw. Interquartilerange, IQR)</h4>
+<p><span class="math display">\[
+IQR = Q_3 - Q_1
+\]</span></p>
+<p>mit: <span class="math display">\[
+Q_i = x_q; \quad \text{und:} \quad q = \frac{i}{4} \cdot n
+\]</span></p>
+<p>Für aufsteigend sortierte Messwerte <span class="math inline">\(x\)</span> gibt <span class="math inline">\(q\)</span> den Messwert an, der die Quartilgrenze des <span class="math inline">\(i\)</span>-ten Quartils darstellt.</p>
+</section>
+<section id="mittlere-absolute-medianabweichung-mad" class="level4">
+<h4 class="anchored" data-anchor-id="mittlere-absolute-medianabweichung-mad">Mittlere Absolute Medianabweichung (MAD)</h4>
+<p><span class="math display">\[
+MAD = \frac{\sum_{m=1}^n |x_m - Md_x|}{n}
+\]</span> mit der Summe <span class="math inline">\(\sum\)</span> der absoluten Abweichungen der Messwerte <span class="math inline">\(x_m\)</span> vom Median <span class="math inline">\(Md\)</span> der Variable <span class="math inline">\(x\)</span> normiert an der Anzahl an Messwerten <span class="math inline">\(n\)</span></p>
+</section>
+<section id="varianz-standardabweichung" class="level4">
+<h4 class="anchored" data-anchor-id="varianz-standardabweichung">Varianz / Standardabweichung</h4>
+<p>die <strong>Varianz</strong> ergibt sich aus dem an der Anzahl an Messwerten <span class="math inline">\(n\)</span> normierten zentralen / zentrierten Moment <em>zweiter</em> Ordnung:</p>
+<p><span class="math display">\[
+s_x^2= \frac{\sum_{m = 1}^n (x_m - \overline{x})^2}{n}
+\]</span></p>
+<p>die <strong>Standardabweichung</strong> ergibt sich indem man die Quadratwurzel der Varianz zieht:</p>
+<p><span class="math display">\[
+s_x = \sqrt{s_x^2} = \sqrt{\frac{\sum_{m = 1}^n (x_m - \overline{x})^2}{n}}
+\]</span></p>
+</section>
+<section id="schiefe" class="level4">
+<h4 class="anchored" data-anchor-id="schiefe">Schiefe</h4>
+<p>die <strong>Schiefe</strong> ergibt sich aus dem an der Anzahl an Messwerten <span class="math inline">\(n\)</span> normierten und der Standardabweichung <span class="math inline">\(s_x\)</span> standardisierten zentralen / zentrierten Moment <em>dritter</em> Ordnung:</p>
+<p><span class="math display">\[
+Sch = \frac{1}{n} \cdot \frac{\sum_{m=1}^n (x_m - \overline{x})^3}{s_x^3} = \frac{1}{n} \cdot \sum_{m=1}^n \left( \frac{x_m - \overline{x}}{s_x} \right)^3
+\]</span></p>
+</section>
+<section id="stichprobenmomente" class="level4">
+<h4 class="anchored" data-anchor-id="stichprobenmomente">Stichprobenmomente</h4>
+<p>Das <span class="math inline">\(k\)</span>-te Stichprobenmoment <span class="math inline">\(m\)</span> für eine Variable <span class="math inline">\(X\)</span> ist definiert als:</p>
+<p><span class="math display">\[
+m_k = \frac{\sum_{i = 1}^n X_i^k}{n}
+\]</span></p>
+<p>das zentrale oder zentrierte <span class="math inline">\(k\)</span>-te Stichprobenmoment <span class="math inline">\(m\)</span> für eine Variable <span class="math inline">\(X\)</span> ist definiert als:</p>
+<p><span class="math display">\[
+m_k = \frac{\sum_{i = 1}^n (X_i - \overline{X})^k}{n}
+\]</span></p>
+<p>mit dem Mittelwert <span class="math inline">\(\overline{X}\)</span></p>
+</section>
+</section>
+</section>
+<section id="wahrscheinlichkeitstheorie" class="level2">
+<h2 class="anchored" data-anchor-id="wahrscheinlichkeitstheorie">Wahrscheinlichkeitstheorie</h2>
+</section>
+<section id="inferenzstatistik-definitionen" class="level2">
+<h2 class="anchored" data-anchor-id="inferenzstatistik-definitionen">Inferenzstatistik: Definitionen</h2>
+</section>
+<section id="gruppenvergleiche" class="level2">
+<h2 class="anchored" data-anchor-id="gruppenvergleiche">Gruppenvergleiche</h2>
+</section>
+<section id="fehler-fragen" class="level2">
+<h2 class="anchored" data-anchor-id="fehler-fragen">Fehler &amp; Fragen</h2>
+<p>Sollten Ihnen Fehler in der Formelsammlung auffallen, dann prüfen Sie diese bitte zuerst mit den Folien der Vorlesung, sowie den in der Pflichtliteratur angegebenen Formeln ab. Wenn diese Prüfung Ihre Fehlervermutung bestätigt, dann schreiben Sie bitte eine Mail unter der Angabe der Formel an: <a href="mailto:gidon.frischkorn@unilu.ch">gidon.frischkorn@unilu.ch</a></p>
 
 
 </section>

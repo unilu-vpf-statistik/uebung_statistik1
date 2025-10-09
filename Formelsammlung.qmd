@@ -1,0 +1,149 @@
+---
+title: "Formelsammlung"
+subtitle: "HS 2025"
+author: "Gidon Frischkorn"
+---
+
+# Formelsammlung: VL Statistik 1
+
+Die folgenden Formelsammlung gibt eine Übersicht über die mathematischen Formeln und Definitionen, die im Rahmen der Vorlesung "Statistik 1" eingeführt und behandelt wurden. 
+
+Es wird erwartet, dass Sie mit den in der Formelsammlung aufgelisteten Formeln und Definitionen einfache Rechnungen durchführen können und diese mit Hilfe der Statistiksoftware R & RStudio, oder einem der für die Prüfung zugelassenen Taschenrechner auf einfach Rechenbeispiele wie in den Übungen anwenden können.
+
+Im Laufe des Semesters werden Schritt für Schritt weitere Formeln hinzugefügt werden. 
+
+## Grundlegenden Rechenoperatoren
+
+### Summe
+
+$$
+\sum_{i = 1}^j x_j = x_1 + x_2 + x_3 + \cdots + x_j
+$$
+
+Die Summe alle Werte der Variablen $x$ begonnen ab dem Startwert $i = 1$ bis zu dem Endwert $j$.
+
+## Deskriptive Statistik
+
+### Häufigkeitsverteilung
+
+#### Absolute Häufigkeit
+
+$n_j =$ absolute Häufigkeit einer Kategorie $j$ wird mit, wobei: $\sum_{j=1}^k n_j = n$ die Gesamtzahl an Beobachtungen $n$ für eine Menge von $k$ Kategorien ergibt
+
+#### Relative Häufigkeit
+
+$$
+h_j = \frac{n_j}{n}
+$$
+
+mit der absoluten Häufigkeit $n_j$ der Kategorie $j$ und der Gesamtzahl an Beobachtungen $n$
+
+#### Kumulierte Häufigkeiten
+
+$$
+kn_j = \sum_{i=1}^j n_i
+$$
+
+Summe der absoluten Häufigkeiten $n_i$  von der kleinsten Kategorie $i = 1$ bis zur Kategorie $j$.
+
+diese Summe kann analog auch für relative Häufikeiten berechnet werden:
+
+$$
+kh_j = \sum_{i=1}^j h_i = \frac{kn_j}{n} = \frac{\sum_{i=1}^j n_i}{n}
+$$
+
+### Masse der zentralen Tendenz
+
+#### Modus
+
+Der **Modus** (engl. Mode) ist der *häufigste* Werte einer primären Häufigkeitsverteilung.
+
+Für kontinuierliche (metrische) Variablen ist der **Modus** das *Maximum* der Häufigkeitsdichte
+
+#### Median
+
+
+
+#### Mittelwert
+
+$$
+\overline{x} = \frac{\sum_{m = 1}^{n} x_m}{n} = M
+$$ mit eine Gesamtzahl von $n$ Messweten $x_m$
+
+### Dispersionsmasse
+
+#### Relativer Informationsgehalt
+
+$$
+H = - \frac{1}{\ln{k}} \cdot \sum_{j = 1}^{k} h_j \cdot \ln{h_j}
+$$
+
+für eine Häufigkeitsverteilung mit $k$ unterschiedlichen Kategorien und den relativen Häufigkeiten $h_j$ für jede einzelne Kategorie $j$
+
+#### Interquartilsabstand (bzw. Interquartilerange, IQR)
+
+$$
+IQR = Q_3 - Q_1
+$$
+
+mit: $$
+Q_i = x_q; \quad \text{und:} \quad q = \frac{i}{4} \cdot n
+$$
+
+Für aufsteigend sortierte Messwerte $x$ gibt $q$ den Messwert an, der die Quartilgrenze des $i$-ten Quartils darstellt.
+
+#### Mittlere Absolute Medianabweichung (MAD)
+
+$$
+MAD = \frac{\sum_{m=1}^n |x_m - Md_x|}{n}
+$$ mit der Summe $\sum$ der absoluten Abweichungen der Messwerte $x_m$ vom Median $Md$ der Variable $x$ normiert an der Anzahl an Messwerten $n$
+
+#### Varianz / Standardabweichung
+
+die **Varianz** ergibt sich aus dem an der Anzahl an Messwerten $n$ normierten zentralen / zentrierten Moment *zweiter* Ordnung:
+
+$$
+s_x^2= \frac{\sum_{m = 1}^n (x_m - \overline{x})^2}{n}
+$$
+
+die **Standardabweichung** ergibt sich indem man die Quadratwurzel der Varianz zieht:
+
+$$
+s_x = \sqrt{s_x^2} = \sqrt{\frac{\sum_{m = 1}^n (x_m - \overline{x})^2}{n}}
+$$
+
+#### Schiefe
+
+die **Schiefe** ergibt sich aus dem an der Anzahl an Messwerten $n$ normierten und der Standardabweichung $s_x$ standardisierten zentralen / zentrierten Moment *dritter* Ordnung:
+
+$$
+Sch = \frac{1}{n} \cdot \frac{\sum_{m=1}^n (x_m - \overline{x})^3}{s_x^3} = \frac{1}{n} \cdot \sum_{m=1}^n \left( \frac{x_m - \overline{x}}{s_x} \right)^3
+$$
+
+#### Stichprobenmomente
+
+Das $k$-te Stichprobenmoment $m$ für eine Variable $X$ ist definiert als:
+
+$$
+m_k = \frac{\sum_{i = 1}^n X_i^k}{n}
+$$
+
+das zentrale oder zentrierte $k$-te Stichprobenmoment $m$ für eine Variable $X$ ist definiert als:
+
+$$
+m_k = \frac{\sum_{i = 1}^n (X_i - \overline{X})^k}{n}
+$$
+
+mit dem Mittelwert $\overline{X}$
+
+## Wahrscheinlichkeitstheorie
+
+## Inferenzstatistik: Definitionen
+
+## Gruppenvergleiche
+
+
+
+## Fehler & Fragen
+
+Sollten Ihnen Fehler in der Formelsammlung auffallen, dann prüfen Sie diese bitte zuerst mit den Folien der Vorlesung, sowie den in der Pflichtliteratur angegebenen Formeln ab. Wenn diese Prüfung Ihre Fehlervermutung bestätigt, dann schreiben Sie bitte eine Mail unter der Angabe der Formel an: [gidon.frischkorn\@unilu.ch](mailto:gidon.frischkorn@unilu.ch)

@@ -1,0 +1,30 @@
+Question
+=======
+Wie viele der Studierenden, die ihr Statistik Wissen hoch einschätzen (`wissen_statistik >= 4`) sind Männer und wie viele Frauen?
+  
+Answerlist
+--------
+* $N_w = 37$
+* $N_m = 7$
+* $N_m = 44$
+* $N_w = 4$
+* $N_m = 40$
+* $N_w = 44$
+
+Solution
+========
+Um diese Frage zu beantworten müssen wir zwei unterschiedliche logische Indexvariablen erstellen und zählen wie häufig diese den Wert `TRUE` haben.
+
+Es bietet sich an diesen Vergleich in mehreren Schritten durchzuführen:
+
+1. Erstellen eine Variablen die kodiert welche Personen ihr Statistik Wissen hoch einschätzen: `index_stats <- semester_data2$wissen_statistik >= 4`
+2. Erstellen einer Variablen die kodiert ob jemand weiblich ist: `index_weiblich <- semester_data2$geschlecht == "weiblich"`
+3. Für die Anzahl Frauen die ihr Statistik Wissen hoch einschätzen können wir nun aufsummieren für wie viele beide Index Variablen den Wert `TRUE` haben: `sum(index_stats & index_weiblich)`
+4. Für die Anzahl Männer können wir einfach die negation des  `index_weiblich` nutzen, weil diese Variable nur zwei Kategorien hat: `sum(index_stats & !index_weiblich)`
+
+Meta-information
+=========
+exname: percent_gender 
+extype: mchoice 
+exsolution: 110000
+exshuffle: TRUE

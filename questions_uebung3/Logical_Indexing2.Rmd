@@ -1,0 +1,24 @@
+Question
+=======
+Wie viele der Studierenden, sind Franzosen *oder* Italiener und weiblich?
+  
+Answerlist
+--------
+* $N = 12$
+* $N = 18$
+* $N = 8$
+* $N = 4$
+* $N = 0$
+
+Solution
+========
+Für komplexer logische Vergleiche bietet es sich an den Vergleich in mehrer einzelschritte zu zerlegen. Für diese Aufgabe empfiehlt es sich erst zu Testen welche Personen aus Frankreich oder Italien sind: `index_nation <- semester_data2$nationalität == "Frankreich" | semester_data2$nationalität == "Italien"` und dann zu Testen welche Personen weiblich sind: `index_weiblich <- semester_data2$geschlecht == "weiblich"`
+
+Mit Hilfe dieser beiden Index-Variablen können sie dann testen auf welche Personen beide Kriterien zutreffen und diese Aufsummieren: `sum(index_nation & index_weiblich)`
+
+Meta-information
+=========
+exname: percent_gender 
+extype: schoice 
+exsolution: 10000
+exshuffle: TRUE

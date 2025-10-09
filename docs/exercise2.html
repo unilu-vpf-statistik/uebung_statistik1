@@ -1683,6 +1683,10 @@ globalThis.qwebrExecuteCode = async function (
 <span class="menu-text">Übungen</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./Formelsammlung.html"> 
+<span class="menu-text">Formelsammlung</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
 <span class="menu-text">Hilfe &amp; Kontakt</span></a>
   </li>  
@@ -1727,6 +1731,12 @@ globalThis.qwebrExecuteCode = async function (
   <div class="sidebar-item-container"> 
   <a href="./exercise2.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Übung 2</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exercise3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Übung 3</span></a>
   </div>
 </li>
     </ul>
@@ -2092,9 +2102,47 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>Nutzen Sie eine <a href="https://unilu-vpf-statistik.github.io/uebung_statistik1/about.html#suchmaschinen">Suchmaschine</a>, wenn Sie nicht wissen welche Funktionen Ihnen ein bestimmtes Ergebnis liefern. Ausserdem können Sie in R immer die <a href="https://www.r-project.org/help.html">Hilfe</a> einer Funktion aufrufen, indem sie vor den Namen der Funktion ein Fragezeichen schreiben, z. Bsp <code>?median</code> oder die Hilfe-Funktion <code>help()</code> mit dem jeweligen Funktionsbefehl ausführen: <code>help(median)</code>.</p>
 <div class="webex-question">
 <div class="webex-check webex-box">
+<p>In der Variable <code>wissen_statistik</code> sollten die Studierenden zu Beginn der VL einschätzen, wie sie ihr Grundlagenwissen im Bereich Statistik einschätzen. Wie viel Prozent (gerundet) schätzen Ihr Wissen gleich oder besser als das Rating 4 ein?</p>
+<div id="webex-08c531d2424e2f38243b6d16cc7ba416" class="webex-radiogroup" data-answer="awhPBR8ASAIYAmk=">
+<label><input type="radio" autocomplete="off" name="08c531d2424e2f38243b6d16cc7ba416"><span>8 %</span></label><label><input type="radio" autocomplete="off" name="08c531d2424e2f38243b6d16cc7ba416"><span>15 %</span></label><label><input type="radio" autocomplete="off" name="08c531d2424e2f38243b6d16cc7ba416"><span>26 %</span></label><label><input type="radio" autocomplete="off" name="08c531d2424e2f38243b6d16cc7ba416"><span>32 %</span></label><label><input type="radio" autocomplete="off" name="08c531d2424e2f38243b6d16cc7ba416"><span>60 %</span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>Um die kumulierten Prozente über die Rating-Kategorien zu erlangen, erstellen wir als erstes eine Häufigkeitstabelle <code>table(semester_data$wissen_statistik)</code>, wenn wir die Werte dieser Tabelle durch die Gesamtzahl an Beobachtungen <code>sum(table(semester_data$wissen_statistik))</code>, dann bekommen wir eine relative Häufigkeitstabelle. Nun müssen wir die Werte für die Ratings 4 und 5 aufsummieren. Alternative können wir auch die kumlativen relativen Häufigkeiten für die Ratings mit hilfe der kumulativen Summenfunktion <code>cumsum()</code> berechnen.</p>
+<p>Mit Hilfe dieser Funktionen sollten Sie eine relative Häufigkeit von <code>17.5 %</code> für ein Rating von 4 und von <code>8.1 %</code> für ein Rating von 5 erhalten. Addiert ergibt das ein gerundetes Rating von <code>26%</code> für ein Rating von 4 oder höher.</p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>Mit welcher Funktion können Sie ein Histogramm der Altersverteilung der Variable <code>alter</code> im Datensatz <code>semeseter_data</code> erstellen?</p>
+<div id="webex-8a292974aeec18d84057e591aee92f72" class="webex-radiogroup" data-answer="Y1EeCR4JGwRNVDg=">
+<label><input type="radio" autocomplete="off" name="8a292974aeec18d84057e591aee92f72"><span><code>barplot(semester_data$alter)</code></span></label><label><input type="radio" autocomplete="off" name="8a292974aeec18d84057e591aee92f72"><span><code>plot(semester_data$alter</code></span></label><label><input type="radio" autocomplete="off" name="8a292974aeec18d84057e591aee92f72"><span><code>histogram(semester_data$alter)</code></span></label><label><input type="radio" autocomplete="off" name="8a292974aeec18d84057e591aee92f72"><span><code>pie(semester_data$alter)</code></span></label><label><input type="radio" autocomplete="off" name="8a292974aeec18d84057e591aee92f72"><span><code>hist(semester_data$alter)</code></span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>Die Funktion <code>hist()</code> erstellt ein histogramm einer Variablen, die der Funktion übergeben wird. Um ein Histogram der Altersverteilung zu erstellen müssen sie also folgenden Befehl ausführen: <code>hist(semester_data$alter)</code></p>
+<p>Wenn Sie diese Funktion ausführen, dann wird das Histogramm direkt ausgegeben. Sie erhalten jedoch keine weiteren Informationen zu der sekundären Häufigkeitsverteilung, die dem Histogram zu Grunde liegt. Um diese Information zu erhalten, können Sie sich das Ergebniss der Funktion in einer neue Variable speichern: <code>Sek_Häufigkeiten_Alter &lt;- hist(semester_data$alter)</code>.</p>
+<p>Die Intervallgrenzen der sekundären Häufigkeitsverteilung können Sie mit <code>Sek_Häufigkeiten_Alter$breaks</code> erhalten. Die absoluten Häufigkeiten in den einzelnen Intervallen erhalten Sie mit <code>Sek_Häufigkeiten_Alter$counts</code>. Ebenso können Sie die Mitte der Intervalle mit <code>Sek_Häufigkeiten_Alter$mids</code> erhalten.</p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>Wie hoch liegt der Anteil an Frauen und Männern in den Daten in Prozent?</p>
+<div id="webex-99233aab33d1d723cd91dd60e9d619c1" class="webex-checkboxgroup" data-answer="YgkeAh9RTVMfA0gBOQ==">
+<label><input type="checkbox" autocomplete="off" name="99233aab33d1d723cd91dd60e9d619c1"><span>11.9% Männer</span></label><label><input type="checkbox" autocomplete="off" name="99233aab33d1d723cd91dd60e9d619c1"><span>82.5% Frauen</span></label><label><input type="checkbox" autocomplete="off" name="99233aab33d1d723cd91dd60e9d619c1"><span>26.2% Männer</span></label><label><input type="checkbox" autocomplete="off" name="99233aab33d1d723cd91dd60e9d619c1"><span>17.5% Männer</span></label><label><input type="checkbox" autocomplete="off" name="99233aab33d1d723cd91dd60e9d619c1"><span>88.1% Frauen</span></label><label><input type="checkbox" autocomplete="off" name="99233aab33d1d723cd91dd60e9d619c1"><span>73.8% Frauen</span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>Um die relative Häufigkeitsverteilung von Frauen und Männern zu erlangen erstellen wir als erstes eine reguläre Häufigkeitsverteilung <code>table(semester_data$geschlecht)</code>.</p>
+<p>Um die absoluten Häufigkeiten in Prozentwerte umzurechnen müssen wir diese durch die Gesamtzahl an beobachtungen Teilen. Diese können Sie entweder erlangen, in dem sie die Summe der absoluten Häufigkeiten in der Häufigkeitstabelle berechnen: <code>sum(table(semester_data$geschlecht))</code> oder indem sie einfach die Zeilen des Datensatzes zählen: <code>nrow(semester_data)</code></p>
+<p>Die relative Häufigkeitstabelle multiplizieren wir dann noch mit 100 um Prozentwerte zu erlangen. Mit dieser Lösung sollten Sie heraus finden können das 82.5 % Frauen und 17.5% Männer in der Stichprobe enthalten sind</p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
 <p>Was ist das mittlere Alter der Frauen und in Männer (gerundet auf eine Nachkommastelle) im Datensatz <code>semester_data</code>?</p>
-<div id="webex-87fa8bdaec12a70d19e396d2f978b4ac" class="webex-checkboxgroup" data-answer="YwdKURRSSFBJUx0DPA==">
-<label><input type="checkbox" autocomplete="off" name="87fa8bdaec12a70d19e396d2f978b4ac"><span>M(männlich) = 22.1</span></label><label><input type="checkbox" autocomplete="off" name="87fa8bdaec12a70d19e396d2f978b4ac"><span>M(männlich) = 23.0</span></label><label><input type="checkbox" autocomplete="off" name="87fa8bdaec12a70d19e396d2f978b4ac"><span>M(weiblich) = 22.1</span></label><label><input type="checkbox" autocomplete="off" name="87fa8bdaec12a70d19e396d2f978b4ac"><span>M(männlich) = 23.2</span></label><label><input type="checkbox" autocomplete="off" name="87fa8bdaec12a70d19e396d2f978b4ac"><span>M(weiblich) = 23.2</span></label><label><input type="checkbox" autocomplete="off" name="87fa8bdaec12a70d19e396d2f978b4ac"><span>M(weiblich) = 23.0</span></label>
+<div id="webex-d78f87304d7820974401c5633b84d194" class="webex-checkboxgroup" data-answer="PwcUVhQHHwEYVRsIbw==">
+<label><input type="checkbox" autocomplete="off" name="d78f87304d7820974401c5633b84d194"><span>M(weiblich) = 23.2</span></label><label><input type="checkbox" autocomplete="off" name="d78f87304d7820974401c5633b84d194"><span>M(männlich) = 22.1</span></label><label><input type="checkbox" autocomplete="off" name="d78f87304d7820974401c5633b84d194"><span>M(weiblich) = 22.1</span></label><label><input type="checkbox" autocomplete="off" name="d78f87304d7820974401c5633b84d194"><span>M(männlich) = 23.2</span></label><label><input type="checkbox" autocomplete="off" name="d78f87304d7820974401c5633b84d194"><span>M(weiblich) = 23.0</span></label><label><input type="checkbox" autocomplete="off" name="d78f87304d7820974401c5633b84d194"><span>M(männlich) = 23.0</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -2107,47 +2155,9 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
-<p>Wie hoch liegt der Anteil an Frauen und Männern in den Daten in Prozent?</p>
-<div id="webex-1ac006bdda3f940a41407c3fca1edbc5" class="webex-checkboxgroup" data-answer="alFPARwHTlRIUR9WZA==">
-<label><input type="checkbox" autocomplete="off" name="1ac006bdda3f940a41407c3fca1edbc5"><span>26.2% Männer</span></label><label><input type="checkbox" autocomplete="off" name="1ac006bdda3f940a41407c3fca1edbc5"><span>17.5% Männer</span></label><label><input type="checkbox" autocomplete="off" name="1ac006bdda3f940a41407c3fca1edbc5"><span>82.5% Frauen</span></label><label><input type="checkbox" autocomplete="off" name="1ac006bdda3f940a41407c3fca1edbc5"><span>11.9% Männer</span></label><label><input type="checkbox" autocomplete="off" name="1ac006bdda3f940a41407c3fca1edbc5"><span>88.1% Frauen</span></label><label><input type="checkbox" autocomplete="off" name="1ac006bdda3f940a41407c3fca1edbc5"><span>73.8% Frauen</span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Um die relative Häufigkeitsverteilung von Frauen und Männern zu erlangen erstellen wir als erstes eine reguläre Häufigkeitsverteilung <code>table(semester_data$geschlecht)</code>.</p>
-<p>Um die absoluten Häufigkeiten in Prozentwerte umzurechnen müssen wir diese durch die Gesamtzahl an beobachtungen Teilen. Diese können Sie entweder erlangen, in dem sie die Summe der absoluten Häufigkeiten in der Häufigkeitstabelle berechnen: <code>sum(table(semester_data$geschlecht))</code> oder indem sie einfach die Zeilen des Datensatzes zählen: <code>nrow(semester_data)</code></p>
-<p>Die relative Häufigkeitstabelle multiplizieren wir dann noch mit 100 um Prozentwerte zu erlangen. Mit dieser Lösung sollten Sie heraus finden können das 82.5 % Frauen und 17.5% Männer in der Stichprobe enthalten sind</p>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Mit welcher Funktion können Sie ein Histogramm der Altersverteilung der Variable <code>alter</code> im Datensatz <code>semeseter_data</code> erstellen?</p>
-<div id="webex-54149a21539419e7826848ca639f82a1" class="webex-radiogroup" data-answer="bgQdBRVRHgEZA2Q=">
-<label><input type="radio" autocomplete="off" name="54149a21539419e7826848ca639f82a1"><span><code>barplot(semester_data$alter)</code></span></label><label><input type="radio" autocomplete="off" name="54149a21539419e7826848ca639f82a1"><span><code>hist(semester_data$alter)</code></span></label><label><input type="radio" autocomplete="off" name="54149a21539419e7826848ca639f82a1"><span><code>histogram(semester_data$alter)</code></span></label><label><input type="radio" autocomplete="off" name="54149a21539419e7826848ca639f82a1"><span><code>pie(semester_data$alter)</code></span></label><label><input type="radio" autocomplete="off" name="54149a21539419e7826848ca639f82a1"><span><code>plot(semester_data$alter</code></span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Die Funktion <code>hist()</code> erstellt ein histogramm einer Variablen, die der Funktion übergeben wird. Um ein Histogram der Altersverteilung zu erstellen müssen sie also folgenden Befehl ausführen: <code>hist(semester_data$alter)</code></p>
-<p>Wenn Sie diese Funktion ausführen, dann wird das Histogramm direkt ausgegeben. Sie erhalten jedoch keine weiteren Informationen zu der sekundären Häufigkeitsverteilung, die dem Histogram zu Grunde liegt. Um diese Information zu erhalten, können Sie sich das Ergebniss der Funktion in einer neue Variable speichern: <code>Sek_Häufigkeiten_Alter &lt;- hist(semester_data$alter)</code>.</p>
-<p>Die Intervallgrenzen der sekundären Häufigkeitsverteilung können Sie mit <code>Sek_Häufigkeiten_Alter$breaks</code> erhalten. Die absoluten Häufigkeiten in den einzelnen Intervallen erhalten Sie mit <code>Sek_Häufigkeiten_Alter$counts</code>. Ebenso können Sie die Mitte der Intervalle mit <code>Sek_Häufigkeiten_Alter$mids</code> erhalten.</p>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>In der Variable <code>wissen_statistik</code> sollten die Studierenden zu Beginn der VL einschätzen, wie sie ihr Grundlagenwissen im Bereich Statistik einschätzen. Wie viel Prozent (gerundet) schätzen Ihr Wissen gleich oder besser als das Rating 4 ein?</p>
-<div id="webex-192432d0b7ec2f55dfae9e51660bbc97" class="webex-radiogroup" data-answer="agkeBB8DSABOBzg=">
-<label><input type="radio" autocomplete="off" name="192432d0b7ec2f55dfae9e51660bbc97"><span>8 %</span></label><label><input type="radio" autocomplete="off" name="192432d0b7ec2f55dfae9e51660bbc97"><span>15 %</span></label><label><input type="radio" autocomplete="off" name="192432d0b7ec2f55dfae9e51660bbc97"><span>26 %</span></label><label><input type="radio" autocomplete="off" name="192432d0b7ec2f55dfae9e51660bbc97"><span>32 %</span></label><label><input type="radio" autocomplete="off" name="192432d0b7ec2f55dfae9e51660bbc97"><span>60 %</span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Um die kumulierten Prozente über die Rating-Kategorien zu erlangen, erstellen wir als erstes eine Häufigkeitstabelle <code>table(semester_data$wissen_statistik)</code>, wenn wir die Werte dieser Tabelle durch die Gesamtzahl an Beobachtungen <code>sum(table(semester_data$wissen_statistik))</code>, dann bekommen wir eine relative Häufigkeitstabelle. Nun müssen wir die Werte für die Ratings 4 und 5 aufsummieren. Alternative können wir auch die kumlativen relativen Häufigkeiten für die Ratings mit hilfe der kumulativen Summenfunktion <code>cumsum()</code> berechnen.</p>
-<p>Mit Hilfe dieser Funktionen sollten Sie eine relative Häufigkeit von <code>17.5 %</code> für ein Rating von 4 und von <code>8.1 %</code> für ein Rating von 5 erhalten. Addiert ergibt das ein gerundetes Rating von <code>26%</code> für ein Rating von 4 oder höher.</p>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
 <p>Was ist der Modus der Häufigkeitsverteilung der Wohnorte im Datensatz <code>semester_data</code>?</p>
-<div id="webex-9352f1551f19342eafc94d5fb9181f3d" class="webex-radiogroup" data-answer="YgMZA0oBGQUdVmw=">
-<label><input type="radio" autocomplete="off" name="9352f1551f19342eafc94d5fb9181f3d"><span>St.&nbsp;Gallen</span></label><label><input type="radio" autocomplete="off" name="9352f1551f19342eafc94d5fb9181f3d"><span>Bern</span></label><label><input type="radio" autocomplete="off" name="9352f1551f19342eafc94d5fb9181f3d"><span>Zuerich</span></label><label><input type="radio" autocomplete="off" name="9352f1551f19342eafc94d5fb9181f3d"><span>Luzern</span></label><label><input type="radio" autocomplete="off" name="9352f1551f19342eafc94d5fb9181f3d"><span>Basel</span></label>
+<div id="webex-8b42783225dba46f676cb7bdae44743d" class="webex-radiogroup" data-answer="Y1IYAxsIHwIeBTk=">
+<label><input type="radio" autocomplete="off" name="8b42783225dba46f676cb7bdae44743d"><span>St.&nbsp;Gallen</span></label><label><input type="radio" autocomplete="off" name="8b42783225dba46f676cb7bdae44743d"><span>Bern</span></label><label><input type="radio" autocomplete="off" name="8b42783225dba46f676cb7bdae44743d"><span>Zuerich</span></label><label><input type="radio" autocomplete="off" name="8b42783225dba46f676cb7bdae44743d"><span>Luzern</span></label><label><input type="radio" autocomplete="off" name="8b42783225dba46f676cb7bdae44743d"><span>Basel</span></label>
 </div>
 </div>
 <div class="webex-solution">

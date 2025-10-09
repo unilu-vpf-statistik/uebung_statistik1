@@ -1657,6 +1657,35 @@ globalThis.qwebrExecuteCode = async function (
 
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -1683,6 +1712,10 @@ globalThis.qwebrExecuteCode = async function (
 <span class="menu-text">Übungen</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./Formelsammlung.html"> 
+<span class="menu-text">Formelsammlung</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
 <span class="menu-text">Hilfe &amp; Kontakt</span></a>
   </li>  
@@ -1697,7 +1730,7 @@ globalThis.qwebrExecuteCode = async function (
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Übung 3 - Dispersionsmasse</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./exercise3.html">Übung 3</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -1729,6 +1762,12 @@ globalThis.qwebrExecuteCode = async function (
  <span class="menu-text">Übung 2</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exercise3.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Übung 3</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -1739,7 +1778,7 @@ globalThis.qwebrExecuteCode = async function (
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#arbeiten-mit-variablen-vektoren-und-data.frames-in-r" id="toc-arbeiten-mit-variablen-vektoren-und-data.frames-in-r" class="nav-link active" data-scroll-target="#arbeiten-mit-variablen-vektoren-und-data.frames-in-r">Arbeiten mit Variablen, Vektoren und data.frames in R</a></li>
+  <li><a href="#logische-operatoren-und-vergleiche-in-r" id="toc-logische-operatoren-und-vergleiche-in-r" class="nav-link active" data-scroll-target="#logische-operatoren-und-vergleiche-in-r">Logische Operatoren und Vergleiche in R</a></li>
   <li><a href="#übungen" id="toc-übungen" class="nav-link" data-scroll-target="#übungen">Übungen</a></li>
   </ul>
 </nav>
@@ -2057,8 +2096,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </header>
 
 
-<section id="arbeiten-mit-variablen-vektoren-und-data.frames-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="arbeiten-mit-variablen-vektoren-und-data.frames-in-r">Arbeiten mit Variablen, Vektoren und data.frames in R</h2>
+<section id="logische-operatoren-und-vergleiche-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="logische-operatoren-und-vergleiche-in-r">Logische Operatoren und Vergleiche in R</h2>
 <p>In dieser Übung werden Sie weiter mit Variablen, Vektoren und Datensätzen in R arbeiten. Vor allem werden wir neben der Vertiefung der Dispersionsmasse, die in der Vorlesung behandelt wurden, mit relationalen und logischen Operatoren arbeiten und sehen wie diese Operatoren genutzt werden können um bestimmte Werte einer Variable auszuwählen.</p>
 <p>Um sich mit relationalen und logischen Operatoren und dem Indizieren von Werten auseinander zu setzen schauen Sie bitte die folgenden Videos:</p>
 <ol type="1">
@@ -2069,26 +2108,100 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </section>
 <section id="übungen" class="level2">
 <h2 class="anchored" data-anchor-id="übungen">Übungen</h2>
-<p>In den folgenden Übungen werden Sie wieder mit einem simulierten Datensatz von fiktiven Daten eines Erstsemester-Jahrgangs von Psychologie-Studierenden arbeiten. Sie können Sich den Datensatz auf ihren eigenen PC herunterladen: <a href="semester_data2.csv">semester_data2.csv</a></p>
-<p>Alternativ können Sie hier auf der Website direkt R Code mit Hilfe der <code>webr</code> Erweiterung ausführen um die Aufgaben zu lösen. Der Datensatz enthält wiederum die gleichen Variablen, wie die Beispiele in der Vorlesung und der letzten Übung: <code>geschlecht</code>, <code>wohnort</code>, <code>alter</code> und <code>wissen_statistik</code>, die Werte sind jedoch anders. Unten sehen sie die ersten Zeilen des simulierten Datensatzes.</p>
+<p>In den folgenden Übungen werden Sie wie in der letzten Übung auch mit einem simulierten Datensatz von fiktiven Daten eines Erstsemester-Jahrgangs von Psychologie-Studierenden arbeiten. Sie können Sich den Datensatz auf ihren eigenen PC herunterladen: <a href="semester_data2.csv">semester_data2.csv</a></p>
+<p>Alternativ können Sie hier auf der Website direkt R Code mit Hilfe der <code>webr</code> Erweiterung ausführen um die Aufgaben zu lösen. Der Datensatz enthält wiederum die gleichen Variablen, wie die Beispiele in der Vorlesung und der letzten Übung: <code>geschlecht</code>, <code>nationalität</code>, <code>wohnort</code>, <code>alter</code> und <code>wissen_statistik</code>, die Werte sind jedoch anders. Unten sehen sie die ersten Zeilen des simulierten Datensatzes.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(semester_data2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  geschlecht nationalität    wohnort alter wissen_statistik
-1   weiblich      Schweiz     Luzern  21.9                3
-2   weiblich   Frankreich       Bern  24.0                2
-3   weiblich      Schweiz        Zug  21.2                3
-4   weiblich   Frankreich    Zuerich  27.0                2
-5   weiblich       andere St. Gallen  17.7                4
-6   weiblich      Schweiz       Bern  22.0                3</code></pre>
+<pre><code>  geschlecht nationalität    wohnort alter wissen_statistik grösse
+1   weiblich      Schweiz     Luzern  21.9                3    158
+2   weiblich   Frankreich       Bern  24.0                2    159
+3   weiblich      Schweiz        Zug  21.2                3    168
+4   weiblich   Frankreich    Zuerich  27.0                2    178
+5   weiblich       andere St. Gallen  17.7                4    164
+6   weiblich      Schweiz       Bern  22.0                3    166</code></pre>
 </div>
 </div>
-<p>Hier finden Sie die <code>webr</code> Konsole, die Ihnen das schreiben und durchführen von R Code direkt auf der Website ermöglicht. Wenn viele Studierenden die Übungen parallel machen, dann kann es sein, dass <code>webr</code> sehr langsam wird.</p>
+<p>Wie in der Übung 2 finden Sie hier über den Übungsaufgaben die <code>webr</code> Konsole, die Ihnen das schreiben und durchführen von R Code direkt auf der Website ermöglicht. Wenn viele Studierenden die Übungen parallel machen, dann kann es sein, dass <code>webr</code> sehr langsam wird.</p>
 <p>Bitte löschen Sie die ersten Zeilen, die den Datensatz lokal verfügbar machen <em>nicht</em>. Wenn Sie die Zeilen doch aus versehen Löschen sollten dann können Sie auf der rechten Seite der Konsole das Symbol mit den im Kreis drehenden Pfeilen drücken, um die Konsole zurück zu setzen.</p>
+<blockquote class="blockquote">
 <p>Um den Code den Sie geschrieben haben auszuführen drücken Sie entwedern <code>Run Code</code>, damit der gesamte Code ausgeführt würde. Alternativ können Sie auch einzelne Zeilen ausführen, indem sie <kbd>CRTL</kbd>+<kbd>Enter</kbd> (Windows) oder <kbd>CMD</kbd>+<kbd>Enter</kbd> (Mac) drücken.</p>
+</blockquote>
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<blockquote class="blockquote">
 <p>Nutzen Sie eine <a href="https://unilu-vpf-statistik.github.io/uebung_statistik1/about.html#suchmaschinen">Suchmaschine</a>, wenn Sie nicht wissen welche Funktionen Ihnen ein bestimmtes Ergebnis liefern. Ausserdem können Sie in R immer die <a href="https://www.r-project.org/help.html">Hilfe</a> einer Funktion aufrufen, indem sie vor den Namen der Funktion ein Fragezeichen schreiben, z. Bsp <code>?median</code> oder die Hilfe-Funktion <code>help()</code> mit dem jeweligen Funktionsbefehl ausführen: <code>help(median)</code>.</p>
+</blockquote>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>Wie viele der Studierenden, die ihr Statistik Wissen hoch einschätzen (<code>wissen_statistik &gt;= 4</code>) sind Männer und wie viele Frauen?</p>
+<div id="webex-4f46fd5fa8a0ffd4d0220981d16779b0" class="webex-checkboxgroup" data-answer="b1YYBkpUGVdNCE0BOw==">
+<label><input type="checkbox" autocomplete="off" name="4f46fd5fa8a0ffd4d0220981d16779b0"><span><span class="math inline">\(N_w = 4\)</span></span></label><label><input type="checkbox" autocomplete="off" name="4f46fd5fa8a0ffd4d0220981d16779b0"><span><span class="math inline">\(N_m = 44\)</span></span></label><label><input type="checkbox" autocomplete="off" name="4f46fd5fa8a0ffd4d0220981d16779b0"><span><span class="math inline">\(N_m = 40\)</span></span></label><label><input type="checkbox" autocomplete="off" name="4f46fd5fa8a0ffd4d0220981d16779b0"><span><span class="math inline">\(N_m = 7\)</span></span></label><label><input type="checkbox" autocomplete="off" name="4f46fd5fa8a0ffd4d0220981d16779b0"><span><span class="math inline">\(N_w = 44\)</span></span></label><label><input type="checkbox" autocomplete="off" name="4f46fd5fa8a0ffd4d0220981d16779b0"><span><span class="math inline">\(N_w = 37\)</span></span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>Um diese Frage zu beantworten müssen wir zwei unterschiedliche logische Indexvariablen erstellen und zählen wie häufig diese den Wert <code>TRUE</code> haben.</p>
+<p>Es bietet sich an diesen Vergleich in mehreren Schritten durchzuführen:</p>
+<ol type="1">
+<li>Erstellen eine Variablen die kodiert welche Personen ihr Statistik Wissen hoch einschätzen: <code>index_stats &lt;- semester_data2$wissen_statistik &gt;= 4</code></li>
+<li>Erstellen einer Variablen die kodiert ob jemand weiblich ist: <code>index_weiblich &lt;- semester_data2$geschlecht == "weiblich"</code></li>
+<li>Für die Anzahl Frauen die ihr Statistik Wissen hoch einschätzen können wir nun aufsummieren für wie viele beide Index Variablen den Wert <code>TRUE</code> haben: <code>sum(index_stats &amp; index_weiblich)</code></li>
+<li>Für die Anzahl Männer können wir einfach die negation des <code>index_weiblich</code> nutzen, weil diese Variable nur zwei Kategorien hat: <code>sum(index_stats &amp; !index_weiblich)</code></li>
+</ol>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>Was ist der Streubereich der Variable <code>alter</code> für die Studierenden mit der <code>nationalität == "Deutsch"</code>?</p>
+<div id="webex-d387391947e03a4d5157385213e9adc2" class="webex-radiogroup" data-answer="PwIUBx8JHQkYBzg=">
+<label><input type="radio" autocomplete="off" name="d387391947e03a4d5157385213e9adc2"><span><span class="math inline">\(Range = [19.3; 29.0]\)</span></span></label><label><input type="radio" autocomplete="off" name="d387391947e03a4d5157385213e9adc2"><span><span class="math inline">\(Range = [17.1; 35.4]\)</span></span></label><label><input type="radio" autocomplete="off" name="d387391947e03a4d5157385213e9adc2"><span><span class="math inline">\(Range = [17.7; 27.7]\)</span></span></label><label><input type="radio" autocomplete="off" name="d387391947e03a4d5157385213e9adc2"><span><span class="math inline">\(Range = [20.0; 26.2]\)</span></span></label><label><input type="radio" autocomplete="off" name="d387391947e03a4d5157385213e9adc2"><span><span class="math inline">\(Range = [19.2; 30.6]\)</span></span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>Um den Altersrange der deutschen Studierenden zu bekommen erstellen sie als erstes eine logische Index-Variable die kodiert welche Studierenden Deutsch sind: <code>index_deutsch &lt;- semester_data2$natioanlität == "Deutsch</code></p>
+<p>Mit Hilfe dieser Index-Variable können Sie dann den Range nur für die Alterswerte der deutschen Studierenden berechnen: <code>range(semester_data2$alter[index_deutsch])</code></p>
+<p>Alternative hätten Sie wie in Übung 2 die <code>aggregate</code> Funktion nutzen können und den Range gruppiert für alle Nationalitäten berechnen können: <code>aggregate(semester_data2$alter, list(semester_data2$nationalität), FUN = range)</code></p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>Wie viele der Studierenden, sind Franzosen <em>oder</em> Italiener und weiblich?</p>
+<div id="webex-957b1bd8db546f89691949c70bd4f255" class="webex-radiogroup" data-answer="YgUbUh1SSAhIU2g=">
+<label><input type="radio" autocomplete="off" name="957b1bd8db546f89691949c70bd4f255"><span><span class="math inline">\(N = 8\)</span></span></label><label><input type="radio" autocomplete="off" name="957b1bd8db546f89691949c70bd4f255"><span><span class="math inline">\(N = 18\)</span></span></label><label><input type="radio" autocomplete="off" name="957b1bd8db546f89691949c70bd4f255"><span><span class="math inline">\(N = 0\)</span></span></label><label><input type="radio" autocomplete="off" name="957b1bd8db546f89691949c70bd4f255"><span><span class="math inline">\(N = 4\)</span></span></label><label><input type="radio" autocomplete="off" name="957b1bd8db546f89691949c70bd4f255"><span><span class="math inline">\(N = 12\)</span></span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>Für komplexer logische Vergleiche bietet es sich an den Vergleich in mehrer einzelschritte zu zerlegen. Für diese Aufgabe empfiehlt es sich erst zu Testen welche Personen aus Frankreich oder Italien sind: <code>index_nation &lt;- semester_data2$nationalität == "Frankreich" | semester_data2$nationalität == "Italien"</code> und dann zu Testen welche Personen weiblich sind: <code>index_weiblich &lt;- semester_data2$geschlecht == "weiblich"</code></p>
+<p>Mit Hilfe dieser beiden Index-Variablen können sie dann testen auf welche Personen beide Kriterien zutreffen und diese Aufsummieren: <code>sum(index_nation &amp; index_weiblich)</code></p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>Was ist der Interquartilsabstand <span class="math inline">\(IQR\)</span> der Variable <code>grössse</code> für Frauen <span class="math inline">\(w\)</span> und Männer <span class="math inline">\(m\)</span>?</p>
+<div id="webex-974d921698c29637c63426288d0116df" class="webex-checkboxgroup" data-answer="YgcYVBUCHQcVCU8CZA==">
+<label><input type="checkbox" autocomplete="off" name="974d921698c29637c63426288d0116df"><span><span class="math inline">\(IQR_m = 14.7\)</span></span></label><label><input type="checkbox" autocomplete="off" name="974d921698c29637c63426288d0116df"><span><span class="math inline">\(IQR_w = 9.2\)</span></span></label><label><input type="checkbox" autocomplete="off" name="974d921698c29637c63426288d0116df"><span><span class="math inline">\(IQR_w = 13\)</span></span></label><label><input type="checkbox" autocomplete="off" name="974d921698c29637c63426288d0116df"><span><span class="math inline">\(IQR_m = 12.5\)</span></span></label><label><input type="checkbox" autocomplete="off" name="974d921698c29637c63426288d0116df"><span><span class="math inline">\(IQR_w = 11.0\)</span></span></label><label><input type="checkbox" autocomplete="off" name="974d921698c29637c63426288d0116df"><span><span class="math inline">\(IQR_m = 13\)</span></span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>Um den Altersrange der deutschen Studierenden zu bekommen erstellen sie als erstes eine logische Index-Variable die kodiert welche Studierenden Deutsch sind: <code>index_deutsch &lt;- semester_data2$natioanlität == "Deutsch</code></p>
+<p>Mit Hilfe dieser Index-Variable können Sie dann den Range nur für die Alterswerte der deutschen Studierenden berechnen: <code>range(semester_data2$alter[index_deutsch])</code></p>
+<p>Alternative hätten Sie wie in Übung 2 die <code>aggregate</code> Funktion nutzen können und den Range gruppiert für alle Nationalitäten berechnen können: <code>aggregate(semester_data2$alter, list(semester_data2$nationalität), FUN = range)</code></p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>Was ist der relative Informationsgehalt der Variable <code>nationalität</code> im Datensatz <code>semetester_data2</code>?</p>
+<div id="webex-27122f185f314f96b99365bd9a44d879" class="webex-radiogroup" data-answer="aQYdAh5WHQho">
+<label><input type="radio" autocomplete="off" name="27122f185f314f96b99365bd9a44d879"><span><span class="math inline">\(H = .57\)</span></span></label><label><input type="radio" autocomplete="off" name="27122f185f314f96b99365bd9a44d879"><span><span class="math inline">\(H = .32\)</span></span></label><label><input type="radio" autocomplete="off" name="27122f185f314f96b99365bd9a44d879"><span><span class="math inline">\(H = .46\)</span></span></label><label><input type="radio" autocomplete="off" name="27122f185f314f96b99365bd9a44d879"><span><span class="math inline">\(H = .17\)</span></span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>Als erstes sollten sie zur Berechnung des relativen Informationsgehalts, die relativen Häufigkeiten der Variable <code>nationalität</code> berechne: <code>rel_häufigkeit &lt;- table(semester_data2$nationalität)/nrow(semester_data2)</code></p>
+<p>Dann können Sie den relativen Informationsgehalt <span class="math inline">\(H\)</span> mit Hilfe der dazugehörigen formel berechnen. Diese enthält zum einen die Normalisierung für die Anzahl an Kategorien <code>normalisierung &lt;- -1/log(length(rel_häufigkeit))</code> und zum Anderen die Summe der relativen Häufigkeiten multipliziert mit dem logarithmus der relativen Häufigkeiten: <code>sum_rel_info &lt;- sum(rel_häufigkeit * log(rel_häufigkeit)</code>.</p>
+<p>Wenn sie diese beiden Werte miteinander multiplizieren erhalten sie den relativen Informationsgehalt: <code>rel_info = normalisierung * sum_rel_info</code></p>
+<p>Für die Lösung müssen Sie diesen Wert dann noch auf zwei Stellen runden: <code>round(rel_info,2)</code></p>
+</div>
+</div>
 <hr>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">

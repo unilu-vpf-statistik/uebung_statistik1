@@ -8,6 +8,8 @@ website:
     left:
       - href: index.qmd
         text: Übungen
+      - href: Formelsammlung.qmd
+        text: Formelsammlung
       - href: about.qmd
         text: Hilfe & Kontakt
   sidebar:
@@ -18,6 +20,8 @@ website:
         href: exercise1.qmd
       - text: "Übung 2"
         href: exercise2.qmd
+      - text: "Übung 3"
+        href: exercise3.qmd
   page-footer:
     left: "Copyright 2025, Gidon Frischkorn"
     right:

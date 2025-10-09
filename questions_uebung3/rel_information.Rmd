@@ -1,0 +1,27 @@
+Question
+=======
+Was ist der relative Informationsgehalt der Variable `nationalität` im Datensatz `semetester_data2`?
+
+Answerlist
+--------
+* $H = .57$
+* $H = .17$
+* $H = .32$
+* $H = .46$
+
+Solution
+========
+Als erstes sollten sie zur Berechnung des relativen Informationsgehalts, die relativen Häufigkeiten der Variable `nationalität` berechne: `rel_häufigkeit <- table(semester_data2$nationalität)/nrow(semester_data2)`
+
+Dann können Sie den relativen Informationsgehalt $H$ mit Hilfe der dazugehörigen formel berechnen. Diese enthält zum einen die Normalisierung für die Anzahl an Kategorien `normalisierung <- -1/log(length(rel_häufigkeit))` und zum Anderen die Summe der relativen Häufigkeiten multipliziert mit dem logarithmus der relativen Häufigkeiten: `sum_rel_info <- sum(rel_häufigkeit * log(rel_häufigkeit)`. 
+
+Wenn sie diese beiden Werte miteinander multiplizieren erhalten sie den relativen Informationsgehalt: `rel_info = normalisierung * sum_rel_info`
+
+Für die Lösung müssen Sie diesen Wert dann noch auf zwei Stellen runden: `round(rel_info,2)`
+
+Meta-information
+=========
+exname: percent_gender 
+extype: schoice 
+exsolution: 1000
+exshuffle: TRUE

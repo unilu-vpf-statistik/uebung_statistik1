@@ -1,0 +1,27 @@
+Question
+=======
+Was ist der Streubereich der Variable `alter` für die Studierenden mit der `nationalität == "Deutsch"`?
+
+Answerlist
+--------
+* $Range = [17.1; 35.4]$
+* $Range = [19.3; 29.0]$
+* $Range = [19.2; 30.6]$
+* $Range = [20.0; 26.2]$
+* $Range = [17.7; 27.7]$
+
+
+Solution
+========
+Um den Altersrange der deutschen Studierenden zu bekommen erstellen sie als erstes eine logische Index-Variable die kodiert welche Studierenden Deutsch sind: `index_deutsch <- semester_data2$natioanlität == "Deutsch`
+
+Mit Hilfe dieser Index-Variable können Sie dann den Range nur für die Alterswerte der deutschen Studierenden berechnen: `range(semester_data2$alter[index_deutsch])`
+
+Alternative hätten Sie wie in Übung 2 die `aggregate` Funktion nutzen können und den Range gruppiert für alle Nationalitäten berechnen können: `aggregate(semester_data2$alter, list(semester_data2$nationalität), FUN = range)`
+
+Meta-information
+=========
+exname: percent_gender 
+extype: schoice 
+exsolution: 01000
+exshuffle: TRUE
