@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>median_statistik_rating – Übungen - VL: Statistik I</title>
+<title>logical_indexing2 – Übungen - VL: Statistik I</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -68,6 +68,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -177,32 +206,26 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="question" class="level1">
 <h1>Question</h1>
-<p>In der Variable <code>wissen_statistik</code> sollten die Studierenden zu Beginn der VL einschätzen, wie sie ihr Grundlagenwissen im Bereich Statistik einschätzen. Wie viel Prozent (gerundet) schätzen Ihr Wissen gleich oder besser als das Rating 4 ein?</p>
+<p>Wie viele der Studierenden, sind Franzosen <em>oder</em> Italiener und weiblich?</p>
 <section id="answerlist" class="level2">
 <h2 class="anchored" data-anchor-id="answerlist">Answerlist</h2>
 <ul>
-<li>8 %</li>
-<li>15 %</li>
-<li>26 %</li>
-<li>32 %</li>
-<li>60 %</li>
+<li><span class="math inline">\(N = 12\)</span></li>
+<li><span class="math inline">\(N = 18\)</span></li>
+<li><span class="math inline">\(N = 8\)</span></li>
+<li><span class="math inline">\(N = 4\)</span></li>
+<li><span class="math inline">\(N = 0\)</span></li>
 </ul>
 </section>
 </section>
 <section id="solution" class="level1">
 <h1>Solution</h1>
-<p>Um die kumulierten Prozente über die Rating-Kategorien zu erlangen, erstellen wir als erstes eine Häufigkeitstabelle <code>table(semester_data$wissen_statistik)</code>, wenn wir die Werte dieser Tabelle durch die Gesamtzahl an Beobachtungen <code>sum(table(semester_data$wissen_statistik))</code>, dann bekommen wir eine relative Häufigkeitstabelle <code>table(semester_data$wissen_statistik)/sum(table(semester_data$wissen_statistik))</code>.</p>
-<p>Nun müssen wir die Werte für die Ratings 4 und 5 aufsummieren. Alternativ können wir auch die kumlativen relativen Häufigkeiten für die Ratings mit Hilfe der kumulativen Summenfunktion <code>cumsum()</code> berechnen.</p>
-<pre><code>stat_wissen_häufigkeit &lt;- table(semester_data$wissen_statistik)
-stat_wissen_rel_häufigkeit &lt;- stat_wissen_häufigkeit / sum(stat_wissen_häufigkeit)
-
-stat_wissen_rel_häufigkeit[4] + stat_wissen_rel_häufigkeit[5]
-cumsum(stat_wissen_rel_häufigkeit)</code></pre>
-<p>Mit Hilfe dieser Funktionen sollten Sie eine relative Häufigkeit von <code>17.5 %</code> für ein Rating von 4 und von <code>8.1 %</code> für ein Rating von 5 erhalten. Addiert ergibt das ein gerundetes Rating von <code>26%</code> für ein Rating von 4 oder höher.</p>
+<p>Für komplexer logische Vergleiche bietet es sich an den Vergleich in mehrer einzelschritte zu zerlegen. Für diese Aufgabe empfiehlt es sich erst zu Testen welche Personen aus Frankreich oder Italien sind: <code>index_nation &lt;- semester_data2$nationalität == "Frankreich" | semester_data2$nationalität == "Italien"</code> und dann zu Testen welche Personen weiblich sind: <code>index_weiblich &lt;- semester_data2$geschlecht == "weiblich"</code></p>
+<p>Mit Hilfe dieser beiden Index-Variablen können sie dann testen auf welche Personen beide Kriterien zutreffen und diese Aufsummieren: <code>sum(index_nation &amp; index_weiblich)</code></p>
 </section>
 <section id="meta-information" class="level1">
 <h1>Meta-information</h1>
-<p>exname: median_rating extype: schoice exsolution: 00100</p>
+<p>exname: percent_gender extype: schoice exsolution: 10000 exshuffle: TRUE</p>
 
 
 </section>

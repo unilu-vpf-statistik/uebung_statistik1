@@ -12,7 +12,17 @@ Answerlist
 
 Solution
 ========
-Um die kumulierten Prozente über die Rating-Kategorien zu erlangen, erstellen wir als erstes eine Häufigkeitstabelle `table(semester_data$wissen_statistik)`, wenn wir die Werte dieser Tabelle durch die Gesamtzahl an Beobachtungen `sum(table(semester_data$wissen_statistik))`, dann bekommen wir eine relative Häufigkeitstabelle. Nun müssen wir die Werte für die Ratings 4 und 5 aufsummieren. Alternative können wir auch die kumlativen relativen Häufigkeiten für die Ratings mit hilfe der kumulativen Summenfunktion `cumsum()` berechnen.
+Um die kumulierten Prozente über die Rating-Kategorien zu erlangen, erstellen wir als erstes eine Häufigkeitstabelle `table(semester_data$wissen_statistik)`, wenn wir die Werte dieser Tabelle durch die Gesamtzahl an Beobachtungen `sum(table(semester_data$wissen_statistik))`, dann bekommen wir eine relative Häufigkeitstabelle `table(semester_data$wissen_statistik)/sum(table(semester_data$wissen_statistik))`. 
+
+Nun müssen wir die Werte für die Ratings 4 und 5 aufsummieren. Alternativ können wir auch die kumlativen relativen Häufigkeiten für die Ratings mit Hilfe der kumulativen Summenfunktion `cumsum()` berechnen.
+
+```
+stat_wissen_häufigkeit <- table(semester_data$wissen_statistik)
+stat_wissen_rel_häufigkeit <- stat_wissen_häufigkeit / sum(stat_wissen_häufigkeit)
+
+stat_wissen_rel_häufigkeit[4] + stat_wissen_rel_häufigkeit[5]
+cumsum(stat_wissen_rel_häufigkeit)
+```
 
 Mit Hilfe dieser Funktionen sollten Sie eine relative Häufigkeit von `17.5 %` für ein Rating von 4 und von `8.1 %` für ein Rating von 5 erhalten. Addiert ergibt das ein gerundetes Rating von `26%` für ein Rating von 4 oder höher.
 

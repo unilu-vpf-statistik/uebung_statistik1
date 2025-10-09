@@ -173,6 +173,12 @@ window.Quarto = {
  <span class="menu-text">Übung 2</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../exercise3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Übung 3</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -215,9 +221,14 @@ window.Quarto = {
 </section>
 <section id="solution" class="level1">
 <h1>Solution</h1>
-<p>Um den Altersrange der deutschen Studierenden zu bekommen erstellen sie als erstes eine logische Index-Variable die kodiert welche Studierenden Deutsch sind: <code>index_deutsch &lt;- semester_data2$natioanlität == "Deutsch</code></p>
-<p>Mit Hilfe dieser Index-Variable können Sie dann den Range nur für die Alterswerte der deutschen Studierenden berechnen: <code>range(semester_data2$alter[index_deutsch])</code></p>
-<p>Alternative hätten Sie wie in Übung 2 die <code>aggregate</code> Funktion nutzen können und den Range gruppiert für alle Nationalitäten berechnen können: <code>aggregate(semester_data2$alter, list(semester_data2$nationalität), FUN = range)</code></p>
+<p>Um diese Frage zu beantworten müssen wir zwei unterschiedliche logische Indexvariablen erstellen und zählen wie häufig diese den Wert <code>TRUE</code> haben.</p>
+<p>Es bietet sich an diesen Vergleich in mehreren Schritten durchzuführen:</p>
+<ol type="1">
+<li>Erstellen eine Variablen die kodiert welche Personen ihr Statistik Wissen hoch einschätzen: <code>index_stats &lt;- semester_data2$wissen_statistik &gt;= 4</code></li>
+<li>Erstellen einer Variablen die kodiert ob jemand weiblich ist: <code>index_weiblich &lt;- semester_data2$geschlecht == "weiblich"</code></li>
+<li>Für die Anzahl Frauen die ihr Statistik Wissen hoch einschätzen können wir nun aufsummieren für wie viele beide Index Variablen den Wert <code>TRUE</code> haben: <code>sum(index_stats &amp; index_weiblich)</code></li>
+<li>Für die Anzahl Männer können wir einfach die negation des <code>index_weiblich</code> nutzen, weil diese Variable nur zwei Kategorien hat: <code>sum(index_stats &amp; !index_weiblich)</code></li>
+</ol>
 </section>
 <section id="meta-information" class="level1">
 <h1>Meta-information</h1>

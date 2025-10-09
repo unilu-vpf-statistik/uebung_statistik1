@@ -12,7 +12,7 @@ Answerlist
 
 Solution
 ========
-Wenn sie eine Häufigkeitsverteilung für den Wohnort generieren: `table(semester_data$wohnort)`, dann können Sie entweder direkt aus der Tabelle ablesen, welche Kategorie die häufigste ist, oder Sie können die Tabelle zusätzlich sortieren lassen `sort(table(semester_data$wohnort))`. Standardmässig sortiert die Funktion `sort()` Werte in aufsteigender Reihenfolge, wenn sie die Werte in absteigender Reihenfolge sortieren wollen, dann können sie zusätzlich das argument `decreasing = TRUE`  setzen.
+Wenn sie eine Häufigkeitsverteilung für den Wohnort generieren: `table(semester_data$wohnort)`, dann können Sie entweder direkt aus der Tabelle ablesen, welche Kategorie die häufigste ist, oder Sie können die Tabelle zusätzlich sortieren lassen `sort(table(semester_data$wohnort))`. Standardmässig sortiert die Funktion `sort()` Werte in aufsteigender Reihenfolge, wenn sie die Werte in absteigender Reihenfolge sortieren wollen, dann können sie zusätzlich das Argument `decreasing = TRUE`  setzen.
 
 Wenn Sie diese Funktionen nutzen, dann sollten Sie zu dem Ergebnis kommen, dass Bern mit 64 Personen in der Kategorie die häufigste Kategorie der Variable `wohnort` ist.
 
