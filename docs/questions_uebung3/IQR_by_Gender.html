@@ -173,6 +173,12 @@ window.Quarto = {
  <span class="menu-text">Übung 2</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../exercise3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Übung 3</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -215,9 +221,10 @@ window.Quarto = {
 </section>
 <section id="solution" class="level1">
 <h1>Solution</h1>
-<p>Um den Altersrange der deutschen Studierenden zu bekommen erstellen sie als erstes eine logische Index-Variable die kodiert welche Studierenden Deutsch sind: <code>index_deutsch &lt;- semester_data2$natioanlität == "Deutsch</code></p>
-<p>Mit Hilfe dieser Index-Variable können Sie dann den Range nur für die Alterswerte der deutschen Studierenden berechnen: <code>range(semester_data2$alter[index_deutsch])</code></p>
-<p>Alternative hätten Sie wie in Übung 2 die <code>aggregate</code> Funktion nutzen können und den Range gruppiert für alle Nationalitäten berechnen können: <code>aggregate(semester_data2$alter, list(semester_data2$nationalität), FUN = range)</code></p>
+<p>Um den Interquartilabstand der Grösse der weiblichen und männlichen Studierenden zu bekommen erstellen sie als erstes eine logische Index-Variable die kodiert welche Studierenden weiblich sind: <code>index_weiblich &lt;- semester_data2$geschlecht == "weiblich"</code></p>
+<p>Mit Hilfe dieser Index-Variable können Sie dann den Interquartilabstand nur für die Grösse der weiblich Studierenden berechnen: <code>IQR(semester_data2$grösse[index_weiblich])</code>.</p>
+<p>Um den Interquartilabstand der männlichen Studierenden zu erlangen können Sie einfach die negation von <code>index_weiblich</code> nutzen, da es nur zwei Merkmalsausprägungen gibt: <code>IQR(semester_data2$grös2se[!index_weiblich])</code></p>
+<p>Alternative hätten Sie wie in Übung 2 die <code>aggregate</code> Funktion nutzen können und den Interquartilabstand gruppiert für alle Geschlechter zu berechnen: <code>aggregate(semester_data2$grösse, list(semester_data2$geschlecht), FUN = IQR)</code></p>
 </section>
 <section id="meta-information" class="level1">
 <h1>Meta-information</h1>
