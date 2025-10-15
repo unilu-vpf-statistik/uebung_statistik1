@@ -2134,9 +2134,23 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </blockquote>
 <div class="webex-question">
 <div class="webex-check webex-box">
+<p>Was ist der Interquartilsabstand <span class="math inline">\(IQR\)</span> der Variable <code>grössse</code> für Frauen <span class="math inline">\(w\)</span> und Männer <span class="math inline">\(m\)</span>?</p>
+<div id="webex-44759d7c7c07648311e548324ae86754" class="webex-checkboxgroup" data-answer="bwQbBRVUG1IbUxwGaw==">
+<label><input type="checkbox" autocomplete="off" name="44759d7c7c07648311e548324ae86754"><span><span class="math inline">\(IQR_w = 9.2\)</span></span></label><label><input type="checkbox" autocomplete="off" name="44759d7c7c07648311e548324ae86754"><span><span class="math inline">\(IQR_m = 13\)</span></span></label><label><input type="checkbox" autocomplete="off" name="44759d7c7c07648311e548324ae86754"><span><span class="math inline">\(IQR_m = 14.7\)</span></span></label><label><input type="checkbox" autocomplete="off" name="44759d7c7c07648311e548324ae86754"><span><span class="math inline">\(IQR_m = 12.5\)</span></span></label><label><input type="checkbox" autocomplete="off" name="44759d7c7c07648311e548324ae86754"><span><span class="math inline">\(IQR_w = 13\)</span></span></label><label><input type="checkbox" autocomplete="off" name="44759d7c7c07648311e548324ae86754"><span><span class="math inline">\(IQR_w = 11.0\)</span></span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>Um den Interquartilabstand der Grösse der weiblichen und männlichen Studierenden zu bekommen erstellen sie als erstes eine logische Index-Variable die kodiert welche Studierenden weiblich sind: <code>index_weiblich &lt;- semester_data2$geschlecht == "weiblich"</code></p>
+<p>Mit Hilfe dieser Index-Variable können Sie dann den Interquartilabstand nur für die Grösse der weiblich Studierenden berechnen: <code>IQR(semester_data2$grösse[index_weiblich])</code>.</p>
+<p>Um den Interquartilabstand der männlichen Studierenden zu erlangen können Sie einfach die negation von <code>index_weiblich</code> nutzen, da es nur zwei Merkmalsausprägungen gibt: <code>IQR(semester_data2$grösse[!index_weiblich])</code></p>
+<p>Alternative hätten Sie wie in Übung 2 die <code>aggregate</code> Funktion nutzen können und den Interquartilabstand gruppiert für alle Geschlechter zu berechnen: <code>aggregate(semester_data2$grösse, list(semester_data2$geschlecht), FUN = IQR)</code></p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
 <p>Was ist der relative Informationsgehalt der Variable <code>nationalität</code> im Datensatz <code>semetester_data2</code>?</p>
-<div id="webex-1593dcca34b0d884823a83fd1edadd48" class="webex-radiogroup" data-answer="agUVA0hST1Fu">
-<label><input type="radio" autocomplete="off" name="1593dcca34b0d884823a83fd1edadd48"><span><span class="math inline">\(H = .46\)</span></span></label><label><input type="radio" autocomplete="off" name="1593dcca34b0d884823a83fd1edadd48"><span><span class="math inline">\(H = .32\)</span></span></label><label><input type="radio" autocomplete="off" name="1593dcca34b0d884823a83fd1edadd48"><span><span class="math inline">\(H = .57\)</span></span></label><label><input type="radio" autocomplete="off" name="1593dcca34b0d884823a83fd1edadd48"><span><span class="math inline">\(H = .17\)</span></span></label>
+<div id="webex-856bb4c679cdfcd24756f21dbf437b8a" class="webex-radiogroup" data-answer="YwUaUk4ETwdq">
+<label><input type="radio" autocomplete="off" name="856bb4c679cdfcd24756f21dbf437b8a"><span><span class="math inline">\(H = .32\)</span></span></label><label><input type="radio" autocomplete="off" name="856bb4c679cdfcd24756f21dbf437b8a"><span><span class="math inline">\(H = .46\)</span></span></label><label><input type="radio" autocomplete="off" name="856bb4c679cdfcd24756f21dbf437b8a"><span><span class="math inline">\(H = .17\)</span></span></label><label><input type="radio" autocomplete="off" name="856bb4c679cdfcd24756f21dbf437b8a"><span><span class="math inline">\(H = .57\)</span></span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -2148,23 +2162,34 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
-<p>Was ist der Interquartilsabstand <span class="math inline">\(IQR\)</span> der Variable <code>grössse</code> für Frauen <span class="math inline">\(w\)</span> und Männer <span class="math inline">\(m\)</span>?</p>
-<div id="webex-7d8b51093ab02b593f023dc6c6d9d6b9" class="webex-checkboxgroup" data-answer="bFUUUhkBHAkfUU4Bbw==">
-<label><input type="checkbox" autocomplete="off" name="7d8b51093ab02b593f023dc6c6d9d6b9"><span><span class="math inline">\(IQR_m = 12.5\)</span></span></label><label><input type="checkbox" autocomplete="off" name="7d8b51093ab02b593f023dc6c6d9d6b9"><span><span class="math inline">\(IQR_w = 9.2\)</span></span></label><label><input type="checkbox" autocomplete="off" name="7d8b51093ab02b593f023dc6c6d9d6b9"><span><span class="math inline">\(IQR_m = 13\)</span></span></label><label><input type="checkbox" autocomplete="off" name="7d8b51093ab02b593f023dc6c6d9d6b9"><span><span class="math inline">\(IQR_m = 14.7\)</span></span></label><label><input type="checkbox" autocomplete="off" name="7d8b51093ab02b593f023dc6c6d9d6b9"><span><span class="math inline">\(IQR_w = 13\)</span></span></label><label><input type="checkbox" autocomplete="off" name="7d8b51093ab02b593f023dc6c6d9d6b9"><span><span class="math inline">\(IQR_w = 11.0\)</span></span></label>
+<p>Wie viele der Studierenden, sind Franzosen <em>oder</em> Italiener und weiblich?</p>
+<div id="webex-143444f0c287d39009b6191e45c5996e" class="webex-radiogroup" data-answer="agQfBBgESgFPAmU=">
+<label><input type="radio" autocomplete="off" name="143444f0c287d39009b6191e45c5996e"><span><span class="math inline">\(N = 4\)</span></span></label><label><input type="radio" autocomplete="off" name="143444f0c287d39009b6191e45c5996e"><span><span class="math inline">\(N = 0\)</span></span></label><label><input type="radio" autocomplete="off" name="143444f0c287d39009b6191e45c5996e"><span><span class="math inline">\(N = 18\)</span></span></label><label><input type="radio" autocomplete="off" name="143444f0c287d39009b6191e45c5996e"><span><span class="math inline">\(N = 12\)</span></span></label><label><input type="radio" autocomplete="off" name="143444f0c287d39009b6191e45c5996e"><span><span class="math inline">\(N = 8\)</span></span></label>
 </div>
 </div>
 <div class="webex-solution">
-<p>Um den Interquartilabstand der Grösse der weiblichen und männlichen Studierenden zu bekommen erstellen sie als erstes eine logische Index-Variable die kodiert welche Studierenden weiblich sind: <code>index_weiblich &lt;- semester_data2$geschlecht == "weiblich"</code></p>
-<p>Mit Hilfe dieser Index-Variable können Sie dann den Interquartilabstand nur für die Grösse der weiblich Studierenden berechnen: <code>IQR(semester_data2$grösse[index_weiblich])</code>.</p>
-<p>Um den Interquartilabstand der männlichen Studierenden zu erlangen können Sie einfach die negation von <code>index_weiblich</code> nutzen, da es nur zwei Merkmalsausprägungen gibt: <code>IQR(semester_data2$grös2se[!index_weiblich])</code></p>
-<p>Alternative hätten Sie wie in Übung 2 die <code>aggregate</code> Funktion nutzen können und den Interquartilabstand gruppiert für alle Geschlechter zu berechnen: <code>aggregate(semester_data2$grösse, list(semester_data2$geschlecht), FUN = IQR)</code></p>
+<p>Für komplexer logische Vergleiche bietet es sich an den Vergleich in mehrer einzelschritte zu zerlegen. Für diese Aufgabe empfiehlt es sich erst zu Testen welche Personen aus Frankreich oder Italien sind: <code>index_nation &lt;- semester_data2$nationalität == "Frankreich" | semester_data2$nationalität == "Italien"</code> und dann zu Testen welche Personen weiblich sind: <code>index_weiblich &lt;- semester_data2$geschlecht == "weiblich"</code></p>
+<p>Mit Hilfe dieser beiden Index-Variablen können sie dann testen auf welche Personen beide Kriterien zutreffen und diese Aufsummieren: <code>sum(index_nation &amp; index_weiblich)</code></p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>Was ist der Streubereich der Variable <code>alter</code> für die Studierenden mit der <code>nationalität == "Deutsch"</code>?</p>
+<div id="webex-abd8e2a5f6dd63f815dc77b736e09c5f" class="webex-radiogroup" data-answer="OlJICUkCTQVKBjk=">
+<label><input type="radio" autocomplete="off" name="abd8e2a5f6dd63f815dc77b736e09c5f"><span><span class="math inline">\(Range = [19.2; 30.6]\)</span></span></label><label><input type="radio" autocomplete="off" name="abd8e2a5f6dd63f815dc77b736e09c5f"><span><span class="math inline">\(Range = [19.3; 29.0]\)</span></span></label><label><input type="radio" autocomplete="off" name="abd8e2a5f6dd63f815dc77b736e09c5f"><span><span class="math inline">\(Range = [17.7; 27.7]\)</span></span></label><label><input type="radio" autocomplete="off" name="abd8e2a5f6dd63f815dc77b736e09c5f"><span><span class="math inline">\(Range = [20.0; 26.2]\)</span></span></label><label><input type="radio" autocomplete="off" name="abd8e2a5f6dd63f815dc77b736e09c5f"><span><span class="math inline">\(Range = [17.1; 35.4]\)</span></span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>Um den Altersrange der deutschen Studierenden zu bekommen erstellen sie als erstes eine logische Index-Variable die kodiert welche Studierenden Deutsch sind: <code>index_deutsch &lt;- semester_data2$natioanlität == "Deutsch"</code></p>
+<p>Mit Hilfe dieser Index-Variable können Sie dann den Range nur für die Alterswerte der deutschen Studierenden berechnen: <code>range(semester_data2$alter[index_deutsch])</code></p>
+<p>Alternative hätten Sie wie in Übung 2 die <code>aggregate</code> Funktion nutzen können und den Range gruppiert für alle Nationalitäten berechnen können: <code>aggregate(semester_data2$alter, list(semester_data2$nationalität), FUN = range)</code></p>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Wie viele der Studierenden, die ihr Statistik Wissen hoch einschätzen (<code>wissen_statistik &gt;= 4</code>) sind Männer und wie viele Frauen?</p>
-<div id="webex-2e0c5d1d6e8da8fcb59ccb93b3fd25f4" class="webex-checkboxgroup" data-answer="aVUcUxlVHVQaVBRUPA==">
-<label><input type="checkbox" autocomplete="off" name="2e0c5d1d6e8da8fcb59ccb93b3fd25f4"><span><span class="math inline">\(N_w = 4\)</span></span></label><label><input type="checkbox" autocomplete="off" name="2e0c5d1d6e8da8fcb59ccb93b3fd25f4"><span><span class="math inline">\(N_w = 44\)</span></span></label><label><input type="checkbox" autocomplete="off" name="2e0c5d1d6e8da8fcb59ccb93b3fd25f4"><span><span class="math inline">\(N_m = 7\)</span></span></label><label><input type="checkbox" autocomplete="off" name="2e0c5d1d6e8da8fcb59ccb93b3fd25f4"><span><span class="math inline">\(N_m = 44\)</span></span></label><label><input type="checkbox" autocomplete="off" name="2e0c5d1d6e8da8fcb59ccb93b3fd25f4"><span><span class="math inline">\(N_w = 37\)</span></span></label><label><input type="checkbox" autocomplete="off" name="2e0c5d1d6e8da8fcb59ccb93b3fd25f4"><span><span class="math inline">\(N_m = 40\)</span></span></label>
+<div id="webex-8a30489afd1bab375dcead339e451a35" class="webex-checkboxgroup" data-answer="Y1EfABgIFVBKVR1SPA==">
+<label><input type="checkbox" autocomplete="off" name="8a30489afd1bab375dcead339e451a35"><span><span class="math inline">\(N_m = 40\)</span></span></label><label><input type="checkbox" autocomplete="off" name="8a30489afd1bab375dcead339e451a35"><span><span class="math inline">\(N_w = 4\)</span></span></label><label><input type="checkbox" autocomplete="off" name="8a30489afd1bab375dcead339e451a35"><span><span class="math inline">\(N_w = 44\)</span></span></label><label><input type="checkbox" autocomplete="off" name="8a30489afd1bab375dcead339e451a35"><span><span class="math inline">\(N_m = 7\)</span></span></label><label><input type="checkbox" autocomplete="off" name="8a30489afd1bab375dcead339e451a35"><span><span class="math inline">\(N_w = 37\)</span></span></label><label><input type="checkbox" autocomplete="off" name="8a30489afd1bab375dcead339e451a35"><span><span class="math inline">\(N_m = 44\)</span></span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -2176,31 +2201,6 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li>Für die Anzahl Frauen die ihr Statistik Wissen hoch einschätzen können wir nun aufsummieren für wie viele beide Index Variablen den Wert <code>TRUE</code> haben: <code>sum(index_stats &amp; index_weiblich)</code></li>
 <li>Für die Anzahl Männer können wir einfach die negation des <code>index_weiblich</code> nutzen, weil diese Variable nur zwei Kategorien hat: <code>sum(index_stats &amp; !index_weiblich)</code></li>
 </ol>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Was ist der Streubereich der Variable <code>alter</code> für die Studierenden mit der <code>nationalität == "Deutsch"</code>?</p>
-<div id="webex-cdbf1c03cbfb5cfba2dd8927ed11e089" class="webex-radiogroup" data-answer="OFROVh1SHANPUjs=">
-<label><input type="radio" autocomplete="off" name="cdbf1c03cbfb5cfba2dd8927ed11e089"><span><span class="math inline">\(Range = [19.2; 30.6]\)</span></span></label><label><input type="radio" autocomplete="off" name="cdbf1c03cbfb5cfba2dd8927ed11e089"><span><span class="math inline">\(Range = [17.1; 35.4]\)</span></span></label><label><input type="radio" autocomplete="off" name="cdbf1c03cbfb5cfba2dd8927ed11e089"><span><span class="math inline">\(Range = [19.3; 29.0]\)</span></span></label><label><input type="radio" autocomplete="off" name="cdbf1c03cbfb5cfba2dd8927ed11e089"><span><span class="math inline">\(Range = [20.0; 26.2]\)</span></span></label><label><input type="radio" autocomplete="off" name="cdbf1c03cbfb5cfba2dd8927ed11e089"><span><span class="math inline">\(Range = [17.7; 27.7]\)</span></span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Um den Altersrange der deutschen Studierenden zu bekommen erstellen sie als erstes eine logische Index-Variable die kodiert welche Studierenden Deutsch sind: <code>index_deutsch &lt;- semester_data2$natioanlität == "Deutsch"</code></p>
-<p>Mit Hilfe dieser Index-Variable können Sie dann den Range nur für die Alterswerte der deutschen Studierenden berechnen: <code>range(semester_data2$alter[index_deutsch])</code></p>
-<p>Alternative hätten Sie wie in Übung 2 die <code>aggregate</code> Funktion nutzen können und den Range gruppiert für alle Nationalitäten berechnen können: <code>aggregate(semester_data2$alter, list(semester_data2$nationalität), FUN = range)</code></p>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Wie viele der Studierenden, sind Franzosen <em>oder</em> Italiener und weiblich?</p>
-<div id="webex-1de54cf497e32bfa287ff20902acdfbb" class="webex-radiogroup" data-answer="alRJBRhSSgQVBzg=">
-<label><input type="radio" autocomplete="off" name="1de54cf497e32bfa287ff20902acdfbb"><span><span class="math inline">\(N = 0\)</span></span></label><label><input type="radio" autocomplete="off" name="1de54cf497e32bfa287ff20902acdfbb"><span><span class="math inline">\(N = 8\)</span></span></label><label><input type="radio" autocomplete="off" name="1de54cf497e32bfa287ff20902acdfbb"><span><span class="math inline">\(N = 12\)</span></span></label><label><input type="radio" autocomplete="off" name="1de54cf497e32bfa287ff20902acdfbb"><span><span class="math inline">\(N = 4\)</span></span></label><label><input type="radio" autocomplete="off" name="1de54cf497e32bfa287ff20902acdfbb"><span><span class="math inline">\(N = 18\)</span></span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Für komplexer logische Vergleiche bietet es sich an den Vergleich in mehrer einzelschritte zu zerlegen. Für diese Aufgabe empfiehlt es sich erst zu Testen welche Personen aus Frankreich oder Italien sind: <code>index_nation &lt;- semester_data2$nationalität == "Frankreich" | semester_data2$nationalität == "Italien"</code> und dann zu Testen welche Personen weiblich sind: <code>index_weiblich &lt;- semester_data2$geschlecht == "weiblich"</code></p>
-<p>Mit Hilfe dieser beiden Index-Variablen können sie dann testen auf welche Personen beide Kriterien zutreffen und diese Aufsummieren: <code>sum(index_nation &amp; index_weiblich)</code></p>
 </div>
 </div>
 <hr>
