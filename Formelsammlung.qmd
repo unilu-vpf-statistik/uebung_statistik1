@@ -207,7 +207,7 @@ $$
 \lim_{n \rightarrow \infty} P(|h(A)-P(A)|< \epsilon) = 1
 $$
 
-geht die Anzahl an Beobachtungen $n$ gegen unendlich $\infty$, dann ist die absolute Differenz der relativen Häufigkeit von A $h(A)$ und der wahren Wahrscheinlichkeit von A $P(A)$ kleiner als ein beliebig kleiner Wert / Fehler $\epsilon$
+geht die Anzahl an Beobachtungen $n$ gegen unendlich $\infty$, dann ist die Wahrscheinlichkeit, dass die absolute Differenz der relativen Häufigkeit von A $h(A)$ und der wahren Wahrscheinlichkeit von A $P(A)$ kleiner als ein beliebig kleiner Wert / Fehler $\epsilon$ gleich 1.
 
 ### Bedingte Wahrscheinlichkeit
 
