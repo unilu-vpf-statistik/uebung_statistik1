@@ -208,7 +208,15 @@ window.Quarto = {
   <li><a href="#masse-der-zentralen-tendenz" id="toc-masse-der-zentralen-tendenz" class="nav-link" data-scroll-target="#masse-der-zentralen-tendenz">Masse der zentralen Tendenz</a></li>
   <li><a href="#dispersionsmasse" id="toc-dispersionsmasse" class="nav-link" data-scroll-target="#dispersionsmasse">Dispersionsmasse</a></li>
   </ul></li>
-  <li><a href="#wahrscheinlichkeitstheorie" id="toc-wahrscheinlichkeitstheorie" class="nav-link" data-scroll-target="#wahrscheinlichkeitstheorie">Wahrscheinlichkeitstheorie</a></li>
+  <li><a href="#wahrscheinlichkeitstheorie" id="toc-wahrscheinlichkeitstheorie" class="nav-link" data-scroll-target="#wahrscheinlichkeitstheorie">Wahrscheinlichkeitstheorie</a>
+  <ul class="collapse">
+  <li><a href="#laplace-wahrscheinlichkeit" id="toc-laplace-wahrscheinlichkeit" class="nav-link" data-scroll-target="#laplace-wahrscheinlichkeit">LaPlace Wahrscheinlichkeit</a></li>
+  <li><a href="#kombinatorik" id="toc-kombinatorik" class="nav-link" data-scroll-target="#kombinatorik">Kombinatorik</a></li>
+  <li><a href="#rechenregeln-wahrscheinlichkeit" id="toc-rechenregeln-wahrscheinlichkeit" class="nav-link" data-scroll-target="#rechenregeln-wahrscheinlichkeit">Rechenregeln: Wahrscheinlichkeit</a></li>
+  <li><a href="#bernoulli-theorem" id="toc-bernoulli-theorem" class="nav-link" data-scroll-target="#bernoulli-theorem">Bernoulli Theorem</a></li>
+  <li><a href="#bedingte-wahrscheinlichkeit" id="toc-bedingte-wahrscheinlichkeit" class="nav-link" data-scroll-target="#bedingte-wahrscheinlichkeit">Bedingte Wahrscheinlichkeit</a></li>
+  <li><a href="#stochastische-unabhängigkeit" id="toc-stochastische-unabhängigkeit" class="nav-link" data-scroll-target="#stochastische-unabhängigkeit">Stochastische Unabhängigkeit</a></li>
+  </ul></li>
   <li><a href="#inferenzstatistik-definitionen" id="toc-inferenzstatistik-definitionen" class="nav-link" data-scroll-target="#inferenzstatistik-definitionen">Inferenzstatistik: Definitionen</a></li>
   <li><a href="#gruppenvergleiche" id="toc-gruppenvergleiche" class="nav-link" data-scroll-target="#gruppenvergleiche">Gruppenvergleiche</a></li>
   <li><a href="#fehler-fragen" id="toc-fehler-fragen" class="nav-link" data-scroll-target="#fehler-fragen">Fehler &amp; Fragen</a></li>
@@ -363,6 +371,89 @@ m_k = \frac{\sum_{i = 1}^n (X_i - \overline{X})^k}{n}
 </section>
 <section id="wahrscheinlichkeitstheorie" class="level2">
 <h2 class="anchored" data-anchor-id="wahrscheinlichkeitstheorie">Wahrscheinlichkeitstheorie</h2>
+<section id="laplace-wahrscheinlichkeit" class="level3">
+<h3 class="anchored" data-anchor-id="laplace-wahrscheinlichkeit">LaPlace Wahrscheinlichkeit</h3>
+<p><span class="math display">\[
+P(A) = \frac{N_A}{K}
+\]</span></p>
+<p>für ein Zufallsexperiment bei dem die Wahrscheinlichkeit aller Elementarereignisse gleich ist (= LaPlace Experiment), mit der Anzahl für das Ereignis A günstigen Ergebnissen <span class="math inline">\(N_A\)</span>, und der Gesamtzahl an Ergebnissen <span class="math inline">\(K\)</span> im Ergebnisraum <span class="math inline">\(\Omega\)</span></p>
+</section>
+<section id="kombinatorik" class="level3">
+<h3 class="anchored" data-anchor-id="kombinatorik">Kombinatorik</h3>
+<section id="mit-zurücklegen-mit-berücksichtigung-der-reihenfolge" class="level4">
+<h4 class="anchored" data-anchor-id="mit-zurücklegen-mit-berücksichtigung-der-reihenfolge"><em>mit</em> Zurücklegen, <em>mit</em> Berücksichtigung der Reihenfolge</h4>
+<p><span class="math display">\[
+K = k^n
+\]</span> mit <span class="math inline">\(k\)</span> gleich der Anzahl der Ergebnisse für eine einzelne Ziehung, und <span class="math inline">\(n\)</span> Ziehungen aus der Urne</p>
+</section>
+<section id="ohne-zurücklegen-mit-berücksichtigung-der-reihenfolge" class="level4">
+<h4 class="anchored" data-anchor-id="ohne-zurücklegen-mit-berücksichtigung-der-reihenfolge"><em>ohne</em> Zurücklegen, <em>mit</em> Berücksichtigung der Reihenfolge</h4>
+<p><span class="math display">\[
+K = \frac{k!}{(k-n)!}
+\]</span></p>
+<p>mit <span class="math inline">\(x! = x \cdot (x-1) \cdot (x-2) \cdot \ldots \cdot (k -(k-1))\)</span>, gesprochen <span class="math inline">\(x\)</span>-Fakultät. Zum Beispiel: <span class="math inline">\(8! = 8 \cdot 7 \cdot 6 \cdot 5 \cdot \ldots \cdot 1 = 40320\)</span></p>
+</section>
+<section id="ohne-zurücklegen-ohne-berücksichtigung-der-reihenfolge" class="level4">
+<h4 class="anchored" data-anchor-id="ohne-zurücklegen-ohne-berücksichtigung-der-reihenfolge"><em>ohne</em> Zurücklegen, <em>ohne</em> Berücksichtigung der Reihenfolge</h4>
+<p><span class="math display">\[
+K = \frac{k!}{(k-n)! \cdot n!} = \binom{k}{n}
+\]</span></p>
+<p>ist der Binomialkoeffizient <span class="math inline">\(\binom{k}{n}\)</span>, gesprochen <span class="math inline">\(k\)</span> über <span class="math inline">\(n\)</span></p>
+</section>
+<section id="mit-zurücklegen-ohne-berücksichtigung-der-reihenfolge" class="level4">
+<h4 class="anchored" data-anchor-id="mit-zurücklegen-ohne-berücksichtigung-der-reihenfolge"><em>mit</em> Zurücklegen, <em>ohne</em> Berücksichtigung der Reihenfolge</h4>
+<p><span class="math display">\[
+K = \frac{(k + n -1)!}{(k-1)! \cdot n!}
+\]</span></p>
+</section>
+</section>
+<section id="rechenregeln-wahrscheinlichkeit" class="level3">
+<h3 class="anchored" data-anchor-id="rechenregeln-wahrscheinlichkeit">Rechenregeln: Wahrscheinlichkeit</h3>
+<section id="wahrscheinlichkeit-teilmengen" class="level4">
+<h4 class="anchored" data-anchor-id="wahrscheinlichkeit-teilmengen">Wahrscheinlichkeit: Teilmengen</h4>
+<p>Ist das Ereignis <span class="math inline">\(A\)</span> eine Teilmenge des Ereignisses <span class="math inline">\(B\)</span>, gilt:</p>
+<p><span class="math display">\[
+P(B) &gt; P(A)
+\]</span></p>
+</section>
+<section id="komplementäre-wahrscheinlichkeit" class="level4">
+<h4 class="anchored" data-anchor-id="komplementäre-wahrscheinlichkeit">Komplementäre Wahrscheinlichkeit</h4>
+<p><span class="math display">\[
+P(\overline{A}) = 1 - P(A)
+\]</span></p>
+<p>mit der Wahrscheinllichkeit, dass das Ereignis A nicht eintritt <span class="math inline">\(\overline{A}\)</span></p>
+</section>
+<section id="wahrscheinlichkeit-schnittmengen" class="level4">
+<h4 class="anchored" data-anchor-id="wahrscheinlichkeit-schnittmengen">Wahrscheinlichkeit: Schnittmengen</h4>
+<p><span class="math display">\[
+P(A \cup B) = P(A) + P(B) - P(A \cap B)
+\]</span></p>
+</section>
+</section>
+<section id="bernoulli-theorem" class="level3">
+<h3 class="anchored" data-anchor-id="bernoulli-theorem">Bernoulli Theorem</h3>
+<p><span class="math display">\[
+\lim_{n \rightarrow \infty} P(|h(A)-P(A)|&lt; \epsilon) = 1
+\]</span></p>
+<p>geht die Anzahl an Beobachtungen <span class="math inline">\(n\)</span> gegen unendlich <span class="math inline">\(\infty\)</span>, dann ist die absolute Differenz der relativen Häufigkeit von A <span class="math inline">\(h(A)\)</span> und der wahren Wahrscheinlichkeit von A <span class="math inline">\(P(A)\)</span> kleiner als ein beliebig kleiner Wert / Fehler <span class="math inline">\(\epsilon\)</span></p>
+</section>
+<section id="bedingte-wahrscheinlichkeit" class="level3">
+<h3 class="anchored" data-anchor-id="bedingte-wahrscheinlichkeit">Bedingte Wahrscheinlichkeit</h3>
+<p><span class="math display">\[
+P(A|B) = \frac{P(A \cap B)}{P(B)}
+\]</span></p>
+</section>
+<section id="stochastische-unabhängigkeit" class="level3">
+<h3 class="anchored" data-anchor-id="stochastische-unabhängigkeit">Stochastische Unabhängigkeit</h3>
+<p>zwei Ereignisse <span class="math inline">\(A\)</span> und <span class="math inline">\(B\)</span> sind stochastisch voneinander unabhängig, wenn entweder das Multiplikations-Theorem gilt:</p>
+<p><span class="math display">\[
+P(A \cap B) = P(A) \cdot P(B)
+\]</span></p>
+<p>oder die bedingte Wahrscheinlichkeit, gleich der unbedingten Wahrscheinlichkeit ist:</p>
+<p><span class="math display">\[
+P(B|A) = P(B)
+\]</span></p>
+</section>
 </section>
 <section id="inferenzstatistik-definitionen" class="level2">
 <h2 class="anchored" data-anchor-id="inferenzstatistik-definitionen">Inferenzstatistik: Definitionen</h2>

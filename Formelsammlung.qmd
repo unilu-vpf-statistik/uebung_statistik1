@@ -138,6 +138,97 @@ mit dem Mittelwert $\overline{X}$
 
 ## Wahrscheinlichkeitstheorie
 
+### LaPlace Wahrscheinlichkeit
+
+$$
+P(A) = \frac{N_A}{K}
+$$
+
+für ein Zufallsexperiment bei dem die Wahrscheinlichkeit aller Elementarereignisse gleich ist (= LaPlace Experiment), mit der Anzahl für das Ereignis A günstigen Ergebnissen $N_A$, und der Gesamtzahl an Ergebnissen $K$ im Ergebnisraum $\Omega$ 
+
+### Kombinatorik
+
+#### *mit* Zurücklegen, *mit* Berücksichtigung der Reihenfolge
+
+$$
+K = k^n
+$$
+mit $k$ gleich der Anzahl der Ergebnisse für eine einzelne Ziehung, und $n$ Ziehungen aus der Urne
+
+#### *ohne* Zurücklegen, *mit* Berücksichtigung der Reihenfolge
+
+$$
+K = \frac{k!}{(k-n)!}
+$$
+
+mit $x! = x \cdot (x-1) \cdot (x-2) \cdot \ldots \cdot (k -(k-1))$, gesprochen $x$-Fakultät. Zum Beispiel: $8! = 8 \cdot 7 \cdot 6 \cdot 5 \cdot \ldots \cdot 1 = 40320$
+
+#### *ohne* Zurücklegen, *ohne* Berücksichtigung der Reihenfolge
+
+$$
+K = \frac{k!}{(k-n)! \cdot n!} = \binom{k}{n}
+$$
+
+ist der Binomialkoeffizient $\binom{k}{n}$, gesprochen $k$ über $n$
+
+#### *mit* Zurücklegen, *ohne* Berücksichtigung der Reihenfolge
+
+$$
+K = \frac{(k + n -1)!}{(k-1)! \cdot n!}
+$$
+
+### Rechenregeln: Wahrscheinlichkeit
+
+#### Wahrscheinlichkeit: Teilmengen
+
+Ist das Ereignis $A$ eine Teilmenge des Ereignisses $B$, gilt:
+
+$$
+P(B) > P(A)
+$$
+
+#### Komplementäre Wahrscheinlichkeit
+
+$$
+P(\overline{A}) = 1 - P(A)
+$$
+
+mit der Wahrscheinllichkeit, dass das Ereignis A nicht eintritt $\overline{A}$
+
+#### Wahrscheinlichkeit: Schnittmengen
+
+$$
+P(A \cup B) = P(A) + P(B) - P(A \cap B)
+$$
+
+### Bernoulli Theorem
+
+$$
+\lim_{n \rightarrow \infty} P(|h(A)-P(A)|< \epsilon) = 1
+$$
+
+geht die Anzahl an Beobachtungen $n$ gegen unendlich $\infty$, dann ist die absolute Differenz der relativen Häufigkeit von A $h(A)$ und der wahren Wahrscheinlichkeit von A $P(A)$ kleiner als ein beliebig kleiner Wert / Fehler $\epsilon$
+
+### Bedingte Wahrscheinlichkeit
+
+$$
+P(A|B) = \frac{P(A \cap B)}{P(B)}
+$$
+
+### Stochastische Unabhängigkeit
+
+zwei Ereignisse $A$ und $B$ sind stochastisch voneinander unabhängig, wenn entweder das Multiplikations-Theorem gilt:
+
+$$
+P(A \cap B) = P(A) \cdot P(B)
+$$
+
+oder die bedingte Wahrscheinlichkeit, gleich der unbedingten Wahrscheinlichkeit ist:
+
+$$
+P(B|A) = P(B)
+$$
+
 ## Inferenzstatistik: Definitionen
 
 ## Gruppenvergleiche

@@ -50,7 +50,7 @@ Für das Multiplikationstheorem sind das folgende Wahrscheinlichkeiten:
 2. Die Wahrscheinlichkeit in Stadt A zu studieren: $P(Stadt = A)$
 3. Die Wahrscheinlichkeit in mit dem Studium zufrieden zu sein und in Stadt A zu studieren: $P(Z = ja \cap Stadt = A)$
 
-Diese Wahrscheinlichkeiten berechnen sich in R folgender massen:
+Diese Wahrscheinlichkeiten berechnen sich in R folgendermassen:
 
 1. `(26700 + 14900 + 9700 + 8900)/(26700 + 14900 + 9700 + 8900 + 9900 + 6400 + 9100 + 14000)` = `r round(p_zufrieden,4)`
 2. `(26700 + 9900)/(26700 + 14900 + 9700 + 8900 + 9900 + 6400 + 9100 + 14000)` = `r round(p_stadtA,4)`
@@ -58,9 +58,19 @@ Diese Wahrscheinlichkeiten berechnen sich in R folgender massen:
 
 Mit diesen Wahrscheinlichkeiten können wir prüfen ob das Multiplikationstheorem gilt:
 
-Aus $P(Z = ja) \cdot P(Stadt = A)$ ergibt sich $`r round(multi_test,4)`$. Diese Wahrscheinlichkeit ist ungleich der berechneten Wahrscheinlichkeit von $P(Z = ja \cap Stadt = A) = `r round(p_union_Azufrieden,4)`$. Daraus können wir schliessen, dass die Wahrschinlihckeiten nicht voneinander unabhängig sind.
+Aus $P(Z = ja) \cdot P(Stadt = A)$ ergibt sich $`r round(multi_test,4)`$. Diese Wahrscheinlichkeit ist ungleich der berechneten Wahrscheinlichkeit von $P(Z = ja \cap Stadt = A) = `r round(p_union_Azufrieden,4)`$. Daraus können wir schliessen, dass die Wahrscheinlichkeiten nicht voneinander unabhängig sind.
 
-Die Lösung für die bedingten Wahrscheinlichkeiten folgt.
+Um zu Prüfen, ob die bedingte Wahrscheinlichkeit mit dem Studium zufrieden zu sein, wenn man in der Stadt C studiert gleich der Wahrscheinlichkeit ist unabhängig vom Studienort mit dem Studium zufrieden zu sein, müssen wir noch zwei weitere Wahrscheinlichkeiten berechnen:
+
+4. Die Wahrscheinlichkeit mit den Studium zufrieden zu sein und in Stadt C zu studieren: $P(Z = ja \cap Stadt = C)$
+5. Diw Wahrscheinlichkeit in der Stadt C zu studieren: $P(Stadt = C)$
+
+In R können wir diese Wahrscheinlichkeiten folgendermassen berechnen:
+
+4. `(9700) / (26700 + 14900 + 9700 + 8900 + 9900 + 6400 + 9100 + 14000)` = `r round(p_union_Czufrieden,4)`
+5. `(9700 + 9100) / (26700 + 14900 + 9700 + 8900 + 9900 + 6400 + 9100 + 14000)` = `r round(p_stadtC, 4)`
+
+Mit diesen Wahrscheinlichkeiten können wir nun die bedingte Wahrscheinlichkeit berechnen, mit den Studium zufrieden zu sein, wenn man in der Stadt C studiert: $P(Z = ja | Stadt = C) = \frac{`r round(p_union_Czufrieden,4)`}{`r round(p_stadtC, 4)`} = `r round(p_zufrieden_stadtC, 4)`$, diese Wahrscheinlichkeit ist unterschiedlich von der Wahrscheinlichkeit mit den Studium zufrieden zu sein unabhängig in welcher Stadt man studiert $P(Z = ja) = `r round(p_zufrieden,4)`$. So wie aus dem Multiplikationstheorem auch, können wir daraus schliessen, dass die Wahrscheinlichkeiten voneinander abhängig sind.
 
 Meta-information
 =========

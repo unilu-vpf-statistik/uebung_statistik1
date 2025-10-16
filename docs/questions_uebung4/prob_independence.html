@@ -179,6 +179,12 @@ window.Quarto = {
  <span class="menu-text">Übung 3</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../exercise4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Übung 4</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -208,7 +214,7 @@ window.Quarto = {
 <h1>Question</h1>
 <p>Berechnen Sie anhand der Werte in der unter der Frage gegebenen Tabelle, ob die Wahrscheinlichkeit das Personen mit Ihrem Studium zufrieden sind <code>zufrieden_ja</code> von der Stadt in der die Studierenden ihr Studium absolvieren unabhängig sind. Berechnen Sie dafür:</p>
 <ol type="1">
-<li>ob das Multiplikationstheorem für die Wahrscheinlichkeit in Stadt A mit dem Studium zufrieden zu sein gilt.</li>
+<li>ob das Multiplikationstheorem für die Wahrscheinlichkeit in Stadt A mit dem Studium zufrieden zu sein gilt: <span class="math inline">\(P(Z = ja \cap Stadt = A) = P(Z = ja) \cdot P(Stadt = A)\)</span>.</li>
 <li>ob die bedingte Wahrscheinlichkeit dafür mit dem Studium zufrieden zu sein, wenn man in Stadt C studiert <span class="math inline">\(P(Z = ja| Stadt = C)\)</span> gleich der Wahrscheinlichkeit ist mit seinem Studium unabhängig von der Stadt zufrieden <span class="math inline">\(P(Z = ja)\)</span> zu sein</li>
 </ol>
 <div class="cell">
@@ -247,15 +253,35 @@ window.Quarto = {
 <ul>
 <li>Die Wahrscheinlichkeit mit dem Studium zufrieden zu sein ist <strong>abhängig</strong> von der Stadt in der man studiert.</li>
 <li>Die Wahrscheinlichkeit mit dem Studium zufrieden zu sein ist <strong>unabhängig</strong> von der Stadt in der man studiert.</li>
+<li>Laut Multiplikationstheorem ergibt sich: <span class="math inline">\(P(Z = ja \cap Stadt = A) = 0.22033\)</span></li>
+<li>Laut Multiplikationstheorem ergibt sich: <span class="math inline">\(P(Z = ja \cap Stadt = A) = 0.267\)</span></li>
+<li>Die Wahrscheinlichkeit mit seinem Studium zufrieden zu sein ist: <span class="math inline">\(P(Z = ja) = 0.602\)</span></li>
+<li>Die bedingte Wahrscheinlichkeit mit seinem Studium zufrieden zu sein, wenn man in Stadt C studiert ist: <span class="math inline">\(P(Z = ja | Stadt = C) = 0.51596\)</span></li>
 </ul>
 </section>
 </section>
 <section id="solution" class="level1">
 <h1>Solution</h1>
+<p>Für diese Übung bietet es sich an zuerst einige Wahrscheinlichkeiten zu berechnen, die benötigt werden um das Multiplikationstheorem zu prüfen und zu testen ob die bedingte Wahrscheinlichkeit <span class="math inline">\(P(Z = ja | Stadt = C) = P(Z = ja)\)</span> gilt.</p>
+<p>Für das Multiplikationstheorem sind das folgende Wahrscheinlichkeiten:</p>
+<ol type="1">
+<li>Die Wahrscheinlichkeit mit dem Studium zufrieden zu sein: <span class="math inline">\(P(Z = ja)\)</span></li>
+<li>Die Wahrscheinlichkeit in Stadt A zu studieren: <span class="math inline">\(P(Stadt = A)\)</span></li>
+<li>Die Wahrscheinlichkeit in mit dem Studium zufrieden zu sein und in Stadt A zu studieren: <span class="math inline">\(P(Z = ja \cap Stadt = A)\)</span></li>
+</ol>
+<p>Diese Wahrscheinlichkeiten berechnen sich in R folgender massen:</p>
+<ol type="1">
+<li><code>(26700 + 14900 + 9700 + 8900)/(26700 + 14900 + 9700 + 8900 + 9900 + 6400 + 9100 + 14000)</code> = 0.602</li>
+<li><code>(26700 + 9900)/(26700 + 14900 + 9700 + 8900 + 9900 + 6400 + 9100 + 14000)</code> = 0.366</li>
+<li><code>(26700)/(26700 + 14900 + 9700 + 8900 + 9900 + 6400 + 9100 + 14000)</code> = 0.267</li>
+</ol>
+<p>Mit diesen Wahrscheinlichkeiten können wir prüfen ob das Multiplikationstheorem gilt:</p>
+<p>Aus <span class="math inline">\(P(Z = ja) \cdot P(Stadt = A)\)</span> ergibt sich <span class="math inline">\(0.2203\)</span>. Diese Wahrscheinlichkeit ist ungleich der berechneten Wahrscheinlichkeit von <span class="math inline">\(P(Z = ja \cap Stadt = A) = 0.267\)</span>. Daraus können wir schliessen, dass die Wahrschinlihckeiten nicht voneinander unabhängig sind.</p>
+<p>Die Lösung für die bedingten Wahrscheinlichkeiten folgt.</p>
 </section>
 <section id="meta-information" class="level1">
 <h1>Meta-information</h1>
-<p>exname: percent_gender extype: mchoice exsolution: 10 exshuffle: TRUE</p>
+<p>exname: percent_gender extype: mchoice exsolution: 101011 exshuffle: TRUE</p>
 
 
 </section>
