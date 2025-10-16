@@ -2172,64 +2172,6 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </blockquote>
 <div class="webex-question">
 <div class="webex-check webex-box">
-<p>Berechnen Sie anhand der Werte in der unter der Frabge gegebenen Vier-Felder Tafel die bedingte Wahrscheinlichkeit, dass eine Person Krebs <span class="math inline">\(K\)</span> hat, wenn Sie Raucher <span class="math inline">\(R\)</span> ist: <span class="math inline">\(P(K = "ja" | R = "ja")\)</span></p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: left;"></th>
-<th style="text-align: right;">krebs_ja</th>
-<th style="text-align: right;">krebs_nein</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">raucher_ja</td>
-<td style="text-align: right;">80</td>
-<td style="text-align: right;">5320</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">raucher_nein</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">14580</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div id="webex-6723785c32513303fbeb7caf1cbe0cda" class="webex-radiogroup" data-answer="bQceAhsIGVNu">
-<label><input type="radio" autocomplete="off" name="6723785c32513303fbeb7caf1cbe0cda"><span><span class="math inline">\(P(K = "ja" | R = "ja") = 0.005\)</span></span></label><label><input type="radio" autocomplete="off" name="6723785c32513303fbeb7caf1cbe0cda"><span><span class="math inline">\(P(K = "ja" | R = "ja") = 0.01481\)</span></span></label><label><input type="radio" autocomplete="off" name="6723785c32513303fbeb7caf1cbe0cda"><span><span class="math inline">\(P(K = "ja" | R = "ja") = 0.00137\)</span></span></label><label><input type="radio" autocomplete="off" name="6723785c32513303fbeb7caf1cbe0cda"><span><span class="math inline">\(P(K = "ja" | R = "ja") = 0.8\)</span></span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Für diese Frage müssen Sie die Formel der bedingten Wahrscheinlichkeit Nutzen: <span class="math inline">\(P(A|B) = \frac{P(A \cap B)}{P(B)}\)</span>.</p>
-<p>Die jeweiligen Wahrscheinlichkeiten können Sie aus den absoluten Häufigkeiten in der Tabelle berechnen.</p>
-<p>Für <span class="math inline">\(P(A \cap B)\)</span> ergibt sich diese aus der Menge an Leuten die Krebs haben und Raucher sind <span class="math inline">\(N_{A \cap B} = 80\)</span> und der Gesamtzahl an Beobachtungen in der Vier-Felder Tafel <span class="math inline">\(N_{ges} = 2\times 10^{4}\)</span>. Daraus ergibt sich die Wahrscheinlichkeit von <span class="math inline">\(P(A \cap B) = \frac{N_{A \cap B}}{N_{ges}} = \frac{80}{2\times 10^{4}} = 0.004\)</span></p>
-<p>In R sieht diese Berechnung so aus: <code>80 / (80 + 20 + 5320 + 14580)</code></p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.004</code></pre>
-</div>
-</div>
-<p>Für <span class="math inline">\(P(B)\)</span> die Wahrscheinlichkeit, dass eine Person Raucher ist, müssen Sie die Anzahl der Raucher <span class="math inline">\(N_B\)</span> durch die gesamt Zahl an Personen <span class="math inline">\(N_ges\)</span> teilen. Entsprechend ergibt sich für <span class="math inline">\(P(B) = \frac{N_B}{N_{ges}} = \frac{80 + 5320}{2\times 10^{4}}= 0.27\)</span></p>
-<p>In R sieht diese Berechnung wiederum so aus: <code>(80 + 5320)  / (80 + 20 + 5320 + 14580)</code></p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.27</code></pre>
-</div>
-</div>
-<p>Nun müssen Sie diese Werte nur noch durcheinander Teilen und erhalten dann die bedingte Wahrscheinlichkeit, dass eine Person Krebs hat wenn Sie Raucher ist: <span class="math inline">\(P(A \cap B) = \frac{0.004}{0.27} = 0.0148148\)</span></p>
-<p>Wie Ihnen vielleicht aufgefallen ist, ist der Nenner für die beiden Wahrscheinlichkeiten <span class="math inline">\(P(A \cap B)\)</span> und <span class="math inline">\(P(B)\)</span> gleich. Deshalb können wir uns die Berechnung der bedingten Wahrscheinlichkeit in R erleichtern indem wir die Zähler der jeweiligen Wahrscheinlichkeiten durcheinander teilen: <code>80  / (80 + 5320)</code></p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.01481481</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
 <p>Berechnen Sie anhand der Werte in der unter der Frage gegebenen Tabelle, ob die Wahrscheinlichkeit das Personen mit Ihrem Studium zufrieden sind <code>zufrieden_ja</code> von der Stadt in der die Studierenden ihr Studium absolvieren unabhängig sind. Berechnen Sie dafür:</p>
 <ol type="1">
 <li>ob das Multiplikationstheorem für die Wahrscheinlichkeit in Stadt A mit dem Studium zufrieden zu sein gilt: <span class="math inline">\(P(Z = ja \cap Stadt = A) = P(Z = ja) \cdot P(Stadt = A)\)</span>.</li>
@@ -2266,8 +2208,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </table>
 </div>
 </div>
-<div id="webex-b7bbd64dded584dfbf3732aaed683d84" class="webex-checkboxgroup" data-answer="OQdOU0gGGFVIVEgEZQ==">
-<label><input type="checkbox" autocomplete="off" name="b7bbd64dded584dfbf3732aaed683d84"><span>Laut Multiplikationstheorem ergibt sich: <span class="math inline">\(P(Z = ja \cap Stadt = A) = 0.267\)</span></span></label><label><input type="checkbox" autocomplete="off" name="b7bbd64dded584dfbf3732aaed683d84"><span>Laut Multiplikationstheorem ergibt sich: <span class="math inline">\(P(Z = ja \cap Stadt = A) = 0.22033\)</span></span></label><label><input type="checkbox" autocomplete="off" name="b7bbd64dded584dfbf3732aaed683d84"><span>Die Wahrscheinlichkeit mit dem Studium zufrieden zu sein ist <strong>unabhängig</strong> von der Stadt in der man studiert.</span></label><label><input type="checkbox" autocomplete="off" name="b7bbd64dded584dfbf3732aaed683d84"><span>Die bedingte Wahrscheinlichkeit mit seinem Studium zufrieden zu sein, wenn man in Stadt C studiert ist: <span class="math inline">\(P(Z = ja | Stadt = C) = 0.51596\)</span></span></label><label><input type="checkbox" autocomplete="off" name="b7bbd64dded584dfbf3732aaed683d84"><span>Die Wahrscheinlichkeit mit dem Studium zufrieden zu sein ist <strong>abhängig</strong> von der Stadt in der man studiert.</span></label><label><input type="checkbox" autocomplete="off" name="b7bbd64dded584dfbf3732aaed683d84"><span>Die Wahrscheinlichkeit mit seinem Studium zufrieden zu sein ist: <span class="math inline">\(P(Z = ja) = 0.602\)</span></span></label>
+<div id="webex-f9f9df792979d4a66aefaf7c96e74041" class="webex-checkboxgroup" data-answer="PQhKCEhXGwgeCRsJOQ==">
+<label><input type="checkbox" autocomplete="off" name="f9f9df792979d4a66aefaf7c96e74041"><span>Die Wahrscheinlichkeit mit dem Studium zufrieden zu sein ist <strong>abhängig</strong> von der Stadt in der man studiert.</span></label><label><input type="checkbox" autocomplete="off" name="f9f9df792979d4a66aefaf7c96e74041"><span>Die bedingte Wahrscheinlichkeit mit seinem Studium zufrieden zu sein, wenn man in Stadt C studiert ist: <span class="math inline">\(P(Z = ja | Stadt = C) = 0.51596\)</span></span></label><label><input type="checkbox" autocomplete="off" name="f9f9df792979d4a66aefaf7c96e74041"><span>Die Wahrscheinlichkeit mit seinem Studium zufrieden zu sein ist: <span class="math inline">\(P(Z = ja) = 0.602\)</span></span></label><label><input type="checkbox" autocomplete="off" name="f9f9df792979d4a66aefaf7c96e74041"><span>Laut Multiplikationstheorem ergibt sich: <span class="math inline">\(P(Z = ja \cap Stadt = A) = 0.22033\)</span></span></label><label><input type="checkbox" autocomplete="off" name="f9f9df792979d4a66aefaf7c96e74041"><span>Die Wahrscheinlichkeit mit dem Studium zufrieden zu sein ist <strong>unabhängig</strong> von der Stadt in der man studiert.</span></label><label><input type="checkbox" autocomplete="off" name="f9f9df792979d4a66aefaf7c96e74041"><span>Laut Multiplikationstheorem ergibt sich: <span class="math inline">\(P(Z = ja \cap Stadt = A) = 0.267\)</span></span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -2297,6 +2239,84 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li><code>(9700 + 9100) / (26700 + 14900 + 9700 + 8900 + 9900 + 6400 + 9100 + 14000)</code> = 0.188</li>
 </ol>
 <p>Mit diesen Wahrscheinlichkeiten können wir nun die bedingte Wahrscheinlichkeit berechnen, mit den Studium zufrieden zu sein, wenn man in der Stadt C studiert: <span class="math inline">\(P(Z = ja | Stadt = C) = \frac{0.097}{0.188} = 0.516\)</span>, diese Wahrscheinlichkeit ist unterschiedlich von der Wahrscheinlichkeit mit den Studium zufrieden zu sein unabhängig in welcher Stadt man studiert <span class="math inline">\(P(Z = ja) = 0.602\)</span>. So wie aus dem Multiplikationstheorem auch, können wir daraus schliessen, dass die Wahrscheinlichkeiten voneinander abhängig sind.</p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>Berechnen Sie die Wahrscheinlichkeit das eine Person aus dem Datensatz <code>semester_data2</code> grösser als 170cm (<span class="math inline">\(G &gt; 170cm\)</span>) ist. Prüfen Sie, ob diese Wahrscheinlichkeit unabhängig davon ist eine Mann oder eine Frau zu sein. Am einfachsten Berechnen sie dafür die bedingte Wahrscheinlichkeiten grösser als 170cm zu sein, wenn eine Person eine Frau oder ein Mann ist.</p>
+<div id="webex-2f7b030fc7e269e19d58c02cc10285ec" class="webex-checkboxgroup" data-answer="aVYbUxwDHFZPBjg=">
+<label><input type="checkbox" autocomplete="off" name="2f7b030fc7e269e19d58c02cc10285ec"><span>Die Wahrscheinlichkeit grösser als 170 cm zu sein ist: <span class="math inline">\(P(G &gt; 170cm) = 0.73333\)</span></span></label><label><input type="checkbox" autocomplete="off" name="2f7b030fc7e269e19d58c02cc10285ec"><span>Die Wahrscheinlichkeit grösser als 170 cm zu sein ist <strong>abhängig</strong> davon ob die Person eine Frau oder ein Mann ist.</span></label><label><input type="checkbox" autocomplete="off" name="2f7b030fc7e269e19d58c02cc10285ec"><span>Die Wahrscheinlichkeit grösser als 170 cm zu sein ist <strong>unabhängig</strong> davon ob die Person eine Frau oder ein Mann ist.</span></label><label><input type="checkbox" autocomplete="off" name="2f7b030fc7e269e19d58c02cc10285ec"><span>Die bedingte Wahrscheinlichkeit grösser als 170cm zu sein, wenn man ein Mann ist, ist: <span class="math inline">\(P(G &gt; 170cm | Mann) = 0.30233\)</span></span></label><label><input type="checkbox" autocomplete="off" name="2f7b030fc7e269e19d58c02cc10285ec"><span>Die bedingte Wahrscheinlichkeit grösser als 170cm zu sein, wenn man eine Frau ist, ist: <span class="math inline">\(P(G &gt; 170cm | Frau) = 0.13139\)</span></span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>Um diese Frage zu lösen müssen wir drei Wahrscheinlichkeiten aus der relativen Häufigkeiten der Daten schätzen:</p>
+<ol type="1">
+<li>Die Wahrscheinlichkeit grösser als 170cm zu sein</li>
+<li>Die Wahrscheinlichkeit grösser als 170cm zu sein, wenn man eine Frau ist</li>
+<li>Die Wahrscheinlichkeit grösser als 170cm zu sein, wenn man ein Mann ist.</li>
+</ol>
+<p>Um die relative Häufigkeit aller Personen zu bekommen, die grösser als 170 cm sind können wir logische Indizierung nutzen: <code>ist_gross &lt;- semester_data2$grösse &gt; 170</code>, für diese Variable können wir aufsummieren, wie viele Werte <code>TRUE</code> sind: <code>sum(ist_gross)</code>, um dann die relative Häufigkeit zu bekommen müssen wir die absolute Häufigkeit noch durch die Anzahl an Werten teilen: <code>sum(ist_gross)/length(ist_gross)</code>.</p>
+<p>Vielleicht ist Ihnen aufgefallen, dass die letzte Operation im wesentlichen die Berechnun des Mittelwerts der Variable <code>ist_gross</code> darstellt. Insofern können wir auch direkt mit der folgenden Berechnung die Wahrscheinlichkeit berechnen, dass eine Person grösser als 170cm ist: <code>mean(semester_data2$grösse &gt; 170)</code></p>
+<p>Mit dem Trick der Mittelwert berechnung können wir auch schnell und effizient die Wahrscheinlichkeit berechnen grösser als 170 cm zu sein, wenn eine Person eine Frau oder ein Mann ist. Dafür müssen wir jeweils nur die Werte der Variable <code>grösse</code> auswählen für die gilt <code>semester_data2$geschlecht == "weiblich"</code>, wenn wir die bedingte Wahrscheinlichkeit für Frauen wollen, und <code>semester_data2$geschlecht == "männlich"</code>, wenn wir die bedingte Wahrscheinlichkeit für Männer wollen.</p>
+<p>Daraus ergibt sich: P(G &gt; 170cm | Frau) = <code>mean(semester_data2$grösse[semester_data2$geschlecht == "weiblich"] &gt; 170)</code> und P(G &gt; 170cm | Mann) = <code>mean(semester_data2$grösse[semester_data2$geschlecht == "männlich"] &gt; 170)</code></p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>Berechnen Sie anhand der Werte in der unter der Frabge gegebenen Vier-Felder Tafel die bedingte Wahrscheinlichkeit, dass eine Person Krebs <span class="math inline">\(K\)</span> hat, wenn Sie Raucher <span class="math inline">\(R\)</span> ist: <span class="math inline">\(P(K = "ja" | R = "ja")\)</span></p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">krebs_ja</th>
+<th style="text-align: right;">krebs_nein</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">raucher_ja</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">5320</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">raucher_nein</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">14580</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="webex-db6ee9304ad625ac907b095e9657964b" class="webex-radiogroup" data-answer="P1MaVUkJHwBp">
+<label><input type="radio" autocomplete="off" name="db6ee9304ad625ac907b095e9657964b"><span><span class="math inline">\(P(K = "ja" | R = "ja") = 0.01481\)</span></span></label><label><input type="radio" autocomplete="off" name="db6ee9304ad625ac907b095e9657964b"><span><span class="math inline">\(P(K = "ja" | R = "ja") = 0.8\)</span></span></label><label><input type="radio" autocomplete="off" name="db6ee9304ad625ac907b095e9657964b"><span><span class="math inline">\(P(K = "ja" | R = "ja") = 0.005\)</span></span></label><label><input type="radio" autocomplete="off" name="db6ee9304ad625ac907b095e9657964b"><span><span class="math inline">\(P(K = "ja" | R = "ja") = 0.00137\)</span></span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>Für diese Frage müssen Sie die Formel der bedingten Wahrscheinlichkeit Nutzen: <span class="math inline">\(P(A|B) = \frac{P(A \cap B)}{P(B)}\)</span>.</p>
+<p>Die jeweiligen Wahrscheinlichkeiten können Sie aus den absoluten Häufigkeiten in der Tabelle berechnen.</p>
+<p>Für <span class="math inline">\(P(A \cap B)\)</span> ergibt sich diese aus der Menge an Leuten die Krebs haben und Raucher sind <span class="math inline">\(N_{A \cap B} = 80\)</span> und der Gesamtzahl an Beobachtungen in der Vier-Felder Tafel <span class="math inline">\(N_{ges} = 2\times 10^{4}\)</span>. Daraus ergibt sich die Wahrscheinlichkeit von <span class="math inline">\(P(A \cap B) = \frac{N_{A \cap B}}{N_{ges}} = \frac{80}{2\times 10^{4}} = 0.004\)</span></p>
+<p>In R sieht diese Berechnung so aus: <code>80 / (80 + 20 + 5320 + 14580)</code></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.004</code></pre>
+</div>
+</div>
+<p>Für <span class="math inline">\(P(B)\)</span> die Wahrscheinlichkeit, dass eine Person Raucher ist, müssen Sie die Anzahl der Raucher <span class="math inline">\(N_B\)</span> durch die gesamt Zahl an Personen <span class="math inline">\(N_ges\)</span> teilen. Entsprechend ergibt sich für <span class="math inline">\(P(B) = \frac{N_B}{N_{ges}} = \frac{80 + 5320}{2\times 10^{4}}= 0.27\)</span></p>
+<p>In R sieht diese Berechnung wiederum so aus: <code>(80 + 5320)  / (80 + 20 + 5320 + 14580)</code></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.27</code></pre>
+</div>
+</div>
+<p>Nun müssen Sie diese Werte nur noch durcheinander Teilen und erhalten dann die bedingte Wahrscheinlichkeit, dass eine Person Krebs hat wenn Sie Raucher ist: <span class="math inline">\(P(A \cap B) = \frac{0.004}{0.27} = 0.0148148\)</span></p>
+<p>Wie Ihnen vielleicht aufgefallen ist, ist der Nenner für die beiden Wahrscheinlichkeiten <span class="math inline">\(P(A \cap B)\)</span> und <span class="math inline">\(P(B)\)</span> gleich. Deshalb können wir uns die Berechnung der bedingten Wahrscheinlichkeit in R erleichtern indem wir die Zähler der jeweiligen Wahrscheinlichkeiten durcheinander teilen: <code>80  / (80 + 5320)</code></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.01481481</code></pre>
+</div>
+</div>
 </div>
 </div>
 <hr>

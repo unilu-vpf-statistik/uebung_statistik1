@@ -1,0 +1,45 @@
+Question
+=======
+Berechnen Sie die Wahrscheinlichkeit das eine Person aus dem Datensatz `semester_data2` grösser als 170cm ($G > 170cm$) ist. Prüfen Sie, ob diese Wahrscheinlichkeit unabhängig davon ist eine Mann oder eine Frau zu sein. Am einfachsten Berechnen sie dafür die bedingte Wahrscheinlichkeiten grösser als 170cm zu sein, wenn eine Person eine Frau oder ein Mann ist.
+
+```{r}
+#| include: false
+semester_data2 <- read.csv("semester_data2.csv")
+
+p_grösse <- mean(semester_data2$grösse > 170)
+p_grösse_frau <- mean(semester_data2$grösse[semester_data2$geschlecht == "weiblich"] > 170)
+p_grösse_mann <- mean(semester_data2$grösse[!semester_data2$geschlecht == "weiblich"] > 170)
+```
+
+
+Answerlist
+--------
+* Die Wahrscheinlichkeit grösser als 170 cm zu sein ist **abhängig** davon ob die Person eine Frau oder ein Mann ist.
+* Die Wahrscheinlichkeit grösser als 170 cm zu sein ist **unabhängig** davon ob die Person eine Frau oder ein Mann ist.
+* Die Wahrscheinlichkeit grösser als 170 cm zu sein ist: $P(G > 170cm) = `r round(1 - p_grösse,5)`$
+* Die bedingte Wahrscheinlichkeit grösser als 170cm zu sein, wenn man ein Mann ist, ist: $P(G > 170cm | Mann) = `r round(1 - p_grösse_mann,5)`$
+* Die bedingte Wahrscheinlichkeit grösser als 170cm zu sein, wenn man eine Frau ist, ist: $P(G > 170cm | Frau) = `r round(p_grösse_frau,5)`$
+
+Solution
+========
+
+Um diese Frage zu lösen müssen wir drei Wahrscheinlichkeiten aus der relativen Häufigkeiten der Daten schätzen:
+
+1. Die Wahrscheinlichkeit grösser als 170cm zu sein
+2. Die Wahrscheinlichkeit grösser als 170cm zu sein, wenn man eine Frau ist
+3. Die Wahrscheinlichkeit grösser als 170cm zu sein, wenn man ein Mann ist.
+
+Um die relative Häufigkeit aller Personen zu bekommen, die grösser als 170 cm sind können wir logische Indizierung nutzen: `ist_gross <- semester_data2$grösse > 170`, für diese Variable können wir aufsummieren, wie viele Werte `TRUE` sind: `sum(ist_gross)`, um dann die relative Häufigkeit zu bekommen müssen wir die absolute Häufigkeit noch durch die Anzahl an Werten teilen: `sum(ist_gross)/length(ist_gross)`.
+
+Vielleicht ist Ihnen aufgefallen, dass die letzte Operation im wesentlichen die Berechnun des Mittelwerts der Variable `ist_gross` darstellt. Insofern können wir auch direkt mit der folgenden Berechnung die Wahrscheinlichkeit berechnen, dass eine Person grösser als 170cm ist: `mean(semester_data2$grösse > 170)`
+
+Mit dem Trick der Mittelwert berechnung können wir auch schnell und effizient die Wahrscheinlichkeit berechnen grösser als 170 cm zu sein, wenn eine Person eine Frau oder ein Mann ist. Dafür müssen wir jeweils nur die Werte der Variable `grösse` auswählen für die gilt `semester_data2$geschlecht == "weiblich"`, wenn wir die bedingte Wahrscheinlichkeit für Frauen wollen, und `semester_data2$geschlecht == "männlich"`, wenn wir die bedingte Wahrscheinlichkeit für Männer wollen.
+
+Daraus ergibt sich: P(G > 170cm | Frau) =  `mean(semester_data2$grösse[semester_data2$geschlecht == "weiblich"] > 170)` und P(G > 170cm | Mann) =  `mean(semester_data2$grösse[semester_data2$geschlecht == "männlich"] > 170)`
+
+Meta-information
+=========
+exname: percent_gender 
+extype: mchoice 
+exsolution: 10001
+exshuffle: TRUE
