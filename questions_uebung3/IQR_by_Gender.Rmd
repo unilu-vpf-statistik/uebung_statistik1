@@ -13,13 +13,13 @@ Answerlist
 
 Solution
 ========
-Um den Interquartilabstand der Grösse der weiblichen und männlichen Studierenden zu bekommen erstellen sie als erstes eine logische Index-Variable die kodiert welche Studierenden weiblich sind: `index_weiblich <- semester_data2$geschlecht == "weiblich`
+Um den Interquartilabstand der Grösse der weiblichen und männlichen Studierenden zu bekommen erstellen sie als erstes eine logische Index-Variable die kodiert welche Studierenden weiblich sind: `index_weiblich <- semester_data2$geschlecht == "weiblich"`
 
-Mit Hilfe dieser Index-Variable können Sie dann den Interquartilabstand nur für die Grösse der weiblich Studierenden berechnen: `IQR(semester_data2$grössse[index_weiblich])`. 
+Mit Hilfe dieser Index-Variable können Sie dann den Interquartilabstand nur für die Grösse der weiblich Studierenden berechnen: `IQR(semester_data2$grösse[index_weiblich])`. 
 
-Um den Interquartilabstand der männlichen Studierenden zu erlangen können Sie einfach die negation von `index_weiblich` nutzen, da es nur zwei Merkmalsausprägungen gibt: `IQR(semester_data2$grössse[!index_weiblich])`
+Um den Interquartilabstand der männlichen Studierenden zu erlangen können Sie einfach die negation von `index_weiblich` nutzen, da es nur zwei Merkmalsausprägungen gibt: `IQR(semester_data2$grösse[!index_weiblich])`
 
-Alternative hätten Sie wie in Übung 2 die `aggregate` Funktion nutzen können und den Interquartilabstand gruppiert für alle Geschlechter zu berechnen: `aggregate(semester_data2$grössse, list(semester_data2$geschlecht), FUN = IQR)`
+Alternative hätten Sie wie in Übung 2 die `aggregate` Funktion nutzen können und den Interquartilabstand gruppiert für alle Geschlechter zu berechnen: `aggregate(semester_data2$grösse, list(semester_data2$geschlecht), FUN = IQR)`
 
 Meta-information
 =========
