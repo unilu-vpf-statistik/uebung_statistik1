@@ -28,7 +28,7 @@ semester_data2 <- read.csv("semester_data2.csv")
 
 In dieser Übung werden keine neuen Konzepte oder Vorgehensweisen mit R eingeführt und besprochen. Statt dessen werden wir mit Hilfe der bisher bekannten Methoden und Operationen die Konzepte der Wahrscheinlichkeitstheorie üben und vertiefen.
 
-Wenn Sie trotzdem nochmal eine Erklärung aus einer anderen Perspektive von den wesentlichen Grundbegriffen und Konzepten bekommen, dann empfehle ich Ihnen sich die folgenden YouTube Videos anzuschauen:
+Wenn Sie trotzdem nochmal eine Erklärungvon den wesentlichen Grundbegriffen und Konzepten der Wahrscheinlichkeitstheorie aus einer anderen Perspektive bekommen wollen, dann empfehle ich Ihnen sich die folgenden YouTube Videos anzuschauen:
 
 1.  Grundlagen: [Wahrscheinlichkeiten](https://www.youtube.com/watch?v=YTWM4aOqVwM&list=PLkxhZdQfAXW2yorCKHwgx4U62iLOCF_oK)
 2.  Grundlagen: [Schnittmenge, Vereiningungsmenge & bedingte Wahrscheinlichkeit](https://www.youtube.com/watch?v=bLwF2fI8Guc&list=PLkxhZdQfAXW2yorCKHwgx4U62iLOCF_oK&index=2)
