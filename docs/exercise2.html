@@ -2108,27 +2108,21 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>Nutzen Sie eine <a href="https://unilu-vpf-statistik.github.io/uebung_statistik1/about.html#suchmaschinen">Suchmaschine</a>, wenn Sie nicht wissen welche Funktionen Ihnen ein bestimmtes Ergebnis liefern. Ausserdem können Sie in R immer die <a href="https://www.r-project.org/help.html">Hilfe</a> einer Funktion aufrufen, indem sie vor den Namen der Funktion ein Fragezeichen schreiben, z. Bsp <code>?median</code> oder die Hilfe-Funktion <code>help()</code> mit dem jeweligen Funktionsbefehl ausführen: <code>help(median)</code>.</p>
 <div class="webex-question">
 <div class="webex-check webex-box">
-<p>In der Variable <code>wissen_statistik</code> sollten die Studierenden zu Beginn der VL einschätzen, wie sie ihr Grundlagenwissen im Bereich Statistik einschätzen. Wie viel Prozent (gerundet) schätzen Ihr Wissen gleich oder besser als das Rating 4 ein?</p>
-<div id="webex-ad8f298d393f316d4ee38ff6de20cbfe" class="webex-radiogroup" data-answer="OlQUVh4IFFQfCW4=">
-<label><input type="radio" autocomplete="off" name="ad8f298d393f316d4ee38ff6de20cbfe"><span>8 %</span></label><label><input type="radio" autocomplete="off" name="ad8f298d393f316d4ee38ff6de20cbfe"><span>15 %</span></label><label><input type="radio" autocomplete="off" name="ad8f298d393f316d4ee38ff6de20cbfe"><span>26 %</span></label><label><input type="radio" autocomplete="off" name="ad8f298d393f316d4ee38ff6de20cbfe"><span>32 %</span></label><label><input type="radio" autocomplete="off" name="ad8f298d393f316d4ee38ff6de20cbfe"><span>60 %</span></label>
+<p>Was ist der Modus der Häufigkeitsverteilung der Wohnorte im Datensatz <code>semester_data</code>?</p>
+<div id="webex-ed4b422af9aab82b0f7ded0794aa1736" class="webex-radiogroup" data-answer="PlQYUxgCHlFKCTw=">
+<label><input type="radio" autocomplete="off" name="ed4b422af9aab82b0f7ded0794aa1736"><span>Zuerich</span></label><label><input type="radio" autocomplete="off" name="ed4b422af9aab82b0f7ded0794aa1736"><span>Bern</span></label><label><input type="radio" autocomplete="off" name="ed4b422af9aab82b0f7ded0794aa1736"><span>St.&nbsp;Gallen</span></label><label><input type="radio" autocomplete="off" name="ed4b422af9aab82b0f7ded0794aa1736"><span>Basel</span></label><label><input type="radio" autocomplete="off" name="ed4b422af9aab82b0f7ded0794aa1736"><span>Luzern</span></label>
 </div>
 </div>
 <div class="webex-solution">
-<p>Um die kumulierten Prozente über die Rating-Kategorien zu erlangen, erstellen wir als erstes eine Häufigkeitstabelle <code>table(semester_data$wissen_statistik)</code>, wenn wir die Werte dieser Tabelle durch die Gesamtzahl an Beobachtungen <code>sum(table(semester_data$wissen_statistik))</code>, dann bekommen wir eine relative Häufigkeitstabelle <code>table(semester_data$wissen_statistik)/sum(table(semester_data$wissen_statistik))</code>.</p>
-<p>Nun müssen wir die Werte für die Ratings 4 und 5 aufsummieren. Alternativ können wir auch die kumlativen relativen Häufigkeiten für die Ratings mit Hilfe der kumulativen Summenfunktion <code>cumsum()</code> berechnen.</p>
-<pre><code>stat_wissen_häufigkeit &lt;- table(semester_data$wissen_statistik)
-stat_wissen_rel_häufigkeit &lt;- stat_wissen_häufigkeit / sum(stat_wissen_häufigkeit)
-
-stat_wissen_rel_häufigkeit[4] + stat_wissen_rel_häufigkeit[5]
-cumsum(stat_wissen_rel_häufigkeit)</code></pre>
-<p>Mit Hilfe dieser Funktionen sollten Sie eine relative Häufigkeit von <code>17.5 %</code> für ein Rating von 4 und von <code>8.1 %</code> für ein Rating von 5 erhalten. Addiert ergibt das ein gerundetes Rating von <code>26%</code> für ein Rating von 4 oder höher.</p>
+<p>Wenn sie eine Häufigkeitsverteilung für den Wohnort generieren: <code>table(semester_data$wohnort)</code>, dann können Sie entweder direkt aus der Tabelle ablesen, welche Kategorie die häufigste ist, oder Sie können die Tabelle zusätzlich sortieren lassen <code>sort(table(semester_data$wohnort))</code>. Standardmässig sortiert die Funktion <code>sort()</code> Werte in aufsteigender Reihenfolge, wenn sie die Werte in absteigender Reihenfolge sortieren wollen, dann können sie zusätzlich das Argument <code>decreasing = TRUE</code> setzen.</p>
+<p>Wenn Sie diese Funktionen nutzen, dann sollten Sie zu dem Ergebnis kommen, dass Bern mit 64 Personen in der Kategorie die häufigste Kategorie der Variable <code>wohnort</code> ist.</p>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Was ist das mittlere Alter der Frauen und in Männer (gerundet auf eine Nachkommastelle) im Datensatz <code>semester_data</code>?</p>
-<div id="webex-27b96a8dd9f4783e81064174add75ea1" class="webex-checkboxgroup" data-answer="aQdOCRpRFFVICUoFag==">
-<label><input type="checkbox" autocomplete="off" name="27b96a8dd9f4783e81064174add75ea1"><span>M(männlich) = 22.1</span></label><label><input type="checkbox" autocomplete="off" name="27b96a8dd9f4783e81064174add75ea1"><span>M(männlich) = 23.0</span></label><label><input type="checkbox" autocomplete="off" name="27b96a8dd9f4783e81064174add75ea1"><span>M(weiblich) = 22.1</span></label><label><input type="checkbox" autocomplete="off" name="27b96a8dd9f4783e81064174add75ea1"><span>M(männlich) = 23.2</span></label><label><input type="checkbox" autocomplete="off" name="27b96a8dd9f4783e81064174add75ea1"><span>M(weiblich) = 23.2</span></label><label><input type="checkbox" autocomplete="off" name="27b96a8dd9f4783e81064174add75ea1"><span>M(weiblich) = 23.0</span></label>
+<div id="webex-51a020cdae83a7af84d18e230f7fcd75" class="webex-checkboxgroup" data-answer="bgFNAB4AT1VNVBQDPA==">
+<label><input type="checkbox" autocomplete="off" name="51a020cdae83a7af84d18e230f7fcd75"><span>M(weiblich) = 22.1</span></label><label><input type="checkbox" autocomplete="off" name="51a020cdae83a7af84d18e230f7fcd75"><span>M(weiblich) = 23.2</span></label><label><input type="checkbox" autocomplete="off" name="51a020cdae83a7af84d18e230f7fcd75"><span>M(männlich) = 22.1</span></label><label><input type="checkbox" autocomplete="off" name="51a020cdae83a7af84d18e230f7fcd75"><span>M(weiblich) = 23.0</span></label><label><input type="checkbox" autocomplete="off" name="51a020cdae83a7af84d18e230f7fcd75"><span>M(männlich) = 23.2</span></label><label><input type="checkbox" autocomplete="off" name="51a020cdae83a7af84d18e230f7fcd75"><span>M(männlich) = 23.0</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -2142,8 +2136,8 @@ cumsum(stat_wissen_rel_häufigkeit)</code></pre>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Wie hoch liegt der Anteil an Frauen und Männern in den Daten in Prozent?</p>
-<div id="webex-ba313321663bea8f98ca5bdea2f38e10" class="webex-checkboxgroup" data-answer="OVEfAB8CHgEaBh9SOA==">
-<label><input type="checkbox" autocomplete="off" name="ba313321663bea8f98ca5bdea2f38e10"><span>26.2% Männer</span></label><label><input type="checkbox" autocomplete="off" name="ba313321663bea8f98ca5bdea2f38e10"><span>17.5% Männer</span></label><label><input type="checkbox" autocomplete="off" name="ba313321663bea8f98ca5bdea2f38e10"><span>82.5% Frauen</span></label><label><input type="checkbox" autocomplete="off" name="ba313321663bea8f98ca5bdea2f38e10"><span>11.9% Männer</span></label><label><input type="checkbox" autocomplete="off" name="ba313321663bea8f98ca5bdea2f38e10"><span>88.1% Frauen</span></label><label><input type="checkbox" autocomplete="off" name="ba313321663bea8f98ca5bdea2f38e10"><span>73.8% Frauen</span></label>
+<div id="webex-cc72e2277238b7322bf345c3a36645de" class="webex-checkboxgroup" data-answer="OFIbAkkCHgcbAx8IPw==">
+<label><input type="checkbox" autocomplete="off" name="cc72e2277238b7322bf345c3a36645de"><span>82.5% Frauen</span></label><label><input type="checkbox" autocomplete="off" name="cc72e2277238b7322bf345c3a36645de"><span>26.2% Männer</span></label><label><input type="checkbox" autocomplete="off" name="cc72e2277238b7322bf345c3a36645de"><span>11.9% Männer</span></label><label><input type="checkbox" autocomplete="off" name="cc72e2277238b7322bf345c3a36645de"><span>88.1% Frauen</span></label><label><input type="checkbox" autocomplete="off" name="cc72e2277238b7322bf345c3a36645de"><span>17.5% Männer</span></label><label><input type="checkbox" autocomplete="off" name="cc72e2277238b7322bf345c3a36645de"><span>73.8% Frauen</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -2155,8 +2149,8 @@ cumsum(stat_wissen_rel_häufigkeit)</code></pre>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Mit welcher Funktion können Sie ein Histogramm der Altersverteilung der Variable <code>alter</code> im Datensatz <code>semeseter_data</code> erstellen?</p>
-<div id="webex-61424b3ebc08c310c3152a6f5e2eb150" class="webex-radiogroup" data-answer="bQEYAxhSH1VOU20=">
-<label><input type="radio" autocomplete="off" name="61424b3ebc08c310c3152a6f5e2eb150"><span><code>barplot(semester_data$alter)</code></span></label><label><input type="radio" autocomplete="off" name="61424b3ebc08c310c3152a6f5e2eb150"><span><code>hist(semester_data$alter)</code></span></label><label><input type="radio" autocomplete="off" name="61424b3ebc08c310c3152a6f5e2eb150"><span><code>histogram(semester_data$alter)</code></span></label><label><input type="radio" autocomplete="off" name="61424b3ebc08c310c3152a6f5e2eb150"><span><code>pie(semester_data$alter)</code></span></label><label><input type="radio" autocomplete="off" name="61424b3ebc08c310c3152a6f5e2eb150"><span><code>plot(semester_data$alter</code></span></label>
+<div id="webex-14d396cf4aea50c68ac62dc1d079dfe7" class="webex-radiogroup" data-answer="agRIAxUGT1cYUTg=">
+<label><input type="radio" autocomplete="off" name="14d396cf4aea50c68ac62dc1d079dfe7"><span><code>histogram(semester_data$alter)</code></span></label><label><input type="radio" autocomplete="off" name="14d396cf4aea50c68ac62dc1d079dfe7"><span><code>plot(semester_data$alter</code></span></label><label><input type="radio" autocomplete="off" name="14d396cf4aea50c68ac62dc1d079dfe7"><span><code>barplot(semester_data$alter)</code></span></label><label><input type="radio" autocomplete="off" name="14d396cf4aea50c68ac62dc1d079dfe7"><span><code>hist(semester_data$alter)</code></span></label><label><input type="radio" autocomplete="off" name="14d396cf4aea50c68ac62dc1d079dfe7"><span><code>pie(semester_data$alter)</code></span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -2167,14 +2161,20 @@ cumsum(stat_wissen_rel_häufigkeit)</code></pre>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
-<p>Was ist der Modus der Häufigkeitsverteilung der Wohnorte im Datensatz <code>semester_data</code>?</p>
-<div id="webex-f8a750e3984d52c7acd4d9403dea1ed2" class="webex-radiogroup" data-answer="PQhNBhkASQMVCGk=">
-<label><input type="radio" autocomplete="off" name="f8a750e3984d52c7acd4d9403dea1ed2"><span>St.&nbsp;Gallen</span></label><label><input type="radio" autocomplete="off" name="f8a750e3984d52c7acd4d9403dea1ed2"><span>Bern</span></label><label><input type="radio" autocomplete="off" name="f8a750e3984d52c7acd4d9403dea1ed2"><span>Zuerich</span></label><label><input type="radio" autocomplete="off" name="f8a750e3984d52c7acd4d9403dea1ed2"><span>Luzern</span></label><label><input type="radio" autocomplete="off" name="f8a750e3984d52c7acd4d9403dea1ed2"><span>Basel</span></label>
+<p>In der Variable <code>wissen_statistik</code> sollten die Studierenden zu Beginn der VL einschätzen, wie sie ihr Grundlagenwissen im Bereich Statistik einschätzen. Wie viel Prozent (gerundet) schätzen Ihr Wissen gleich oder besser als das Rating 4 ein?</p>
+<div id="webex-454178d62b7cffa420161a8586c0bffe" class="webex-radiogroup" data-answer="bwUYARsJSAYeUmo=">
+<label><input type="radio" autocomplete="off" name="454178d62b7cffa420161a8586c0bffe"><span>8 %</span></label><label><input type="radio" autocomplete="off" name="454178d62b7cffa420161a8586c0bffe"><span>15 %</span></label><label><input type="radio" autocomplete="off" name="454178d62b7cffa420161a8586c0bffe"><span>26 %</span></label><label><input type="radio" autocomplete="off" name="454178d62b7cffa420161a8586c0bffe"><span>32 %</span></label><label><input type="radio" autocomplete="off" name="454178d62b7cffa420161a8586c0bffe"><span>60 %</span></label>
 </div>
 </div>
 <div class="webex-solution">
-<p>Wenn sie eine Häufigkeitsverteilung für den Wohnort generieren: <code>table(semester_data$wohnort)</code>, dann können Sie entweder direkt aus der Tabelle ablesen, welche Kategorie die häufigste ist, oder Sie können die Tabelle zusätzlich sortieren lassen <code>sort(table(semester_data$wohnort))</code>. Standardmässig sortiert die Funktion <code>sort()</code> Werte in aufsteigender Reihenfolge, wenn sie die Werte in absteigender Reihenfolge sortieren wollen, dann können sie zusätzlich das Argument <code>decreasing = TRUE</code> setzen.</p>
-<p>Wenn Sie diese Funktionen nutzen, dann sollten Sie zu dem Ergebnis kommen, dass Bern mit 64 Personen in der Kategorie die häufigste Kategorie der Variable <code>wohnort</code> ist.</p>
+<p>Um die kumulierten Prozente über die Rating-Kategorien zu erlangen, erstellen wir als erstes eine Häufigkeitstabelle <code>table(semester_data$wissen_statistik)</code>, wenn wir die Werte dieser Tabelle durch die Gesamtzahl an Beobachtungen <code>sum(table(semester_data$wissen_statistik))</code>, dann bekommen wir eine relative Häufigkeitstabelle <code>table(semester_data$wissen_statistik)/sum(table(semester_data$wissen_statistik))</code>.</p>
+<p>Nun müssen wir die Werte für die Ratings 4 und 5 aufsummieren. Alternativ können wir auch die kumlativen relativen Häufigkeiten für die Ratings mit Hilfe der kumulativen Summenfunktion <code>cumsum()</code> berechnen.</p>
+<pre><code>stat_wissen_häufigkeit &lt;- table(semester_data$wissen_statistik)
+stat_wissen_rel_häufigkeit &lt;- stat_wissen_häufigkeit / sum(stat_wissen_häufigkeit)
+
+stat_wissen_rel_häufigkeit[4] + stat_wissen_rel_häufigkeit[5]
+cumsum(stat_wissen_rel_häufigkeit)</code></pre>
+<p>Mit Hilfe dieser Funktionen sollten Sie eine relative Häufigkeit von <code>17.5 %</code> für ein Rating von 4 und von <code>8.1 %</code> für ein Rating von 5 erhalten. Addiert ergibt das ein gerundetes Rating von <code>26%</code> für ein Rating von 4 oder höher.</p>
 </div>
 </div>
 <hr>
