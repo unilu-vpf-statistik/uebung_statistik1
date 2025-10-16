@@ -1,0 +1,41 @@
+Question
+=======
+In einem Seminar mit 30 Studierenden sollen 4 Personen zusammen ein Gruppenreferat vorbereiten. Dafür will der Dozent 4 zufällige Studierende aus allen Seminarteilnehmern ziehen. Sie und Ihre Kollegin, haben gerade überhaupt keine Zeit noch mehr fürs Studium zu tun und hoffen, dass sie nicht gezogen werden. Welches Modell der Kombinatorik passt für das hier vorliegenden Zufallsexperiment und wie hoch ist die Wahrscheinlichkeit, dass Sie und Ihre Kollegin um das Referat herum kommen?
+
+```{r}
+#| include: false
+nchoosek <- function(k,n) {
+  prod(k:1)/(prod((k-n):1)*prod(n:1))
+}
+
+gesamtzahl <- nchoosek(30,4)
+günstige_fälle <- nchoosek(28,4)
+wahrscheinlichkeit <- günstige_fälle/gesamtzahl
+```
+
+Answerlist
+--------
+* Für diese Zufallsexperiment wählt man das Modell *ohne* Zurücklegen und *ohne* Berücksichtigung der Reihenfolge
+* Für diese Zufallesexperiment wählt man das Modell *ohne* Zurücklegen und *mit* Berücksichtigung der Reihenfolge
+* Die Wahrscheinlichkeit, dass Sie und Ihre Kollegin um das Referat herum kommen ist: $P = `r round(wahrscheinlichkeit,3)`$
+* Die Wahrscheinlichkeit, dass Sie und Ihre Kollegin um das Referat herum kommen ist: $P = `r round(1- wahrscheinlichkeit,3)`$
+
+Solution
+========
+
+Zuerst müssen Sie erkennen, dass es sich bei diesem Zufallsexperiment um einen Ziehen ohne Zurücklegen und ohne Berücksichtigung der Reihenfolge handelt.
+
+Entsprechend können wir mit Hilfe des Binomialkoeffizienten als erstes die Gesamtzahl an möglichen Ergebnissen $K$ bestimmen. Die Zahl an möglichen Ergebnissen bei einer Ziehung $k$ ist dabei 30 und die Anzahl an Ziehungen $n$ ist 4. Mit Hilfe der Produktfunktion `prod` können wir die entsprechenden Fakultäten mit Hilfe von Ganzzahligen Sequenzen `k:1`, dabei in die entsprechende Funktion einsetzen: `gesamtzahl <- prod(30:1)/(prod((30-4):1)*prod(4:1))`
+
+Nun müssen wir überlegen, wie viele Ergebnisse günstig für das Ereignis, dass weder Sie noch Ihre Kollegin für das Referat ausgewählt werden, sind. Im Prinzip heisst dieses Ereignis, dass die Studierenden für das Gruppenreferat nur aus den anderen 28 Teilnehmern gezogen werden, die nicht Sie oder Ihre Kollegin sind. Damit können wir die Anzahl günstiger Ereignisse ebenfalls mit einem Binomialkoeffizienten ausrechnen. Dabei setzen wir die Zahl an möglichen Ergebnissen bei einer Ziehung $k$ jedoch auf 28. Die Anzahl an Ziehungen $n$ bleibt bei 4. Also ergibt sich die Anzahl an günstigen Ereignisse aus: `günstige_fälle <- prod(28:1)/(prod((28-4):1)*prod(4:1))`
+
+Mit Hilfe dieser beiden Werte können wir nun die Wahrscheinlichkeit ausrechnen, dass weder Sie noch Ihre Freundin für das Referat ausgewählt werden: `wahrscheinlichkeit <- günstige_fälle / gesamtzahl`.
+
+Aus dieser Berechnung sollte sich ergeben, dass die Wahrscheinlichkeit, dass Sie und Ihre Kollegin um das Referat herum kommen gleich `r round(wahrscheinlichkeit,4)` ist.
+
+Meta-information
+=========
+exname: prob_kombinatorik
+extype: mchoice 
+exsolution: 1010
+exshuffle: TRUE

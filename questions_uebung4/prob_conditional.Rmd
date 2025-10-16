@@ -61,7 +61,7 @@ Wie Ihnen vielleicht aufgefallen ist, ist der Nenner für die beiden Wahrscheinl
 
 Meta-information
 =========
-exname: percent_gender 
+exname: prob_conditional 
 extype: schoice 
 exsolution: 1000
 exshuffle: TRUE

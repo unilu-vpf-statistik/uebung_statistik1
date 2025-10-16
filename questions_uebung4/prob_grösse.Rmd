@@ -39,7 +39,7 @@ Daraus ergibt sich: P(G > 170cm | Frau) =  `mean(semester_data2$grösse[semester
 
 Meta-information
 =========
-exname: percent_gender 
+exname: prob_grösse 
 extype: mchoice 
 exsolution: 10001
 exshuffle: TRUE

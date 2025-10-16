@@ -1,0 +1,48 @@
+Question
+=======
+Berechnen Sie die Wahrscheinlichkeit das eine Person aus dem Datensatz `semester_data2` aus der Schweiz kommt. Prüfen Sie, ob diese Wahrscheinlichkeit unabhängig davon ist eine Mann oder eine Frau zu sein. Am einfachsten Berechnen sie dafür die bedingte Wahrscheinlichkeiten aus der Schweiz zu sein, wenn eine Person eine Frau oder ein Mann ist.
+
+```{r}
+#| include: false
+semester_data2 <- read.csv("semester_data2.csv")
+
+p_schweiz <- mean(semester_data2$nationalität == "Schweiz")
+p_schweiz_frau <- mean(semester_data2$nationalität[semester_data2$geschlecht == "weiblich"] == "Schweiz")
+p_schweiz_mann <- mean(semester_data2$nationalität[!semester_data2$geschlecht == "weiblich"] == "Schweiz")
+```
+
+Answerlist
+--------
+* Die Wahrscheinlichkeit aus der Schweiz zu sein ist **abhängig** davon ob die Person eine Frau oder ein Mann ist.
+* Die Wahrscheinlichkeit aus der Schweiz zu sein ist **unabhängig** davon ob die Person eine Frau oder ein Mann ist.
+* Die Wahrscheinlichkeit aus der Schweiz zu sein ist: $P(Schweiz) = `r round(p_schweiz,3)`$
+* Die bedingte Wahrscheinlichkeit aus der Schweiz zu sein, wenn man ein Mann ist, ist: $P(Schweiz | Mann) = `r round(p_schweiz_frau,3)`$
+* Die bedingte Wahrscheinlichkeit grösser als 170cm zu sein, wenn man eine Frau ist, ist: $P(Schweiz | Frau) = `r round(p_schweiz_mann,3)`$
+
+Solution
+========
+
+Um diese Frage zu lösen müssen wir drei Wahrscheinlichkeiten aus der relativen Häufigkeiten der Daten schätzen:
+
+1. Die Wahrscheinlichkeit aus der Schweiz zu sein
+2. Die Wahrscheinlichkeit aus der Schweiz zu sein, wenn man eine Frau ist
+3. Die Wahrscheinlichkeit aus der Schweiz zu sein, wenn man ein Mann ist.
+
+Um die relative Häufigkeit aller Personen zu bekommen, die aus der Schweiz sind können wir logische Indizierung nutzen: `ist_schweizer <- semester_data2$nationalität == "Schweiz"`, für diese Variable können wir wiederum aufsummieren, wie viele Werte `TRUE` sind: `sum(ist_schweizer)`, um dann die relative Häufigkeit zu bekommen müssen wir die absolute Häufigkeit noch durch die Anzahl an Werten teilen: `sum(ist_schweizer)/length(ist_schweizer)`.
+
+Vielleicht ist Ihnen aufgefallen, dass die letzte Operation im wesentlichen die Berechnung des Mittelwerts der Variable `ist_schweizer` darstellt. Insofern können wir auch direkt mit der folgenden Berechnung die Wahrscheinlichkeit berechnen, dass eine Person aus der Schweiz ist: `mean(semester_data2$nationalität == "Schweiz")`
+
+Mit dem Trick der Mittelwertberechnung können wir auch schnell und effizient die Wahrscheinlichkeit berechnen aus der Schweiz zu sein, wenn eine Person eine Frau oder ein Mann ist. Dafür müssen wir jeweils nur die Werte der Variable `nationalität` auswählen für die gilt `semester_data2$geschlecht == "weiblich"`, wenn wir die bedingte Wahrscheinlichkeit für Frauen wollen, und `semester_data2$geschlecht == "männlich"`, wenn wir die bedingte Wahrscheinlichkeit für Männer wollen.
+
+Daraus ergibt sich: P(Schweiz | Frau) =  `mean(semester_data2$nationalität[semester_data2$geschlecht == "weiblich"] == "Schweiz")` und P(Schweiz | Mann) =  `mean(semester_data2$nationalität[semester_data2$geschlecht == "männlich"] == "Schweiz")`
+
+Wenn sie diese Werte miteinander vergleich: P(Schweiz) = `r round(p_schweiz,3)`; P(Schweiz | Frau) = `r round(p_schweiz_frau,3)`; und P(Schweiz | Mann) = `r round(p_schweiz_mann,3)`, dann weichen diese numerische (also was die absoluten Zahlen angeht) zwar leicht voneinander ab. Aber an dieser Stelle müssen wir beachten, dass die Schätzung der "wahren" Wahrscheinlichkeit durch die relativen Häufigkeiten aus den Daten eben auch nicht perfekt ist. Deshalb würde ich an dieser Stelle darauf schliessen, dass die Wahrscheinlichkeit aus der Schweiz zu sein stochastisch *unabhängig* davon ist ob man eine Frau oder ein Mann ist.
+
+Um diesen Schluss noch weiter abzusichern, könnten noch mehr Daten gesammelt werden. Ausserdem werden wir im Laufe des Semesters noch einen statistischen Test kennen lernen, der prüft ob die hier gefundene Abweichung statistisch bedeutsam ist.
+
+Meta-information
+=========
+exname: prob_nationalität 
+extype: mchoice 
+exsolution: 01100
+exshuffle: TRUE

@@ -74,7 +74,7 @@ Mit diesen Wahrscheinlichkeiten können wir nun die bedingte Wahrscheinlichkeit 
 
 Meta-information
 =========
-exname: percent_gender 
+exname: prob_independence 
 extype: mchoice 
 exsolution: 101011
 exshuffle: TRUE
