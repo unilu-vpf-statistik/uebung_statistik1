@@ -1,0 +1,70 @@
+Question
+=======
+Berechnen Sie anhand der Werte in der unter der Frage gegebenen Tabelle, ob die Wahrscheinlichkeit das Personen mit Ihrem Studium zufrieden sind `zufrieden_ja` von der Stadt in der die Studierenden ihr Studium absolvieren unabhängig sind.  Berechnen Sie dafür:
+
+1. ob das Multiplikationstheorem für die Wahrscheinlichkeit in Stadt A mit dem Studium zufrieden zu sein gilt: $P(Z = ja \cap Stadt = A) = P(Z = ja) \cdot P(Stadt = A)$.
+2. ob die bedingte Wahrscheinlichkeit dafür mit dem Studium zufrieden zu sein, wenn man in Stadt C studiert $P(Z = ja| Stadt = C)$ gleich der Wahrscheinlichkeit ist mit seinem Studium unabhängig von der Stadt zufrieden $P(Z = ja)$ zu sein
+
+```{r}
+#| echo: false
+tabelle <- matrix(c(26700,9900,14900,6400,9700,9100,8900,14400), ncol = 4, nrow = 2)
+rownames(tabelle) <- c('zufrieden_ja', 'zufrieden_nein')
+colnames(tabelle) <- c('stadt_a', 'stadt_b','stadt_c','stadt_d')
+
+knitr::kable(tabelle)
+```
+
+
+```{r}
+#| include: false
+p_zufrieden <- sum(tabelle["zufrieden_ja",])/sum(tabelle)
+p_stadtA <- sum(tabelle[,"stadt_a"])/sum(tabelle)
+p_stadtC <- sum(tabelle[,"stadt_c"])/sum(tabelle)
+
+# multiplikationstheorem
+p_union_Azufrieden <- tabelle["zufrieden_ja","stadt_a"]/sum(tabelle[])
+multi_test <- p_zufrieden * p_stadtA
+
+# conditional probability
+p_zufrieden_stadtC <- tabelle["zufrieden_ja","stadt_c"]/sum(tabelle[,"stadt_c"])
+p_union_Czufrieden <-  tabelle["zufrieden_ja","stadt_c"]/sum(tabelle[])
+```
+
+
+Answerlist
+--------
+* Die Wahrscheinlichkeit mit dem Studium zufrieden zu sein ist **abhängig** von der Stadt in der man studiert.
+* Die Wahrscheinlichkeit mit dem Studium zufrieden zu sein ist **unabhängig** von der Stadt in der man studiert.
+* Laut Multiplikationstheorem ergibt sich: $P(Z = ja \cap Stadt = A) = `r round(multi_test,5)`$
+* Laut Multiplikationstheorem ergibt sich: $P(Z = ja \cap Stadt = A) = `r round(p_union_Azufrieden,5)`$
+* Die Wahrscheinlichkeit mit seinem Studium zufrieden zu sein ist: $P(Z = ja) = `r round(p_zufrieden,5)`$
+* Die bedingte Wahrscheinlichkeit mit seinem Studium zufrieden zu sein, wenn man in Stadt C studiert ist: $P(Z = ja | Stadt = C) = `r round(p_zufrieden_stadtC,5)`$
+
+Solution
+========
+Für diese Übung bietet es sich an zuerst einige Wahrscheinlichkeiten zu berechnen, die benötigt werden um das Multiplikationstheorem zu prüfen und zu testen ob die bedingte Wahrscheinlichkeit $P(Z = ja | Stadt = C) = P(Z = ja)$ gilt.
+
+Für das Multiplikationstheorem sind das folgende Wahrscheinlichkeiten:
+
+1. Die Wahrscheinlichkeit mit dem Studium zufrieden zu sein: $P(Z = ja)$
+2. Die Wahrscheinlichkeit in Stadt A zu studieren: $P(Stadt = A)$
+3. Die Wahrscheinlichkeit in mit dem Studium zufrieden zu sein und in Stadt A zu studieren: $P(Z = ja \cap Stadt = A)$
+
+Diese Wahrscheinlichkeiten berechnen sich in R folgender massen:
+
+1. `(26700 + 14900 + 9700 + 8900)/(26700 + 14900 + 9700 + 8900 + 9900 + 6400 + 9100 + 14000)` = `r round(p_zufrieden,4)`
+2. `(26700 + 9900)/(26700 + 14900 + 9700 + 8900 + 9900 + 6400 + 9100 + 14000)` = `r round(p_stadtA,4)`
+3. `(26700)/(26700 + 14900 + 9700 + 8900 + 9900 + 6400 + 9100 + 14000)` = `r round(p_union_Azufrieden,4)`
+
+Mit diesen Wahrscheinlichkeiten können wir prüfen ob das Multiplikationstheorem gilt:
+
+Aus $P(Z = ja) \cdot P(Stadt = A)$ ergibt sich $`r round(multi_test,4)`$. Diese Wahrscheinlichkeit ist ungleich der berechneten Wahrscheinlichkeit von $P(Z = ja \cap Stadt = A) = `r round(p_union_Azufrieden,4)`$. Daraus können wir schliessen, dass die Wahrschinlihckeiten nicht voneinander unabhängig sind.
+
+Die Lösung für die bedingten Wahrscheinlichkeiten folgt.
+
+Meta-information
+=========
+exname: percent_gender 
+extype: mchoice 
+exsolution: 101011
+exshuffle: TRUE

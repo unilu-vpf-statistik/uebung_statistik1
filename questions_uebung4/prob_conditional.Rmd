@@ -1,0 +1,67 @@
+Question
+=======
+Berechnen Sie anhand der Werte in der unter der Frabge gegebenen Vier-Felder Tafel die bedingte Wahrscheinlichkeit, dass eine Person Krebs $K$ hat, wenn Sie Raucher $R$ ist: $P(K = "ja" | R = "ja")$
+
+```{r}
+#| echo: false
+felder_tafel <- matrix(c(80,20,5320,14580), ncol = 2, nrow = 2)
+rownames(felder_tafel) <- c('raucher_ja', 'raucher_nein')
+colnames(felder_tafel) <- c('krebs_ja', 'krebs_nein')
+knitr::kable(felder_tafel)
+```
+
+```{r}
+#| include: false
+correct_response = felder_tafel["raucher_ja","krebs_ja"]/sum(felder_tafel["raucher_ja",])
+distractor_response1 = sum(felder_tafel[,"krebs_ja"])/sum(felder_tafel)
+distractor_response2 = felder_tafel["raucher_nein","krebs_ja"]/sum(felder_tafel["raucher_nein",])
+distractor_response3 = felder_tafel["raucher_ja","krebs_ja"]/sum(felder_tafel[,"krebs_ja"])
+```
+
+
+Answerlist
+--------
+* $P(K = "ja" | R = "ja") = `r round(correct_response,5)`$
+* $P(K = "ja" | R = "ja") = `r round(distractor_response1,5)`$
+* $P(K = "ja" | R = "ja") = `r round(distractor_response2,5)`$
+* $P(K = "ja" | R = "ja") = `r round(distractor_response3,5)`$
+
+Solution
+========
+Für diese Frage müssen Sie die Formel der bedingten Wahrscheinlichkeit Nutzen: $P(A|B) = \frac{P(A \cap B)}{P(B)}$. 
+
+Die jeweiligen Wahrscheinlichkeiten können Sie aus den absoluten Häufigkeiten in der Tabelle berechnen. 
+
+Für $P(A \cap B)$ ergibt sich diese aus der Menge an Leuten die Krebs haben und Raucher sind $N_{A \cap B} = `r felder_tafel["raucher_ja","krebs_ja"]`$ und der Gesamtzahl an Beobachtungen in der Vier-Felder Tafel $N_{ges} = `r sum(felder_tafel)`$. Daraus ergibt sich die Wahrscheinlichkeit von $P(A \cap B) = \frac{N_{A \cap B}}{N_{ges}} = \frac{`r felder_tafel["raucher_ja","krebs_ja"]`}{`r sum(felder_tafel)`} = `r felder_tafel["raucher_ja","krebs_ja"]/sum(felder_tafel)`$
+
+In R sieht diese Berechnung so aus: `80 / (80 + 20 + 5320 + 14580)`
+
+```{r}
+#| echo: false
+80 / (80 + 20 + 5320 + 14580)
+```
+
+Für $P(B)$ die Wahrscheinlichkeit, dass eine Person Raucher ist, müssen Sie die Anzahl der Raucher $N_B$ durch die gesamt Zahl an Personen $N_ges$ teilen. Entsprechend ergibt sich für $P(B) = \frac{N_B}{N_{ges}} = \frac{`r felder_tafel["raucher_ja","krebs_ja"]` + `r felder_tafel["raucher_ja","krebs_nein"]`}{`r sum(felder_tafel)`}= `r sum(felder_tafel["raucher_ja",])/sum(felder_tafel)`$
+
+In R sieht diese Berechnung wiederum so aus: `(80 + 5320)  / (80 + 20 + 5320 + 14580)`
+
+```{r}
+#| echo: false
+(80 + 5320)  / (80 + 20 + 5320 + 14580)
+```
+
+Nun müssen Sie diese Werte nur noch durcheinander Teilen und erhalten dann die bedingte Wahrscheinlichkeit, dass eine Person Krebs hat wenn Sie Raucher ist: $P(A \cap B) = \frac{`r felder_tafel["raucher_ja","krebs_ja"]/sum(felder_tafel)`}{`r sum(felder_tafel["raucher_ja",])/sum(felder_tafel)`} = `r felder_tafel["raucher_ja","krebs_ja"]/sum(felder_tafel["raucher_ja",])`$
+
+Wie Ihnen vielleicht aufgefallen ist, ist der Nenner für die beiden Wahrscheinlichkeiten $P(A \cap B)$ und $P(B)$ gleich. Deshalb können wir uns die Berechnung der bedingten Wahrscheinlichkeit in R erleichtern indem wir die Zähler der jeweiligen Wahrscheinlichkeiten durcheinander teilen: `80  / (80 + 5320)`
+
+```{r}
+#| echo: false
+80  / (80 + 5320)
+```
+
+Meta-information
+=========
+exname: percent_gender 
+extype: schoice 
+exsolution: 1000
+exshuffle: TRUE

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>iqr_by_gender – Übungen - VL: Statistik I</title>
+<title>prob_union – Übungen - VL: Statistik I</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -206,29 +206,52 @@ window.Quarto = {
 
 <section id="question" class="level1">
 <h1>Question</h1>
-<p>Was ist der Interquartilsabstand <span class="math inline">\(IQR\)</span> der Variable <code>grössse</code> für Frauen <span class="math inline">\(w\)</span> und Männer <span class="math inline">\(m\)</span>?</p>
+<p>Berechnen Sie anhand der Werte in der unten gegebeneen Vier-Felder Tafel die bedingte Wahrscheinlichkeit, dass eine Person Krebs <span class="math inline">\(K\)</span> hat, wenn Sie Raucher <span class="math inline">\(R\)</span> ist: <span class="math inline">\(P(K = "ja" | R = "ja")\)</span></p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">krebs_ja</th>
+<th style="text-align: right;">krebs_nein</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">raucher_ja</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">5320</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">raucher_nein</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">14580</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <section id="answerlist" class="level2">
 <h2 class="anchored" data-anchor-id="answerlist">Answerlist</h2>
 <ul>
-<li><span class="math inline">\(IQR_w = 11.0\)</span></li>
-<li><span class="math inline">\(IQR_m = 12.5\)</span></li>
-<li><span class="math inline">\(IQR_m = 13\)</span></li>
-<li><span class="math inline">\(IQR_w = 9.2\)</span></li>
-<li><span class="math inline">\(IQR_m = 14.7\)</span></li>
-<li><span class="math inline">\(IQR_w = 13\)</span></li>
+<li><span class="math inline">\(P(K = "ja" | R = "ja") = 0.01481\)</span></li>
+<li><span class="math inline">\(H = .17\)</span></li>
+<li><span class="math inline">\(H = .32\)</span></li>
+<li><span class="math inline">\(H = .46\)</span></li>
 </ul>
 </section>
 </section>
 <section id="solution" class="level1">
 <h1>Solution</h1>
-<p>Um den Interquartilabstand der Grösse der weiblichen und männlichen Studierenden zu bekommen erstellen sie als erstes eine logische Index-Variable die kodiert welche Studierenden weiblich sind: <code>index_weiblich &lt;- semester_data2$geschlecht == "weiblich</code></p>
-<p>Mit Hilfe dieser Index-Variable können Sie dann den Interquartilabstand nur für die Grösse der weiblich Studierenden berechnen: <code>IQR(semester_data2$grössse[index_weiblich])</code>.</p>
-<p>Um den Interquartilabstand der männlichen Studierenden zu erlangen können Sie einfach die negation von <code>index_weiblich</code> nutzen, da es nur zwei Merkmalsausprägungen gibt: <code>IQR(semester_data2$grössse[!index_weiblich])</code></p>
-<p>Alternative hätten Sie wie in Übung 2 die <code>aggregate</code> Funktion nutzen können und den Interquartilabstand gruppiert für alle Geschlechter zu berechnen: <code>aggregate(semester_data2$grössse, list(semester_data2$geschlecht), FUN = IQR)</code></p>
+<p>Als erstes sollten sie zur Berechnung des relativen Informationsgehalts, die relativen Häufigkeiten der Variable <code>nationalität</code> berechne: <code>rel_häufigkeit &lt;- table(semester_data2$nationalität)/nrow(semester_data2)</code></p>
+<p>Dann können Sie den relativen Informationsgehalt <span class="math inline">\(H\)</span> mit Hilfe der dazugehörigen formel berechnen. Diese enthält zum einen die Normalisierung für die Anzahl an Kategorien <code>normalisierung &lt;- -1/log(length(rel_häufigkeit))</code> und zum Anderen die Summe der relativen Häufigkeiten multipliziert mit dem logarithmus der relativen Häufigkeiten: <code>sum_rel_info &lt;- sum(rel_häufigkeit * log(rel_häufigkeit)</code>.</p>
+<p>Wenn sie diese beiden Werte miteinander multiplizieren erhalten sie den relativen Informationsgehalt: <code>rel_info = normalisierung * sum_rel_info</code></p>
+<p>Für die Lösung müssen Sie diesen Wert dann noch auf zwei Stellen runden: <code>round(rel_info,2)</code></p>
 </section>
 <section id="meta-information" class="level1">
 <h1>Meta-information</h1>
-<p>exname: percent_gender extype: mchoice exsolution: 110000 exshuffle: TRUE</p>
+<p>exname: percent_gender extype: schoice exsolution: 1000 exshuffle: TRUE</p>
 
 
 </section>

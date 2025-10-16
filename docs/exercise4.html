@@ -8,7 +8,7 @@
 
 <meta name="author" content="Gidon Frischkorn">
 
-<title>Übung 3 - Dispersionsmasse – Übungen - VL: Statistik I</title>
+<title>Übung 4 - Wahrscheinlichkeitstheorie – Übungen - VL: Statistik I</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -403,7 +403,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"# Herunterladen der Daten um sie lokal verfügbar zu machen\nurl <- \"https://unilu-vpf-statistik.github.io/uebung_statistik1/semester_data2.csv\"\ndownload.file(url, \"semester_data2.csv\")\n\n# Laden des Datensatzes\nsemester_data2 <- read.csv(\"semester_data2.csv\")\n\n# Anzeigen der ersten Zeilen des Datensatzes\nhead(semester_data2)\n\n# Schreiben Sie hier ihren Code um die Aufgaben zu lösen\n\n\n","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"# Herunterladen der Daten um sie lokal verfügbar zu machen\nurl <- \"https://unilu-vpf-statistik.github.io/uebung_statistik1/semester_data2.csv\"\ndownload.file(url, \"semester_data2.csv\")\n\n# Laden des Datensatzes\nsemester_data2 <- read.csv(\"semester_data2.csv\")\n\n# Anzeigen der ersten Zeilen des Datensatzes\nhead(semester_data2)\n\n# Schreiben Sie hier ihren Code um die Aufgaben zu lösen\n\n","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1730,7 +1730,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./exercise3.html">Übung 3</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./exercise4.html">Übung 4</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -1764,13 +1764,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercise3.html" class="sidebar-item-text sidebar-link active">
+  <a href="./exercise3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Übung 3</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercise4.html" class="sidebar-item-text sidebar-link">
+  <a href="./exercise4.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Übung 4</span></a>
   </div>
 </li>
@@ -1784,7 +1784,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#logische-operatoren-und-vergleiche-in-r" id="toc-logische-operatoren-und-vergleiche-in-r" class="nav-link active" data-scroll-target="#logische-operatoren-und-vergleiche-in-r">Logische Operatoren und Vergleiche in R</a></li>
+  <li><a href="#wiederholung-vertiefung-wahrscheinlichkeitstheorie" id="toc-wiederholung-vertiefung-wahrscheinlichkeitstheorie" class="nav-link active" data-scroll-target="#wiederholung-vertiefung-wahrscheinlichkeitstheorie">Wiederholung &amp; Vertiefung: Wahrscheinlichkeitstheorie</a></li>
+  <li><a href="#fakultät-in-r" id="toc-fakultät-in-r" class="nav-link" data-scroll-target="#fakultät-in-r">Fakultät in R</a></li>
   <li><a href="#übungen" id="toc-übungen" class="nav-link" data-scroll-target="#übungen">Übungen</a></li>
   </ul>
 </nav>
@@ -2078,7 +2079,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Übung 3 - Dispersionsmasse</h1>
+<h1 class="title">Übung 4 - Wahrscheinlichkeitstheorie</h1>
 <p class="subtitle lead">HS 2025</p>
 </div>
 
@@ -2102,22 +2103,53 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </header>
 
 
-<section id="logische-operatoren-und-vergleiche-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="logische-operatoren-und-vergleiche-in-r">Logische Operatoren und Vergleiche in R</h2>
-<p>In dieser Übung werden Sie weiter mit Variablen, Vektoren und Datensätzen in R arbeiten. Vor allem werden wir neben der Vertiefung der Dispersionsmasse, die in der Vorlesung behandelt wurden, mit relationalen und logischen Operatoren arbeiten und sehen wie diese Operatoren genutzt werden können um bestimmte Werte einer Variable auszuwählen.</p>
-<p>Um sich mit relationalen und logischen Operatoren und dem Indizieren von Werten auseinander zu setzen schauen Sie bitte die folgenden Videos:</p>
+<section id="wiederholung-vertiefung-wahrscheinlichkeitstheorie" class="level2">
+<h2 class="anchored" data-anchor-id="wiederholung-vertiefung-wahrscheinlichkeitstheorie">Wiederholung &amp; Vertiefung: Wahrscheinlichkeitstheorie</h2>
+<p>In dieser Übung werden keine neuen Konzepte oder Vorgehensweisen mit R eingeführt und besprochen. Statt dessen werden wir mit Hilfe der bisher bekannten Methoden und Operationen die Konzepte der Wahrscheinlichkeitstheorie üben und vertiefen.</p>
+<p>Wenn Sie trotzdem nochmal eine Erklärung aus einer anderen Perspektive von den wesentlichen Grundbegriffen und Konzepten bekommen, dann empfehle ich Ihnen sich die folgenden YouTube Videos anzuschauen:</p>
 <ol type="1">
-<li>Ein <a href="https://www.youtube.com/watch?v=ZJ7H-3j_-mE">Video zu Relationalen Operatoren</a></li>
-<li>Ein <a href="https://www.youtube.com/watch?v=6PpQS-YLWDQ&amp;t=2s">Video zu Logischen Operatoren</a></li>
-<li>Ein <a href="https://www.youtube.com/watch?v=o_ldRKmgvHo&amp;list=PLjgj6kdf_snYBkIsWQYcYtUZiDpam7ygg&amp;index=5">Video zur Indzierung von Vekoren</a></li>
+<li>Grundlagen: <a href="https://www.youtube.com/watch?v=YTWM4aOqVwM&amp;list=PLkxhZdQfAXW2yorCKHwgx4U62iLOCF_oK">Wahrscheinlichkeiten</a></li>
+<li>Grundlagen: <a href="https://www.youtube.com/watch?v=bLwF2fI8Guc&amp;list=PLkxhZdQfAXW2yorCKHwgx4U62iLOCF_oK&amp;index=2">Schnittmenge, Vereiningungsmenge &amp; bedingte Wahrscheinlichkeit</a></li>
+<li>Grundlagen: <a href="https://www.youtube.com/watch?v=aVqmWW3xmdU&amp;list=PLkxhZdQfAXW2yorCKHwgx4U62iLOCF_oK&amp;index=3">Stochastische Unabhängigkeit</a></li>
 </ol>
+</section>
+<section id="fakultät-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="fakultät-in-r">Fakultät in R</h2>
+<p>Leider gibt es in R keine Funktion, die die Fakultät einer Zahl <span class="math inline">\(k\)</span> direkt berechnet. Zum Glück kann man aber mit einigen einfachen Funktionen die Fakultät einer Zahl schnell berechnen. Dafür müssen wir zwei Schritte durchführen:</p>
+<ol type="1">
+<li>Einen Vektor von 1 bis zur Zahl <span class="math inline">\(k\)</span> erstellen</li>
+<li>Das Produkt aller Elemente im Vektor berechnen</li>
+</ol>
+<p>Für den ersten Schritt gibt es in R die Notation <code>1:k</code>, wenn Sie einen beliebigen Ganzzahligen Wert für <code>k</code> einsetzen, zum Beispiel <code>k = 8</code>, dann erhalten sie die Sequenz der ganzen Zahlen von 1 bis 8</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">8</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 2 3 4 5 6 7 8</code></pre>
+</div>
+</div>
+<p>Falls Sie die Sequenz lieber so wie in der Vorlesung von der grössten bis zur kleinsten Zahl ausgeben wollen, dann können Sie auch <code>k:1</code> schreiben</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span><span class="sc">:</span><span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8 7 6 5 4 3 2 1</code></pre>
+</div>
+</div>
+<p>Diese Sequenz können wir nutzen um nun das Produkt aller Elemente der Sequenz zu berechnen. Dafür bietet R die Funktion <code>prod</code>, die das Produkt aller Elemente eines Vektors berechnet, der der Funktion übergeben wird. Wir können die Fakultät einer Zahl also folgendermassen berechnen.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">8</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">prod</span>(<span class="dv">1</span><span class="sc">:</span>k)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 40320</code></pre>
+</div>
+</div>
+<p>Mit Hilfe dieser Funktion sollten Sie die folgenden Übungsaufgaben lösen können.</p>
 </section>
 <section id="übungen" class="level2">
 <h2 class="anchored" data-anchor-id="übungen">Übungen</h2>
-<p>In den folgenden Übungen werden Sie wie in der letzten Übung auch mit einem simulierten Datensatz von fiktiven Daten eines Erstsemester-Jahrgangs von Psychologie-Studierenden arbeiten. Sie können Sich den Datensatz auf ihren eigenen PC herunterladen: <a href="semester_data2.csv">semester_data2.csv</a></p>
-<p>Alternativ können Sie hier auf der Website direkt R Code mit Hilfe der <code>webr</code> Erweiterung ausführen um die Aufgaben zu lösen. Der Datensatz enthält wiederum die gleichen Variablen, wie die Beispiele in der Vorlesung und der letzten Übung: <code>geschlecht</code>, <code>nationalität</code>, <code>wohnort</code>, <code>alter</code> und <code>wissen_statistik</code>, die Werte sind jedoch anders. Unten sehen sie die ersten Zeilen des simulierten Datensatzes.</p>
+<p>In den folgenden Übungen werden Sie wie in der letzten Übung mit dem simulierten Datensatz von fiktiven Daten eines Erstsemester-Jahrgangs von Psychologie-Studierenden arbeiten. Für diese Übung verwenden wir den gleichen Datensatz wie in Übung 3, sie können Sich den Datensatz auf ihren eigenen PC herunterladen: <a href="semester_data2.csv">semester_data2.csv</a></p>
+<p>Alternativ können Sie hier auf der Website direkt R Code mit Hilfe der <code>webr</code> Erweiterung ausführen um die Aufgaben zu lösen. Der Datensatz enthält die Variablen: <code>geschlecht</code>, <code>nationalität</code>, <code>wohnort</code>, <code>alter</code> und <code>wissen_statistik</code>. Unten sehen sie die ersten Zeilen des simulierten Datensatzes.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(semester_data2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(semester_data2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  geschlecht nationalität    wohnort alter wissen_statistik grösse
 1   weiblich      Schweiz     Luzern  21.9                3    158
@@ -2128,7 +2160,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 6   weiblich      Schweiz       Bern  22.0                3    166</code></pre>
 </div>
 </div>
-<p>Wie in der Übung 2 finden Sie hier über den Übungsaufgaben die <code>webr</code> Konsole, die Ihnen das schreiben und durchführen von R Code direkt auf der Website ermöglicht. Wenn viele Studierenden die Übungen parallel machen, dann kann es sein, dass <code>webr</code> sehr langsam wird.</p>
+<p>Wie in den bisherigen Übungen finden Sie hier über den Übungsaufgaben die <code>webr</code> Konsole, die Ihnen das Schreiben und Durchführen von R Code direkt auf der Website ermöglicht. Wenn viele Studierenden die Übungen parallel machen, dann kann es sein, dass <code>webr</code> sehr langsam wird.</p>
 <p>Bitte löschen Sie die ersten Zeilen, die den Datensatz lokal verfügbar machen <em>nicht</em>. Wenn Sie die Zeilen doch aus versehen Löschen sollten dann können Sie auf der rechten Seite der Konsole das Symbol mit den im Kreis drehenden Pfeilen drücken, um die Konsole zurück zu setzen.</p>
 <blockquote class="blockquote">
 <p>Um den Code den Sie geschrieben haben auszuführen drücken Sie entwedern <code>Run Code</code>, damit der gesamte Code ausgeführt würde. Alternativ können Sie auch einzelne Zeilen ausführen, indem sie <kbd>CRTL</kbd>+<kbd>Enter</kbd> (Windows) oder <kbd>CMD</kbd>+<kbd>Enter</kbd> (Mac) drücken.</p>
@@ -2140,73 +2172,121 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </blockquote>
 <div class="webex-question">
 <div class="webex-check webex-box">
-<p>Wie viele der Studierenden, die ihr Statistik Wissen hoch einschätzen (<code>wissen_statistik &gt;= 4</code>) sind Männer und wie viele Frauen?</p>
-<div id="webex-6a10f6fdd376a823789b67d43360a592" class="webex-checkboxgroup" data-answer="bVEdAEoGSlVIAxsHPA==">
-<label><input type="checkbox" autocomplete="off" name="6a10f6fdd376a823789b67d43360a592"><span><span class="math inline">\(N_w = 4\)</span></span></label><label><input type="checkbox" autocomplete="off" name="6a10f6fdd376a823789b67d43360a592"><span><span class="math inline">\(N_m = 44\)</span></span></label><label><input type="checkbox" autocomplete="off" name="6a10f6fdd376a823789b67d43360a592"><span><span class="math inline">\(N_m = 40\)</span></span></label><label><input type="checkbox" autocomplete="off" name="6a10f6fdd376a823789b67d43360a592"><span><span class="math inline">\(N_m = 7\)</span></span></label><label><input type="checkbox" autocomplete="off" name="6a10f6fdd376a823789b67d43360a592"><span><span class="math inline">\(N_w = 44\)</span></span></label><label><input type="checkbox" autocomplete="off" name="6a10f6fdd376a823789b67d43360a592"><span><span class="math inline">\(N_w = 37\)</span></span></label>
+<p>Berechnen Sie anhand der Werte in der unter der Frabge gegebenen Vier-Felder Tafel die bedingte Wahrscheinlichkeit, dass eine Person Krebs <span class="math inline">\(K\)</span> hat, wenn Sie Raucher <span class="math inline">\(R\)</span> ist: <span class="math inline">\(P(K = "ja" | R = "ja")\)</span></p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">krebs_ja</th>
+<th style="text-align: right;">krebs_nein</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">raucher_ja</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">5320</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">raucher_nein</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">14580</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="webex-cd5a050d0e5b0aeee7a295a1c8ee9ab3" class="webex-radiogroup" data-answer="OFQZURwEHFRt">
+<label><input type="radio" autocomplete="off" name="cd5a050d0e5b0aeee7a295a1c8ee9ab3"><span><span class="math inline">\(P(K = "ja" | R = "ja") = 0.8\)</span></span></label><label><input type="radio" autocomplete="off" name="cd5a050d0e5b0aeee7a295a1c8ee9ab3"><span><span class="math inline">\(P(K = "ja" | R = "ja") = 0.005\)</span></span></label><label><input type="radio" autocomplete="off" name="cd5a050d0e5b0aeee7a295a1c8ee9ab3"><span><span class="math inline">\(P(K = "ja" | R = "ja") = 0.01481\)</span></span></label><label><input type="radio" autocomplete="off" name="cd5a050d0e5b0aeee7a295a1c8ee9ab3"><span><span class="math inline">\(P(K = "ja" | R = "ja") = 0.00137\)</span></span></label>
 </div>
 </div>
 <div class="webex-solution">
-<p>Um diese Frage zu beantworten müssen wir zwei unterschiedliche logische Indexvariablen erstellen und zählen wie häufig diese den Wert <code>TRUE</code> haben.</p>
-<p>Es bietet sich an diesen Vergleich in mehreren Schritten durchzuführen:</p>
+<p>Für diese Frage müssen Sie die Formel der bedingten Wahrscheinlichkeit Nutzen: <span class="math inline">\(P(A|B) = \frac{P(A \cap B)}{P(B)}\)</span>.</p>
+<p>Die jeweiligen Wahrscheinlichkeiten können Sie aus den absoluten Häufigkeiten in der Tabelle berechnen.</p>
+<p>Für <span class="math inline">\(P(A \cap B)\)</span> ergibt sich diese aus der Menge an Leuten die Krebs haben und Raucher sind <span class="math inline">\(N_{A \cap B} = 80\)</span> und der Gesamtzahl an Beobachtungen in der Vier-Felder Tafel <span class="math inline">\(N_{ges} = 2\times 10^{4}\)</span>. Daraus ergibt sich die Wahrscheinlichkeit von <span class="math inline">\(P(A \cap B) = \frac{N_{A \cap B}}{N_{ges}} = \frac{80}{2\times 10^{4}} = 0.004\)</span></p>
+<p>In R sieht diese Berechnung so aus: <code>80 / (80 + 20 + 5320 + 14580)</code></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.004</code></pre>
+</div>
+</div>
+<p>Für <span class="math inline">\(P(B)\)</span> die Wahrscheinlichkeit, dass eine Person Raucher ist, müssen Sie die Anzahl der Raucher <span class="math inline">\(N_B\)</span> durch die gesamt Zahl an Personen <span class="math inline">\(N_ges\)</span> teilen. Entsprechend ergibt sich für <span class="math inline">\(P(B) = \frac{N_B}{N_{ges}} = \frac{80 + 5320}{2\times 10^{4}}= 0.27\)</span></p>
+<p>In R sieht diese Berechnung wiederum so aus: <code>(80 + 5320)  / (80 + 20 + 5320 + 14580)</code></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.27</code></pre>
+</div>
+</div>
+<p>Nun müssen Sie diese Werte nur noch durcheinander Teilen und erhalten dann die bedingte Wahrscheinlichkeit, dass eine Person Krebs hat wenn Sie Raucher ist: <span class="math inline">\(P(A \cap B) = \frac{0.004}{0.27} = 0.0148148\)</span></p>
+<p>Wie Ihnen vielleicht aufgefallen ist, ist der Nenner für die beiden Wahrscheinlichkeiten <span class="math inline">\(P(A \cap B)\)</span> und <span class="math inline">\(P(B)\)</span> gleich. Deshalb können wir uns die Berechnung der bedingten Wahrscheinlichkeit in R erleichtern indem wir die Zähler der jeweiligen Wahrscheinlichkeiten durcheinander teilen: <code>80  / (80 + 5320)</code></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.01481481</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>Berechnen Sie anhand der Werte in der unter der Frage gegebenen Tabelle, ob die Wahrscheinlichkeit das Personen mit Ihrem Studium zufrieden sind <code>zufrieden_ja</code> von der Stadt in der die Studierenden ihr Studium absolvieren unabhängig sind. Berechnen Sie dafür:</p>
 <ol type="1">
-<li>Erstellen eine Variablen die kodiert welche Personen ihr Statistik Wissen hoch einschätzen: <code>index_stats &lt;- semester_data2$wissen_statistik &gt;= 4</code></li>
-<li>Erstellen einer Variablen die kodiert ob jemand weiblich ist: <code>index_weiblich &lt;- semester_data2$geschlecht == "weiblich"</code></li>
-<li>Für die Anzahl Frauen die ihr Statistik Wissen hoch einschätzen können wir nun aufsummieren für wie viele beide Index Variablen den Wert <code>TRUE</code> haben: <code>sum(index_stats &amp; index_weiblich)</code></li>
-<li>Für die Anzahl Männer können wir einfach die negation des <code>index_weiblich</code> nutzen, weil diese Variable nur zwei Kategorien hat: <code>sum(index_stats &amp; !index_weiblich)</code></li>
+<li>ob das Multiplikationstheorem für die Wahrscheinlichkeit in Stadt A mit dem Studium zufrieden zu sein gilt: <span class="math inline">\(P(Z = ja \cap Stadt = A) = P(Z = ja) \cdot P(Stadt = A)\)</span>.</li>
+<li>ob die bedingte Wahrscheinlichkeit dafür mit dem Studium zufrieden zu sein, wenn man in Stadt C studiert <span class="math inline">\(P(Z = ja| Stadt = C)\)</span> gleich der Wahrscheinlichkeit ist mit seinem Studium unabhängig von der Stadt zufrieden <span class="math inline">\(P(Z = ja)\)</span> zu sein</li>
 </ol>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">stadt_a</th>
+<th style="text-align: right;">stadt_b</th>
+<th style="text-align: right;">stadt_c</th>
+<th style="text-align: right;">stadt_d</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">zufrieden_ja</td>
+<td style="text-align: right;">26700</td>
+<td style="text-align: right;">14900</td>
+<td style="text-align: right;">9700</td>
+<td style="text-align: right;">8900</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">zufrieden_nein</td>
+<td style="text-align: right;">9900</td>
+<td style="text-align: right;">6400</td>
+<td style="text-align: right;">9100</td>
+<td style="text-align: right;">14400</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Was ist der relative Informationsgehalt der Variable <code>nationalität</code> im Datensatz <code>semetester_data2</code>?</p>
-<div id="webex-0021633bd992f20bede45970c6eec220" class="webex-radiogroup" data-answer="awAeARoDH1M5">
-<label><input type="radio" autocomplete="off" name="0021633bd992f20bede45970c6eec220"><span><span class="math inline">\(H = .32\)</span></span></label><label><input type="radio" autocomplete="off" name="0021633bd992f20bede45970c6eec220"><span><span class="math inline">\(H = .46\)</span></span></label><label><input type="radio" autocomplete="off" name="0021633bd992f20bede45970c6eec220"><span><span class="math inline">\(H = .17\)</span></span></label><label><input type="radio" autocomplete="off" name="0021633bd992f20bede45970c6eec220"><span><span class="math inline">\(H = .57\)</span></span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Als erstes sollten sie zur Berechnung des relativen Informationsgehalts, die relativen Häufigkeiten der Variable <code>nationalität</code> berechne: <code>rel_häufigkeit &lt;- table(semester_data2$nationalität)/nrow(semester_data2)</code></p>
-<p>Dann können Sie den relativen Informationsgehalt <span class="math inline">\(H\)</span> mit Hilfe der dazugehörigen formel berechnen. Diese enthält zum einen die Normalisierung für die Anzahl an Kategorien <code>normalisierung &lt;- -1/log(length(rel_häufigkeit))</code> und zum Anderen die Summe der relativen Häufigkeiten multipliziert mit dem logarithmus der relativen Häufigkeiten: <code>sum_rel_info &lt;- sum(rel_häufigkeit * log(rel_häufigkeit)</code>.</p>
-<p>Wenn sie diese beiden Werte miteinander multiplizieren erhalten sie den relativen Informationsgehalt: <code>rel_info = normalisierung * sum_rel_info</code></p>
-<p>Für die Lösung müssen Sie diesen Wert dann noch auf zwei Stellen runden: <code>round(rel_info,2)</code></p>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Was ist der Streubereich der Variable <code>alter</code> für die Studierenden mit der <code>nationalität == "Deutsch"</code>?</p>
-<div id="webex-d15885bbd58188cd3dcc2bf5b4e0ceb5" class="webex-radiogroup" data-answer="PwEZCBQETlJIBWU=">
-<label><input type="radio" autocomplete="off" name="d15885bbd58188cd3dcc2bf5b4e0ceb5"><span><span class="math inline">\(Range = [20.0; 26.2]\)</span></span></label><label><input type="radio" autocomplete="off" name="d15885bbd58188cd3dcc2bf5b4e0ceb5"><span><span class="math inline">\(Range = [17.7; 27.7]\)</span></span></label><label><input type="radio" autocomplete="off" name="d15885bbd58188cd3dcc2bf5b4e0ceb5"><span><span class="math inline">\(Range = [19.3; 29.0]\)</span></span></label><label><input type="radio" autocomplete="off" name="d15885bbd58188cd3dcc2bf5b4e0ceb5"><span><span class="math inline">\(Range = [17.1; 35.4]\)</span></span></label><label><input type="radio" autocomplete="off" name="d15885bbd58188cd3dcc2bf5b4e0ceb5"><span><span class="math inline">\(Range = [19.2; 30.6]\)</span></span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Um den Altersrange der deutschen Studierenden zu bekommen erstellen sie als erstes eine logische Index-Variable die kodiert welche Studierenden Deutsch sind: <code>index_deutsch &lt;- semester_data2$natioanlität == "Deutsch</code></p>
-<p>Mit Hilfe dieser Index-Variable können Sie dann den Range nur für die Alterswerte der deutschen Studierenden berechnen: <code>range(semester_data2$alter[index_deutsch])</code></p>
-<p>Alternative hätten Sie wie in Übung 2 die <code>aggregate</code> Funktion nutzen können und den Range gruppiert für alle Nationalitäten berechnen können: <code>aggregate(semester_data2$alter, list(semester_data2$nationalität), FUN = range)</code></p>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Was ist der Interquartilsabstand <span class="math inline">\(IQR\)</span> der Variable <code>grössse</code> für Frauen <span class="math inline">\(w\)</span> und Männer <span class="math inline">\(m\)</span>?</p>
-<div id="webex-1e31dd67bc3382745058657dc37cb875" class="webex-checkboxgroup" data-answer="alUfAUhVGgZOUx8DZQ==">
-<label><input type="checkbox" autocomplete="off" name="1e31dd67bc3382745058657dc37cb875"><span><span class="math inline">\(IQR_m = 13\)</span></span></label><label><input type="checkbox" autocomplete="off" name="1e31dd67bc3382745058657dc37cb875"><span><span class="math inline">\(IQR_w = 13\)</span></span></label><label><input type="checkbox" autocomplete="off" name="1e31dd67bc3382745058657dc37cb875"><span><span class="math inline">\(IQR_w = 11.0\)</span></span></label><label><input type="checkbox" autocomplete="off" name="1e31dd67bc3382745058657dc37cb875"><span><span class="math inline">\(IQR_m = 12.5\)</span></span></label><label><input type="checkbox" autocomplete="off" name="1e31dd67bc3382745058657dc37cb875"><span><span class="math inline">\(IQR_w = 9.2\)</span></span></label><label><input type="checkbox" autocomplete="off" name="1e31dd67bc3382745058657dc37cb875"><span><span class="math inline">\(IQR_m = 14.7\)</span></span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Um den Interquartilabstand der Grösse der weiblichen und männlichen Studierenden zu bekommen erstellen sie als erstes eine logische Index-Variable die kodiert welche Studierenden weiblich sind: <code>index_weiblich &lt;- semester_data2$geschlecht == "weiblich</code></p>
-<p>Mit Hilfe dieser Index-Variable können Sie dann den Interquartilabstand nur für die Grösse der weiblich Studierenden berechnen: <code>IQR(semester_data2$grössse[index_weiblich])</code>.</p>
-<p>Um den Interquartilabstand der männlichen Studierenden zu erlangen können Sie einfach die negation von <code>index_weiblich</code> nutzen, da es nur zwei Merkmalsausprägungen gibt: <code>IQR(semester_data2$grössse[!index_weiblich])</code></p>
-<p>Alternative hätten Sie wie in Übung 2 die <code>aggregate</code> Funktion nutzen können und den Interquartilabstand gruppiert für alle Geschlechter zu berechnen: <code>aggregate(semester_data2$grössse, list(semester_data2$geschlecht), FUN = IQR)</code></p>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Wie viele der Studierenden, sind Franzosen <em>oder</em> Italiener und weiblich?</p>
-<div id="webex-638f35910b8bd37ac527b8a3d149b721" class="webex-radiogroup" data-answer="bQMUVh8EFQEcUmU=">
-<label><input type="radio" autocomplete="off" name="638f35910b8bd37ac527b8a3d149b721"><span><span class="math inline">\(N = 0\)</span></span></label><label><input type="radio" autocomplete="off" name="638f35910b8bd37ac527b8a3d149b721"><span><span class="math inline">\(N = 8\)</span></span></label><label><input type="radio" autocomplete="off" name="638f35910b8bd37ac527b8a3d149b721"><span><span class="math inline">\(N = 12\)</span></span></label><label><input type="radio" autocomplete="off" name="638f35910b8bd37ac527b8a3d149b721"><span><span class="math inline">\(N = 4\)</span></span></label><label><input type="radio" autocomplete="off" name="638f35910b8bd37ac527b8a3d149b721"><span><span class="math inline">\(N = 18\)</span></span></label>
+<div id="webex-eec01b9e7cc81dfbcb347a9f5b73f655" class="webex-checkboxgroup" data-answer="PlVPAR1TFVUbUk8JbA==">
+<label><input type="checkbox" autocomplete="off" name="eec01b9e7cc81dfbcb347a9f5b73f655"><span>Die Wahrscheinlichkeit mit dem Studium zufrieden zu sein ist <strong>unabhängig</strong> von der Stadt in der man studiert.</span></label><label><input type="checkbox" autocomplete="off" name="eec01b9e7cc81dfbcb347a9f5b73f655"><span>Laut Multiplikationstheorem ergibt sich: <span class="math inline">\(P(Z = ja \cap Stadt = A) = 0.22033\)</span></span></label><label><input type="checkbox" autocomplete="off" name="eec01b9e7cc81dfbcb347a9f5b73f655"><span>Die Wahrscheinlichkeit mit seinem Studium zufrieden zu sein ist: <span class="math inline">\(P(Z = ja) = 0.602\)</span></span></label><label><input type="checkbox" autocomplete="off" name="eec01b9e7cc81dfbcb347a9f5b73f655"><span>Laut Multiplikationstheorem ergibt sich: <span class="math inline">\(P(Z = ja \cap Stadt = A) = 0.267\)</span></span></label><label><input type="checkbox" autocomplete="off" name="eec01b9e7cc81dfbcb347a9f5b73f655"><span>Die Wahrscheinlichkeit mit dem Studium zufrieden zu sein ist <strong>abhängig</strong> von der Stadt in der man studiert.</span></label><label><input type="checkbox" autocomplete="off" name="eec01b9e7cc81dfbcb347a9f5b73f655"><span>Die bedingte Wahrscheinlichkeit mit seinem Studium zufrieden zu sein, wenn man in Stadt C studiert ist: <span class="math inline">\(P(Z = ja | Stadt = C) = 0.51596\)</span></span></label>
 </div>
 </div>
 <div class="webex-solution">
-<p>Für komplexer logische Vergleiche bietet es sich an den Vergleich in mehrer einzelschritte zu zerlegen. Für diese Aufgabe empfiehlt es sich erst zu Testen welche Personen aus Frankreich oder Italien sind: <code>index_nation &lt;- semester_data2$nationalität == "Frankreich" | semester_data2$nationalität == "Italien"</code> und dann zu Testen welche Personen weiblich sind: <code>index_weiblich &lt;- semester_data2$geschlecht == "weiblich"</code></p>
-<p>Mit Hilfe dieser beiden Index-Variablen können sie dann testen auf welche Personen beide Kriterien zutreffen und diese Aufsummieren: <code>sum(index_nation &amp; index_weiblich)</code></p>
+<p>Für diese Übung bietet es sich an zuerst einige Wahrscheinlichkeiten zu berechnen, die benötigt werden um das Multiplikationstheorem zu prüfen und zu testen ob die bedingte Wahrscheinlichkeit <span class="math inline">\(P(Z = ja | Stadt = C) = P(Z = ja)\)</span> gilt.</p>
+<p>Für das Multiplikationstheorem sind das folgende Wahrscheinlichkeiten:</p>
+<ol type="1">
+<li>Die Wahrscheinlichkeit mit dem Studium zufrieden zu sein: <span class="math inline">\(P(Z = ja)\)</span></li>
+<li>Die Wahrscheinlichkeit in Stadt A zu studieren: <span class="math inline">\(P(Stadt = A)\)</span></li>
+<li>Die Wahrscheinlichkeit in mit dem Studium zufrieden zu sein und in Stadt A zu studieren: <span class="math inline">\(P(Z = ja \cap Stadt = A)\)</span></li>
+</ol>
+<p>Diese Wahrscheinlichkeiten berechnen sich in R folgender massen:</p>
+<ol type="1">
+<li><code>(26700 + 14900 + 9700 + 8900)/(26700 + 14900 + 9700 + 8900 + 9900 + 6400 + 9100 + 14000)</code> = 0.602</li>
+<li><code>(26700 + 9900)/(26700 + 14900 + 9700 + 8900 + 9900 + 6400 + 9100 + 14000)</code> = 0.366</li>
+<li><code>(26700)/(26700 + 14900 + 9700 + 8900 + 9900 + 6400 + 9100 + 14000)</code> = 0.267</li>
+</ol>
+<p>Mit diesen Wahrscheinlichkeiten können wir prüfen ob das Multiplikationstheorem gilt:</p>
+<p>Aus <span class="math inline">\(P(Z = ja) \cdot P(Stadt = A)\)</span> ergibt sich <span class="math inline">\(0.2203\)</span>. Diese Wahrscheinlichkeit ist ungleich der berechneten Wahrscheinlichkeit von <span class="math inline">\(P(Z = ja \cap Stadt = A) = 0.267\)</span> Daraus können wir schliessen, dass die Wahrschinlihckeiten nicht voneinander unabhängig sind.</p>
+<p>Die Lösung für die bedingten Wahrscheinlichkeiten folgt.</p>
 </div>
 </div>
 <hr>
