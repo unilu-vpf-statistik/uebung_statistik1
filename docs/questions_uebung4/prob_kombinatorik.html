@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>prob_independence – Übungen - VL: Statistik I</title>
+<title>prob_kombinatorik – Übungen - VL: Statistik I</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -212,86 +212,28 @@ window.Quarto = {
 
 <section id="question" class="level1">
 <h1>Question</h1>
-<p>Berechnen Sie anhand der Werte in der unter der Frage gegebenen Tabelle, ob die Wahrscheinlichkeit das Personen mit Ihrem Studium zufrieden sind <code>zufrieden_ja</code> von der Stadt in der die Studierenden ihr Studium absolvieren unabhängig sind. Berechnen Sie dafür:</p>
-<ol type="1">
-<li>ob das Multiplikationstheorem für die Wahrscheinlichkeit in Stadt A mit dem Studium zufrieden zu sein gilt: <span class="math inline">\(P(Z = ja \cap Stadt = A) = P(Z = ja) \cdot P(Stadt = A)\)</span>.</li>
-<li>ob die bedingte Wahrscheinlichkeit dafür mit dem Studium zufrieden zu sein, wenn man in Stadt C studiert <span class="math inline">\(P(Z = ja| Stadt = C)\)</span> gleich der Wahrscheinlichkeit ist mit seinem Studium unabhängig von der Stadt zufrieden <span class="math inline">\(P(Z = ja)\)</span> zu sein</li>
-</ol>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: left;"></th>
-<th style="text-align: right;">stadt_a</th>
-<th style="text-align: right;">stadt_b</th>
-<th style="text-align: right;">stadt_c</th>
-<th style="text-align: right;">stadt_d</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">zufrieden_ja</td>
-<td style="text-align: right;">26700</td>
-<td style="text-align: right;">14900</td>
-<td style="text-align: right;">9700</td>
-<td style="text-align: right;">8900</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">zufrieden_nein</td>
-<td style="text-align: right;">9900</td>
-<td style="text-align: right;">6400</td>
-<td style="text-align: right;">9100</td>
-<td style="text-align: right;">14400</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+<p>In einem Seminar mit 30 Studierenden sollen 4 Personen zusammen ein Gruppenreferat vorbereiten. Dafür will der Dozent 4 zufällige Studierende aus allen Seminarteilnehmern ziehen. Sie und Ihre Kollegin, haben gerade überhaupt keine Zeit noch mehr fürs Studium zu tun und hoffen, dass sie nicht gezogen werden. Welches Modell der Kombinatorik passt für das hier vorliegenden Zufallsexperiment und wie hoch ist die Wahrscheinlichkeit, dass Sie und Ihre Kollegin um das Referat herum kommen?</p>
 <section id="answerlist" class="level2">
 <h2 class="anchored" data-anchor-id="answerlist">Answerlist</h2>
 <ul>
-<li>Die Wahrscheinlichkeit mit dem Studium zufrieden zu sein ist <strong>abhängig</strong> von der Stadt in der man studiert.</li>
-<li>Die Wahrscheinlichkeit mit dem Studium zufrieden zu sein ist <strong>unabhängig</strong> von der Stadt in der man studiert.</li>
-<li>Laut Multiplikationstheorem ergibt sich: <span class="math inline">\(P(Z = ja \cap Stadt = A) = 0.22033\)</span></li>
-<li>Laut Multiplikationstheorem ergibt sich: <span class="math inline">\(P(Z = ja \cap Stadt = A) = 0.267\)</span></li>
-<li>Die Wahrscheinlichkeit mit seinem Studium zufrieden zu sein ist: <span class="math inline">\(P(Z = ja) = 0.602\)</span></li>
-<li>Die bedingte Wahrscheinlichkeit mit seinem Studium zufrieden zu sein, wenn man in Stadt C studiert ist: <span class="math inline">\(P(Z = ja | Stadt = C) = 0.51596\)</span></li>
+<li>Für diese Zufallsexperiment wählt man das Modell <em>ohne</em> Zurücklegen und <em>ohne</em> Berücksichtigung der Reihenfolge</li>
+<li>Für diese Zufallesexperiment wählt man das Modell <em>ohne</em> Zurücklegen und <em>mit</em> Berücksichtigung der Reihenfolge</li>
+<li>Die Wahrscheinlichkeit, dass Sie und Ihre Kollegin um das Referat herum kommen ist: <span class="math inline">\(P = 0.747\)</span></li>
+<li>Die Wahrscheinlichkeit, dass Sie und Ihre Kollegin um das Referat herum kommen ist: <span class="math inline">\(P = 0.253\)</span></li>
 </ul>
 </section>
 </section>
 <section id="solution" class="level1">
 <h1>Solution</h1>
-<p>Für diese Übung bietet es sich an zuerst einige Wahrscheinlichkeiten zu berechnen, die benötigt werden um das Multiplikationstheorem zu prüfen und zu testen ob die bedingte Wahrscheinlichkeit <span class="math inline">\(P(Z = ja | Stadt = C) = P(Z = ja)\)</span> gilt.</p>
-<p>Für das Multiplikationstheorem sind das folgende Wahrscheinlichkeiten:</p>
-<ol type="1">
-<li>Die Wahrscheinlichkeit mit dem Studium zufrieden zu sein: <span class="math inline">\(P(Z = ja)\)</span></li>
-<li>Die Wahrscheinlichkeit in Stadt A zu studieren: <span class="math inline">\(P(Stadt = A)\)</span></li>
-<li>Die Wahrscheinlichkeit in mit dem Studium zufrieden zu sein und in Stadt A zu studieren: <span class="math inline">\(P(Z = ja \cap Stadt = A)\)</span></li>
-</ol>
-<p>Diese Wahrscheinlichkeiten berechnen sich in R folgendermassen:</p>
-<ol type="1">
-<li><code>(26700 + 14900 + 9700 + 8900)/(26700 + 14900 + 9700 + 8900 + 9900 + 6400 + 9100 + 14000)</code> = 0.602</li>
-<li><code>(26700 + 9900)/(26700 + 14900 + 9700 + 8900 + 9900 + 6400 + 9100 + 14000)</code> = 0.366</li>
-<li><code>(26700)/(26700 + 14900 + 9700 + 8900 + 9900 + 6400 + 9100 + 14000)</code> = 0.267</li>
-</ol>
-<p>Mit diesen Wahrscheinlichkeiten können wir prüfen ob das Multiplikationstheorem gilt:</p>
-<p>Aus <span class="math inline">\(P(Z = ja) \cdot P(Stadt = A)\)</span> ergibt sich <span class="math inline">\(0.2203\)</span>. Diese Wahrscheinlichkeit ist ungleich der berechneten Wahrscheinlichkeit von <span class="math inline">\(P(Z = ja \cap Stadt = A) = 0.267\)</span>. Daraus können wir schliessen, dass die Wahrscheinlichkeiten nicht voneinander unabhängig sind.</p>
-<p>Um zu Prüfen, ob die bedingte Wahrscheinlichkeit mit dem Studium zufrieden zu sein, wenn man in der Stadt C studiert gleich der Wahrscheinlichkeit ist unabhängig vom Studienort mit dem Studium zufrieden zu sein, müssen wir noch zwei weitere Wahrscheinlichkeiten berechnen:</p>
-<ol start="4" type="1">
-<li>Die Wahrscheinlichkeit mit den Studium zufrieden zu sein und in Stadt C zu studieren: <span class="math inline">\(P(Z = ja \cap Stadt = C)\)</span></li>
-<li>Diw Wahrscheinlichkeit in der Stadt C zu studieren: <span class="math inline">\(P(Stadt = C)\)</span></li>
-</ol>
-<p>In R können wir diese Wahrscheinlichkeiten folgendermassen berechnen:</p>
-<ol start="4" type="1">
-<li><code>(9700) / (26700 + 14900 + 9700 + 8900 + 9900 + 6400 + 9100 + 14000)</code> = 0.097</li>
-<li><code>(9700 + 9100) / (26700 + 14900 + 9700 + 8900 + 9900 + 6400 + 9100 + 14000)</code> = 0.188</li>
-</ol>
-<p>Mit diesen Wahrscheinlichkeiten können wir nun die bedingte Wahrscheinlichkeit berechnen, mit den Studium zufrieden zu sein, wenn man in der Stadt C studiert: <span class="math inline">\(P(Z = ja | Stadt = C) = \frac{0.097}{0.188} = 0.516\)</span>, diese Wahrscheinlichkeit ist unterschiedlich von der Wahrscheinlichkeit mit den Studium zufrieden zu sein unabhängig in welcher Stadt man studiert <span class="math inline">\(P(Z = ja) = 0.602\)</span>. So wie aus dem Multiplikationstheorem auch, können wir daraus schliessen, dass die Wahrscheinlichkeiten voneinander abhängig sind.</p>
+<p>Zuerst müssen Sie erkennen, dass es sich bei diesem Zufallsexperiment um einen Ziehen ohne Zurücklegen und ohne Berücksichtigung der Reihenfolge handelt.</p>
+<p>Entsprechend können wir mit Hilfe des Binomialkoeffizienten als erstes die Gesamtzahl an möglichen Ergebnissen <span class="math inline">\(K\)</span> bestimmen. Die Zahl an möglichen Ergebnissen bei einer Ziehung <span class="math inline">\(k\)</span> ist dabei 30 und die Anzahl an Ziehungen <span class="math inline">\(n\)</span> ist 4. Mit Hilfe der Produktfunktion <code>prod</code> können wir die entsprechenden Fakultäten mit Hilfe von Ganzzahligen Sequenzen <code>k:1</code>, dabei in die entsprechende Funktion einsetzen: <code>gesamtzahl &lt;- prod(30:1)/(prod((30-4):1)*prod(4:1))</code></p>
+<p>Nun müssen wir überlegen, wie viele Ergebnisse günstig für das Ereignis, dass weder Sie noch Ihre Kollegin für das Referat ausgewählt werden, sind. Im Prinzip heisst dieses Ereignis, dass die Studierenden für das Gruppenreferat nur aus den anderen 28 Teilnehmern gezogen werden, die nicht Sie oder Ihre Kollegin sind. Damit können wir die Anzahl günstiger Ereignisse ebenfalls mit einem Binomialkoeffizienten ausrechnen. Dabei setzen wir die Zahl an möglichen Ergebnissen bei einer Ziehung <span class="math inline">\(k\)</span> jedoch auf 28. Die Anzahl an Ziehungen <span class="math inline">\(n\)</span> bleibt bei 4. Also ergibt sich die Anzahl an günstigen Ereignisse aus: <code>günstige_fälle &lt;- prod(28:1)/(prod((28-4):1)*prod(4:1))</code></p>
+<p>Mit Hilfe dieser beiden Werte können wir nun die Wahrscheinlichkeit ausrechnen, dass weder Sie noch Ihre Freundin für das Referat ausgewählt werden: <code>wahrscheinlichkeit &lt;- günstige_fälle / gesamtzahl</code>.</p>
+<p>Aus dieser Berechnung sollte sich ergeben, dass die Wahrscheinlichkeit, dass Sie und Ihre Kollegin um das Referat herum kommen gleich 0.7471 ist.</p>
 </section>
 <section id="meta-information" class="level1">
 <h1>Meta-information</h1>
-<p>exname: prob_independence extype: mchoice exsolution: 101011 exshuffle: TRUE</p>
+<p>exname: prob_kombinatorik extype: mchoice exsolution: 1010 exshuffle: TRUE</p>
 
 
 </section>

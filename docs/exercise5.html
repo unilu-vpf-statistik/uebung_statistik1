@@ -8,7 +8,7 @@
 
 <meta name="author" content="Gidon Frischkorn">
 
-<title>Übung 4 - Wahrscheinlichkeitstheorie – Übungen - VL: Statistik I</title>
+<title>Übung 5 - Wahrscheinlichkeitstheorie – Übungen - VL: Statistik I</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -1730,7 +1730,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./exercise4.html">Übung 4</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Übung 5 - Wahrscheinlichkeitstheorie</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -1770,7 +1770,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercise4.html" class="sidebar-item-text sidebar-link active">
+  <a href="./exercise4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Übung 4</span></a>
   </div>
 </li>
@@ -1784,8 +1784,12 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#wiederholung-vertiefung-wahrscheinlichkeitstheorie" id="toc-wiederholung-vertiefung-wahrscheinlichkeitstheorie" class="nav-link active" data-scroll-target="#wiederholung-vertiefung-wahrscheinlichkeitstheorie">Wiederholung &amp; Vertiefung: Wahrscheinlichkeitstheorie</a></li>
-  <li><a href="#fakultät-in-r" id="toc-fakultät-in-r" class="nav-link" data-scroll-target="#fakultät-in-r">Fakultät in R</a></li>
+  <li><a href="#wiederholung-vertiefung-bayes-theorem-wahrscheinlichkeitsverteilungen" id="toc-wiederholung-vertiefung-bayes-theorem-wahrscheinlichkeitsverteilungen" class="nav-link active" data-scroll-target="#wiederholung-vertiefung-bayes-theorem-wahrscheinlichkeitsverteilungen">Wiederholung &amp; Vertiefung: Bayes Theorem &amp; Wahrscheinlichkeitsverteilungen</a></li>
+  <li><a href="#odds-chancen-bayes-faktoren" id="toc-odds-chancen-bayes-faktoren" class="nav-link" data-scroll-target="#odds-chancen-bayes-faktoren">Odds / Chancen &amp; Bayes Faktoren</a>
+  <ul class="collapse">
+  <li><a href="#odds-chancen" id="toc-odds-chancen" class="nav-link" data-scroll-target="#odds-chancen">Odds / Chancen</a></li>
+  <li><a href="#bayes-faktoren" id="toc-bayes-faktoren" class="nav-link" data-scroll-target="#bayes-faktoren">Bayes Faktoren</a></li>
+  </ul></li>
   <li><a href="#übungen" id="toc-übungen" class="nav-link" data-scroll-target="#übungen">Übungen</a></li>
   </ul>
 </nav>
@@ -2079,7 +2083,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Übung 4 - Wahrscheinlichkeitstheorie</h1>
+<h1 class="title">Übung 5 - Wahrscheinlichkeitstheorie</h1>
 <p class="subtitle lead">HS 2025</p>
 </div>
 
@@ -2103,53 +2107,66 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </header>
 
 
-<section id="wiederholung-vertiefung-wahrscheinlichkeitstheorie" class="level2">
-<h2 class="anchored" data-anchor-id="wiederholung-vertiefung-wahrscheinlichkeitstheorie">Wiederholung &amp; Vertiefung: Wahrscheinlichkeitstheorie</h2>
-<p>In dieser Übung werden keine neuen Konzepte oder Vorgehensweisen mit R eingeführt und besprochen. Statt dessen werden wir mit Hilfe der bisher bekannten Methoden und Operationen die Konzepte der Wahrscheinlichkeitstheorie üben und vertiefen.</p>
-<p>Wenn Sie trotzdem nochmal eine Erklärungvon den wesentlichen Grundbegriffen und Konzepten der Wahrscheinlichkeitstheorie aus einer anderen Perspektive bekommen wollen, dann empfehle ich Ihnen sich die folgenden YouTube Videos anzuschauen:</p>
-<ol type="1">
-<li>Grundlagen: <a href="https://www.youtube.com/watch?v=YTWM4aOqVwM&amp;list=PLkxhZdQfAXW2yorCKHwgx4U62iLOCF_oK">Wahrscheinlichkeiten</a></li>
-<li>Grundlagen: <a href="https://www.youtube.com/watch?v=bLwF2fI8Guc&amp;list=PLkxhZdQfAXW2yorCKHwgx4U62iLOCF_oK&amp;index=2">Schnittmenge, Vereiningungsmenge &amp; bedingte Wahrscheinlichkeit</a></li>
-<li>Grundlagen: <a href="https://www.youtube.com/watch?v=aVqmWW3xmdU&amp;list=PLkxhZdQfAXW2yorCKHwgx4U62iLOCF_oK&amp;index=3">Stochastische Unabhängigkeit</a></li>
-</ol>
+<section id="wiederholung-vertiefung-bayes-theorem-wahrscheinlichkeitsverteilungen" class="level2">
+<h2 class="anchored" data-anchor-id="wiederholung-vertiefung-bayes-theorem-wahrscheinlichkeitsverteilungen">Wiederholung &amp; Vertiefung: Bayes Theorem &amp; Wahrscheinlichkeitsverteilungen</h2>
+<p>In dieser Übung werden Üben mit den Verteilungsfunktionen der Binomialverteilung in R zu Arbeiten. Darüber hinaus sollen Sie sich noch einmal Vertieft mit einer anderen Parametrisierung des Bayes Theorems beschäftigen.</p>
+<p>Für eine ausführliche Erklärung dieser alternativen Parametrizierung schauen Sie sich bitte das folgende YouTube Video an:</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=lG4VkPoG3ko">The medical test paradox, and redesigning Bayes’ rule</a></li>
+</ul>
+<p>Nehmen Sie sich bitte Zeit dafür dieses Video anzuschauen und die Konzepte und Erklärungen nachzuvollziehen. Die Inhalte können Teil der Prüfung sein und damit sollten Sie die entsprechenden Konzepte verstehen und anwenden können.</p>
 </section>
-<section id="fakultät-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="fakultät-in-r">Fakultät in R</h2>
-<p>Leider gibt es in R keine Funktion, die die Fakultät einer Zahl <span class="math inline">\(k\)</span> direkt berechnet. Zum Glück kann man aber mit einigen einfachen Funktionen die Fakultät einer Zahl schnell berechnen. Dafür müssen wir zwei Schritte durchführen:</p>
+<section id="odds-chancen-bayes-faktoren" class="level2">
+<h2 class="anchored" data-anchor-id="odds-chancen-bayes-faktoren">Odds / Chancen &amp; Bayes Faktoren</h2>
+<p>In diesem Abschnitt fasse ich die wichtigsten Informationen aus dem Video nochmal zusammen. In dem Video werden zwei wichtige Konzepte eingeführt:</p>
 <ol type="1">
-<li>Einen Vektor von 1 bis zur Zahl <span class="math inline">\(k\)</span> erstellen</li>
-<li>Das Produkt aller Elemente im Vektor berechnen</li>
+<li>Die Darstellung von Wahrscheinlichkeiten mit Hilfe von Odds, oder deutsch Chancen</li>
+<li>Die Umformung der Sensitivität und Spezifität eines Tests in einen Bayes Faktor</li>
 </ol>
-<p>Für den ersten Schritt gibt es in R die Notation <code>1:k</code>, wenn Sie einen beliebigen Ganzzahligen Wert für <code>k</code> einsetzen, zum Beispiel <code>k = 8</code>, dann erhalten sie die Sequenz der ganzen Zahlen von 1 bis 8</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">8</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1 2 3 4 5 6 7 8</code></pre>
-</div>
-</div>
-<p>Falls Sie die Sequenz lieber so wie in der Vorlesung von der grössten bis zur kleinsten Zahl ausgeben wollen, dann können Sie auch <code>k:1</code> schreiben</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span><span class="sc">:</span><span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 8 7 6 5 4 3 2 1</code></pre>
-</div>
-</div>
-<p>Diese Sequenz können wir nutzen um nun das Produkt aller Elemente der Sequenz zu berechnen. Dafür bietet R die Funktion <code>prod</code>, die das Produkt aller Elemente eines Vektors berechnet, der der Funktion übergeben wird. Wir können die Fakultät einer Zahl also folgendermassen berechnen.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">8</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">prod</span>(<span class="dv">1</span><span class="sc">:</span>k)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 40320</code></pre>
-</div>
-</div>
-<p>Mit Hilfe dieser Funktion sollten Sie die folgenden Übungsaufgaben lösen können.</p>
+<section id="odds-chancen" class="level3">
+<h3 class="anchored" data-anchor-id="odds-chancen">Odds / Chancen</h3>
+<p>Normalerweise schreiben wir eine Wahrscheinlichkeit als einen Bruch bzw. eine Zahl zwischen 0 und 1. Die Idee dabei ist, dass wir die Anzahl günstiger Ereignisse zur Gesamtzahhl an möglichen Ereignissen in Bezug setzen. Wenn, wir zum Beispiel die Wahrscheinlichkeit bei würfeln eines fairen Würfels eine 6 zu werfen beschreiben, dann ist diese <span class="math inline">\(\frac{1}{6} = 0.16666 \dots\)</span>, weil ein Ergebnis der Zahl 6 enspricht, und es insgesamt 6 mögliche ergebnisse gibt.</p>
+<p>Alternativ können wir diese Wahrscheinlichkeit jedoch auch als Odds (bzw. Chancen) schreiben. Dabei setzen wir die Anzahl günstiger Ergebnisse zur Anzahl ungünstiger Ergebnisse in Bezug <span class="math inline">\(1:5\)</span>. Um Odds (Chancen) von Wahrscheinlichkeiten in der Notation abzugrenzen wird dabei Häufig ein Doppelpunkt verwendet. Die Odds <span class="math inline">\(1:5\)</span> beschreiben dabei genau so die Wahrscheinlichkeit und können auch in diese Übertragen werden in dem man die erste Zahl durch die Summe beider Zahlen teilt <span class="math inline">\(\frac{1}{1 + 5}\)</span>. Allgemein können wir also schreiben:</p>
+<p><span class="math display">\[
+a:b = \frac{a}{a+b}
+\]</span></p>
+<p>Odds (Chancen) können dabei auch als eine Zahl zwischen 0 und Unendlich <span class="math inline">\(\infty\)</span> angegeben werden. Dabei entsprechen Odds = 1 einer Wahrscheinlichkeit von 50% oder <span class="math inline">\(\frac{1}{2}\)</span>, Odds &lt; 1 entsprechen Wahrscheinlichkeiten kleiner als 50%, und Odds &gt; 1 entsprechen Wahrscheinlichkeiten grösser als 50%. Sind Odds als einzelne Zahl angegeben können Sie diese jeweils relativ zur Zahl 1 verstehen. Gegeben die Odds <span class="math inline">\(O\)</span> ergibt sich die Wahrscheinlichkeit:</p>
+<p><span class="math display">\[
+O = O:1 = \frac{O}{O+1}
+\]</span></p>
+</section>
+<section id="bayes-faktoren" class="level3">
+<h3 class="anchored" data-anchor-id="bayes-faktoren">Bayes Faktoren</h3>
+<p>Im Allgemeinen stellen Bayes Faktoren das Verhältnis von zwei Likelihoods, also bedigten Wahrscheinlichkeiten bestimmte Daten <span class="math inline">\(D\)</span> unter der Annahme eines Modells oder einer Hypothese <span class="math inline">\(H\)</span> zu Beobachten. Wenn wir also zwei solcher Likelihoods <span class="math inline">\(P(D | H_1)\)</span> und <span class="math inline">\(P(D | H_2)\)</span> zueinander in Bezug setzen erhalten wir den Bayes Faktor <span class="math inline">\(BF\)</span>:</p>
+<p><span class="math display">\[
+BF_{12} = \frac{P(D | H_1)}{P(D | H_2)}
+\]</span></p>
+<p>Der Index des Bayes Faktors gibt dabei an, welche bedingte Wahrscheinlichkeit im Zähler bzw. im Nenner steht. Die erste Zahl bezieht sich auf den Index der Hypothese im Zähler, die zweite Zahl auf den Index der Hypothese im Nenner.</p>
+<p>Im Bezug auf das Bayes Theorem ist die Berechnung des Bayes Faktors sehr hilfreich, da sie die Aktualisierungvon den Prior Beliefs, also unseres Wissens bevor wir die Daten gesehen haben, zu den Posterior Beliefs, also unserem Wissen nachdem wir die Daten gesehen haben, sehr klar und einfach darstellt. Stellen wir die Prior und Posterior Probability jeweils als Odds dar, gilt folgendes:</p>
+<p><span class="math display">\[
+O_{posterior} = BF \cdot O_{prior}
+\]</span></p>
+<section id="beispiel" class="level4">
+<h4 class="anchored" data-anchor-id="beispiel">Beispiel</h4>
+<p>Sie interessieren sich dafür wie ein bestimtes Symptom <span class="math inline">\(S\)</span> ihre Vermutung einer Diagnose <span class="math inline">\(D\)</span> verändert. Sie wissen,</p>
+<ol type="1">
+<li>dass die Prior Odds der Diagnose <span class="math inline">\(O(D)\)</span> (z. Bsp. Depression) 0.1 sind (es liegt also eine Wahrscheinlichkeit von <span class="math inline">\(\frac{0.1}{0.1+1} \approx 0.09 = 9\%\)</span> für eine Depression vor).</li>
+<li>Für das beobachtete Symptom (z. Bsp. Antriebslosigkeit) ist bekannt das der Bayes Faktor = 5 ist. Das heisst zum Beispiel depressive Personen <span class="math inline">\(D\)</span> zeigen zu 75% Antriebslosigkeit, während nicht depressive Personen <span class="math inline">\(\neg D\)</span> nur zu 15% Antriebslosigkeit breichten: <span class="math inline">\(\frac{P(S|D)}{P(S|\neg D)} = \frac{0.75}{0.15} = 5\)</span>.</li>
+</ol>
+<p>Mit diesen Informationen können wir schnell und einfach berechnen wie stark sich die Odds (Chancen) einer Diagnose auf Basis des beobachteten Symptoms verändern:</p>
+<p><span class="math display">\[
+O(D|S) = \frac{P(S|D)}{P(S|\neg D)} \cdot O(D) = \frac{0.75}{0.15} \cdot 0.1 = 5 \cdot 0.1 = 0.5
+\]</span></p>
+<p>Wenn wir diese Posterior Odds <span class="math inline">\(O(D | S)\)</span> in eine Wahrscheinlichkeit umrechnen erhalten wir: <span class="math inline">\(\frac{0.5}{0.5+1} = 0.333 \dots \approx 33 \%\)</span>. Nachdem wir das Symptom beobachtet haben, haben wir nun also eine höhere Chance <span class="math inline">\(33\% &gt; 9\%\)</span>, dass eine Person die das Symptom berichtet an Depression leidet.</p>
+</section>
+</section>
 </section>
 <section id="übungen" class="level2">
 <h2 class="anchored" data-anchor-id="übungen">Übungen</h2>
 <p>In den folgenden Übungen werden Sie wie in der letzten Übung mit dem simulierten Datensatz von fiktiven Daten eines Erstsemester-Jahrgangs von Psychologie-Studierenden arbeiten. Für diese Übung verwenden wir den gleichen Datensatz wie in Übung 3, sie können Sich den Datensatz auf ihren eigenen PC herunterladen: <a href="semester_data2.csv">semester_data2.csv</a></p>
 <p>Alternativ können Sie hier auf der Website direkt R Code mit Hilfe der <code>webr</code> Erweiterung ausführen um die Aufgaben zu lösen. Der Datensatz enthält die Variablen: <code>geschlecht</code>, <code>nationalität</code>, <code>wohnort</code>, <code>alter</code> und <code>wissen_statistik</code>. Unten sehen sie die ersten Zeilen des simulierten Datensatzes.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(semester_data2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(semester_data2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  geschlecht nationalität    wohnort alter wissen_statistik grösse
 1   weiblich      Schweiz     Luzern  21.9                3    158
@@ -2172,188 +2189,18 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </blockquote>
 <div class="webex-question">
 <div class="webex-check webex-box">
-<p>Berechnen Sie anhand der Werte in der unter der Frabge gegebenen Vier-Felder Tafel die bedingte Wahrscheinlichkeit, dass eine Person Krebs <span class="math inline">\(K\)</span> hat, wenn Sie Raucher <span class="math inline">\(R\)</span> ist: <span class="math inline">\(P(K = "ja" | R = "ja")\)</span></p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: left;"></th>
-<th style="text-align: right;">krebs_ja</th>
-<th style="text-align: right;">krebs_nein</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">raucher_ja</td>
-<td style="text-align: right;">80</td>
-<td style="text-align: right;">5320</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">raucher_nein</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">14580</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div id="webex-bedb6b1b8b94db3ebba5e6bbca40b2f5" class="webex-radiogroup" data-answer="OVVIUhpSHVNl">
-<label><input type="radio" autocomplete="off" name="bedb6b1b8b94db3ebba5e6bbca40b2f5"><span><span class="math inline">\(P(K = "ja" | R = "ja") = 0.005\)</span></span></label><label><input type="radio" autocomplete="off" name="bedb6b1b8b94db3ebba5e6bbca40b2f5"><span><span class="math inline">\(P(K = "ja" | R = "ja") = 0.00137\)</span></span></label><label><input type="radio" autocomplete="off" name="bedb6b1b8b94db3ebba5e6bbca40b2f5"><span><span class="math inline">\(P(K = "ja" | R = "ja") = 0.8\)</span></span></label><label><input type="radio" autocomplete="off" name="bedb6b1b8b94db3ebba5e6bbca40b2f5"><span><span class="math inline">\(P(K = "ja" | R = "ja") = 0.01481\)</span></span></label>
+<p>In einem normalen Jahr fallen 20% aller Studierenden duuch die Prüfung der Vorlesung Statistik 1 $ P(P-) = 0.2 $. Von den Studierenden, die die Prüfung bestehen haben 80% alle Übungen im Selbststudium gewissenhaft gelöst $ P(Ü+ | P+) = 0.8 $. Von den Studierenden, die durch die Prüfung fallen, haben nur 20% die Übungen gewissenhaft gelöst $ P(Ü+ | P-) = 0.2 $. Auf welche Wahrscheinlichkeit reduziert sich die Wahrscheinlichkeit durch die Statistikprüfung zu fallen, wenn Sie die Übungen gewissenhaft lösen $ P(P+ | Ü+) $.</p>
+<p>Um die Frage zu Beantworten berechnen Sie bitte:</p>
+<ol type="1">
+<li>Die Odds / Chance die Prüfung zu bestehen, unabhängig davon, ob die Übungen gewissenhaft gelöst wurden oder nicht $ O(P+) $</li>
+<li>Den Bayes Faktor zur Aktualisierung der Odds die Prüfung zu bestehen, wenn die Übungen gelöst wurden $ BF_{Ü+} $</li>
+</ol>
+<div id="webex-85251813ca61ad8fb72c4facd75677b7" class="webex-checkboxgroup" data-answer="YwQeBB0JHQM+">
+<label><input type="checkbox" autocomplete="off" name="85251813ca61ad8fb72c4facd75677b7"><span>Die Odds / Chancen die Prüfung zu bestehen, unabhängig davon ob man die Übungen gelöst hat oder nicht sind $ O(P+) = 4 $</span></label><label><input type="checkbox" autocomplete="off" name="85251813ca61ad8fb72c4facd75677b7"><span>Der Bayes Faktor zur Aktualisierung der Odds durch die Prüfung zu fallen, wenn man die Übungen gelöst hat ist $ BF_{P-} = 0.25 $</span></label><label><input type="checkbox" autocomplete="off" name="85251813ca61ad8fb72c4facd75677b7"><span>Die Wahrhscheinlichkeit durch die Prüfung zu fallen, wenn Sie die Übungen gewissenhaft gelöst haben ist $ P(P+ | Ü+) = 0.059 $</span></label><label><input type="checkbox" autocomplete="off" name="85251813ca61ad8fb72c4facd75677b7"><span>Antwort 4</span></label>
 </div>
 </div>
 <div class="webex-solution">
-<p>Für diese Frage müssen Sie die Formel der bedingten Wahrscheinlichkeit Nutzen: <span class="math inline">\(P(A|B) = \frac{P(A \cap B)}{P(B)}\)</span>.</p>
-<p>Die jeweiligen Wahrscheinlichkeiten können Sie aus den absoluten Häufigkeiten in der Tabelle berechnen.</p>
-<p>Für <span class="math inline">\(P(A \cap B)\)</span> ergibt sich diese aus der Menge an Leuten die Krebs haben und Raucher sind <span class="math inline">\(N_{A \cap B} = 80\)</span> und der Gesamtzahl an Beobachtungen in der Vier-Felder Tafel <span class="math inline">\(N_{ges} = 2\times 10^{4}\)</span>. Daraus ergibt sich die Wahrscheinlichkeit von <span class="math inline">\(P(A \cap B) = \frac{N_{A \cap B}}{N_{ges}} = \frac{80}{2\times 10^{4}} = 0.004\)</span></p>
-<p>In R sieht diese Berechnung so aus: <code>80 / (80 + 20 + 5320 + 14580)</code></p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.004</code></pre>
-</div>
-</div>
-<p>Für <span class="math inline">\(P(B)\)</span> die Wahrscheinlichkeit, dass eine Person Raucher ist, müssen Sie die Anzahl der Raucher <span class="math inline">\(N_B\)</span> durch die gesamt Zahl an Personen <span class="math inline">\(N_ges\)</span> teilen. Entsprechend ergibt sich für <span class="math inline">\(P(B) = \frac{N_B}{N_{ges}} = \frac{80 + 5320}{2\times 10^{4}}= 0.27\)</span></p>
-<p>In R sieht diese Berechnung wiederum so aus: <code>(80 + 5320)  / (80 + 20 + 5320 + 14580)</code></p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.27</code></pre>
-</div>
-</div>
-<p>Nun müssen Sie diese Werte nur noch durcheinander Teilen und erhalten dann die bedingte Wahrscheinlichkeit, dass eine Person Krebs hat wenn Sie Raucher ist: <span class="math inline">\(P(A \cap B) = \frac{0.004}{0.27} = 0.0148148\)</span></p>
-<p>Wie Ihnen vielleicht aufgefallen ist, ist der Nenner für die beiden Wahrscheinlichkeiten <span class="math inline">\(P(A \cap B)\)</span> und <span class="math inline">\(P(B)\)</span> gleich. Deshalb können wir uns die Berechnung der bedingten Wahrscheinlichkeit in R erleichtern indem wir die Zähler der jeweiligen Wahrscheinlichkeiten durcheinander teilen: <code>80  / (80 + 5320)</code></p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.01481481</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Berechnen Sie die Wahrscheinlichkeit das eine Person aus dem Datensatz <code>semester_data2</code> aus der Schweiz kommt. Prüfen Sie, ob diese Wahrscheinlichkeit unabhängig davon ist eine Mann oder eine Frau zu sein. Am einfachsten Berechnen sie dafür die bedingte Wahrscheinlichkeiten aus der Schweiz zu sein, wenn eine Person eine Frau oder ein Mann ist.</p>
-<div id="webex-6a871f93ebedffa5bd26ffa68be033f4" class="webex-checkboxgroup" data-answer="bVEUBx1XFQNJUzg=">
-<label><input type="checkbox" autocomplete="off" name="6a871f93ebedffa5bd26ffa68be033f4"><span>Die bedingte Wahrscheinlichkeit grösser als 170cm zu sein, wenn man eine Frau ist, ist: <span class="math inline">\(P(Schweiz | Frau) = 0.744\)</span></span></label><label><input type="checkbox" autocomplete="off" name="6a871f93ebedffa5bd26ffa68be033f4"><span>Die bedingte Wahrscheinlichkeit aus der Schweiz zu sein, wenn man ein Mann ist, ist: <span class="math inline">\(P(Schweiz | Mann) = 0.715\)</span></span></label><label><input type="checkbox" autocomplete="off" name="6a871f93ebedffa5bd26ffa68be033f4"><span>Die Wahrscheinlichkeit aus der Schweiz zu sein ist <strong>unabhängig</strong> davon ob die Person eine Frau oder ein Mann ist.</span></label><label><input type="checkbox" autocomplete="off" name="6a871f93ebedffa5bd26ffa68be033f4"><span>Die Wahrscheinlichkeit aus der Schweiz zu sein ist <strong>abhängig</strong> davon ob die Person eine Frau oder ein Mann ist.</span></label><label><input type="checkbox" autocomplete="off" name="6a871f93ebedffa5bd26ffa68be033f4"><span>Die Wahrscheinlichkeit aus der Schweiz zu sein ist: <span class="math inline">\(P(Schweiz) = 0.722\)</span></span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Um diese Frage zu lösen müssen wir drei Wahrscheinlichkeiten aus der relativen Häufigkeiten der Daten schätzen:</p>
-<ol type="1">
-<li>Die Wahrscheinlichkeit aus der Schweiz zu sein</li>
-<li>Die Wahrscheinlichkeit aus der Schweiz zu sein, wenn man eine Frau ist</li>
-<li>Die Wahrscheinlichkeit aus der Schweiz zu sein, wenn man ein Mann ist.</li>
-</ol>
-<p>Um die relative Häufigkeit aller Personen zu bekommen, die aus der Schweiz sind können wir logische Indizierung nutzen: <code>ist_schweizer &lt;- semester_data2$nationalität == "Schweiz"</code>, für diese Variable können wir wiederum aufsummieren, wie viele Werte <code>TRUE</code> sind: <code>sum(ist_schweizer)</code>, um dann die relative Häufigkeit zu bekommen müssen wir die absolute Häufigkeit noch durch die Anzahl an Werten teilen: <code>sum(ist_schweizer)/length(ist_schweizer)</code>.</p>
-<p>Vielleicht ist Ihnen aufgefallen, dass die letzte Operation im wesentlichen die Berechnung des Mittelwerts der Variable <code>ist_schweizer</code> darstellt. Insofern können wir auch direkt mit der folgenden Berechnung die Wahrscheinlichkeit berechnen, dass eine Person aus der Schweiz ist: <code>mean(semester_data2$nationalität == "Schweiz")</code></p>
-<p>Mit dem Trick der Mittelwertberechnung können wir auch schnell und effizient die Wahrscheinlichkeit berechnen aus der Schweiz zu sein, wenn eine Person eine Frau oder ein Mann ist. Dafür müssen wir jeweils nur die Werte der Variable <code>nationalität</code> auswählen für die gilt <code>semester_data2$geschlecht == "weiblich"</code>, wenn wir die bedingte Wahrscheinlichkeit für Frauen wollen, und <code>semester_data2$geschlecht == "männlich"</code>, wenn wir die bedingte Wahrscheinlichkeit für Männer wollen.</p>
-<p>Daraus ergibt sich: P(Schweiz | Frau) = <code>mean(semester_data2$nationalität[semester_data2$geschlecht == "weiblich"] == "Schweiz")</code> und P(Schweiz | Mann) = <code>mean(semester_data2$nationalität[semester_data2$geschlecht == "männlich"] == "Schweiz")</code></p>
-<p>Wenn sie diese Werte miteinander vergleich: P(Schweiz) = 0.722; P(Schweiz | Frau) = 0.715; und P(Schweiz | Mann) = 0.744, dann weichen diese numerische (also was die absoluten Zahlen angeht) zwar leicht voneinander ab. Aber an dieser Stelle müssen wir beachten, dass die Schätzung der “wahren” Wahrscheinlichkeit durch die relativen Häufigkeiten aus den Daten eben auch nicht perfekt ist. Deshalb würde ich an dieser Stelle darauf schliessen, dass die Wahrscheinlichkeit aus der Schweiz zu sein stochastisch <em>unabhängig</em> davon ist ob man eine Frau oder ein Mann ist.</p>
-<p>Um diesen Schluss noch weiter abzusichern, könnten noch mehr Daten gesammelt werden. Ausserdem werden wir im Laufe des Semesters noch einen statistischen Test kennen lernen, der prüft ob die hier gefundene Abweichung statistisch bedeutsam ist.</p>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>In einem Seminar mit 30 Studierenden sollen 4 Personen zusammen ein Gruppenreferat vorbereiten. Dafür will der Dozent 4 zufällige Studierende aus allen Seminarteilnehmern ziehen. Sie und Ihre Kollegin, haben gerade überhaupt keine Zeit noch mehr fürs Studium zu tun und hoffen, dass sie nicht gezogen werden. Welches Modell der Kombinatorik passt für das hier vorliegenden Zufallsexperiment und wie hoch ist die Wahrscheinlichkeit, dass Sie und Ihre Kollegin um das Referat herum kommen?</p>
-<div id="webex-7eef28d2c9a553df5f8853147e1bb172" class="webex-checkboxgroup" data-answer="bFVJVx4JSAI+">
-<label><input type="checkbox" autocomplete="off" name="7eef28d2c9a553df5f8853147e1bb172"><span>Für diese Zufallesexperiment wählt man das Modell <em>ohne</em> Zurücklegen und <em>mit</em> Berücksichtigung der Reihenfolge</span></label><label><input type="checkbox" autocomplete="off" name="7eef28d2c9a553df5f8853147e1bb172"><span>Für diese Zufallsexperiment wählt man das Modell <em>ohne</em> Zurücklegen und <em>ohne</em> Berücksichtigung der Reihenfolge</span></label><label><input type="checkbox" autocomplete="off" name="7eef28d2c9a553df5f8853147e1bb172"><span>Die Wahrscheinlichkeit, dass Sie und Ihre Kollegin um das Referat herum kommen ist: <span class="math inline">\(P = 0.747\)</span></span></label><label><input type="checkbox" autocomplete="off" name="7eef28d2c9a553df5f8853147e1bb172"><span>Die Wahrscheinlichkeit, dass Sie und Ihre Kollegin um das Referat herum kommen ist: <span class="math inline">\(P = 0.253\)</span></span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Zuerst müssen Sie erkennen, dass es sich bei diesem Zufallsexperiment um einen Ziehen ohne Zurücklegen und ohne Berücksichtigung der Reihenfolge handelt.</p>
-<p>Entsprechend können wir mit Hilfe des Binomialkoeffizienten als erstes die Gesamtzahl an möglichen Ergebnissen <span class="math inline">\(K\)</span> bestimmen. Die Zahl an möglichen Ergebnissen bei einer Ziehung <span class="math inline">\(k\)</span> ist dabei 30 und die Anzahl an Ziehungen <span class="math inline">\(n\)</span> ist 4. Mit Hilfe der Produktfunktion <code>prod</code> können wir die entsprechenden Fakultäten mit Hilfe von Ganzzahligen Sequenzen <code>k:1</code>, dabei in die entsprechende Funktion einsetzen: <code>gesamtzahl &lt;- prod(30:1)/(prod((30-4):1)*prod(4:1))</code></p>
-<p>Nun müssen wir überlegen, wie viele Ergebnisse günstig für das Ereignis, dass weder Sie noch Ihre Kollegin für das Referat ausgewählt werden, sind. Im Prinzip heisst dieses Ereignis, dass die Studierenden für das Gruppenreferat nur aus den anderen 28 Teilnehmern gezogen werden, die nicht Sie oder Ihre Kollegin sind. Damit können wir die Anzahl günstiger Ereignisse ebenfalls mit einem Binomialkoeffizienten ausrechnen. Dabei setzen wir die Zahl an möglichen Ergebnissen bei einer Ziehung <span class="math inline">\(k\)</span> jedoch auf 28. Die Anzahl an Ziehungen <span class="math inline">\(n\)</span> bleibt bei 4. Also ergibt sich die Anzahl an günstigen Ereignisse aus: <code>günstige_fälle &lt;- prod(28:1)/(prod((28-4):1)*prod(4:1))</code></p>
-<p>Mit Hilfe dieser beiden Werte können wir nun die Wahrscheinlichkeit ausrechnen, dass weder Sie noch Ihre Freundin für das Referat ausgewählt werden: <code>wahrscheinlichkeit &lt;- günstige_fälle / gesamtzahl</code>.</p>
-<p>Aus dieser Berechnung sollte sich ergeben, dass die Wahrscheinlichkeit, dass Sie und Ihre Kollegin um das Referat herum kommen gleich 0.7471 ist.</p>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Berechnen Sie anhand der Werte in der unter der Frage gegebenen Tabelle, ob die Wahrscheinlichkeit das Personen mit Ihrem Studium zufrieden sind <code>zufrieden_ja</code> von der Stadt in der die Studierenden ihr Studium absolvieren unabhängig sind. Berechnen Sie dafür:</p>
-<ol type="1">
-<li>ob das Multiplikationstheorem für die Wahrscheinlichkeit in Stadt A mit dem Studium zufrieden zu sein gilt: <span class="math inline">\(P(Z = ja \cap Stadt = A) = P(Z = ja) \cdot P(Stadt = A)\)</span>.</li>
-<li>ob die bedingte Wahrscheinlichkeit dafür mit dem Studium zufrieden zu sein, wenn man in Stadt C studiert <span class="math inline">\(P(Z = ja| Stadt = C)\)</span> gleich der Wahrscheinlichkeit ist mit seinem Studium unabhängig von der Stadt zufrieden <span class="math inline">\(P(Z = ja)\)</span> zu sein</li>
-</ol>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: left;"></th>
-<th style="text-align: right;">stadt_a</th>
-<th style="text-align: right;">stadt_b</th>
-<th style="text-align: right;">stadt_c</th>
-<th style="text-align: right;">stadt_d</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">zufrieden_ja</td>
-<td style="text-align: right;">26700</td>
-<td style="text-align: right;">14900</td>
-<td style="text-align: right;">9700</td>
-<td style="text-align: right;">8900</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">zufrieden_nein</td>
-<td style="text-align: right;">9900</td>
-<td style="text-align: right;">6400</td>
-<td style="text-align: right;">9100</td>
-<td style="text-align: right;">14400</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div id="webex-69ee2f0671fffdfb8e612d758ff587cc" class="webex-checkboxgroup" data-answer="bQhJVB5WHAcbAEpWOw==">
-<label><input type="checkbox" autocomplete="off" name="69ee2f0671fffdfb8e612d758ff587cc"><span>Laut Multiplikationstheorem ergibt sich: <span class="math inline">\(P(Z = ja \cap Stadt = A) = 0.22033\)</span></span></label><label><input type="checkbox" autocomplete="off" name="69ee2f0671fffdfb8e612d758ff587cc"><span>Die Wahrscheinlichkeit mit dem Studium zufrieden zu sein ist <strong>abhängig</strong> von der Stadt in der man studiert.</span></label><label><input type="checkbox" autocomplete="off" name="69ee2f0671fffdfb8e612d758ff587cc"><span>Die Wahrscheinlichkeit mit dem Studium zufrieden zu sein ist <strong>unabhängig</strong> von der Stadt in der man studiert.</span></label><label><input type="checkbox" autocomplete="off" name="69ee2f0671fffdfb8e612d758ff587cc"><span>Die Wahrscheinlichkeit mit seinem Studium zufrieden zu sein ist: <span class="math inline">\(P(Z = ja) = 0.602\)</span></span></label><label><input type="checkbox" autocomplete="off" name="69ee2f0671fffdfb8e612d758ff587cc"><span>Die bedingte Wahrscheinlichkeit mit seinem Studium zufrieden zu sein, wenn man in Stadt C studiert ist: <span class="math inline">\(P(Z = ja | Stadt = C) = 0.51596\)</span></span></label><label><input type="checkbox" autocomplete="off" name="69ee2f0671fffdfb8e612d758ff587cc"><span>Laut Multiplikationstheorem ergibt sich: <span class="math inline">\(P(Z = ja \cap Stadt = A) = 0.267\)</span></span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Für diese Übung bietet es sich an zuerst einige Wahrscheinlichkeiten zu berechnen, die benötigt werden um das Multiplikationstheorem zu prüfen und zu testen ob die bedingte Wahrscheinlichkeit <span class="math inline">\(P(Z = ja | Stadt = C) = P(Z = ja)\)</span> gilt.</p>
-<p>Für das Multiplikationstheorem sind das folgende Wahrscheinlichkeiten:</p>
-<ol type="1">
-<li>Die Wahrscheinlichkeit mit dem Studium zufrieden zu sein: <span class="math inline">\(P(Z = ja)\)</span></li>
-<li>Die Wahrscheinlichkeit in Stadt A zu studieren: <span class="math inline">\(P(Stadt = A)\)</span></li>
-<li>Die Wahrscheinlichkeit in mit dem Studium zufrieden zu sein und in Stadt A zu studieren: <span class="math inline">\(P(Z = ja \cap Stadt = A)\)</span></li>
-</ol>
-<p>Diese Wahrscheinlichkeiten berechnen sich in R folgendermassen:</p>
-<ol type="1">
-<li><code>(26700 + 14900 + 9700 + 8900)/(26700 + 14900 + 9700 + 8900 + 9900 + 6400 + 9100 + 14000)</code> = 0.602</li>
-<li><code>(26700 + 9900)/(26700 + 14900 + 9700 + 8900 + 9900 + 6400 + 9100 + 14000)</code> = 0.366</li>
-<li><code>(26700)/(26700 + 14900 + 9700 + 8900 + 9900 + 6400 + 9100 + 14000)</code> = 0.267</li>
-</ol>
-<p>Mit diesen Wahrscheinlichkeiten können wir prüfen ob das Multiplikationstheorem gilt:</p>
-<p>Aus <span class="math inline">\(P(Z = ja) \cdot P(Stadt = A)\)</span> ergibt sich <span class="math inline">\(0.2203\)</span>. Diese Wahrscheinlichkeit ist ungleich der berechneten Wahrscheinlichkeit von <span class="math inline">\(P(Z = ja \cap Stadt = A) = 0.267\)</span>. Daraus können wir schliessen, dass die Wahrscheinlichkeiten nicht voneinander unabhängig sind.</p>
-<p>Um zu Prüfen, ob die bedingte Wahrscheinlichkeit mit dem Studium zufrieden zu sein, wenn man in der Stadt C studiert gleich der Wahrscheinlichkeit ist unabhängig vom Studienort mit dem Studium zufrieden zu sein, müssen wir noch zwei weitere Wahrscheinlichkeiten berechnen:</p>
-<ol start="4" type="1">
-<li>Die Wahrscheinlichkeit mit den Studium zufrieden zu sein und in Stadt C zu studieren: <span class="math inline">\(P(Z = ja \cap Stadt = C)\)</span></li>
-<li>Diw Wahrscheinlichkeit in der Stadt C zu studieren: <span class="math inline">\(P(Stadt = C)\)</span></li>
-</ol>
-<p>In R können wir diese Wahrscheinlichkeiten folgendermassen berechnen:</p>
-<ol start="4" type="1">
-<li><code>(9700) / (26700 + 14900 + 9700 + 8900 + 9900 + 6400 + 9100 + 14000)</code> = 0.097</li>
-<li><code>(9700 + 9100) / (26700 + 14900 + 9700 + 8900 + 9900 + 6400 + 9100 + 14000)</code> = 0.188</li>
-</ol>
-<p>Mit diesen Wahrscheinlichkeiten können wir nun die bedingte Wahrscheinlichkeit berechnen, mit den Studium zufrieden zu sein, wenn man in der Stadt C studiert: <span class="math inline">\(P(Z = ja | Stadt = C) = \frac{0.097}{0.188} = 0.516\)</span>, diese Wahrscheinlichkeit ist unterschiedlich von der Wahrscheinlichkeit mit den Studium zufrieden zu sein unabhängig in welcher Stadt man studiert <span class="math inline">\(P(Z = ja) = 0.602\)</span>. So wie aus dem Multiplikationstheorem auch, können wir daraus schliessen, dass die Wahrscheinlichkeiten voneinander abhängig sind.</p>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Berechnen Sie die Wahrscheinlichkeit das eine Person aus dem Datensatz <code>semester_data2</code> grösser als 170cm (<span class="math inline">\(G &gt; 170cm\)</span>) ist. Prüfen Sie, ob diese Wahrscheinlichkeit unabhängig davon ist eine Mann oder eine Frau zu sein. Am einfachsten Berechnen sie dafür die bedingte Wahrscheinlichkeiten grösser als 170cm zu sein, wenn eine Person eine Frau oder ein Mann ist.</p>
-<div id="webex-ae9878363e42cde0771fc7dc50275366" class="webex-checkboxgroup" data-answer="OlQVCRsIHwYfVWk=">
-<label><input type="checkbox" autocomplete="off" name="ae9878363e42cde0771fc7dc50275366"><span>Die Wahrscheinlichkeit grösser als 170 cm zu sein ist <strong>abhängig</strong> davon ob die Person eine Frau oder ein Mann ist.</span></label><label><input type="checkbox" autocomplete="off" name="ae9878363e42cde0771fc7dc50275366"><span>Die bedingte Wahrscheinlichkeit grösser als 170cm zu sein, wenn man eine Frau ist, ist: <span class="math inline">\(P(G &gt; 170cm | Frau) = 0.13139\)</span></span></label><label><input type="checkbox" autocomplete="off" name="ae9878363e42cde0771fc7dc50275366"><span>Die Wahrscheinlichkeit grösser als 170 cm zu sein ist <strong>unabhängig</strong> davon ob die Person eine Frau oder ein Mann ist.</span></label><label><input type="checkbox" autocomplete="off" name="ae9878363e42cde0771fc7dc50275366"><span>Die Wahrscheinlichkeit grösser als 170 cm zu sein ist: <span class="math inline">\(P(G &gt; 170cm) = 0.73333\)</span></span></label><label><input type="checkbox" autocomplete="off" name="ae9878363e42cde0771fc7dc50275366"><span>Die bedingte Wahrscheinlichkeit grösser als 170cm zu sein, wenn man ein Mann ist, ist: <span class="math inline">\(P(G &gt; 170cm | Mann) = 0.30233\)</span></span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Um diese Frage zu lösen müssen wir drei Wahrscheinlichkeiten aus der relativen Häufigkeiten der Daten schätzen:</p>
-<ol type="1">
-<li>Die Wahrscheinlichkeit grösser als 170cm zu sein</li>
-<li>Die Wahrscheinlichkeit grösser als 170cm zu sein, wenn man eine Frau ist</li>
-<li>Die Wahrscheinlichkeit grösser als 170cm zu sein, wenn man ein Mann ist.</li>
-</ol>
-<p>Um die relative Häufigkeit aller Personen zu bekommen, die grösser als 170 cm sind können wir logische Indizierung nutzen: <code>ist_gross &lt;- semester_data2$grösse &gt; 170</code>, für diese Variable können wir aufsummieren, wie viele Werte <code>TRUE</code> sind: <code>sum(ist_gross)</code>, um dann die relative Häufigkeit zu bekommen müssen wir die absolute Häufigkeit noch durch die Anzahl an Werten teilen: <code>sum(ist_gross)/length(ist_gross)</code>.</p>
-<p>Vielleicht ist Ihnen aufgefallen, dass die letzte Operation im wesentlichen die Berechnun des Mittelwerts der Variable <code>ist_gross</code> darstellt. Insofern können wir auch direkt mit der folgenden Berechnung die Wahrscheinlichkeit berechnen, dass eine Person grösser als 170cm ist: <code>mean(semester_data2$grösse &gt; 170)</code></p>
-<p>Mit dem Trick der Mittelwert berechnung können wir auch schnell und effizient die Wahrscheinlichkeit berechnen grösser als 170 cm zu sein, wenn eine Person eine Frau oder ein Mann ist. Dafür müssen wir jeweils nur die Werte der Variable <code>grösse</code> auswählen für die gilt <code>semester_data2$geschlecht == "weiblich"</code>, wenn wir die bedingte Wahrscheinlichkeit für Frauen wollen, und <code>semester_data2$geschlecht == "männlich"</code>, wenn wir die bedingte Wahrscheinlichkeit für Männer wollen.</p>
-<p>Daraus ergibt sich: P(G &gt; 170cm | Frau) = <code>mean(semester_data2$grösse[semester_data2$geschlecht == "weiblich"] &gt; 170)</code> und P(G &gt; 170cm | Mann) = <code>mean(semester_data2$grösse[semester_data2$geschlecht == "männlich"] &gt; 170)</code></p>
+
 </div>
 </div>
 <hr>

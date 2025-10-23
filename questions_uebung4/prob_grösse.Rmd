@@ -3,7 +3,12 @@ Question
 Berechnen Sie die Wahrscheinlichkeit das eine Person aus dem Datensatz `semester_data2` grösser als 170cm ($G > 170cm$) ist. Prüfen Sie, ob diese Wahrscheinlichkeit unabhängig davon ist eine Mann oder eine Frau zu sein. Am einfachsten Berechnen sie dafür die bedingte Wahrscheinlichkeiten grösser als 170cm zu sein, wenn eine Person eine Frau oder ein Mann ist.
 
 ```{r}
+#| message: false
+#| warning: false
 #| include: false
+url <- "https://unilu-vpf-statistik.github.io/uebung_statistik1/semester_data2.csv"
+download.file(url, "semester_data2.csv")
+
 semester_data2 <- read.csv("semester_data2.csv")
 
 p_grösse <- mean(semester_data2$grösse > 170)

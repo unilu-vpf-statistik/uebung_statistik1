@@ -1,0 +1,55 @@
+Question
+=======
+
+```{r settings}
+#| include: false
+p_fail <- 0.2
+p_exercise_pass <- 0.8
+p_exercise_fail <- 0.2
+```
+
+In einem normalen Jahr fallen 20% aller Studierenden duuch die Prüfung der Vorlesung Statistik 1 $ P(P-) = `r p_fail` $. Von den Studierenden, die die Prüfung bestehen haben 80% alle Übungen im Selbststudium gewissenhaft gelöst $ P(Ü+ | P+) = `r p_exercise_pass` $. Von den Studierenden, die durch die Prüfung fallen, haben nur 20% die Übungen gewissenhaft gelöst $ P(Ü+ | P-) = `r p_exercise_fail` $. Auf welche Wahrscheinlichkeit reduziert sich die Wahrscheinlichkeit durch die Statistikprüfung zu fallen, wenn Sie die Übungen gewissenhaft lösen $ P(P+ | Ü+) $.
+
+Um die Frage zu Beantworten berechnen Sie bitte:
+
+1. Die Odds / Chance die Prüfung zu bestehen, unabhängig davon, ob die Übungen gewissenhaft gelöst wurden oder nicht $ O(P+) $
+2. Den Bayes Faktor zur Aktualisierung der Odds die Prüfung zu bestehen, wenn die Übungen gelöst wurden $ BF_{Ü+} $
+
+```{r compute_solution}
+#| echo: false
+odds_fail <- p_fail/(1-p_fail)
+odds_pass <- (1-p_fail)/p_fail
+
+bayes_factor_übungJA <- p_exercise_pass/p_exercise_fail
+bayes_factor_übungNEIN <- (1-p_exercise_fail)/(1-p_exercise_pass)
+
+odds_fail_übungJA   <- odds_fail * 1/bayes_factor_übungJA
+odds_pass_übungJA <- odds_pass * bayes_factor_übungJA
+
+odds_fail_übungNEIN <- odds_fail * bayes_factor_übungNEIN
+odds_pass_übungNEIN <- odds_pass * 1/bayes_factor_übungNEIN
+
+prob_fail_übungJA <- odds_fail_übungJA/(1+odds_fail_übungJA)
+prob_pass_übungJA <- odds_pass_übungJA/(1+odds_pass_übungJA)
+
+prob_fail_übungNEIN <- odds_fail_übungNEIN/(1+odds_fail_übungNEIN)
+prob_pass_übungNEIN <- odds_pass_übungNEIN/(1+odds_pass_übungNEIN)
+```
+
+Answerlist
+--------
+* Die Odds / Chancen die Prüfung zu bestehen, unabhängig davon ob man die Übungen gelöst hat oder nicht sind $ O(P+) = `r odds_pass` $
+* Der Bayes Faktor zur Aktualisierung der Odds durch die Prüfung zu fallen, wenn man die Übungen gelöst hat ist $ BF_{P-} = `r round(1/bayes_factor_übungJA,3)` $
+* Die Wahrhscheinlichkeit durch die Prüfung zu fallen, wenn Sie die Übungen gewissenhaft gelöst haben ist $ P(P+ | Ü+) = `r round(prob_fail_übungJA, 3)` $
+* Antwort 4
+
+Solution
+========
+
+
+Meta-information
+=========
+exname: prob_conditional 
+extype: mchoice 
+exsolution: 1110
+exshuffle: FALSE

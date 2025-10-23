@@ -17,7 +17,7 @@ Answerlist
 * Die Wahrscheinlichkeit aus der Schweiz zu sein ist **unabhängig** davon ob die Person eine Frau oder ein Mann ist.
 * Die Wahrscheinlichkeit aus der Schweiz zu sein ist: $P(Schweiz) = `r round(p_schweiz,3)`$
 * Die bedingte Wahrscheinlichkeit aus der Schweiz zu sein, wenn man ein Mann ist, ist: $P(Schweiz | Mann) = `r round(p_schweiz_frau,3)`$
-* Die bedingte Wahrscheinlichkeit grösser als 170cm zu sein, wenn man eine Frau ist, ist: $P(Schweiz | Frau) = `r round(p_schweiz_mann,3)`$
+* Die bedingte Wahrscheinlichkeit aus der Schweiz zu sein, wenn man eine Frau ist, ist: $P(Schweiz | Frau) = `r round(p_schweiz_mann,3)`$
 
 Solution
 ========

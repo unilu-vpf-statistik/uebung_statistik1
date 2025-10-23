@@ -1,0 +1,34 @@
+Question
+=======
+
+Von 100.000 Personen sind 10% and Covid erkrankt. Sie fühlen Sich verschnupft und krank und führen einen Covid-Test durch. Das Ergebnis ist negativ. Sie wissen, dass der Test eine Sensitivität von 95% hat und damit für 95% der Personen, die an Covid erkrankt sind ein positives Ergebnis liefert. Ausserdem hat der Test eine Spezifität von 90%, Personen die nicht an COVID erkrankt sind erhalten also in 10% der Fälle ein positives Ergebnis. Wie hoch ist die Wahrscheinlichkeit, dass Sie an COVID erkrankt sind, gegeben dem negativen Testergebnis.
+
+Wenden Sie das Bayes Theorem an um diese Frage zu Beantworten. Beachten Sie, dass Sie die Wahrscheinlichkeit für COVID gegeben eines negativen Testergebnisses berechnen sollen. Sie müssen die Elemente der Formel also entsprechend anpassen.
+
+```{r compute_solution}
+#| echo: false
+prob_noCovid <- 0.9
+
+prob_testPos_Covid <- 0.05
+prob_testPos_NoCovid <- 0.01
+
+(prob_noCovid * prob_testPos_NoCovid) / (prob_noCovid * prob_testPos_NoCovid + (1-prob_noCovid)*prob_testPos_Covid)
+```
+
+Answerlist
+--------
+* Die Odds / Chancen die Prüfung zu bestehen, unabhängig davon ob man die Übungen gelöst hat oder nicht sind $ O(P+) = `r odds_pass` $
+* Der Bayes Faktor zur Aktualisierung der Odds durch die Prüfung zu fallen, wenn man die Übungen gelöst hat ist $ BF_{P-} = `r round(1/bayes_factor_übungJA,3)` $
+* Die Wahrhscheinlichkeit durch die Prüfung zu fallen, wenn Sie die Übungen gewissenhaft gelöst haben ist $ P(P+ | Ü+) = `r round(prob_fail_übungJA, 3)` $
+* Antwort 4
+
+Solution
+========
+
+
+Meta-information
+=========
+exname: prob_conditional 
+extype: mchoice 
+exsolution: 1110
+exshuffle: FALSE
