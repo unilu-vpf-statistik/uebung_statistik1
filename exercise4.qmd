@@ -17,7 +17,7 @@ library(exams2forms)
 library(here)
 library(dplyr)
 
-exam_files <- list.files(here("questions_uebung4"), full.names = TRUE)
+exam_files <- list.files(here("questions_uebung4") , pattern = ".Rmd", full.names = TRUE)
 shuffeld_questions <- sample(exam_files)
 
 # Laden des Datensatzes

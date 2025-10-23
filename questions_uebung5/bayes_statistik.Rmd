@@ -1,22 +1,20 @@
 Question
 =======
-
-```{r settings}
-#| include: false
-p_fail <- 0.2
-p_exercise_pass <- 0.8
-p_exercise_fail <- 0.2
-```
-
-In einem normalen Jahr fallen 20% aller Studierenden duuch die Prüfung der Vorlesung Statistik 1 $ P(P-) = `r p_fail` $. Von den Studierenden, die die Prüfung bestehen haben 80% alle Übungen im Selbststudium gewissenhaft gelöst $ P(Ü+ | P+) = `r p_exercise_pass` $. Von den Studierenden, die durch die Prüfung fallen, haben nur 20% die Übungen gewissenhaft gelöst $ P(Ü+ | P-) = `r p_exercise_fail` $. Auf welche Wahrscheinlichkeit reduziert sich die Wahrscheinlichkeit durch die Statistikprüfung zu fallen, wenn Sie die Übungen gewissenhaft lösen $ P(P+ | Ü+) $.
+In einem normalen Jahr fallen 20% aller Studierenden durch die Prüfung der Vorlesung Statistik 1 $P(P^-) = 0.2$. Von den Studierenden, die die Prüfung bestehen haben 90% alle Übungen im Selbststudium gewissenhaft gelöst $P(Ü^+ | P^+) = 0.9$. Von den Studierenden, die durch die Prüfung fallen, haben nur 30% die Übungen gewissenhaft gelöst $P(Ü^+ | P^-) = 0.3$. Auf welche Wahrscheinlichkeit reduziert sich die Wahrscheinlichkeit durch die Statistikprüfung zu fallen, wenn Sie die Übungen gewissenhaft lösen $P(P^+ | Ü^+)$.
 
 Um die Frage zu Beantworten berechnen Sie bitte:
 
-1. Die Odds / Chance die Prüfung zu bestehen, unabhängig davon, ob die Übungen gewissenhaft gelöst wurden oder nicht $ O(P+) $
-2. Den Bayes Faktor zur Aktualisierung der Odds die Prüfung zu bestehen, wenn die Übungen gelöst wurden $ BF_{Ü+} $
+1. Die Odds / Chance die Prüfung zu bestehen, unabhängig davon, ob die Übungen gewissenhaft gelöst wurden oder nicht $O(P^+)$
+2. Den Bayes Faktor zur Aktualisierung der Odds die Prüfung zu bestehen, wenn die Übungen gelöst wurden $BF_{Ü^+}$
+
+**Antworten**
 
 ```{r compute_solution}
 #| echo: false
+p_fail <- 0.2
+p_exercise_pass <- 0.9
+p_exercise_fail <- 0.3
+
 odds_fail <- p_fail/(1-p_fail)
 odds_pass <- (1-p_fail)/p_fail
 
@@ -38,18 +36,55 @@ prob_pass_übungNEIN <- odds_pass_übungNEIN/(1+odds_pass_übungNEIN)
 
 Answerlist
 --------
-* Die Odds / Chancen die Prüfung zu bestehen, unabhängig davon ob man die Übungen gelöst hat oder nicht sind $ O(P+) = `r odds_pass` $
-* Der Bayes Faktor zur Aktualisierung der Odds durch die Prüfung zu fallen, wenn man die Übungen gelöst hat ist $ BF_{P-} = `r round(1/bayes_factor_übungJA,3)` $
-* Die Wahrhscheinlichkeit durch die Prüfung zu fallen, wenn Sie die Übungen gewissenhaft gelöst haben ist $ P(P+ | Ü+) = `r round(prob_fail_übungJA, 3)` $
-* Antwort 4
+
+
+* Wenn Sie die Übungen gewissenhaft gelöst haben, liegt die Wahrscheinlichkeit, die Prüfung zu bestehen, bei etwa 94 %.
+* Wenn Sie die Übungen gewissenhaft lösen, liegt Ihre Bestehenswahrscheinlichkeit bei 68 %, da das der Anteil aller Studierenden ist, die gut vorbereitet sind
+* Wer die Übungen gewissenhaft löst, hat ein Verhalten gezeigt, das **dreimal häufiger bei erfolgreichen Studierenden** vorkommt als bei den Durchfallenden. Das entspricht dem **Bayes-Faktor** $BF_{Ü^+} = 3$
+* Wenn man noch nichts über das Übungsverhalten weiß, beträgt die Chance, die Prüfung zu bestehen, **fünfmal so hoch** wie die Chance, durchzufallen. Das entspricht den **Prior-Odds** $O(P^+) = 5$
+* Wer die Übungen gewissenhaft löst, hat **keinen Vorteil**, die Bestehenswahrscheinlichkeit bleibt bei 80 %.  
 
 Solution
 ========
+Bevor wir Informationen über das Übungsverhalten haben, beträgt die Wahrscheinlichkeit zu bestehen $P(P^+) = 0.8$  
+und zu scheitern $P(P^-) = 0.2$. Die **Odds** (Chance im Verhältnis zu Misserfolg) sind:
+
+$$
+O(P^+) = \frac{P(P^+)}{P(P^-)} = \frac{0.8}{0.2} = 4
+$$
+
+Die Chance zu bestehen ist also **viermal so hoch** wie die Chance, durchzufallen. 
+
+Die zusätzliche Information, die Übungen gewissenhaft zu lösen $Ü^+$ liefert uns weitere Informationen in Bezug auf die Chancen die Prüfung zu bestehen. Wir wollen nun wissen, wie stark diese Information unsere bisherigen Erwartungen aktualisieren sollte. Dazu vergleichen wir, wie wahrscheinlich diese Information unter Personen, die die Prüfung bestehen gegenüber Personen, die die Prüfung nicht bestehen ist. Das liefert uns den Bayes Faktor:
+
+$$
+BF_{Ü^+} = \frac{P(Ü^+ \mid P^+)}{P(Ü^+ \mid P^-)} = \frac{0.90}{0.30} = 3
+$$
+
+Das Verhalten „Übungen gewissenhaft lösen“ ist **viermal häufiger** unter den Bestehenden als unter den Durchfallenden.  
+Es ist also ein **positives Signal** für den Prüfungserfolg.
+
+Mit diesem Bayes Faktor können wir unseres Wissens aktualisiern. In Odds-Form lautet diese Aktualisierung:
+
+$$
+O(P^+ \mid Ü^+) = O(P^+) \times BF_{Ü^+} = = 4 \times 3 = 12
+$$
+
+Nach der Information „Übungen gewissenhaft gelöst“ ist die Bestehenschance also **16-mal höher** als die Durchfallchance. Aus diesen Odds lässt sich direkt die Wahrscheinlichkeit berechnen:
+
+$$
+P(P^+ \mid Ü^+) = \frac{O(P^+ \mid Ü^+)}{1 + O(P^+ \mid Ü^+)} 
+= \frac{12}{1+12} = \frac{12}{13} \approx 0.923
+$$
+
+Entsprechend können wir zu
+- Wahrscheinlichkeit zu bestehen, wenn die Übungen gewissenhaft bearbeitet wurden: **92,3 %**
+- Wahrscheinlichkeit zu scheitern, wenn die Übungen gewissenhaft bearbeitet wurden: **7,7 %**
 
 
 Meta-information
 =========
-exname: prob_conditional 
+exname: bayes_statistik
 extype: mchoice 
-exsolution: 1110
+exsolution: 10100
 exshuffle: FALSE

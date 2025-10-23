@@ -1,0 +1,32 @@
+Question
+=======
+Sie haben einen gezinkten Würfel der mit einer Wahrscheinlichkeit von 0.5 eine Sechs würfelt. Die anderen Zahlen sind jeweils gleich Wahrscheinlich. Berechnen Sie den Erwartungswert und die Standardabweichung der Wahrscheinlichkeitsverteilung für diesen Würfel.
+
+```{r compute_solution}
+#| echo: false
+prob_dist <- c(rep(1/5*0.5, times = 5),0.5)
+values <- 1:6
+names(values) <- as.character(values)
+
+erwartungswert <- sum(prob_dist*values)
+varianz <- sum((values - erwartungswert)^2 * prob_dist)
+stabw <- sqrt(varianz)
+```
+
+Answerlist
+--------
+* Der Erwartungswert für die Wahrscheinlichkeitsverteilung des Würfels ist: $E(X) = 4.5$
+* Der Erwartungswert für die Wahrscheinlichkeitsverteilung des Würfels ist: $E(X) = 6$
+* Die Standardabweichung der Wahrscheinlichkeitsverteilung des Würfels ist: $\sigma = 3.25$
+* Die Standardabweichung der Wahrscheinlichkeitsverteilung des Würfels ist: $\sigma \approx 1.81$
+
+Solution
+========
+
+
+Meta-information
+=========
+exname: bayes_statistik
+extype: mchoice 
+exsolution: 1001
+exshuffle: FALSE

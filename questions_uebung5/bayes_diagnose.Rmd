@@ -1,34 +1,74 @@
 Question
 =======
 
-Von 100.000 Personen sind 10% and Covid erkrankt. Sie fühlen Sich verschnupft und krank und führen einen Covid-Test durch. Das Ergebnis ist negativ. Sie wissen, dass der Test eine Sensitivität von 95% hat und damit für 95% der Personen, die an Covid erkrankt sind ein positives Ergebnis liefert. Ausserdem hat der Test eine Spezifität von 90%, Personen die nicht an COVID erkrankt sind erhalten also in 10% der Fälle ein positives Ergebnis. Wie hoch ist die Wahrscheinlichkeit, dass Sie an COVID erkrankt sind, gegeben dem negativen Testergebnis.
+Von 100.000 Personen sind 10% an Covid erkrankt. Sie fühlen Sich verschnupft und krank und führen einen Covid-Test durch. Das Ergebnis ist negativ. Sie wissen, dass der Test eine Sensitivität von 90% hat und damit für 90% der Personen, die an Covid erkrankt sind ein positives Ergebnis liefert. Ausserdem hat der Test eine Spezifität von 99%, Personen die nicht an COVID erkrankt sind erhalten also in 1% der Fälle ein positives Ergebnis. Wie hoch ist die Wahrscheinlichkeit, dass Sie an COVID erkrankt sind, gegeben dem negativen Testergebnis.
 
 Wenden Sie das Bayes Theorem an um diese Frage zu Beantworten. Beachten Sie, dass Sie die Wahrscheinlichkeit für COVID gegeben eines negativen Testergebnisses berechnen sollen. Sie müssen die Elemente der Formel also entsprechend anpassen.
 
 ```{r compute_solution}
 #| echo: false
-prob_noCovid <- 0.9
+# Parameter
+p_C        <- 0.10           # Prävalenz P(C)
+sens       <- 0.90           # Sensitivität P(+|C)
+spec       <- 0.99           # Spezifität P(-|~C)
 
-prob_testPos_Covid <- 0.05
-prob_testPos_NoCovid <- 0.01
+# Abgeleitete Wahrscheinlichkeiten
+p_neg_C    <- 1 - sens       # P(-|C)
+p_neg_notC <- spec           # P(-|~C)
+p_notC     <- 1 - p_C
 
-(prob_noCovid * prob_testPos_NoCovid) / (prob_noCovid * prob_testPos_NoCovid + (1-prob_noCovid)*prob_testPos_Covid)
+# Bayes: P(C|-)
+p_neg      <- p_neg_C * p_C + p_neg_notC * p_notC
+p_C_given_neg <- (p_neg_C * p_C) / p_neg
 ```
 
 Answerlist
 --------
-* Die Odds / Chancen die Prüfung zu bestehen, unabhängig davon ob man die Übungen gelöst hat oder nicht sind $ O(P+) = `r odds_pass` $
-* Der Bayes Faktor zur Aktualisierung der Odds durch die Prüfung zu fallen, wenn man die Übungen gelöst hat ist $ BF_{P-} = `r round(1/bayes_factor_übungJA,3)` $
-* Die Wahrhscheinlichkeit durch die Prüfung zu fallen, wenn Sie die Übungen gewissenhaft gelöst haben ist $ P(P+ | Ü+) = `r round(prob_fail_übungJA, 3)` $
-* Antwort 4
+* Die Wahrscheinlichkeit für ein negatives Testergebnis, unabhängig davon ob man an Covid erkrankt ist oder nicht liegt bei $P(T-) = 0.95$
+* Die Wahrscheinlichkeit für ein negatives Testergebnis, wenn man Covid hat liegt bei $P(- | C) = 0.1$
+* Die Wahrscheinlichkeit an Covid erkrankt zu sein, gegeben dem negativen Testergebnis ist. $P(C | -) = 1.1\%$
+* Die Wahrscheinlichkeit an Covid erkrankt zu sein, gegeben dem negativen Testergebnis ist. $P(C | -) = 0.5\%$
 
 Solution
 ========
+Lassen Sie uns zu Beginn nochmal kurz die wichtigen Begriffe für die Aufgabe klären:
 
+- **Sensitivität**: Wie oft erkennt der Test Kranke korrekt als *positiv*.  
+- **Spezifität**: Wie oft erkennt der Test Gesunde korrekt als *negativ*.  
+- **Unser Ziel**: Von einem **negativen Ergebnis** auf die **Krankheit** schließen → \(P(C\mid -)\).
+
+Dafür brauchen wir das Bayes Theorem in der Variante **für ein negatives Ergebnis**:
+
+$$
+P(C\mid -) \;=\; \frac{P(-\mid C)\,P(C)}{P(-\mid C)\,P(C) \;+\; P(-\mid \neg C)\,P(\neg C)}.
+$$
+
+In diese From des Bayes Theorems können wir nun die entsprechenden Werte eintragen:
+
+- $P(-\mid C)=1-\text{Sensitivität}=1-0{,}90=0{,}10$  
+- $P(-\mid \neg C)=\text{Spezifität}=0{,}99$
+- $(P(C)=0{,}10$, $P(\neg C)=0{,}90$
+
+Damit können wir zuerst die Wahrscheinlichkeit für ein negatives Testergebnis, unabhängig von der Erkrankrung berechnen:
+
+$$
+P(-) \;=\; 0.10\cdot 0.10 \;+\; 0.99\cdot 0.90
+\;=\; 0.01 \;+\; 0.891 \;=\; 0.901.
+$$
+
+Nachdem wir nun den Nenner für das Bayes Theorem bestimmt haben, können wir alle Werte einsetzten und die gesuchte Wahrscheinlichkeit ausrechnen:
+
+$$
+P(C\mid -) \;=\; \frac{0.10\cdot 0.10}{0.901}
+\;=\; \frac{0.01}{0.901}
+\;\approx\; 0.01110 \;=\; \mathbf{1.11\%}.
+$$
+
+Nach einem negativen Test ist die Restwahrscheinlichkeit an COVID erkrankt zu sein also **1,11 %**.
 
 Meta-information
 =========
-exname: prob_conditional 
+exname: bayes_diagnose 
 extype: mchoice 
-exsolution: 1110
+exsolution: 0110
 exshuffle: FALSE

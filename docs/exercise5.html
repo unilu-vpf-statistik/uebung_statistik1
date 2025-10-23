@@ -21,41 +21,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -403,7 +368,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"# Herunterladen der Daten um sie lokal verfügbar zu machen\nurl <- \"https://unilu-vpf-statistik.github.io/uebung_statistik1/semester_data2.csv\"\ndownload.file(url, \"semester_data2.csv\")\n\n# Laden des Datensatzes\nsemester_data2 <- read.csv(\"semester_data2.csv\")\n\n# Anzeigen der ersten Zeilen des Datensatzes\nhead(semester_data2)\n\n# Schreiben Sie hier ihren Code um die Aufgaben zu lösen\n\n","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"# Schreiben Sie hier ihren Code um die Aufgaben zu lösen\n\n","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1730,7 +1695,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Übung 5 - Wahrscheinlichkeitstheorie</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./exercise5.html">Übung 5</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -1772,6 +1737,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./exercise4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Übung 4</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exercise5.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Übung 5</span></a>
   </div>
 </li>
     </ul>
@@ -2163,22 +2134,8 @@ O(D|S) = \frac{P(S|D)}{P(S|\neg D)} \cdot O(D) = \frac{0.75}{0.15} \cdot 0.1 = 5
 </section>
 <section id="übungen" class="level2">
 <h2 class="anchored" data-anchor-id="übungen">Übungen</h2>
-<p>In den folgenden Übungen werden Sie wie in der letzten Übung mit dem simulierten Datensatz von fiktiven Daten eines Erstsemester-Jahrgangs von Psychologie-Studierenden arbeiten. Für diese Übung verwenden wir den gleichen Datensatz wie in Übung 3, sie können Sich den Datensatz auf ihren eigenen PC herunterladen: <a href="semester_data2.csv">semester_data2.csv</a></p>
-<p>Alternativ können Sie hier auf der Website direkt R Code mit Hilfe der <code>webr</code> Erweiterung ausführen um die Aufgaben zu lösen. Der Datensatz enthält die Variablen: <code>geschlecht</code>, <code>nationalität</code>, <code>wohnort</code>, <code>alter</code> und <code>wissen_statistik</code>. Unten sehen sie die ersten Zeilen des simulierten Datensatzes.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(semester_data2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  geschlecht nationalität    wohnort alter wissen_statistik grösse
-1   weiblich      Schweiz     Luzern  21.9                3    158
-2   weiblich   Frankreich       Bern  24.0                2    159
-3   weiblich      Schweiz        Zug  21.2                3    168
-4   weiblich   Frankreich    Zuerich  27.0                2    178
-5   weiblich       andere St. Gallen  17.7                4    164
-6   weiblich      Schweiz       Bern  22.0                3    166</code></pre>
-</div>
-</div>
+<p>In den folgenden Übungen nutzen Sie keinen Datensatz, sondern können R einfach als Taschenrechnen verwenden.</p>
 <p>Wie in den bisherigen Übungen finden Sie hier über den Übungsaufgaben die <code>webr</code> Konsole, die Ihnen das Schreiben und Durchführen von R Code direkt auf der Website ermöglicht. Wenn viele Studierenden die Übungen parallel machen, dann kann es sein, dass <code>webr</code> sehr langsam wird.</p>
-<p>Bitte löschen Sie die ersten Zeilen, die den Datensatz lokal verfügbar machen <em>nicht</em>. Wenn Sie die Zeilen doch aus versehen Löschen sollten dann können Sie auf der rechten Seite der Konsole das Symbol mit den im Kreis drehenden Pfeilen drücken, um die Konsole zurück zu setzen.</p>
 <blockquote class="blockquote">
 <p>Um den Code den Sie geschrieben haben auszuführen drücken Sie entwedern <code>Run Code</code>, damit der gesamte Code ausgeführt würde. Alternativ können Sie auch einzelne Zeilen ausführen, indem sie <kbd>CRTL</kbd>+<kbd>Enter</kbd> (Windows) oder <kbd>CMD</kbd>+<kbd>Enter</kbd> (Mac) drücken.</p>
 </blockquote>
@@ -2189,18 +2146,93 @@ O(D|S) = \frac{P(S|D)}{P(S|\neg D)} \cdot O(D) = \frac{0.75}{0.15} \cdot 0.1 = 5
 </blockquote>
 <div class="webex-question">
 <div class="webex-check webex-box">
-<p>In einem normalen Jahr fallen 20% aller Studierenden duuch die Prüfung der Vorlesung Statistik 1 $ P(P-) = 0.2 $. Von den Studierenden, die die Prüfung bestehen haben 80% alle Übungen im Selbststudium gewissenhaft gelöst $ P(Ü+ | P+) = 0.8 $. Von den Studierenden, die durch die Prüfung fallen, haben nur 20% die Übungen gewissenhaft gelöst $ P(Ü+ | P-) = 0.2 $. Auf welche Wahrscheinlichkeit reduziert sich die Wahrscheinlichkeit durch die Statistikprüfung zu fallen, wenn Sie die Übungen gewissenhaft lösen $ P(P+ | Ü+) $.</p>
-<p>Um die Frage zu Beantworten berechnen Sie bitte:</p>
-<ol type="1">
-<li>Die Odds / Chance die Prüfung zu bestehen, unabhängig davon, ob die Übungen gewissenhaft gelöst wurden oder nicht $ O(P+) $</li>
-<li>Den Bayes Faktor zur Aktualisierung der Odds die Prüfung zu bestehen, wenn die Übungen gelöst wurden $ BF_{Ü+} $</li>
-</ol>
-<div id="webex-85251813ca61ad8fb72c4facd75677b7" class="webex-checkboxgroup" data-answer="YwQeBB0JHQM+">
-<label><input type="checkbox" autocomplete="off" name="85251813ca61ad8fb72c4facd75677b7"><span>Die Odds / Chancen die Prüfung zu bestehen, unabhängig davon ob man die Übungen gelöst hat oder nicht sind $ O(P+) = 4 $</span></label><label><input type="checkbox" autocomplete="off" name="85251813ca61ad8fb72c4facd75677b7"><span>Der Bayes Faktor zur Aktualisierung der Odds durch die Prüfung zu fallen, wenn man die Übungen gelöst hat ist $ BF_{P-} = 0.25 $</span></label><label><input type="checkbox" autocomplete="off" name="85251813ca61ad8fb72c4facd75677b7"><span>Die Wahrhscheinlichkeit durch die Prüfung zu fallen, wenn Sie die Übungen gewissenhaft gelöst haben ist $ P(P+ | Ü+) = 0.059 $</span></label><label><input type="checkbox" autocomplete="off" name="85251813ca61ad8fb72c4facd75677b7"><span>Antwort 4</span></label>
+<p>Sie haben einen gezinkten Würfel der mit einer Wahrscheinlichkeit von 0.5 eine Sechs würfelt. Die anderen Zahlen sind jeweils gleich Wahrscheinlich. Berechnen Sie den Erwartungswert und die Standardabweichung der Wahrscheinlichkeitsverteilung für diesen Würfel.</p>
+<div id="webex-f77e58cda1ddbc52aca6e5ae754ed6a7" class="webex-checkboxgroup" data-answer="PQYbVRkIT1U8">
+<label><input type="checkbox" autocomplete="off" name="f77e58cda1ddbc52aca6e5ae754ed6a7"><span>Der Erwartungswert für die Wahrscheinlichkeitsverteilung des Würfels ist: <span class="math inline">\(E(X) = 4.5\)</span></span></label><label><input type="checkbox" autocomplete="off" name="f77e58cda1ddbc52aca6e5ae754ed6a7"><span>Der Erwartungswert für die Wahrscheinlichkeitsverteilung des Würfels ist: <span class="math inline">\(E(X) = 6\)</span></span></label><label><input type="checkbox" autocomplete="off" name="f77e58cda1ddbc52aca6e5ae754ed6a7"><span>Die Standardabweichung der Wahrscheinlichkeitsverteilung des Würfels ist: <span class="math inline">\(\sigma = 3.25\)</span></span></label><label><input type="checkbox" autocomplete="off" name="f77e58cda1ddbc52aca6e5ae754ed6a7"><span>Die Standardabweichung der Wahrscheinlichkeitsverteilung des Würfels ist: <span class="math inline">\(\sigma \approx 1.81\)</span></span></label>
 </div>
 </div>
 <div class="webex-solution">
 
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>In einem normalen Jahr fallen 20% aller Studierenden durch die Prüfung der Vorlesung Statistik 1 <span class="math inline">\(P(P^-) = 0.2\)</span>. Von den Studierenden, die die Prüfung bestehen haben 90% alle Übungen im Selbststudium gewissenhaft gelöst <span class="math inline">\(P(Ü^+ | P^+) = 0.9\)</span>. Von den Studierenden, die durch die Prüfung fallen, haben nur 30% die Übungen gewissenhaft gelöst <span class="math inline">\(P(Ü^+ | P^-) = 0.3\)</span>. Auf welche Wahrscheinlichkeit reduziert sich die Wahrscheinlichkeit durch die Statistikprüfung zu fallen, wenn Sie die Übungen gewissenhaft lösen <span class="math inline">\(P(P^+ | Ü^+)\)</span>.</p>
+<p>Um die Frage zu Beantworten berechnen Sie bitte:</p>
+<ol type="1">
+<li>Die Odds / Chance die Prüfung zu bestehen, unabhängig davon, ob die Übungen gewissenhaft gelöst wurden oder nicht <span class="math inline">\(O(P^+)\)</span></li>
+<li>Den Bayes Faktor zur Aktualisierung der Odds die Prüfung zu bestehen, wenn die Übungen gelöst wurden <span class="math inline">\(BF_{Ü^+}\)</span></li>
+</ol>
+<p><strong>Antworten</strong></p>
+<div id="webex-3a26fa2c3c6a2e88679d68de0a2a0218" class="webex-checkboxgroup" data-answer="aFAeBkpQHlMfU2s=">
+<label><input type="checkbox" autocomplete="off" name="3a26fa2c3c6a2e88679d68de0a2a0218"><span>Wenn Sie die Übungen gewissenhaft gelöst haben, liegt die Wahrscheinlichkeit, die Prüfung zu bestehen, bei etwa 94 %.</span></label><label><input type="checkbox" autocomplete="off" name="3a26fa2c3c6a2e88679d68de0a2a0218"><span>Wenn Sie die Übungen gewissenhaft lösen, liegt Ihre Bestehenswahrscheinlichkeit bei 68 %, da das der Anteil aller Studierenden ist, die gut vorbereitet sind</span></label><label><input type="checkbox" autocomplete="off" name="3a26fa2c3c6a2e88679d68de0a2a0218"><span>Wer die Übungen gewissenhaft löst, hat ein Verhalten gezeigt, das <strong>dreimal häufiger bei erfolgreichen Studierenden</strong> vorkommt als bei den Durchfallenden. Das entspricht dem <strong>Bayes-Faktor</strong> <span class="math inline">\(BF_{Ü^+} = 3\)</span></span></label><label><input type="checkbox" autocomplete="off" name="3a26fa2c3c6a2e88679d68de0a2a0218"><span>Wenn man noch nichts über das Übungsverhalten weiß, beträgt die Chance, die Prüfung zu bestehen, <strong>fünfmal so hoch</strong> wie die Chance, durchzufallen. Das entspricht den <strong>Prior-Odds</strong> <span class="math inline">\(O(P^+) = 5\)</span></span></label><label><input type="checkbox" autocomplete="off" name="3a26fa2c3c6a2e88679d68de0a2a0218"><span>Wer die Übungen gewissenhaft löst, hat <strong>keinen Vorteil</strong>, die Bestehenswahrscheinlichkeit bleibt bei 80 %.</span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>Bevor wir Informationen über das Übungsverhalten haben, beträgt die Wahrscheinlichkeit zu bestehen <span class="math inline">\(P(P^+) = 0.8\)</span><br>
+und zu scheitern <span class="math inline">\(P(P^-) = 0.2\)</span>. Die <strong>Odds</strong> (Chance im Verhältnis zu Misserfolg) sind:</p>
+<p><span class="math display">\[
+O(P^+) = \frac{P(P^+)}{P(P^-)} = \frac{0.8}{0.2} = 4
+\]</span></p>
+<p>Die Chance zu bestehen ist also <strong>viermal so hoch</strong> wie die Chance, durchzufallen.</p>
+<p>Die zusätzliche Information, die Übungen gewissenhaft zu lösen <span class="math inline">\(Ü^+\)</span> liefert uns weitere Informationen in Bezug auf die Chancen die Prüfung zu bestehen. Wir wollen nun wissen, wie stark diese Information unsere bisherigen Erwartungen aktualisieren sollte. Dazu vergleichen wir, wie wahrscheinlich diese Information unter Personen, die die Prüfung bestehen gegenüber Personen, die die Prüfung nicht bestehen ist. Das liefert uns den Bayes Faktor:</p>
+<p><span class="math display">\[
+BF_{Ü^+} = \frac{P(Ü^+ \mid P^+)}{P(Ü^+ \mid P^-)} = \frac{0.90}{0.30} = 3
+\]</span></p>
+<p>Das Verhalten „Übungen gewissenhaft lösen“ ist <strong>viermal häufiger</strong> unter den Bestehenden als unter den Durchfallenden.<br>
+Es ist also ein <strong>positives Signal</strong> für den Prüfungserfolg.</p>
+<p>Mit diesem Bayes Faktor können wir unseres Wissens aktualisiern. In Odds-Form lautet diese Aktualisierung:</p>
+<p><span class="math display">\[
+O(P^+ \mid Ü^+) = O(P^+) \times BF_{Ü^+} = = 4 \times 3 = 12
+\]</span></p>
+<p>Nach der Information „Übungen gewissenhaft gelöst“ ist die Bestehenschance also <strong>16-mal höher</strong> als die Durchfallchance. Aus diesen Odds lässt sich direkt die Wahrscheinlichkeit berechnen:</p>
+<p><span class="math display">\[
+P(P^+ \mid Ü^+) = \frac{O(P^+ \mid Ü^+)}{1 + O(P^+ \mid Ü^+)}
+= \frac{12}{1+12} = \frac{12}{13} \approx 0.923
+\]</span></p>
+<p>Entsprechend können wir zu - Wahrscheinlichkeit zu bestehen, wenn die Übungen gewissenhaft bearbeitet wurden: <strong>92,3 %</strong> - Wahrscheinlichkeit zu scheitern, wenn die Übungen gewissenhaft bearbeitet wurden: <strong>7,7 %</strong></p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>Von 100.000 Personen sind 10% an Covid erkrankt. Sie fühlen Sich verschnupft und krank und führen einen Covid-Test durch. Das Ergebnis ist negativ. Sie wissen, dass der Test eine Sensitivität von 90% hat und damit für 90% der Personen, die an Covid erkrankt sind ein positives Ergebnis liefert. Ausserdem hat der Test eine Spezifität von 99%, Personen die nicht an COVID erkrankt sind erhalten also in 1% der Fälle ein positives Ergebnis. Wie hoch ist die Wahrscheinlichkeit, dass Sie an COVID erkrankt sind, gegeben dem negativen Testergebnis.</p>
+<p>Wenden Sie das Bayes Theorem an um diese Frage zu Beantworten. Beachten Sie, dass Sie die Wahrscheinlichkeit für COVID gegeben eines negativen Testergebnisses berechnen sollen. Sie müssen die Elemente der Formel also entsprechend anpassen.</p>
+<div id="webex-2374c35c4fbb18bdac328fc91a073f78" class="webex-checkboxgroup" data-answer="aQMbBU8CGVNp">
+<label><input type="checkbox" autocomplete="off" name="2374c35c4fbb18bdac328fc91a073f78"><span>Die Wahrscheinlichkeit für ein negatives Testergebnis, unabhängig davon ob man an Covid erkrankt ist oder nicht liegt bei <span class="math inline">\(P(T-) = 0.95\)</span></span></label><label><input type="checkbox" autocomplete="off" name="2374c35c4fbb18bdac328fc91a073f78"><span>Die Wahrscheinlichkeit für ein negatives Testergebnis, wenn man Covid hat liegt bei <span class="math inline">\(P(- | C) = 0.1\)</span></span></label><label><input type="checkbox" autocomplete="off" name="2374c35c4fbb18bdac328fc91a073f78"><span>Die Wahrscheinlichkeit an Covid erkrankt zu sein, gegeben dem negativen Testergebnis ist. <span class="math inline">\(P(C | -) = 1.1\%\)</span></span></label><label><input type="checkbox" autocomplete="off" name="2374c35c4fbb18bdac328fc91a073f78"><span>Die Wahrscheinlichkeit an Covid erkrankt zu sein, gegeben dem negativen Testergebnis ist. <span class="math inline">\(P(C | -) = 0.5\%\)</span></span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>Lassen Sie uns zu Beginn nochmal kurz die wichtigen Begriffe für die Aufgabe klären:</p>
+<ul>
+<li><strong>Sensitivität</strong>: Wie oft erkennt der Test Kranke korrekt als <em>positiv</em>.<br>
+</li>
+<li><strong>Spezifität</strong>: Wie oft erkennt der Test Gesunde korrekt als <em>negativ</em>.<br>
+</li>
+<li><strong>Unser Ziel</strong>: Von einem <strong>negativen Ergebnis</strong> auf die <strong>Krankheit</strong> schließen → (P(C-)).</li>
+</ul>
+<p>Dafür brauchen wir das Bayes Theorem in der Variante <strong>für ein negatives Ergebnis</strong>:</p>
+<p><span class="math display">\[
+P(C\mid -) \;=\; \frac{P(-\mid C)\,P(C)}{P(-\mid C)\,P(C) \;+\; P(-\mid \neg C)\,P(\neg C)}.
+\]</span></p>
+<p>In diese From des Bayes Theorems können wir nun die entsprechenden Werte eintragen:</p>
+<ul>
+<li><span class="math inline">\(P(-\mid C)=1-\text{Sensitivität}=1-0{,}90=0{,}10\)</span><br>
+</li>
+<li><span class="math inline">\(P(-\mid \neg C)=\text{Spezifität}=0{,}99\)</span></li>
+<li><span class="math inline">\((P(C)=0{,}10\)</span>, <span class="math inline">\(P(\neg C)=0{,}90\)</span></li>
+</ul>
+<p>Damit können wir zuerst die Wahrscheinlichkeit für ein negatives Testergebnis, unabhängig von der Erkrankrung berechnen:</p>
+<p><span class="math display">\[
+P(-) \;=\; 0.10\cdot 0.10 \;+\; 0.99\cdot 0.90
+\;=\; 0.01 \;+\; 0.891 \;=\; 0.901.
+\]</span></p>
+<p>Nachdem wir nun den Nenner für das Bayes Theorem bestimmt haben, können wir alle Werte einsetzten und die gesuchte Wahrscheinlichkeit ausrechnen:</p>
+<p><span class="math display">\[
+P(C\mid -) \;=\; \frac{0.10\cdot 0.10}{0.901}
+\;=\; \frac{0.01}{0.901}
+\;\approx\; 0.01110 \;=\; \mathbf{1.11\%}.
+\]</span></p>
+<p>Nach einem negativen Test ist die Restwahrscheinlichkeit an COVID erkrankt zu sein also <strong>1,11 %</strong>.</p>
 </div>
 </div>
 <hr>

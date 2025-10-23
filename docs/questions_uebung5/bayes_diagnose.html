@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>bayes_statistik – Übungen - VL: Statistik I</title>
+<title>bayes_diagnose – Übungen - VL: Statistik I</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -218,52 +218,55 @@ window.Quarto = {
 
 <section id="question" class="level1">
 <h1>Question</h1>
-<p>In einem normalen Jahr fallen 20% aller Studierenden durch die Prüfung der Vorlesung Statistik 1 <span class="math inline">\(P(P^-) = 0.2\)</span>. Von den Studierenden, die die Prüfung bestehen haben 90% alle Übungen im Selbststudium gewissenhaft gelöst <span class="math inline">\(P(Ü^+ | P^+) = 0.9\)</span>. Von den Studierenden, die durch die Prüfung fallen, haben nur 30% die Übungen gewissenhaft gelöst <span class="math inline">\(P(Ü^+ | P^-) = 0.3\)</span>. Auf welche Wahrscheinlichkeit reduziert sich die Wahrscheinlichkeit durch die Statistikprüfung zu fallen, wenn Sie die Übungen gewissenhaft lösen <span class="math inline">\(P(P^+ | Ü^+)\)</span>.</p>
-<p>Um die Frage zu Beantworten berechnen Sie bitte:</p>
-<ol type="1">
-<li>Die Odds / Chance die Prüfung zu bestehen, unabhängig davon, ob die Übungen gewissenhaft gelöst wurden oder nicht <span class="math inline">\(O(P^+)\)</span></li>
-<li>Den Bayes Faktor zur Aktualisierung der Odds die Prüfung zu bestehen, wenn die Übungen gelöst wurden <span class="math inline">\(BF_{Ü^+}\)</span></li>
-</ol>
-<p><strong>Antworten</strong></p>
+<p>Von 100.000 Personen sind 10% an Covid erkrankt. Sie fühlen Sich verschnupft und krank und führen einen Covid-Test durch. Das Ergebnis ist negativ. Sie wissen, dass der Test eine Sensitivität von 90% hat und damit für 90% der Personen, die an Covid erkrankt sind ein positives Ergebnis liefert. Ausserdem hat der Test eine Spezifität von 99%, Personen die nicht an COVID erkrankt sind erhalten also in 1% der Fälle ein positives Ergebnis. Wie hoch ist die Wahrscheinlichkeit, dass Sie an COVID erkrankt sind, gegeben dem negativen Testergebnis.</p>
+<p>Wenden Sie das Bayes Theorem an um diese Frage zu Beantworten. Beachten Sie, dass Sie die Wahrscheinlichkeit für COVID gegeben eines negativen Testergebnisses berechnen sollen. Sie müssen die Elemente der Formel also entsprechend anpassen.</p>
 <section id="answerlist" class="level2">
 <h2 class="anchored" data-anchor-id="answerlist">Answerlist</h2>
 <ul>
-<li>Wenn Sie die Übungen gewissenhaft gelöst haben, liegt die Wahrscheinlichkeit, die Prüfung zu bestehen, bei etwa 94 %.</li>
-<li>Wenn Sie die Übungen gewissenhaft lösen, liegt Ihre Bestehenswahrscheinlichkeit bei 68 %, da das der Anteil aller Studierenden ist, die gut vorbereitet sind</li>
-<li>Wer die Übungen gewissenhaft löst, hat ein Verhalten gezeigt, das <strong>dreimal häufiger bei erfolgreichen Studierenden</strong> vorkommt als bei den Durchfallenden. Das entspricht dem <strong>Bayes-Faktor</strong> <span class="math inline">\(BF_{Ü^+} = 3\)</span></li>
-<li>Wenn man noch nichts über das Übungsverhalten weiß, beträgt die Chance, die Prüfung zu bestehen, <strong>fünfmal so hoch</strong> wie die Chance, durchzufallen. Das entspricht den <strong>Prior-Odds</strong> <span class="math inline">\(O(P^+) = 5\)</span></li>
-<li>Wer die Übungen gewissenhaft löst, hat <strong>keinen Vorteil</strong>, die Bestehenswahrscheinlichkeit bleibt bei 80 %.</li>
+<li>Die Wahrscheinlichkeit für ein negatives Testergebnis, unabhängig davon ob man an Covid erkrankt ist oder nicht liegt bei <span class="math inline">\(P(T-) = 0.95\)</span></li>
+<li>Die Wahrscheinlichkeit für ein negatives Testergebnis, wenn man Covid hat liegt bei <span class="math inline">\(P(- | C) = 0.1\)</span></li>
+<li>Die Wahrscheinlichkeit an Covid erkrankt zu sein, gegeben dem negativen Testergebnis ist. <span class="math inline">\(P(C | -) = 1.1\%\)</span></li>
+<li>Die Wahrscheinlichkeit an Covid erkrankt zu sein, gegeben dem negativen Testergebnis ist. <span class="math inline">\(P(C | -) = 0.5\%\)</span></li>
 </ul>
 </section>
 </section>
 <section id="solution" class="level1">
 <h1>Solution</h1>
-<p>Bevor wir Informationen über das Übungsverhalten haben, beträgt die Wahrscheinlichkeit zu bestehen <span class="math inline">\(P(P^+) = 0.8\)</span><br>
-und zu scheitern <span class="math inline">\(P(P^-) = 0.2\)</span>. Die <strong>Odds</strong> (Chance im Verhältnis zu Misserfolg) sind:</p>
+<p>Lassen Sie uns zu Beginn nochmal kurz die wichtigen Begriffe für die Aufgabe klären:</p>
+<ul>
+<li><strong>Sensitivität</strong>: Wie oft erkennt der Test Kranke korrekt als <em>positiv</em>.<br>
+</li>
+<li><strong>Spezifität</strong>: Wie oft erkennt der Test Gesunde korrekt als <em>negativ</em>.<br>
+</li>
+<li><strong>Unser Ziel</strong>: Von einem <strong>negativen Ergebnis</strong> auf die <strong>Krankheit</strong> schließen → (P(C-)).</li>
+</ul>
+<p>Dafür brauchen wir das Bayes Theorem in der Variante <strong>für ein negatives Ergebnis</strong>:</p>
 <p><span class="math display">\[
-O(P^+) = \frac{P(P^+)}{P(P^-)} = \frac{0.8}{0.2} = 4
+P(C\mid -) \;=\; \frac{P(-\mid C)\,P(C)}{P(-\mid C)\,P(C) \;+\; P(-\mid \neg C)\,P(\neg C)}.
 \]</span></p>
-<p>Die Chance zu bestehen ist also <strong>viermal so hoch</strong> wie die Chance, durchzufallen.</p>
-<p>Die zusätzliche Information, die Übungen gewissenhaft zu lösen <span class="math inline">\(Ü^+\)</span> liefert uns weitere Informationen in Bezug auf die Chancen die Prüfung zu bestehen. Wir wollen nun wissen, wie stark diese Information unsere bisherigen Erwartungen aktualisieren sollte. Dazu vergleichen wir, wie wahrscheinlich diese Information unter Personen, die die Prüfung bestehen gegenüber Personen, die die Prüfung nicht bestehen ist. Das liefert uns den Bayes Faktor:</p>
+<p>In diese From des Bayes Theorems können wir nun die entsprechenden Werte eintragen:</p>
+<ul>
+<li><span class="math inline">\(P(-\mid C)=1-\text{Sensitivität}=1-0{,}90=0{,}10\)</span><br>
+</li>
+<li><span class="math inline">\(P(-\mid \neg C)=\text{Spezifität}=0{,}99\)</span></li>
+<li><span class="math inline">\((P(C)=0{,}10\)</span>, <span class="math inline">\(P(\neg C)=0{,}90\)</span></li>
+</ul>
+<p>Damit können wir zuerst die Wahrscheinlichkeit für ein negatives Testergebnis, unabhängig von der Erkrankrung berechnen:</p>
 <p><span class="math display">\[
-BF_{Ü^+} = \frac{P(Ü^+ \mid P^+)}{P(Ü^+ \mid P^-)} = \frac{0.90}{0.30} = 3
+P(-) \;=\; 0.10\cdot 0.10 \;+\; 0.99\cdot 0.90
+\;=\; 0.01 \;+\; 0.891 \;=\; 0.901.
 \]</span></p>
-<p>Das Verhalten „Übungen gewissenhaft lösen“ ist <strong>viermal häufiger</strong> unter den Bestehenden als unter den Durchfallenden.<br>
-Es ist also ein <strong>positives Signal</strong> für den Prüfungserfolg.</p>
-<p>Mit diesem Bayes Faktor können wir unseres Wissens aktualisiern. In Odds-Form lautet diese Aktualisierung:</p>
+<p>Nachdem wir nun den Nenner für das Bayes Theorem bestimmt haben, können wir alle Werte einsetzten und die gesuchte Wahrscheinlichkeit ausrechnen:</p>
 <p><span class="math display">\[
-O(P^+ \mid Ü^+) = O(P^+) \times BF_{Ü^+} = = 4 \times 3 = 12
+P(C\mid -) \;=\; \frac{0.10\cdot 0.10}{0.901}
+\;=\; \frac{0.01}{0.901}
+\;\approx\; 0.01110 \;=\; \mathbf{1.11\%}.
 \]</span></p>
-<p>Nach der Information „Übungen gewissenhaft gelöst“ ist die Bestehenschance also <strong>16-mal höher</strong> als die Durchfallchance. Aus diesen Odds lässt sich direkt die Wahrscheinlichkeit berechnen:</p>
-<p><span class="math display">\[
-P(P^+ \mid Ü^+) = \frac{O(P^+ \mid Ü^+)}{1 + O(P^+ \mid Ü^+)}
-= \frac{12}{1+12} = \frac{12}{13} \approx 0.923
-\]</span></p>
-<p>Entsprechend können wir zu - Wahrscheinlichkeit zu bestehen, wenn die Übungen gewissenhaft bearbeitet wurden: <strong>92,3 %</strong> - Wahrscheinlichkeit zu scheitern, wenn die Übungen gewissenhaft bearbeitet wurden: <strong>7,7 %</strong></p>
+<p>Nach einem negativen Test ist die Restwahrscheinlichkeit an COVID erkrankt zu sein also <strong>1,11 %</strong>.</p>
 </section>
 <section id="meta-information" class="level1">
 <h1>Meta-information</h1>
-<p>exname: bayes_statistik extype: mchoice exsolution: 10100 exshuffle: FALSE</p>
+<p>exname: bayes_diagnose extype: mchoice exsolution: 0110 exshuffle: FALSE</p>
 
 
 </section>
