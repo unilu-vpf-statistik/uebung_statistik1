@@ -2181,10 +2181,56 @@ O(D|S) = \frac{P(S|D)}{P(S|\neg D)} \cdot O(D) = \frac{0.75}{0.15} \cdot 0.1 = 5
 </blockquote>
 <div class="webex-question">
 <div class="webex-check webex-box">
+<p>In einem Gedächtnisexperiment sehen Teilnehmer 5 Wörter, die sie sich merken sollen. Im Test werden 5 Wörter präsentiert, die entweder “alt” - also eines der Wörter die sich die Teilnehmer merken sollten - oder “neu” - also nicht gezeigte Wörter - sein können. Die Teilnehmer sollen dabei für jedes Wort sagen, ob es “neu” oder “alt” ist. Sie führen 20 Durchgänge mit 5 zu merkenden Wörtern durch.</p>
+<p>Rechnen Sie die folgenden Wahrscheinlichkeiten auf Basis der Binomialverteilung aus:</p>
+<ol type="1">
+<li>Die Wahrscheinlichkeit in einem Durchgänge alle Wörter richtig als “alt” oder “neu” zu klassifizieren</li>
+<li>Die Wahrscheinlichkeit 2 oder weniger Wörter richtig als “alt” oder “neu” zu klassifizieren</li>
+<li>Die Anzahl an Wörtern, für die die Wahrscheinlichkeit so viele oder mehr richtig als “alt” oder “neu” zu klassifizieren, gleich 0.8 ist</li>
+</ol>
+<p><strong>Antworten</strong></p>
+<div id="webex-f9da7802f3886ed0ffbfcdbd1894c5ee" class="webex-checkboxgroup" data-answer="PQhIURsJHAJKAhQIaw==">
+<label><input type="checkbox" autocomplete="off" name="f9da7802f3886ed0ffbfcdbd1894c5ee"><span>Die Wahrscheinlichkeit in einem Durchgang alle Wörter richtig zu klassifizieren ist etwa 3.1%</span></label><label><input type="checkbox" autocomplete="off" name="f9da7802f3886ed0ffbfcdbd1894c5ee"><span>Die Wahrscheinlichkeit in einem Durchgang alle Wörter richtig zu klassifizieren ist etwa 1.4%</span></label><label><input type="checkbox" autocomplete="off" name="f9da7802f3886ed0ffbfcdbd1894c5ee"><span>Die Wahrscheinlichkeit 2 oder weniger Wörter als richtig zu klassifizieren ist 50%</span></label><label><input type="checkbox" autocomplete="off" name="f9da7802f3886ed0ffbfcdbd1894c5ee"><span>Die Wahrscheinlichkeit 2 oder weniger Wörter als richtig zu klassifizieren ist 81%</span></label><label><input type="checkbox" autocomplete="off" name="f9da7802f3886ed0ffbfcdbd1894c5ee"><span>Die Anzahl an Wörter für die man eine Wahrscheinlichkeit von 80% hat so viele oder mehr Wörter richtig zu klassifizieren ist 2</span></label><label><input type="checkbox" autocomplete="off" name="f9da7802f3886ed0ffbfcdbd1894c5ee"><span>Die Anzahl an Wörter für die man eine Wahrscheinlichkeit von 80% hat so viele oder mehr Wörter richtig zu klassifizieren ist 1</span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>Für die drei gefragte Antworten müssen sie jeweils die Wahrscheinlichkeitsfunktion <code>dbinom</code>, die Verteilungsfunktion <code>pbinom</code>, und die Quantilfunktion <code>qbinom</code> nutzen. Wichtig ist dabei darauf zu achten, dass die Anzahl an Durchgängen für die Lösung der Aufgaben nicht relevant ist, und sie nur die Anzahl an Wörtern die in einem Durchgang klassifiziert werden müssen (= 5) beachten müssen. Zusätzlich müssen Sie überlegen, dass die Ratewahrscheinlichkeit in dieser Aufgabe bei <span class="math inline">\(0.5 = \frac{1}{2}\)</span> liegt.</p>
+<p>Die erste Wahrscheinlichkeit berechnet sich dabei mit der Wahrscheinlichkeitsfunktion <code>dbinom</code> für eine bestimmte Anzahl an Wiederholungen gleich 5 und dem Ergebnis dabei 5 Erfolge (also richtige Antworten) zu erzielen:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">5</span>, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">prob =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.03125</code></pre>
+</div>
+</div>
+<p>Die kumulierte Wahrscheinlichkeit 2 oder weniger Wörter korrekt zu klassifizieren berechnet sich mit der Verteilungsfunktion <code>pbinom</code> für eine Anzahl an Wiederholungen gleich 5 und dem Ergebnis dabei 2 oder weniger Erfolge (also richtige Antworten) zu erzielen)</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="dv">2</span>, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">prob =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.5</code></pre>
+</div>
+</div>
+<p>Für die Anzahl an Wörter für die Sie eine kumulierte Wahrscheinlichkeit von 80% für so viele oder mehr richtige Antworten haben können sie mit der Quantilsfunktion <code>qbinom</code> berechnen. Dabei gibt es in den Argumenten der Quantilsfunktion die Option <code>lower.tail</code>. Standardmässig ist diese auf <code>TRUE</code> gesetzt. Da wir für die gefragte Anzahl aber die Wahrscheinlichkeit von 80% für so viele oder mehr richtige Antworten suchen, können wir diese Option auf <code>FALSE</code> setzen und damit die gefragte Anzahl an Wörtern erhalten:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qbinom</span>(<span class="fl">0.8</span>, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">prob =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+<p>Genauso können sie aber auch <span class="math inline">\(1 - 0.8 = 0.2\)</span> verwenden, um mit diesem Wert und den Standardeinstellungen auf das gleiche Ergebnis zu kommen:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qbinom</span>(<span class="fl">0.2</span>, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">prob =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
 <p>Von 100.000 Personen sind 10% an Covid erkrankt. Sie fühlen Sich verschnupft und krank und führen einen Covid-Test durch. Das Ergebnis ist negativ. Sie wissen, dass der Test eine Sensitivität von 90% hat und damit für 90% der Personen, die an Covid erkrankt sind ein positives Ergebnis liefert. Ausserdem hat der Test eine Spezifität von 99%, Personen die nicht an COVID erkrankt sind erhalten also in 1% der Fälle ein positives Ergebnis. Wie hoch ist die Wahrscheinlichkeit, dass Sie an COVID erkrankt sind, gegeben dem negativen Testergebnis.</p>
 <p>Wenden Sie das Bayes Theorem an um diese Frage zu Beantworten. Beachten Sie, dass Sie die Wahrscheinlichkeit für COVID gegeben eines negativen Testergebnisses berechnen sollen. Sie müssen die Elemente der Formel also entsprechend anpassen.</p>
-<div id="webex-9cd01ff2585ffee7c1b5640f153cde69" class="webex-checkboxgroup" data-answer="YlNIAR1XSgJo">
-<label><input type="checkbox" autocomplete="off" name="9cd01ff2585ffee7c1b5640f153cde69"><span>Die Wahrscheinlichkeit für ein negatives Testergebnis, unabhängig davon ob man an Covid erkrankt ist oder nicht liegt bei <span class="math inline">\(P(T-) = 0.95\)</span></span></label><label><input type="checkbox" autocomplete="off" name="9cd01ff2585ffee7c1b5640f153cde69"><span>Die Wahrscheinlichkeit für ein negatives Testergebnis, wenn man Covid hat liegt bei <span class="math inline">\(P(- | C) = 0.1\)</span></span></label><label><input type="checkbox" autocomplete="off" name="9cd01ff2585ffee7c1b5640f153cde69"><span>Die Wahrscheinlichkeit an Covid erkrankt zu sein, gegeben dem negativen Testergebnis ist. <span class="math inline">\(P(C | -) = 1.1\%\)</span></span></label><label><input type="checkbox" autocomplete="off" name="9cd01ff2585ffee7c1b5640f153cde69"><span>Die Wahrscheinlichkeit an Covid erkrankt zu sein, gegeben dem negativen Testergebnis ist. <span class="math inline">\(P(C | -) = 0.5\%\)</span></span></label>
+<div id="webex-14b27c2749c3bf9ea2527d1cbd707d4d" class="webex-checkboxgroup" data-answer="agROAxtSHgdp">
+<label><input type="checkbox" autocomplete="off" name="14b27c2749c3bf9ea2527d1cbd707d4d"><span>Die Wahrscheinlichkeit für ein negatives Testergebnis, unabhängig davon ob man an Covid erkrankt ist oder nicht liegt bei <span class="math inline">\(P(T-) = 0.95\)</span></span></label><label><input type="checkbox" autocomplete="off" name="14b27c2749c3bf9ea2527d1cbd707d4d"><span>Die Wahrscheinlichkeit für ein negatives Testergebnis, wenn man Covid hat liegt bei <span class="math inline">\(P(- | C) = 0.1\)</span></span></label><label><input type="checkbox" autocomplete="off" name="14b27c2749c3bf9ea2527d1cbd707d4d"><span>Die Wahrscheinlichkeit an Covid erkrankt zu sein, gegeben dem negativen Testergebnis ist. <span class="math inline">\(P(C | -) = 1.1\%\)</span></span></label><label><input type="checkbox" autocomplete="off" name="14b27c2749c3bf9ea2527d1cbd707d4d"><span>Die Wahrscheinlichkeit an Covid erkrankt zu sein, gegeben dem negativen Testergebnis ist. <span class="math inline">\(P(C | -) = 0.5\%\)</span></span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -2223,6 +2269,27 @@ P(C\mid -) \;=\; \frac{0.10\cdot 0.10}{0.901}
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
+<p>Sie haben einen gezinkten Würfel der mit einer Wahrscheinlichkeit von 0.5 eine Sechs würfelt. Die anderen Zahlen sind jeweils gleich Wahrscheinlich. Berechnen Sie den Erwartungswert und die Standardabweichung der Wahrscheinlichkeitsverteilung für diesen Würfel.</p>
+<div id="webex-1b19a7ddbbc8a08b6471c21352508c54" class="webex-checkboxgroup" data-answer="alMdCU0HSFU/">
+<label><input type="checkbox" autocomplete="off" name="1b19a7ddbbc8a08b6471c21352508c54"><span>Der Erwartungswert für die Wahrscheinlichkeitsverteilung des Würfels ist: <span class="math inline">\(E(X) = 4.5\)</span></span></label><label><input type="checkbox" autocomplete="off" name="1b19a7ddbbc8a08b6471c21352508c54"><span>Der Erwartungswert für die Wahrscheinlichkeitsverteilung des Würfels ist: <span class="math inline">\(E(X) = 6\)</span></span></label><label><input type="checkbox" autocomplete="off" name="1b19a7ddbbc8a08b6471c21352508c54"><span>Die Standardabweichung der Wahrscheinlichkeitsverteilung des Würfels ist: <span class="math inline">\(\sigma = 3.25\)</span></span></label><label><input type="checkbox" autocomplete="off" name="1b19a7ddbbc8a08b6471c21352508c54"><span>Die Standardabweichung der Wahrscheinlichkeitsverteilung des Würfels ist: <span class="math inline">\(\sigma \approx 1.81\)</span></span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>Als erstes müssen wir die Wahrscheinlichkeitsverteilung für den Würfel definieren. Aus dem angaben in der Aufgabe wissen wir, dass das Ergebnis eine Sechs zu würfeln eine Wahrscheinlichkeit von 0.5 hat. Die restliche Wahrscheinlichkeit von 0.5 verteilt sich gleich auf die anderen Ergebnisse. Damit haben die Ergebnisse 1 bis 5 jeweils eine Wahrscheinlichkeit von <span class="math inline">\(\frac{0.5}{5} = 0.1\)</span>. Wir können diese Wahrscheinlichkeiten also in einem Vektor speichern:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>prob_wuerfel <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.1</span>,<span class="fl">0.1</span>,<span class="fl">0.1</span>,<span class="fl">0.1</span>,<span class="fl">0.5</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(prob_wuerfel) <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Mit Hilfe der Werte für die Einzelnen Ergebnisse <code>1:6</code> und der Wahrscheinlichkeitsverteilung können wir dann den Erwartungswert berechnen:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>erwartungswert <span class="ot">&lt;-</span> <span class="fu">sum</span>(prob_wuerfel <span class="sc">*</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>erwartungswert</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Mit dem so berechneten Erwartungswert können wir dann auch die Varianz berechnen:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>varianz <span class="ot">&lt;-</span> <span class="fu">sum</span>( (<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span> <span class="sc">-</span> erwartungswert)<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> prob_wuerfel)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>varianz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Indem wir die Wurzel aus der Varianz ziehen bekommen wir dann die Standardabweichung</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(varianz)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
 <p>In einem normalen Jahr fallen 20% aller Studierenden durch die Prüfung der Vorlesung Statistik 1 <span class="math inline">\(P(P^-) = 0.2\)</span>. Von den Studierenden, die die Prüfung bestehen haben 90% alle Übungen im Selbststudium gewissenhaft gelöst <span class="math inline">\(P(Ü^+ | P^+) = 0.9\)</span>. Von den Studierenden, die durch die Prüfung fallen, haben nur 30% die Übungen gewissenhaft gelöst <span class="math inline">\(P(Ü^+ | P^-) = 0.3\)</span>. Auf welche Wahrscheinlichkeit reduziert sich die Wahrscheinlichkeit durch die Statistikprüfung zu fallen, wenn Sie die Übungen gewissenhaft lösen <span class="math inline">\(P(P^+ | Ü^+)\)</span>.</p>
 <p>Um die Frage zu Beantworten berechnen Sie bitte:</p>
 <ol type="1">
@@ -2230,8 +2297,8 @@ P(C\mid -) \;=\; \frac{0.10\cdot 0.10}{0.901}
 <li>Den Bayes Faktor zur Aktualisierung der Odds die Prüfung zu bestehen, wenn die Übungen gelöst wurden <span class="math inline">\(BF_{Ü^+}\)</span></li>
 </ol>
 <p><strong>Antworten</strong></p>
-<div id="webex-eab24194ecd082b29b0dcd3d51116aa7" class="webex-checkboxgroup" data-answer="PlBOAhgAFQRJUzk=">
-<label><input type="checkbox" autocomplete="off" name="eab24194ecd082b29b0dcd3d51116aa7"><span>Wenn Sie die Übungen gewissenhaft gelöst haben, liegt die Wahrscheinlichkeit, die Prüfung zu bestehen, bei etwa 94 %.</span></label><label><input type="checkbox" autocomplete="off" name="eab24194ecd082b29b0dcd3d51116aa7"><span>Wenn Sie die Übungen gewissenhaft lösen, liegt Ihre Bestehenswahrscheinlichkeit bei 68 %, da das der Anteil aller Studierenden ist, die gut vorbereitet sind</span></label><label><input type="checkbox" autocomplete="off" name="eab24194ecd082b29b0dcd3d51116aa7"><span>Wer die Übungen gewissenhaft löst, hat ein Verhalten gezeigt, das <strong>dreimal häufiger bei erfolgreichen Studierenden</strong> vorkommt als bei den Durchfallenden. Das entspricht dem <strong>Bayes-Faktor</strong> <span class="math inline">\(BF_{Ü^+} = 3\)</span></span></label><label><input type="checkbox" autocomplete="off" name="eab24194ecd082b29b0dcd3d51116aa7"><span>Wenn man noch nichts über das Übungsverhalten weiß, beträgt die Chance, die Prüfung zu bestehen, <strong>fünfmal so hoch</strong> wie die Chance, durchzufallen. Das entspricht den <strong>Prior-Odds</strong> <span class="math inline">\(O(P^+) = 5\)</span></span></label><label><input type="checkbox" autocomplete="off" name="eab24194ecd082b29b0dcd3d51116aa7"><span>Wer die Übungen gewissenhaft löst, hat <strong>keinen Vorteil</strong>, die Bestehenswahrscheinlichkeit bleibt bei 80 %.</span></label>
+<div id="webex-bdbcd670be866eae710f0d02616a41a9" class="webex-checkboxgroup" data-answer="OVVOU0gHGwBOVWU=">
+<label><input type="checkbox" autocomplete="off" name="bdbcd670be866eae710f0d02616a41a9"><span>Wenn Sie die Übungen gewissenhaft gelöst haben, liegt die Wahrscheinlichkeit, die Prüfung zu bestehen, bei etwa 94 %.</span></label><label><input type="checkbox" autocomplete="off" name="bdbcd670be866eae710f0d02616a41a9"><span>Wenn Sie die Übungen gewissenhaft lösen, liegt Ihre Bestehenswahrscheinlichkeit bei 68 %, da das der Anteil aller Studierenden ist, die gut vorbereitet sind</span></label><label><input type="checkbox" autocomplete="off" name="bdbcd670be866eae710f0d02616a41a9"><span>Wer die Übungen gewissenhaft löst, hat ein Verhalten gezeigt, das <strong>dreimal häufiger bei erfolgreichen Studierenden</strong> vorkommt als bei den Durchfallenden. Das entspricht dem <strong>Bayes-Faktor</strong> <span class="math inline">\(BF_{Ü^+} = 3\)</span></span></label><label><input type="checkbox" autocomplete="off" name="bdbcd670be866eae710f0d02616a41a9"><span>Wenn man noch nichts über das Übungsverhalten weiß, beträgt die Chance, die Prüfung zu bestehen, <strong>fünfmal so hoch</strong> wie die Chance, durchzufallen. Das entspricht den <strong>Prior-Odds</strong> <span class="math inline">\(O(P^+) = 5\)</span></span></label><label><input type="checkbox" autocomplete="off" name="bdbcd670be866eae710f0d02616a41a9"><span>Wer die Übungen gewissenhaft löst, hat <strong>keinen Vorteil</strong>, die Bestehenswahrscheinlichkeit bleibt bei 80 %.</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -2257,73 +2324,6 @@ P(P^+ \mid Ü^+) = \frac{O(P^+ \mid Ü^+)}{1 + O(P^+ \mid Ü^+)}
 = \frac{12}{1+12} = \frac{12}{13} \approx 0.923
 \]</span></p>
 <p>Entsprechend können wir zu - Wahrscheinlichkeit zu bestehen, wenn die Übungen gewissenhaft bearbeitet wurden: <strong>92,3 %</strong> - Wahrscheinlichkeit zu scheitern, wenn die Übungen gewissenhaft bearbeitet wurden: <strong>7,7 %</strong></p>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Sie haben einen gezinkten Würfel der mit einer Wahrscheinlichkeit von 0.5 eine Sechs würfelt. Die anderen Zahlen sind jeweils gleich Wahrscheinlich. Berechnen Sie den Erwartungswert und die Standardabweichung der Wahrscheinlichkeitsverteilung für diesen Würfel.</p>
-<div id="webex-164a159007368f8628815ffcb28b4dc1" class="webex-checkboxgroup" data-answer="agcYUR0FFQFt">
-<label><input type="checkbox" autocomplete="off" name="164a159007368f8628815ffcb28b4dc1"><span>Der Erwartungswert für die Wahrscheinlichkeitsverteilung des Würfels ist: <span class="math inline">\(E(X) = 4.5\)</span></span></label><label><input type="checkbox" autocomplete="off" name="164a159007368f8628815ffcb28b4dc1"><span>Der Erwartungswert für die Wahrscheinlichkeitsverteilung des Würfels ist: <span class="math inline">\(E(X) = 6\)</span></span></label><label><input type="checkbox" autocomplete="off" name="164a159007368f8628815ffcb28b4dc1"><span>Die Standardabweichung der Wahrscheinlichkeitsverteilung des Würfels ist: <span class="math inline">\(\sigma = 3.25\)</span></span></label><label><input type="checkbox" autocomplete="off" name="164a159007368f8628815ffcb28b4dc1"><span>Die Standardabweichung der Wahrscheinlichkeitsverteilung des Würfels ist: <span class="math inline">\(\sigma \approx 1.81\)</span></span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Als erstes müssen wir die Wahrscheinlichkeitsverteilung für den Würfel definieren. Aus dem angaben in der Aufgabe wissen wir, dass das Ergebnis eine Sechs zu würfeln eine Wahrscheinlichkeit von 0.5 hat. Die restliche Wahrscheinlichkeit von 0.5 verteilt sich gleich auf die anderen Ergebnisse. Damit haben die Ergebnisse 1 bis 5 jeweils eine Wahrscheinlichkeit von <span class="math inline">\(\frac{0.5}{5} = 0.1\)</span>. Wir können diese Wahrscheinlichkeiten also in einem Vektor speichern:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>prob_wuerfel <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.1</span>,<span class="fl">0.1</span>,<span class="fl">0.1</span>,<span class="fl">0.1</span>,<span class="fl">0.5</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(prob_wuerfel) <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Mit Hilfe der Werte für die Einzelnen Ergebnisse <code>1:6</code> und der Wahrscheinlichkeitsverteilung können wir dann den Erwartungswert berechnen:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>erwartungswert <span class="ot">&lt;-</span> <span class="fu">sum</span>(prob_wuerfel <span class="sc">*</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>erwartungswert</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Mit dem so berechneten Erwartungswert können wir dann auch die Varianz berechnen:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>varianz <span class="ot">&lt;-</span> <span class="fu">sum</span>( (<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span> <span class="sc">-</span> erwartungswert)<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> prob_wuerfel)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>varianz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Indem wir die Wurzel aus der Varianz ziehen bekommen wir dann die Standardabweichung</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(varianz)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>In einem Gedächtnisexperiment sehen Teilnehmer 5 Wörter, die sie sich merken sollen. Im Test werden 5 Wörter präsentiert, die entweder “alt” - also eines der Wörter die sich die Teilnehmer merken sollten - oder “neu” - also nicht gezeigte Wörter - sein können. Die Teilnehmer sollen dabei für jedes Wort sagen, ob es “neu” oder “alt” ist. Sie führen 20 Durchgänge mit 5 zu merkenden Wörtern durch.</p>
-<p>Rechnen Sie die folgenden Wahrscheinlichkeiten auf Basis der Binomialverteilung aus:</p>
-<ol type="1">
-<li>Die Wahrscheinlichkeit in einem Durchgänge alle Wörter richtig als “alt” oder “neu” zu klassifizieren</li>
-<li>Die Wahrscheinlichkeit 2 oder weniger Wörter richtig als “alt” oder “neu” zu klassifizieren</li>
-<li>Die Anzahl an Wörtern, für die die Wahrscheinlichkeit so viele oder mehr richtig als “alt” oder “neu” zu klassifizieren, gleich 0.8 ist</li>
-</ol>
-<p><strong>Antworten</strong></p>
-<div id="webex-cd9ce5e1407ed71aaaa039def48be9a5" class="webex-checkboxgroup" data-answer="OFUVU0kESQEYARtVOQ==">
-<label><input type="checkbox" autocomplete="off" name="cd9ce5e1407ed71aaaa039def48be9a5"><span>Die Wahrscheinlichkeit in einem Durchgang alle Wörter richtig zu klassifizieren ist etwa 3.1%</span></label><label><input type="checkbox" autocomplete="off" name="cd9ce5e1407ed71aaaa039def48be9a5"><span>Die Wahrscheinlichkeit in einem Durchgang alle Wörter richtig zu klassifizieren ist etwa 1.4%</span></label><label><input type="checkbox" autocomplete="off" name="cd9ce5e1407ed71aaaa039def48be9a5"><span>Die Wahrscheinlichkeit 2 oder weniger Wörter als richtig zu klassifizieren ist 50%</span></label><label><input type="checkbox" autocomplete="off" name="cd9ce5e1407ed71aaaa039def48be9a5"><span>Die Wahrscheinlichkeit 2 oder weniger Wörter als richtig zu klassifizieren ist 81%</span></label><label><input type="checkbox" autocomplete="off" name="cd9ce5e1407ed71aaaa039def48be9a5"><span>Die Anzahl an Wörter für die man eine Wahrscheinlichkeit von 80% hat so viele oder mehr Wörter richtig zu klassifizieren ist 2</span></label><label><input type="checkbox" autocomplete="off" name="cd9ce5e1407ed71aaaa039def48be9a5"><span>Die Anzahl an Wörter für die man eine Wahrscheinlichkeit von 80% hat so viele oder mehr Wörter richtig zu klassifizieren ist 1</span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Für die drei gefragte Antworten müssen sie jeweils die Wahrscheinlichkeitsfunktion <code>dbinom</code>, die Verteilungsfunktion <code>pbinom</code>, und die Quantilfunktion <code>qbinom</code> nutzen. Wichtig ist dabei darauf zu achten, dass die Anzahl an Durchgängen für die Lösung der Aufgaben nicht relevant ist, und sie nur die Anzahl an Wörtern die in einem Durchgang klassifiziert werden müssen (= 5) beachten müssen. Zusätzlich müssen Sie überlegen, dass die Ratewahrscheinlichkeit in dieser Aufgabe bei <span class="math inline">\(0.5 = \frac{1}{2}\)</span> liegt.</p>
-<p>Die erste Wahrscheinlichkeit berechnet sich dabei mit der Wahrscheinlichkeitsfunktion <code>dbinom</code> für eine bestimmte Anzahl an Wiederholungen gleich 5 und dem Ergebnis dabei 5 Erfolge (also richtige Antworten) zu erzielen:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">5</span>, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">prob =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.03125</code></pre>
-</div>
-</div>
-<p>Die kumulierte Wahrscheinlichkeit 2 oder weniger Wörter korrekt zu klassifizieren berechnet sich mit der Verteilungsfunktion <code>pbinom</code> für eine Anzahl an Wiederholungen gleich 5 und dem Ergebnis dabei 2 oder weniger Erfolge (also richtige Antworten) zu erzielen)</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="dv">2</span>, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">prob =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.5</code></pre>
-</div>
-</div>
-<p>Für die Anzahl an Wörter für die Sie eine kumulierte Wahrscheinlichkeit von 80% für so viele oder mehr richtige Antworten haben können sie mit der Quantilsfunktion <code>qbinom</code> berechnen. Dabei gibt es in den Argumenten der Quantilsfunktion die Option <code>lower.tail</code>. Standardmässig ist diese auf <code>TRUE</code> gesetzt. Da wir für die gefragte Anzahl aber die Wahrscheinlichkeit von 80% für so viele oder mehr richtige Antworten suchen, können wir diese Option auf <code>FALSE</code> setzen und damit die gefragte Anzahl an Wörtern erhalten:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qbinom</span>(<span class="fl">0.8</span>, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">prob =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
-<p>Genauso können sie aber auch <span class="math inline">\(1 - 0.8 = 0.2\)</span> verwenden, um mit diesem Wert und den Standardeinstellungen auf das gleiche Ergebnis zu kommen:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qbinom</span>(<span class="fl">0.2</span>, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">prob =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
 </div>
 </div>
 <hr>
