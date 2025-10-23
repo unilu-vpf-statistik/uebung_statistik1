@@ -22,7 +22,32 @@ Answerlist
 
 Solution
 ========
+Als erstes müssen wir die Wahrscheinlichkeitsverteilung für den Würfel definieren. Aus dem angaben in der Aufgabe wissen wir, dass das Ergebnis eine Sechs zu würfeln eine Wahrscheinlichkeit von 0.5 hat. Die restliche Wahrscheinlichkeit von 0.5 verteilt sich gleich auf die anderen Ergebnisse. Damit haben die Ergebnisse 1 bis 5 jeweils eine Wahrscheinlichkeit von $\frac{0.5}{5} = 0.1$. Wir können diese Wahrscheinlichkeiten also in einem Vektor speichern:
 
+```r
+prob_wuerfel <- c(0.1,0.1,0.1,0.1,0.1,0.5)
+names(prob_wuerfel) <- as.character(1:6)
+``` 
+
+Mit Hilfe der Werte für die Einzelnen Ergebnisse `1:6` und der Wahrscheinlichkeitsverteilung können wir dann den Erwartungswert berechnen:
+
+```r
+erwartungswert <- sum(prob_wuerfel * 1:6)
+erwartungswert
+```
+
+Mit dem so berechneten Erwartungswert können wir dann auch die Varianz berechnen: 
+
+```r
+varianz <- sum( (1:6 - erwartungswert)^2 * prob_wuerfel)
+varianz
+```
+
+Indem wir die Wurzel aus der Varianz ziehen bekommen wir dann die Standardabweichung
+
+```r
+sqrt(varianz)
+```
 
 Meta-information
 =========

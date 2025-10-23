@@ -1,0 +1,75 @@
+Question
+=======
+In einem Gedächtnisexperiment sehen Teilnehmer 5 Wörter, die sie sich merken sollen. Im Test werden 5 Wörter präsentiert, die entweder "alt" - also eines der Wörter die sich die Teilnehmer merken sollten - oder "neu" - also nicht gezeigte Wörter - sein können. Die Teilnehmer sollen dabei für jedes Wort sagen, ob es "neu" oder "alt" ist. Sie führen 20 Durchgänge mit 5 zu merkenden Wörtern durch.
+
+Rechnen Sie die folgenden Wahrscheinlichkeiten auf Basis der Binomialverteilung aus:
+
+1. Die Wahrscheinlichkeit in einem Durchgänge alle Wörter richtig als "alt" oder "neu" zu klassifizieren
+2. Die Wahrscheinlichkeit 2 oder weniger Wörter richtig als "alt" oder "neu" zu klassifizieren
+3. Die Anzahl an Wörtern, für die die Wahrscheinlichkeit so viele oder mehr richtig als "alt" oder "neu" zu klassifizieren, gleich 0.8 ist
+
+**Antworten**
+
+Answerlist
+--------
+* Die Wahrscheinlichkeit in einem Durchgang alle Wörter richtig zu klassifizieren ist etwa 3.1%
+* Die Wahrscheinlichkeit in einem Durchgang alle Wörter richtig zu klassifizieren ist etwa 1.4%
+* Die Wahrscheinlichkeit 2 oder weniger Wörter als richtig zu klassifizieren ist 50%
+* Die Wahrscheinlichkeit 2 oder weniger Wörter als richtig zu klassifizieren ist 81%
+* Die Anzahl an Wörter für die man eine Wahrscheinlichkeit von 80% hat so viele oder mehr Wörter richtig zu klassifizieren ist 2
+* Die Anzahl an Wörter für die man eine Wahrscheinlichkeit von 80% hat so viele oder mehr Wörter richtig zu klassifizieren ist 1
+
+Solution
+========
+Für die drei gefragte Antworten müssen sie jeweils die Wahrscheinlichkeitsfunktion `dbinom`, die Verteilungsfunktion `pbinom`, und die Quantilfunktion `qbinom` nutzen. Wichtig ist dabei darauf zu achten, dass die Anzahl an Durchgängen für die Lösung der Aufgaben nicht relevant ist, und sie nur die Anzahl an Wörtern die in einem Durchgang klassifiziert werden müssen  (= 5) beachten müssen. Zusätzlich müssen Sie überlegen, dass die Ratewahrscheinlichkeit in dieser Aufgabe bei $0.5 = \frac{1}{2}$ liegt.
+
+Die erste Wahrscheinlichkeit berechnet sich dabei mit der Wahrscheinlichkeitsfunktion `dbinom` für eine bestimmte Anzahl an Wiederholungen gleich 5 und dem Ergebnis dabei 5 Erfolge (also richtige Antworten) zu erzielen:
+
+```r
+dbinom(5, size = 5, prob = 1/2)
+```
+
+```{r}
+#| echo: false
+dbinom(5, size = 5, prob = 1/2)
+```
+
+Die kumulierte Wahrscheinlichkeit 2 oder weniger Wörter korrekt zu klassifizieren berechnet sich mit der Verteilungsfunktion `pbinom` für eine Anzahl an Wiederholungen gleich 5 und dem Ergebnis dabei 2 oder weniger Erfolge (also richtige Antworten) zu erzielen)
+
+```r
+pbinom(2, size = 5, prob = 1/2)
+```
+
+```{r}
+#| echo: false
+pbinom(2, size = 5, prob = 1/2)
+```
+
+Für die Anzahl an Wörter für die Sie eine kumulierte Wahrscheinlichkeit von 80% für so viele oder mehr richtige Antworten haben können sie mit der Quantilsfunktion `qbinom` berechnen. Dabei gibt es in den Argumenten der Quantilsfunktion die Option `lower.tail`. Standardmässig ist diese auf `TRUE` gesetzt. Da wir für die gefragte Anzahl aber die Wahrscheinlichkeit von 80% für so viele oder mehr richtige Antworten suchen, können wir diese Option auf `FALSE` setzen und damit die gefragte Anzahl an Wörtern erhalten:
+
+```r
+qbinom(0.8, size = 5, prob = 1/2, lower.tail = FALSE)
+```
+
+```{r}
+#| echo: false
+qbinom(0.8, size = 5, prob = 1/2, lower.tail = FALSE)
+```
+
+Genauso können sie aber auch $1 - 0.8 = 0.2$ verwenden, um mit diesem Wert und den Standardeinstellungen auf das gleiche Ergebnis zu kommen:
+
+```r
+qbinom(0.2, size = 5, prob = 1/2)
+```
+
+```{r}
+#| echo: false
+qbinom(0.2, size = 5, prob = 1/2)
+```
+
+Meta-information
+=========
+exname: bayes_statistik
+extype: mchoice 
+exsolution: 101010
+exshuffle: FALSE
