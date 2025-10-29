@@ -1,0 +1,67 @@
+---
+title: "Übung 6 - Wahrscheinlichkeitstheorie"
+subtitle: "HS 2025"
+author: "Gidon Frischkorn"
+format:
+  html:
+    css: styles.css
+    include-after-body: webex.js
+filters:
+  - webr
+---
+
+```{r preparation}
+#| include: false
+library(exams)
+library(exams2forms)
+library(here)
+library(dplyr)
+
+exam_files <- list.files(here("questions_uebung6"), full.names = TRUE)
+shuffeld_questions <- sample(exam_files)
+
+# Laden des Datensatzes
+semester_data2 <- read.csv("semester_data2.csv")
+```
+
+## Wiederholung & Vertiefung: Dichteverteilungen
+
+In dieser Übung werden wir Üben mit der Dichte- & Verteilungsfunktionen der Normalverteilung in R zu Arbeiten. Falls Sie sich nochmal vertieft mit den einzelnen Funktionen der Normalverteilung in R auseinandersetzen wollen, dann kann ich Ihnen das folgende Video empfehlen:
+
+- [How to use the 4 different norm() functions in Re](https://www.youtube.com/watch?v=X5NXDK6AVtU)
+
+Wenn Sie nochmal eine Vertiefung der konzeptuellen Hintergründe der Standardnormalverteilung und dem Ablesen aus Verteilungstabellen wollen, kann ich Ihnen dieses Video empfehlen:
+
+- [Normalverteilung anhand von Beispielen erklärt](https://www.youtube.com/watch?v=xI9ZHGOSaCg)
+
+## Übungen
+
+In den folgenden Übungen nutzen Sie wiederum keinen Datensatz, sondern können R einfach als Taschenrechnen verwenden.
+
+Falls Sie die Übungsfragen nicht mit R beantworten wollen, dann können Sie die hier gedruckte Tabelle der z-Werte der Verteilungsfunktion der Standardnormalverteilung nutzen um die Fragen zu beantworten
+
+![Tabelle der z-Werte für die Verteilungsfunktion der Standardnormalverteilung](./images/zTabelle_Normalverteilung.png)
+
+Wie in den bisherigen Übungen finden Sie über den Übungsaufgaben die `webr` Konsole, die Ihnen das Schreiben und Durchführen von R Code direkt auf der Website ermöglicht. Wenn viele Studierenden die Übungen parallel machen, dann kann es sein, dass `webr` sehr langsam wird.
+
+> Um den Code den Sie geschrieben haben auszuführen drücken Sie entwedern `Run Code`, damit der gesamte Code ausgeführt würde. Alternativ können Sie auch einzelne Zeilen ausführen, indem sie <kbd>CRTL</kbd>+<kbd>Enter</kbd> (Windows) oder <kbd>CMD</kbd>+<kbd>Enter</kbd> (Mac) drücken.
+
+```{webr-r}
+# Schreiben Sie hier ihren Code um die Aufgaben zu lösen
+
+
+
+```
+
+> Nutzen Sie eine [Suchmaschine](https://unilu-vpf-statistik.github.io/uebung_statistik1/about.html#suchmaschinen), wenn Sie nicht wissen welche Funktionen Ihnen ein bestimmtes Ergebnis liefern. Ausserdem können Sie in R immer die [Hilfe](https://www.r-project.org/help.html) einer Funktion aufrufen, indem sie vor den Namen der Funktion ein Fragezeichen schreiben, z. Bsp `?median` oder die Hilfe-Funktion `help()` mit dem jeweligen Funktionsbefehl ausführen: `help(median)`.
+
+```{r print_questions}
+#| echo: false
+#| message: false
+#| results: "asis"
+exams2forms(shuffeld_questions)
+```
+
+------------------------------------------------------------------------
+
+[![](images/Logo_UniLu.png){fig-align="center" width="300"}](https://www.unilu.ch/fakultaeten/vpf/uebersicht/)

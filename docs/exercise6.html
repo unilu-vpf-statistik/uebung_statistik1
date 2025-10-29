@@ -8,7 +8,7 @@
 
 <meta name="author" content="Gidon Frischkorn">
 
-<title>Übung 5 - Wahrscheinlichkeitstheorie – Übungen - VL: Statistik I</title>
+<title>Übung 6 - Wahrscheinlichkeitstheorie – Übungen - VL: Statistik I</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -1730,7 +1730,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./exercise5.html">Übung 5</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./exercise6.html">Übung 6</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -1776,13 +1776,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercise5.html" class="sidebar-item-text sidebar-link active">
+  <a href="./exercise5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Übung 5</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercise6.html" class="sidebar-item-text sidebar-link">
+  <a href="./exercise6.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Übung 6</span></a>
   </div>
 </li>
@@ -1796,12 +1796,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#wiederholung-vertiefung-bayes-theorem-wahrscheinlichkeitsverteilungen" id="toc-wiederholung-vertiefung-bayes-theorem-wahrscheinlichkeitsverteilungen" class="nav-link active" data-scroll-target="#wiederholung-vertiefung-bayes-theorem-wahrscheinlichkeitsverteilungen">Wiederholung &amp; Vertiefung: Bayes Theorem &amp; Wahrscheinlichkeitsverteilungen</a></li>
-  <li><a href="#odds-chancen-bayes-faktoren" id="toc-odds-chancen-bayes-faktoren" class="nav-link" data-scroll-target="#odds-chancen-bayes-faktoren">Odds / Chancen &amp; Bayes Faktoren</a>
-  <ul class="collapse">
-  <li><a href="#odds-chancen" id="toc-odds-chancen" class="nav-link" data-scroll-target="#odds-chancen">Odds / Chancen</a></li>
-  <li><a href="#bayes-faktoren" id="toc-bayes-faktoren" class="nav-link" data-scroll-target="#bayes-faktoren">Bayes Faktoren</a></li>
-  </ul></li>
+  <li><a href="#wiederholung-vertiefung-dichteverteilungen" id="toc-wiederholung-vertiefung-dichteverteilungen" class="nav-link active" data-scroll-target="#wiederholung-vertiefung-dichteverteilungen">Wiederholung &amp; Vertiefung: Dichteverteilungen</a></li>
   <li><a href="#übungen" id="toc-übungen" class="nav-link" data-scroll-target="#übungen">Übungen</a></li>
   </ul>
 </nav>
@@ -2095,7 +2090,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Übung 5 - Wahrscheinlichkeitstheorie</h1>
+<h1 class="title">Übung 6 - Wahrscheinlichkeitstheorie</h1>
 <p class="subtitle lead">HS 2025</p>
 </div>
 
@@ -2119,64 +2114,28 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </header>
 
 
-<section id="wiederholung-vertiefung-bayes-theorem-wahrscheinlichkeitsverteilungen" class="level2">
-<h2 class="anchored" data-anchor-id="wiederholung-vertiefung-bayes-theorem-wahrscheinlichkeitsverteilungen">Wiederholung &amp; Vertiefung: Bayes Theorem &amp; Wahrscheinlichkeitsverteilungen</h2>
-<p>In dieser Übung werden Üben mit den Verteilungsfunktionen der Binomialverteilung in R zu Arbeiten. Darüber hinaus sollen Sie sich noch einmal Vertieft mit einer anderen Parametrisierung des Bayes Theorems beschäftigen.</p>
-<p>Für eine ausführliche Erklärung dieser alternativen Parametrizierung schauen Sie sich bitte das folgende YouTube Video an:</p>
+<section id="wiederholung-vertiefung-dichteverteilungen" class="level2">
+<h2 class="anchored" data-anchor-id="wiederholung-vertiefung-dichteverteilungen">Wiederholung &amp; Vertiefung: Dichteverteilungen</h2>
+<p>In dieser Übung werden wir Üben mit der Dichte- &amp; Verteilungsfunktionen der Normalverteilung in R zu Arbeiten. Falls Sie sich nochmal vertieft mit den einzelnen Funktionen der Normalverteilung in R auseinandersetzen wollen, dann kann ich Ihnen das folgende Video empfehlen:</p>
 <ul>
-<li><a href="https://www.youtube.com/watch?v=lG4VkPoG3ko">The medical test paradox, and redesigning Bayes’ rule</a></li>
+<li><a href="https://www.youtube.com/watch?v=X5NXDK6AVtU">How to use the 4 different norm() functions in Re</a></li>
 </ul>
-<p>Nehmen Sie sich bitte Zeit dafür dieses Video anzuschauen und die Konzepte und Erklärungen nachzuvollziehen. Die Inhalte können Teil der Prüfung sein und damit sollten Sie die entsprechenden Konzepte verstehen und anwenden können.</p>
-</section>
-<section id="odds-chancen-bayes-faktoren" class="level2">
-<h2 class="anchored" data-anchor-id="odds-chancen-bayes-faktoren">Odds / Chancen &amp; Bayes Faktoren</h2>
-<p>In diesem Abschnitt fasse ich die wichtigsten Informationen aus dem Video nochmal zusammen. In dem Video werden zwei wichtige Konzepte eingeführt:</p>
-<ol type="1">
-<li>Die Darstellung von Wahrscheinlichkeiten mit Hilfe von Odds, oder deutsch Chancen</li>
-<li>Die Umformung der Sensitivität und Spezifität eines Tests in einen Bayes Faktor</li>
-</ol>
-<section id="odds-chancen" class="level3">
-<h3 class="anchored" data-anchor-id="odds-chancen">Odds / Chancen</h3>
-<p>Normalerweise schreiben wir eine Wahrscheinlichkeit als einen Bruch bzw. eine Zahl zwischen 0 und 1. Die Idee dabei ist, dass wir die Anzahl günstiger Ereignisse zur Gesamtzahhl an möglichen Ereignissen in Bezug setzen. Wenn, wir zum Beispiel die Wahrscheinlichkeit bei würfeln eines fairen Würfels eine 6 zu werfen beschreiben, dann ist diese <span class="math inline">\(\frac{1}{6} = 0.16666 \dots\)</span>, weil ein Ergebnis der Zahl 6 enspricht, und es insgesamt 6 mögliche ergebnisse gibt.</p>
-<p>Alternativ können wir diese Wahrscheinlichkeit jedoch auch als Odds (bzw. Chancen) schreiben. Dabei setzen wir die Anzahl günstiger Ergebnisse zur Anzahl ungünstiger Ergebnisse in Bezug <span class="math inline">\(1:5\)</span>. Um Odds (Chancen) von Wahrscheinlichkeiten in der Notation abzugrenzen wird dabei Häufig ein Doppelpunkt verwendet. Die Odds <span class="math inline">\(1:5\)</span> beschreiben dabei genau so die Wahrscheinlichkeit und können auch in diese Übertragen werden in dem man die erste Zahl durch die Summe beider Zahlen teilt <span class="math inline">\(\frac{1}{1 + 5}\)</span>. Allgemein können wir also schreiben:</p>
-<p><span class="math display">\[
-a:b = \frac{a}{a+b}
-\]</span></p>
-<p>Odds (Chancen) können dabei auch als eine Zahl zwischen 0 und Unendlich <span class="math inline">\(\infty\)</span> angegeben werden. Dabei entsprechen Odds = 1 einer Wahrscheinlichkeit von 50% oder <span class="math inline">\(\frac{1}{2}\)</span>, Odds &lt; 1 entsprechen Wahrscheinlichkeiten kleiner als 50%, und Odds &gt; 1 entsprechen Wahrscheinlichkeiten grösser als 50%. Sind Odds als einzelne Zahl angegeben können Sie diese jeweils relativ zur Zahl 1 verstehen. Gegeben die Odds <span class="math inline">\(O\)</span> ergibt sich die Wahrscheinlichkeit:</p>
-<p><span class="math display">\[
-O = O:1 = \frac{O}{O+1}
-\]</span></p>
-</section>
-<section id="bayes-faktoren" class="level3">
-<h3 class="anchored" data-anchor-id="bayes-faktoren">Bayes Faktoren</h3>
-<p>Im Allgemeinen stellen Bayes Faktoren das Verhältnis von zwei Likelihoods, also bedigten Wahrscheinlichkeiten bestimmte Daten <span class="math inline">\(D\)</span> unter der Annahme eines Modells oder einer Hypothese <span class="math inline">\(H\)</span> zu Beobachten. Wenn wir also zwei solcher Likelihoods <span class="math inline">\(P(D | H_1)\)</span> und <span class="math inline">\(P(D | H_2)\)</span> zueinander in Bezug setzen erhalten wir den Bayes Faktor <span class="math inline">\(BF\)</span>:</p>
-<p><span class="math display">\[
-BF_{12} = \frac{P(D | H_1)}{P(D | H_2)}
-\]</span></p>
-<p>Der Index des Bayes Faktors gibt dabei an, welche bedingte Wahrscheinlichkeit im Zähler bzw. im Nenner steht. Die erste Zahl bezieht sich auf den Index der Hypothese im Zähler, die zweite Zahl auf den Index der Hypothese im Nenner.</p>
-<p>Im Bezug auf das Bayes Theorem ist die Berechnung des Bayes Faktors sehr hilfreich, da sie die Aktualisierungvon den Prior Beliefs, also unseres Wissens bevor wir die Daten gesehen haben, zu den Posterior Beliefs, also unserem Wissen nachdem wir die Daten gesehen haben, sehr klar und einfach darstellt. Stellen wir die Prior und Posterior Probability jeweils als Odds dar, gilt folgendes:</p>
-<p><span class="math display">\[
-O_{posterior} = BF \cdot O_{prior}
-\]</span></p>
-<section id="beispiel" class="level4">
-<h4 class="anchored" data-anchor-id="beispiel">Beispiel</h4>
-<p>Sie interessieren sich dafür wie ein bestimtes Symptom <span class="math inline">\(S\)</span> ihre Vermutung einer Diagnose <span class="math inline">\(D\)</span> verändert. Sie wissen,</p>
-<ol type="1">
-<li>dass die Prior Odds der Diagnose <span class="math inline">\(O(D)\)</span> (z. Bsp. Depression) 0.1 sind (es liegt also eine Wahrscheinlichkeit von <span class="math inline">\(\frac{0.1}{0.1+1} \approx 0.09 = 9\%\)</span> für eine Depression vor).</li>
-<li>Für das beobachtete Symptom (z. Bsp. Antriebslosigkeit) ist bekannt das der Bayes Faktor = 5 ist. Das heisst zum Beispiel depressive Personen <span class="math inline">\(D\)</span> zeigen zu 75% Antriebslosigkeit, während nicht depressive Personen <span class="math inline">\(\neg D\)</span> nur zu 15% Antriebslosigkeit breichten: <span class="math inline">\(\frac{P(S|D)}{P(S|\neg D)} = \frac{0.75}{0.15} = 5\)</span>.</li>
-</ol>
-<p>Mit diesen Informationen können wir schnell und einfach berechnen wie stark sich die Odds (Chancen) einer Diagnose auf Basis des beobachteten Symptoms verändern:</p>
-<p><span class="math display">\[
-O(D|S) = \frac{P(S|D)}{P(S|\neg D)} \cdot O(D) = \frac{0.75}{0.15} \cdot 0.1 = 5 \cdot 0.1 = 0.5
-\]</span></p>
-<p>Wenn wir diese Posterior Odds <span class="math inline">\(O(D | S)\)</span> in eine Wahrscheinlichkeit umrechnen erhalten wir: <span class="math inline">\(\frac{0.5}{0.5+1} = 0.333 \dots \approx 33 \%\)</span>. Nachdem wir das Symptom beobachtet haben, haben wir nun also eine höhere Chance <span class="math inline">\(33\% &gt; 9\%\)</span>, dass eine Person die das Symptom berichtet an Depression leidet.</p>
-</section>
-</section>
+<p>Wenn Sie nochmal eine Vertiefung der konzeptuellen Hintergründe der Standardnormalverteilung und dem Ablesen aus Verteilungstabellen wollen, kann ich Ihnen dieses Video empfehlen:</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=xI9ZHGOSaCg">Normalverteilung anhand von Beispielen erklärt</a></li>
+</ul>
 </section>
 <section id="übungen" class="level2">
 <h2 class="anchored" data-anchor-id="übungen">Übungen</h2>
-<p>In den folgenden Übungen nutzen Sie keinen Datensatz, sondern können R einfach als Taschenrechnen verwenden.</p>
-<p>Wie in den bisherigen Übungen finden Sie hier über den Übungsaufgaben die <code>webr</code> Konsole, die Ihnen das Schreiben und Durchführen von R Code direkt auf der Website ermöglicht. Wenn viele Studierenden die Übungen parallel machen, dann kann es sein, dass <code>webr</code> sehr langsam wird.</p>
+<p>In den folgenden Übungen nutzen Sie wiederum keinen Datensatz, sondern können R einfach als Taschenrechnen verwenden.</p>
+<p>Falls Sie die Übungsfragen nicht mit R beantworten wollen, dann können Sie die hier gedruckte Tabelle der z-Werte der Verteilungsfunktion der Standardnormalverteilung nutzen um die Fragen zu beantworten</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/zTabelle_Normalverteilung.png" class="img-fluid figure-img"></p>
+<figcaption>Tabelle der z-Werte für die Verteilungsfunktion der Standardnormalverteilung</figcaption>
+</figure>
+</div>
+<p>Wie in den bisherigen Übungen finden Sie über den Übungsaufgaben die <code>webr</code> Konsole, die Ihnen das Schreiben und Durchführen von R Code direkt auf der Website ermöglicht. Wenn viele Studierenden die Übungen parallel machen, dann kann es sein, dass <code>webr</code> sehr langsam wird.</p>
 <blockquote class="blockquote">
 <p>Um den Code den Sie geschrieben haben auszuführen drücken Sie entwedern <code>Run Code</code>, damit der gesamte Code ausgeführt würde. Alternativ können Sie auch einzelne Zeilen ausführen, indem sie <kbd>CRTL</kbd>+<kbd>Enter</kbd> (Windows) oder <kbd>CMD</kbd>+<kbd>Enter</kbd> (Mac) drücken.</p>
 </blockquote>
@@ -2187,149 +2146,58 @@ O(D|S) = \frac{P(S|D)}{P(S|\neg D)} \cdot O(D) = \frac{0.75}{0.15} \cdot 0.1 = 5
 </blockquote>
 <div class="webex-question">
 <div class="webex-check webex-box">
-<p>In einem Gedächtnisexperiment sehen Teilnehmer 5 Wörter, die sie sich merken sollen. Im Test werden 5 Wörter präsentiert, die entweder “alt” - also eines der Wörter die sich die Teilnehmer merken sollten - oder “neu” - also nicht gezeigte Wörter - sein können. Die Teilnehmer sollen dabei für jedes Wort sagen, ob es “neu” oder “alt” ist. Sie führen 20 Durchgänge mit 5 zu merkenden Wörtern durch.</p>
-<p>Rechnen Sie die folgenden Wahrscheinlichkeiten auf Basis der Binomialverteilung aus:</p>
+<p>Aus einer Studie zum Schlafverhalten von Studierenden wissen Sie, dass die Schlafdauer von Studierenden einer Normalverteilung folgt. Im Mittel Schlafen Studierende 7.4 Stunden, und die Varianz der Schlafdauer beträgt 0.36. Beantworten Sie die Folgenden Fragen zur Schlafdauer der Studierenden mit Hilfe der verschiedenen R-Funktionen zur Normalverteilung oder der Tabelle der z-Werte für die Verteilungsfunktion der Standardnormalverteilung.</p>
 <ol type="1">
-<li>Die Wahrscheinlichkeit in einem Durchgänge alle Wörter richtig als “alt” oder “neu” zu klassifizieren</li>
-<li>Die Wahrscheinlichkeit 2 oder weniger Wörter richtig als “alt” oder “neu” zu klassifizieren</li>
-<li>Die Anzahl an Wörtern, für die die Wahrscheinlichkeit so viele oder mehr richtig als “alt” oder “neu” zu klassifizieren, gleich 0.8 ist</li>
+<li>In welchem Intervall liegt die Schlafdauer, der Mittleren 95% der Studierenden?</li>
+<li>Mit welcher Schlafdauer schläft man länger als 80% der Studierenden?</li>
+<li>Mit einer Schlafdauer von 8 Studen schläft man länger als wie viel Prozent der Studierenden?</li>
 </ol>
-<p><strong>Antworten</strong></p>
-<div id="webex-6ef5acc423f812bc60b1953a9af0ef6c" class="webex-checkboxgroup" data-answer="bVRKBU1STwQeAkoIbA==">
-<label><input type="checkbox" autocomplete="off" name="6ef5acc423f812bc60b1953a9af0ef6c"><span>Die Wahrscheinlichkeit in einem Durchgang alle Wörter richtig zu klassifizieren ist etwa 3.1%</span></label><label><input type="checkbox" autocomplete="off" name="6ef5acc423f812bc60b1953a9af0ef6c"><span>Die Wahrscheinlichkeit in einem Durchgang alle Wörter richtig zu klassifizieren ist etwa 1.4%</span></label><label><input type="checkbox" autocomplete="off" name="6ef5acc423f812bc60b1953a9af0ef6c"><span>Die Wahrscheinlichkeit 2 oder weniger Wörter als richtig zu klassifizieren ist 50%</span></label><label><input type="checkbox" autocomplete="off" name="6ef5acc423f812bc60b1953a9af0ef6c"><span>Die Wahrscheinlichkeit 2 oder weniger Wörter als richtig zu klassifizieren ist 81%</span></label><label><input type="checkbox" autocomplete="off" name="6ef5acc423f812bc60b1953a9af0ef6c"><span>Die Anzahl an Wörter für die man eine Wahrscheinlichkeit von 80% hat so viele oder mehr Wörter richtig zu klassifizieren ist 2</span></label><label><input type="checkbox" autocomplete="off" name="6ef5acc423f812bc60b1953a9af0ef6c"><span>Die Anzahl an Wörter für die man eine Wahrscheinlichkeit von 80% hat so viele oder mehr Wörter richtig zu klassifizieren ist 1</span></label>
+<div id="webex-0ca616a4d9e14df46f2bebe413a94714" class="webex-checkboxgroup" data-answer="a1JNBh0GTQVICEkBaQ==">
+<label><input type="checkbox" autocomplete="off" name="0ca616a4d9e14df46f2bebe413a94714"><span>Das Intervall der Mittleren Schlafdauer von 95% der Studierenden ist: [6.22; 8.58]</span></label><label><input type="checkbox" autocomplete="off" name="0ca616a4d9e14df46f2bebe413a94714"><span>Das Intervall der Mittleren Schlafdauer von 95% der Studierenden ist: [6.69; 8.11]</span></label><label><input type="checkbox" autocomplete="off" name="0ca616a4d9e14df46f2bebe413a94714"><span>Wenn, mann länger als 80% der Studierenden schlafen will, muss man 7.7 Stunden schlafen.</span></label><label><input type="checkbox" autocomplete="off" name="0ca616a4d9e14df46f2bebe413a94714"><span>Wenn, mann länger als 80% der Studierenden schlafen will, muss man 7.9 Stunden schlafen.</span></label><label><input type="checkbox" autocomplete="off" name="0ca616a4d9e14df46f2bebe413a94714"><span>Mit einer Schlafdauer von 8 Stunden schläft man länger als 84.1% der Studierenden.</span></label><label><input type="checkbox" autocomplete="off" name="0ca616a4d9e14df46f2bebe413a94714"><span>Mit einer Schlafdauer von 8 Stunden schläft man länger als 95.2% der Studierenden.</span></label>
 </div>
 </div>
 <div class="webex-solution">
-<p>Für die drei gefragte Antworten müssen sie jeweils die Wahrscheinlichkeitsfunktion <code>dbinom</code>, die Verteilungsfunktion <code>pbinom</code>, und die Quantilfunktion <code>qbinom</code> nutzen. Wichtig ist dabei darauf zu achten, dass die Anzahl an Durchgängen für die Lösung der Aufgaben nicht relevant ist, und sie nur die Anzahl an Wörtern die in einem Durchgang klassifiziert werden müssen (= 5) beachten müssen. Zusätzlich müssen Sie überlegen, dass die Ratewahrscheinlichkeit in dieser Aufgabe bei <span class="math inline">\(0.5 = \frac{1}{2}\)</span> liegt.</p>
-<p>Die erste Wahrscheinlichkeit berechnet sich dabei mit der Wahrscheinlichkeitsfunktion <code>dbinom</code> für eine bestimmte Anzahl an Wiederholungen gleich 5 und dem Ergebnis dabei 5 Erfolge (also richtige Antworten) zu erzielen:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">5</span>, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">prob =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.03125</code></pre>
-</div>
-</div>
-<p>Die kumulierte Wahrscheinlichkeit 2 oder weniger Wörter korrekt zu klassifizieren berechnet sich mit der Verteilungsfunktion <code>pbinom</code> für eine Anzahl an Wiederholungen gleich 5 und dem Ergebnis dabei 2 oder weniger Erfolge (also richtige Antworten) zu erzielen)</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="dv">2</span>, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">prob =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.5</code></pre>
-</div>
-</div>
-<p>Für die Anzahl an Wörter für die Sie eine kumulierte Wahrscheinlichkeit von 80% für so viele oder mehr richtige Antworten haben können sie mit der Quantilsfunktion <code>qbinom</code> berechnen. Dabei gibt es in den Argumenten der Quantilsfunktion die Option <code>lower.tail</code>. Standardmässig ist diese auf <code>TRUE</code> gesetzt. Da wir für die gefragte Anzahl aber die Wahrscheinlichkeit von 80% für so viele oder mehr richtige Antworten suchen, können wir diese Option auf <code>FALSE</code> setzen und damit die gefragte Anzahl an Wörtern erhalten:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qbinom</span>(<span class="fl">0.8</span>, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">prob =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
-<p>Genauso können sie aber auch <span class="math inline">\(1 - 0.8 = 0.2\)</span> verwenden, um mit diesem Wert und den Standardeinstellungen auf das gleiche Ergebnis zu kommen:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qbinom</span>(<span class="fl">0.2</span>, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">prob =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Sie haben einen gezinkten Würfel der mit einer Wahrscheinlichkeit von 0.5 eine Sechs würfelt. Die anderen Zahlen sind jeweils gleich Wahrscheinlich. Berechnen Sie den Erwartungswert und die Standardabweichung der Wahrscheinlichkeitsverteilung für diesen Würfel.</p>
-<div id="webex-8152adc32b105f41543f686a0892ad76" class="webex-checkboxgroup" data-answer="YwAZAk1UTwJv">
-<label><input type="checkbox" autocomplete="off" name="8152adc32b105f41543f686a0892ad76"><span>Der Erwartungswert für die Wahrscheinlichkeitsverteilung des Würfels ist: <span class="math inline">\(E(X) = 4.5\)</span></span></label><label><input type="checkbox" autocomplete="off" name="8152adc32b105f41543f686a0892ad76"><span>Der Erwartungswert für die Wahrscheinlichkeitsverteilung des Würfels ist: <span class="math inline">\(E(X) = 6\)</span></span></label><label><input type="checkbox" autocomplete="off" name="8152adc32b105f41543f686a0892ad76"><span>Die Standardabweichung der Wahrscheinlichkeitsverteilung des Würfels ist: <span class="math inline">\(\sigma = 3.25\)</span></span></label><label><input type="checkbox" autocomplete="off" name="8152adc32b105f41543f686a0892ad76"><span>Die Standardabweichung der Wahrscheinlichkeitsverteilung des Würfels ist: <span class="math inline">\(\sigma \approx 1.81\)</span></span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Als erstes müssen wir die Wahrscheinlichkeitsverteilung für den Würfel definieren. Aus dem angaben in der Aufgabe wissen wir, dass das Ergebnis eine Sechs zu würfeln eine Wahrscheinlichkeit von 0.5 hat. Die restliche Wahrscheinlichkeit von 0.5 verteilt sich gleich auf die anderen Ergebnisse. Damit haben die Ergebnisse 1 bis 5 jeweils eine Wahrscheinlichkeit von <span class="math inline">\(\frac{0.5}{5} = 0.1\)</span>. Wir können diese Wahrscheinlichkeiten also in einem Vektor speichern:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>prob_wuerfel <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.1</span>,<span class="fl">0.1</span>,<span class="fl">0.1</span>,<span class="fl">0.1</span>,<span class="fl">0.5</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(prob_wuerfel) <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Mit Hilfe der Werte für die Einzelnen Ergebnisse <code>1:6</code> und der Wahrscheinlichkeitsverteilung können wir dann den Erwartungswert berechnen:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>erwartungswert <span class="ot">&lt;-</span> <span class="fu">sum</span>(prob_wuerfel <span class="sc">*</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>erwartungswert</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Mit dem so berechneten Erwartungswert können wir dann auch die Varianz berechnen:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>varianz <span class="ot">&lt;-</span> <span class="fu">sum</span>( (<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span> <span class="sc">-</span> erwartungswert)<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> prob_wuerfel)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>varianz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Indem wir die Wurzel aus der Varianz ziehen bekommen wir dann die Standardabweichung</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(varianz)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>In einem normalen Jahr fallen 20% aller Studierenden durch die Prüfung der Vorlesung Statistik 1 <span class="math inline">\(P(P^-) = 0.2\)</span>. Von den Studierenden, die die Prüfung bestehen haben 90% alle Übungen im Selbststudium gewissenhaft gelöst <span class="math inline">\(P(Ü^+ | P^+) = 0.9\)</span>. Von den Studierenden, die durch die Prüfung fallen, haben nur 30% die Übungen gewissenhaft gelöst <span class="math inline">\(P(Ü^+ | P^-) = 0.3\)</span>. Auf welche Wahrscheinlichkeit reduziert sich die Wahrscheinlichkeit durch die Statistikprüfung zu fallen, wenn Sie die Übungen gewissenhaft lösen <span class="math inline">\(P(P^+ | Ü^+)\)</span>.</p>
-<p>Um die Frage zu Beantworten berechnen Sie bitte:</p>
-<ol type="1">
-<li>Die Odds / Chance die Prüfung zu bestehen, unabhängig davon, ob die Übungen gewissenhaft gelöst wurden oder nicht <span class="math inline">\(O(P^+)\)</span></li>
-<li>Den Bayes Faktor zur Aktualisierung der Odds die Prüfung zu bestehen, wenn die Übungen gelöst wurden <span class="math inline">\(BF_{Ü^+}\)</span></li>
-</ol>
-<p><strong>Antworten</strong></p>
-<div id="webex-18a059e302aea7c4c517f214c3b16920" class="webex-checkboxgroup" data-answer="aglNABkISQMcAjw=">
-<label><input type="checkbox" autocomplete="off" name="18a059e302aea7c4c517f214c3b16920"><span>Wenn Sie die Übungen gewissenhaft gelöst haben, liegt die Wahrscheinlichkeit, die Prüfung zu bestehen, bei etwa 92 %.</span></label><label><input type="checkbox" autocomplete="off" name="18a059e302aea7c4c517f214c3b16920"><span>Wenn Sie die Übungen gewissenhaft lösen, liegt Ihre Bestehenswahrscheinlichkeit bei 68 %, da das der Anteil aller Studierenden ist, die gut vorbereitet sind</span></label><label><input type="checkbox" autocomplete="off" name="18a059e302aea7c4c517f214c3b16920"><span>Wer die Übungen gewissenhaft löst, hat ein Verhalten gezeigt, das <strong>dreimal häufiger bei erfolgreichen Studierenden</strong> vorkommt als bei den Durchfallenden. Das entspricht dem <strong>Bayes-Faktor</strong> <span class="math inline">\(BF_{Ü^+} = 3\)</span></span></label><label><input type="checkbox" autocomplete="off" name="18a059e302aea7c4c517f214c3b16920"><span>Wenn man noch nichts über das Übungsverhalten weiß, beträgt die Chance, die Prüfung zu bestehen, <strong>fünfmal so hoch</strong> wie die Chance, durchzufallen. Das entspricht den <strong>Prior-Odds</strong> <span class="math inline">\(O(P^+) = 5\)</span></span></label><label><input type="checkbox" autocomplete="off" name="18a059e302aea7c4c517f214c3b16920"><span>Wer die Übungen gewissenhaft löst, hat <strong>keinen Vorteil</strong>, die Bestehenswahrscheinlichkeit bleibt bei 80 %.</span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Bevor wir Informationen über das Übungsverhalten haben, beträgt die Wahrscheinlichkeit zu bestehen <span class="math inline">\(P(P^+) = 0.8\)</span><br>
-und zu scheitern <span class="math inline">\(P(P^-) = 0.2\)</span>. Die <strong>Odds</strong> (Chance im Verhältnis zu Misserfolg) sind:</p>
+<p>Zuerst sollen Sie für die Lösung dieser Aufgabe die Varianz in die Standardabweichung umrechen:</p>
 <p><span class="math display">\[
-O(P^+) = \frac{P(P^+)}{P(P^-)} = \frac{0.8}{0.2} = 4
+\sigma = \sqrt{VAR}= \sqrt{0.36} = 0.6
 \]</span></p>
-<p>Die Chance zu bestehen ist also <strong>viermal so hoch</strong> wie die Chance, durchzufallen.</p>
-<p>Die zusätzliche Information, die Übungen gewissenhaft zu lösen <span class="math inline">\(Ü^+\)</span> liefert uns weitere Informationen in Bezug auf die Chancen die Prüfung zu bestehen. Wir wollen nun wissen, wie stark diese Information unsere bisherigen Erwartungen aktualisieren sollte. Dazu vergleichen wir, wie wahrscheinlich diese Information unter Personen, die die Prüfung bestehen gegenüber Personen, die die Prüfung nicht bestehen ist. Das liefert uns den Bayes Faktor:</p>
+<p>Die Standardabweichung können Sie nutzen um die relevanten Werte mit Hilfe der z-Transformation zu berechnen.</p>
 <p><span class="math display">\[
-BF_{Ü^+} = \frac{P(Ü^+ \mid P^+)}{P(Ü^+ \mid P^-)} = \frac{0.90}{0.30} = 3
+Z = \frac{X - \mu}{\sigma}; \quad X = Z \cdot \sigma + \mu
 \]</span></p>
-<p>Das Verhalten „Übungen gewissenhaft lösen“ ist <strong>dreimal häufiger</strong> unter den Bestehenden als unter den Durchfallenden.<br>
-Es ist also ein <strong>positives Signal</strong> für den Prüfungserfolg.</p>
-<p>Mit diesem Bayes Faktor können wir unseres Wissens aktualisiern. In Odds-Form lautet diese Aktualisierung:</p>
+<p>Für das <strong>Intervall der mittleren 95% der Schlafdauer</strong>, müssen Sie jeweils 2.5% am unteren und am oberen Ende der Verteilung abschneiden. Sie müssen also die Z-Werte für eine kumulierte Wahrscheinlichkeit von 2.5% und 97.5% ermitteln. Anhand der Tabelle können Sie heraus finden, dass:</p>
 <p><span class="math display">\[
-O(P^+ \mid Ü^+) = O(P^+) \times BF_{Ü^+} = = 4 \times 3 = 12
+Z_{97.5\%} = 1.96
 \]</span></p>
-<p>Nach der Information „Übungen gewissenhaft gelöst“ ist die Bestehenschance also <strong>12-mal höher</strong> als die Durchfallchance. Aus diesen Odds lässt sich direkt die Wahrscheinlichkeit berechnen:</p>
+<p>aufgrund der Symmetrie der Normalverteilung können Sie ableiten:</p>
 <p><span class="math display">\[
-P(P^+ \mid Ü^+) = \frac{O(P^+ \mid Ü^+)}{1 + O(P^+ \mid Ü^+)}
-= \frac{12}{1+12} = \frac{12}{13} \approx 0.923
+Z_{2.5\%} = -Z_{97.5\%} = -1.96
 \]</span></p>
-<p>Entsprechend können wir zu - Wahrscheinlichkeit zu bestehen, wenn die Übungen gewissenhaft bearbeitet wurden: <strong>92,3 %</strong> - Wahrscheinlichkeit zu scheitern, wenn die Übungen gewissenhaft bearbeitet wurden: <strong>7,7 %</strong></p>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Von 100.000 Personen sind 10% an Covid erkrankt. Sie fühlen Sich verschnupft und krank und führen einen Covid-Test durch. Das Ergebnis ist negativ. Sie wissen, dass der Test eine Sensitivität von 90% hat und damit für 90% der Personen, die an Covid erkrankt sind ein positives Ergebnis liefert. Ausserdem hat der Test eine Spezifität von 99%, Personen die nicht an COVID erkrankt sind erhalten also in 1% der Fälle ein positives Ergebnis. Wie hoch ist die Wahrscheinlichkeit, dass Sie an COVID erkrankt sind, gegeben dem negativen Testergebnis.</p>
-<p>Wenden Sie das Bayes Theorem an um diese Frage zu Beantworten. Beachten Sie, dass Sie die Wahrscheinlichkeit für COVID gegeben eines negativen Testergebnisses berechnen sollen. Sie müssen die Elemente der Formel also entsprechend anpassen.</p>
-<div id="webex-9aeab607f155c903253af5f525a45b2b" class="webex-checkboxgroup" data-answer="YlFJUE4HHAc7">
-<label><input type="checkbox" autocomplete="off" name="9aeab607f155c903253af5f525a45b2b"><span>Die Wahrscheinlichkeit für ein negatives Testergebnis, unabhängig davon ob man an Covid erkrankt ist oder nicht liegt bei <span class="math inline">\(P(T-) = 0.95\)</span></span></label><label><input type="checkbox" autocomplete="off" name="9aeab607f155c903253af5f525a45b2b"><span>Die Wahrscheinlichkeit für ein negatives Testergebnis, wenn man Covid hat liegt bei <span class="math inline">\(P(- | C) = 0.1\)</span></span></label><label><input type="checkbox" autocomplete="off" name="9aeab607f155c903253af5f525a45b2b"><span>Die Wahrscheinlichkeit an Covid erkrankt zu sein, gegeben dem negativen Testergebnis ist. <span class="math inline">\(P(C | -) = 1.1\%\)</span></span></label><label><input type="checkbox" autocomplete="off" name="9aeab607f155c903253af5f525a45b2b"><span>Die Wahrscheinlichkeit an Covid erkrankt zu sein, gegeben dem negativen Testergebnis ist. <span class="math inline">\(P(C | -) = 0.5\%\)</span></span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Lassen Sie uns zu Beginn nochmal kurz die wichtigen Begriffe für die Aufgabe klären:</p>
-<ul>
-<li><strong>Sensitivität</strong>: Wie oft erkennt der Test Kranke korrekt als <em>positiv</em>.<br>
-</li>
-<li><strong>Spezifität</strong>: Wie oft erkennt der Test Gesunde korrekt als <em>negativ</em>.<br>
-</li>
-<li><strong>Unser Ziel</strong>: Von einem <strong>negativen Ergebnis</strong> auf die <strong>Krankheit</strong> schließen → (P(C-)).</li>
-</ul>
-<p>Dafür brauchen wir das Bayes Theorem in der Variante <strong>für ein negatives Ergebnis</strong>:</p>
+<p>Mit dieser Information können wir die erste Frage beantworten und berechnen:</p>
 <p><span class="math display">\[
-P(C\mid -) \;=\; \frac{P(-\mid C)\,P(C)}{P(-\mid C)\,P(C) \;+\; P(-\mid \neg C)\,P(\neg C)}.
+X_{2.5\%} = Z_{2.5\%} \cdot \sigma + \mu = -1.96 \cdot 0.6 + 7.4 \approx 6.22
+\]</span> <span class="math display">\[
+X_{97.5\%} = Z_{97.5\%} \cdot \sigma + \mu = 1.96 \cdot 0.6 + 7.4 \approx 8.58
 \]</span></p>
-<p>In diese From des Bayes Theorems können wir nun die entsprechenden Werte eintragen:</p>
-<ul>
-<li><span class="math inline">\(P(-\mid C)=1-\text{Sensitivität}=1-0{,}90=0{,}10\)</span><br>
-</li>
-<li><span class="math inline">\(P(-\mid \neg C)=\text{Spezifität}=0{,}99\)</span></li>
-<li><span class="math inline">\((P(C)=0{,}10\)</span>, <span class="math inline">\(P(\neg C)=0{,}90\)</span></li>
-</ul>
-<p>Damit können wir zuerst die Wahrscheinlichkeit für ein negatives Testergebnis, unabhängig von der Erkrankrung berechnen:</p>
+<p>Um heraus zu finden mit welcher <strong>Schlafdauer man länger als 80% der Studierenden</strong> schläft, müssen wir zuerst den Z wert für die kumulierte Wahrscheinlichkeit von 80% aus der Tabelle ablesen. Dieser Beträgt <span class="math inline">\(Z_{80\%} \approx 0.79\)</span></p>
+<p>Anolog zur letzten Aufgaben können wir damit bestimmen, wie lange man Schlafen muss um länger als 80% der Studierenden zu schlafen:</p>
 <p><span class="math display">\[
-P(-) \;=\; 0.10\cdot 0.10 \;+\; 0.99\cdot 0.90
-\;=\; 0.01 \;+\; 0.891 \;=\; 0.901.
+X_{80\%} = Z_{80\%} \cdot \sigma + \mu = 0.79 * 0.6 + 7.4 = 7.90
 \]</span></p>
-<p>Nachdem wir nun den Nenner für das Bayes Theorem bestimmt haben, können wir alle Werte einsetzten und die gesuchte Wahrscheinlichkeit ausrechnen:</p>
+<p>Wenn wir wissen wollen, welcher <strong>Anteil an Studierenden kürzer als 8 Stunden schläft</strong>, müssen wir den Z-Wert für den Wert von 8 Stunden berechnen:</p>
 <p><span class="math display">\[
-P(C\mid -) \;=\; \frac{0.10\cdot 0.10}{0.901}
-\;=\; \frac{0.01}{0.901}
-\;\approx\; 0.01110 \;=\; \mathbf{1.11\%}.
+Z = \frac{X - \mu}{\sigma}=\frac{8-7.4}{0.6} = 1
 \]</span></p>
-<p>Nach einem negativen Test ist die Restwahrscheinlichkeit an COVID erkrankt zu sein also <strong>1,11 %</strong>.</p>
+<p>Anhand des z-Werts können wir aus der Tabelle ablesen, dass die kumulierte Wahrscheinlichkeit für diesen Wert gleich <span class="math inline">\(0.8413\)</span> ist.</p>
+<p>Mir R können Sie diese Ergebnisse mit Hilfe der folgenden funktionen direkt bestimmen:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Intervall der mittleren 95%</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>), <span class="at">mean =</span> <span class="fl">7.4</span>, <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="fl">0.36</span>))</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Schlafdauer grösser als 80%</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.8</span>, <span class="at">mean =</span> <span class="fl">7.4</span>, <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="fl">0.36</span>))</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Kumulierte Prozent mit Schlafdauer kleiner als 8 Stunden</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">8</span>, <span class="at">mean =</span> <span class="fl">7.4</span>, <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="fl">0.36</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <hr>

@@ -1,0 +1,87 @@
+Question
+=======
+Aus einer Studie zum Schlafverhalten von Studierenden wissen Sie, dass die Schlafdauer von Studierenden einer Normalverteilung folgt. Im Mittel Schlafen Studierende 7.4 Stunden, und die Varianz der Schlafdauer beträgt 0.36. Beantworten Sie die Folgenden Fragen zur Schlafdauer der Studierenden mit Hilfe der verschiedenen R-Funktionen zur Normalverteilung oder der Tabelle der z-Werte für die Verteilungsfunktion der Standardnormalverteilung.
+
+1. In welchem Intervall liegt die Schlafdauer, der Mittleren 95% der Studierenden?
+2. Mit welcher Schlafdauer schläft man länger als 80% der Studierenden?
+3. Mit einer Schlafdauer von 8 Studen schläft man länger als wie viel Prozent der Studierenden?
+
+Answerlist
+--------
+* Das Intervall der Mittleren Schlafdauer von 95% der Studierenden ist: [6.22; 8.58]
+* Das Intervall der Mittleren Schlafdauer von 95% der Studierenden ist: [6.69; 8.11]
+* Wenn, mann länger als 80% der Studierenden schlafen will, muss man 7.7 Stunden schlafen.
+* Wenn, mann länger als 80% der Studierenden schlafen will, muss man 7.9 Stunden schlafen.
+* Mit einer Schlafdauer von 8 Stunden schläft man länger als 84.1% der Studierenden.
+* Mit einer Schlafdauer von 8 Stunden schläft man länger als 95.2% der Studierenden.
+
+Solution
+========
+Zuerst sollen Sie für die Lösung dieser Aufgabe die Varianz in die Standardabweichung umrechen:
+
+$$
+\sigma = \sqrt{VAR}= \sqrt{0.36} = 0.6
+$$
+
+Die Standardabweichung können Sie nutzen um die relevanten Werte mit Hilfe der z-Transformation zu berechnen.
+
+$$
+Z = \frac{X - \mu}{\sigma}; \quad X = Z \cdot \sigma + \mu
+$$
+
+Für das **Intervall der mittleren 95% der Schlafdauer**, müssen Sie jeweils 2.5% am unteren und am oberen Ende der Verteilung abschneiden. Sie müssen also die Z-Werte für eine kumulierte Wahrscheinlichkeit von 2.5% und 97.5% ermitteln. Anhand der Tabelle können Sie heraus finden, dass:
+
+$$
+Z_{97.5\%} = 1.96
+$$
+
+aufgrund der Symmetrie der Normalverteilung können Sie ableiten:
+
+$$
+Z_{2.5\%} = -Z_{97.5\%} = -1.96
+$$
+
+Mit dieser Information können wir die erste Frage beantworten und berechnen:
+
+$$
+X_{2.5\%} = Z_{2.5\%} \cdot \sigma + \mu = -1.96 \cdot 0.6 + 7.4 \approx 6.22
+$$
+$$
+X_{97.5\%} = Z_{97.5\%} \cdot \sigma + \mu = 1.96 \cdot 0.6 + 7.4 \approx 8.58
+$$
+
+Um heraus zu finden mit welcher **Schlafdauer man länger als 80% der Studierenden** schläft, müssen wir zuerst den Z wert für die kumulierte Wahrscheinlichkeit von 80% aus der Tabelle ablesen. Dieser Beträgt $Z_{80\%} \approx 0.79$
+
+Anolog zur letzten Aufgaben können wir damit bestimmen, wie lange man Schlafen muss um länger als 80% der Studierenden zu schlafen:
+
+$$
+X_{80\%} = Z_{80\%} \cdot \sigma + \mu = 0.79 * 0.6 + 7.4 = 7.90
+$$
+
+Wenn wir wissen wollen, welcher **Anteil an Studierenden kürzer als 8 Stunden schläft**, müssen wir den Z-Wert für den Wert von 8 Stunden berechnen:
+
+$$
+Z = \frac{X - \mu}{\sigma}=\frac{8-7.4}{0.6} = 1
+$$
+
+Anhand des z-Werts können wir aus der Tabelle ablesen, dass die kumulierte Wahrscheinlichkeit für diesen Wert gleich $0.8413$ ist.
+
+Mir R können Sie diese Ergebnisse mit Hilfe der folgenden funktionen direkt bestimmen:
+
+```r
+# Intervall der mittleren 95%
+qnorm(c(0.025, 0.975), mean = 7.4, sd = sqrt(0.36))
+
+# Schlafdauer grösser als 80%
+qnorm(0.8, mean = 7.4, sd = sqrt(0.36))
+
+# Kumulierte Prozent mit Schlafdauer kleiner als 8 Stunden
+pnorm(8, mean = 7.4, sd = sqrt(0.36))
+```
+
+Meta-information
+=========
+exname: normal_schlafdauer
+extype: mchoice 
+exsolution: 100110
+exshuffle: FALSE

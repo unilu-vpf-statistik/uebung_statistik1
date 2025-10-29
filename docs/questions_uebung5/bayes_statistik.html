@@ -228,7 +228,7 @@ window.Quarto = {
 <section id="answerlist" class="level2">
 <h2 class="anchored" data-anchor-id="answerlist">Answerlist</h2>
 <ul>
-<li>Wenn Sie die Übungen gewissenhaft gelöst haben, liegt die Wahrscheinlichkeit, die Prüfung zu bestehen, bei etwa 94 %.</li>
+<li>Wenn Sie die Übungen gewissenhaft gelöst haben, liegt die Wahrscheinlichkeit, die Prüfung zu bestehen, bei etwa 92 %.</li>
 <li>Wenn Sie die Übungen gewissenhaft lösen, liegt Ihre Bestehenswahrscheinlichkeit bei 68 %, da das der Anteil aller Studierenden ist, die gut vorbereitet sind</li>
 <li>Wer die Übungen gewissenhaft löst, hat ein Verhalten gezeigt, das <strong>dreimal häufiger bei erfolgreichen Studierenden</strong> vorkommt als bei den Durchfallenden. Das entspricht dem <strong>Bayes-Faktor</strong> <span class="math inline">\(BF_{Ü^+} = 3\)</span></li>
 <li>Wenn man noch nichts über das Übungsverhalten weiß, beträgt die Chance, die Prüfung zu bestehen, <strong>fünfmal so hoch</strong> wie die Chance, durchzufallen. Das entspricht den <strong>Prior-Odds</strong> <span class="math inline">\(O(P^+) = 5\)</span></li>
@@ -248,13 +248,13 @@ O(P^+) = \frac{P(P^+)}{P(P^-)} = \frac{0.8}{0.2} = 4
 <p><span class="math display">\[
 BF_{Ü^+} = \frac{P(Ü^+ \mid P^+)}{P(Ü^+ \mid P^-)} = \frac{0.90}{0.30} = 3
 \]</span></p>
-<p>Das Verhalten „Übungen gewissenhaft lösen“ ist <strong>viermal häufiger</strong> unter den Bestehenden als unter den Durchfallenden.<br>
+<p>Das Verhalten „Übungen gewissenhaft lösen“ ist <strong>dreimal häufiger</strong> unter den Bestehenden als unter den Durchfallenden.<br>
 Es ist also ein <strong>positives Signal</strong> für den Prüfungserfolg.</p>
 <p>Mit diesem Bayes Faktor können wir unseres Wissens aktualisiern. In Odds-Form lautet diese Aktualisierung:</p>
 <p><span class="math display">\[
 O(P^+ \mid Ü^+) = O(P^+) \times BF_{Ü^+} = = 4 \times 3 = 12
 \]</span></p>
-<p>Nach der Information „Übungen gewissenhaft gelöst“ ist die Bestehenschance also <strong>16-mal höher</strong> als die Durchfallchance. Aus diesen Odds lässt sich direkt die Wahrscheinlichkeit berechnen:</p>
+<p>Nach der Information „Übungen gewissenhaft gelöst“ ist die Bestehenschance also <strong>12-mal höher</strong> als die Durchfallchance. Aus diesen Odds lässt sich direkt die Wahrscheinlichkeit berechnen:</p>
 <p><span class="math display">\[
 P(P^+ \mid Ü^+) = \frac{O(P^+ \mid Ü^+)}{1 + O(P^+ \mid Ü^+)}
 = \frac{12}{1+12} = \frac{12}{13} \approx 0.923

@@ -235,6 +235,96 @@ $$
 P(A|B) = \frac{P(B|A) * P(A)}{P(B)}
 $$
 
+wobei:
+
+$$
+P(B) = P(B|A) * P(A) + P(B|\neg  A) * P(\neg  A)
+$$
+
+#### Odds (Chancen)
+
+Odds (bzw. Chancen) lassen sich aus Wahrscheinlichkeiten berechnen:
+
+$$
+O = \frac{p}{1-p}; \quad p = \frac{O}{O+1}
+$$
+
+#### Bayes Faktor
+
+Der Bayes Faktor gibt das Verhältnis der Wahrscheinlichkeiten bestimmter Daten $D$ unter unterschiedlichen Hypothesen $H_i$ an. Wenn Sie zum Beispiel einen medizinischen Test betrachten, dann können Sie den Bayes Faktor für die Wahrscheinlichkeite einer Krankheit $K^+$ geben der Test ist positiv $T^+$, folgenderemassen berechnen:
+
+$$
+BF_{K^+} = \frac{P(T^+|K^+)}{P(T^+|K^-)}
+$$
+den Bayes Faktor können Sie zur Aktualisierung der Prior Odds in die Posterior Odds nutzen:
+
+$$
+O_{Post(K^+)} = O_{Prior(K^+)} \cdot BF_{K^+} 
+$$
+
+
+### Wahrscheinlichkeitsverteilungen
+
+#### Binomialverteilung
+
+Die Wahrscheinlichkeitsfunktion der Binomialverteilung ist:
+
+$$
+f(x) = \binom{n}{x} \cdot \pi^x \cdot (1-\pi)^{n-x}
+$$
+wobei $n$ der Anzahl ziehungen entspricht, und $\pi$ die zugrunde liegenden Wahrscheinlichkeit für einen Erfolg $x$ darstellt.
+
+Der Erwartungswert der Binomialverteilung ergibt sich aus:
+
+$$
+E(X) = n \cdot \pi
+$$
+
+und die Varianz ergibt sich aus:
+
+$$
+Var(X) = n \cdot \pi \cdot (1-\pi)
+$$
+
+mit zunehmenden $n$ und Wahrscheinlichkeiten abseits der extreme: $0.1 > \pi > 0.9$ nähert sich die Binomialverteilung der Normalverteilung an. Für sehr grosse $n > 250$ gilt das auch für extreme Wahrscheinlichkeiten $\pi < 0.1$ oder $\pi > 0.9$
+
+#### Exponentialverteilung
+
+Die Dichtefunktion einer Exponentialverteilung lautet für $x \geq 0$:
+
+$$
+f(x) = \lambda \cdot e^{-\lambda \cdot x}
+$$
+
+wobei $\lambda$ die Rate des Abfalls der Wahrscheinlichkeitsdichte bestimmt.
+
+Der Erwartungswert der Binomialverteilung ergibt sich aus:
+
+$$
+E(X) = \frac{1}{\lambda}
+$$
+
+und die Varianz ergibt sich aus:
+
+$$
+VAR(X) = \frac{1}{\lambda^2}
+$$
+
+#### Normalverteilung
+
+Die Dichtefunktion der Normalverteilung für $x \in \mathbb{R}$ lautet:
+
+$$
+f(x) = \frac{1}{\sigma \cdot \sqrt{2\pi}} \cdot e^{-\frac{1}{2}\cdot \left(\frac{x-\mu}{\sigma} \right)^2}
+$$
+
+mit dem Erwartungswert $\mu$, und der Varianz $\sigma^2$
+
+Eine Normalverteilte Variable $X$ kann in eine Standardnormalverteilte Variable $Z$ mit dem Erwartungswert $\mu = 0$ und der Varianz $\sigma^2 = 1$ transformiert werden:
+
+$$
+Z = \frac{X - \mu}{\sigma}; \quad X_p = Z_p \cdot \sigma + \mu
+$$
 
 ## Inferenzstatistik: Definitionen
 

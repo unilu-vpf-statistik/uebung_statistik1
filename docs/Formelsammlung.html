@@ -192,6 +192,12 @@ window.Quarto = {
  <span class="menu-text">Übung 5</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exercise6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Übung 6</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -223,6 +229,7 @@ window.Quarto = {
   <li><a href="#bedingte-wahrscheinlichkeit" id="toc-bedingte-wahrscheinlichkeit" class="nav-link" data-scroll-target="#bedingte-wahrscheinlichkeit">Bedingte Wahrscheinlichkeit</a></li>
   <li><a href="#stochastische-unabhängigkeit" id="toc-stochastische-unabhängigkeit" class="nav-link" data-scroll-target="#stochastische-unabhängigkeit">Stochastische Unabhängigkeit</a></li>
   <li><a href="#bayes-theorem" id="toc-bayes-theorem" class="nav-link" data-scroll-target="#bayes-theorem">Bayes Theorem</a></li>
+  <li><a href="#wahrscheinlichkeitsverteilungen" id="toc-wahrscheinlichkeitsverteilungen" class="nav-link" data-scroll-target="#wahrscheinlichkeitsverteilungen">Wahrscheinlichkeitsverteilungen</a></li>
   </ul></li>
   <li><a href="#inferenzstatistik-definitionen" id="toc-inferenzstatistik-definitionen" class="nav-link" data-scroll-target="#inferenzstatistik-definitionen">Inferenzstatistik: Definitionen</a></li>
   <li><a href="#gruppenvergleiche" id="toc-gruppenvergleiche" class="nav-link" data-scroll-target="#gruppenvergleiche">Gruppenvergleiche</a></li>
@@ -466,6 +473,74 @@ P(B|A) = P(B)
 <p><span class="math display">\[
 P(A|B) = \frac{P(B|A) * P(A)}{P(B)}
 \]</span></p>
+<p>wobei:</p>
+<p><span class="math display">\[
+P(B) = P(B|A) * P(A) + P(B|\neg  A) * P(\neg  A)
+\]</span></p>
+<section id="odds-chancen" class="level4">
+<h4 class="anchored" data-anchor-id="odds-chancen">Odds (Chancen)</h4>
+<p>Odds (bzw. Chancen) lassen sich aus Wahrscheinlichkeiten berechnen:</p>
+<p><span class="math display">\[
+O = \frac{p}{1-p}; \quad p = \frac{O}{O+1}
+\]</span></p>
+</section>
+<section id="bayes-faktor" class="level4">
+<h4 class="anchored" data-anchor-id="bayes-faktor">Bayes Faktor</h4>
+<p>Der Bayes Faktor gibt das Verhältnis der Wahrscheinlichkeiten bestimmter Daten <span class="math inline">\(D\)</span> unter unterschiedlichen Hypothesen <span class="math inline">\(H_i\)</span> an. Wenn Sie zum Beispiel einen medizinischen Test betrachten, dann können Sie den Bayes Faktor für die Wahrscheinlichkeite einer Krankheit <span class="math inline">\(K^+\)</span> geben der Test ist positiv <span class="math inline">\(T^+\)</span>, folgenderemassen berechnen:</p>
+<p><span class="math display">\[
+BF_{K^+} = \frac{P(T^+|K^+)}{P(T^+|K^-)}
+\]</span> den Bayes Faktor können Sie zur Aktualisierung der Prior Odds in die Posterior Odds nutzen:</p>
+<p><span class="math display">\[
+O_{Post(K^+)} = O_{Prior(K^+)} \cdot BF_{K^+}
+\]</span></p>
+</section>
+</section>
+<section id="wahrscheinlichkeitsverteilungen" class="level3">
+<h3 class="anchored" data-anchor-id="wahrscheinlichkeitsverteilungen">Wahrscheinlichkeitsverteilungen</h3>
+<section id="binomialverteilung" class="level4">
+<h4 class="anchored" data-anchor-id="binomialverteilung">Binomialverteilung</h4>
+<p>Die Wahrscheinlichkeitsfunktion der Binomialverteilung ist:</p>
+<p><span class="math display">\[
+f(x) = \binom{n}{x} \cdot \pi^x \cdot (1-\pi)^{n-x}
+\]</span> wobei <span class="math inline">\(n\)</span> der Anzahl ziehungen entspricht, und <span class="math inline">\(\pi\)</span> die zugrunde liegenden Wahrscheinlichkeit für einen Erfolg <span class="math inline">\(x\)</span> darstellt.</p>
+<p>Der Erwartungswert der Binomialverteilung ergibt sich aus:</p>
+<p><span class="math display">\[
+E(X) = n \cdot \pi
+\]</span></p>
+<p>und die Varianz ergibt sich aus:</p>
+<p><span class="math display">\[
+Var(X) = n \cdot \pi \cdot (1-\pi)
+\]</span></p>
+<p>mit zunehmenden <span class="math inline">\(n\)</span> und Wahrscheinlichkeiten abseits der extreme: <span class="math inline">\(0.1 &gt; \pi &gt; 0.9\)</span> nähert sich die Binomialverteilung der Normalverteilung an. Für sehr grosse <span class="math inline">\(n &gt; 250\)</span> gilt das auch für extreme Wahrscheinlichkeiten <span class="math inline">\(\pi &lt; 0.1\)</span> oder <span class="math inline">\(\pi &gt; 0.9\)</span></p>
+</section>
+<section id="exponentialverteilung" class="level4">
+<h4 class="anchored" data-anchor-id="exponentialverteilung">Exponentialverteilung</h4>
+<p>Die Dichtefunktion einer Exponentialverteilung lautet für <span class="math inline">\(x \geq 0\)</span>:</p>
+<p><span class="math display">\[
+f(x) = \lambda \cdot e^{-\lambda \cdot x}
+\]</span></p>
+<p>wobei <span class="math inline">\(\lambda\)</span> die Rate des Abfalls der Wahrscheinlichkeitsdichte bestimmt.</p>
+<p>Der Erwartungswert der Binomialverteilung ergibt sich aus:</p>
+<p><span class="math display">\[
+E(X) = \frac{1}{\lambda}
+\]</span></p>
+<p>und die Varianz ergibt sich aus:</p>
+<p><span class="math display">\[
+VAR(X) = \frac{1}{\lambda^2}
+\]</span></p>
+</section>
+<section id="normalverteilung" class="level4">
+<h4 class="anchored" data-anchor-id="normalverteilung">Normalverteilung</h4>
+<p>Die Dichtefunktion der Normalverteilung für <span class="math inline">\(x \in \mathbb{R}\)</span> lautet:</p>
+<p><span class="math display">\[
+f(x) = \frac{1}{\sigma \cdot \sqrt{2\pi}} \cdot e^{-\frac{1}{2}\cdot \left(\frac{x-\mu}{\sigma} \right)^2}
+\]</span></p>
+<p>mit dem Erwartungswert <span class="math inline">\(\mu\)</span>, und der Varianz <span class="math inline">\(\sigma^2\)</span></p>
+<p>Eine Normalverteilte Variable <span class="math inline">\(X\)</span> kann in eine Standardnormalverteilte Variable <span class="math inline">\(Z\)</span> mit dem Erwartungswert <span class="math inline">\(\mu = 0\)</span> und der Varianz <span class="math inline">\(\sigma^2 = 1\)</span> transformiert werden:</p>
+<p><span class="math display">\[
+Z = \frac{X - \mu}{\sigma}; \quad X_p = Z_p \cdot \sigma + \mu
+\]</span></p>
+</section>
 </section>
 </section>
 <section id="inferenzstatistik-definitionen" class="level2">

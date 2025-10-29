@@ -38,7 +38,7 @@ Answerlist
 --------
 
 
-* Wenn Sie die Übungen gewissenhaft gelöst haben, liegt die Wahrscheinlichkeit, die Prüfung zu bestehen, bei etwa 94 %.
+* Wenn Sie die Übungen gewissenhaft gelöst haben, liegt die Wahrscheinlichkeit, die Prüfung zu bestehen, bei etwa 92 %.
 * Wenn Sie die Übungen gewissenhaft lösen, liegt Ihre Bestehenswahrscheinlichkeit bei 68 %, da das der Anteil aller Studierenden ist, die gut vorbereitet sind
 * Wer die Übungen gewissenhaft löst, hat ein Verhalten gezeigt, das **dreimal häufiger bei erfolgreichen Studierenden** vorkommt als bei den Durchfallenden. Das entspricht dem **Bayes-Faktor** $BF_{Ü^+} = 3$
 * Wenn man noch nichts über das Übungsverhalten weiß, beträgt die Chance, die Prüfung zu bestehen, **fünfmal so hoch** wie die Chance, durchzufallen. Das entspricht den **Prior-Odds** $O(P^+) = 5$
@@ -61,7 +61,7 @@ $$
 BF_{Ü^+} = \frac{P(Ü^+ \mid P^+)}{P(Ü^+ \mid P^-)} = \frac{0.90}{0.30} = 3
 $$
 
-Das Verhalten „Übungen gewissenhaft lösen“ ist **viermal häufiger** unter den Bestehenden als unter den Durchfallenden.  
+Das Verhalten „Übungen gewissenhaft lösen“ ist **dreimal häufiger** unter den Bestehenden als unter den Durchfallenden.  
 Es ist also ein **positives Signal** für den Prüfungserfolg.
 
 Mit diesem Bayes Faktor können wir unseres Wissens aktualisiern. In Odds-Form lautet diese Aktualisierung:
@@ -70,7 +70,7 @@ $$
 O(P^+ \mid Ü^+) = O(P^+) \times BF_{Ü^+} = = 4 \times 3 = 12
 $$
 
-Nach der Information „Übungen gewissenhaft gelöst“ ist die Bestehenschance also **16-mal höher** als die Durchfallchance. Aus diesen Odds lässt sich direkt die Wahrscheinlichkeit berechnen:
+Nach der Information „Übungen gewissenhaft gelöst“ ist die Bestehenschance also **12-mal höher** als die Durchfallchance. Aus diesen Odds lässt sich direkt die Wahrscheinlichkeit berechnen:
 
 $$
 P(P^+ \mid Ü^+) = \frac{O(P^+ \mid Ü^+)}{1 + O(P^+ \mid Ü^+)} 

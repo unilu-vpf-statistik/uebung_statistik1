@@ -267,33 +267,16 @@ window.Quarto = {
 <section id="solution" class="level1">
 <h1>Solution</h1>
 <p>Als erstes müssen wir die Wahrscheinlichkeitsverteilung für den Würfel definieren. Aus dem angaben in der Aufgabe wissen wir, dass das Ergebnis eine Sechs zu würfeln eine Wahrscheinlichkeit von 0.5 hat. Die restliche Wahrscheinlichkeit von 0.5 verteilt sich gleich auf die anderen Ergebnisse. Damit haben die Ergebnisse 1 bis 5 jeweils eine Wahrscheinlichkeit von <span class="math inline">\(\frac{0.5}{5} = 0.1\)</span>. Wir können diese Wahrscheinlichkeiten also in einem Vektor speichern:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>prob_wuerfel <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.1</span>,<span class="fl">0.1</span>,<span class="fl">0.1</span>,<span class="fl">0.1</span>,<span class="fl">0.5</span>)</span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>prob_wuerfel <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">0.1</span>,<span class="fl">0.1</span>,<span class="fl">0.1</span>,<span class="fl">0.1</span>,<span class="fl">0.5</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(prob_wuerfel) <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <p>Mit Hilfe der Werte für die Einzelnen Ergebnisse <code>1:6</code> und der Wahrscheinlichkeitsverteilung können wir dann den Erwartungswert berechnen:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>erwartungswert <span class="ot">&lt;-</span> <span class="fu">sum</span>(prob_wuerfel <span class="sc">*</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)</span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>erwartungswert <span class="ot">&lt;-</span> <span class="fu">sum</span>(prob_wuerfel <span class="sc">*</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>erwartungswert</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4.5</code></pre>
-</div>
-</div>
 <p>Mit dem so berechneten Erwartungswert können wir dann auch die Varianz berechnen:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>varianz <span class="ot">&lt;-</span> <span class="fu">sum</span>( (<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span> <span class="sc">-</span> erwartungswert)<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> prob_wuerfel)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>varianz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.25</code></pre>
-</div>
-</div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>varianz <span class="ot">&lt;-</span> <span class="fu">sum</span>( (<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span> <span class="sc">-</span> erwartungswert)<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> prob_wuerfel)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>varianz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Indem wir die Wurzel aus der Varianz ziehen bekommen wir dann die Standardabweichung</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(varianz)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.802776</code></pre>
-</div>
-</div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(varianz)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="meta-information" class="level1">
 <h1>Meta-information</h1>
