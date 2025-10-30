@@ -1,0 +1,55 @@
+Question
+=======
+Eine umfassende Untersuchung hat ergeben, dass Personen die unter Depression leiden eine durschnittliche Schlafdauer von 6.2 Stunden mit einer Varianz von 0.4 haben, wohingegen Gesunde Personen eine durchschnittliche Schlafdauer von 7.1 Stunden mit einer Varianz von 0.5 haben. Sie wissen das die Wahrscheinlichkeit, dass eine zufällige Person unter Depression leidet bei 0.1 liegt.
+
+Ein Patient hat einen Fragebogen zur Schlafqualität ausgefüllt und berichtet dort, dass er in den letzten 4 Wochen durchschnittlich 6.5 Stunden geschlafen hat. Wie verändert dieses Wissen die Wahrscheinlichkeit, dass der Patient unter Depressionen leidet?
+
+Answerlist
+--------
+* Die Prior Odds für eine Depression sind $O_{D^+} = \frac{1}{9}$
+* Der Bayes Faktor zur Aktualisierung der Wahrscheinlichkeit einer Depression, gegeben die berichtete Schlafdauer liegt bei $BF_{D+|T_S} \approx 1.9$
+* Die Wahrscheinlichkeit einer Depression gegeben der berichteten Schlafdauer ist $P(D^+|T_S) \approx 0.135$
+* Die Wahrscheinlichkeit einer Depression gegeben der berichteten Schlafdauer ist $P(D^+|T_S) \approx 0.174$
+
+Solution
+========
+Um das Bayes Theorem, dass wir für diese Fragestellung nutzen müssen, einfach und schnell anwenden zu können rechnen wir als erstes die Prior Wahrscheinlichkeit für Depression $P(D^+) = 0.1$ in die Prior Odds um:
+
+$$
+O_{D^+} = \frac{P(D^+)}{1-P(D^+)} = \frac{0.1}{1-0.1} = \frac{0.1}{0.9} = \frac{1}{9}
+$$
+
+Anschliessend müssen wir den Bayes Faktor zur Aktualisierung der Wahrscheinlichkeit einer Depression $BF_{D^+}$ berechnen. Dafür müssen wir die Likelihood der berichteten Schlafdauer von $T_S = 6.5$ Stunden unter der Verteilung von Depressiven Personen, durch die Likelihood der berichteten Schlafdauern unter der Verteilung der Gesunden Personen berechnen:
+
+$$
+BF_{D+|T_S} = \frac{P(T_S|D^+)}{P(T_S | D^-)}
+$$
+
+Dafür nutzen wir am besten die `dnorm` Funktion:
+
+```r
+bf_depression <- dnorm(6.5, mean = 6.2, sd = sqrt(0.4)) / dnorm(6.5, mean = 7.1, sd = sqrt(0.5))
+```
+
+Dieser Bayes Faktor ergibt $BF_{D^+} \approx 1.4$. Auf Basis dieses Ergebnis können wir schon einschätzen, dass wir durch die gegebene Schlafdauer keine besonders starke Aktualisierung der Wahrscheinlichkeit einer Depression erreichen werden.
+
+Trotzdem können wir nun die Prior Odds mit dem Bayes Faktor multiplizieren und dadurch die Posterior Odds erhalten:
+
+$$
+O_{D+|T_S} = O_{D^+} \cdot BF_{D^+} = \frac{1}{9} \cdot 1.4 \approx 0.156
+$$
+
+Wenn wir diese Posterior Odds in eine Wahrscheinlichkeit umrechnen erhalten wir:
+
+$$
+P(D^+|T_S) = \frac{O_{D+|T_S}}{1+O_{D+|T_S}} = \frac{0.156}{1+0.156} \approx 0.135
+$$
+
+Auf Basis der berichteten Schlafdauer ist die Wahrscheinlichkeit einer Depression also bei 13.5%.
+
+Meta-information
+=========
+exname: normal_schlafdauer
+extype: mchoice 
+exsolution: 1010
+exshuffle: FALSE

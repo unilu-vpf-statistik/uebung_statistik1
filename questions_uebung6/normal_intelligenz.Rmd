@@ -1,0 +1,67 @@
+Question
+=======
+Zur Abklärung von Hochbegabung habenSie mit einem Jugendlichen im Alter von 14 Jahren einen Intelligenztest durchgeführt. Der Intelligenztest ist durch eine Normstichprobe so normiert, dass die IQ Werte einen Mittelwert von 100 und eine Varianz von 225 haben. Beantworten Sie folgende Fragen zu dem Ergebnis des Jugendlichen
+
+1. Mit welchem IQ-Wert hätte der Jugendliche eine Leistung besser als 95% der Normstichprobe?
+2. Mit einem IQ-Ergebnis von 121 ist der Jugendliche besser als wie viel Prozent der Normstichprobe?
+3. Wie viel Prozent der Normstichprobe haben ein IQ-Ergebnis zwischen minus einer Standardabweichung und plus einer Standardabweichung vom Mittelwert.
+
+Answerlist
+--------
+* Um eine Leistung besser als 95% der Normstichprobe zu erreichen, muss man einen IQ-Wert von ca. 124.7 erreichen.
+* Um eine Leistung besser als 95% der Normstichprobe zu erreichen, muss man einen IQ-Wert von ca. 129.4 erreichen.
+* Mit einem IQ = 121 erreicht man eine bessere Leistung als 91.9% der Normstichprobe
+* Mit einem IQ = 121 erreicht man eine bessere Leistung als 53.7% der Normstichprobe
+* Zwischen $\mu - \sigma$ und $\mu + \sigma$ liegen weniger als 1% der Werte 
+* Zwischen $\mu - \sigma$ und $\mu + \sigma$ liegen ca. 68.3% der Werte
+
+Solution
+========
+Wir bestimmen als erstes die Varianz der IQ-Verteilung:
+
+$$
+\sigma = \sqrt{VAR}= \sqrt{225} = 15
+$$
+
+Nun können wir aus der Tabelle oder mit Hilfe der `qnorm` Funktion bestimmen für welchen z-Wert 95% der Standardnormalverteilung kleinere Werte haben:
+
+```r
+qnorm(0.95)
+```
+
+Dieser Wert ist $Z_{95\%} \approx 1.65$. Mit diesem Wert können wir den Z-Wert in den X-Wert der Normalverteilung mit dem Mittelwert $\mu = 100$ und der Standardabweichung $\sigma = 15$ umrechnen:
+
+$$
+X_{95\%} = Z_{95\%} \cdot \sigma + \mu = 1.65 \cdot 15 + 100 = 124.75
+$$
+
+Um heraus zu finden wie viel Prozent der Normstichprobe kleine IQ-Werte als 121 haben, müssen wir diesen Wert in eine Z-Wert transformiere:
+
+$$
+Z = \frac{X - \mu}{\sigma} = \frac{121 - 100}{15} = \frac{21}{15} = 1.4
+$$
+
+Nun können wir anhand der Tabelle oder mit Hilfe der `pnorm` Funktion bestimmen wie viel Prozent der Verteilung unterhalb dieses z-Werts liegen
+
+```r
+pnorm(1.4)
+```
+
+für diesen Z-Wert liegen 91.9% unterhalb der Verteilung.
+
+Für den letzen Punkt müssen wir den Wert der Verteilungsfunktion $F(Z)$ für $Z = -1$ von Wert der Verteilungsfunktion für $Z = 1$ abziehen. Das können wir unabhängig vom Mittelwert und der Standardabweichung einfach mit der Standardnormalverteilung machen. Wenn Sie diese Aufgabe mit Hilfe der Tabelle lösen, dann müssen Sie sich die Symmetrie der Verteilung in Erinnerung rufen, wodurch gilt: $F(-Z) = 1 - F(Z)$
+
+Wenn Sie den Wert für $Z = 1$ aus der Tabelle bestimmen, erhalten sie: $F(Z = 1) = 0.8413$. Entsprechend können Sie den Anteil an Werten zwischen einer Standardabweichung unterhalb des Mittelwerts und einer Standardabweichung oberhalb des Mittelwerts wie folgt berechnen:
+
+$$
+P(\mu - \sigma < X < \mu + \sigma) = F(1) - F(-1) = F(1) - (1 - (F-1)) = 0.8413 - (1- 0.8413) = 0.6826
+$$
+
+Entsprechend liegen 68.26% der Normstichprobe zwischen einer Standardabweichung unterhalb des Mittelwerts und einer Standardabweichung oberhalb des Mittelwerts.
+
+Meta-information
+=========
+exname: normal_schlafdauer
+extype: mchoice 
+exsolution: 101001
+exshuffle: FALSE

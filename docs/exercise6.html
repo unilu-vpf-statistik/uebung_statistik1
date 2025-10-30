@@ -2152,8 +2152,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li>Mit welcher Schlafdauer schläft man länger als 80% der Studierenden?</li>
 <li>Mit einer Schlafdauer von 8 Studen schläft man länger als wie viel Prozent der Studierenden?</li>
 </ol>
-<div id="webex-0ca616a4d9e14df46f2bebe413a94714" class="webex-checkboxgroup" data-answer="a1JNBh0GTQVICEkBaQ==">
-<label><input type="checkbox" autocomplete="off" name="0ca616a4d9e14df46f2bebe413a94714"><span>Das Intervall der Mittleren Schlafdauer von 95% der Studierenden ist: [6.22; 8.58]</span></label><label><input type="checkbox" autocomplete="off" name="0ca616a4d9e14df46f2bebe413a94714"><span>Das Intervall der Mittleren Schlafdauer von 95% der Studierenden ist: [6.69; 8.11]</span></label><label><input type="checkbox" autocomplete="off" name="0ca616a4d9e14df46f2bebe413a94714"><span>Wenn, mann länger als 80% der Studierenden schlafen will, muss man 7.7 Stunden schlafen.</span></label><label><input type="checkbox" autocomplete="off" name="0ca616a4d9e14df46f2bebe413a94714"><span>Wenn, mann länger als 80% der Studierenden schlafen will, muss man 7.9 Stunden schlafen.</span></label><label><input type="checkbox" autocomplete="off" name="0ca616a4d9e14df46f2bebe413a94714"><span>Mit einer Schlafdauer von 8 Stunden schläft man länger als 84.1% der Studierenden.</span></label><label><input type="checkbox" autocomplete="off" name="0ca616a4d9e14df46f2bebe413a94714"><span>Mit einer Schlafdauer von 8 Stunden schläft man länger als 95.2% der Studierenden.</span></label>
+<div id="webex-cf96e9cb87ed77ff1303563da8553a59" class="webex-checkboxgroup" data-answer="OFcVBkkJT1MUBklUag==">
+<label><input type="checkbox" autocomplete="off" name="cf96e9cb87ed77ff1303563da8553a59"><span>Das Intervall der Mittleren Schlafdauer von 95% der Studierenden ist: [6.22; 8.58]</span></label><label><input type="checkbox" autocomplete="off" name="cf96e9cb87ed77ff1303563da8553a59"><span>Das Intervall der Mittleren Schlafdauer von 95% der Studierenden ist: [6.69; 8.11]</span></label><label><input type="checkbox" autocomplete="off" name="cf96e9cb87ed77ff1303563da8553a59"><span>Wenn, mann länger als 80% der Studierenden schlafen will, muss man 7.7 Stunden schlafen.</span></label><label><input type="checkbox" autocomplete="off" name="cf96e9cb87ed77ff1303563da8553a59"><span>Wenn, mann länger als 80% der Studierenden schlafen will, muss man 7.9 Stunden schlafen.</span></label><label><input type="checkbox" autocomplete="off" name="cf96e9cb87ed77ff1303563da8553a59"><span>Mit einer Schlafdauer von 8 Stunden schläft man länger als 84.1% der Studierenden.</span></label><label><input type="checkbox" autocomplete="off" name="cf96e9cb87ed77ff1303563da8553a59"><span>Mit einer Schlafdauer von 8 Stunden schläft man länger als 95.2% der Studierenden.</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -2198,6 +2198,75 @@ Z = \frac{X - \mu}{\sigma}=\frac{8-7.4}{0.6} = 1
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Kumulierte Prozent mit Schlafdauer kleiner als 8 Stunden</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">8</span>, <span class="at">mean =</span> <span class="fl">7.4</span>, <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="fl">0.36</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>Eine umfassende Untersuchung hat ergeben, dass Personen die unter Depression leiden eine durschnittliche Schlafdauer von 6.2 Stunden mit einer Varianz von 0.4 haben, wohingegen Gesunde Personen eine durchschnittliche Schlafdauer von 7.1 Stunden mit einer Varianz von 0.5 haben. Sie wissen das die Wahrscheinlichkeit, dass eine zufällige Person unter Depression leidet bei 0.1 liegt.</p>
+<p>Ein Patient hat einen Fragebogen zur Schlafqualität ausgefüllt und berichtet dort, dass er in den letzten 4 Wochen durchschnittlich 6.5 Stunden geschlafen hat. Wie verändert dieses Wissen die Wahrscheinlichkeit, dass der Patient unter Depressionen leidet?</p>
+<div id="webex-07a0da74df486baef8ed42427f48712a" class="webex-checkboxgroup" data-answer="awZNAEhQGwQ5">
+<label><input type="checkbox" autocomplete="off" name="07a0da74df486baef8ed42427f48712a"><span>Die Prior Odds für eine Depression sind <span class="math inline">\(O_{D^+} = \frac{1}{9}\)</span></span></label><label><input type="checkbox" autocomplete="off" name="07a0da74df486baef8ed42427f48712a"><span>Der Bayes Faktor zur Aktualisierung der Wahrscheinlichkeit einer Depression, gegeben die berichtete Schlafdauer liegt bei <span class="math inline">\(BF_{D+|T_S} \approx 1.9\)</span></span></label><label><input type="checkbox" autocomplete="off" name="07a0da74df486baef8ed42427f48712a"><span>Die Wahrscheinlichkeit einer Depression gegeben der berichteten Schlafdauer ist <span class="math inline">\(P(D^+|T_S) \approx 0.135\)</span></span></label><label><input type="checkbox" autocomplete="off" name="07a0da74df486baef8ed42427f48712a"><span>Die Wahrscheinlichkeit einer Depression gegeben der berichteten Schlafdauer ist <span class="math inline">\(P(D^+|T_S) \approx 0.174\)</span></span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>Um das Bayes Theorem, dass wir für diese Fragestellung nutzen müssen, einfach und schnell anwenden zu können rechnen wir als erstes die Prior Wahrscheinlichkeit für Depression <span class="math inline">\(P(D^+) = 0.1\)</span> in die Prior Odds um:</p>
+<p><span class="math display">\[
+O_{D^+} = \frac{P(D^+)}{1-P(D^+)} = \frac{0.1}{1-0.1} = \frac{0.1}{0.9} = \frac{1}{9}
+\]</span></p>
+<p>Anschliessend müssen wir den Bayes Faktor zur Aktualisierung der Wahrscheinlichkeit einer Depression <span class="math inline">\(BF_{D^+}\)</span> berechnen. Dafür müssen wir die Likelihood der berichteten Schlafdauer von <span class="math inline">\(T_S = 6.5\)</span> Stunden unter der Verteilung von Depressiven Personen, durch die Likelihood der berichteten Schlafdauern unter der Verteilung der Gesunden Personen berechnen:</p>
+<p><span class="math display">\[
+BF_{D+|T_S} = \frac{P(T_S|D^+)}{P(T_S | D^-)}
+\]</span></p>
+<p>Dafür nutzen wir am besten die <code>dnorm</code> Funktion:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>bf_depression <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(<span class="fl">6.5</span>, <span class="at">mean =</span> <span class="fl">6.2</span>, <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="fl">0.4</span>)) <span class="sc">/</span> <span class="fu">dnorm</span>(<span class="fl">6.5</span>, <span class="at">mean =</span> <span class="fl">7.1</span>, <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="fl">0.5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Dieser Bayes Faktor ergibt <span class="math inline">\(BF_{D^+} \approx 1.4\)</span>. Auf Basis dieses Ergebnis können wir schon einschätzen, dass wir durch die gegebene Schlafdauer keine besonders starke Aktualisierung der Wahrscheinlichkeit einer Depression erreichen werden.</p>
+<p>Trotzdem können wir nun die Prior Odds mit dem Bayes Faktor multiplizieren und dadurch die Posterior Odds erhalten:</p>
+<p><span class="math display">\[
+O_{D+|T_S} = O_{D^+} \cdot BF_{D^+} = \frac{1}{9} \cdot 1.4 \approx 0.156
+\]</span></p>
+<p>Wenn wir diese Posterior Odds in eine Wahrscheinlichkeit umrechnen erhalten wir:</p>
+<p><span class="math display">\[
+P(D^+|T_S) = \frac{O_{D+|T_S}}{1+O_{D+|T_S}} = \frac{0.156}{1+0.156} \approx 0.135
+\]</span></p>
+<p>Auf Basis der berichteten Schlafdauer ist die Wahrscheinlichkeit einer Depression also bei 13.5%.</p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>Zur Abklärung von Hochbegabung habenSie mit einem Jugendlichen im Alter von 14 Jahren einen Intelligenztest durchgeführt. Der Intelligenztest ist durch eine Normstichprobe so normiert, dass die IQ Werte einen Mittelwert von 100 und eine Varianz von 225 haben. Beantworten Sie folgende Fragen zu dem Ergebnis des Jugendlichen</p>
+<ol type="1">
+<li>Mit welchem IQ-Wert hätte der Jugendliche eine Leistung besser als 95% der Normstichprobe?</li>
+<li>Mit einem IQ-Ergebnis von 121 ist der Jugendliche besser als wie viel Prozent der Normstichprobe?</li>
+<li>Wie viel Prozent der Normstichprobe haben ein IQ-Ergebnis zwischen minus einer Standardabweichung und plus einer Standardabweichung vom Mittelwert.</li>
+</ol>
+<div id="webex-822873ef6d4521c5e48e0b7f7f388d72" class="webex-checkboxgroup" data-answer="YwMeCBsCSVYaVBgEbw==">
+<label><input type="checkbox" autocomplete="off" name="822873ef6d4521c5e48e0b7f7f388d72"><span>Um eine Leistung besser als 95% der Normstichprobe zu erreichen, muss man einen IQ-Wert von ca. 124.7 erreichen.</span></label><label><input type="checkbox" autocomplete="off" name="822873ef6d4521c5e48e0b7f7f388d72"><span>Um eine Leistung besser als 95% der Normstichprobe zu erreichen, muss man einen IQ-Wert von ca. 129.4 erreichen.</span></label><label><input type="checkbox" autocomplete="off" name="822873ef6d4521c5e48e0b7f7f388d72"><span>Mit einem IQ = 121 erreicht man eine bessere Leistung als 91.9% der Normstichprobe</span></label><label><input type="checkbox" autocomplete="off" name="822873ef6d4521c5e48e0b7f7f388d72"><span>Mit einem IQ = 121 erreicht man eine bessere Leistung als 53.7% der Normstichprobe</span></label><label><input type="checkbox" autocomplete="off" name="822873ef6d4521c5e48e0b7f7f388d72"><span>Zwischen <span class="math inline">\(\mu - \sigma\)</span> und <span class="math inline">\(\mu + \sigma\)</span> liegen weniger als 1% der Werte</span></label><label><input type="checkbox" autocomplete="off" name="822873ef6d4521c5e48e0b7f7f388d72"><span>Zwischen <span class="math inline">\(\mu - \sigma\)</span> und <span class="math inline">\(\mu + \sigma\)</span> liegen ca. 68.3% der Werte</span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>Wir bestimmen als erstes die Varianz der IQ-Verteilung:</p>
+<p><span class="math display">\[
+\sigma = \sqrt{VAR}= \sqrt{225} = 15
+\]</span></p>
+<p>Nun können wir aus der Tabelle oder mit Hilfe der <code>qnorm</code> Funktion bestimmen für welchen z-Wert 95% der Standardnormalverteilung kleinere Werte haben:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.95</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Dieser Wert ist <span class="math inline">\(Z_{95\%} \approx 1.65\)</span>. Mit diesem Wert können wir den Z-Wert in den X-Wert der Normalverteilung mit dem Mittelwert <span class="math inline">\(\mu = 100\)</span> und der Standardabweichung <span class="math inline">\(\sigma = 15\)</span> umrechnen:</p>
+<p><span class="math display">\[
+X_{95\%} = Z_{95\%} \cdot \sigma + \mu = 1.65 \cdot 15 + 100 = 124.75
+\]</span></p>
+<p>Um heraus zu finden wie viel Prozent der Normstichprobe kleine IQ-Werte als 121 haben, müssen wir diesen Wert in eine Z-Wert transformiere:</p>
+<p><span class="math display">\[
+Z = \frac{X - \mu}{\sigma} = \frac{121 - 100}{15} = \frac{21}{15} = 1.4
+\]</span></p>
+<p>Nun können wir anhand der Tabelle oder mit Hilfe der <code>pnorm</code> Funktion bestimmen wie viel Prozent der Verteilung unterhalb dieses z-Werts liegen</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">1.4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>für diesen Z-Wert liegen 91.9% unterhalb der Verteilung.</p>
+<p>Für den letzen Punkt müssen wir den Wert der Verteilungsfunktion <span class="math inline">\(F(Z)\)</span> für <span class="math inline">\(Z = -1\)</span> von Wert der Verteilungsfunktion für <span class="math inline">\(Z = 1\)</span> abziehen. Das können wir unabhängig vom Mittelwert und der Standardabweichung einfach mit der Standardnormalverteilung machen. Wenn Sie diese Aufgabe mit Hilfe der Tabelle lösen, dann müssen Sie sich die Symmetrie der Verteilung in Erinnerung rufen, wodurch gilt: <span class="math inline">\(F(-Z) = 1 - F(Z)\)</span></p>
+<p>Wenn Sie den Wert für <span class="math inline">\(Z = 1\)</span> aus der Tabelle bestimmen, erhalten sie: <span class="math inline">\(F(Z = 1) = 0.8413\)</span>. Entsprechend können Sie den Anteil an Werten zwischen einer Standardabweichung unterhalb des Mittelwerts und einer Standardabweichung oberhalb des Mittelwerts wie folgt berechnen:</p>
+<p><span class="math display">\[
+P(\mu - \sigma &lt; X &lt; \mu + \sigma) = F(1) - F(-1) = F(1) - (1 - (F-1)) = 0.8413 - (1- 0.8413) = 0.6826
+\]</span></p>
+<p>Entsprechend liegen 68.26% der Normstichprobe zwischen einer Standardabweichung unterhalb des Mittelwerts und einer Standardabweichung oberhalb des Mittelwerts.</p>
 </div>
 </div>
 <hr>
