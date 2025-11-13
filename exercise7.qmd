@@ -18,7 +18,7 @@ library(here)
 library(dplyr)
 
 exam_files <- list.files(here("questions_uebung7"), full.names = TRUE)
-shuffeld_questions <- sample(exam_files)
+shuffeld_questions <- exam_files
 ```
 
 ## Wiederholung & Vertiefung: Inferenzstatistik
@@ -61,7 +61,7 @@ Wie in den bisherigen Übungen finden Sie über den Übungsaufgaben die `webr` K
 #| echo: false
 #| message: false
 #| results: "asis"
-#exams2forms(shuffeld_questions)
+exams2forms(shuffeld_questions)
 ```
 
 ------------------------------------------------------------------------

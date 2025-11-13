@@ -56,8 +56,21 @@ in `R` können wir das natürlich auch wieder direkt mit dem Mittelwert und der 
 p_emp <- round(pnorm(X_emp, mean = mu, sd = sigma),3)
 ```
 
-Zur bestimmung des $\beta$-Fehlers müssen wir als erstes Bestimmen welchen $z$-Wert der kritische Wert für das Signifikanzniveau $\alpha = 5\%$ hat: $z_{H1} = z_{krit} - \delta$. Da wir alle Werte schon auf der Ebenen der Standardnormalverteilung haben, müssen wir dabei nicht durch die Standardabweichung teilen.
+Zur bestimmung des $\beta$-Fehlers müssen wir als erstes Bestimmen welchen $z$-Wert der kritische Wert für das Signifikanzniveau $\alpha = 5\%$ hat: $z_{H1} = z_{krit} - \delta$. Da wir alle Werte schon auf der Ebenen der Standardnormalverteilung haben, müssen wir dabei nicht durch die Standardabweichung teilen. Anhand diesen $z_{H1}$-Wertes können wir nun den $\beta$-Fehler bestimmen, indem wir die Wahrscheinlichkeit bestimmen den gleichen oder extremere Werte unter der $H_1$ zu beobachten. Dafür nutzen wir die Verteilungsfunktion der Standardnormalverteilung:
 
+```r
+# beta-Fehler
+z_H1 <- z_krit - coh_d
+beta <- pnorm(z_H1, lower.tail = FALSE)
+```
+mit `R` könnten wir dies wiederum direkt mit dem kritischen $z$-Wert und einer Normalverteilung mit einem Mittelwert $\mu = \delta$ und einer Standardabweichung von 1 bestimmen:
+
+```r
+# nicht auf Basis der Standardnormalverteilung
+beta <- pnorm(z_krit, mean = coh_d, lower.tail = FALSE)
+```
+
+Beachten Sie, dass wir hier die Fläche über den kritischen Wert für die Verteilung unter der Alternativhypothese berechnen müssen. Deshalb müssen Sie den Wert den Sie aus der Tabelle ablesen noch von 1 abziehen: $\beta = 1 - F(z_{krit})$; in `R` können wir das mit dem Argument `lower.tail = FALSE` direkt in der Verteilungsfunktion erreichen. Alternativ könnten Sie natürlich auch: `1 - pnorm(z_H1)` rechnen.
 
 Meta-information
 =========
