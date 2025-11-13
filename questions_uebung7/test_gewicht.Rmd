@@ -1,0 +1,67 @@
+Question
+=======
+Ein männlicher Patient einer Klinik mit Verdacht auf Magersucht hat ein Gewicht von 62.5kg. Das Durchschnittliche Gewicht von schweizer Männer liegt bei 84kg mit einer Standardabweichung von 9kg. Für Magersucht nehmen Sie einen Effekt von Cohen's $\delta$ von -2 an. Beantworten Sie die folgenden Fragen für einen Test, ob der Patient ein kleineres GEwicht als die Population hat, nach dem binären Entscheidungskonzept mit einen Signifikanzniveau $\alpha = 5\%$:
+
+1. Was ist der kritische Wert auf der Skala des Gewichts $X_{krit}$ in kg?
+2. Was ist der $p$-Wert für das beobachtete Gewicht oder extremere Ergebisse?
+3. Wie gross ist der $\beta$-Fehler für diesen Test?
+4. Welchen Hypothese nehmen Sie auf Basis der berechneten Statistiken an?
+
+Answerlist
+--------
+* Der kritische Wert auf der Skala des Gewichts ist: $X_{krit} \approx 69.2$
+* Der $p$-Wert für das beobachtete Gewicht oder extremere Werte ist: $p \approx .992$
+* Der $\beta$-Fehler für den Test mit $\alpha = 5\%$ und Cohen's $\delta = -2$ ist: $\beta \approx .639$
+* Auf Basis der berechneten Statistiken verwerfen wir die Nullhypothese und nehmen die Alternativhypothese an.
+
+Solution
+========
+Zuerst sollten wir wieder die relevanten Grössen aus der Aufgabenstellung sammlen:
+
+```r
+# Werte aus der Aufgabe
+mu <- 84
+sigma <- 9
+X_emp <- 62.5
+coh_d <- -2
+```
+
+Um den **kritischen Wert auf der Skala des Gewichts** zu bestimmen können wir erst den kritischen $z$-Wert für $\alpha = 5\%$ bestimmen. Dies können wir anhand der Tabelle oder mit Hilfe der Quantilfunktion der Standardnormalverteilung machen. Dann können wir mit Hilfe des Populationsmittelwerts und der Standardabweichung der $z$-Wert in den kritischen Wert auf der Skala des Gewichts bestimmen:
+
+```r
+# Kritischer Wert: Skala kg
+z_krit <- round(qnorm(p = .05),3)
+X_krit <- z_krit*sigma + mu
+```
+
+in R können wir diesen Wert natürlich auch bestimmen in dem wir die Quantilfunktion mit dem genannten Mittelwert und der Standardbweichung aus der Aufgabe berechnen:
+
+```r
+# nicht auf Basis der Standardnormalverteilung:
+X_krit <- round(qnorm(p = .05, mean = mu, sd = sigma),3)
+```
+
+Um den **$p$-Wert** zu bestimmen, können wir das beobachtete Gewicht $X_{emp}$ als erstes in einen $z$-Wert umrechnen und dann anhand der Verteilungsfunktion der Standardnormalverteilung bzw. der Tabelle bestimmen, wie hoch die Wahrscheinlichkeit für den beobachteten Wert oder extremere Werte ist. Dabei müssen wir beachten, dass wir dieses Mal eine Hypothese testen bei der wir prüfen ob das beobachtete Gewicht kleiner als das Gewicht in der Population ist, deshalb müssen wir die Fläche unter der Verteilung links von den beobachten Wert bestimmen:
+
+```r
+# p-Wert
+z_emp <- round((X_emp - mu)/sigma,3)
+p_emp <- round(pnorm(z_emp, lower.tail = TRUE),3)
+```
+
+in `R` können wir das natürlich auch wieder direkt mit dem Mittelwert und der Standardabweichung aus der Aufgabenstellung machen:
+
+```r
+# nicht auf Basis der Standardnormalverteilung:
+p_emp <- round(pnorm(X_emp, mean = mu, sd = sigma),3)
+```
+
+Zur bestimmung des $\beta$-Fehlers müssen wir als erstes Bestimmen welchen $z$-Wert der kritische Wert für das Signifikanzniveau $\alpha = 5\%$ hat: $z_{H1} = z_{krit} - \delta$. Da wir alle Werte schon auf der Ebenen der Standardnormalverteilung haben, müssen wir dabei nicht durch die Standardabweichung teilen.
+
+
+Meta-information
+=========
+exname: test_gewicht
+extype: mchoice 
+exsolution: 1001
+exshuffle: FALSE

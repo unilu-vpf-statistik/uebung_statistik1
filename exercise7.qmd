@@ -1,0 +1,69 @@
+---
+title: "Übung 7 - Inferenzstatistik"
+subtitle: "HS 2025"
+author: "Gidon Frischkorn"
+format:
+  html:
+    css: styles.css
+    include-after-body: webex.js
+filters:
+  - webr
+---
+
+```{r preparation}
+#| include: false
+library(exams)
+library(exams2forms)
+library(here)
+library(dplyr)
+
+exam_files <- list.files(here("questions_uebung7"), full.names = TRUE)
+shuffeld_questions <- sample(exam_files)
+```
+
+## Wiederholung & Vertiefung: Inferenzstatistik
+
+In dieser Übung werden wir Üben mit den Konzepten des Nullhypothesentests und des Binären Entscheidungskonzepts zu arbeiten. Wenn Sie die Grundlegenden Konzepte der Vorlesung nochmal wiederholen und Vertiefen wollen, dann empfehle ich Ihnen die folgenden Videos:
+
+- [Population Vs. Stichprobe](https://www.youtube.com/watch?v=bJm2pt-mq2c)
+- [Grundlagen des Null-Hypothesentestens](https://www.youtube.com/watch?v=1g3pCE_B12E)
+
+Beachten Sie das einzelne Konzepte aus den Videos noch nicht vertieft in der Vorlesung behandelt wurden aber in den nächsten Sitzungen auch eingeführt werden. Insofern können Sie die Videos (insbesondere das Video zu Hypothesentests) als eine Vorbereitung auf die Nächsten Sitzungen nutzen.
+
+## Übungen
+
+In den folgenden Übungen nutzen Sie keinen konkreten Datensatz, sondern werden anhand von Verteilungsannahmen und theoretischen Populationsparmaetern Hypothesen formulieren, Kritische Werte berechnen und Hypothesentests für Einzelfälle durchführen. Nutzen sie R dabei einfach als Taschenrechner.
+
+Falls Sie die Übungsfragen nicht mit R beantworten wollen, dann können Sie die hier gedruckte Tabelle der z-Werte der Verteilungsfunktion der Standardnormalverteilung nutzen um die Fragen zu beantworten.
+
+Beachten Sie, dass sie für die Nutzung der Tabelle der z-Werte ihre unstandardisierten Ergebnisse $X$, für die wir in der Regel annehmen, dass sie einer Normalverteilung folgen, in $z$-Werte transformieren müssen, die einer Standardnormalverteilung folgen.
+
+$$
+z = \frac{X - \mu}{\sigma}
+$$
+
+![Tabelle der z-Werte für die Verteilungsfunktion der Standardnormalverteilung](./images/zTabelle_Normalverteilung.png)
+
+Wie in den bisherigen Übungen finden Sie über den Übungsaufgaben die `webr` Konsole, die Ihnen das Schreiben und Durchführen von R Code direkt auf der Website ermöglicht. Wenn viele Studierenden die Übungen parallel machen, dann kann es sein, dass `webr` langsam wird.
+
+> Um den Code den Sie geschrieben haben auszuführen drücken Sie entwedern `Run Code`, damit der gesamte Code ausgeführt würde. Alternativ können Sie auch einzelne Zeilen ausführen, indem sie <kbd>CRTL</kbd>+<kbd>Enter</kbd> (Windows) oder <kbd>CMD</kbd>+<kbd>Enter</kbd> (Mac) drücken.
+
+```{webr-r}
+# Schreiben Sie hier ihren Code um die Aufgaben zu lösen
+
+
+
+```
+
+> Nutzen Sie eine [Suchmaschine](https://unilu-vpf-statistik.github.io/uebung_statistik1/about.html#suchmaschinen), wenn Sie nicht wissen welche Funktionen Ihnen ein bestimmtes Ergebnis liefern. Ausserdem können Sie in R immer die [Hilfe](https://www.r-project.org/help.html) einer Funktion aufrufen, indem sie vor den Namen der Funktion ein Fragezeichen schreiben, z. Bsp `?median` oder die Hilfe-Funktion `help()` mit dem jeweligen Funktionsbefehl ausführen: `help(median)`.
+
+```{r print_questions}
+#| echo: false
+#| message: false
+#| results: "asis"
+#exams2forms(shuffeld_questions)
+```
+
+------------------------------------------------------------------------
+
+[![](images/Logo_UniLu.png){fig-align="center" width="300"}](https://www.unilu.ch/fakultaeten/vpf/uebersicht/)

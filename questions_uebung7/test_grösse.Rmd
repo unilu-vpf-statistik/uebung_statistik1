@@ -1,0 +1,68 @@
+Question
+=======
+Eine zufällig ausgewählte Psychologiestudentin (Stichprobe mit N = 1) hat eine Körpergrösse von 178.7 cm. Sie wissen, dass schweizerische Psychologiestudentinnen genauso gross sind wie alle Schweizerinnen ($\mu = 165$; $\sigma = 7$).
+
+Beantworten Sie die folgeden Fragen für einen Nullhypothesentest, ob die ausgewählte Studentin Grösser als die Population der schweizerischen Psychologiestudentinnen ist:
+
+1. Was ist der kritische $z$-Wert zur Ablehung der Nullhypothese, für ein Signifikanzniveau von $\alpha = 1\%$?
+2. Was ist der empirische $z$-Wert der beobachteten Grösse der zufällig ausgewählten Studentin?
+3. Was ist der p-Wert die beobachtete Grösse oder extremere Werte zu beobachten?
+4. Was schliessen Sie aus den berechnetenen Statistiken?
+
+Answerlist
+--------
+* Der kritische $z$-Wert zur Ablehnung der Nullhypothese bei einem Signifikanzniveau ist: $z_{krit} \approx 181.3$
+* Der empirische $z$-Wert der beobachteten Grösse ist: $z_{emp} \approx 1.957$
+* Der $p$-Wert für die beobachtete Grösse oder extremere Werte beträgt: $p \approx .025$
+* Auf Basis der berechneten Statistiken verwerfen wir die Nullhypothese.
+
+Solution
+========
+Zuerst sollten wir die relevanten Grössen aus der Aufgabenstellung sammlen:
+
+```r
+# Werte aus der Aufgabe
+mu <- 165
+sigma <- 7
+X_emp <- 178.7
+```
+
+Für die erste Frage müssen wir die Quantilfunktion der Standardnormalverteilung nutzen um den kritischen z-Wert für ein Signifikanzniveau von 1% bestimmen. In diesem Fall handelt es sich wie in der Vorlesung um eine gerichtete Hypothese, da wir testen ob die zufällig ausgewählte Studentin grösser ist als die Population. Entsprechen berechnen wir den kritischen $z$-Wert:
+
+```r
+# kritischer Wert für 1% Signifikanz
+z_krit <- round(qnorm(p = .99),3)
+```
+
+Mit Hilfe der $z$-Transformation können wir aus der beobachteten Grösse `X_emp` den empirischen $z$-Wert berechnen:
+
+```r
+# empirischer z-Wert
+z_emp <- round((X_emp - mu)/sigma,3)
+```
+
+Mit dem empirischen $z$-Wert und der Verteilungsfunktion der Standardnormalverteilung bzw. der Tabelle können wir nun den $p$-Wert bestimmen:
+
+```r
+# p-Wert 
+p_emp <- round(pnorm(z_emp, lower.tail = FALSE),3)
+```
+
+In `R` haben wir natürlich auch die Möglichkeit den kritischen Wert $X_{krit}$ auf der Skala der Zufallsvariable $X$ zu berechnen, und den $p$-Wert direkt auf Basis des beobachteten Werts der Zufallsvariable $X_{emp}$ zu bestimmen:
+
+```r
+# ohne Standardnormalverteilung / Tabelle
+X_krit <- round(qnorm(p = .99, mean = mu, sd = sigma),1)
+p_emp <- round(pnorm(X_emp, mean = mu, sd = sigma, lower.tail = FALSE),3)
+```
+
+Auf Basis der berechneten Statistiken kommen wir zu dem Schluss, dass wir die Nullhypothese nicht verwerfen. Dazu können Sie einerseits den Betrag des emprischen $z$Werts mit dem des kritischen $z$-Werts vergleichen. Ein Test ist signifikant, wenn gilt: $|z_{emp}| > |z_{krit}|$. Dies ist in diesem Fall nicht erfüllt, da: $|z_{emp}| = 1.957 < |z_{krit}| = 2.326$.
+
+Andereseits können Sie prüfen, ob der berechnete $p$-Wert kleiner als das gewählte Signifikanzniveau $\alpha = 1\%$ ist: $p < .01$ Dies ist ebenfalls nicht der Fall: $p = .025 > .01$. Entsprechend können wir die Nullhypothese nicht verwerfen.
+
+Meta-information
+=========
+exname: test_grösse
+extype: mchoice 
+exsolution: 0110
+exshuffle: FALSE

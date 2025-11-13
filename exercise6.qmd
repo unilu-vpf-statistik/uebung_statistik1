@@ -28,7 +28,7 @@ semester_data2 <- read.csv("semester_data2.csv")
 
 In dieser Übung werden wir Üben mit der Dichte- & Verteilungsfunktionen der Normalverteilung in R zu Arbeiten. Falls Sie sich nochmal vertieft mit den einzelnen Funktionen der Normalverteilung in R auseinandersetzen wollen, dann kann ich Ihnen das folgende Video empfehlen:
 
-- [How to use the 4 different norm() functions in Re](https://www.youtube.com/watch?v=X5NXDK6AVtU)
+- [How to use the 4 different norm() functions in R](https://www.youtube.com/watch?v=X5NXDK6AVtU)
 
 Wenn Sie nochmal eine Vertiefung der konzeptuellen Hintergründe der Standardnormalverteilung und dem Ablesen aus Verteilungstabellen wollen, kann ich Ihnen dieses Video empfehlen:
 

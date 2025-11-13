@@ -694,5 +694,40 @@
     "title": "Question",
     "section": "",
     "text": "Um eine Leistung besser als 95% der Normstichprobe zu erreichen, muss man einen IQ-Wert von ca. 124.7 erreichen.\nUm eine Leistung besser als 95% der Normstichprobe zu erreichen, muss man einen IQ-Wert von ca. 129.4 erreichen.\nMit einem IQ = 121 erreicht man eine bessere Leistung als 91.9% der Normstichprobe\nMit einem IQ = 121 erreicht man eine bessere Leistung als 53.7% der Normstichprobe\nZwischen \\(\\mu - \\sigma\\) und \\(\\mu + \\sigma\\) liegen weniger als 1% der Werte\nZwischen \\(\\mu - \\sigma\\) und \\(\\mu + \\sigma\\) liegen ca. 68.3% der Werte"
+  },
+  {
+    "objectID": "exercise7.html",
+    "href": "exercise7.html",
+    "title": "Übung 7 - Inferenzstatistik",
+    "section": "",
+    "text": "In dieser Übung werden wir Üben mit den Konzepten des Nullhypothesentests und des Binären Entscheidungskonzepts zu arbeiten. Wenn Sie die Grundlegenden Konzepte der Vorlesung nochmal wiederholen und Vertiefen wollen, dann empfehle ich Ihnen die folgenden Videos:\n\nPopulation Vs. Stichprobe\nGrundlagen des Null-Hypothesentestens\n\nBeachten Sie das einzelne Konzepte aus den Videos noch nicht vertieft in der Vorlesung behandelt wurden aber in den nächsten Sitzungen auch eingeführt werden. Insofern können Sie die Videos (insbesondere das Video zu Hypothesentests) als eine Vorbereitung auf die Nächsten Sitzungen nutzen."
+  },
+  {
+    "objectID": "exercise7.html#wiederholung-vertiefung-inferenzstatistik",
+    "href": "exercise7.html#wiederholung-vertiefung-inferenzstatistik",
+    "title": "Übung 7 - Inferenzstatistik",
+    "section": "",
+    "text": "In dieser Übung werden wir Üben mit den Konzepten des Nullhypothesentests und des Binären Entscheidungskonzepts zu arbeiten. Wenn Sie die Grundlegenden Konzepte der Vorlesung nochmal wiederholen und Vertiefen wollen, dann empfehle ich Ihnen die folgenden Videos:\n\nPopulation Vs. Stichprobe\nGrundlagen des Null-Hypothesentestens\n\nBeachten Sie das einzelne Konzepte aus den Videos noch nicht vertieft in der Vorlesung behandelt wurden aber in den nächsten Sitzungen auch eingeführt werden. Insofern können Sie die Videos (insbesondere das Video zu Hypothesentests) als eine Vorbereitung auf die Nächsten Sitzungen nutzen."
+  },
+  {
+    "objectID": "exercise7.html#übungen",
+    "href": "exercise7.html#übungen",
+    "title": "Übung 7 - Inferenzstatistik",
+    "section": "Übungen",
+    "text": "Übungen\nIn den folgenden Übungen nutzen Sie keinen konkreten Datensatz, sondern werden anhand von Verteilungsannahmen und theoretischen Populationsparmaetern Hypothesen formulieren, Kritische Werte berechnen und Hypothesentests für Einzelfälle durchführen. Nutzen sie R dabei einfach als Taschenrechner.\nFalls Sie die Übungsfragen nicht mit R beantworten wollen, dann können Sie die hier gedruckte Tabelle der z-Werte der Verteilungsfunktion der Standardnormalverteilung nutzen um die Fragen zu beantworten.\nBeachten Sie, dass sie für die Nutzung der Tabelle der z-Werte ihre unstandardisierten Ergebnisse \\(X\\), für die wir in der Regel annehmen, dass sie einer Normalverteilung folgen, in \\(z\\)-Werte transformieren müssen, die einer Standardnormalverteilung folgen.\n\\[\nz = \\frac{X - \\mu}{\\sigma}\n\\]\n\n\n\nTabelle der z-Werte für die Verteilungsfunktion der Standardnormalverteilung\n\n\nWie in den bisherigen Übungen finden Sie über den Übungsaufgaben die webr Konsole, die Ihnen das Schreiben und Durchführen von R Code direkt auf der Website ermöglicht. Wenn viele Studierenden die Übungen parallel machen, dann kann es sein, dass webr sehr langsam wird.\n\nUm den Code den Sie geschrieben haben auszuführen drücken Sie entwedern Run Code, damit der gesamte Code ausgeführt würde. Alternativ können Sie auch einzelne Zeilen ausführen, indem sie CRTL+Enter (Windows) oder CMD+Enter (Mac) drücken.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nNutzen Sie eine Suchmaschine, wenn Sie nicht wissen welche Funktionen Ihnen ein bestimmtes Ergebnis liefern. Ausserdem können Sie in R immer die Hilfe einer Funktion aufrufen, indem sie vor den Namen der Funktion ein Fragezeichen schreiben, z. Bsp ?median oder die Hilfe-Funktion help() mit dem jeweligen Funktionsbefehl ausführen: help(median)."
+  },
+  {
+    "objectID": "questions_uebung6/bayes_schlafdauer.html",
+    "href": "questions_uebung6/bayes_schlafdauer.html",
+    "title": "Question",
+    "section": "",
+    "text": "Eine umfassende Untersuchung hat ergeben, dass Personen die unter Depression leiden eine durschnittliche Schlafdauer von 6.2 Stunden mit einer Varianz von 0.4 haben, wohingegen Gesunde Personen eine durchschnittliche Schlafdauer von 7.1 Stunden mit einer Varianz von 0.5 haben. Sie wissen das die Wahrscheinlichkeit, dass eine zufällige Person unter Depression leidet bei 0.1 liegt.\nEin Patient hat einen Fragebogen zur Schlafqualität ausgefüllt und berichtet dort, dass er in den letzten 4 Wochen durchschnittlich 6.5 Stunden geschlafen hat. Wie verändert dieses Wissen die Wahrscheinlichkeit, dass der Patient unter Depressionen leidet?\n\n\n\nDie Prior Odds für eine Depression sind \\(O_{D^+} = \\frac{1}{9}\\)\nDer Bayes Faktor zur Aktualisierung der Wahrscheinlichkeit einer Depression, gegeben die berichtete Schlafdauer liegt bei \\(BF_{D+|T_S} \\approx 1.9\\)\nDie Wahrscheinlichkeit einer Depression gegeben der berichteten Schlafdauer ist \\(P(D^+|T_S) \\approx 0.135\\)\nDie Wahrscheinlichkeit einer Depression gegeben der berichteten Schlafdauer ist \\(P(D^+|T_S) \\approx 0.174\\)"
+  },
+  {
+    "objectID": "questions_uebung6/bayes_schlafdauer.html#answerlist",
+    "href": "questions_uebung6/bayes_schlafdauer.html#answerlist",
+    "title": "Question",
+    "section": "",
+    "text": "Die Prior Odds für eine Depression sind \\(O_{D^+} = \\frac{1}{9}\\)\nDer Bayes Faktor zur Aktualisierung der Wahrscheinlichkeit einer Depression, gegeben die berichtete Schlafdauer liegt bei \\(BF_{D+|T_S} \\approx 1.9\\)\nDie Wahrscheinlichkeit einer Depression gegeben der berichteten Schlafdauer ist \\(P(D^+|T_S) \\approx 0.135\\)\nDie Wahrscheinlichkeit einer Depression gegeben der berichteten Schlafdauer ist \\(P(D^+|T_S) \\approx 0.174\\)"
   }
 ]

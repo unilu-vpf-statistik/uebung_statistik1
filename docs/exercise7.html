@@ -8,7 +8,7 @@
 
 <meta name="author" content="Gidon Frischkorn">
 
-<title>Übung 6 - Wahrscheinlichkeitstheorie – Übungen - VL: Statistik I</title>
+<title>Übung 7 - Inferenzstatistik – Übungen - VL: Statistik I</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -1730,7 +1695,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./exercise6.html">Übung 6</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Übung 7 - Inferenzstatistik</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -1782,14 +1747,8 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercise6.html" class="sidebar-item-text sidebar-link active">
+  <a href="./exercise6.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Übung 6</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./exercise7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Übung 7</span></a>
   </div>
 </li>
     </ul>
@@ -1802,7 +1761,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#wiederholung-vertiefung-dichteverteilungen" id="toc-wiederholung-vertiefung-dichteverteilungen" class="nav-link active" data-scroll-target="#wiederholung-vertiefung-dichteverteilungen">Wiederholung &amp; Vertiefung: Dichteverteilungen</a></li>
+  <li><a href="#wiederholung-vertiefung-inferenzstatistik" id="toc-wiederholung-vertiefung-inferenzstatistik" class="nav-link active" data-scroll-target="#wiederholung-vertiefung-inferenzstatistik">Wiederholung &amp; Vertiefung: Inferenzstatistik</a></li>
   <li><a href="#übungen" id="toc-übungen" class="nav-link" data-scroll-target="#übungen">Übungen</a></li>
   </ul>
 </nav>
@@ -2096,7 +2055,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Übung 6 - Wahrscheinlichkeitstheorie</h1>
+<h1 class="title">Übung 7 - Inferenzstatistik</h1>
 <p class="subtitle lead">HS 2025</p>
 </div>
 
@@ -2120,21 +2079,23 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </header>
 
 
-<section id="wiederholung-vertiefung-dichteverteilungen" class="level2">
-<h2 class="anchored" data-anchor-id="wiederholung-vertiefung-dichteverteilungen">Wiederholung &amp; Vertiefung: Dichteverteilungen</h2>
-<p>In dieser Übung werden wir Üben mit der Dichte- &amp; Verteilungsfunktionen der Normalverteilung in R zu Arbeiten. Falls Sie sich nochmal vertieft mit den einzelnen Funktionen der Normalverteilung in R auseinandersetzen wollen, dann kann ich Ihnen das folgende Video empfehlen:</p>
+<section id="wiederholung-vertiefung-inferenzstatistik" class="level2">
+<h2 class="anchored" data-anchor-id="wiederholung-vertiefung-inferenzstatistik">Wiederholung &amp; Vertiefung: Inferenzstatistik</h2>
+<p>In dieser Übung werden wir Üben mit den Konzepten des Nullhypothesentests und des Binären Entscheidungskonzepts zu arbeiten. Wenn Sie die Grundlegenden Konzepte der Vorlesung nochmal wiederholen und Vertiefen wollen, dann empfehle ich Ihnen die folgenden Videos:</p>
 <ul>
-<li><a href="https://www.youtube.com/watch?v=X5NXDK6AVtU">How to use the 4 different norm() functions in Re</a></li>
+<li><a href="https://www.youtube.com/watch?v=bJm2pt-mq2c">Population Vs. Stichprobe</a></li>
+<li><a href="https://www.youtube.com/watch?v=1g3pCE_B12E">Grundlagen des Null-Hypothesentestens</a></li>
 </ul>
-<p>Wenn Sie nochmal eine Vertiefung der konzeptuellen Hintergründe der Standardnormalverteilung und dem Ablesen aus Verteilungstabellen wollen, kann ich Ihnen dieses Video empfehlen:</p>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=xI9ZHGOSaCg">Normalverteilung anhand von Beispielen erklärt</a></li>
-</ul>
+<p>Beachten Sie das einzelne Konzepte aus den Videos noch nicht vertieft in der Vorlesung behandelt wurden aber in den nächsten Sitzungen auch eingeführt werden. Insofern können Sie die Videos (insbesondere das Video zu Hypothesentests) als eine Vorbereitung auf die Nächsten Sitzungen nutzen.</p>
 </section>
 <section id="übungen" class="level2">
 <h2 class="anchored" data-anchor-id="übungen">Übungen</h2>
-<p>In den folgenden Übungen nutzen Sie wiederum keinen Datensatz, sondern können R einfach als Taschenrechnen verwenden.</p>
-<p>Falls Sie die Übungsfragen nicht mit R beantworten wollen, dann können Sie die hier gedruckte Tabelle der z-Werte der Verteilungsfunktion der Standardnormalverteilung nutzen um die Fragen zu beantworten</p>
+<p>In den folgenden Übungen nutzen Sie keinen konkreten Datensatz, sondern werden anhand von Verteilungsannahmen und theoretischen Populationsparmaetern Hypothesen formulieren, Kritische Werte berechnen und Hypothesentests für Einzelfälle durchführen. Nutzen sie R dabei einfach als Taschenrechner.</p>
+<p>Falls Sie die Übungsfragen nicht mit R beantworten wollen, dann können Sie die hier gedruckte Tabelle der z-Werte der Verteilungsfunktion der Standardnormalverteilung nutzen um die Fragen zu beantworten.</p>
+<p>Beachten Sie, dass sie für die Nutzung der Tabelle der z-Werte ihre unstandardisierten Ergebnisse <span class="math inline">\(X\)</span>, für die wir in der Regel annehmen, dass sie einer Normalverteilung folgen, in <span class="math inline">\(z\)</span>-Werte transformieren müssen, die einer Standardnormalverteilung folgen.</p>
+<p><span class="math display">\[
+z = \frac{X - \mu}{\sigma}
+\]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./images/zTabelle_Normalverteilung.png" class="img-fluid figure-img"></p>
@@ -2150,131 +2111,6 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <blockquote class="blockquote">
 <p>Nutzen Sie eine <a href="https://unilu-vpf-statistik.github.io/uebung_statistik1/about.html#suchmaschinen">Suchmaschine</a>, wenn Sie nicht wissen welche Funktionen Ihnen ein bestimmtes Ergebnis liefern. Ausserdem können Sie in R immer die <a href="https://www.r-project.org/help.html">Hilfe</a> einer Funktion aufrufen, indem sie vor den Namen der Funktion ein Fragezeichen schreiben, z. Bsp <code>?median</code> oder die Hilfe-Funktion <code>help()</code> mit dem jeweligen Funktionsbefehl ausführen: <code>help(median)</code>.</p>
 </blockquote>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Aus einer Studie zum Schlafverhalten von Studierenden wissen Sie, dass die Schlafdauer von Studierenden einer Normalverteilung folgt. Im Mittel Schlafen Studierende 7.4 Stunden, und die Varianz der Schlafdauer beträgt 0.36. Beantworten Sie die Folgenden Fragen zur Schlafdauer der Studierenden mit Hilfe der verschiedenen R-Funktionen zur Normalverteilung oder der Tabelle der z-Werte für die Verteilungsfunktion der Standardnormalverteilung.</p>
-<ol type="1">
-<li>In welchem Intervall liegt die Schlafdauer, der Mittleren 95% der Studierenden?</li>
-<li>Mit welcher Schlafdauer schläft man länger als 80% der Studierenden?</li>
-<li>Mit einer Schlafdauer von 8 Studen schläft man länger als wie viel Prozent der Studierenden?</li>
-</ol>
-<div id="webex-cf96e9cb87ed77ff1303563da8553a59" class="webex-checkboxgroup" data-answer="OFcVBkkJT1MUBklUag==">
-<label><input type="checkbox" autocomplete="off" name="cf96e9cb87ed77ff1303563da8553a59"><span>Das Intervall der Mittleren Schlafdauer von 95% der Studierenden ist: [6.22; 8.58]</span></label><label><input type="checkbox" autocomplete="off" name="cf96e9cb87ed77ff1303563da8553a59"><span>Das Intervall der Mittleren Schlafdauer von 95% der Studierenden ist: [6.69; 8.11]</span></label><label><input type="checkbox" autocomplete="off" name="cf96e9cb87ed77ff1303563da8553a59"><span>Wenn, mann länger als 80% der Studierenden schlafen will, muss man 7.7 Stunden schlafen.</span></label><label><input type="checkbox" autocomplete="off" name="cf96e9cb87ed77ff1303563da8553a59"><span>Wenn, mann länger als 80% der Studierenden schlafen will, muss man 7.9 Stunden schlafen.</span></label><label><input type="checkbox" autocomplete="off" name="cf96e9cb87ed77ff1303563da8553a59"><span>Mit einer Schlafdauer von 8 Stunden schläft man länger als 84.1% der Studierenden.</span></label><label><input type="checkbox" autocomplete="off" name="cf96e9cb87ed77ff1303563da8553a59"><span>Mit einer Schlafdauer von 8 Stunden schläft man länger als 95.2% der Studierenden.</span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Zuerst sollen Sie für die Lösung dieser Aufgabe die Varianz in die Standardabweichung umrechen:</p>
-<p><span class="math display">\[
-\sigma = \sqrt{VAR}= \sqrt{0.36} = 0.6
-\]</span></p>
-<p>Die Standardabweichung können Sie nutzen um die relevanten Werte mit Hilfe der z-Transformation zu berechnen.</p>
-<p><span class="math display">\[
-Z = \frac{X - \mu}{\sigma}; \quad X = Z \cdot \sigma + \mu
-\]</span></p>
-<p>Für das <strong>Intervall der mittleren 95% der Schlafdauer</strong>, müssen Sie jeweils 2.5% am unteren und am oberen Ende der Verteilung abschneiden. Sie müssen also die Z-Werte für eine kumulierte Wahrscheinlichkeit von 2.5% und 97.5% ermitteln. Anhand der Tabelle können Sie heraus finden, dass:</p>
-<p><span class="math display">\[
-Z_{97.5\%} = 1.96
-\]</span></p>
-<p>aufgrund der Symmetrie der Normalverteilung können Sie ableiten:</p>
-<p><span class="math display">\[
-Z_{2.5\%} = -Z_{97.5\%} = -1.96
-\]</span></p>
-<p>Mit dieser Information können wir die erste Frage beantworten und berechnen:</p>
-<p><span class="math display">\[
-X_{2.5\%} = Z_{2.5\%} \cdot \sigma + \mu = -1.96 \cdot 0.6 + 7.4 \approx 6.22
-\]</span> <span class="math display">\[
-X_{97.5\%} = Z_{97.5\%} \cdot \sigma + \mu = 1.96 \cdot 0.6 + 7.4 \approx 8.58
-\]</span></p>
-<p>Um heraus zu finden mit welcher <strong>Schlafdauer man länger als 80% der Studierenden</strong> schläft, müssen wir zuerst den Z wert für die kumulierte Wahrscheinlichkeit von 80% aus der Tabelle ablesen. Dieser Beträgt <span class="math inline">\(Z_{80\%} \approx 0.79\)</span></p>
-<p>Anolog zur letzten Aufgaben können wir damit bestimmen, wie lange man Schlafen muss um länger als 80% der Studierenden zu schlafen:</p>
-<p><span class="math display">\[
-X_{80\%} = Z_{80\%} \cdot \sigma + \mu = 0.79 * 0.6 + 7.4 = 7.90
-\]</span></p>
-<p>Wenn wir wissen wollen, welcher <strong>Anteil an Studierenden kürzer als 8 Stunden schläft</strong>, müssen wir den Z-Wert für den Wert von 8 Stunden berechnen:</p>
-<p><span class="math display">\[
-Z = \frac{X - \mu}{\sigma}=\frac{8-7.4}{0.6} = 1
-\]</span></p>
-<p>Anhand des z-Werts können wir aus der Tabelle ablesen, dass die kumulierte Wahrscheinlichkeit für diesen Wert gleich <span class="math inline">\(0.8413\)</span> ist.</p>
-<p>Mir R können Sie diese Ergebnisse mit Hilfe der folgenden funktionen direkt bestimmen:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Intervall der mittleren 95%</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>), <span class="at">mean =</span> <span class="fl">7.4</span>, <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="fl">0.36</span>))</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Schlafdauer grösser als 80%</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.8</span>, <span class="at">mean =</span> <span class="fl">7.4</span>, <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="fl">0.36</span>))</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Kumulierte Prozent mit Schlafdauer kleiner als 8 Stunden</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">8</span>, <span class="at">mean =</span> <span class="fl">7.4</span>, <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="fl">0.36</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Eine umfassende Untersuchung hat ergeben, dass Personen die unter Depression leiden eine durschnittliche Schlafdauer von 6.2 Stunden mit einer Varianz von 0.4 haben, wohingegen Gesunde Personen eine durchschnittliche Schlafdauer von 7.1 Stunden mit einer Varianz von 0.5 haben. Sie wissen das die Wahrscheinlichkeit, dass eine zufällige Person unter Depression leidet bei 0.1 liegt.</p>
-<p>Ein Patient hat einen Fragebogen zur Schlafqualität ausgefüllt und berichtet dort, dass er in den letzten 4 Wochen durchschnittlich 6.5 Stunden geschlafen hat. Wie verändert dieses Wissen die Wahrscheinlichkeit, dass der Patient unter Depressionen leidet?</p>
-<div id="webex-07a0da74df486baef8ed42427f48712a" class="webex-checkboxgroup" data-answer="awZNAEhQGwQ5">
-<label><input type="checkbox" autocomplete="off" name="07a0da74df486baef8ed42427f48712a"><span>Die Prior Odds für eine Depression sind <span class="math inline">\(O_{D^+} = \frac{1}{9}\)</span></span></label><label><input type="checkbox" autocomplete="off" name="07a0da74df486baef8ed42427f48712a"><span>Der Bayes Faktor zur Aktualisierung der Wahrscheinlichkeit einer Depression, gegeben die berichtete Schlafdauer liegt bei <span class="math inline">\(BF_{D+|T_S} \approx 1.9\)</span></span></label><label><input type="checkbox" autocomplete="off" name="07a0da74df486baef8ed42427f48712a"><span>Die Wahrscheinlichkeit einer Depression gegeben der berichteten Schlafdauer ist <span class="math inline">\(P(D^+|T_S) \approx 0.135\)</span></span></label><label><input type="checkbox" autocomplete="off" name="07a0da74df486baef8ed42427f48712a"><span>Die Wahrscheinlichkeit einer Depression gegeben der berichteten Schlafdauer ist <span class="math inline">\(P(D^+|T_S) \approx 0.174\)</span></span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Um das Bayes Theorem, dass wir für diese Fragestellung nutzen müssen, einfach und schnell anwenden zu können rechnen wir als erstes die Prior Wahrscheinlichkeit für Depression <span class="math inline">\(P(D^+) = 0.1\)</span> in die Prior Odds um:</p>
-<p><span class="math display">\[
-O_{D^+} = \frac{P(D^+)}{1-P(D^+)} = \frac{0.1}{1-0.1} = \frac{0.1}{0.9} = \frac{1}{9}
-\]</span></p>
-<p>Anschliessend müssen wir den Bayes Faktor zur Aktualisierung der Wahrscheinlichkeit einer Depression <span class="math inline">\(BF_{D^+}\)</span> berechnen. Dafür müssen wir die Likelihood der berichteten Schlafdauer von <span class="math inline">\(T_S = 6.5\)</span> Stunden unter der Verteilung von Depressiven Personen, durch die Likelihood der berichteten Schlafdauern unter der Verteilung der Gesunden Personen berechnen:</p>
-<p><span class="math display">\[
-BF_{D+|T_S} = \frac{P(T_S|D^+)}{P(T_S | D^-)}
-\]</span></p>
-<p>Dafür nutzen wir am besten die <code>dnorm</code> Funktion:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>bf_depression <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(<span class="fl">6.5</span>, <span class="at">mean =</span> <span class="fl">6.2</span>, <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="fl">0.4</span>)) <span class="sc">/</span> <span class="fu">dnorm</span>(<span class="fl">6.5</span>, <span class="at">mean =</span> <span class="fl">7.1</span>, <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="fl">0.5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Dieser Bayes Faktor ergibt <span class="math inline">\(BF_{D^+} \approx 1.4\)</span>. Auf Basis dieses Ergebnis können wir schon einschätzen, dass wir durch die gegebene Schlafdauer keine besonders starke Aktualisierung der Wahrscheinlichkeit einer Depression erreichen werden.</p>
-<p>Trotzdem können wir nun die Prior Odds mit dem Bayes Faktor multiplizieren und dadurch die Posterior Odds erhalten:</p>
-<p><span class="math display">\[
-O_{D+|T_S} = O_{D^+} \cdot BF_{D^+} = \frac{1}{9} \cdot 1.4 \approx 0.156
-\]</span></p>
-<p>Wenn wir diese Posterior Odds in eine Wahrscheinlichkeit umrechnen erhalten wir:</p>
-<p><span class="math display">\[
-P(D^+|T_S) = \frac{O_{D+|T_S}}{1+O_{D+|T_S}} = \frac{0.156}{1+0.156} \approx 0.135
-\]</span></p>
-<p>Auf Basis der berichteten Schlafdauer ist die Wahrscheinlichkeit einer Depression also bei 13.5%.</p>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Zur Abklärung von Hochbegabung habenSie mit einem Jugendlichen im Alter von 14 Jahren einen Intelligenztest durchgeführt. Der Intelligenztest ist durch eine Normstichprobe so normiert, dass die IQ Werte einen Mittelwert von 100 und eine Varianz von 225 haben. Beantworten Sie folgende Fragen zu dem Ergebnis des Jugendlichen</p>
-<ol type="1">
-<li>Mit welchem IQ-Wert hätte der Jugendliche eine Leistung besser als 95% der Normstichprobe?</li>
-<li>Mit einem IQ-Ergebnis von 121 ist der Jugendliche besser als wie viel Prozent der Normstichprobe?</li>
-<li>Wie viel Prozent der Normstichprobe haben ein IQ-Ergebnis zwischen minus einer Standardabweichung und plus einer Standardabweichung vom Mittelwert.</li>
-</ol>
-<div id="webex-822873ef6d4521c5e48e0b7f7f388d72" class="webex-checkboxgroup" data-answer="YwMeCBsCSVYaVBgEbw==">
-<label><input type="checkbox" autocomplete="off" name="822873ef6d4521c5e48e0b7f7f388d72"><span>Um eine Leistung besser als 95% der Normstichprobe zu erreichen, muss man einen IQ-Wert von ca. 124.7 erreichen.</span></label><label><input type="checkbox" autocomplete="off" name="822873ef6d4521c5e48e0b7f7f388d72"><span>Um eine Leistung besser als 95% der Normstichprobe zu erreichen, muss man einen IQ-Wert von ca. 129.4 erreichen.</span></label><label><input type="checkbox" autocomplete="off" name="822873ef6d4521c5e48e0b7f7f388d72"><span>Mit einem IQ = 121 erreicht man eine bessere Leistung als 91.9% der Normstichprobe</span></label><label><input type="checkbox" autocomplete="off" name="822873ef6d4521c5e48e0b7f7f388d72"><span>Mit einem IQ = 121 erreicht man eine bessere Leistung als 53.7% der Normstichprobe</span></label><label><input type="checkbox" autocomplete="off" name="822873ef6d4521c5e48e0b7f7f388d72"><span>Zwischen <span class="math inline">\(\mu - \sigma\)</span> und <span class="math inline">\(\mu + \sigma\)</span> liegen weniger als 1% der Werte</span></label><label><input type="checkbox" autocomplete="off" name="822873ef6d4521c5e48e0b7f7f388d72"><span>Zwischen <span class="math inline">\(\mu - \sigma\)</span> und <span class="math inline">\(\mu + \sigma\)</span> liegen ca. 68.3% der Werte</span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Wir bestimmen als erstes die Varianz der IQ-Verteilung:</p>
-<p><span class="math display">\[
-\sigma = \sqrt{VAR}= \sqrt{225} = 15
-\]</span></p>
-<p>Nun können wir aus der Tabelle oder mit Hilfe der <code>qnorm</code> Funktion bestimmen für welchen z-Wert 95% der Standardnormalverteilung kleinere Werte haben:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.95</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Dieser Wert ist <span class="math inline">\(Z_{95\%} \approx 1.65\)</span>. Mit diesem Wert können wir den Z-Wert in den X-Wert der Normalverteilung mit dem Mittelwert <span class="math inline">\(\mu = 100\)</span> und der Standardabweichung <span class="math inline">\(\sigma = 15\)</span> umrechnen:</p>
-<p><span class="math display">\[
-X_{95\%} = Z_{95\%} \cdot \sigma + \mu = 1.65 \cdot 15 + 100 = 124.75
-\]</span></p>
-<p>Um heraus zu finden wie viel Prozent der Normstichprobe kleine IQ-Werte als 121 haben, müssen wir diesen Wert in eine Z-Wert transformiere:</p>
-<p><span class="math display">\[
-Z = \frac{X - \mu}{\sigma} = \frac{121 - 100}{15} = \frac{21}{15} = 1.4
-\]</span></p>
-<p>Nun können wir anhand der Tabelle oder mit Hilfe der <code>pnorm</code> Funktion bestimmen wie viel Prozent der Verteilung unterhalb dieses z-Werts liegen</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">1.4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>für diesen Z-Wert liegen 91.9% unterhalb der Verteilung.</p>
-<p>Für den letzen Punkt müssen wir den Wert der Verteilungsfunktion <span class="math inline">\(F(Z)\)</span> für <span class="math inline">\(Z = -1\)</span> von Wert der Verteilungsfunktion für <span class="math inline">\(Z = 1\)</span> abziehen. Das können wir unabhängig vom Mittelwert und der Standardabweichung einfach mit der Standardnormalverteilung machen. Wenn Sie diese Aufgabe mit Hilfe der Tabelle lösen, dann müssen Sie sich die Symmetrie der Verteilung in Erinnerung rufen, wodurch gilt: <span class="math inline">\(F(-Z) = 1 - F(Z)\)</span></p>
-<p>Wenn Sie den Wert für <span class="math inline">\(Z = 1\)</span> aus der Tabelle bestimmen, erhalten sie: <span class="math inline">\(F(Z = 1) = 0.8413\)</span>. Entsprechend können Sie den Anteil an Werten zwischen einer Standardabweichung unterhalb des Mittelwerts und einer Standardabweichung oberhalb des Mittelwerts wie folgt berechnen:</p>
-<p><span class="math display">\[
-P(\mu - \sigma &lt; X &lt; \mu + \sigma) = F(1) - F(-1) = F(1) - (1 - (F-1)) = 0.8413 - (1- 0.8413) = 0.6826
-\]</span></p>
-<p>Entsprechend liegen 68.26% der Normstichprobe zwischen einer Standardabweichung unterhalb des Mittelwerts und einer Standardabweichung oberhalb des Mittelwerts.</p>
-</div>
-</div>
 <hr>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
