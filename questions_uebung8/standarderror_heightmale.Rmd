@@ -1,0 +1,85 @@
+Question
+=======
+Sie wollen Testen, ob männliche Studierenden statistisch bedeutsam grösser sind als weibliche Studierende. Sie wählen dafür ein Signifkanzniveau von $\alpha = .01$. Sie wissen, dass die Grösse von Frauen im Alter von 18 bis 30 in der Schweiz einer Normalverteilung mit dem Mittelwert $\mu_W = 165$ und der Standardabweichung $\sigma_W = 7$ folgt und nehmen an, dass das auch für weibliche Studierende gilt. 
+
+Für die Planung der Untersuchung nehmen Sie an das männliche Studierende einer Normalverteilung mit Mittelwert $\mu_M = 175$ und Standardabweichung $\sigma_M = 7$ folgen. Wie gross muss ihre Stichprobe sein, damit das nach unten geschlossene Konfidenzintervall des Mittelwerts der Stichprobe der männlichen Studierenden, den Mittelwert der Verteilung der Frauen nicht einschliesst? Nehmen Sie dafür an, dass der beobachtete Mittelwert $\bar{x}$ dem Mittelwert der Populationsverteilung der Männer entspricht.
+
+Answerlist
+--------
+* Die Stichprobegrässe muss $N = 3$ gross sein.
+* Die Stichprobegrässe muss $N = 10$ gross sein.
+* Die Stichprobegrässe muss $N = 23$ gross sein.
+* Mit den angegebenen Werten kann man die erforderliche Stichprobengrösse nicht berechnen.
+
+Solution
+========
+Um diese Frage zu beantworten müssen wir als erstes die Formel zur Berechnung der unteren Grenze eines nach unten Geschlossenen einseitigen Konfidenzintervalls betrachten:
+
+$$
+\bar{x}_{M} - z_{0.99} \cdot \frac{\sigma_{x_M}}{\sqrt{N}}
+$$
+
+Für die Planung muss dieser Wert grösser sein als der Mittelwert der Grössenverteilung der Frauen $\mu_W$
+
+$$
+\bar{x}_{M} - z_{0.99} \cdot \frac{\sigma_{x_M}}{\sqrt{N}} > \mu_W
+$$
+
+Um nach der gefragten Stichprobengrösse $N$ aufzulösen müssen wir die Ungleichung nach $N$ auflösen:
+
+1. Zu beiden Seiten $z_{0.99}\frac{\sigma_{x_M}}{\sqrt{N}}$ addieren.
+
+$$
+\bar{x}_{M}  > \mu_W + z_{0.99} \cdot \frac{\sigma_{x_M}}{\sqrt{N}};
+$$
+
+2. Von beiden Seiten $\mu_W$ abziehen.
+
+$$
+\bar{x}_{M}- \mu_W  > z_{0.99} \cdot \frac{\sigma_{x_M}}{\sqrt{N}};
+$$
+
+3. Beide Seiten durch $z_{0.99} \cdot \sigma_{x_M}$ teilen
+
+$$
+\frac{\bar{x}_{M}- \mu_W}{z_{0.99} \cdot \sigma_{x_M}}  > \frac{1}{\sqrt{N}};
+$$
+
+4. Für beide Seiten den Kehrwert nehmen
+
+$$
+\frac{z_{0.99} \cdot \sigma_{x_M}}{\bar{x}_{M}- \mu_W}  > \sqrt{N};
+$$
+
+5. Beide Seiten quadrieren.
+
+$$
+\left(\frac{z_{0.99} \cdot \sigma_{x_M}}{\bar{x}_{M}- \mu_W}\right)^2 > N
+$$
+
+In diese umgeformte Ungleichung können wir nun die Werte aus der Aufgabenstellung, sowie den $z$-Wert für die gewünscht Konfidenz einsetzen. Den $z$-Wert können Sie entweder aus der Tabelle ablesen, indem sie den Wert für einen Wert grösser als .99 suchen. Oder Sie nutzen die Quantilfunktion in R für das gewünschte Konfidenzniveua `qnorm(p = .99)`
+
+Wenn Sie die Berechnung in `R` durchführen ergibt sich dabei:
+
+
+```r
+z_confidence <- qnorm(p = .99)
+sigma_male <- 7
+mean_male <- 175
+mu_female <- 165
+
+required_sample <- ((z_confidence * sigma_male)/(mean_male - mu_female))^2
+
+# aufrunden um das ungleichheitszeichen zu beachten
+ceil(required_sample)
+```
+
+Damit kommen sie auf eine erfordeliche Stichprobengrösse von $N = 3$. Sie müssen dabei jedoch beachten, dass wir hier angenommen haben, dass der Mittelwert der gezogenen Stichprobe dem Populationsmittelwert der Männer entspricht. In der Praxis ist es gut möglich, dass der Stichprobenmittelwert unter dem Populationsmittelwert liegt.
+
+
+Meta-information
+=========
+exname: se_height
+extype: schoice 
+exsolution: 1000
+exshuffle: FALSE

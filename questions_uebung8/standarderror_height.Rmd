@@ -1,0 +1,49 @@
+Question
+=======
+Sie wollen den Mittelwert der Grösse von Psychologiestudentinnen bestimmen. Sie wissen, dass die Grösse von Frauen im Alter von 18 bis 30 in der Schweiz einer Normalverteilung mit dem Mittelwert $\mu = 165$ und der Standardabweichung $\sigma = 7$ folgt. Wie gross muss ihre Stichprobe sein, wenn der Standardfehler für die Schätzung der Durchschnittlichen Grösse von Psychologiestudentinnen $\sigma_{\bar{x}} = 1$ sein soll?
+
+Answerlist
+--------
+* Die Stichprobegrässe muss $N = 30$ gross sein.
+* Die Stichprobegrässe muss $N = 49$ gross sein.
+* Die Stichprobegrässe muss $N = 7$ gross sein.
+* Mit den angegebenen Werten kann man die erforderliche Stichprobengrösse nicht berechnen.
+
+Solution
+========
+Um diese Frage zu beantworten müssen wir als erstes die Formel für den Standarfehler des Mittelwerts betrachten:
+
+$$
+\sigma_{\bar{x}} = \frac{\sigma_x}{\sqrt{N}}
+$$
+
+Die Standardabweichung in der Popultion $\sigma_x$ ist gegeben, ebenso ist angegeben, dass wir einen bestimmten Standardfehler $\sigma_{\bar{x}}$ erreichen wollen. Wir müssen diese Formel also nach der Stichprobengrösse $N$ auflösen.
+
+Um nach der gefragten Stichprobengrösse $N$ aufzulösen müssen wir die folgenden Schritte durchführen:
+
+1. Beide Seiten mit der Wurzel der Stichprobengrösse $\sqrt{N}$ multiplizieren.
+2. Beide Seiten durch den Standardfehler des Mittelwerts $\sigma_{\bar{x}}$ teilen.
+3. Beide Seiten quadrieren.
+
+$$
+\sigma_{\bar{x}} \cdot \sqrt{N} = \sigma_x; \quad  \sqrt{N} = \frac{\sigma_x}{\sigma_{\bar{x}}}; \quad N = \left(\frac{\sigma_x}{\sigma_{\bar{x}}}\right)^2
+$$
+
+In diese umgeformte Formel, können wir nun die Werte aus der Fragestellung einsetzen. Wenn Sie dabei `R` als Taschenrechner nutzen wollen wäre den Code dafür:
+
+```r
+required_SE <- 1
+population_sd <- 7
+
+required_Sample <- (population_sd/required_SE)^2
+```
+
+Damit sollten Sie auf eine Stichprobengrösse von $N = 49$ kommen, mit der Sie einen Standardfehler von $\sigma_{\bar{x}} = 1$ erreichen.
+
+
+Meta-information
+=========
+exname: se_height
+extype: schoice 
+exsolution: 0100
+exshuffle: FALSE

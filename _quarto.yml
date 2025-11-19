@@ -30,6 +30,8 @@ website:
         href: exercise6.qmd
       - text: "Übung 7"
         href: exercise7.qmd
+      - text: "Übung 8"
+        href: exercise8.qmd
   page-footer:
     left: "Copyright 2025, Gidon Frischkorn"
     right:

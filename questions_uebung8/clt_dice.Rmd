@@ -1,0 +1,91 @@
+Question
+=======
+Sie werfen 30 mal einen fairen Würfel und zählen aller Ergebnisse zusammen. Bestimmen Sie das zweiseitige 90%-Konfidenzintervall für die Summe der Ergebnisse unter Annahme des Zentralen Grenzwerttheorems. Berechnen Sie dafür als erstes den Erwartungswert $\mu$ und die Varianz $\sigma^2$ der Wahrscheinlichkeitsverteilung für den fairen Würfel (siehe Vorlesung 5: Wahrscheinlichkeitstheorie 2).
+
+Answerlist
+--------
+* Das 90% Konfidenzintervall ist: $90\% KI = [89.62, 120.38]$
+* Das 90% Konfidenzintervall ist: $90\% KI = [102.19, 107.81]$
+* Das 90% Konfidenzintervall ist: $90\% KI = [78.73, 131.27]$
+* Mit den angegebenen Werten kann man das gefragte Konfidenzintervall nicht berechnen.
+
+Solution
+========
+Laut Zentralem Grenzwerttheorem folgt die Summe der Ergebnisse des widerholten Würfelwurfs einer Normalverteilung:
+
+$$
+\sum X \sim \mathcal{N}(N\cdot\mu, \sqrt{N} \cdot \sigma)
+$$
+
+Um den Erwartungswert und die Standardabweichung der Verteilung der Summe der Ergebnisse zu berechnen müssen wir also zuerst den Erwartungswert und die Standardabweichung der Wahrscheinlichkeitsverteilung für einen Würfelwurf berechnen. Für einen fairen Würfel haben alle Ergebnisse von 1 bis 6 die gleiche theoretische Warhscheinlichkeit $\pi = \frac{1}{6}$. Asu diesen Werten ergibt sich:
+
+$$
+E(X) = \mu = \sum_{i = 1}^j X_j \cdot \pi_j = 1 \cdot \frac{1}{6} + 2 \cdot \frac{1}{6} + 3 \cdot \frac{1}{6} + \dots + 6 \cdot \frac{1}{6} = 3.5
+$$
+
+$$
+VAR(X) = \sigma^2 = \sum_{i = 1}^j (X_j - \mu)^2 \cdot \pi_j = (1−3.5)^2 \cdot \frac{1}{6} + (2−3.5)^2 \cdot \frac{1}{6}+ \dots + (6−3.5)^2 \cdot \frac{1}{6} = 2.916...
+$$
+
+Mit diesen Werten können wir nun den Erwartungswert und die Standardabweichung der Verteilung der Summe aus $N = 30$ Würfelwurfen berechnen:
+
+$$
+\mu_\sum = N \cdot \mu = 30 \cdot 3.5 = 105
+$$
+
+$$
+\sigma_\sum = \sqrt{N} \cdot \sigma = \sqrt{N} \cdot \sqrt{\sigma^2} = \sqrt{30} \cdot \sqrt{2.916} = 9.35...
+$$
+
+Mit diesen Werten können wir nun die Grenzen des Konfidenzintervalls berechnen
+
+$$
+90\% KI = [\mu_\sum - z_{0.95}\cdot \sigma_\sum, \mu_\sum + z_{0.95} \cdot \sigma_\sum]
+$$
+
+den relevanten $z$-Wert können wir in der Tabelle auslesen, oder mit Hilfe der Quantilfunktion in `R` bestimmen: `qnorm(0.95)`, daraus ergibt sich $z_{0.95} = 1.65$. Das Konfidenzintervall ist entsprechend:
+
+$$
+90\% KI = [105 - 1.65 \cdot 9.35, 105 + 1.65 \cdot 9.35]
+$$
+
+$$
+90\% KI = [89.62, 120.38]
+$$
+
+Beachten Sie, dass wir an dieser Stelle das Konfindezintervall mit Hilfe der Standardabweichung berechnen, weil es sich um ein Ergebnis handelt das wir durch 30 Mal Würfeln erhalten. Die Stichprobe für das relevante Zufallsexperiment ist also 1.
+
+Wenn Sie `R` als Taschenrechner nutzen, könnte eine Lösung folgendermassen aussehen:
+
+```r
+ergebnisse <- 1:6
+wahrscheinlichkeiten <- rep(1/length(results), length = length(results))
+
+# Kennwerte der Wahrscheinlichkeitsverteilung eines Würfelwurfs
+erwartungswert <- sum(ergebnisse*wahrscheinlichkeiten)
+varianz <- sum((ergebnisse-erwartungswert)^2 * wahrscheinlichkeiten)
+
+# Kennwerte der Normalverteilung der Summe aus 30 Würfelwürfen
+anzahl_würfe <- 30
+erwartungswert_summe <- anzahl_würfe * erwartungswert
+varianz_summe <- anzahl_würfe * varianz
+sd_summe <- sqrt(varianz_summe)
+
+# Berechnung des erforderlichen z-Werts
+z_95prozent <- qnorm(0.95)
+
+# Berechnung der Grenzen des Konfidenzintervalls
+untere_grenze <- erwartungswert_summe - z_95prozent * sd_summe
+obere_grenze <- erwartungswert_summe + z_95prozent * sd_summe
+untere_grenze
+obere_grenze
+```
+
+Bis auf kleine Rundungsfehler erhalten Sie damit die gleiche Lösung wie in den oben berechneten Gleichungen.
+
+Meta-information
+=========
+exname: clt_dice
+extype: schoice 
+exsolution: 1000
+exshuffle: TRUE
