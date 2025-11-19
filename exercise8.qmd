@@ -1,5 +1,5 @@
 ---
-title: "Übung 7 - Inferenzstatistik"
+title: "Übung 8 - Inferenzstatistik"
 subtitle: "HS 2025"
 author: "Gidon Frischkorn"
 format:
@@ -21,7 +21,7 @@ exam_files <- list.files(here("questions_uebung7"), full.names = TRUE)
 shuffeld_questions <- exam_files
 ```
 
-## Wiederholung & Vertiefung: Hypothesentesten
+## Wiederholung & Vertiefung: Parameterschätzung
 
 In dieser Übung werden wir Üben mit den Konzepten des Nullhypothesentests und des Binären Entscheidungskonzepts zu arbeiten. Wenn Sie die Grundlegenden Konzepte der Vorlesung nochmal wiederholen und Vertiefen wollen, dann empfehle ich Ihnen die folgenden Videos:
 
