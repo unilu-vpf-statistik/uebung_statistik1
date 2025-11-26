@@ -1,0 +1,59 @@
+Question
+=======
+Sie wollen testen, ob sich die Einschätzung des eigenen Wissens im Bezug auf das Fach Statistik von Beginn zum Ende des Semesters bei den Studierenden verändert hat. Dafür wollen Sie einen $t$-Test für abhängige Stichproben rechnen. Aus den Daten haben Sie folgenden Kennwerte für die Differenz zwischen dem eingeschätzten Wissen am Ende `wissen_statistik_ende` und dem eingeschätzten Wissen am Anfang `wissen_statistik_start` berechnet:
+
+- Mittelwert der Differenz: $\bar{x}_D = 0.32$
+- Populationsschätzer der Standardabweichung der Differenz: $\hat{\sigma}_D = 0.78$
+
+Berechnen Sie den $t$-Test für abhängige Stichproben aus den $N = 30$ Beobachtungen und nehmen Sie ein Signifikanzniveau von $\alpha = .01$ an. Sie testen die gerichtete Hypothese, dass das eingeschätzte Wissen am Ende des Semesters grösser als am Anfang ist
+
+Answerlist
+--------
+* Bei den Test handelt es sich um einen Einstichproben $t$-Test
+* Der kritische $t$-Wert liegt bei $t_{krit}(\alpha = .01) = 1.6991$
+* Der empirische $t$-Wert liegt bei $t_{emp} = 2.29$
+* Der $p$-Wert ist grösser als das Signifikanzniveau $\alpha$
+
+Solution
+========
+Bei diesem $t$-Test handelt es sich um einen $t$-Test für *abhängige* Stichproben. Die Freiheitsgrade des Test berechnen sich entsprechend als $df = N-1 = 30-1 = 29$
+
+Mit den Freiheitsgraden und dem Signifikanzniveau von $\alpha = .01$ können wir den kritischen $t$-Wert aus der Tabelle der $p$-Quantile ablesen. Dafür lesen wir den Wert aus der Zeile für $df = 29$ und dem $p$-Quantil für $p = 1 - \alpha = .99$ ab. Dieser Werte ist $t_{krit} (\alpha = .01) = 2.46$
+
+> Der in der zweiten Antwortalternative angegebene kritische $t$-Wert ist für ein Signifikanzniveau von $\alpha = .05$. Hier ist aber ein Signifkanzniveau von $\alpha = .01$ gewählt worden.
+
+Auf Basis der gegebenen Informationen aus der Aufgabe können wir auch den empirischen $t$-Wert berechnen. Für den $t$-Test für abhängige Stichproben ergibt sich dieser aus:
+
+$$
+t_{emp} = \frac{\bar{x}_D}{\hat{\sigma}_{\bar{x}_d}}= \frac{\bar{x}_D}{\frac{\hat{\sigma}_{D}}{\sqrt{N}}} = \frac{0.32}{\frac{0.78}{\sqrt{30}}} = 
+\frac{0.32}{0.14} = 2.29
+$$
+
+Mit dem empirischen $t$-Wert können wir aus der Tabelle der $p$-Quantile auch das Intervall bestimmen in dem der $p$-Wert liegt. Für die Zeile von $df = 29$ liegt $t_{emp}$ zwischen dem Wert des $p$-Quantils $p = .975 \rightarrow t = 2.04$ und dem Wert des $p$-Quantils für $p = .99 \rightarrow t = 2.48$. Entsprechend ist der $p$-Wert kleiner als .025 aber grösser als .01.
+
+**in `R`**
+
+Wenn Sie den $t$-Test in `R` direkt mit dem Datensatz ausrechnen, dann müssen Sie folgenden Befehl eingeben:
+
+```r
+t.test(x = semester_data3$wissen_statistik_ende,
+       y = semester_data3$wissen_statistik_start,
+       paired = TRUE,
+       alpha = .01,
+       alternative = "greater",
+       var.equal = TRUE)
+```
+
+als Output sollten Sie dann folgendes Ergebnis erhalten:
+
+![](./images/results_pairedSample_alpha01.png)
+
+Die Werte imn Output unterscheiden sich auf Grund von Rundungsfehlern von den oben berechneten Werten kommen aber zum gleichen Ergebnis.
+
+
+Meta-information
+=========
+exname: ttest_pairedsample
+extype: mchoice 
+exsolution: 0011
+exshuffle: FALSE

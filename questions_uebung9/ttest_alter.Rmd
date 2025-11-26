@@ -1,0 +1,70 @@
+Question
+=======
+Sie wollen für die Stichprobe aus dem Datensatz `semester_data3.csv` testen, ob das Alter der Studierenden bedeutsam von dem Durchschnittlichen Alter aller Studierenden im Fach Psychologie $\mu_0 = 23.5$ abweicht. Der Datensatz enthälte Werte von $N = 30$ Studierenden. Der Mittelwert des Alters im Datensatz ist $\bar{x} = 22.5$ und der Populationsschätzer der Standardabweichung aus dem Datensatz ist $\hat{\sigma} = 3.1$.
+
+Berechnen Sie den entsprechenden t-test um die zwei-seitige Hypothese zu prüfen, dass sich das Alter der Studierenden nicht bedeutsam von dem Wert $\mu_0$ unterscheidet. Kreuzen Sie an welche der folgenden Aussagen für den Test mit einem Signifikanzniveau von $\alpha = .05$ zutreffen.
+
+**Wichtig**: Die Antworten beziehen sich auf die in der Aufgabe angegebenen gerundeten Werte. Wenn Sie den Test mit R auf Basis der Daten ausrechnen, werden Sie aufgrund von Rundungsfehlern auf leicht andere Werte kommen. Die Schlussfolgerung in Bezug auf die Signifikanz des Tests bleibt allerdings unverändert.
+
+Answerlist
+--------
+* Der Betrage des kritische t-Werts liegt bei: $|t_{krit}(\alpha = .05)| \approx |1.70|$
+* Der Betrag des empirische t-Werts liegt bei $|t_{emp}| = 1.767$
+* Für den $p$-Wert gilt, das $p < \alpha$
+* Die Freiheitsgrade des Tests sind $df = 28$
+
+Solution
+========
+Zur Durchführung des $t$-Test müssen wir folgenden Schritte durchführen:
+
+1. Bestimmung des kritischen $t$-Werts für die ungerichtete Hypothese mit dem entsprechenden Signifikanzniveau
+
+Diesen Wert können wir direkt aus der Tabelle der $p$-Quantile der $t$-Verteilung die über den Übungsaufgaben gegeben ist ablesen. 
+
+Dabei müssen wir beachten, dass der $t$-Test $df = N - 1 = 30 - 1 = 29$ Freiheitsgrade hat und wir auf Grund der ungerichteten Hypothese das Signifikanzniveau halbieren müssen. Entsprechend müssen wir den $t$-Wert für $df = 29$ und $p = .975$ aus der Tabelle ablesen. Dieser ist: $t_{krit}(\alpha = .05) = 2.0452$ 
+
+> Der in der ersten Antwort angegebenen kritische $t$-Wert wäre korrekt, wenn es sich um einen gerichteten Test handeln würde. Dann hätten wir in der Tabelle den $t$-Wert für $df = 29$ und $p = .95$ ablesen müssen der gerundet $t_{krit}(\alpha = .05) \approx 1.70$ ist.
+
+2. Bestimmung des empirischen $t$-Wertes auf Basis der in der Frage angegebene Grössen
+
+Den empirischen $t$-Wert können wir mit Hilfe des Stichproben-Mittelwerts $\bar{x} = 22.5$, des Populationsschätzers der Standardabweichung $\hat{\sigma} = 3.1$ und dem Referenzwert $\mu_0 = 23.5$ berechnen. Der empirische $t$-Wert ergibt sich dabei aus:
+
+$$
+t_{emp} = \frac{\bar{x} - \mu_0}{\hat{\sigma}_{\bar{x}}} = \frac{\bar{x} - \mu_0}{\frac{\hat{\sigma}_x}{\sqrt{N}}} = \frac{22.5 - 23.5}{\frac{3.1}{\sqrt{30}}} = \frac{-1}{0.566} = -1.767
+$$
+
+Der empirische $t$-Wert beträgt damit: $t_{emp} \approx -1,767$
+
+3. Bestimmung des $p$-Wertes anhand des empirischen $t$-Wertes
+
+Anhand der Tabelle der $p$-Quantile der $t$-Verteilung können wir bestimmen, dass der $p-Wert$ zwischen $.10 > p > .05$ liegt. 
+
+Dabei sehen wir, dass der empirische $t$-Wert zwischen den $t$-Werte für $p = .95$ und $p = .975$ liegt. Für einen ungerichteten Test berechnet sich der $p$-Wert aus $p = 2 \cdot (1 - F_t(|t_{emp}|, df))$ da wir beachten müssen, dass der $t$-Wert den kritischen Wert im negativen wie auch positiven Bereich überschreiten kann.
+
+Daraus ergibt sich, dass der $p$-Wert für den berechneten empirischen $t$-Wert zwischen .10 und .05 liegen muss und damit nicht kleiner also unser Signifikanzniveau von $\alpha = .05$ ist.
+
+Auf Basis der Tabelle können wir den $p$-Wert leider nicht genauer bestimmen. Aber wir sehen auch anhand des Vergleichs des kritischen $t$-Werts mit dem empirischen $t$-Wert, dass der Test nicht signifikant ist: $|t_{krit}| \approx 2.05 > |t_{emp}| \approx 1.77$
+
+**in `R`**
+
+Wenn Sie den $t$-Test in `R` direkt mit dem Datensatz ausrechnen, dann müssen Sie folgenden Befehl eingeben:
+
+```r
+t.test(semester_data3$alter, 
+       mu = 23.5,
+       alternative = "two.sided",
+       var.equal = TRUE) # ist für Einstichproben t-test nnicht unbedingt nötig
+```
+
+als Output sollten Sie dann folgendes Ergebnis erhalten:
+
+![](./images/results_OneSample.png)
+
+Die Werte imn Output unterscheiden sich auf Grund von Rundungsfehlern von den oben berechneten Werten kommen aber zum gleichen Ergebnis.
+
+Meta-information
+=========
+exname: ttest_onesample
+extype: mchoice 
+exsolution: 0110
+exshuffle: FALSE

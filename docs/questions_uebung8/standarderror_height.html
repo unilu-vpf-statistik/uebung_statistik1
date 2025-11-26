@@ -238,6 +238,12 @@ window.Quarto = {
  <span class="menu-text">Übung 7</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../exercise8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Übung 8</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -265,7 +271,7 @@ window.Quarto = {
 
 <section id="question" class="level1">
 <h1>Question</h1>
-<p>Sie wollen den Mittelwert der Gröse von Psychologiestudentinnen bestimmen. Sie wissen, dass die Grösse von Frauen im Alter von 18 bis 30 einer Normalverteilung mit dem Mittelwert <span class="math inline">\(\mu = 165\)</span> und der Standardabweichung <span class="math inline">\(\sigma = 7\)</span> folgt. Wie gross muss ihre Stichprobe sein, wenn der Standardfehler für die Schätzung der Durchschnittlichen Grösse von Psychologiestudentinnen <span class="math inline">\(\sigma_{\bar{x}} = 1\)</span> sein soll?</p>
+<p>Sie wollen den Mittelwert der Grösse von Psychologiestudentinnen bestimmen. Sie wissen, dass die Grösse von Frauen im Alter von 18 bis 30 in der Schweiz einer Normalverteilung mit dem Mittelwert <span class="math inline">\(\mu = 165\)</span> und der Standardabweichung <span class="math inline">\(\sigma = 7\)</span> folgt. Wie gross muss ihre Stichprobe sein, wenn der Standardfehler für die Schätzung der Durchschnittlichen Grösse von Psychologiestudentinnen <span class="math inline">\(\sigma_{\bar{x}} = 1\)</span> sein soll?</p>
 <section id="answerlist" class="level2">
 <h2 class="anchored" data-anchor-id="answerlist">Answerlist</h2>
 <ul>
@@ -282,16 +288,16 @@ window.Quarto = {
 <p><span class="math display">\[
 \sigma_{\bar{x}} = \frac{\sigma_x}{\sqrt{N}}
 \]</span></p>
-<p>Die Standardabweichung in der Popultion <span class="math inline">\(\sigma_x\)</span> ist gegebene, ebenso ist angegeben, dass wir einen bestimmten Standardfehler <span class="math inline">\(\sigma_{\bar{x}}\)</span> erreichen wollen. Wir müssen diese Formel also nach der Stichprobengrösse <span class="math inline">\(N\)</span> auflösen.</p>
-<p><span class="math display">\[
-\sigma_{\bar{x}} \cdot \sqrt{N} = \sigma_x; \quad  \sqrt{N} = \frac{\sigma_x}{\sigma_{\bar{x}}}; \quad N = \left(\frac{\sigma_x}{\sigma_{\bar{x}}}\right)^2
-\]</span></p>
+<p>Die Standardabweichung in der Popultion <span class="math inline">\(\sigma_x\)</span> ist gegeben, ebenso ist angegeben, dass wir einen bestimmten Standardfehler <span class="math inline">\(\sigma_{\bar{x}}\)</span> erreichen wollen. Wir müssen diese Formel also nach der Stichprobengrösse <span class="math inline">\(N\)</span> auflösen.</p>
 <p>Um nach der gefragten Stichprobengrösse <span class="math inline">\(N\)</span> aufzulösen müssen wir die folgenden Schritte durchführen:</p>
 <ol type="1">
 <li>Beide Seiten mit der Wurzel der Stichprobengrösse <span class="math inline">\(\sqrt{N}\)</span> multiplizieren.</li>
 <li>Beide Seiten durch den Standardfehler des Mittelwerts <span class="math inline">\(\sigma_{\bar{x}}\)</span> teilen.</li>
 <li>Beide Seiten quadrieren.</li>
 </ol>
+<p><span class="math display">\[
+\sigma_{\bar{x}} \cdot \sqrt{N} = \sigma_x; \quad  \sqrt{N} = \frac{\sigma_x}{\sigma_{\bar{x}}}; \quad N = \left(\frac{\sigma_x}{\sigma_{\bar{x}}}\right)^2
+\]</span></p>
 <p>In diese umgeformte Formel, können wir nun die Werte aus der Fragestellung einsetzen. Wenn Sie dabei <code>R</code> als Taschenrechner nutzen wollen wäre den Code dafür:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>required_SE <span class="ot">&lt;-</span> <span class="dv">1</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>population_sd <span class="ot">&lt;-</span> <span class="dv">7</span></span>
@@ -301,7 +307,7 @@ window.Quarto = {
 </section>
 <section id="meta-information" class="level1">
 <h1>Meta-information</h1>
-<p>exname: test_gewicht extype: mchoice exsolution: 1001 exshuffle: FALSE</p>
+<p>exname: se_height extype: schoice exsolution: 0100 exshuffle: FALSE</p>
 
 
 </section>

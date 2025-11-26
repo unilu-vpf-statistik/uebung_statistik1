@@ -1,0 +1,74 @@
+Question
+=======
+Sie wollen auf Basis der Daten im Datensatz `semester_data3` testen, ob sich die Grösse zwischen weiblichen und männlichen Studierenden unterscheidet. Sie haben dafür folgende Werte Berechnet:
+
+- Mittelwerte der Grösse nach Geschlecht: $\bar{x}_W = 159.04$; $\bar{x}_M = 179.00$
+- Populationsschätzer der Standardabweichung: $\hat{\sigma}_W = 7.11$; $\hat{\sigma}_M = 6.12$
+- Gruppengrösse in der Daten: $N_W = 25$; $N_M = 5$
+
+Sie testen eine gerichtete Hypothese die Prüft, ob männliche Studierende grösser als weibliche Studierende sind. Sie nutzen dafür ein Signifikanzniveau von $\alpha = .05$. Beurteilen Sie für den Berechneten Test welche der folgenden Aussagen zutreffen.
+
+Answerlist
+--------
+* Bei den Test handelt es sich um einen $t$-Test für unabhängige Stichproben
+* Der kritische $t$-Wert liegt bei $t_{krit}(\alpha = .05) = 1.6991$
+* Der empirische $t$-Wert liegt bei $t_{emp} = 2.84$
+* Der $p$-Wert ist kleiner als das Signifikanzniveau $\alpha$
+
+Solution
+========
+
+Bei dem zu berechnenden $t$-Test handelt es sich um einen $t$-Test für *unabhängige* Stichproben. 
+
+Den kritischen $t$-Wert können wir also auf Basis des gegebenen Signifinkanzniveaus $\alpha = .05$ und den Freiheitsgraden $df = N_W + N_M - 2$ bestimmen. Aus der Tabelle der $p$-Quantile lesen wir also aus der Zeile mit $df = 28$ und der Spalte für $p = 1 - \alpha = .95$ den kritischen $t$-Wert ab: $t_{krit}(\alpha = .05) = 1.7011$
+
+> Der in der zweiten Antwort angegebene $t$-Wert ist für $df = 29$. Diese Freiheitsgrade würden aber nur für einen *einstichproben* $t$-Test oder den $t$-Test für *abhängige* Stichproben stimmen
+
+Nun müssen wir auf Basis der gegebenen Werte den empirischen $t$-Wert berechnen. Dabei müssen wir die folgenden Schritte durchführen:
+
+1. Berechnung der gepoolten Varianz
+
+$$
+\hat{\sigma}_{inn}^2 = \frac{\hat{\sigma}_W^2\cdot(N_W-1) + \hat{\sigma}_M^2\cdot(N_M-1)}{(N_W-1)+(N_M-1)} = 
+\frac{7.11^2 \cdot 24 + 6.12^2 \cdot 4}{(25-1)+(5-1)} = \frac{1213.25 + 149.82}{28} = 48.68
+$$
+
+2. Berechnung des Standardfehlers der Mittelwertsdifferenz
+
+$$
+\hat{\sigma}_{\bar{x}_M - \bar{x}_W} = \sqrt{\frac{\hat{\sigma}_{inn}^2}{N_W} + \frac{\hat{\sigma}_{inn}^2}{N_M}} = 
+\sqrt{\frac{48.68}{25} + \frac{48.68}{5}} = \sqrt{1.95 + 9.74} = 3.42
+$$
+
+3. Berechnung des empirischen $t$-Wertes
+
+$$
+t_{emp} = \frac{\bar{x}_M - \bar{x}_w}{\hat{\sigma}_{\bar{x}_M - \bar{x}_W}} = \frac{179.00 - 159.04}{3.42} = \frac{19.96}{3.42} = 5.84
+$$
+
+Auf Basis des empirischen $t$-Werts können wir nun anhand der Tabelle der $p$-Quantile auch den $p$-Wert bestimmen. Dabei sehen wir, dass der empirische $t$-Wert grösser ist als der $t$-Wert in der letzten Spalte für das $p$-Quantil $p = .995$ $\rightarrow t = 2.7633$, daraus können wir schliessen, dass der $p$-Wert für die beobachtete Mittelwertsdifferent kleiner als $p < 1 - .995 = .005$ ist.
+
+**in `R`**
+
+Wenn Sie den $t$-Test in `R` direkt mit dem Datensatz ausrechnen, dann müssen Sie folgenden Befehl eingeben:
+
+```r
+t.test(grösse ~ geschlecht,     # formelschreibweise: av ~ uv
+       alternative = "greater", # gerichtete Hypothese
+       data = semester_data3,   # Datensatz in dem die in der Formel angegebenen Variablen enthalten sind
+       var.equal = TRUE).       # Annahme gleicher Varianzen
+```
+
+als Output sollten Sie dann folgendes Ergebnis erhalten:
+
+![](./images/results_TwoSample.png)
+
+Die Werte imn Output unterscheiden sich auf Grund von Rundungsfehlern von den oben berechneten Werten kommen aber zum gleichen Ergebnis.
+
+
+Meta-information
+=========
+exname: ttest_twosample
+extype: mchoice 
+exsolution: 1011
+exshuffle: FALSE

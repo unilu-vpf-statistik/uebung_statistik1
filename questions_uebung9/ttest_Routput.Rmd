@@ -1,0 +1,40 @@
+Question
+=======
+Sie haben in R mit der Funktion `t.test` berechnet ob sich das Alter zwischen den Weiblichen und Männlichen Studierenden in den Daten des Datensatzes `semester_data3` bedeutsam voneinander unterscheidet. Sie haben dabei folgenden Output erhalten.
+
+![Output des in R berechneten t-Tests](./images/results_Interpretation.png)
+
+Beurteilen, welche der folgenden Aussagen auf Basis des Outputs korrekt sind.
+
+
+Answerlist
+--------
+* Bei dem Test handelt es sich um einen t-Test für anbhängige Stichproben
+* Der empirische t-Wert liegt bei: $t_{emp} \approx -.135$
+* Der $p$-Wert für den Test ist grösser als $\alpha = .05$
+* Das Mittlere Alter in der Gruppe der Männer ist $\bar{x}_{M} = 22.3$
+* Die Menge an Beobchatungen in der Gruppe der Frauen ist $N = 28$
+* Der t-Test hat eine gerichtete Hypotheses getestet
+
+Solution
+========
+
+1) Der Titel des Outputs `Two Sample t-test` zeigt an, dass es sich um einen t-Test für unabhämngige Stichproben handelt. Für einen Einstichproben t-Test lautet der Title `One Sample t-test` und für einen t-Test für abhängige Stichproben `Paired Sample t-test`.
+
+2) Der empirische $t$-Wert kann aus der zweiten Zeile des Outputs abgelesen werden und beträgt: $t_{emp} = -0.13566$
+
+3) Der exakte $p$-Wert liegt bei $p = 0.8931$ was ebenfalls aus der zweiten Zeile des Outputs abgelesen werden kann. Dieser ist auch klar grösser als ein Signifkanzniveau von $\alpha = .05$
+
+4) Aus den letzten Zeilen des Outputs können Sie die Mittelwerte in den beiden Gruppen ablesen. Dabei liegt der Mittelwert der Männer bei $\bar{x}_M = 22.3$ und der Mittelwert der Frauen bei $\bar{x}_F = 22.508$
+
+5) Die Menge an Beobachtungen in den einzelnen Gruppen lässt sich aus dem Output nicht ablesen. Sie können allerdings auf Basis des Tests $\rightarrow$ $t$-Test für unabhängige Stichproben; und den Freiheitsgrade $df = 28$ schliessen, dass die Gesamtstichprobengrösse der Gruppe der Männer und Frauen bei $N = 30$ liegt. Das folgt aus der Formel $df = (N_1 -1) + (N_2 - 1) = N_1 + N_2 -2$ für die Berechnung der Freiheitsgrade beim $t$-Test für unabhängige Stichproben.
+
+6) Aus der dritten Zeile, die die `alternative hypothesis` angibt, können Sie ablesen, dass der Test ungerichtet durchgeführt wurde und die Alternativhypothese $H_1: \mu1 \neq \mu2$ testet, die keine Richtung anzeigt. 
+
+
+Meta-information
+=========
+exname: ttest_interpretation
+extype: mchoice 
+exsolution: 011100
+exshuffle: FALSE

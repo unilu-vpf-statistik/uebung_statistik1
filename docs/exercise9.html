@@ -8,7 +8,7 @@
 
 <meta name="author" content="Gidon Frischkorn">
 
-<title>Übung 7 - Inferenzstatistik – Übungen - VL: Statistik I</title>
+<title>Übung 9 - Gruppenvergleiche (metrische Variablen) – Übungen - VL: Statistik I</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -403,7 +403,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"# Schreiben Sie hier ihren Code um die Aufgaben zu lösen\n\n","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"# Herunterladen der Daten um sie lokal verfügbar zu machen\nurl <- \"https://unilu-vpf-statistik.github.io/uebung_statistik1/semester_data3.csv\"\ndownload.file(url, \"semester_data3.csv\")\n\n# Laden des Datensatzes\nsemester_data3 <- read.csv(\"semester_data3.csv\")\n\n# Anzeigen der ersten Zeilen des Datensatzes\nhead(semester_data3)\n\n# Schreiben Sie hier ihren Code um die Aufgaben zu lösen\n\n","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1730,7 +1730,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./exercise7.html">Übung 7</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./exercise9.html">Übung 9</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -1788,7 +1788,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercise7.html" class="sidebar-item-text sidebar-link active">
+  <a href="./exercise7.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Übung 7</span></a>
   </div>
 </li>
@@ -1800,7 +1800,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercise9.html" class="sidebar-item-text sidebar-link">
+  <a href="./exercise9.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Übung 9</span></a>
   </div>
 </li>
@@ -1814,7 +1814,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#wiederholung-vertiefung-hypothesentesten" id="toc-wiederholung-vertiefung-hypothesentesten" class="nav-link active" data-scroll-target="#wiederholung-vertiefung-hypothesentesten">Wiederholung &amp; Vertiefung: Hypothesentesten</a></li>
+  <li><a href="#wiederholung-vertiefung-parameterschätzung" id="toc-wiederholung-vertiefung-parameterschätzung" class="nav-link active" data-scroll-target="#wiederholung-vertiefung-parameterschätzung">Wiederholung &amp; Vertiefung: Parameterschätzung</a></li>
   <li><a href="#übungen" id="toc-übungen" class="nav-link" data-scroll-target="#übungen">Übungen</a></li>
   </ul>
 </nav>
@@ -2108,7 +2108,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Übung 7 - Inferenzstatistik</h1>
+<h1 class="title">Übung 9 - Gruppenvergleiche (metrische Variablen)</h1>
 <p class="subtitle lead">HS 2025</p>
 </div>
 
@@ -2132,27 +2132,43 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </header>
 
 
-<section id="wiederholung-vertiefung-hypothesentesten" class="level2">
-<h2 class="anchored" data-anchor-id="wiederholung-vertiefung-hypothesentesten">Wiederholung &amp; Vertiefung: Hypothesentesten</h2>
-<p>In dieser Übung werden wir Üben mit den Konzepten des Nullhypothesentests und des Binären Entscheidungskonzepts zu arbeiten. Wenn Sie die Grundlegenden Konzepte der Vorlesung nochmal wiederholen und Vertiefen wollen, dann empfehle ich Ihnen die folgenden Videos:</p>
+<section id="wiederholung-vertiefung-parameterschätzung" class="level2">
+<h2 class="anchored" data-anchor-id="wiederholung-vertiefung-parameterschätzung">Wiederholung &amp; Vertiefung: Parameterschätzung</h2>
+<p>In dieser Übung werden wir üben wie man von Hand und mit Hilfe von R einen t-test berechnet und die jeweiligen Ergebnisse interpretiert. Wenn Sie einige Inhalte der Vorlesung nochmal vertiefen wollen, oder nochmal eine ausführlichere Erklärung für die Anwendung des t-tests in R haben wollen, dann können Sie sich die folgenden Videos anschauen.</p>
 <ul>
-<li><a href="https://www.youtube.com/watch?v=bJm2pt-mq2c">Population Vs. Stichprobe</a></li>
-<li><a href="https://www.youtube.com/watch?v=1g3pCE_B12E">Grundlagen des Null-Hypothesentestens</a></li>
+<li><a href="https://www.youtube.com/watch?v=DEkPZv5ppHI">Vergleich z-Statistiken mit t-Statistiken</a></li>
+<li><a href="https://www.youtube.com/watch?v=7vcyjuSwfzI">Einstichproben t-test in R</a></li>
+<li><a href="https://www.youtube.com/watch?v=3Yz-XNRasGM">t-test für unabhängige Stichproben in R</a></li>
+<li><a href="https://www.youtube.com/watch?v=H15M_8gh1Ok">t-test für abhängige Stichproben in R</a></li>
 </ul>
-<p>Beachten Sie das einzelne Konzepte aus den Videos noch nicht vertieft in der Vorlesung behandelt wurden aber in den nächsten Sitzungen auch eingeführt werden. Insofern können Sie die Videos (insbesondere das Video zu Hypothesentests) als eine Vorbereitung auf die Nächsten Sitzungen nutzen.</p>
 </section>
 <section id="übungen" class="level2">
 <h2 class="anchored" data-anchor-id="übungen">Übungen</h2>
-<p>In den folgenden Übungen nutzen Sie keinen konkreten Datensatz, sondern werden anhand von Verteilungsannahmen und theoretischen Populationsparmaetern Hypothesen formulieren, Kritische Werte berechnen und Hypothesentests für Einzelfälle durchführen. Nutzen sie R dabei einfach als Taschenrechner.</p>
-<p>Falls Sie die Übungsfragen nicht mit R beantworten wollen, dann können Sie die hier gedruckte Tabelle der z-Werte der Verteilungsfunktion der Standardnormalverteilung nutzen um die Fragen zu beantworten.</p>
-<p>Beachten Sie, dass sie für die Nutzung der Tabelle der z-Werte ihre unstandardisierten Ergebnisse <span class="math inline">\(X\)</span>, für die wir in der Regel annehmen, dass sie einer Normalverteilung folgen, in <span class="math inline">\(z\)</span>-Werte transformieren müssen, die einer Standardnormalverteilung folgen.</p>
-<p><span class="math display">\[
-z = \frac{X - \mu}{\sigma}
-\]</span></p>
+<p>In den folgenden Übungen können Sie entweder den simulierten Datensatz <a href="semester_data3.csv">semester_data3.csv</a>) nutzen, oder Sie können die in den Aufgaben angegebenen Kennwerte die auf Basis des Datensatzes ausgerechnet wurden verwenden um die jeweilgen Tests von Hand zu rechnen. Der Datensatz enthält die Variablen: <code>geschlecht</code>, <code>nationalität</code>, <code>wohnort</code>, <code>alter</code>, <code>wissen_statistik_start</code>, <code>wissen_statistik_end</code> und <code>grösse</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(semester_data3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  geschlecht nationalität wohnort alter wissen_statistik_start
+1   weiblich      Schweiz    Bern  26.4                      1
+2   weiblich      Schweiz  Luzern  20.4                      3
+3   weiblich      Schweiz   Basel  22.6                      2
+4   weiblich      Schweiz    Bern  25.4                      2
+5   weiblich      Schweiz    Bern  24.0                      2
+6   weiblich      Schweiz     Zug  23.5                      4
+  wissen_statistik_ende grösse
+1                   3.0    159
+2                   3.5    151
+3                   2.0    164
+4                   1.5    162
+5                   1.0    151
+6                   3.5    162</code></pre>
+</div>
+</div>
+<p>Falls Sie die Übungsfragen nicht mit R beantworten wollen, dann können Sie die hier gedruckte Tabelle der p-Quantile der t-Verteilung nutzen um die Fragen zu beantworten.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="./images/zTabelle_Normalverteilung.png" class="img-fluid figure-img"></p>
-<figcaption>Tabelle der z-Werte für die Verteilungsfunktion der Standardnormalverteilung</figcaption>
+<p><img src="./images/pQuantile_tVerteilung.png" class="img-fluid figure-img"></p>
+<figcaption>Tabelle der p-Quantile der t-Verteilung</figcaption>
 </figure>
 </div>
 <p>Wie in den bisherigen Übungen finden Sie über den Übungsaufgaben die <code>webr</code> Konsole, die Ihnen das Schreiben und Durchführen von R Code direkt auf der Website ermöglicht. Wenn viele Studierenden die Übungen parallel machen, dann kann es sein, dass <code>webr</code> langsam wird.</p>
@@ -2166,83 +2182,161 @@ z = \frac{X - \mu}{\sigma}
 </blockquote>
 <div class="webex-question">
 <div class="webex-check webex-box">
-<p>Ein männlicher Patient einer Klinik mit Verdacht auf Magersucht hat ein Gewicht von 62.5kg. Das Durchschnittliche Gewicht von schweizer Männer liegt bei 84kg mit einer Standardabweichung von 9kg. Für Magersucht nehmen Sie einen Effekt von Cohen’s <span class="math inline">\(\delta\)</span> von -2 an. Beantworten Sie die folgenden Fragen für einen Test, ob der Patient ein kleineres GEwicht als die Population hat, nach dem binären Entscheidungskonzept mit einen Signifikanzniveau <span class="math inline">\(\alpha = 5\%\)</span>:</p>
-<ol type="1">
-<li>Was ist der kritische Wert auf der Skala des Gewichts <span class="math inline">\(X_{krit}\)</span> in kg?</li>
-<li>Was ist der <span class="math inline">\(p\)</span>-Wert für das beobachtete Gewicht oder extremere Ergebisse?</li>
-<li>Wie gross ist der <span class="math inline">\(\beta\)</span>-Fehler für diesen Test?</li>
-<li>Welchen Hypothese nehmen Sie auf Basis der berechneten Statistiken an?</li>
-</ol>
-<div id="webex-65b99c31e7cc854e2482d172f0e5328a" class="webex-checkboxgroup" data-answer="bQROCRVTHwA4">
-<label><input type="checkbox" autocomplete="off" name="65b99c31e7cc854e2482d172f0e5328a"><span>Der kritische Wert auf der Skala des Gewichts ist: <span class="math inline">\(X_{krit} \approx 69.2\)</span></span></label><label><input type="checkbox" autocomplete="off" name="65b99c31e7cc854e2482d172f0e5328a"><span>Der <span class="math inline">\(p\)</span>-Wert für das beobachtete Gewicht oder extremere Werte ist: <span class="math inline">\(p \approx .992\)</span></span></label><label><input type="checkbox" autocomplete="off" name="65b99c31e7cc854e2482d172f0e5328a"><span>Der <span class="math inline">\(\beta\)</span>-Fehler für den Test mit <span class="math inline">\(\alpha = 5\%\)</span> und Cohen’s <span class="math inline">\(\delta = -2\)</span> ist: <span class="math inline">\(\beta \approx .639\)</span></span></label><label><input type="checkbox" autocomplete="off" name="65b99c31e7cc854e2482d172f0e5328a"><span>Auf Basis der berechneten Statistiken verwerfen wir die Nullhypothese und nehmen die Alternativhypothese an.</span></label>
+<p>Sie wollen für die Stichprobe aus dem Datensatz <code>semester_data3.csv</code> testen, ob das Alter der Studierenden bedeutsam von dem Durchschnittlichen Alter aller Studierenden im Fach Psychologie <span class="math inline">\(\mu_0 = 23.5\)</span> abweicht. Der Datensatz enthälte Werte von <span class="math inline">\(N = 30\)</span> Studierenden. Der Mittelwert des Alters im Datensatz ist <span class="math inline">\(\bar{x} = 22.5\)</span> und der Populationsschätzer der Standardabweichung aus dem Datensatz ist <span class="math inline">\(\hat{\sigma} = 3.1\)</span>.</p>
+<p>Berechnen Sie den entsprechenden t-test um die zwei-seitige Hypothese zu prüfen, dass sich das Alter der Studierenden nicht bedeutsam von dem Wert <span class="math inline">\(\mu_0\)</span> unterscheidet. Kreuzen Sie an welche der folgenden Aussagen für den Test mit einem Signifikanzniveau von <span class="math inline">\(\alpha = .05\)</span> zutreffen.</p>
+<p><strong>Wichtig</strong>: Die Antworten beziehen sich auf die in der Aufgabe angegebenen gerundeten Werte. Wenn Sie den Test mit R auf Basis der Daten ausrechnen, werden Sie aufgrund von Rundungsfehlern auf leicht andere Werte kommen. Die Schlussfolgerung in Bezug auf die Signifikanz des Tests bleibt allerdings unverändert.</p>
+<div id="webex-343b0326f5e4421e87aa26da87df8efb" class="webex-checkboxgroup" data-answer="aAQfUxwCHgY7">
+<label><input type="checkbox" autocomplete="off" name="343b0326f5e4421e87aa26da87df8efb"><span>Der Betrage des kritische t-Werts liegt bei: <span class="math inline">\(|t_{krit}(\alpha = .05)| \approx |1.70|\)</span></span></label><label><input type="checkbox" autocomplete="off" name="343b0326f5e4421e87aa26da87df8efb"><span>Der Betrag des empirische t-Werts liegt bei <span class="math inline">\(|t_{emp}| = 1.767\)</span></span></label><label><input type="checkbox" autocomplete="off" name="343b0326f5e4421e87aa26da87df8efb"><span>Für den <span class="math inline">\(p\)</span>-Wert gilt, das <span class="math inline">\(p &lt; \alpha\)</span></span></label><label><input type="checkbox" autocomplete="off" name="343b0326f5e4421e87aa26da87df8efb"><span>Die Freiheitsgrade des Tests sind <span class="math inline">\(df = 28\)</span></span></label>
 </div>
 </div>
 <div class="webex-solution">
-<p>Zuerst sollten wir wieder die relevanten Grössen aus der Aufgabenstellung sammlen:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Werte aus der Aufgabe</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="dv">84</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="dv">9</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>X_emp <span class="ot">&lt;-</span> <span class="fl">62.5</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>coh_d <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Um den <strong>kritischen Wert auf der Skala des Gewichts</strong> zu bestimmen können wir erst den kritischen <span class="math inline">\(z\)</span>-Wert für <span class="math inline">\(\alpha = 5\%\)</span> bestimmen. Dies können wir anhand der Tabelle oder mit Hilfe der Quantilfunktion der Standardnormalverteilung machen. Dann können wir mit Hilfe des Populationsmittelwerts und der Standardabweichung der <span class="math inline">\(z\)</span>-Wert in den kritischen Wert auf der Skala des Gewichts bestimmen:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Kritischer Wert: Skala kg</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>z_krit <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">qnorm</span>(<span class="at">p =</span> .<span class="dv">05</span>),<span class="dv">3</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>X_krit <span class="ot">&lt;-</span> z_krit<span class="sc">*</span>sigma <span class="sc">+</span> mu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>in R können wir diesen Wert natürlich auch bestimmen in dem wir die Quantilfunktion mit dem genannten Mittelwert und der Standardbweichung aus der Aufgabe berechnen:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># nicht auf Basis der Standardnormalverteilung:</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>X_krit <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">qnorm</span>(<span class="at">p =</span> .<span class="dv">05</span>, <span class="at">mean =</span> mu, <span class="at">sd =</span> sigma),<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Um den <strong><span class="math inline">\(p\)</span>-Wert</strong> zu bestimmen, können wir das beobachtete Gewicht <span class="math inline">\(X_{emp}\)</span> als erstes in einen <span class="math inline">\(z\)</span>-Wert umrechnen und dann anhand der Verteilungsfunktion der Standardnormalverteilung bzw. der Tabelle bestimmen, wie hoch die Wahrscheinlichkeit für den beobachteten Wert oder extremere Werte ist. Dabei müssen wir beachten, dass wir dieses Mal eine Hypothese testen bei der wir prüfen ob das beobachtete Gewicht kleiner als das Gewicht in der Population ist, deshalb müssen wir die Fläche unter der Verteilung links von den beobachten Wert bestimmen:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># p-Wert</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>z_emp <span class="ot">&lt;-</span> <span class="fu">round</span>((X_emp <span class="sc">-</span> mu)<span class="sc">/</span>sigma,<span class="dv">3</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>p_emp <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">pnorm</span>(z_emp, <span class="at">lower.tail =</span> <span class="cn">TRUE</span>),<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>in <code>R</code> können wir das natürlich auch wieder direkt mit dem Mittelwert und der Standardabweichung aus der Aufgabenstellung machen:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># nicht auf Basis der Standardnormalverteilung:</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>p_emp <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">pnorm</span>(X_emp, <span class="at">mean =</span> mu, <span class="at">sd =</span> sigma),<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Zur bestimmung des <span class="math inline">\(\beta\)</span>-Fehlers müssen wir als erstes Bestimmen welchen <span class="math inline">\(z\)</span>-Wert der kritische Wert für das Signifikanzniveau <span class="math inline">\(\alpha = 5\%\)</span> hat: <span class="math inline">\(z_{H1} = z_{krit} - \delta\)</span>. Da wir alle Werte schon auf der Ebenen der Standardnormalverteilung haben, müssen wir dabei nicht durch die Standardabweichung teilen. Anhand diesen <span class="math inline">\(z_{H1}\)</span>-Wertes können wir nun den <span class="math inline">\(\beta\)</span>-Fehler bestimmen, indem wir die Wahrscheinlichkeit bestimmen den gleichen oder extremere Werte unter der <span class="math inline">\(H_1\)</span> zu beobachten. Dafür nutzen wir die Verteilungsfunktion der Standardnormalverteilung:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># beta-Fehler</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>z_H1 <span class="ot">&lt;-</span> z_krit <span class="sc">-</span> coh_d</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>beta <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(z_H1, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>mit <code>R</code> könnten wir dies wiederum direkt mit dem kritischen <span class="math inline">\(z\)</span>-Wert und einer Normalverteilung mit einem Mittelwert <span class="math inline">\(\mu = \delta\)</span> und einer Standardabweichung von 1 bestimmen:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># nicht auf Basis der Standardnormalverteilung</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>beta <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(z_krit, <span class="at">mean =</span> coh_d, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Beachten Sie, dass wir hier die Fläche über den kritischen Wert für die Verteilung unter der Alternativhypothese berechnen müssen. Deshalb müssen Sie den Wert den Sie aus der Tabelle ablesen noch von 1 abziehen: <span class="math inline">\(\beta = 1 - F(z_{krit})\)</span>; in <code>R</code> können wir das mit dem Argument <code>lower.tail = FALSE</code> direkt in der Verteilungsfunktion erreichen. Alternativ könnten Sie natürlich auch: <code>1 - pnorm(z_H1)</code> rechnen.</p>
+<p>Zur Durchführung des <span class="math inline">\(t\)</span>-Test müssen wir folgenden Schritte durchführen:</p>
+<ol type="1">
+<li>Bestimmung des kritischen <span class="math inline">\(t\)</span>-Werts für die ungerichtete Hypothese mit dem entsprechenden Signifikanzniveau</li>
+</ol>
+<p>Diesen Wert können wir direkt aus der Tabelle der <span class="math inline">\(p\)</span>-Quantile der <span class="math inline">\(t\)</span>-Verteilung die über den Übungsaufgaben gegeben ist ablesen.</p>
+<p>Dabei müssen wir beachten, dass der <span class="math inline">\(t\)</span>-Test <span class="math inline">\(df = N - 1 = 30 - 1 = 29\)</span> Freiheitsgrade hat und wir auf Grund der ungerichteten Hypothese das Signifikanzniveau halbieren müssen. Entsprechend müssen wir den <span class="math inline">\(t\)</span>-Wert für <span class="math inline">\(df = 29\)</span> und <span class="math inline">\(p = .975\)</span> aus der Tabelle ablesen. Dieser ist: <span class="math inline">\(t_{krit}(\alpha = .05) = 2.0452\)</span></p>
+<blockquote class="blockquote">
+<p>Der in der ersten Antwort angegebenen kritische <span class="math inline">\(t\)</span>-Wert wäre korrekt, wenn es sich um einen gerichteten Test handeln würde. Dann hätten wir in der Tabelle den <span class="math inline">\(t\)</span>-Wert für <span class="math inline">\(df = 29\)</span> und <span class="math inline">\(p = .95\)</span> ablesen müssen der gerundet <span class="math inline">\(t_{krit}(\alpha = .05) \approx 1.70\)</span> ist.</p>
+</blockquote>
+<ol start="2" type="1">
+<li>Bestimmung des empirischen <span class="math inline">\(t\)</span>-Wertes auf Basis der in der Frage angegebene Grössen</li>
+</ol>
+<p>Den empirischen <span class="math inline">\(t\)</span>-Wert können wir mit Hilfe des Stichproben-Mittelwerts <span class="math inline">\(\bar{x} = 22.5\)</span>, des Populationsschätzers der Standardabweichung <span class="math inline">\(\hat{\sigma} = 3.1\)</span> und dem Referenzwert <span class="math inline">\(\mu_0 = 23.5\)</span> berechnen. Der empirische <span class="math inline">\(t\)</span>-Wert ergibt sich dabei aus:</p>
+<p><span class="math display">\[
+t_{emp} = \frac{\bar{x} - \mu_0}{\hat{\sigma}_{\bar{x}}} = \frac{\bar{x} - \mu_0}{\frac{\hat{\sigma}_x}{\sqrt{N}}} = \frac{22.5 - 23.5}{\frac{3.1}{\sqrt{30}}} = \frac{-1}{0.566} = -1.767
+\]</span></p>
+<p>Der empirische <span class="math inline">\(t\)</span>-Wert beträgt damit: <span class="math inline">\(t_{emp} \approx -1,767\)</span></p>
+<ol start="3" type="1">
+<li>Bestimmung des <span class="math inline">\(p\)</span>-Wertes anhand des empirischen <span class="math inline">\(t\)</span>-Wertes</li>
+</ol>
+<p>Anhand der Tabelle der <span class="math inline">\(p\)</span>-Quantile der <span class="math inline">\(t\)</span>-Verteilung können wir bestimmen, dass der <span class="math inline">\(p-Wert\)</span> zwischen <span class="math inline">\(.10 &gt; p &gt; .05\)</span> liegt.</p>
+<p>Dabei sehen wir, dass der empirische <span class="math inline">\(t\)</span>-Wert zwischen den <span class="math inline">\(t\)</span>-Werte für <span class="math inline">\(p = .95\)</span> und <span class="math inline">\(p = .975\)</span> liegt. Für einen ungerichteten Test berechnet sich der <span class="math inline">\(p\)</span>-Wert aus <span class="math inline">\(p = 2 \cdot (1 - F_t(|t_{emp}|, df))\)</span> da wir beachten müssen, dass der <span class="math inline">\(t\)</span>-Wert den kritischen Wert im negativen wie auch positiven Bereich überschreiten kann.</p>
+<p>Daraus ergibt sich, dass der <span class="math inline">\(p\)</span>-Wert für den berechneten empirischen <span class="math inline">\(t\)</span>-Wert zwischen .10 und .05 liegen muss und damit nicht kleiner also unser Signifikanzniveau von <span class="math inline">\(\alpha = .05\)</span> ist.</p>
+<p>Auf Basis der Tabelle können wir den <span class="math inline">\(p\)</span>-Wert leider nicht genauer bestimmen. Aber wir sehen auch anhand des Vergleichs des kritischen <span class="math inline">\(t\)</span>-Werts mit dem empirischen <span class="math inline">\(t\)</span>-Wert, dass der Test nicht signifikant ist: <span class="math inline">\(|t_{krit}| \approx 2.05 &gt; |t_{emp}| \approx 1.77\)</span></p>
+<p><strong>in <code>R</code></strong></p>
+<p>Wenn Sie den <span class="math inline">\(t\)</span>-Test in <code>R</code> direkt mit dem Datensatz ausrechnen, dann müssen Sie folgenden Befehl eingeben:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(semester_data3<span class="sc">$</span>alter, </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mu =</span> <span class="fl">23.5</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">alternative =</span> <span class="st">"two.sided"</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">var.equal =</span> <span class="cn">TRUE</span>) <span class="co"># ist für Einstichproben t-test nnicht unbedingt nötig</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>als Output sollten Sie dann folgendes Ergebnis erhalten:</p>
+<p><img src="./images/results_OneSample.png" class="img-fluid"></p>
+<p>Die Werte imn Output unterscheiden sich auf Grund von Rundungsfehlern von den oben berechneten Werten kommen aber zum gleichen Ergebnis.</p>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
-<p>Eine zufällig ausgewählte Psychologiestudentin (Stichprobe mit N = 1) hat eine Körpergrösse von 178.7 cm. Sie wissen, dass schweizerische Psychologiestudentinnen genauso gross sind wie alle Schweizerinnen (<span class="math inline">\(\mu = 165\)</span>; <span class="math inline">\(\sigma = 7\)</span>).</p>
-<p>Beantworten Sie die folgeden Fragen für einen Nullhypothesentest, ob die ausgewählte Studentin Grösser als die Population der schweizerischen Psychologiestudentinnen ist:</p>
-<ol type="1">
-<li>Was ist der kritische <span class="math inline">\(z\)</span>-Wert zur Ablehung der Nullhypothese, für ein Signifikanzniveau von <span class="math inline">\(\alpha = 1\%\)</span>?</li>
-<li>Was ist der empirische <span class="math inline">\(z\)</span>-Wert der beobachteten Grösse der zufällig ausgewählten Studentin?</li>
-<li>Was ist der p-Wert die beobachtete Grösse oder extremere Werte zu beobachten?</li>
-<li>Was schliessen Sie aus den berechnetenen Statistiken?</li>
-</ol>
-<div id="webex-eddffa24e99e7a482ecbe3c42d7451ff" class="webex-checkboxgroup" data-answer="PlRIV0pQHgQ4">
-<label><input type="checkbox" autocomplete="off" name="eddffa24e99e7a482ecbe3c42d7451ff"><span>Der kritische <span class="math inline">\(z\)</span>-Wert zur Ablehnung der Nullhypothese bei einem Signifikanzniveau ist: <span class="math inline">\(z_{krit} \approx 181.3\)</span></span></label><label><input type="checkbox" autocomplete="off" name="eddffa24e99e7a482ecbe3c42d7451ff"><span>Der empirische <span class="math inline">\(z\)</span>-Wert der beobachteten Grösse ist: <span class="math inline">\(z_{emp} \approx 1.957\)</span></span></label><label><input type="checkbox" autocomplete="off" name="eddffa24e99e7a482ecbe3c42d7451ff"><span>Der <span class="math inline">\(p\)</span>-Wert für die beobachtete Grösse oder extremere Werte beträgt: <span class="math inline">\(p \approx .025\)</span></span></label><label><input type="checkbox" autocomplete="off" name="eddffa24e99e7a482ecbe3c42d7451ff"><span>Auf Basis der berechneten Statistiken verwerfen wir die Nullhypothese.</span></label>
+<p>Sie wollen auf Basis der Daten im Datensatz <code>semester_data3</code> testen, ob sich die Grösse zwischen weiblichen und männlichen Studierenden unterscheidet. Sie haben dafür folgende Werte Berechnet:</p>
+<ul>
+<li>Mittelwerte der Grösse nach Geschlecht: <span class="math inline">\(\bar{x}_W = 159.04\)</span>; <span class="math inline">\(\bar{x}_M = 179.00\)</span></li>
+<li>Populationsschätzer der Standardabweichung: <span class="math inline">\(\hat{\sigma}_W = 7.11\)</span>; <span class="math inline">\(\hat{\sigma}_M = 6.12\)</span></li>
+<li>Gruppengrösse in der Daten: <span class="math inline">\(N_W = 25\)</span>; <span class="math inline">\(N_M = 5\)</span></li>
+</ul>
+<p>Sie testen eine gerichtete Hypothese die Prüft, ob männliche Studierende grösser als weibliche Studierende sind. Sie nutzen dafür ein Signifikanzniveau von <span class="math inline">\(\alpha = .05\)</span>. Beurteilen Sie für den Berechneten Test welche der folgenden Aussagen zutreffen.</p>
+<div id="webex-ae478681f24d9730823f1fb550bd5b9c" class="webex-checkboxgroup" data-answer="OlQYBxQHFAA7">
+<label><input type="checkbox" autocomplete="off" name="ae478681f24d9730823f1fb550bd5b9c"><span>Bei den Test handelt es sich um einen <span class="math inline">\(t\)</span>-Test für unabhängige Stichproben</span></label><label><input type="checkbox" autocomplete="off" name="ae478681f24d9730823f1fb550bd5b9c"><span>Der kritische <span class="math inline">\(t\)</span>-Wert liegt bei <span class="math inline">\(t_{krit}(\alpha = .05) = 1.6991\)</span></span></label><label><input type="checkbox" autocomplete="off" name="ae478681f24d9730823f1fb550bd5b9c"><span>Der empirische <span class="math inline">\(t\)</span>-Wert liegt bei <span class="math inline">\(t_{emp} = 2.84\)</span></span></label><label><input type="checkbox" autocomplete="off" name="ae478681f24d9730823f1fb550bd5b9c"><span>Der <span class="math inline">\(p\)</span>-Wert ist kleiner als das Signifikanzniveau <span class="math inline">\(\alpha\)</span></span></label>
 </div>
 </div>
 <div class="webex-solution">
-<p>Zuerst sollten wir die relevanten Grössen aus der Aufgabenstellung sammlen:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Werte aus der Aufgabe</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="dv">165</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="dv">7</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>X_emp <span class="ot">&lt;-</span> <span class="fl">178.7</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Für die erste Frage müssen wir die Quantilfunktion der Standardnormalverteilung nutzen um den kritischen z-Wert für ein Signifikanzniveau von 1% bestimmen. In diesem Fall handelt es sich wie in der Vorlesung um eine gerichtete Hypothese, da wir testen ob die zufällig ausgewählte Studentin grösser ist als die Population. Entsprechen berechnen wir den kritischen <span class="math inline">\(z\)</span>-Wert:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># kritischer Wert für 1% Signifikanz</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>z_krit <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">qnorm</span>(<span class="at">p =</span> .<span class="dv">99</span>),<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Mit Hilfe der <span class="math inline">\(z\)</span>-Transformation können wir aus der beobachteten Grösse <code>X_emp</code> den empirischen <span class="math inline">\(z\)</span>-Wert berechnen:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># empirischer z-Wert</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>z_emp <span class="ot">&lt;-</span> <span class="fu">round</span>((X_emp <span class="sc">-</span> mu)<span class="sc">/</span>sigma,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Mit dem empirischen <span class="math inline">\(z\)</span>-Wert und der Verteilungsfunktion der Standardnormalverteilung bzw. der Tabelle können wir nun den <span class="math inline">\(p\)</span>-Wert bestimmen:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># p-Wert </span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>p_emp <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">pnorm</span>(z_emp, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>),<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>In <code>R</code> haben wir natürlich auch die Möglichkeit den kritischen Wert <span class="math inline">\(X_{krit}\)</span> auf der Skala der Zufallsvariable <span class="math inline">\(X\)</span> zu berechnen, und den <span class="math inline">\(p\)</span>-Wert direkt auf Basis des beobachteten Werts der Zufallsvariable <span class="math inline">\(X_{emp}\)</span> zu bestimmen:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ohne Standardnormalverteilung / Tabelle</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>X_krit <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">qnorm</span>(<span class="at">p =</span> .<span class="dv">99</span>, <span class="at">mean =</span> mu, <span class="at">sd =</span> sigma),<span class="dv">1</span>)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>p_emp <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">pnorm</span>(X_emp, <span class="at">mean =</span> mu, <span class="at">sd =</span> sigma, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>),<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Auf Basis der berechneten Statistiken kommen wir zu dem Schluss, dass wir die Nullhypothese nicht verwerfen. Dazu können Sie einerseits den Betrag des emprischen <span class="math inline">\(z\)</span>Werts mit dem des kritischen <span class="math inline">\(z\)</span>-Werts vergleichen. Ein Test ist signifikant, wenn gilt: <span class="math inline">\(|z_{emp}| &gt; |z_{krit}|\)</span>. Dies ist in diesem Fall nicht erfüllt, da: <span class="math inline">\(|z_{emp}| = 1.957 &lt; |z_{krit}| = 2.326\)</span>.</p>
-<p>Andereseits können Sie prüfen, ob der berechnete <span class="math inline">\(p\)</span>-Wert kleiner als das gewählte Signifikanzniveau <span class="math inline">\(\alpha = 1\%\)</span> ist: <span class="math inline">\(p &lt; .01\)</span> Dies ist ebenfalls nicht der Fall: <span class="math inline">\(p = .025 &gt; .01\)</span>. Entsprechend können wir die Nullhypothese nicht verwerfen.</p>
+<p>Bei dem zu berechnenden <span class="math inline">\(t\)</span>-Test handelt es sich um einen <span class="math inline">\(t\)</span>-Test für <em>unabhängige</em> Stichproben.</p>
+<p>Den kritischen <span class="math inline">\(t\)</span>-Wert können wir also auf Basis des gegebenen Signifinkanzniveaus <span class="math inline">\(\alpha = .05\)</span> und den Freiheitsgraden <span class="math inline">\(df = N_W + N_M - 2\)</span> bestimmen. Aus der Tabelle der <span class="math inline">\(p\)</span>-Quantile lesen wir also aus der Zeile mit <span class="math inline">\(df = 28\)</span> und der Spalte für <span class="math inline">\(p = 1 - \alpha = .95\)</span> den kritischen <span class="math inline">\(t\)</span>-Wert ab: <span class="math inline">\(t_{krit}(\alpha = .05) = 1.7011\)</span></p>
+<blockquote class="blockquote">
+<p>Der in der zweiten Antwort angegebene <span class="math inline">\(t\)</span>-Wert ist für <span class="math inline">\(df = 29\)</span>. Diese Freiheitsgrade würden aber nur für einen <em>einstichproben</em> <span class="math inline">\(t\)</span>-Test oder den <span class="math inline">\(t\)</span>-Test für <em>abhängige</em> Stichproben stimmen</p>
+</blockquote>
+<p>Nun müssen wir auf Basis der gegebenen Werte den empirischen <span class="math inline">\(t\)</span>-Wert berechnen. Dabei müssen wir die folgenden Schritte durchführen:</p>
+<ol type="1">
+<li>Berechnung der gepoolten Varianz</li>
+</ol>
+<p><span class="math display">\[
+\hat{\sigma}_{inn}^2 = \frac{\hat{\sigma}_W^2\cdot(N_W-1) + \hat{\sigma}_M^2\cdot(N_M-1)}{(N_W-1)+(N_M-1)} =
+\frac{7.11^2 \cdot 24 + 6.12^2 \cdot 4}{(25-1)+(5-1)} = \frac{1213.25 + 149.82}{28} = 48.68
+\]</span></p>
+<ol start="2" type="1">
+<li>Berechnung des Standardfehlers der Mittelwertsdifferenz</li>
+</ol>
+<p><span class="math display">\[
+\hat{\sigma}_{\bar{x}_M - \bar{x}_W} = \sqrt{\frac{\hat{\sigma}_{inn}^2}{N_W} + \frac{\hat{\sigma}_{inn}^2}{N_M}} =
+\sqrt{\frac{48.68}{25} + \frac{48.68}{5}} = \sqrt{1.95 + 9.74} = 3.42
+\]</span></p>
+<ol start="3" type="1">
+<li>Berechnung des empirischen <span class="math inline">\(t\)</span>-Wertes</li>
+</ol>
+<p><span class="math display">\[
+t_{emp} = \frac{\bar{x}_M - \bar{x}_w}{\hat{\sigma}_{\bar{x}_M - \bar{x}_W}} = \frac{179.00 - 159.04}{3.42} = \frac{19.96}{3.42} = 5.84
+\]</span></p>
+<p>Auf Basis des empirischen <span class="math inline">\(t\)</span>-Werts können wir nun anhand der Tabelle der <span class="math inline">\(p\)</span>-Quantile auch den <span class="math inline">\(p\)</span>-Wert bestimmen. Dabei sehen wir, dass der empirische <span class="math inline">\(t\)</span>-Wert grösser ist als der <span class="math inline">\(t\)</span>-Wert in der letzten Spalte für das <span class="math inline">\(p\)</span>-Quantil <span class="math inline">\(p = .995\)</span> <span class="math inline">\(\rightarrow t = 2.7633\)</span>, daraus können wir schliessen, dass der <span class="math inline">\(p\)</span>-Wert für die beobachtete Mittelwertsdifferent kleiner als <span class="math inline">\(p &lt; 1 - .995 = .005\)</span> ist.</p>
+<p><strong>in <code>R</code></strong></p>
+<p>Wenn Sie den <span class="math inline">\(t\)</span>-Test in <code>R</code> direkt mit dem Datensatz ausrechnen, dann müssen Sie folgenden Befehl eingeben:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(grösse <span class="sc">~</span> geschlecht,     <span class="co"># formelschreibweise: av ~ uv</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">alternative =</span> <span class="st">"greater"</span>, <span class="co"># gerichtete Hypothese</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">data =</span> semester_data3,   <span class="co"># Datensatz in dem die in der Formel angegebenen Variablen enthalten sind</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">var.equal =</span> <span class="cn">TRUE</span>).       <span class="co"># Annahme gleicher Varianzen</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>als Output sollten Sie dann folgendes Ergebnis erhalten:</p>
+<p><img src="./images/results_TwoSample.png" class="img-fluid"></p>
+<p>Die Werte imn Output unterscheiden sich auf Grund von Rundungsfehlern von den oben berechneten Werten kommen aber zum gleichen Ergebnis.</p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>Sie haben in R mit der Funktion <code>t.test</code> berechnet ob sich das Alter zwischen den Weiblichen und Männlichen Studierenden in den Daten des Datensatzes <code>semester_data3</code> bedeutsam voneinander unterscheidet. Sie haben dabei folgenden Output erhalten.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/results_Interpretation.png" class="img-fluid figure-img"></p>
+<figcaption>Output des in R berechneten t-Tests</figcaption>
+</figure>
+</div>
+<p>Beurteilen, welche der folgenden Aussagen auf Basis des Outputs korrekt sind.</p>
+<div id="webex-46bce9dabbd162fcb278625bf85515a5" class="webex-checkboxgroup" data-answer="bwZOUkkISFBOUkgBaw==">
+<label><input type="checkbox" autocomplete="off" name="46bce9dabbd162fcb278625bf85515a5"><span>Bei dem Test handelt es sich um einen t-Test für anbhängige Stichproben</span></label><label><input type="checkbox" autocomplete="off" name="46bce9dabbd162fcb278625bf85515a5"><span>Der empirische t-Wert liegt bei: <span class="math inline">\(t_{emp} \approx -.135\)</span></span></label><label><input type="checkbox" autocomplete="off" name="46bce9dabbd162fcb278625bf85515a5"><span>Der <span class="math inline">\(p\)</span>-Wert für den Test ist grösser als <span class="math inline">\(\alpha = .05\)</span></span></label><label><input type="checkbox" autocomplete="off" name="46bce9dabbd162fcb278625bf85515a5"><span>Das Mittlere Alter in der Gruppe der Männer ist <span class="math inline">\(\bar{x}_{M} = 22.3\)</span></span></label><label><input type="checkbox" autocomplete="off" name="46bce9dabbd162fcb278625bf85515a5"><span>Die Menge an Beobchatungen in der Gruppe der Frauen ist <span class="math inline">\(N = 28\)</span></span></label><label><input type="checkbox" autocomplete="off" name="46bce9dabbd162fcb278625bf85515a5"><span>Der t-Test hat eine gerichtete Hypotheses getestet</span></label>
+</div>
+</div>
+<div class="webex-solution">
+<ol type="1">
+<li><p>Der Titel des Outputs <code>Two Sample t-test</code> zeigt an, dass es sich um einen t-Test für unabhämngige Stichproben handelt. Für einen Einstichproben t-Test lautet der Title <code>One Sample t-test</code> und für einen t-Test für abhängige Stichproben <code>Paired Sample t-test</code>.</p></li>
+<li><p>Der empirische <span class="math inline">\(t\)</span>-Wert kann aus der zweiten Zeile des Outputs abgelesen werden und beträgt: <span class="math inline">\(t_{emp} = -0.13566\)</span></p></li>
+<li><p>Der exakte <span class="math inline">\(p\)</span>-Wert liegt bei <span class="math inline">\(p = 0.8931\)</span> was ebenfalls aus der zweiten Zeile des Outputs abgelesen werden kann. Dieser ist auch klar grösser als ein Signifkanzniveau von <span class="math inline">\(\alpha = .05\)</span></p></li>
+<li><p>Aus den letzten Zeilen des Outputs können Sie die Mittelwerte in den beiden Gruppen ablesen. Dabei liegt der Mittelwert der Männer bei <span class="math inline">\(\bar{x}_M = 22.3\)</span> und der Mittelwert der Frauen bei <span class="math inline">\(\bar{x}_F = 22.508\)</span></p></li>
+<li><p>Die Menge an Beobachtungen in den einzelnen Gruppen lässt sich aus dem Output nicht ablesen. Sie können allerdings auf Basis des Tests <span class="math inline">\(\rightarrow\)</span> <span class="math inline">\(t\)</span>-Test für unabhängige Stichproben; und den Freiheitsgrade <span class="math inline">\(df = 28\)</span> schliessen, dass die Gesamtstichprobengrösse der Gruppe der Männer und Frauen bei <span class="math inline">\(N = 30\)</span> liegt. Das folgt aus der Formel <span class="math inline">\(df = (N_1 -1) + (N_2 - 1) = N_1 + N_2 -2\)</span> für die Berechnung der Freiheitsgrade beim <span class="math inline">\(t\)</span>-Test für unabhängige Stichproben.</p></li>
+<li><p>Aus der dritten Zeile, die die <code>alternative hypothesis</code> angibt, können Sie ablesen, dass der Test ungerichtet durchgeführt wurde und die Alternativhypothese <span class="math inline">\(H_1: \mu1 \neq \mu2\)</span> testet, die keine Richtung anzeigt.</p></li>
+</ol>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>Sie wollen testen, ob sich die Einschätzung des eigenen Wissens im Bezug auf das Fach Statistik von Beginn zum Ende des Semesters bei den Studierenden verändert hat. Dafür wollen Sie einen <span class="math inline">\(t\)</span>-Test für abhängige Stichproben rechnen. Aus den Daten haben Sie folgenden Kennwerte für die Differenz zwischen dem eingeschätzten Wissen am Ende <code>wissen_statistik_ende</code> und dem eingeschätzten Wissen am Anfang <code>wissen_statistik_start</code> berechnet:</p>
+<ul>
+<li>Mittelwert der Differenz: <span class="math inline">\(\bar{x}_D = 0.32\)</span></li>
+<li>Populationsschätzer der Standardabweichung der Differenz: <span class="math inline">\(\hat{\sigma}_D = 0.78\)</span></li>
+</ul>
+<p>Berechnen Sie den <span class="math inline">\(t\)</span>-Test für abhängige Stichproben aus den <span class="math inline">\(N = 30\)</span> Beobachtungen und nehmen Sie ein Signifikanzniveau von <span class="math inline">\(\alpha = .01\)</span> an. Sie testen die gerichtete Hypothese, dass das eingeschätzte Wissen am Ende des Semesters grösser als am Anfang ist</p>
+<div id="webex-955f207a5e5f5969799144169271ea8b" class="webex-checkboxgroup" data-answer="YgUZVh4BG1Bo">
+<label><input type="checkbox" autocomplete="off" name="955f207a5e5f5969799144169271ea8b"><span>Bei den Test handelt es sich um einen Einstichproben <span class="math inline">\(t\)</span>-Test</span></label><label><input type="checkbox" autocomplete="off" name="955f207a5e5f5969799144169271ea8b"><span>Der kritische <span class="math inline">\(t\)</span>-Wert liegt bei <span class="math inline">\(t_{krit}(\alpha = .01) = 1.6991\)</span></span></label><label><input type="checkbox" autocomplete="off" name="955f207a5e5f5969799144169271ea8b"><span>Der empirische <span class="math inline">\(t\)</span>-Wert liegt bei <span class="math inline">\(t_{emp} = 2.29\)</span></span></label><label><input type="checkbox" autocomplete="off" name="955f207a5e5f5969799144169271ea8b"><span>Der <span class="math inline">\(p\)</span>-Wert ist grösser als das Signifikanzniveau <span class="math inline">\(\alpha\)</span></span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>Bei diesem <span class="math inline">\(t\)</span>-Test handelt es sich um einen <span class="math inline">\(t\)</span>-Test für <em>abhängige</em> Stichproben. Die Freiheitsgrade des Test berechnen sich entsprechend als <span class="math inline">\(df = N-1 = 30-1 = 29\)</span></p>
+<p>Mit den Freiheitsgraden und dem Signifikanzniveau von <span class="math inline">\(\alpha = .01\)</span> können wir den kritischen <span class="math inline">\(t\)</span>-Wert aus der Tabelle der <span class="math inline">\(p\)</span>-Quantile ablesen. Dafür lesen wir den Wert aus der Zeile für <span class="math inline">\(df = 29\)</span> und dem <span class="math inline">\(p\)</span>-Quantil für <span class="math inline">\(p = 1 - \alpha = .99\)</span> ab. Dieser Werte ist <span class="math inline">\(t_{krit} (\alpha = .01) = 2.46\)</span></p>
+<blockquote class="blockquote">
+<p>Der in der zweiten Antwortalternative angegebene kritische <span class="math inline">\(t\)</span>-Wert ist für ein Signifikanzniveau von <span class="math inline">\(\alpha = .05\)</span>. Hier ist aber ein Signifkanzniveau von <span class="math inline">\(\alpha = .01\)</span> gewählt worden.</p>
+</blockquote>
+<p>Auf Basis der gegebenen Informationen aus der Aufgabe können wir auch den empirischen <span class="math inline">\(t\)</span>-Wert berechnen. Für den <span class="math inline">\(t\)</span>-Test für abhängige Stichproben ergibt sich dieser aus:</p>
+<p><span class="math display">\[
+t_{emp} = \frac{\bar{x}_D}{\hat{\sigma}_{\bar{x}_d}}= \frac{\bar{x}_D}{\frac{\hat{\sigma}_{D}}{\sqrt{N}}} = \frac{0.32}{\frac{0.78}{\sqrt{30}}} =
+\frac{0.32}{0.14} = 2.29
+\]</span></p>
+<p>Mit dem empirischen <span class="math inline">\(t\)</span>-Wert können wir aus der Tabelle der <span class="math inline">\(p\)</span>-Quantile auch das Intervall bestimmen in dem der <span class="math inline">\(p\)</span>-Wert liegt. Für die Zeile von <span class="math inline">\(df = 29\)</span> liegt <span class="math inline">\(t_{emp}\)</span> zwischen dem Wert des <span class="math inline">\(p\)</span>-Quantils <span class="math inline">\(p = .975 \rightarrow t = 2.04\)</span> und dem Wert des <span class="math inline">\(p\)</span>-Quantils für <span class="math inline">\(p = .99 \rightarrow t = 2.48\)</span>. Entsprechend ist der <span class="math inline">\(p\)</span>-Wert kleiner als .025 aber grösser als .01.</p>
+<p><strong>in <code>R</code></strong></p>
+<p>Wenn Sie den <span class="math inline">\(t\)</span>-Test in <code>R</code> direkt mit dem Datensatz ausrechnen, dann müssen Sie folgenden Befehl eingeben:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">x =</span> semester_data3<span class="sc">$</span>wissen_statistik_ende,</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> semester_data3<span class="sc">$</span>wissen_statistik_start,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">paired =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">alpha =</span> .<span class="dv">01</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">alternative =</span> <span class="st">"greater"</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">var.equal =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>als Output sollten Sie dann folgendes Ergebnis erhalten:</p>
+<p><img src="./images/results_pairedSample_alpha01.png" class="img-fluid"></p>
+<p>Die Werte imn Output unterscheiden sich auf Grund von Rundungsfehlern von den oben berechneten Werten kommen aber zum gleichen Ergebnis.</p>
 </div>
 </div>
 <hr>

@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Gidon Frischkorn">
 
-<title>Übungen - VL: Statistik I</title>
+<title>standarderror_heightmale – Übungen - VL: Statistik I</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,26 +20,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-960cc9eac5395d1658253b679c30d018.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-960cc9eac5395d1658253b679c30d018.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,8 +103,37 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light">
@@ -80,7 +143,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Übungen - VL: Statistik I</span>
     </a>
   </div>
@@ -91,15 +154,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Übungen</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Formelsammlung.html"> 
+    <a class="nav-link" href="../Formelsammlung.html"> 
 <span class="menu-text">Formelsammlung</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">Hilfe &amp; Kontakt</span></a>
   </li>  
 </ul>
@@ -113,7 +176,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Übungen - VL: Statistik I</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -135,56 +198,50 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercise1.html" class="sidebar-item-text sidebar-link">
+  <a href="../exercise1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Übung 1</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercise2.html" class="sidebar-item-text sidebar-link">
+  <a href="../exercise2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Übung 2</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercise3.html" class="sidebar-item-text sidebar-link">
+  <a href="../exercise3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Übung 3</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercise4.html" class="sidebar-item-text sidebar-link">
+  <a href="../exercise4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Übung 4</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercise5.html" class="sidebar-item-text sidebar-link">
+  <a href="../exercise5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Übung 5</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercise6.html" class="sidebar-item-text sidebar-link">
+  <a href="../exercise6.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Übung 6</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercise7.html" class="sidebar-item-text sidebar-link">
+  <a href="../exercise7.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Übung 7</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercise8.html" class="sidebar-item-text sidebar-link">
+  <a href="../exercise8.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Übung 8</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./exercise9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Übung 9</span></a>
   </div>
 </li>
     </ul>
@@ -197,64 +254,94 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#einrichtung-von-r-rstudio-auf-ihrem-pc-laptop" id="toc-einrichtung-von-r-rstudio-auf-ihrem-pc-laptop" class="nav-link active" data-scroll-target="#einrichtung-von-r-rstudio-auf-ihrem-pc-laptop">Einrichtung von R &amp; RStudio auf ihrem PC / Laptop</a>
+  <li><a href="#question" id="toc-question" class="nav-link active" data-scroll-target="#question">Question</a>
   <ul class="collapse">
-  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a></li>
-  <li><a href="#r-studio" id="toc-r-studio" class="nav-link" data-scroll-target="#r-studio">R Studio</a></li>
+  <li><a href="#answerlist" id="toc-answerlist" class="nav-link" data-scroll-target="#answerlist">Answerlist</a></li>
   </ul></li>
+  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution">Solution</a></li>
+  <li><a href="#meta-information" id="toc-meta-information" class="nav-link" data-scroll-target="#meta-information">Meta-information</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Übungen - VL: Statistik I</h1>
-<p class="subtitle lead">HS 2025</p>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Gidon Frischkorn </p>
-          </div>
-  </div>
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p>Auf dieser Website finden Sie die Übungen zur Vorlesung “Statistik I” des Bachelors Psychologie an der Fakultät für Verhaltenswissenschaften und Psychologie der Universität Luzern. Die Übungen sind im Selbststudium parallel zur Vorlesung durchzuführen. Die Inhalte und Lösungen der Übungen gehören wie der Inhalt der Vorlesung selbst zum Prüfungsstoff.</p>
-<p>In der Regel dauert die Lösung einer Übung für eine Vorlesung zwischen 90 und 120 Minuten. Inhalte der Übungen sind neben vertiefenden Inhalten, wie zum Beispiel Videos oder Online-Artikeln, Aufgaben mit der Statistik Software R.</p>
-<section id="einrichtung-von-r-rstudio-auf-ihrem-pc-laptop" class="level2">
-<h2 class="anchored" data-anchor-id="einrichtung-von-r-rstudio-auf-ihrem-pc-laptop">Einrichtung von R &amp; RStudio auf ihrem PC / Laptop</h2>
-<section id="r" class="level3">
-<h3 class="anchored" data-anchor-id="r">R</h3>
-<p>Ich empfehle Ihnen direkt zum Start des Semester die Statistik-Software R auf Ihrem PC oder Laptop zu installieren. Für Windows folgen sie dafür bitte diesem Link: <a href="https://cran.r-project.org/bin/windows/base/" class="uri">https://cran.r-project.org/bin/windows/base/</a> und für Mac bitte diesem Link: <a href="https://cran.r-project.org/bin/macosx/" class="uri">https://cran.r-project.org/bin/macosx/</a>. Auf neueren Mac Rechnern müssen sie in der Regel die ARM-Version für Mac installieren. Diese ist für Chipsätze der M-Generationen (M1 / M2 / M2 Pro / etc.) optimiert.</p>
-<p>R selbst ist keine Software sondern eine Programmiersprache ähnlich wie C, C++, oder JavaScript. Die üblichen R Pakete installieren zwar auch ein Graphical User Interfance (GUI) zur Nutzung von R. Dennoch ist die Verwendung einer Integrated Developer Environment (IDE) empfehlenswert um effizient und strukturiert mit R arbeiten zu können.</p>
+<section id="question" class="level1">
+<h1>Question</h1>
+<p>Sie wollen Testen, ob männliche Studierenden statistisch bedeutsam grösser sind als weibliche Studierende. Sie wählen dafür ein Signifkanzniveau von <span class="math inline">\(\alpha = .01\)</span>. Sie wissen, dass die Grösse von Frauen im Alter von 18 bis 30 in der Schweiz einer Normalverteilung mit dem Mittelwert <span class="math inline">\(\mu_W = 165\)</span> und der Standardabweichung <span class="math inline">\(\sigma_W = 7\)</span> folgt und nehmen an, dass das auch für weibliche Studierende gilt.</p>
+<p>Für die Planung der Untersuchung nehmen Sie an das männliche Studierende einer Normalverteilung mit Mittelwert <span class="math inline">\(\mu_M = 175\)</span> und Standardabweichung <span class="math inline">\(\sigma_M = 7\)</span> folgen. Wie gross muss ihre Stichprobe sein, damit das nach unten geschlossene Konfidenzintervall des Mittelwerts der Stichprobe der männlichen Studierenden, den Mittelwert der Verteilung der Frauen nicht einschliesst? Nehmen Sie dafür an, dass der beobachtete Mittelwert <span class="math inline">\(\bar{x}\)</span> dem Mittelwert der Populationsverteilung der Männer entspricht.</p>
+<section id="answerlist" class="level2">
+<h2 class="anchored" data-anchor-id="answerlist">Answerlist</h2>
+<ul>
+<li>Die Stichprobegrässe muss <span class="math inline">\(N = 3\)</span> gross sein.</li>
+<li>Die Stichprobegrässe muss <span class="math inline">\(N = 10\)</span> gross sein.</li>
+<li>Die Stichprobegrässe muss <span class="math inline">\(N = 23\)</span> gross sein.</li>
+<li>Mit den angegebenen Werten kann man die erforderliche Stichprobengrösse nicht berechnen.</li>
+</ul>
 </section>
-<section id="r-studio" class="level3">
-<h3 class="anchored" data-anchor-id="r-studio">R Studio</h3>
-<p>Nachdem Sie R installiert haben, empfehle ich Ihnen R Studio als “Integrated Developer Environment” (IDE) zu installieren. R Studio können sie unter dem folgenden Link herunterladen: <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a></p>
-<hr>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://www.unilu.ch/fakultaeten/vpf/uebersicht/"><img src="images/Logo_UniLu.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300"></a></p>
-</figure>
-</div>
-
-
 </section>
+<section id="solution" class="level1">
+<h1>Solution</h1>
+<p>Um diese Frage zu beantworten müssen wir als erstes die Formel zur Berechnung der unteren Grenze eines nach unten Geschlossenen einseitigen Konfidenzintervalls betrachten:</p>
+<p><span class="math display">\[
+\bar{x}_{M} - z_{0.99} \cdot \frac{\sigma_{x_M}}{\sqrt{N}}
+\]</span></p>
+<p>Für die Planung muss dieser Wert grösser sein als der Mittelwert der Grössenverteilung der Frauen <span class="math inline">\(\mu_W\)</span></p>
+<p><span class="math display">\[
+\bar{x}_{M} - z_{0.99} \cdot \frac{\sigma_{x_M}}{\sqrt{N}} &gt; \mu_W
+\]</span></p>
+<p>Um nach der gefragten Stichprobengrösse <span class="math inline">\(N\)</span> aufzulösen müssen wir die Ungleichung nach <span class="math inline">\(N\)</span> auflösen:</p>
+<ol type="1">
+<li>Zu beiden Seiten <span class="math inline">\(z_{0.99}\frac{\sigma_{x_M}}{\sqrt{N}}\)</span> addieren.</li>
+</ol>
+<p><span class="math display">\[
+\bar{x}_{M}  &gt; \mu_W + z_{0.99} \cdot \frac{\sigma_{x_M}}{\sqrt{N}};
+\]</span></p>
+<ol start="2" type="1">
+<li>Von beiden Seiten <span class="math inline">\(\mu_W\)</span> abziehen.</li>
+</ol>
+<p><span class="math display">\[
+\bar{x}_{M}- \mu_W  &gt; z_{0.99} \cdot \frac{\sigma_{x_M}}{\sqrt{N}};
+\]</span></p>
+<ol start="3" type="1">
+<li>Beide Seiten durch <span class="math inline">\(z_{0.99} \cdot \sigma_{x_M}\)</span> teilen</li>
+</ol>
+<p><span class="math display">\[
+\frac{\bar{x}_{M}- \mu_W}{z_{0.99} \cdot \sigma_{x_M}}  &gt; \frac{1}{\sqrt{N}};
+\]</span></p>
+<ol start="4" type="1">
+<li>Für beide Seiten den Kehrwert nehmen</li>
+</ol>
+<p><span class="math display">\[
+\frac{z_{0.99} \cdot \sigma_{x_M}}{\bar{x}_{M}- \mu_W}  &gt; \sqrt{N};
+\]</span></p>
+<ol start="5" type="1">
+<li>Beide Seiten quadrieren.</li>
+</ol>
+<p><span class="math display">\[
+\left(\frac{z_{0.99} \cdot \sigma_{x_M}}{\bar{x}_{M}- \mu_W}\right)^2 &gt; N
+\]</span></p>
+<p>In diese umgeformte Ungleichung können wir nun die Werte aus der Aufgabenstellung, sowie den <span class="math inline">\(z\)</span>-Wert für die gewünscht Konfidenz einsetzen. Den <span class="math inline">\(z\)</span>-Wert können Sie entweder aus der Tabelle ablesen, indem sie den Wert für einen Wert grösser als .99 suchen. Oder Sie nutzen die Quantilfunktion in R für das gewünschte Konfidenzniveua <code>qnorm(p = .99)</code></p>
+<p>Wenn Sie die Berechnung in <code>R</code> durchführen ergibt sich dabei:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>z_confidence <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="at">p =</span> .<span class="dv">99</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sigma_male <span class="ot">&lt;-</span> <span class="dv">7</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>mean_male <span class="ot">&lt;-</span> <span class="dv">175</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>mu_female <span class="ot">&lt;-</span> <span class="dv">165</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>required_sample <span class="ot">&lt;-</span> ((z_confidence <span class="sc">*</span> sigma_male)<span class="sc">/</span>(mean_male <span class="sc">-</span> mu_female))<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># aufrunden um das ungleichheitszeichen zu beachten</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ceil</span>(required_sample)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Damit kommen sie auf eine erfordeliche Stichprobengrösse von <span class="math inline">\(N = 3\)</span>. Sie müssen dabei jedoch beachten, dass wir hier angenommen haben, dass der Mittelwert der gezogenen Stichprobe dem Populationsmittelwert der Männer entspricht. In der Praxis ist es gut möglich, dass der Stichprobenmittelwert unter dem Populationsmittelwert liegt.</p>
+</section>
+<section id="meta-information" class="level1">
+<h1>Meta-information</h1>
+<p>exname: se_height extype: schoice exsolution: 1000 exshuffle: FALSE</p>
+
+
 </section>
 
 </main> <!-- /main -->
