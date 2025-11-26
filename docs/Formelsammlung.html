@@ -249,7 +249,11 @@ window.Quarto = {
   <li><a href="#bayes-theorem" id="toc-bayes-theorem" class="nav-link" data-scroll-target="#bayes-theorem">Bayes Theorem</a></li>
   <li><a href="#wahrscheinlichkeitsverteilungen" id="toc-wahrscheinlichkeitsverteilungen" class="nav-link" data-scroll-target="#wahrscheinlichkeitsverteilungen">Wahrscheinlichkeitsverteilungen</a></li>
   </ul></li>
-  <li><a href="#inferenzstatistik-definitionen" id="toc-inferenzstatistik-definitionen" class="nav-link" data-scroll-target="#inferenzstatistik-definitionen">Inferenzstatistik: Definitionen</a></li>
+  <li><a href="#inferenzstatistik-definitionen" id="toc-inferenzstatistik-definitionen" class="nav-link" data-scroll-target="#inferenzstatistik-definitionen">Inferenzstatistik: Definitionen</a>
+  <ul class="collapse">
+  <li><a href="#hypothesentests" id="toc-hypothesentests" class="nav-link" data-scroll-target="#hypothesentests">Hypothesentests</a></li>
+  <li><a href="#parameterschätzung" id="toc-parameterschätzung" class="nav-link" data-scroll-target="#parameterschätzung">Parameterschätzung</a></li>
+  </ul></li>
   <li><a href="#gruppenvergleiche" id="toc-gruppenvergleiche" class="nav-link" data-scroll-target="#gruppenvergleiche">Gruppenvergleiche</a></li>
   <li><a href="#fehler-fragen" id="toc-fehler-fragen" class="nav-link" data-scroll-target="#fehler-fragen">Fehler &amp; Fragen</a></li>
   </ul></li>
@@ -563,6 +567,98 @@ Z = \frac{X - \mu}{\sigma}; \quad X_p = Z_p \cdot \sigma + \mu
 </section>
 <section id="inferenzstatistik-definitionen" class="level2">
 <h2 class="anchored" data-anchor-id="inferenzstatistik-definitionen">Inferenzstatistik: Definitionen</h2>
+<section id="hypothesentests" class="level3">
+<h3 class="anchored" data-anchor-id="hypothesentests">Hypothesentests</h3>
+<section id="nullhypothesentests-fischer" class="level4">
+<h4 class="anchored" data-anchor-id="nullhypothesentests-fischer">Nullhypothesentests: Fischer</h4>
+<p><strong>Ungerichtete</strong> Nullhypothese: <span class="math inline">\(H_0: \hat{\theta} = \theta_0\)</span></p>
+<p><span class="math inline">\(\rightarrow\)</span> Der Populationsschätzer eines Paramters <span class="math inline">\(\hat{\theta}\)</span> unterscheidet sich nicht von einem Populationswert unter der Nullhypothese <span class="math inline">\(\theta_0\)</span>. Typischerweise wird <span class="math inline">\(\theta_0 = 0\)</span> angenommen.</p>
+<p><strong>Gerichtete</strong> Nullhypothese: <span class="math inline">\(H_0: \hat{\theta} \leq \theta_0\)</span> oder <span class="math inline">\(H_0: \hat{\theta} \geq \theta_0\)</span></p>
+<p><span class="math inline">\(\rightarrow\)</span> Der Populationsschätzer eines Paramters <span class="math inline">\(\hat{\theta}\)</span> ist kleiner oder gleich bzw. grösser oder gleich einem Populationswert unter der Nullhypothese <span class="math inline">\(\theta_0\)</span>. Typischerweise wird <span class="math inline">\(\theta_0 = 0\)</span> angenommen.</p>
+<p><strong>Kritischer</strong> Testwert</p>
+<p><span class="math inline">\(\rightarrow\)</span> Wert einer Teststatistik <span class="math inline">\(T\)</span> (z.Bsp: <span class="math inline">\(z\)</span> oder <span class="math inline">\(t\)</span>), der gerade noch mit der Nullhypothese vereinbar ist. Für ein bestimmtest Signifikanzniveau <span class="math inline">\(\alpha\)</span> gilt:</p>
+<p><span class="math display">\[
+\text{gerichtete Hypothese:} \quad |T_{krit}| = F^{-1}(p = 1-\alpha/2)
+\]</span></p>
+<p><span class="math display">\[
+\text{ungerichtete Hypothese:} \quad |T_{krit}| = F^{-1}(p = 1-\alpha)
+\]</span></p>
+<p>mit der Quantilfunktion <span class="math inline">\(F^{-1}\)</span> der entsprechenden Verteilung des jeweiligen Teststatistik.</p>
+<p><strong><span class="math inline">\(p\)</span>-Wert</strong></p>
+<p>Wahrscheinlichkeit ein bestimmtes Ergebnis bzw. eine bestimmte empirische Teststatistik <span class="math inline">\(T_emp\)</span> oder extremere Ergebnisse unter Annahme der Nullhypothese zu beobachten.</p>
+<p><span class="math display">\[
+\text{gerichtete Hypothese:} \quad p = 2\cdot (1 - F(|T_{emp})|)
+\]</span></p>
+<p><span class="math display">\[
+\text{ungerichtete Hypothese:} \quad p = 1 - F(|T_{emp}|)
+\]</span></p>
+<p>mit der Verteilungsfunktion <span class="math inline">\(F\)</span> der entsprechenden Verteilung der jeweiligen Teststatistik.</p>
+</section>
+<section id="binäres-entscheidungskonzept-neyman-pearson" class="level4">
+<h4 class="anchored" data-anchor-id="binäres-entscheidungskonzept-neyman-pearson">Binäres Entscheidungskonzept: Neyman &amp; Pearson</h4>
+<p>Nutzt die gleichen Hypothesen wie das Konzept des Nullhypothesentests von Fischer ergänzt diese aber mit einer komplementären Alternativhypothese <span class="math inline">\(H_1\)</span></p>
+<p>bei <strong>Ungerichteter</strong> Nullhypothese, gilt: <span class="math inline">\(H_1: \hat{\theta} \neq \theta_0\)</span></p>
+<p><span class="math inline">\(\rightarrow\)</span> Der Populationsschätzer eines Paramters <span class="math inline">\(\hat{\theta}\)</span> unterscheidet sich von einem Populationswert unter der Nullhypothese <span class="math inline">\(\theta_0\)</span>. Typischerweise wird <span class="math inline">\(\theta_0 = 0\)</span> angenommen.</p>
+<p>bei <strong>Gerichteter</strong> Nullhypothese: <span class="math inline">\(H_1: \hat{\theta} &gt; \theta_0\)</span> oder <span class="math inline">\(H_0: \hat{\theta} &lt; \theta_0\)</span></p>
+<p><span class="math inline">\(\rightarrow\)</span> Der Populationsschätzer eines Paramters <span class="math inline">\(\hat{\theta}\)</span> ist kleiner bzw. grösser als der Populationswert unter der Nullhypothese <span class="math inline">\(\theta_0\)</span>. Typischerweise wird <span class="math inline">\(\theta_0 = 0\)</span> angenommen.</p>
+<p><strong><span class="math inline">\(\alpha\)</span>-Fehler</strong> oder Fehler 1. Art</p>
+<p><span class="math inline">\(\rightarrow\)</span> Wahrscheinlichkeit mit der ich die Alternativhypothese annehme, obwohl in der Population die Nullhypothese gilt.</p>
+<p><strong><span class="math inline">\(\beta\)</span>-Fehler</strong> oder Fehler 2. Art</p>
+<p><span class="math inline">\(\rightarrow\)</span> Wahrscheinlichkeit mit der ich die Nullhypothese annehme, obwohl in der Population die Alternativhypothese gilt.</p>
+<p>Der <span class="math inline">\(\beta\)</span>-Fehler kann nur unter Annahme eines bestimmten Effekts <span class="math inline">\(\epsilon\)</span> bestimmt werden.</p>
+</section>
+</section>
+<section id="parameterschätzung" class="level3">
+<h3 class="anchored" data-anchor-id="parameterschätzung">Parameterschätzung</h3>
+<section id="zentraler-grenzwertsatz" class="level4">
+<h4 class="anchored" data-anchor-id="zentraler-grenzwertsatz">Zentraler Grenzwertsatz</h4>
+<p>Für eine Stichprobe von <span class="math inline">\(N\)</span> unabhängigen Werten einer Zufallsvariable <span class="math inline">\(X\)</span> aus einer beliebigen Wahrscheinlichkeitsverteilung <span class="math inline">\(\mathcal{D}\)</span> mit endlicher Varianz <span class="math inline">\((0 &lt; \sigma^2 &lt; \infty)\)</span>: <span class="math inline">\(X \sim \mathcal{D}(\theta)\)</span> gilt mit wachsendem <span class="math inline">\(N\)</span> <span class="math inline">\((N \rightarrow \infty)\)</span> konvergiert:</p>
+<ol type="a">
+<li>die Summe der beobachteten Werte <span class="math inline">\(\sum X\)</span> zu einer Normalverteilung <span class="math inline">\(\mathcal{N}\)</span></li>
+<li>mit dem Erwartungswert: <span class="math inline">\(\mu_{\sum} = N \cdot \mu_{\mathcal{D}}\)</span></li>
+<li>und der Standardabweichung: <span class="math inline">\(\sigma_{\sum} = \sqrt{N} \cdot \sigma_{\mathcal{D}}\)</span></li>
+</ol>
+</section>
+<section id="standardfehler-des-mittelwerts" class="level4">
+<h4 class="anchored" data-anchor-id="standardfehler-des-mittelwerts">Standardfehler des Mittelwerts</h4>
+<p>Für eine Stichprobe mit <span class="math inline">\(N\)</span> Werten einer Normalverteilte Variable <span class="math inline">\(X \sim \mathcal{N}(\mu_X, \sigma_X)\)</span> ist der Standarfehler des Mittelwerts <span class="math inline">\(\bar{X} = \frac{\sum X}{N}\)</span>:</p>
+<p><span class="math display">\[
+\sigma_{\bar{x}} = \frac{\sigma_X}{\sqrt{N}}
+\]</span></p>
+<p>Für eine Stichprobe mit <span class="math inline">\(N\)</span> Werte einer Zufallsvariable <span class="math inline">\(Y\)</span>, die einer beliebigen Wahrscheinlichkeitsverteilung <span class="math inline">\(\mathcal{D}\)</span> mit endlicher Varianz (<span class="math inline">\(0 &lt; \sigma^2 &lt; \infty\)</span>) folgt, konvergiert der Standardfehler des Mittelwerts <span class="math inline">\(\bar{y} = \frac{\sum Y}{N}\)</span> mit wachsender Stichprobengrösse <span class="math inline">\(N \rightarrow \infty\)</span> gegen:</p>
+<p><span class="math display">\[
+\sigma_{\bar{y}} = \frac{\sigma_Y}{\sqrt{N}}
+\]</span></p>
+</section>
+<section id="standardfehler-des-medians" class="level4">
+<h4 class="anchored" data-anchor-id="standardfehler-des-medians">Standardfehler des Medians</h4>
+<p>Für eine Stichprobe mit <span class="math inline">\(N\)</span> Werten einer Normalverteilte Variable <span class="math inline">\(X \sim \mathcal{N}(\mu_X, \sigma_X)\)</span> ist der Standarfehler des Medians:</p>
+<p><span class="math display">\[
+\sigma_{Md} = 1.253 \cdot \frac{\sigma_X}{\sqrt{N}}
+\]</span></p>
+</section>
+<section id="konfidenzintervalle" class="level4">
+<h4 class="anchored" data-anchor-id="konfidenzintervalle">Konfidenzintervalle</h4>
+<p>bei <strong>bekannten</strong> Populationsparametern einer Zufallsvariable <span class="math inline">\(X\)</span> aus einer Normalverteilten Variable: <span class="math inline">\(X \sim \mathcal{N}(\mu_X, \sigma_X)\)</span> berechnet sich das Konfidenzintervall, für die Konfidenz <span class="math inline">\((1-\alpha)\)</span> mit Hilfe der <span class="math inline">\(z\)</span>-Werte:</p>
+<p>mit <em>auf beiden Seiten geschlossenen</em> Grenzen, berechnen sich die Grenzen:</p>
+<p><span class="math display">\[
+\mu  \pm z_{1-\alpha/2} * \sigma
+\]</span></p>
+<p>für <em>nach unten</em> oder <em>nach oben</em> geschlossene Grenzen, berechnet sich die Grenze:</p>
+<p><span class="math display">\[
+\mu  \pm z_{1-\alpha} * \sigma
+\]</span></p>
+<p>bei <strong>unbekannten</strong> Populationsparametern einer Zufallsvariable <span class="math inline">\(X\)</span> aus einer Normalverteilten Variable: <span class="math inline">\(X \sim \mathcal{N}(\mu_X, \sigma_X)\)</span> berechnet sich das Konfidenzintervall, für die Konfidenz <span class="math inline">\((1-\alpha)\)</span> mit Hilfe der <span class="math inline">\(t\)</span>-Werte aus <span class="math inline">\(t(df = N-1,0,1)\)</span> und der Stichprobengrösse <span class="math inline">\(N\)</span> aus der die Populationsparameter geschätzt werden:</p>
+<p>mit <em>auf beiden Seiten geschlossenen</em> Grenzen, berechnen sich die Grenzen:</p>
+<p><span class="math display">\[
+\hat{\mu}  \pm t_{1-\alpha/2}(df = N-1) * \hat{\sigma} = \bar{x} \pm t_{1-\alpha/2}(df = N-1) \cdot \frac{s_X}{(N-1)}
+\]</span></p>
+<p>für <em>nach unten</em> oder <em>nach oben</em> geschlossene Grenzen, berechnet sich die Grenze:</p>
+<p><span class="math display">\[
+\hat{\mu}  \pm t_{1-\alpha}(df = N-1) * \hat{\sigma} = \bar{x} \pm t_{1-\alpha}(df = N-1) \cdot \frac{s_X}{(N-1)}
+\]</span></p>
+</section>
+</section>
 </section>
 <section id="gruppenvergleiche" class="level2">
 <h2 class="anchored" data-anchor-id="gruppenvergleiche">Gruppenvergleiche</h2>

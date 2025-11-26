@@ -326,7 +326,135 @@ $$
 Z = \frac{X - \mu}{\sigma}; \quad X_p = Z_p \cdot \sigma + \mu
 $$
 
+
+
 ## Inferenzstatistik: Definitionen
+
+### Hypothesentests
+
+#### Nullhypothesentests: Fischer
+
+**Ungerichtete** Nullhypothese: $H_0: \hat{\theta} = \theta_0$
+
+$\rightarrow$ Der Populationsschätzer eines Paramters $\hat{\theta}$ unterscheidet sich nicht von einem Populationswert unter der Nullhypothese $\theta_0$. Typischerweise wird $\theta_0 = 0$ angenommen.
+
+**Gerichtete** Nullhypothese: $H_0: \hat{\theta} \leq \theta_0$ oder $H_0: \hat{\theta} \geq \theta_0$
+
+$\rightarrow$ Der Populationsschätzer eines Paramters $\hat{\theta}$ ist kleiner oder gleich bzw. grösser oder gleich einem Populationswert unter der Nullhypothese $\theta_0$. Typischerweise wird $\theta_0 = 0$ angenommen.
+
+**Kritischer** Testwert
+
+$\rightarrow$ Wert einer Teststatistik $T$ (z.Bsp: $z$ oder $t$), der gerade noch mit der Nullhypothese vereinbar ist. Für ein bestimmtest Signifikanzniveau $\alpha$ gilt:
+
+$$
+\text{gerichtete Hypothese:} \quad |T_{krit}| = F^{-1}(p = 1-\alpha/2) 
+$$
+
+$$
+\text{ungerichtete Hypothese:} \quad |T_{krit}| = F^{-1}(p = 1-\alpha)
+$$
+
+mit der Quantilfunktion $F^{-1}$ der entsprechenden Verteilung des jeweiligen Teststatistik.
+
+**$p$-Wert**
+
+Wahrscheinlichkeit ein bestimmtes Ergebnis bzw. eine bestimmte empirische Teststatistik $T_emp$ oder extremere Ergebnisse unter Annahme der Nullhypothese zu beobachten.
+
+$$
+\text{gerichtete Hypothese:} \quad p = 2\cdot (1 - F(|T_{emp})|) 
+$$
+
+$$
+\text{ungerichtete Hypothese:} \quad p = 1 - F(|T_{emp}|)
+$$
+
+mit der Verteilungsfunktion $F$ der entsprechenden Verteilung der jeweiligen Teststatistik.
+
+#### Binäres Entscheidungskonzept: Neyman & Pearson
+
+Nutzt die gleichen Hypothesen wie das Konzept des Nullhypothesentests von Fischer ergänzt diese aber mit einer komplementären Alternativhypothese $H_1$
+
+bei **Ungerichteter** Nullhypothese, gilt: $H_1: \hat{\theta} \neq \theta_0$
+
+$\rightarrow$ Der Populationsschätzer eines Paramters $\hat{\theta}$ unterscheidet sich von einem Populationswert unter der Nullhypothese $\theta_0$. Typischerweise wird $\theta_0 = 0$ angenommen.
+
+bei **Gerichteter** Nullhypothese: $H_1: \hat{\theta} > \theta_0$ oder $H_0: \hat{\theta} < \theta_0$
+
+$\rightarrow$ Der Populationsschätzer eines Paramters $\hat{\theta}$ ist kleiner bzw. grösser als der Populationswert unter der Nullhypothese $\theta_0$. Typischerweise wird $\theta_0 = 0$ angenommen.
+
+**$\alpha$-Fehler** oder Fehler 1. Art
+
+$\rightarrow$ Wahrscheinlichkeit mit der ich die Alternativhypothese annehme, obwohl in der Population die Nullhypothese gilt.
+
+**$\beta$-Fehler** oder Fehler 2. Art
+
+$\rightarrow$ Wahrscheinlichkeit mit der ich die Nullhypothese annehme, obwohl in der Population die Alternativhypothese gilt.
+
+Der $\beta$-Fehler kann nur unter Annahme eines bestimmten Effekts $\epsilon$ bestimmt werden.
+
+
+### Parameterschätzung
+
+#### Zentraler Grenzwertsatz
+
+Für eine Stichprobe von $N$ unabhängigen Werten einer Zufallsvariable $X$ aus einer beliebigen Wahrscheinlichkeitsverteilung $\mathcal{D}$ mit endlicher Varianz $(0 < \sigma^2 < \infty)$: $X \sim \mathcal{D}(\theta)$
+gilt mit wachsendem $N$ $(N \rightarrow \infty)$ konvergiert:
+
+a) die Summe der beobachteten Werte $\sum X$ zu einer Normalverteilung $\mathcal{N}$
+b) mit dem Erwartungswert: $\mu_{\sum} = N \cdot \mu_{\mathcal{D}}$
+c) und der Standardabweichung: $\sigma_{\sum} = \sqrt{N} \cdot \sigma_{\mathcal{D}}$
+
+#### Standardfehler des Mittelwerts
+
+Für eine Stichprobe mit $N$ Werten einer Normalverteilte Variable $X \sim \mathcal{N}(\mu_X, \sigma_X)$ ist der Standarfehler des Mittelwerts $\bar{X} = \frac{\sum X}{N}$:
+
+$$
+\sigma_{\bar{x}} = \frac{\sigma_X}{\sqrt{N}}
+$$
+
+Für eine Stichprobe mit $N$ Werte einer Zufallsvariable $Y$, die einer beliebigen Wahrscheinlichkeitsverteilung $\mathcal{D}$ mit endlicher Varianz ($0 < \sigma^2 < \infty$) folgt, konvergiert der Standardfehler des Mittelwerts $\bar{y} = \frac{\sum Y}{N}$ mit wachsender Stichprobengrösse $N \rightarrow \infty$ gegen:
+
+$$
+\sigma_{\bar{y}} = \frac{\sigma_Y}{\sqrt{N}}
+$$
+
+#### Standardfehler des Medians
+
+Für eine Stichprobe mit $N$ Werten einer Normalverteilte Variable $X \sim \mathcal{N}(\mu_X, \sigma_X)$ ist der Standarfehler des Medians:
+
+$$
+\sigma_{Md} = 1.253 \cdot \frac{\sigma_X}{\sqrt{N}}
+$$
+
+#### Konfidenzintervalle
+
+bei **bekannten** Populationsparametern einer Zufallsvariable $X$ aus einer Normalverteilten Variable: $X \sim \mathcal{N}(\mu_X, \sigma_X)$ berechnet sich das Konfidenzintervall, für die Konfidenz $(1-\alpha)$ mit Hilfe der $z$-Werte:
+
+mit *auf beiden Seiten geschlossenen* Grenzen, berechnen sich die Grenzen:
+
+$$
+\mu  \pm z_{1-\alpha/2} * \sigma
+$$
+
+für *nach unten* oder *nach oben* geschlossene Grenzen, berechnet sich die Grenze:
+
+$$
+\mu  \pm z_{1-\alpha} * \sigma
+$$
+
+bei **unbekannten** Populationsparametern einer Zufallsvariable $X$ aus einer Normalverteilten Variable: $X \sim \mathcal{N}(\mu_X, \sigma_X)$ berechnet sich das Konfidenzintervall, für die Konfidenz $(1-\alpha)$ mit Hilfe der $t$-Werte aus $t(df = N-1,0,1)$ und der Stichprobengrösse $N$ aus der die Populationsparameter geschätzt werden:
+
+mit *auf beiden Seiten geschlossenen* Grenzen, berechnen sich die Grenzen:
+
+$$
+\hat{\mu}  \pm t_{1-\alpha/2}(df = N-1) * \hat{\sigma} = \bar{x} \pm t_{1-\alpha/2}(df = N-1) \cdot \frac{s_X}{(N-1)}
+$$
+
+für *nach unten* oder *nach oben* geschlossene Grenzen, berechnet sich die Grenze:
+
+$$
+\hat{\mu}  \pm t_{1-\alpha}(df = N-1) * \hat{\sigma} = \bar{x} \pm t_{1-\alpha}(df = N-1) \cdot \frac{s_X}{(N-1)}
+$$
 
 ## Gruppenvergleiche
 
