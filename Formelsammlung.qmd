@@ -458,7 +458,66 @@ $$
 
 ## Gruppenvergleiche
 
+### Metrische Variablen
 
+#### Einstichproben $t$-Test
+
+für eine Stichprobe mit $N$ Werten aus einer Normalverteilten Variable: $X \sim \mathcal{N}(\mu_X, \sigma_X^2)$, berechnet sich die Teststatistik des Einstichproben $t$-Tests:
+
+$$
+t_{emp} = \frac{\hat{\mu}_X - \mu_0}{\hat{\sigma}_{\hat{\mu}_X}}  = 
+\frac{\bar{x} - \mu_0}{\hat{\sigma}_{\bar{x}}}
+$$
+
+mit:
+
+$$
+\sigma_{\bar{x}} = \frac{\hat{\sigma}_X}{\sqrt{N}}
+$$
+
+und den Freiheitsgraden $df = N-1$
+
+#### $t$-Test für *unabhängige* Stichproben
+
+für unabhängige Stichproben aus zwei Gruppen $i = 1,2$ mit $N_1 \& N_2$ Werten, die einer Normalverteilung folgen: $X_{ip} \sim \mathcal{N}(\mu_i, \sigma_i^2)$, berechnet sich die Teststatistik des $t$-Tests für unabhämngige Stichproben folgendermassen:
+
+$$
+t_{emp} = \frac{\hat{\mu}_1 - \hat{\mu}_2}{\hat{\sigma}_{\hat{\mu}_1 - \hat{\mu}_2}} = 
+\frac{\bar{x_1} - \bar{x_2}}{\hat{\sigma}_{\bar{x}_1 - \bar{x}_2}}
+$$
+
+mit:
+
+$$
+\sigma_{\bar{x}_1 - \bar{x}_2}^2 = \sqrt{\frac{\hat{\sigma}_{inn}^2}{N_1} + \frac{\hat{\sigma}_{inn}^2}{N_2}}
+$$
+
+und: 
+
+$$
+\hat{\sigma}_{inn}^2 = \frac{\hat{\sigma}_1^2 \cdot(N_1 -1) + \hat{\sigma}_2^2 \cdot(N_2-1)}{(N_1 -1) + (N_2 - 1)}
+$$
+
+
+und den Freiheitsgraden $df = N_1 + N_2 - 2 = (N_1 -1) + (N_2 - 1)$
+
+**Beachten Sie**: Die Reihenfolge mit der die Differenz der Mittelwerte berechnet wirkt ist in der Regel nicht relevant. Sie müssen nur darauf achten die gerichteten Hypothesen entsprechend zu spezifizieren.
+
+#### $t$-Test für *abhängige* Stichproben
+
+für abhängige Stichproben mit $N$ Werten, deren Differenz $X_D = X_1 - X_2$ einer Normalverteilung folgt: $X_D \sim \mathcal{N}(\mu_D, \sigma_D^2)$, berechnet sich die Teststatistik des $t$-Tests für abhängige Stichproben:
+
+$$
+t_{emp} = \frac{\hat{\mu}_D}{\hat{\sigma}_{\mu_D}} = \frac{\bar{x}_D}{\hat{\sigma}_{\bar{x}_D}}
+$$
+
+mit:
+
+$$
+\sigma_{\bar{x}_D} = \frac{\hat{\sigma}_{X_D}}{\sqrt{N}}
+$$
+
+und den Freiheitsgraden $df = N-1$
 
 ## Fehler & Fragen
 

@@ -254,7 +254,10 @@ window.Quarto = {
   <li><a href="#hypothesentests" id="toc-hypothesentests" class="nav-link" data-scroll-target="#hypothesentests">Hypothesentests</a></li>
   <li><a href="#parameterschätzung" id="toc-parameterschätzung" class="nav-link" data-scroll-target="#parameterschätzung">Parameterschätzung</a></li>
   </ul></li>
-  <li><a href="#gruppenvergleiche" id="toc-gruppenvergleiche" class="nav-link" data-scroll-target="#gruppenvergleiche">Gruppenvergleiche</a></li>
+  <li><a href="#gruppenvergleiche" id="toc-gruppenvergleiche" class="nav-link" data-scroll-target="#gruppenvergleiche">Gruppenvergleiche</a>
+  <ul class="collapse">
+  <li><a href="#metrische-variablen" id="toc-metrische-variablen" class="nav-link" data-scroll-target="#metrische-variablen">Metrische Variablen</a></li>
+  </ul></li>
   <li><a href="#fehler-fragen" id="toc-fehler-fragen" class="nav-link" data-scroll-target="#fehler-fragen">Fehler &amp; Fragen</a></li>
   </ul></li>
   </ul>
@@ -662,6 +665,52 @@ Z = \frac{X - \mu}{\sigma}; \quad X_p = Z_p \cdot \sigma + \mu
 </section>
 <section id="gruppenvergleiche" class="level2">
 <h2 class="anchored" data-anchor-id="gruppenvergleiche">Gruppenvergleiche</h2>
+<section id="metrische-variablen" class="level3">
+<h3 class="anchored" data-anchor-id="metrische-variablen">Metrische Variablen</h3>
+<section id="einstichproben-t-test" class="level4">
+<h4 class="anchored" data-anchor-id="einstichproben-t-test">Einstichproben <span class="math inline">\(t\)</span>-Test</h4>
+<p>für eine Stichprobe mit <span class="math inline">\(N\)</span> Werten aus einer Normalverteilten Variable: <span class="math inline">\(X \sim \mathcal{N}(\mu_X, \sigma_X^2)\)</span>, berechnet sich die Teststatistik des Einstichproben <span class="math inline">\(t\)</span>-Tests:</p>
+<p><span class="math display">\[
+t_{emp} = \frac{\hat{\mu}_X - \mu_0}{\hat{\sigma}_{\hat{\mu}_X}}  =
+\frac{\bar{x} - \mu_0}{\hat{\sigma}_{\bar{x}}}
+\]</span></p>
+<p>mit:</p>
+<p><span class="math display">\[
+\sigma_{\bar{x}} = \frac{\hat{\sigma}_X}{\sqrt{N}}
+\]</span></p>
+<p>und den Freiheitsgraden <span class="math inline">\(df = N-1\)</span></p>
+</section>
+<section id="t-test-für-unabhängige-stichproben" class="level4">
+<h4 class="anchored" data-anchor-id="t-test-für-unabhängige-stichproben"><span class="math inline">\(t\)</span>-Test für <em>unabhängige</em> Stichproben</h4>
+<p>für unabhängige Stichproben aus zwei Gruppen <span class="math inline">\(i = 1,2\)</span> mit <span class="math inline">\(N_1 \&amp; N_2\)</span> Werten, die einer Normalverteilung folgen: <span class="math inline">\(X_{ip} \sim \mathcal{N}(\mu_i, \sigma_i^2)\)</span>, berechnet sich die Teststatistik des <span class="math inline">\(t\)</span>-Tests für unabhämngige Stichproben folgendermassen:</p>
+<p><span class="math display">\[
+t_{emp} = \frac{\hat{\mu}_1 - \hat{\mu}_2}{\hat{\sigma}_{\hat{\mu}_1 - \hat{\mu}_2}} =
+\frac{\bar{x_1} - \bar{x_2}}{\hat{\sigma}_{\bar{x}_1 - \bar{x}_2}}
+\]</span></p>
+<p>mit:</p>
+<p><span class="math display">\[
+\sigma_{\bar{x}_1 - \bar{x}_2}^2 = \sqrt{\frac{\hat{\sigma}_{inn}^2}{N_1} + \frac{\hat{\sigma}_{inn}^2}{N_2}}
+\]</span></p>
+<p>und:</p>
+<p><span class="math display">\[
+\hat{\sigma}_{inn}^2 = \frac{\hat{\sigma}_1^2 \cdot(N_1 -1) + \hat{\sigma}_2^2 \cdot(N_2-1)}{(N_1 -1) + (N_2 - 1)}
+\]</span></p>
+<p>und den Freiheitsgraden <span class="math inline">\(df = N_1 + N_2 - 2 = (N_1 -1) + (N_2 - 1)\)</span></p>
+<p><strong>Beachten Sie</strong>: Die Reihenfolge mit der die Differenz der Mittelwerte berechnet wirkt ist in der Regel nicht relevant. Sie müssen nur darauf achten die gerichteten Hypothesen entsprechend zu spezifizieren.</p>
+</section>
+<section id="t-test-für-abhängige-stichproben" class="level4">
+<h4 class="anchored" data-anchor-id="t-test-für-abhängige-stichproben"><span class="math inline">\(t\)</span>-Test für <em>abhängige</em> Stichproben</h4>
+<p>für abhängige Stichproben mit <span class="math inline">\(N\)</span> Werten, deren Differenz <span class="math inline">\(X_D = X_1 - X_2\)</span> einer Normalverteilung folgt: <span class="math inline">\(X_D \sim \mathcal{N}(\mu_D, \sigma_D^2)\)</span>, berechnet sich die Teststatistik des <span class="math inline">\(t\)</span>-Tests für abhängige Stichproben:</p>
+<p><span class="math display">\[
+t_{emp} = \frac{\hat{\mu}_D}{\hat{\sigma}_{\mu_D}} = \frac{\bar{x}_D}{\hat{\sigma}_{\bar{x}_D}}
+\]</span></p>
+<p>mit:</p>
+<p><span class="math display">\[
+\sigma_{\bar{x}_D} = \frac{\hat{\sigma}_{X_D}}{\sqrt{N}}
+\]</span></p>
+<p>und den Freiheitsgraden <span class="math inline">\(df = N-1\)</span></p>
+</section>
+</section>
 </section>
 <section id="fehler-fragen" class="level2">
 <h2 class="anchored" data-anchor-id="fehler-fragen">Fehler &amp; Fragen</h2>
