@@ -39,14 +39,14 @@ Wenn Sie den $t$-Test in `R` direkt mit dem Datensatz ausrechnen, dann müssen S
 t.test(x = semester_data3$wissen_statistik_ende,
        y = semester_data3$wissen_statistik_start,
        paired = TRUE,
-       alpha = .01,
+       conf.level = .01,
        alternative = "greater",
        var.equal = TRUE)
 ```
 
 als Output sollten Sie dann folgendes Ergebnis erhalten:
 
-![](./images/results_pairedSample_alpha01.png)
+![](./images/results_PairedSample.png)
 
 Die Werte imn Output unterscheiden sich auf Grund von Rundungsfehlern von den oben berechneten Werten kommen aber zum gleichen Ergebnis.
 
