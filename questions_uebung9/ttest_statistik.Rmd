@@ -11,7 +11,7 @@ Answerlist
 --------
 * Bei den Test handelt es sich um einen Einstichproben $t$-Test
 * Der kritische $t$-Wert liegt bei $t_{krit}(\alpha = .01) = 1.6991$
-* Der empirische $t$-Wert liegt bei $t_{emp} = 2.29$
+* Der empirische $t$-Wert liegt bei $t_{emp} = 2.25$
 * Der $p$-Wert ist grösser als das Signifikanzniveau $\alpha$
 
 Solution
@@ -26,7 +26,7 @@ Auf Basis der gegebenen Informationen aus der Aufgabe können wir auch den empir
 
 $$
 t_{emp} = \frac{\bar{x}_D}{\hat{\sigma}_{\bar{x}_d}}= \frac{\bar{x}_D}{\frac{\hat{\sigma}_{D}}{\sqrt{N}}} = \frac{0.32}{\frac{0.78}{\sqrt{30}}} = 
-\frac{0.32}{0.14} = 2.29
+\frac{0.32}{0.142} = 2.253
 $$
 
 Mit dem empirischen $t$-Wert können wir aus der Tabelle der $p$-Quantile auch das Intervall bestimmen in dem der $p$-Wert liegt. Für die Zeile von $df = 29$ liegt $t_{emp}$ zwischen dem Wert des $p$-Quantils $p = .975 \rightarrow t = 2.04$ und dem Wert des $p$-Quantils für $p = .99 \rightarrow t = 2.48$. Entsprechend ist der $p$-Wert kleiner als .025 aber grösser als .01.

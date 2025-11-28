@@ -279,12 +279,12 @@ window.Quarto = {
 <h1>Question</h1>
 <p>Sie wollen für die Stichprobe aus dem Datensatz <code>semester_data3.csv</code> testen, ob das Alter der Studierenden bedeutsam von dem Durchschnittlichen Alter aller Studierenden im Fach Psychologie <span class="math inline">\(\mu_0 = 23.5\)</span> abweicht. Der Datensatz enthälte Werte von <span class="math inline">\(N = 30\)</span> Studierenden. Der Mittelwert des Alters im Datensatz ist <span class="math inline">\(\bar{x} = 22.5\)</span> und der Populationsschätzer der Standardabweichung aus dem Datensatz ist <span class="math inline">\(\hat{\sigma} = 3.1\)</span>.</p>
 <p>Berechnen Sie den entsprechenden t-test um die zwei-seitige Hypothese zu prüfen, dass sich das Alter der Studierenden nicht bedeutsam von dem Wert <span class="math inline">\(\mu_0\)</span> unterscheidet. Kreuzen Sie an welche der folgenden Aussagen für den Test mit einem Signifikanzniveau von <span class="math inline">\(\alpha = .05\)</span> zutreffen.</p>
-<p><strong>Wichtig</strong>: Die Antworten beziehen sich auf die in der Aufgabe angegebenen gerundeten Werte. Wenn Sie den Test mit R auf Basis der Daten ausrechnen, werden Sie aufgrund von Rundungsfehlern auf leicht andere Werte kommen. Die Schlussfolgerung in Bezug auf die Signifikanz des Tests bleibt allerdings unverändert.</p>
+<p><strong>Wichtig</strong>: Die Antworten beziehen sich auf die in der Aufgabe angegebenen gerundeten Werte. Wenn Sie den Test mit R auf Basis der Daten ausrechnen, werden Sie aufgrund von Rundungsfehlern auf leicht andere Werte kommen. Bei der Berechnung gehe ich davon aus, dass Sie Zwischenergebnisse auf 3-Nachkommastellen gerundet haben. Die Schlussfolgerung in Bezug auf die Signifikanz des Tests bleibt allerdings unverändert.</p>
 <section id="answerlist" class="level2">
 <h2 class="anchored" data-anchor-id="answerlist">Answerlist</h2>
 <ul>
 <li>Der Betrage des kritische t-Werts liegt bei: <span class="math inline">\(|t_{krit}(\alpha = .05)| \approx |1.70|\)</span></li>
-<li>Der Betrag des empirische t-Werts liegt bei <span class="math inline">\(|t_{emp}| = 1.767\)</span></li>
+<li>Der Betrag des empirische t-Werts liegt bei <span class="math inline">\(|t_{emp}| = 1.77\)</span></li>
 <li>Für den <span class="math inline">\(p\)</span>-Wert gilt, das <span class="math inline">\(p &lt; \alpha\)</span></li>
 <li>Die Freiheitsgrade des Tests sind <span class="math inline">\(df = 28\)</span></li>
 </ul>
@@ -308,7 +308,7 @@ window.Quarto = {
 <p><span class="math display">\[
 t_{emp} = \frac{\bar{x} - \mu_0}{\hat{\sigma}_{\bar{x}}} = \frac{\bar{x} - \mu_0}{\frac{\hat{\sigma}_x}{\sqrt{N}}} = \frac{22.5 - 23.5}{\frac{3.1}{\sqrt{30}}} = \frac{-1}{0.566} = -1.767
 \]</span></p>
-<p>Der empirische <span class="math inline">\(t\)</span>-Wert beträgt damit: <span class="math inline">\(t_{emp} \approx -1,767\)</span></p>
+<p>Der empirische <span class="math inline">\(t\)</span>-Wert beträgt damit auf zwei Nachkommastellen gerundet: <span class="math inline">\(t_{emp} \approx -1,77\)</span></p>
 <ol start="3" type="1">
 <li>Bestimmung des <span class="math inline">\(p\)</span>-Wertes anhand des empirischen <span class="math inline">\(t\)</span>-Wertes</li>
 </ol>

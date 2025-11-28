@@ -4,12 +4,12 @@ Sie wollen für die Stichprobe aus dem Datensatz `semester_data3.csv` testen, ob
 
 Berechnen Sie den entsprechenden t-test um die zwei-seitige Hypothese zu prüfen, dass sich das Alter der Studierenden nicht bedeutsam von dem Wert $\mu_0$ unterscheidet. Kreuzen Sie an welche der folgenden Aussagen für den Test mit einem Signifikanzniveau von $\alpha = .05$ zutreffen.
 
-**Wichtig**: Die Antworten beziehen sich auf die in der Aufgabe angegebenen gerundeten Werte. Wenn Sie den Test mit R auf Basis der Daten ausrechnen, werden Sie aufgrund von Rundungsfehlern auf leicht andere Werte kommen. Die Schlussfolgerung in Bezug auf die Signifikanz des Tests bleibt allerdings unverändert.
+**Wichtig**: Die Antworten beziehen sich auf die in der Aufgabe angegebenen gerundeten Werte. Wenn Sie den Test mit R auf Basis der Daten ausrechnen, werden Sie aufgrund von Rundungsfehlern auf leicht andere Werte kommen. Bei der Berechnung gehe ich davon aus, dass Sie Zwischenergebnisse auf 3-Nachkommastellen gerundet haben. Die Schlussfolgerung in Bezug auf die Signifikanz des Tests bleibt allerdings unverändert.
 
 Answerlist
 --------
 * Der Betrage des kritische t-Werts liegt bei: $|t_{krit}(\alpha = .05)| \approx |1.70|$
-* Der Betrag des empirische t-Werts liegt bei $|t_{emp}| = 1.767$
+* Der Betrag des empirische t-Werts liegt bei $|t_{emp}| = 1.77$
 * Für den $p$-Wert gilt, das $p < \alpha$
 * Die Freiheitsgrade des Tests sind $df = 28$
 
@@ -33,7 +33,7 @@ $$
 t_{emp} = \frac{\bar{x} - \mu_0}{\hat{\sigma}_{\bar{x}}} = \frac{\bar{x} - \mu_0}{\frac{\hat{\sigma}_x}{\sqrt{N}}} = \frac{22.5 - 23.5}{\frac{3.1}{\sqrt{30}}} = \frac{-1}{0.566} = -1.767
 $$
 
-Der empirische $t$-Wert beträgt damit: $t_{emp} \approx -1,767$
+Der empirische $t$-Wert beträgt damit auf zwei Nachkommastellen gerundet: $t_{emp} \approx -1,77$
 
 3. Bestimmung des $p$-Wertes anhand des empirischen $t$-Wertes
 

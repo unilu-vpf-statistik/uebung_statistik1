@@ -8,6 +8,8 @@ Sie wollen auf Basis der Daten im Datensatz `semester_data3` testen, ob sich die
 
 Sie testen eine gerichtete Hypothese die Prüft, ob männliche Studierende grösser als weibliche Studierende sind. Sie nutzen dafür ein Signifikanzniveau von $\alpha = .05$. Beurteilen Sie für den Berechneten Test welche der folgenden Aussagen zutreffen.
 
+**Wichtig**: Die Antworten beziehen sich auf die in der Aufgabe angegebenen gerundeten Werte. Wenn Sie den Test mit R auf Basis der Daten ausrechnen, werden Sie aufgrund von Rundungsfehlern auf leicht andere Werte kommen. Bei der Berechnung gehe ich davon aus, dass Sie Zwischenergebnisse auf 3-Nachkommastellen gerundet haben. Die Schlussfolgerung in Bezug auf die Signifikanz des Tests bleibt allerdings unverändert.
+
 Answerlist
 --------
 * Bei den Test handelt es sich um einen $t$-Test für unabhängige Stichproben
@@ -30,23 +32,23 @@ Nun müssen wir auf Basis der gegebenen Werte den empirischen $t$-Wert berechnen
 
 $$
 \hat{\sigma}_{inn}^2 = \frac{\hat{\sigma}_W^2\cdot(N_W-1) + \hat{\sigma}_M^2\cdot(N_M-1)}{(N_W-1)+(N_M-1)} = 
-\frac{7.11^2 \cdot 24 + 6.12^2 \cdot 4}{(25-1)+(5-1)} = \frac{1213.25 + 149.82}{28} = 48.68
+\frac{7.11^2 \cdot 24 + 6.12^2 \cdot 4}{(25-1)+(5-1)} = \frac{1213.25 + 149.82}{28} = 48.681
 $$
 
 2. Berechnung des Standardfehlers der Mittelwertsdifferenz
 
 $$
 \hat{\sigma}_{\bar{x}_M - \bar{x}_W} = \sqrt{\frac{\hat{\sigma}_{inn}^2}{N_W} + \frac{\hat{\sigma}_{inn}^2}{N_M}} = 
-\sqrt{\frac{48.68}{25} + \frac{48.68}{5}} = \sqrt{1.95 + 9.74} = 3.42
+\sqrt{\frac{48.681}{25} + \frac{48.681}{5}} = \sqrt{1.957 + 9.736} = 3.420
 $$
 
 3. Berechnung des empirischen $t$-Wertes
 
 $$
-t_{emp} = \frac{\bar{x}_M - \bar{x}_w}{\hat{\sigma}_{\bar{x}_M - \bar{x}_W}} = \frac{179.00 - 159.04}{3.42} = \frac{19.96}{3.42} = 5.84
+t_{emp} = \frac{\bar{x}_M - \bar{x}_w}{\hat{\sigma}_{\bar{x}_M - \bar{x}_W}} = \frac{179.00 - 159.04}{3.42} = \frac{19.96}{3.420} = 5.836
 $$
 
-Auf Basis des empirischen $t$-Werts können wir nun anhand der Tabelle der $p$-Quantile auch den $p$-Wert bestimmen. Dabei sehen wir, dass der empirische $t$-Wert grösser ist als der $t$-Wert in der letzten Spalte für das $p$-Quantil $p = .995$ $\rightarrow t = 2.7633$, daraus können wir schliessen, dass der $p$-Wert für die beobachtete Mittelwertsdifferent kleiner als $p < 1 - .995 = .005$ ist.
+Auf Basis des empirischen $t$-Werts können wir nun anhand der Tabelle der $p$-Quantile auch den $p$-Wert bestimmen. Dabei sehen wir, dass der empirische $t$-Wert grösser ist als der $t$-Wert in der letzten Spalte für das $p$-Quantil $p = .995$ $\rightarrow t = 2.7633$, daraus können wir schliessen, dass der $p$-Wert für die beobachtete Mittelwertsdifferent kleiner als $p < 1 - .995 = .005$ ist. Damit ist der $p$-Wert kleiner als das gewählte Signifikanzniveau $\alpha = .05$
 
 **in `R`**
 
@@ -70,5 +72,5 @@ Meta-information
 =========
 exname: ttest_twosample
 extype: mchoice 
-exsolution: 1011
+exsolution: 1001
 exshuffle: FALSE

@@ -284,6 +284,7 @@ window.Quarto = {
 <li>Gruppengrösse in der Daten: <span class="math inline">\(N_W = 25\)</span>; <span class="math inline">\(N_M = 5\)</span></li>
 </ul>
 <p>Sie testen eine gerichtete Hypothese die Prüft, ob männliche Studierende grösser als weibliche Studierende sind. Sie nutzen dafür ein Signifikanzniveau von <span class="math inline">\(\alpha = .05\)</span>. Beurteilen Sie für den Berechneten Test welche der folgenden Aussagen zutreffen.</p>
+<p><strong>Wichtig</strong>: Die Antworten beziehen sich auf die in der Aufgabe angegebenen gerundeten Werte. Wenn Sie den Test mit R auf Basis der Daten ausrechnen, werden Sie aufgrund von Rundungsfehlern auf leicht andere Werte kommen. Bei der Berechnung gehe ich davon aus, dass Sie Zwischenergebnisse auf 3-Nachkommastellen gerundet haben. Die Schlussfolgerung in Bezug auf die Signifikanz des Tests bleibt allerdings unverändert.</p>
 <section id="answerlist" class="level2">
 <h2 class="anchored" data-anchor-id="answerlist">Answerlist</h2>
 <ul>
@@ -307,22 +308,22 @@ window.Quarto = {
 </ol>
 <p><span class="math display">\[
 \hat{\sigma}_{inn}^2 = \frac{\hat{\sigma}_W^2\cdot(N_W-1) + \hat{\sigma}_M^2\cdot(N_M-1)}{(N_W-1)+(N_M-1)} =
-\frac{7.11^2 \cdot 24 + 6.12^2 \cdot 4}{(25-1)+(5-1)} = \frac{1213.25 + 149.82}{28} = 48.68
+\frac{7.11^2 \cdot 24 + 6.12^2 \cdot 4}{(25-1)+(5-1)} = \frac{1213.25 + 149.82}{28} = 48.681
 \]</span></p>
 <ol start="2" type="1">
 <li>Berechnung des Standardfehlers der Mittelwertsdifferenz</li>
 </ol>
 <p><span class="math display">\[
 \hat{\sigma}_{\bar{x}_M - \bar{x}_W} = \sqrt{\frac{\hat{\sigma}_{inn}^2}{N_W} + \frac{\hat{\sigma}_{inn}^2}{N_M}} =
-\sqrt{\frac{48.68}{25} + \frac{48.68}{5}} = \sqrt{1.95 + 9.74} = 3.42
+\sqrt{\frac{48.681}{25} + \frac{48.681}{5}} = \sqrt{1.957 + 9.736} = 3.420
 \]</span></p>
 <ol start="3" type="1">
 <li>Berechnung des empirischen <span class="math inline">\(t\)</span>-Wertes</li>
 </ol>
 <p><span class="math display">\[
-t_{emp} = \frac{\bar{x}_M - \bar{x}_w}{\hat{\sigma}_{\bar{x}_M - \bar{x}_W}} = \frac{179.00 - 159.04}{3.42} = \frac{19.96}{3.42} = 5.84
+t_{emp} = \frac{\bar{x}_M - \bar{x}_w}{\hat{\sigma}_{\bar{x}_M - \bar{x}_W}} = \frac{179.00 - 159.04}{3.42} = \frac{19.96}{3.420} = 5.836
 \]</span></p>
-<p>Auf Basis des empirischen <span class="math inline">\(t\)</span>-Werts können wir nun anhand der Tabelle der <span class="math inline">\(p\)</span>-Quantile auch den <span class="math inline">\(p\)</span>-Wert bestimmen. Dabei sehen wir, dass der empirische <span class="math inline">\(t\)</span>-Wert grösser ist als der <span class="math inline">\(t\)</span>-Wert in der letzten Spalte für das <span class="math inline">\(p\)</span>-Quantil <span class="math inline">\(p = .995\)</span> <span class="math inline">\(\rightarrow t = 2.7633\)</span>, daraus können wir schliessen, dass der <span class="math inline">\(p\)</span>-Wert für die beobachtete Mittelwertsdifferent kleiner als <span class="math inline">\(p &lt; 1 - .995 = .005\)</span> ist.</p>
+<p>Auf Basis des empirischen <span class="math inline">\(t\)</span>-Werts können wir nun anhand der Tabelle der <span class="math inline">\(p\)</span>-Quantile auch den <span class="math inline">\(p\)</span>-Wert bestimmen. Dabei sehen wir, dass der empirische <span class="math inline">\(t\)</span>-Wert grösser ist als der <span class="math inline">\(t\)</span>-Wert in der letzten Spalte für das <span class="math inline">\(p\)</span>-Quantil <span class="math inline">\(p = .995\)</span> <span class="math inline">\(\rightarrow t = 2.7633\)</span>, daraus können wir schliessen, dass der <span class="math inline">\(p\)</span>-Wert für die beobachtete Mittelwertsdifferent kleiner als <span class="math inline">\(p &lt; 1 - .995 = .005\)</span> ist. Damit ist der <span class="math inline">\(p\)</span>-Wert kleiner als das gewählte Signifikanzniveau <span class="math inline">\(\alpha = .05\)</span></p>
 <p><strong>in <code>R</code></strong></p>
 <p>Wenn Sie den <span class="math inline">\(t\)</span>-Test in <code>R</code> direkt mit dem Datensatz ausrechnen, dann müssen Sie folgenden Befehl eingeben:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(grösse <span class="sc">~</span> geschlecht,     <span class="co"># formelschreibweise: av ~ uv</span></span>
@@ -335,7 +336,7 @@ t_{emp} = \frac{\bar{x}_M - \bar{x}_w}{\hat{\sigma}_{\bar{x}_M - \bar{x}_W}} = \
 </section>
 <section id="meta-information" class="level1">
 <h1>Meta-information</h1>
-<p>exname: ttest_twosample extype: mchoice exsolution: 1011 exshuffle: FALSE</p>
+<p>exname: ttest_twosample extype: mchoice exsolution: 1001 exshuffle: FALSE</p>
 
 
 </section>

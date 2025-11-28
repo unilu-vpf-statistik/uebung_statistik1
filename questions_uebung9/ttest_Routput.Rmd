@@ -10,7 +10,7 @@ Beurteilen, welche der folgenden Aussagen auf Basis des Outputs korrekt sind.
 Answerlist
 --------
 * Bei dem Test handelt es sich um einen t-Test für anbhängige Stichproben
-* Der empirische t-Wert liegt bei: $t_{emp} \approx -.135$
+* Der empirische t-Wert liegt bei: $t_{emp} \approx -.136$
 * Der $p$-Wert für den Test ist grösser als $\alpha = .05$
 * Das Mittlere Alter in der Gruppe der Männer ist $\bar{x}_{M} = 22.3$
 * Die Menge an Beobchatungen in der Gruppe der Frauen ist $N = 28$
