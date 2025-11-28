@@ -66,5 +66,5 @@ Meta-information
 =========
 exname: ttest_onesample
 extype: mchoice 
-exsolution: 0110
+exsolution: 0100
 exshuffle: FALSE
