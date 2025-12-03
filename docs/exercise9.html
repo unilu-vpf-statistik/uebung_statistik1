@@ -1814,7 +1814,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#wiederholung-vertiefung-parameterschätzung" id="toc-wiederholung-vertiefung-parameterschätzung" class="nav-link active" data-scroll-target="#wiederholung-vertiefung-parameterschätzung">Wiederholung &amp; Vertiefung: Parameterschätzung</a></li>
+  <li><a href="#wiederholung-vertiefung-t-test" id="toc-wiederholung-vertiefung-t-test" class="nav-link active" data-scroll-target="#wiederholung-vertiefung-t-test">Wiederholung &amp; Vertiefung: t-test</a></li>
   <li><a href="#übungen" id="toc-übungen" class="nav-link" data-scroll-target="#übungen">Übungen</a></li>
   </ul>
 </nav>
@@ -2132,14 +2132,19 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </header>
 
 
-<section id="wiederholung-vertiefung-parameterschätzung" class="level2">
-<h2 class="anchored" data-anchor-id="wiederholung-vertiefung-parameterschätzung">Wiederholung &amp; Vertiefung: Parameterschätzung</h2>
+<section id="wiederholung-vertiefung-t-test" class="level2">
+<h2 class="anchored" data-anchor-id="wiederholung-vertiefung-t-test">Wiederholung &amp; Vertiefung: t-test</h2>
 <p>In dieser Übung werden wir üben wie man von Hand und mit Hilfe von R einen t-test berechnet und die jeweiligen Ergebnisse interpretiert. Wenn Sie einige Inhalte der Vorlesung nochmal vertiefen wollen, oder nochmal eine ausführlichere Erklärung für die Anwendung des t-tests in R haben wollen, dann können Sie sich die folgenden Videos anschauen.</p>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=DEkPZv5ppHI">Vergleich z-Statistiken mit t-Statistiken</a></li>
 <li><a href="https://www.youtube.com/watch?v=7vcyjuSwfzI">Einstichproben t-test in R</a></li>
 <li><a href="https://www.youtube.com/watch?v=3Yz-XNRasGM">t-test für unabhängige Stichproben in R</a></li>
 <li><a href="https://www.youtube.com/watch?v=H15M_8gh1Ok">t-test für abhängige Stichproben in R</a></li>
+</ul>
+<p>Für eine konzeptuelle Wiederholung des t-test auf Grund des fehlenden Podcasts empfehle ich Ihnen die folgenden Videos:</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=UetYS3PaHIo">Eine Ausfürhliche Erklärung der Relevanz der t-Verteilung</a>: Das Video geht etwas mehr in die Tiefe als in der Vorlesung liefert aber eine sehr fundierte Erklärung warum wir die t-Verteilung für statistische Tests von Mittelwertsvergleichen mit Hilfe von Stichproben nutzen. Die Funktionen gelten jeweils für Excel und nicht für R</li>
+<li><a href="https://www.youtube.com/watch?v=AdX7JVdLhbk">Übersichtliche Zusammenfassung des t-tests &amp; der unterschiedlichen Testszenarien</a>: Leider ist die Notation in diesem Video nicht ganz akkurat aber die Grundsätzliche Logik und die Unterschiedlichen Testszenarien werden trotzdem gut erklärt.</li>
 </ul>
 </section>
 <section id="übungen" class="level2">
@@ -2185,8 +2190,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>Sie wollen für die Stichprobe aus dem Datensatz <code>semester_data3.csv</code> testen, ob das Alter der Studierenden bedeutsam von dem Durchschnittlichen Alter aller Studierenden im Fach Psychologie <span class="math inline">\(\mu_0 = 23.5\)</span> abweicht. Der Datensatz enthälte Werte von <span class="math inline">\(N = 30\)</span> Studierenden. Der Mittelwert des Alters im Datensatz ist <span class="math inline">\(\bar{x} = 22.5\)</span> und der Populationsschätzer der Standardabweichung aus dem Datensatz ist <span class="math inline">\(\hat{\sigma} = 3.1\)</span>.</p>
 <p>Berechnen Sie den entsprechenden t-test um die zwei-seitige Hypothese zu prüfen, dass sich das Alter der Studierenden nicht bedeutsam von dem Wert <span class="math inline">\(\mu_0\)</span> unterscheidet. Kreuzen Sie an welche der folgenden Aussagen für den Test mit einem Signifikanzniveau von <span class="math inline">\(\alpha = .05\)</span> zutreffen.</p>
 <p><strong>Wichtig</strong>: Die Antworten beziehen sich auf die in der Aufgabe angegebenen gerundeten Werte. Wenn Sie den Test mit R auf Basis der Daten ausrechnen, werden Sie aufgrund von Rundungsfehlern auf leicht andere Werte kommen. Bei der Berechnung gehe ich davon aus, dass Sie Zwischenergebnisse auf 3-Nachkommastellen gerundet haben. Die Schlussfolgerung in Bezug auf die Signifikanz des Tests bleibt allerdings unverändert.</p>
-<div id="webex-e16cb4ad4696bd6b989a45af2290d4d5" class="webex-checkboxgroup" data-answer="PgEaUk4ETVRp">
-<label><input type="checkbox" autocomplete="off" name="e16cb4ad4696bd6b989a45af2290d4d5"><span>Der Betrage des kritische t-Werts liegt bei: <span class="math inline">\(|t_{krit}(\alpha = .05)| \approx |1.70|\)</span></span></label><label><input type="checkbox" autocomplete="off" name="e16cb4ad4696bd6b989a45af2290d4d5"><span>Der Betrag des empirische t-Werts liegt bei <span class="math inline">\(|t_{emp}| = 1.77\)</span></span></label><label><input type="checkbox" autocomplete="off" name="e16cb4ad4696bd6b989a45af2290d4d5"><span>Für den <span class="math inline">\(p\)</span>-Wert gilt, das <span class="math inline">\(p &lt; \alpha\)</span></span></label><label><input type="checkbox" autocomplete="off" name="e16cb4ad4696bd6b989a45af2290d4d5"><span>Die Freiheitsgrade des Tests sind <span class="math inline">\(df = 28\)</span></span></label>
+<div id="webex-cd44d31c26825a99b56ac67828039a31" class="webex-checkboxgroup" data-answer="OFQYBUgDHVNv">
+<label><input type="checkbox" autocomplete="off" name="cd44d31c26825a99b56ac67828039a31"><span>Der Betrage des kritische t-Werts liegt bei: <span class="math inline">\(|t_{krit}(\alpha = .05)| \approx |1.70|\)</span></span></label><label><input type="checkbox" autocomplete="off" name="cd44d31c26825a99b56ac67828039a31"><span>Der Betrag des empirische t-Werts liegt bei <span class="math inline">\(|t_{emp}| = 1.77\)</span></span></label><label><input type="checkbox" autocomplete="off" name="cd44d31c26825a99b56ac67828039a31"><span>Für den <span class="math inline">\(p\)</span>-Wert gilt, das <span class="math inline">\(p &lt; \alpha\)</span></span></label><label><input type="checkbox" autocomplete="off" name="cd44d31c26825a99b56ac67828039a31"><span>Die Freiheitsgrade des Tests sind <span class="math inline">\(df = 28\)</span></span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -2235,8 +2240,8 @@ t_{emp} = \frac{\bar{x} - \mu_0}{\hat{\sigma}_{\bar{x}}} = \frac{\bar{x} - \mu_0
 </ul>
 <p>Sie testen eine gerichtete Hypothese die Prüft, ob männliche Studierende grösser als weibliche Studierende sind. Sie nutzen dafür ein Signifikanzniveau von <span class="math inline">\(\alpha = .05\)</span>. Beurteilen Sie für den Berechneten Test welche der folgenden Aussagen zutreffen.</p>
 <p><strong>Wichtig</strong>: Die Antworten beziehen sich auf die in der Aufgabe angegebenen gerundeten Werte. Wenn Sie den Test mit R auf Basis der Daten ausrechnen, werden Sie aufgrund von Rundungsfehlern auf leicht andere Werte kommen. Bei der Berechnung gehe ich davon aus, dass Sie Zwischenergebnisse auf 3-Nachkommastellen gerundet haben. Die Schlussfolgerung in Bezug auf die Signifikanz des Tests bleibt allerdings unverändert.</p>
-<div id="webex-563864cb8fa83b4b63a18a730c8ecb5d" class="webex-checkboxgroup" data-answer="bgcfCBoET1Nl">
-<label><input type="checkbox" autocomplete="off" name="563864cb8fa83b4b63a18a730c8ecb5d"><span>Bei den Test handelt es sich um einen <span class="math inline">\(t\)</span>-Test für unabhängige Stichproben</span></label><label><input type="checkbox" autocomplete="off" name="563864cb8fa83b4b63a18a730c8ecb5d"><span>Der kritische <span class="math inline">\(t\)</span>-Wert liegt bei <span class="math inline">\(t_{krit}(\alpha = .05) = 1.6991\)</span></span></label><label><input type="checkbox" autocomplete="off" name="563864cb8fa83b4b63a18a730c8ecb5d"><span>Der empirische <span class="math inline">\(t\)</span>-Wert liegt bei <span class="math inline">\(t_{emp} = 2.84\)</span></span></label><label><input type="checkbox" autocomplete="off" name="563864cb8fa83b4b63a18a730c8ecb5d"><span>Der <span class="math inline">\(p\)</span>-Wert ist kleiner als das Signifikanzniveau <span class="math inline">\(\alpha\)</span></span></label>
+<div id="webex-00e6f571c9746fa5e9a979e8df25950b" class="webex-checkboxgroup" data-answer="awFJBkoFGwA+">
+<label><input type="checkbox" autocomplete="off" name="00e6f571c9746fa5e9a979e8df25950b"><span>Bei den Test handelt es sich um einen <span class="math inline">\(t\)</span>-Test für unabhängige Stichproben</span></label><label><input type="checkbox" autocomplete="off" name="00e6f571c9746fa5e9a979e8df25950b"><span>Der kritische <span class="math inline">\(t\)</span>-Wert liegt bei <span class="math inline">\(t_{krit}(\alpha = .05) = 1.6991\)</span></span></label><label><input type="checkbox" autocomplete="off" name="00e6f571c9746fa5e9a979e8df25950b"><span>Der empirische <span class="math inline">\(t\)</span>-Wert liegt bei <span class="math inline">\(t_{emp} = 2.84\)</span></span></label><label><input type="checkbox" autocomplete="off" name="00e6f571c9746fa5e9a979e8df25950b"><span>Der <span class="math inline">\(p\)</span>-Wert ist kleiner als das Signifikanzniveau <span class="math inline">\(\alpha\)</span></span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -2288,8 +2293,8 @@ t_{emp} = \frac{\bar{x}_M - \bar{x}_w}{\hat{\sigma}_{\bar{x}_M - \bar{x}_W}} = \
 </figure>
 </div>
 <p>Beurteilen, welche der folgenden Aussagen auf Basis des Outputs korrekt sind.</p>
-<div id="webex-99ea4584321602126551e2dc162a55d6" class="webex-checkboxgroup" data-answer="YglJUBgEFAUfAh0GbQ==">
-<label><input type="checkbox" autocomplete="off" name="99ea4584321602126551e2dc162a55d6"><span>Bei dem Test handelt es sich um einen t-Test für anbhängige Stichproben</span></label><label><input type="checkbox" autocomplete="off" name="99ea4584321602126551e2dc162a55d6"><span>Der empirische t-Wert liegt bei: <span class="math inline">\(t_{emp} \approx -.136\)</span></span></label><label><input type="checkbox" autocomplete="off" name="99ea4584321602126551e2dc162a55d6"><span>Der <span class="math inline">\(p\)</span>-Wert für den Test ist grösser als <span class="math inline">\(\alpha = .05\)</span></span></label><label><input type="checkbox" autocomplete="off" name="99ea4584321602126551e2dc162a55d6"><span>Das Mittlere Alter in der Gruppe der Männer ist <span class="math inline">\(\bar{x}_{M} = 22.3\)</span></span></label><label><input type="checkbox" autocomplete="off" name="99ea4584321602126551e2dc162a55d6"><span>Die Menge an Beobchatungen in der Gruppe der Frauen ist <span class="math inline">\(N = 28\)</span></span></label><label><input type="checkbox" autocomplete="off" name="99ea4584321602126551e2dc162a55d6"><span>Der t-Test hat eine gerichtete Hypotheses getestet</span></label>
+<div id="webex-d881e2167e06e6ec00d2cef289b4df9d" class="webex-checkboxgroup" data-answer="PwgUAEkDHQcbVRwGOA==">
+<label><input type="checkbox" autocomplete="off" name="d881e2167e06e6ec00d2cef289b4df9d"><span>Bei dem Test handelt es sich um einen t-Test für anbhängige Stichproben</span></label><label><input type="checkbox" autocomplete="off" name="d881e2167e06e6ec00d2cef289b4df9d"><span>Der empirische t-Wert liegt bei: <span class="math inline">\(t_{emp} \approx -.136\)</span></span></label><label><input type="checkbox" autocomplete="off" name="d881e2167e06e6ec00d2cef289b4df9d"><span>Der <span class="math inline">\(p\)</span>-Wert für den Test ist grösser als <span class="math inline">\(\alpha = .05\)</span></span></label><label><input type="checkbox" autocomplete="off" name="d881e2167e06e6ec00d2cef289b4df9d"><span>Das Mittlere Alter in der Gruppe der Männer ist <span class="math inline">\(\bar{x}_{M} = 22.3\)</span></span></label><label><input type="checkbox" autocomplete="off" name="d881e2167e06e6ec00d2cef289b4df9d"><span>Die Menge an Beobchatungen in der Gruppe der Frauen ist <span class="math inline">\(N = 28\)</span></span></label><label><input type="checkbox" autocomplete="off" name="d881e2167e06e6ec00d2cef289b4df9d"><span>Der t-Test hat eine gerichtete Hypotheses getestet</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -2311,8 +2316,8 @@ t_{emp} = \frac{\bar{x}_M - \bar{x}_w}{\hat{\sigma}_{\bar{x}_M - \bar{x}_W}} = \
 <li>Populationsschätzer der Standardabweichung der Differenz: <span class="math inline">\(\hat{\sigma}_D = 0.78\)</span></li>
 </ul>
 <p>Berechnen Sie den <span class="math inline">\(t\)</span>-Test für abhängige Stichproben aus den <span class="math inline">\(N = 30\)</span> Beobachtungen und nehmen Sie ein Signifikanzniveau von <span class="math inline">\(\alpha = .01\)</span> an. Sie testen die gerichtete Hypothese, dass das eingeschätzte Wissen am Ende des Semesters grösser als am Anfang ist</p>
-<div id="webex-d290b1297ae7a0712a03e4f9dd401080" class="webex-checkboxgroup" data-answer="PwIVAE4AHghq">
-<label><input type="checkbox" autocomplete="off" name="d290b1297ae7a0712a03e4f9dd401080"><span>Bei den Test handelt es sich um einen Einstichproben <span class="math inline">\(t\)</span>-Test</span></label><label><input type="checkbox" autocomplete="off" name="d290b1297ae7a0712a03e4f9dd401080"><span>Der kritische <span class="math inline">\(t\)</span>-Wert liegt bei <span class="math inline">\(t_{krit}(\alpha = .01) = 1.6991\)</span></span></label><label><input type="checkbox" autocomplete="off" name="d290b1297ae7a0712a03e4f9dd401080"><span>Der empirische <span class="math inline">\(t\)</span>-Wert liegt bei <span class="math inline">\(t_{emp} = 2.25\)</span></span></label><label><input type="checkbox" autocomplete="off" name="d290b1297ae7a0712a03e4f9dd401080"><span>Der <span class="math inline">\(p\)</span>-Wert ist grösser als das Signifikanzniveau <span class="math inline">\(\alpha\)</span></span></label>
+<div id="webex-792fc3c42acde7a1b290a136c6f5e7e1" class="webex-checkboxgroup" data-answer="bAkeVk8CTwVv">
+<label><input type="checkbox" autocomplete="off" name="792fc3c42acde7a1b290a136c6f5e7e1"><span>Bei den Test handelt es sich um einen Einstichproben <span class="math inline">\(t\)</span>-Test</span></label><label><input type="checkbox" autocomplete="off" name="792fc3c42acde7a1b290a136c6f5e7e1"><span>Der kritische <span class="math inline">\(t\)</span>-Wert liegt bei <span class="math inline">\(t_{krit}(\alpha = .01) = 1.6991\)</span></span></label><label><input type="checkbox" autocomplete="off" name="792fc3c42acde7a1b290a136c6f5e7e1"><span>Der empirische <span class="math inline">\(t\)</span>-Wert liegt bei <span class="math inline">\(t_{emp} = 2.25\)</span></span></label><label><input type="checkbox" autocomplete="off" name="792fc3c42acde7a1b290a136c6f5e7e1"><span>Der <span class="math inline">\(p\)</span>-Wert ist grösser als das Signifikanzniveau <span class="math inline">\(\alpha\)</span></span></label>
 </div>
 </div>
 <div class="webex-solution">

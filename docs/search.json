@@ -819,7 +819,7 @@
     "href": "exercise9.html",
     "title": "Übung 9 - Gruppenvergleiche (metrische Variablen)",
     "section": "",
-    "text": "In dieser Übung werden wir üben wie man von Hand und mit Hilfe von R einen t-test berechnet und die jeweiligen Ergebnisse interpretiert. Wenn Sie einige Inhalte der Vorlesung nochmal vertiefen wollen, oder nochmal eine ausführlichere Erklärung für die Anwendung des t-tests in R haben wollen, dann können Sie sich die folgenden Videos anschauen.\n\nVergleich z-Statistiken mit t-Statistiken\nEinstichproben t-test in R\nt-test für unabhängige Stichproben in R\nt-test für abhängige Stichproben in R",
+    "text": "In dieser Übung werden wir üben wie man von Hand und mit Hilfe von R einen t-test berechnet und die jeweiligen Ergebnisse interpretiert. Wenn Sie einige Inhalte der Vorlesung nochmal vertiefen wollen, oder nochmal eine ausführlichere Erklärung für die Anwendung des t-tests in R haben wollen, dann können Sie sich die folgenden Videos anschauen.\n\nVergleich z-Statistiken mit t-Statistiken\nEinstichproben t-test in R\nt-test für unabhängige Stichproben in R\nt-test für abhängige Stichproben in R\n\nFür eine konzeptuelle Wiederholung des t-test auf Grund des fehlenden Podcasts empfehle ich Ihnen die folgenden Videos:\n\nEine Ausfürhliche Erklärung der Relevanz der t-Verteilung: Das Video geht etwas mehr in die Tiefe als in der Vorlesung liefert aber eine sehr fundierte Erklärung warum wir die t-Verteilung für statistische Tests von Mittelwertsvergleichen mit Hilfe von Stichproben nutzen. Die Funktionen gelten jeweils für Excel und nicht für R\nÜbersichtliche Zusammenfassung des t-tests & der unterschiedlichen Testszenarien: Leider ist die Notation in diesem Video nicht ganz akkurat aber die Grundsätzliche Logik und die Unterschiedlichen Testszenarien werden trotzdem gut erklärt.",
     "crumbs": [
       "Übungen",
       "Übung 9"
@@ -958,5 +958,16 @@
     "title": "Question",
     "section": "",
     "text": "Bei den Test handelt es sich um einen Einstichproben \\(t\\)-Test\nDer kritische \\(t\\)-Wert liegt bei \\(t_{krit}(\\alpha = .01) = 1.6991\\)\nDer empirische \\(t\\)-Wert liegt bei \\(t_{emp} = 2.25\\)\nDer \\(p\\)-Wert ist grösser als das Signifikanzniveau \\(\\alpha\\)"
+  },
+  {
+    "objectID": "exercise9.html#wiederholung-vertiefung-t-test",
+    "href": "exercise9.html#wiederholung-vertiefung-t-test",
+    "title": "Übung 9 - Gruppenvergleiche (metrische Variablen)",
+    "section": "",
+    "text": "In dieser Übung werden wir üben wie man von Hand und mit Hilfe von R einen t-test berechnet und die jeweiligen Ergebnisse interpretiert. Wenn Sie einige Inhalte der Vorlesung nochmal vertiefen wollen, oder nochmal eine ausführlichere Erklärung für die Anwendung des t-tests in R haben wollen, dann können Sie sich die folgenden Videos anschauen.\n\nVergleich z-Statistiken mit t-Statistiken\nEinstichproben t-test in R\nt-test für unabhängige Stichproben in R\nt-test für abhängige Stichproben in R\n\nFür eine konzeptuelle Wiederholung des t-test auf Grund des fehlenden Podcasts empfehle ich Ihnen die folgenden Videos:\n\nEine Ausfürhliche Erklärung der Relevanz der t-Verteilung: Das Video geht etwas mehr in die Tiefe als in der Vorlesung liefert aber eine sehr fundierte Erklärung warum wir die t-Verteilung für statistische Tests von Mittelwertsvergleichen mit Hilfe von Stichproben nutzen. Die Funktionen gelten jeweils für Excel und nicht für R\nÜbersichtliche Zusammenfassung des t-tests & der unterschiedlichen Testszenarien: Leider ist die Notation in diesem Video nicht ganz akkurat aber die Grundsätzliche Logik und die Unterschiedlichen Testszenarien werden trotzdem gut erklärt.",
+    "crumbs": [
+      "Übungen",
+      "Übung 9"
+    ]
   }
 ]

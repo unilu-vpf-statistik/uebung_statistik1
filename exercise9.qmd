@@ -44,7 +44,7 @@ exam_files <- list.files(here("questions_uebung9"), pattern = "*.Rmd", full.name
 shuffeld_questions <- exam_files
 ```
 
-## Wiederholung & Vertiefung: Parameterschätzung
+## Wiederholung & Vertiefung: t-test
 
 In dieser Übung werden wir üben wie man von Hand und mit Hilfe von R einen t-test berechnet und die jeweiligen Ergebnisse interpretiert. Wenn Sie einige Inhalte der Vorlesung nochmal vertiefen wollen, oder nochmal eine ausführlichere Erklärung für die Anwendung des t-tests in R haben wollen, dann können Sie sich die folgenden Videos anschauen.
 
@@ -52,6 +52,12 @@ In dieser Übung werden wir üben wie man von Hand und mit Hilfe von R einen t-t
 - [Einstichproben t-test in R](https://www.youtube.com/watch?v=7vcyjuSwfzI)
 - [t-test für unabhängige Stichproben in R](https://www.youtube.com/watch?v=3Yz-XNRasGM)
 - [t-test für abhängige Stichproben in R](https://www.youtube.com/watch?v=H15M_8gh1Ok)
+
+Für eine konzeptuelle Wiederholung des t-test auf Grund des fehlenden Podcasts empfehle ich Ihnen die folgenden Videos:
+
+- [Eine Ausfürhliche Erklärung der Relevanz der t-Verteilung](https://www.youtube.com/watch?v=UetYS3PaHIo): Das Video geht etwas mehr in die Tiefe als in der Vorlesung liefert aber eine sehr fundierte Erklärung warum wir die t-Verteilung für statistische Tests von Mittelwertsvergleichen mit Hilfe von Stichproben nutzen. Die Funktionen gelten jeweils für Excel und nicht für R
+- [Übersichtliche Zusammenfassung des t-tests & der unterschiedlichen Testszenarien](https://www.youtube.com/watch?v=AdX7JVdLhbk): Leider ist die Notation in diesem Video nicht ganz akkurat aber die Grundsätzliche Logik und die Unterschiedlichen Testszenarien werden trotzdem gut erklärt.
+
 
 ## Übungen
 
