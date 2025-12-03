@@ -347,25 +347,25 @@ $\rightarrow$ Der Populationsschätzer eines Paramters $\hat{\theta}$ ist kleine
 $\rightarrow$ Wert einer Teststatistik $T$ (z.Bsp: $z$ oder $t$), der gerade noch mit der Nullhypothese vereinbar ist. Für ein bestimmtest Signifikanzniveau $\alpha$ gilt:
 
 $$
-\text{gerichtete Hypothese:} \quad |T_{krit}| = F^{-1}(p = 1-\alpha/2) 
+\text{ungerichtete Hypothese:} \quad |T_{krit}| = F^{-1}(p = 1-\alpha/2) 
 $$
 
 $$
-\text{ungerichtete Hypothese:} \quad |T_{krit}| = F^{-1}(p = 1-\alpha)
+\text{gerichtete Hypothese:} \quad |T_{krit}| = F^{-1}(p = 1-\alpha)
 $$
 
-mit der Quantilfunktion $F^{-1}$ der entsprechenden Verteilung des jeweiligen Teststatistik.
+mit der Quantilfunktion $F^{-1}$ der entsprechenden Verteilung der jeweiligen Teststatistik.
 
 **$p$-Wert**
 
 Wahrscheinlichkeit ein bestimmtes Ergebnis bzw. eine bestimmte empirische Teststatistik $T_emp$ oder extremere Ergebnisse unter Annahme der Nullhypothese zu beobachten.
 
 $$
-\text{gerichtete Hypothese:} \quad p = 2\cdot (1 - F(|T_{emp})|) 
+\text{ungerichtete Hypothese:} \quad p = 2\cdot (1 - F(|T_{emp})|) 
 $$
 
 $$
-\text{ungerichtete Hypothese:} \quad p = 1 - F(|T_{emp}|)
+\text{gerichtete Hypothese:} \quad p = 1 - F(|T_{emp}|)
 $$
 
 mit der Verteilungsfunktion $F$ der entsprechenden Verteilung der jeweiligen Teststatistik.
