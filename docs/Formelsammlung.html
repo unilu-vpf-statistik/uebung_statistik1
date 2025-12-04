@@ -216,6 +216,12 @@ window.Quarto = {
  <span class="menu-text">Übung 9</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exercise10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Übung 10</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -257,6 +263,7 @@ window.Quarto = {
   <li><a href="#gruppenvergleiche" id="toc-gruppenvergleiche" class="nav-link" data-scroll-target="#gruppenvergleiche">Gruppenvergleiche</a>
   <ul class="collapse">
   <li><a href="#metrische-variablen" id="toc-metrische-variablen" class="nav-link" data-scroll-target="#metrische-variablen">Metrische Variablen</a></li>
+  <li><a href="#diskrete-variablen" id="toc-diskrete-variablen" class="nav-link" data-scroll-target="#diskrete-variablen">Diskrete Variablen</a></li>
   </ul></li>
   <li><a href="#fehler-fragen" id="toc-fehler-fragen" class="nav-link" data-scroll-target="#fehler-fragen">Fehler &amp; Fragen</a></li>
   </ul></li>
@@ -586,7 +593,7 @@ Z = \frac{X - \mu}{\sigma}; \quad X_p = Z_p \cdot \sigma + \mu
 <p><span class="math display">\[
 \text{gerichtete Hypothese:} \quad |T_{krit}| = F^{-1}(p = 1-\alpha)
 \]</span></p>
-<p>mit der Quantilfunktion <span class="math inline">\(F^{-1}\)</span> der entsprechenden Verteilung des jeweiligen Teststatistik.</p>
+<p>mit der Quantilfunktion <span class="math inline">\(F^{-1}\)</span> der entsprechenden Verteilung der jeweiligen Teststatistik.</p>
 <p><strong><span class="math inline">\(p\)</span>-Wert</strong></p>
 <p>Wahrscheinlichkeit ein bestimmtes Ergebnis bzw. eine bestimmte empirische Teststatistik <span class="math inline">\(T_emp\)</span> oder extremere Ergebnisse unter Annahme der Nullhypothese zu beobachten.</p>
 <p><span class="math display">\[
@@ -709,6 +716,29 @@ t_{emp} = \frac{\hat{\mu}_D}{\hat{\sigma}_{\mu_D}} = \frac{\bar{x}_D}{\hat{\sigm
 \sigma_{\bar{x}_D} = \frac{\hat{\sigma}_{X_D}}{\sqrt{N}}
 \]</span></p>
 <p>und den Freiheitsgraden <span class="math inline">\(df = N-1\)</span></p>
+</section>
+</section>
+<section id="diskrete-variablen" class="level3">
+<h3 class="anchored" data-anchor-id="diskrete-variablen">Diskrete Variablen</h3>
+<section id="chi2-test-eine-stichprobe" class="level4">
+<h4 class="anchored" data-anchor-id="chi2-test-eine-stichprobe"><span class="math inline">\(\chi^2\)</span>-Test: Eine Stichprobe</h4>
+<p>Für eine Häufigkeitsverteilung der beobachteten Häufigkeiten <span class="math inline">\(n\)</span> mit <span class="math inline">\(j\)</span> Kategorien:</p>
+<p><span class="math display">\[
+\chi^2 = \sum^j_{i = 1} \frac{(n_i - \epsilon_i)^2}{\epsilon_i}
+\]</span></p>
+<p>und den Freiheitsgraden: <span class="math inline">\(df = j -1\)</span></p>
+</section>
+<section id="chi2-test-zwei-stichproben" class="level4">
+<h4 class="anchored" data-anchor-id="chi2-test-zwei-stichproben"><span class="math inline">\(\chi^2\)</span>-Test: Zwei Stichproben</h4>
+<p>Für eine Häufigkeitsverteilung von beobachteten Häufigkeiten <span class="math inline">\(n\)</span> mit <span class="math inline">\(j\)</span> Kategorien und <span class="math inline">\(p\)</span> Gruppen berechnet sich der empirische <span class="math inline">\(\chi^2\)</span> Wert:</p>
+<p><span class="math display">\[
+\chi^2 = \sum_{k = 1}^p \sum_{i = 1}^j \frac{(n_{ki}-\epsilon_{ki})^2}{\epsilon_{ki}}
+\]</span></p>
+<p>und den Freiheitsgraden: <span class="math inline">\(df = (k-1) \cdot (j - 1)\)</span></p>
+<p>Unter der Annahme das die Merkmale der Kreuztabelle unabhängig sind berechnet sich die geschätzte erwartete Häufigkeit:</p>
+<p><span class="math display">\[
+\hat{\epsilon}_{ki} = \frac{n_k \cdot n_i}{N}
+\]</span></p>
 </section>
 </section>
 </section>
