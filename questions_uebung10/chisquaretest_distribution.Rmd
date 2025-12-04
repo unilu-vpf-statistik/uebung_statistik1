@@ -1,0 +1,87 @@
+```{r generate_data}
+#| echo: FALSE
+#| results: "hide"
+set.seed(2025)
+prob_dist <- c("Basel" = 0.08, "Bern" = 0.25, "Luzern" = 0.30, "St.Gallen" = 0.12, "Zuerich" = 0.18, "Zug" = 0.07)
+prob_dist <- matrix(data = prob_dist, nrow = 1, ncol = length(prob_dist), 
+                    dimnames = list(c("1"),names(prob_dist)))
+
+sample_size <- 180
+sim_data <- t(rmultinom(n = 1, size = sample_size,
+                      prob = prob_dist))
+colnames(sim_data) <- colnames(prob_dist)
+```
+
+Question
+=======
+Aus dem vorangegangen Semester wissen Sie das die Wahrscheinlihchkeit für den Wohnort der Studierenden folgender Wahrscheinlichkeitsverteilung folgt:
+
+```{r print_probDist}
+#| echo: false
+knitr::kable(prob_dist)
+```
+
+Im aktuellen Semester haben Sie von `r sample_size` Studierenden die folgenden Häufigkeiten des Wohnorts beobachtet:
+
+```{r print_data}
+#| echo: false
+knitr::kable(sim_data)
+```
+
+Berechnen Sie einen $\chi^2$-Test mit Signifikanzniveau $\alpha = .05$ um zu Testen, ob die Häufigkeitsverteilung des aktuellen Semester sich statistisch bedeutsam von der Wahrscheinlichkeitsverteilung des letzten Semesters unterscheidet.
+
+Kreuzen Sie für den Test an welche der folgenden Antworten korrekt ist.
+
+```{r compute_chisq}
+#| echo: false
+observed <- sim_data
+expected <- prob_dist*sample_size
+df_test <- prod(dim(observed)[2]-1)
+
+chisq_emp <- round(sum((observed-expected)^2/expected),2)
+chisq_krit <- round(qchisq(p = 1 - .05, df = df_test),2)
+result_sig <- ifelse(chisq_emp > chisq_krit,"signifikant", "nicht signifikant")
+```
+
+
+Answerlist
+--------
+* Der kritische Testwert für diesen Test bei $\alpha = .05$ ist: $\chi_{krit}^2 = `r round(chisq_krit,2)`$
+* Die Freiheitsgrade des Test betragen $df = `r dim(observed)[2]`$
+* Der empirische Testwert für diesen Test ist: $\chi_{emp}^2 = `r round(chisq_emp,2)`$
+* Der Test ist `r result_sig`.
+
+Solution
+========
+
+Als erstes müssen wir die erwarteten Häufigkeiten aus der Wahrscheinlichkeitsverteilung und der Anzahl an Studierenden berechnen. Dafür müssen wir die Wahrscheinlichkeiten für jede Zelle mit der Stichprobengrösse multiplizieren. 
+
+```{r print_expected}
+#| echo: false
+knitr::kable(expected)
+```
+
+Mit diesen Werten können wir nun die quadrierten Abweichungen zwischen den beobachteten und erwarteten Häufigkeiten berechnen, durch die erwartete Häufigkeit teilen und entsprechend der Formel für den empirischen $\chi^2$-Wert aufsummieren.
+
+Hier sehen Sie die Tabelle der quadrierten Abweichungen:
+
+```{r print_deviationsSq}
+#| echo: false
+knitr::kable((observed - expected)^2)
+```
+
+und hier sind die Quadrierten Abweichungen durch die erwarteten Häufigkeiten geteilt:
+
+```{r print_normedDeviations}
+#| echo: false
+knitr::kable(round((observed - expected)^2/expected,3))
+```
+
+Wenn sie die Werte aus der letzten Tabelle aufsummieren erhalten sie den empirischen Chi-Quadrat wert: $\chi^2_{emp} = `r chisq_emp`$
+
+Meta-information
+=========
+exname: chisq_onesample
+extype: mchoice 
+exsolution: 1011
+exshuffle: FALSE
