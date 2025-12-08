@@ -519,6 +519,34 @@ $$
 
 und den Freiheitsgraden $df = N-1$
 
+### Diskrete Variablen
+
+#### $\chi^2$-Test: Eine Stichprobe
+
+Für eine Häufigkeitsverteilung der beobachteten Häufigkeiten $n$ mit $j$ Kategorien:
+
+$$
+\chi^2 = \sum^j_{i = 1} \frac{(n_i - \epsilon_i)^2}{\epsilon_i}
+$$
+
+und den Freiheitsgraden: $df = j -1$
+
+#### $\chi^2$-Test: Zwei Stichproben
+
+Für eine Häufigkeitsverteilung von beobachteten Häufigkeiten $n$ mit $j$ Kategorien und $p$ Gruppen berechnet sich der empirische $\chi^2$ Wert:
+
+$$
+\chi^2 = \sum_{k = 1}^p \sum_{i = 1}^j \frac{(n_{ki}-\epsilon_{ki})^2}{\epsilon_{ki}}
+$$
+
+und den Freiheitsgraden: $df = (k-1) \cdot (j - 1)$
+
+Unter der Annahme das die Merkmale der Kreuztabelle unabhängig sind berechnet sich die geschätzte erwartete Häufigkeit:
+
+$$
+\hat{\epsilon}_{ki} = \frac{n_k \cdot n_i}{N}
+$$
+
 ## Fehler & Fragen
 
 Sollten Ihnen Fehler in der Formelsammlung auffallen, dann prüfen Sie diese bitte zuerst mit den Folien der Vorlesung, sowie den in der Pflichtliteratur angegebenen Formeln ab. Wenn diese Prüfung Ihre Fehlervermutung bestätigt, dann schreiben Sie bitte eine Mail unter der Angabe der Formel an: [gidon.frischkorn\@unilu.ch](mailto:gidon.frischkorn@unilu.ch)

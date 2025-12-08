@@ -39,6 +39,8 @@ In dieser Übung werden wir üben wie man von Hand und mit Hilfe von R einen Bin
 
 In den folgenden Übungen können Sie entweder den simulierten Datensatz [semester_data2.csv](semester_data2.csv) nutzen, oder Sie können die in den Aufgaben angegebenen Häufigkeitstabellen die auf Basis des Datensatzes ausgerechnet wurden verwenden um die jeweilgen Tests von Hand zu rechnen. Der Datensatz enthält die  Variablen: `geschlecht`, `nationalität`, `wohnort`, `alter`, `wissen_statistik_start`, `wissen_statistik_end` und `grösse`.
 
+Zum Teil basieren die Werte auf simulierten Daten, die nicht in dem Datensatz enthalten sind.
+
 ```{r}
 head(semester_data2)
 ```

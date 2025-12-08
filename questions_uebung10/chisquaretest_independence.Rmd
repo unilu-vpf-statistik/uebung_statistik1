@@ -1,0 +1,105 @@
+```{r generate_data}
+#| echo: FALSE
+#| results: "hide"
+set.seed(2025)
+sample_size = 200
+
+prob_male = 0.25
+prob_pass = 0.75
+prob_malepass = prob_male * prob_pass
+
+n_male <- rbinom(n = 1, size = sample_size, prob = prob_male)
+n_pass <- rbinom(n = 1, size = sample_size, prob = prob_pass)
+n_female <- sample_size - n_male
+n_notpass <- sample_size - n_pass
+
+n_malepass <- rbinom(n = 1, size = sample_size, prob = prob_malepass)
+n_femalepass <- n_pass - n_malepass
+n_malenotpass <- n_male - n_malepass
+n_femalenotpass <- n_female - n_femalepass
+
+cross_table <- matrix(data = c(n_malepass, n_malenotpass, n_femalepass, n_femalenotpass),
+                               nrow = 2, ncol = 2)
+colnames(cross_table) <- c("männlich","weiblich")
+rownames(cross_table) <- c("bestanden", "nicht bestanden")
+
+expected_table <- outer(rowSums(cross_table),colSums(cross_table))/sample_size
+
+expected_table_full <- cbind(expected_table,rowSums(expected_table))
+expected_table_full <- rbind(expected_table_full,colSums(expected_table_full))
+
+chisq_emp <- round(sum((cross_table - expected_table)^2/expected_table),2)
+
+solution <- round(c(expected_table_full,chisq_emp),2)
+```
+
+Question
+=======
+Sie haben die folgenden Kreuztabelle zu den Ergebnissen der Prüfung in Statistik 1 von `r sample_size` Studierenden.
+
+```{r print_probDist}
+#| echo: false
+knitr::kable(cross_table)
+```
+
+Berechnen Sie die erwarteten Häufigkeiten unter der Annahme, dass die Wahrscheinlichkeiten die Prüfung zu bestehen unabhängig davon ist, ob Studierenden männlich oder weiblich sind. (Geben Sie für alle Häufigkeiten 2 Nachkommastellen an und nutzen sie einen Punkt als Dezimaltrennzeichen)
+
+|               | männlich      | weiblich.      | Summe         |
+|:-------------:|:-------------:|:--------------:|:-------------:|
+|bestanden      | ##ANSWER1##   | ##ANSWER4##    | ##ANSWER7##   |
+|nicht bestand. | ##ANSWER2##   | ##ANSWER5##    | ##ANSWER8##   |
+|Summe          | ##ANSWER3##   | ##ANSWER6##    | ##ANSWER9##   |
+
+Berechnen Sie zusätzlich auf Basis der erwarteten Häufigkeiten den empirischen Chi-Quadrat-Wert für den Test auf unabhängigkeit: $\chi^2_{emp} =$ ##ANSWER10##
+
+```{r questionlist, echo = FALSE, results = "asis"}
+answerlist(rep("", length(solution)), markup = "markdown")
+```
+
+Solution
+========
+Um die erwateten Häufigkeiten zu berechnen müssen wir zuerst die marginalen Häufigkeiten für die Zeilen und Spalten berechnen. Dabei ergibt sich für die Häufigkeiten die Prüfung zu bestehen oder nicht zu bestehen:
+
+```{r marginal_pass}
+#| echo: false
+knitr::kable(rowSums(cross_table))
+```
+
+und für die Häufigkeiten von männlichen und weiblichen Studierenden:
+
+```{r marginal_geschlecht}
+#| echo: false
+knitr::kable(colSums(cross_table))
+```
+
+mit diesen Werte können wir nun auf Basis der Formel $n_{ij} = \frac{n_i \cdot n_j}{N}$ mit $N$ gleich der Stichprobengrösse 200. Die erwarteten Häufigkeiten in den einzelnen Zellen berechnen. Dabei sollten Sie mit den oben berechneten Werten auf die folgenden Kreuztabelle der Erwarteten Häufigkeiten kommen:
+
+```{r expected_table}
+#| echo: false
+knitr::kable(expected_table_full)
+```
+
+Für die Berechnung der empirischen Chi-Quadrat Wertes müssen wir zuerst wieder die Differenz zwischen beobachteten und erwarteten Häufigkeiten berechnen:
+
+```{r diff_table}
+#| echo: false
+knitr::kable(cross_table - expected_table)
+```
+
+diese Abweichungen quadrieren wir dann wiederum und teilen Sie durch die erwarteten Häufigkeiten:
+
+```{r sqdiff_table}
+#| echo: false
+knitr::kable(round((cross_table - expected_table)^2/expected_table,2))
+```
+
+Wenn wir diese Werte nun aufsummieren kommen wir auf den empirischen Chi-Quadrat Wert: $\chi^2_{emp} = `r chisq_emp`$
+
+Meta-information
+=========
+exname: chisq_twosample
+extype: cloze
+exsolution: `r paste(solution, collapse = "|")`
+exclozetype: num|num|num|num|num|num|num|num|num|num
+extol: 0.05
+exextra[numwidth,logical]: TRUE

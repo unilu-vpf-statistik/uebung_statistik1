@@ -1,16 +1,16 @@
 Question
 =======
-Sie wollen für die Stichprobe aus dem Datensatz `semester_data2.csv` testen, ob die Wahrscheinlichkeit das eigenen Statistikwissen sehr hoch einzuschätzen (d.h mit einer 5 zu Bewerten) on 0.05 abweicht. Aus dem Datensazt haben Sie berechnet, dass 12 con 180 Personen ihr Statistikwissen sehr hoch einschätzen. Der Output des Binomialtests den Sie mit R berechnet haben sieht folgendermassen aus:
+Sie wollen für die Stichprobe aus dem Datensatz `semester_data2.csv` testen, ob die Wahrscheinlichkeit das eigenen Statistikwissen sehr hoch einzuschätzen (d.h mit einer 5 zu Bewerten) von 0.05 abweicht. Aus dem Datensatz haben Sie berechnet, dass 12 von 180 Personen ihr Statistikwissen sehr hoch einschätzen. Der Output des Binomialtests den Sie mit R berechnet haben sieht folgendermassen aus:
 
 ![](./images/Result_Binomialtest.png)
 
-Welche der folgenden Aussagen für einen Test mit dem Signifikantniveau von $\alpha = .10$ ist korrekt?
+Welche der folgenden Aussagen für einen Test mit dem Signifikanzniveau von $\alpha = .10$ ist korrekt?
 
 Answerlist
 --------
 * Die aus den Daten geschätzte Wahrscheinlichkeit sein Statistikwissen hoch einzuschätzen ist $P_{emp} = 0.067$
 * Der $p$-Wert des Test ist grösser als das Signifikanzniveau $\alpha$ und deshalb ist der Test nicht signifikant.
-* Die Wahrhscheinlichkeit, dass die Nullhypothese in der Population gilt ist $P_{H_0} = .302$
+* Die Wahrscheinlichkeit, dass die Nullhypothese in der Population gilt ist $P_{H_0} = .302$
 * Der Binomialtest wurde mit einer gerichteten Hypothese durchgeführt.
 
 Solution

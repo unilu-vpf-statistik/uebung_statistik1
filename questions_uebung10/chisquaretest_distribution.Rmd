@@ -14,7 +14,7 @@ colnames(sim_data) <- colnames(prob_dist)
 
 Question
 =======
-Aus dem vorangegangen Semester wissen Sie das die Wahrscheinlihchkeit für den Wohnort der Studierenden folgender Wahrscheinlichkeitsverteilung folgt:
+Aus dem vorangegangen Semester wissen Sie das die Wahrscheinlichkeit für den Wohnort der Studierenden folgender Wahrscheinlichkeitsverteilung folgt:
 
 ```{r print_probDist}
 #| echo: false
@@ -41,6 +41,7 @@ df_test <- prod(dim(observed)[2]-1)
 chisq_emp <- round(sum((observed-expected)^2/expected),2)
 chisq_krit <- round(qchisq(p = 1 - .05, df = df_test),2)
 result_sig <- ifelse(chisq_emp > chisq_krit,"signifikant", "nicht signifikant")
+result_comparison <- ifelse(chisq_emp > chisq_krit,"grösser als der", "kleiner oder gleich dem")
 ```
 
 
@@ -77,7 +78,33 @@ und hier sind die Quadrierten Abweichungen durch die erwarteten Häufigkeiten ge
 knitr::kable(round((observed - expected)^2/expected,3))
 ```
 
-Wenn sie die Werte aus der letzten Tabelle aufsummieren erhalten sie den empirischen Chi-Quadrat wert: $\chi^2_{emp} = `r chisq_emp`$
+Wenn sie die Werte aus der letzten Tabelle aufsummieren erhalten sie den empirischen Chi-Quadrat wert: $\chi^2_{emp} = `r chisq_emp`$.
+
+Den kritischen Testwert können Sie aus der Tabelle der $p$-Quantile der $\chi^2$-Verteilung ablesen. Dafür müssen wir bestimmen, dass die Freiheitsgrade des Tests die Anzahl an Zellen der Häufigkeitstabelle minus 1 sind: $df = n-1 = 6 - 1 = 5$ und wir in der Zeile für das $p$-Quantil von $p = 1 - \alpha = 1 - .05 = .95$ ablesen müssen. Mit diesen werten sollten Sie den kritischen Chi-Quadrat-Wert als: $\chi^2_{krit}(df = `r df_test`) = `r chisq_krit`$ finden.
+
+Weil der empirische Chi-Quadrat Wert `r result_comparison` kritischen Chi-Quadrat Wert ist, ist der Test `r result_sig`.
+
+In R könnten Sie den Test folgendermassen durchführen:
+
+```r
+theoretische_wahrscheinlichkeiten <- c(0.08, 0.25, 0.30, 0.12, 0.18, 0.07)
+beobachtete_häufigkeit <- c(17,41,50,30,29,13)
+alpha = .05
+
+# mit theoretischen wahrscheinlichkeiten
+chisq.test(beobachtete_häufigkeit, p = theoretische_wahrscheinlichkeiten, correct = FALSE)
+
+# von Hand
+erwartete_häufigkeiten <- theoretische_wahrscheinlichkeiten * sum(beobachtete_häufigkeit)
+chisq_emp <- sum((beobachtete_häufigkeit-erwartete_häufigkeiten)^2/erwartete_häufigkeiten)
+df <- length(beobachtete_häufigkeit) - 1
+chisq_krit <- qchisq(p = 1 - alpha, df = df)
+
+chisq_emp
+chisq_krit
+df
+ifelse(chisq_emp > chisq_krit, "signifikant", "nicht signifikant")
+```
 
 Meta-information
 =========
