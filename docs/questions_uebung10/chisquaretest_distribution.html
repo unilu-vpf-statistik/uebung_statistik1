@@ -269,7 +269,7 @@ window.Quarto = {
 </table>
 </div>
 </div>
-<p>Im aktuellen Semester haben Sie von Studierenden die folgenden Häufigkeiten des Wohnorts beobachtet:</p>
+<p>Im aktuellen Semester haben Sie von 180 Studierenden die folgenden Häufigkeiten des Wohnorts beobachtet:</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -304,12 +304,95 @@ window.Quarto = {
 <li>Der kritische Testwert für diesen Test bei <span class="math inline">\(\alpha = .05\)</span> ist: <span class="math inline">\(\chi_{krit}^2 = 11.07\)</span></li>
 <li>Die Freiheitsgrade des Test betragen <span class="math inline">\(df = 6\)</span></li>
 <li>Der empirische Testwert für diesen Test ist: <span class="math inline">\(\chi_{emp}^2 = 4.76\)</span></li>
-<li>Der Test ist $$.</li>
+<li>Der Test ist nicht signifikant.</li>
 </ul>
 </section>
 </section>
 <section id="solution" class="level1">
 <h1>Solution</h1>
+<p>Als erstes müssen wir die erwarteten Häufigkeiten aus der Wahrscheinlichkeitsverteilung und der Anzahl an Studierenden berechnen. Dafür müssen wir die Wahrscheinlichkeiten für jede Zelle mit der Stichprobengrösse multiplizieren.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Basel</th>
+<th style="text-align: right;">Bern</th>
+<th style="text-align: right;">Luzern</th>
+<th style="text-align: right;">St.Gallen</th>
+<th style="text-align: right;">Zuerich</th>
+<th style="text-align: right;">Zug</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">14.4</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">54</td>
+<td style="text-align: right;">21.6</td>
+<td style="text-align: right;">32.4</td>
+<td style="text-align: right;">12.6</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Mit diesen Werten können wir nun die quadrierten Abweichungen zwischen den beobachteten und erwarteten Häufigkeiten berechnen, durch die erwartete Häufigkeit teilen und entsprechend der Formel für den empirischen <span class="math inline">\(\chi^2\)</span>-Wert aufsummieren.</p>
+<p>Hier sehen Sie die Tabelle der quadrierten Abweichungen:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Basel</th>
+<th style="text-align: right;">Bern</th>
+<th style="text-align: right;">Luzern</th>
+<th style="text-align: right;">St.Gallen</th>
+<th style="text-align: right;">Zuerich</th>
+<th style="text-align: right;">Zug</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">6.76</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">70.56</td>
+<td style="text-align: right;">11.56</td>
+<td style="text-align: right;">0.16</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>und hier sind die Quadrierten Abweichungen durch die erwarteten Häufigkeiten geteilt:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Basel</th>
+<th style="text-align: right;">Bern</th>
+<th style="text-align: right;">Luzern</th>
+<th style="text-align: right;">St.Gallen</th>
+<th style="text-align: right;">Zuerich</th>
+<th style="text-align: right;">Zug</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0.469</td>
+<td style="text-align: right;">0.356</td>
+<td style="text-align: right;">0.296</td>
+<td style="text-align: right;">3.267</td>
+<td style="text-align: right;">0.357</td>
+<td style="text-align: right;">0.013</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Wenn sie die Werte aus der letzten Tabelle aufsummieren erhalten sie den empirischen Chi-Quadrat wert: <span class="math inline">\(\chi^2_{emp} = 4.76\)</span></p>
 </section>
 <section id="meta-information" class="level1">
 <h1>Meta-information</h1>

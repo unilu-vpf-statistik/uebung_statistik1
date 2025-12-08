@@ -489,7 +489,7 @@ $$
 mit:
 
 $$
-\sigma_{\bar{x}_1 - \bar{x}_2}^2 = \sqrt{\frac{\hat{\sigma}_{inn}^2}{N_1} + \frac{\hat{\sigma}_{inn}^2}{N_2}}
+\hat{\sigma}_{\bar{x}_1 - \bar{x}_2} = \sqrt{\frac{\hat{\sigma}_{inn}^2}{N_1} + \frac{\hat{\sigma}_{inn}^2}{N_2}}
 $$
 
 und: 
