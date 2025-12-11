@@ -97,6 +97,6 @@ head(correlation_data)
 #| echo: false
 #| message: false
 #| results: "asis"
-exams2forms(shuffeld_questions, mathjax = TRUE)
+#exams2forms(shuffeld_questions, mathjax = TRUE)
 ```
 
