@@ -26,7 +26,7 @@ groesse ~~ 1*groesse
 alter ~~ 1*alter
 luzern ~~ 1*luzern
 
-geschlecht ~~ -0.7*groesse + 0*alter + 0.3*luzern
+geschlecht ~~ 0.7*groesse + 0*alter + 0.3*luzern
 groesse ~~ 0.3*alter + 0*luzern
 alter ~~ 0*luzern
 "
@@ -34,7 +34,7 @@ alter ~~ 0*luzern
 library(lavaan)
 correlation_data <- simulateData(model = gen_model, sample.nobs = 180)
 
-correlation_data$geschlecht <- ifelse(correlation_data$groesse > -0.5, "weiblich","männlich")
+correlation_data$geschlecht <- ifelse(correlation_data$geschlecht < 0.5, "weiblich","männlich")
 correlation_data$groesse <- round(correlation_data$groesse*7 + 170,2)
 correlation_data$alter <- round(correlation_data$alter*2.5 + 23)
 correlation_data$luzern <- ifelse(correlation_data$luzern > -0.5, "ja","nein")
@@ -97,6 +97,6 @@ head(correlation_data)
 #| echo: false
 #| message: false
 #| results: "asis"
-#exams2forms(shuffeld_questions, mathjax = TRUE)
+exams2forms(shuffeld_questions, mathjax = TRUE)
 ```
 

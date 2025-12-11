@@ -1,0 +1,40 @@
+
+```{r}
+#| include: false
+library(exams2forms)
+correlation_data <- read.csv("correlation_data.csv")
+
+corTest <- cor.test(correlation_data$groesse, correlation_data$alter)
+
+tkrit <- round(qt(p = .975, df = corTest$parameter),2)
+
+solution <- c(round(corTest$estimate,2), round(corTest$statistic,2), tkrit)
+```
+
+Question
+=======
+Sie wollen für die Stichprobe von N = 180 Personen aus dem Datensatz `correlation_data.csv` testen, ob `alter` mit der `groesse` zusammenhängt. Dafür wollen Sie eine Produkt-Moment Korrelation berechnen. Die Kovarianz der beiden Variablen ist $s_{XY} = `r round(cov(correlation_data$groesse, correlation_data$alter),2)`$, die Standardabweichung des Alters ist $s_{X} = `r round(sd(correlation_data$alter),2)`$, und die Standardabweichung der Grösse ist $s_{X} = `r round(sd(correlation_data$groesse),2)`$.
+
+Berechnen Sie die Produkt-Moment-Korrelation (auf 2-stellen gerunder): ##ANSWER1##
+
+Berchnen Sie den $t$-Wert für den Hypothesentest, ob die Korrelationbedeutsam von Null unterschiedlich ist ##ANSWER2##
+
+Bestimmen Sie den kritischen $t$-Wert für eine ungerichtete Hypothese mit $\alpha = .05$ aus der Tabelle der p-Quantile der t-Verteilung: ##ANSWER3##
+
+```{r questionlist, echo = FALSE, results = "asis"}
+answerlist(rep("", length(solution)), markup = "markdown")
+```
+
+Solution
+========
+
+Die Korrelation können Sie anhand der 
+
+Meta-information
+=========
+exname: pearson_corr
+extype: cloze
+exsolution: `r paste(solution, collapse = "|")`
+exclozetype: num|num|num
+extol: 0.05
+exextra[numwidth,logical]: TRUE

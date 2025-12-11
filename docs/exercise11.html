@@ -2153,12 +2153,12 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(correlation_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  geschlecht groesse alter luzern
-1   weiblich  170.05    21     ja
-2   weiblich  170.63    26     ja
-3   männlich  165.30    26     ja
-4   männlich  163.04    24     ja
-5   männlich  164.23    21   nein
-6   weiblich  169.22    21     ja</code></pre>
+1   weiblich  162.20    24     ja
+2   weiblich  168.92    20     ja
+3   weiblich  165.04    19     ja
+4   weiblich  161.06    20     ja
+5   weiblich  171.14    25   nein
+6   weiblich  172.81    26     ja</code></pre>
 </div>
 </div>
 <p>Falls Sie die Übungsfragen nicht mit R beantworten wollen, dann können Sie die hier gedruckte Tabelle der p-Quantile der <span class="math inline">\(t\)</span>-Verteilung nutzen um die Fragen zu beantworten.</p>
@@ -2184,6 +2184,17 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <blockquote class="blockquote">
 <p>Nutzen Sie eine <a href="https://unilu-vpf-statistik.github.io/uebung_statistik1/about.html#suchmaschinen">Suchmaschine</a>, wenn Sie nicht wissen welche Funktionen Ihnen ein bestimmtes Ergebnis liefern. Ausserdem können Sie in R immer die <a href="https://www.r-project.org/help.html">Hilfe</a> einer Funktion aufrufen, indem sie vor den Namen der Funktion ein Fragezeichen schreiben, z. Bsp <code>?median</code> oder die Hilfe-Funktion <code>help()</code> mit dem jeweligen Funktionsbefehl ausführen: <code>help(median)</code>.</p>
 </blockquote>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>Sie wollen für die Stichprobe von N = 180 Personen aus dem Datensatz <code>correlation_data.csv</code> testen, ob <code>alter</code> mit der <code>groesse</code> zusammenhängt. Dafür wollen Sie eine Produkt-Moment Korrelation berechnen. Die Kovarianz der beiden Variablen ist <span class="math inline">\(s_{XY} = 4.48\)</span>, die Standardabweichung des Alters ist <span class="math inline">\(s_{X} = 2.59\)</span>, und die Standardabweichung der Grösse ist <span class="math inline">\(s_{X} = 6.86\)</span>.</p>
+<p>Berechnen Sie die Produkt-Moment-Korrelation (auf 2-stellen gerunder): <input class="webex-solveme nospaces" id="webex-f9082337a4339e7b07f7caa4f551fba6" data-tol="0.05" size="20" data-answer="PRsAFgAGEWo="></p>
+<p>Berchnen Sie den <span class="math inline">\(t\)</span>-Wert für den Hypothesentest, ob die Korrelationbedeutsam von Null unterschiedlich ist <input class="webex-solveme nospaces" id="webex-ab12e46aa537774e9d46f6d7345be466" data-tol="0.05" size="20" data-answer="OkACHFEDFDw="></p>
+<p>Bestimmen Sie den kritischen <span class="math inline">\(t\)</span>-Wert für eine ungerichtete Hypothese mit <span class="math inline">\(\alpha = .05\)</span> aus der Tabelle der p-Quantile der t-Verteilung: <input class="webex-solveme nospaces" id="webex-3a7f08a40a0aeafb58bbfc8f231e79d8" data-tol="0.05" size="20" data-answer="aEMGSAkPQ2k="></p>
+</div>
+<div class="webex-solution">
+<p>Die Korrelation können Sie anhand der</p>
+</div>
+</div>
 
 
 </section>
