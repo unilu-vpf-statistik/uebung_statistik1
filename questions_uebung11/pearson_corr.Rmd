@@ -17,7 +17,7 @@ Sie wollen für die Stichprobe von N = 180 Personen aus dem Datensatz `correlati
 
 Berechnen Sie die Produkt-Moment-Korrelation (auf 2-stellen gerunder): ##ANSWER1##
 
-Berchnen Sie den empirischen $t$-Wert für den Hypothesentest, ob die Korrelationbedeutsam von Null unterschiedlich ist ##ANSWER2##
+Berchnen Sie den empirischen $t$-Wert für den Hypothesentest, ob die Korrelation bedeutsam von Null unterschiedlich ist ##ANSWER2##
 
 Bestimmen Sie den kritischen $t$-Wert für eine ungerichtete Hypothese mit $\alpha = .05$. Wegen der hohen Freiheitsgrade können Sie dafür näherungsweise die Tabelle der Standardnormalverteilung nutzen: ##ANSWER3##
 
@@ -27,11 +27,11 @@ answerlist(rep("", length(solution)), markup = "markdown")
 
 Solution
 ========
-Die Korrelation können Sie anhand der Fromel $r_{XY} = \frac{s_{XY}}{s_X \cdot s_Y}$ aus den Werte in der Aufgabenstellung berechnen.
+Die Korrelation können Sie anhand der Fromel $r_{XY} = \frac{s_{XY}}{s_X \cdot s_Y}$ aus den Werte in der Aufgabenstellung berechnen. Dabei sollten Sie auf den Wert $`r round(corTest$estimate,2)`$ kommen.
 
-Der empirische $t$-Wert berechnet sich anhand der Formel: $t = \frac{r \cdot \sqrt{N-2}}{\sqrt{1-r^2}}$ 
+Der empirische $t$-Wert berechnet sich anhand der Formel: $t = \frac{r \cdot \sqrt{N-2}}{\sqrt{1-r^2}}$, wenn Sie die Korrelation auf 2 Nachkommastellen gerundet haben, dann ist der Wert: $`r round((round(corTest$estimate,2)*sqrt(corTest$parameter))/(sqrt(1-round(corTest$estimate,2)^2)),2)`$. Wenn Sie die Korrelation auf mehr Nachkommastellen berechnen, dann ist der Wert: $`r round((corTest$estimate*sqrt(corTest$parameter))/sqrt(1-corTest$estimate^2),2)`$
 
-Den kritischen $t$-Wert lesen sie wegen der hohen Freiheitsgrade $df = `r corTest$parameter`$ aus der $z$-Tabelle der Standardnormalverteilung ab, da die $t$-Verteilung in diesem Fall ausreichend gegen die Standardnormalverteilung konvergiert ist.
+Den kritischen $t$-Wert lesen sie wegen der hohen Freiheitsgrade $df = `r corTest$parameter`$ aus der $z$-Tabelle der Standardnormalverteilung ab, da die $t$-Verteilung in diesem Fall ausreichend gegen die Standardnormalverteilung konvergiert ist. Wenn Sie den kritischen Wert aus der Standardnormalverteilung bestimmen erhalten sie: $t_{krit} = `r round(qnorm(p = .975),2)`$, wenn Sie den kritischen Wert mit Hilfe von `R` aus der $t$-Verteilung mit $df = `r corTest$parameter`$ bestimmen erhalten sie: $t_{krit} = `r round(qt(p = .975, df = corTest$parameter),2)`$.
 
 Meta-information
 =========

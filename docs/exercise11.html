@@ -1730,7 +1730,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Übung 11 - Zusammenhangsmasse</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./exercise11.html">Übung 11</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -1808,6 +1808,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./exercise10.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Übung 10</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exercise11.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Übung 11</span></a>
   </div>
 </li>
     </ul>
@@ -2184,17 +2190,30 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <blockquote class="blockquote">
 <p>Nutzen Sie eine <a href="https://unilu-vpf-statistik.github.io/uebung_statistik1/about.html#suchmaschinen">Suchmaschine</a>, wenn Sie nicht wissen welche Funktionen Ihnen ein bestimmtes Ergebnis liefern. Ausserdem können Sie in R immer die <a href="https://www.r-project.org/help.html">Hilfe</a> einer Funktion aufrufen, indem sie vor den Namen der Funktion ein Fragezeichen schreiben, z. Bsp <code>?median</code> oder die Hilfe-Funktion <code>help()</code> mit dem jeweligen Funktionsbefehl ausführen: <code>help(median)</code>.</p>
 </blockquote>
+<pre><code>Warning in read_metainfo(file, exshuffle = exshuffle): length of exclozetype
+does not match length of exsolution</code></pre>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Sie wollen für die Stichprobe von N = 180 Personen aus dem Datensatz <code>correlation_data.csv</code> testen, ob <code>alter</code> mit der <code>groesse</code> zusammenhängt. Dafür wollen Sie eine Produkt-Moment Korrelation berechnen. Die Kovarianz der beiden Variablen ist <span class="math inline">\(s_{XY} = 4.48\)</span>, die Standardabweichung des Alters ist <span class="math inline">\(s_{X} = 2.59\)</span>, und die Standardabweichung der Grösse ist <span class="math inline">\(s_{X} = 6.86\)</span>.</p>
-<p>Berechnen Sie die Produkt-Moment-Korrelation (auf 2-stellen gerunder): <input class="webex-solveme nospaces" id="webex-a86f106d5ea676a0b70c37b5c26d4916" data-tol="0.05" size="20" data-answer="OhoGSAMFFDk="></p>
-<p>Berchnen Sie den empirischen <span class="math inline">\(t\)</span>-Wert für den Hypothesentest, ob die Korrelationbedeutsam von Null unterschiedlich ist <input class="webex-solveme nospaces" id="webex-204d088a823b3469e73c653f47cf63df" data-tol="0.05" size="20" data-answer="aRIHSgQPGjw="></p>
-<p>Bestimmen Sie den kritischen <span class="math inline">\(t\)</span>-Wert für eine ungerichtete Hypothese mit <span class="math inline">\(\alpha = .05\)</span>. Wegen der hohen Freiheitsgrade können Sie dafür näherungsweise die Tabelle der Standardnormalverteilung nutzen: <input class="webex-solveme nospaces" id="webex-9004637df9dc579e96f9bc458cd667c0" data-tol="0.05" size="20" data-answer="YhIBGg8EFTk="></p>
+<p>Berechnen Sie die Produkt-Moment-Korrelation (auf 2-stellen gerunder): <input class="webex-solveme nospaces" id="webex-6f938d0fb09f0412e8c41cd86f6cc6e5" data-tol="0.05" size="20" data-answer="bUQJHQpREjs="></p>
+<p>Berchnen Sie den empirischen <span class="math inline">\(t\)</span>-Wert für den Hypothesentest, ob die Korrelation bedeutsam von Null unterschiedlich ist <input class="webex-solveme nospaces" id="webex-69d3864e40f2e28410decbfd9c7b6303" data-tol="0.05" size="20" data-answer="bRtXHQwBFjg="></p>
+<p>Bestimmen Sie den kritischen <span class="math inline">\(t\)</span>-Wert für eine ungerichtete Hypothese mit <span class="math inline">\(\alpha = .05\)</span>. Wegen der hohen Freiheitsgrade können Sie dafür näherungsweise die Tabelle der Standardnormalverteilung nutzen: <input class="webex-solveme nospaces" id="webex-dcc8af886ec6d909866d415e1040f5e6" data-tol="0.05" size="20" data-answer="P0FSFlhRGmU="></p>
 </div>
 <div class="webex-solution">
-<p>Die Korrelation können Sie anhand der Fromel <span class="math inline">\(r_{XY} = \frac{s_{XY}}{s_X \cdot s_Y}\)</span> aus den Werte in der Aufgabenstellung berechnen.</p>
-<p>Der empirische <span class="math inline">\(t\)</span>-Wert berechnet sich anhand der Formel: <span class="math inline">\(t = \frac{r \cdot \sqrt{N-2}}{\sqrt{1-r^2}}\)</span></p>
-<p>Den kritischen <span class="math inline">\(t\)</span>-Wert lesen sie wegen der hohen Freiheitsgrade <span class="math inline">\(df = 178\)</span> aus der <span class="math inline">\(z\)</span>-Tabelle der Standardnormalverteilung ab, da die <span class="math inline">\(t\)</span>-Verteilung in diesem Fall ausreichend gegen die Standardnormalverteilung konvergiert ist.</p>
+<p>Die Korrelation können Sie anhand der Fromel <span class="math inline">\(r_{XY} = \frac{s_{XY}}{s_X \cdot s_Y}\)</span> aus den Werte in der Aufgabenstellung berechnen. Dabei sollten Sie auf den Wert <span class="math inline">\(0.25\)</span> kommen.</p>
+<p>Der empirische <span class="math inline">\(t\)</span>-Wert berechnet sich anhand der Formel: <span class="math inline">\(t = \frac{r \cdot \sqrt{N-2}}{\sqrt{1-r^2}}\)</span>, wenn Sie die Korrelation auf 2 Nachkommastellen gerundet haben, dann ist der Wert: <span class="math inline">\(3.44\)</span>. Wenn Sie die Korrelation auf mehr Nachkommastellen berechnen, dann ist der Wert: <span class="math inline">\(3.47\)</span></p>
+<p>Den kritischen <span class="math inline">\(t\)</span>-Wert lesen sie wegen der hohen Freiheitsgrade <span class="math inline">\(df = 178\)</span> aus der <span class="math inline">\(z\)</span>-Tabelle der Standardnormalverteilung ab, da die <span class="math inline">\(t\)</span>-Verteilung in diesem Fall ausreichend gegen die Standardnormalverteilung konvergiert ist. Wenn Sie den kritischen Wert aus der Standardnormalverteilung bestimmen erhalten sie: <span class="math inline">\(t_{krit} = 1.96\)</span>, wenn Sie den kritischen Wert mit Hilfe von <code>R</code> aus der <span class="math inline">\(t\)</span>-Verteilung mit <span class="math inline">\(df = 178\)</span> bestimmen erhalten sie: <span class="math inline">\(t_{krit} = 1.97\)</span>.</p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>Sie wollen für die Stichprobe von N = 180 Personen aus dem Datensatz <code>correlation_data.csv</code> berechnen, ob es einen Zusammenhang zwischen der <code>groesse</code> und dem <code>geschlecht</code> der Teilnehmer gibt. Der t-test für unabhängige Stichproben hat einen empirischen <span class="math inline">\(t\)</span>-Wert von <span class="math inline">\(t_{emp} = -9.24\)</span> ergeben.</p>
+<p>Berechnen Sie die Punkt-Biseriale-Korrelation (auf 2-stellen gerundet): <input class="webex-solveme nospaces" id="webex-9a705c38a96eb28b499042e74cfa63be" data-tol="0.05" size="20" data-answer="YkMHHgBUEWU=">.</p>
+<p>Wie viel Varianz wird durch das Geschlecht an der Grösse erklärt (in Prozent mit keinen Nachkommastellen): <input class="webex-solveme nospaces" id="webex-5af00961446e239e50902d7944b96c8d" data-tol="0.05" size="20" data-answer="bkNVAhJk"></p>
+</div>
+<div class="webex-solution">
+<p>Mit Hilfe der Formel <span class="math inline">\(r_{pb} = \frac{t}{\sqrt{t^2-df}}\)</span> können wir den <span class="math inline">\(t\)</span>-Wert in die Punkt-Biseriale Korrelation umrechnen. Die Freiheitsgrade ergeben sich dabei aus <span class="math inline">\(df = N - 2 = 178\)</span>. Das Ergebnis ist dabei: <span class="math inline">\(r_{pb} = 0.57\)</span>.</p>
+<p>Für die aufgeklärte Varianz können wir die Punkt-Biseriale Korrelation quadrieren: <span class="math inline">\(r_{pb}^2 = 0.32\)</span>. Dieser Wert mal 100 gibt die aufgeklärte Varianz in Prozent</p>
 </div>
 </div>
 

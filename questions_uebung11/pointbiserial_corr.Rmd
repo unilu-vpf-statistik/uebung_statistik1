@@ -1,0 +1,46 @@
+
+```{r solutions_pointbiserial}
+#| include: false
+library(exams2forms)
+correlation_data <- read.csv("correlation_data.csv")
+
+ttest <- t.test(correlation_data$groesse[correlation_data$geschlecht == "weiblich"], 
+                correlation_data$groesse[correlation_data$geschlecht == "männlich"],
+                var.equal = TRUE)
+corTest <- cor.test(correlation_data$groesse, ifelse(correlation_data$geschlecht == "weiblich",-0.5,0))
+
+tkrit <- round(qt(p = .975, df = corTest$parameter),2)
+
+var_grösse <- var(correlation_data$groesse)
+
+var_inn <- (var(correlation_data$groesse[correlation_data$geschlecht == "weiblich"]) * sum(correlation_data$geschlecht == "weiblich") + var(correlation_data$groesse[correlation_data$geschlecht == "männlich"]) * sum(correlation_data$geschlecht == "männlich"))/(sum(correlation_data$geschlecht == "weiblich") + sum(correlation_data$geschlecht == "männlich"))
+
+solution <- c(round(corTest$estimate,2), round(corTest$estimate^2*100))
+```
+
+Question
+=======
+Sie wollen für die Stichprobe von N = 180 Personen aus dem Datensatz `correlation_data.csv` berechnen, ob es einen Zusammenhang zwischen der `groesse` und dem `geschlecht` der Teilnehmer gibt. Der t-test für unabhängige Stichproben hat einen empirischen $t$-Wert von $t_{emp} = `r round(ttest$statistic,2)`$ ergeben.
+
+Berechnen Sie die Punkt-Biseriale-Korrelation (auf 2-stellen gerundet): ##ANSWER1##.
+
+Wie viel Varianz wird durch das Geschlecht an der Grösse erklärt (in Prozent mit keinen Nachkommastellen): ##ANSWER2##
+
+```{r questionlist, echo = FALSE, results = "asis"}
+answerlist(rep("", length(solution)), markup = "markdown")
+```
+
+Solution
+========
+Mit Hilfe der Formel $r_{pb} = \frac{t}{\sqrt{t^2-df}}$ können wir den $t$-Wert in die Punkt-Biseriale Korrelation umrechnen. Die Freiheitsgrade ergeben sich dabei aus $df = N - 2 = 178$. Das Ergebnis ist dabei: $r_{pb} = `r solution[1]`$.
+
+Für die aufgeklärte Varianz können wir die Punkt-Biseriale Korrelation quadrieren: $r_{pb}^2 = `r solution[2]/100`$. Dieser Wert mal 100 gibt die aufgeklärte Varianz in Prozent
+
+Meta-information
+=========
+exname: pearson_corr
+extype: cloze
+exsolution: `r paste(solution, collapse = "|")`
+exclozetype: num|num|num
+extol: 0.05
+exextra[numwidth,logical]: TRUE
