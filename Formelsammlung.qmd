@@ -620,7 +620,7 @@ Die Teststatistik $z_r$ folgt approximativ einer Standardnormalverteilung $x \si
 Für eine Korrelation zwischen eine Dichotomen Variable und einer kontinuierlichen Variable können wir die Punkt-Biseriale Korrelation auf Basis des $t$-Wertes für den Mittelwertsvergleich der beiden Gruppen berechnen:
 
 $$
-r_{pb} = \frac{t}{\sqrt{(t^2 - df)}}
+r_{pb} = \frac{t}{\sqrt{(t^2 + df)}}
 $$
 
 ### Phi-Koeffizient
