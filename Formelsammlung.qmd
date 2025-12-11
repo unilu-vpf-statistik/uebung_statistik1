@@ -195,7 +195,7 @@ $$
 
 mit der Wahrscheinllichkeit, dass das Ereignis A nicht eintritt $\overline{A}$
 
-#### Wahrscheinlichkeit: Schnittmengen
+#### Wahrscheinlichkeit: Vereinigungsmengen
 
 $$
 P(A \cup B) = P(A) + P(B) - P(A \cap B)
@@ -358,7 +358,7 @@ mit der Quantilfunktion $F^{-1}$ der entsprechenden Verteilung der jeweiligen Te
 
 **$p$-Wert**
 
-Wahrscheinlichkeit ein bestimmtes Ergebnis bzw. eine bestimmte empirische Teststatistik $T_emp$ oder extremere Ergebnisse unter Annahme der Nullhypothese zu beobachten.
+Wahrscheinlichkeit ein bestimmtes Ergebnis bzw. eine bestimmte empirische Teststatistik $T_{emp}$ oder extremere Ergebnisse unter Annahme der Nullhypothese zu beobachten.
 
 $$
 \text{ungerichtete Hypothese:} \quad p = 2\cdot (1 - F(|T_{emp})|) 
@@ -582,7 +582,7 @@ $$
 für einen Hypothesentest einer Korrelation $r_{XY}$ gegen null, d.h. $\rho_0 = 0$ können wir die folgenden Teststatistik berechnen:
 
 $$
-t_{} = \frac{r_{XY}\sqrt{N-2}}{\sqrt{1-r_{XY}^2}}
+t_{r} = \frac{r_{XY}\sqrt{N-2}}{\sqrt{1-r_{XY}^2}}
 $$
 
 mit den Freiheitsgraden: $df = N-2$
@@ -603,15 +603,33 @@ $$
 
 Fisher's Z Werte folgen approximativ einer Normalverteilung mit $Z_r \sim \mathcal{N}(\mu_r = Z_{\rho}, \sigma^2_Z = \frac{1}{N-3})$
 
-#### z-Test: Test einer Korrelation aus einer Stichprobe gegen ein
+#### z-Test: Test einer Korrelation gegen eine beliebige anderen Korrelation
 
-Für 
+um eine Korrelation $r_{XY}$ gegen eine Korrelation unter der Nullhypothese $\rho_0$ zu testen berechnen wir:
+
+$$
+z_{r} = \frac{Z_{r}-Z_{\rho_0}}{\sigma_{Z}}; \quad \sigma_Z = \frac{1}{\sqrt{N-3}}
+$$
+
+Mit den Fisher's Z-Transformierten werten der Korrelation in der Stichprobe $Z_r$ und der Korrelation unter der Nullhypothese $Z_{\rho_0}$.
+
+Die Teststatistik $z_r$ folgt approximativ einer Standardnormalverteilung $x \sim \mathcal{N}(\mu = 0, \sigma = 1)$
 
 ### Punkt-Biseriale Korrelation
 
+Für eine Korrelation zwischen eine Dichotomen Variable und einer kontinuierlichen Variable können wir die Punkt-Biseriale Korrelation auf Basis des $t$-Wertes für den Mittelwertsvergleich der beiden Gruppen berechnen:
+
+$$
+r_{pb} = \frac{t}{\sqrt{(t^2 - df)}}
+$$
+
 ### Phi-Koeffizient
 
-### Cramer's V
+für die Berechnung der Korrelation einer 2x2 Häufigkeitstabelle können wir die Korrelation zwischen den beiden Variablen mit dem Phi-Koeffizient $\phi$ aus dem $\chi^2$-Wert für den Test auf unabhängigkeit berechnen:
+
+$$
+\phi = \sqrt{\frac{\chi^2}{N}}
+$$
 
 
 ## Fehler & Fragen

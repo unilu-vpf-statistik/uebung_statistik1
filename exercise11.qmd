@@ -18,14 +18,32 @@ library(exams2forms)
 library(here)
 library(dplyr)
 
-gen_model <- ""
+set.seed(2025)
 
-cor_mat <- matrix(data = c(1, 0.7, 0.5, 0.3,  0.7, 1, 0.5, 0.5, 0.5, 0.5))
-# Laden des Datensatzes
-semester_data2 <- read.csv("semester_data2.csv")
+gen_model <- "
+geschlecht ~~ 1*geschlecht
+groesse ~~ 1*groesse
+alter ~~ 1*alter
+luzern ~~ 1*luzern
+
+geschlecht ~~ -0.7*groesse + 0*alter + 0.3*luzern
+groesse ~~ 0.3*alter + 0*luzern
+alter ~~ 0*luzern
+"
+
+library(lavaan)
+correlation_data <- simulateData(model = gen_model, sample.nobs = 180)
+
+correlation_data$geschlecht <- ifelse(correlation_data$groesse > -0.5, "weiblich","männlich")
+correlation_data$groesse <- round(correlation_data$groesse*7 + 170,2)
+correlation_data$alter <- round(correlation_data$alter*2.5 + 23)
+correlation_data$luzern <- ifelse(correlation_data$luzern > -0.5, "ja","nein")
+
+write.csv(correlation_data, "correlation_data.csv")
+
 
 # exercise questions
-exam_files <- list.files(here("questions_uebung10"), pattern = "*.Rmd", full.names = TRUE)
+exam_files <- list.files(here("questions_uebung11"), pattern = "*.Rmd", full.names = TRUE)
 shuffeld_questions <- exam_files
 ```
 
@@ -38,17 +56,19 @@ In dieser Übung werden wir üben wie man von Hand und mit Hilfe von R Zusammenh
 
 ## Übungen
 
-In den folgenden Übungen können Sie entweder den simulierten Datensatz [semester_data2.csv](semester_data2.csv) nutzen, oder Sie können die in den Aufgaben angegebenen Häufigkeitstabellen die auf Basis des Datensatzes ausgerechnet wurden verwenden um die jeweilgen Tests von Hand zu rechnen. Der Datensatz enthält die  Variablen: `geschlecht`, `nationalität`, `wohnort`, `alter`, `wissen_statistik_start`, `wissen_statistik_end` und `grösse`.
-
-Zum Teil basieren die Werte auf simulierten Daten, die nicht in dem Datensatz enthalten sind.
+In den folgenden Übungen können Sie entweder den simulierten Datensatz [correlation_Data.csv](correlation_data.csv) nutzen, oder Sie können die in den Aufgaben angegebenen Deskriptiven Statistiken nutzen die auf Basis des Datensatzes ausgerechnet wurden verwenden um die jeweilgen Tests von Hand zu rechnen. Der Datensatz enthält die  Variablen: `geschlecht`, `groesse`, `alter`, `luzern`.
 
 ```{r}
-head(semester_data2)
+head(correlation_data)
 ```
 
-Falls Sie die Übungsfragen nicht mit R beantworten wollen, dann können Sie die hier gedruckte Tabelle der p-Quantile der $\chi^2$-Verteilung nutzen um die Fragen zu beantworten.
+Falls Sie die Übungsfragen nicht mit R beantworten wollen, dann können Sie die hier gedruckte Tabelle der p-Quantile der $t$-Verteilung nutzen um die Fragen zu beantworten.
 
-![Tabelle der p-Quantile der $\chi^2$-Verteilung](./images/Tabelle_pQuantile_ChiQuadrat.png)
+![Tabelle der p-Quantile der $t$-Verteilung](./images/pQuantile_tVerteilung.png)
+
+Sowie die Tabelle der Verteilungsfunktion der Standardnormalverteilung:
+
+![Tabelle der Verteilungsfunktion der Standardnormalverteilung](./images/zTabelle_Normalverteilung.png)
 
 Wie in den bisherigen Übungen finden Sie über den Übungsaufgaben die `webr` Konsole, die Ihnen das Schreiben und Durchführen von R Code direkt auf der Website ermöglicht. Wenn viele Studierenden die Übungen parallel machen, dann kann es sein, dass `webr` langsam wird.
 
@@ -56,14 +76,14 @@ Wie in den bisherigen Übungen finden Sie über den Übungsaufgaben die `webr` K
 
 ```{webr-r}
 # Herunterladen der Daten um sie lokal verfügbar zu machen
-url <- "https://unilu-vpf-statistik.github.io/uebung_statistik1/semester_data2.csv"
-download.file(url, "semester_data2.csv")
+url <- "https://unilu-vpf-statistik.github.io/uebung_statistik1/correlation_data.csv"
+download.file(url, "correlation_data.csv")
 
 # Laden des Datensatzes
-semester_data2 <- read.csv("semester_data2.csv")
+correlation_data <- read.csv("correlation_data.csv")
 
 # Anzeigen der ersten Zeilen des Datensatzes
-head(semester_data2)
+head(correlation_data)
 
 # Schreiben Sie hier ihren Code um die Aufgaben zu lösen
 
