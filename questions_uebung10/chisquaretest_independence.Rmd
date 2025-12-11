@@ -1,6 +1,7 @@
 ```{r generate_data}
 #| echo: FALSE
 #| results: "hide"
+library(exams2forms)
 set.seed(2025)
 sample_size = 200
 

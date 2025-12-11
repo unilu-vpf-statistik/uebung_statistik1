@@ -265,6 +265,14 @@ window.Quarto = {
   <li><a href="#metrische-variablen" id="toc-metrische-variablen" class="nav-link" data-scroll-target="#metrische-variablen">Metrische Variablen</a></li>
   <li><a href="#diskrete-variablen" id="toc-diskrete-variablen" class="nav-link" data-scroll-target="#diskrete-variablen">Diskrete Variablen</a></li>
   </ul></li>
+  <li><a href="#zusammenhangsmasse" id="toc-zusammenhangsmasse" class="nav-link" data-scroll-target="#zusammenhangsmasse">Zusammenhangsmasse</a>
+  <ul class="collapse">
+  <li><a href="#kovarianz" id="toc-kovarianz" class="nav-link" data-scroll-target="#kovarianz">Kovarianz</a></li>
+  <li><a href="#produkt-moment-korrelation" id="toc-produkt-moment-korrelation" class="nav-link" data-scroll-target="#produkt-moment-korrelation">Produkt-Moment Korrelation</a></li>
+  <li><a href="#punkt-biseriale-korrelation" id="toc-punkt-biseriale-korrelation" class="nav-link" data-scroll-target="#punkt-biseriale-korrelation">Punkt-Biseriale Korrelation</a></li>
+  <li><a href="#phi-koeffizient" id="toc-phi-koeffizient" class="nav-link" data-scroll-target="#phi-koeffizient">Phi-Koeffizient</a></li>
+  <li><a href="#cramers-v" id="toc-cramers-v" class="nav-link" data-scroll-target="#cramers-v">Cramer’s V</a></li>
+  </ul></li>
   <li><a href="#fehler-fragen" id="toc-fehler-fragen" class="nav-link" data-scroll-target="#fehler-fragen">Fehler &amp; Fragen</a></li>
   </ul></li>
   </ul>
@@ -740,6 +748,57 @@ t_{emp} = \frac{\hat{\mu}_D}{\hat{\sigma}_{\mu_D}} = \frac{\bar{x}_D}{\hat{\sigm
 \hat{\epsilon}_{ki} = \frac{n_k \cdot n_i}{N}
 \]</span></p>
 </section>
+</section>
+</section>
+<section id="zusammenhangsmasse" class="level2">
+<h2 class="anchored" data-anchor-id="zusammenhangsmasse">Zusammenhangsmasse</h2>
+<section id="kovarianz" class="level3">
+<h3 class="anchored" data-anchor-id="kovarianz">Kovarianz</h3>
+<p>als deskriptive Statistik in einer Stichprobe mit <span class="math inline">\(N\)</span> Werten berechnet sich die Kovarianz zwischen zwei kontinuierlichen Zufallsvariablen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> wie folgt:</p>
+<p><span class="math display">\[
+s_{XY} = \frac{\sum_{i = 1}^N (x_i - \bar{x})(y_i - \bar{y})}{N}
+\]</span></p>
+<p>als Populationsschätzer für die Kovarianz in der Population:</p>
+<p><span class="math display">\[
+\hat{\sigma}_{XY} = \frac{\sum_{i = 1}^N (x_i - \bar{x})(y_i - \bar{y})}{N-1}
+\]</span></p>
+</section>
+<section id="produkt-moment-korrelation" class="level3">
+<h3 class="anchored" data-anchor-id="produkt-moment-korrelation">Produkt-Moment Korrelation</h3>
+<p>in der Stichprobe berechnet sich die Produkt-Moment Korrelation zwischen zwei kontinuierlichen Zufallsvariablen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> folgendermassen:</p>
+<p><span class="math display">\[
+r_{XY}=\frac{s_{XY}}{s_X \cdot s_Y}
+\]</span></p>
+<p>der Populationsschätzer für die Korrelation in der Population ist:</p>
+<p><span class="math display">\[
+\hat{\rho}_{XY} = \frac{\hat{\sigma}_{XY}}{\hat{\sigma}_X \cdot \hat{\sigma}_Y}= \frac{\frac{N-1}{N} \cdot s_{XY}}{\sqrt{\frac{N-1}{N}}s_X \cdot \sqrt{\frac{N-1}{N}}s_Y} = \frac{s_{XY}}{s_X \cdot s_Y} = r_{XY}
+\]</span> #### Teststatistik: Unkorreliertheit von zwei Variablen</p>
+<p>für einen Hypothesentest einer Korrelation <span class="math inline">\(r_{XY}\)</span> gegen null, d.h. <span class="math inline">\(\rho_0 = 0\)</span> können wir die folgenden Teststatistik berechnen:</p>
+<p><span class="math display">\[
+t_{} = \frac{r_{XY}\sqrt{N-2}}{\sqrt{1-r_{XY}^2}}
+\]</span></p>
+<p>mit den Freiheitsgraden: <span class="math inline">\(df = N-2\)</span></p>
+<section id="fishers-z-transformation" class="level4">
+<h4 class="anchored" data-anchor-id="fishers-z-transformation">Fisher’s Z Transformation</h4>
+<p>für den Vergleich von zwei Korrelationen aus unabhängigen Stichproben, wenden wir Fisher’s Z Transformation an:</p>
+<p><span class="math display">\[
+Z_r = \frac{1}{2} \ln\left(\frac{1 + r_{XY}}{1-r_{XY}}\right)
+\]</span></p>
+<p>wobei Fisher’s Z werte anhand der folgenden Formel in Korrelationswerte zurück transformiert werden können:</p>
+<p><span class="math display">\[
+r = \frac{e^{2 \cdot Z_r}-1}{e^{2 \cdot Z_r}+1}
+\]</span></p>
+<p>Fisher’s Z Werte folgen approximativ einer Normalverteilung mit <span class="math inline">\(Z_r \sim \mathcal{N}(\mu_r = Z_{\rho}, \sigma^2_Z = \frac{1}{N-3})\)</span></p>
+</section>
+</section>
+<section id="punkt-biseriale-korrelation" class="level3">
+<h3 class="anchored" data-anchor-id="punkt-biseriale-korrelation">Punkt-Biseriale Korrelation</h3>
+</section>
+<section id="phi-koeffizient" class="level3">
+<h3 class="anchored" data-anchor-id="phi-koeffizient">Phi-Koeffizient</h3>
+</section>
+<section id="cramers-v" class="level3">
+<h3 class="anchored" data-anchor-id="cramers-v">Cramer’s V</h3>
 </section>
 </section>
 <section id="fehler-fragen" class="level2">

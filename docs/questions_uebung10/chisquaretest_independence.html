@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>chisquaretest_distribution – Übungen - VL: Statistik I</title>
+<title>chisquaretest_independence – Übungen - VL: Statistik I</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,41 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -281,183 +246,227 @@ window.Quarto = {
 
 
 
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: exams</code></pre>
+</div>
+</div>
 <section id="question" class="level1">
 <h1>Question</h1>
-<p>Aus dem vorangegangen Semester wissen Sie das die Wahrscheinlichkeit für den Wohnort der Studierenden folgender Wahrscheinlichkeitsverteilung folgt:</p>
+<p>Sie haben die folgenden Kreuztabelle zu den Ergebnissen der Prüfung in Statistik 1 von 200 Studierenden.</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th style="text-align: right;">Basel</th>
-<th style="text-align: right;">Bern</th>
-<th style="text-align: right;">Luzern</th>
-<th style="text-align: right;">St.Gallen</th>
-<th style="text-align: right;">Zuerich</th>
-<th style="text-align: right;">Zug</th>
+<th style="text-align: left;"></th>
+<th style="text-align: right;">männlich</th>
+<th style="text-align: right;">weiblich</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">0.08</td>
-<td style="text-align: right;">0.25</td>
-<td style="text-align: right;">0.3</td>
-<td style="text-align: right;">0.12</td>
-<td style="text-align: right;">0.18</td>
-<td style="text-align: right;">0.07</td>
+<td style="text-align: left;">bestanden</td>
+<td style="text-align: right;">39</td>
+<td style="text-align: right;">104</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">nicht bestanden</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">52</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<p>Im aktuellen Semester haben Sie von 180 Studierenden die folgenden Häufigkeiten des Wohnorts beobachtet:</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
+<p>Berechnen Sie die erwarteten Häufigkeiten unter der Annahme, dass die Wahrscheinlichkeiten die Prüfung zu bestehen unabhängig davon ist, ob Studierenden männlich oder weiblich sind. (Geben Sie für alle Häufigkeiten 2 Nachkommastellen an und nutzen sie einen Punkt als Dezimaltrennzeichen)</p>
+<table class="caption-top table">
 <thead>
 <tr class="header">
-<th style="text-align: right;">Basel</th>
-<th style="text-align: right;">Bern</th>
-<th style="text-align: right;">Luzern</th>
-<th style="text-align: right;">St.Gallen</th>
-<th style="text-align: right;">Zuerich</th>
-<th style="text-align: right;">Zug</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">männlich</th>
+<th style="text-align: center;">weiblich.</th>
+<th style="text-align: center;">Summe</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">17</td>
-<td style="text-align: right;">41</td>
-<td style="text-align: right;">50</td>
-<td style="text-align: right;">30</td>
-<td style="text-align: right;">29</td>
-<td style="text-align: right;">13</td>
+<td style="text-align: center;">bestanden</td>
+<td style="text-align: center;">##ANSWER1##</td>
+<td style="text-align: center;">##ANSWER4##</td>
+<td style="text-align: center;">##ANSWER7##</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">nicht bestand.</td>
+<td style="text-align: center;">##ANSWER2##</td>
+<td style="text-align: center;">##ANSWER5##</td>
+<td style="text-align: center;">##ANSWER8##</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Summe</td>
+<td style="text-align: center;">##ANSWER3##</td>
+<td style="text-align: center;">##ANSWER6##</td>
+<td style="text-align: center;">##ANSWER9##</td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<p>Berechnen Sie einen <span class="math inline">\(\chi^2\)</span>-Test mit Signifikanzniveau <span class="math inline">\(\alpha = .05\)</span> um zu Testen, ob die Häufigkeitsverteilung des aktuellen Semester sich statistisch bedeutsam von der Wahrscheinlichkeitsverteilung des letzten Semesters unterscheidet.</p>
-<p>Kreuzen Sie für den Test an welche der folgenden Antworten korrekt ist.</p>
+<p>Berechnen Sie zusätzlich auf Basis der erwarteten Häufigkeiten den empirischen Chi-Quadrat-Wert für den Test auf unabhängigkeit: <span class="math inline">\(\chi^2_{emp} =\)</span> ##ANSWER10##</p>
 <section id="answerlist" class="level2">
 <h2 class="anchored" data-anchor-id="answerlist">Answerlist</h2>
 <ul>
-<li>Der kritische Testwert für diesen Test bei <span class="math inline">\(\alpha = .05\)</span> ist: <span class="math inline">\(\chi_{krit}^2 = 11.07\)</span></li>
-<li>Die Freiheitsgrade des Test betragen <span class="math inline">\(df = 6\)</span></li>
-<li>Der empirische Testwert für diesen Test ist: <span class="math inline">\(\chi_{emp}^2 = 4.76\)</span></li>
-<li>Der Test ist nicht signifikant.</li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
 </ul>
 </section>
 </section>
 <section id="solution" class="level1">
 <h1>Solution</h1>
-<p>Als erstes müssen wir die erwarteten Häufigkeiten aus der Wahrscheinlichkeitsverteilung und der Anzahl an Studierenden berechnen. Dafür müssen wir die Wahrscheinlichkeiten für jede Zelle mit der Stichprobengrösse multiplizieren.</p>
+<p>Um die erwateten Häufigkeiten zu berechnen müssen wir zuerst die marginalen Häufigkeiten für die Zeilen und Spalten berechnen. Dabei ergibt sich für die Häufigkeiten die Prüfung zu bestehen oder nicht zu bestehen:</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th style="text-align: right;">Basel</th>
-<th style="text-align: right;">Bern</th>
-<th style="text-align: right;">Luzern</th>
-<th style="text-align: right;">St.Gallen</th>
-<th style="text-align: right;">Zuerich</th>
-<th style="text-align: right;">Zug</th>
+<th style="text-align: left;"></th>
+<th style="text-align: right;">x</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">14.4</td>
-<td style="text-align: right;">45</td>
-<td style="text-align: right;">54</td>
-<td style="text-align: right;">21.6</td>
-<td style="text-align: right;">32.4</td>
-<td style="text-align: right;">12.6</td>
+<td style="text-align: left;">bestanden</td>
+<td style="text-align: right;">143</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">nicht bestanden</td>
+<td style="text-align: right;">57</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<p>Mit diesen Werten können wir nun die quadrierten Abweichungen zwischen den beobachteten und erwarteten Häufigkeiten berechnen, durch die erwartete Häufigkeit teilen und entsprechend der Formel für den empirischen <span class="math inline">\(\chi^2\)</span>-Wert aufsummieren.</p>
-<p>Hier sehen Sie die Tabelle der quadrierten Abweichungen:</p>
+<p>und für die Häufigkeiten von männlichen und weiblichen Studierenden:</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th style="text-align: right;">Basel</th>
-<th style="text-align: right;">Bern</th>
-<th style="text-align: right;">Luzern</th>
-<th style="text-align: right;">St.Gallen</th>
-<th style="text-align: right;">Zuerich</th>
-<th style="text-align: right;">Zug</th>
+<th style="text-align: left;"></th>
+<th style="text-align: right;">x</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">6.76</td>
-<td style="text-align: right;">16</td>
-<td style="text-align: right;">16</td>
-<td style="text-align: right;">70.56</td>
-<td style="text-align: right;">11.56</td>
-<td style="text-align: right;">0.16</td>
+<td style="text-align: left;">männlich</td>
+<td style="text-align: right;">44</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">weiblich</td>
+<td style="text-align: right;">156</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<p>und hier sind die Quadrierten Abweichungen durch die erwarteten Häufigkeiten geteilt:</p>
+<p>mit diesen Werte können wir nun auf Basis der Formel <span class="math inline">\(n_{ij} = \frac{n_i \cdot n_j}{N}\)</span> mit <span class="math inline">\(N\)</span> gleich der Stichprobengrösse 200. Die erwarteten Häufigkeiten in den einzelnen Zellen berechnen. Dabei sollten Sie mit den oben berechneten Werten auf die folgenden Kreuztabelle der Erwarteten Häufigkeiten kommen:</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th style="text-align: right;">Basel</th>
-<th style="text-align: right;">Bern</th>
-<th style="text-align: right;">Luzern</th>
-<th style="text-align: right;">St.Gallen</th>
-<th style="text-align: right;">Zuerich</th>
-<th style="text-align: right;">Zug</th>
+<th style="text-align: left;"></th>
+<th style="text-align: right;">männlich</th>
+<th style="text-align: right;">weiblich</th>
+<th style="text-align: right;"></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">0.469</td>
-<td style="text-align: right;">0.356</td>
-<td style="text-align: right;">0.296</td>
-<td style="text-align: right;">3.267</td>
-<td style="text-align: right;">0.357</td>
-<td style="text-align: right;">0.013</td>
+<td style="text-align: left;">bestanden</td>
+<td style="text-align: right;">31.46</td>
+<td style="text-align: right;">111.54</td>
+<td style="text-align: right;">143</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">nicht bestanden</td>
+<td style="text-align: right;">12.54</td>
+<td style="text-align: right;">44.46</td>
+<td style="text-align: right;">57</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: right;">44.00</td>
+<td style="text-align: right;">156.00</td>
+<td style="text-align: right;">200</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<p>Wenn sie die Werte aus der letzten Tabelle aufsummieren erhalten sie den empirischen Chi-Quadrat wert: <span class="math inline">\(\chi^2_{emp} = 4.76\)</span>.</p>
-<p>Den kritischen Testwert können Sie aus der Tabelle der <span class="math inline">\(p\)</span>-Quantile der <span class="math inline">\(\chi^2\)</span>-Verteilung ablesen. Dafür müssen wir bestimmen, dass die Freiheitsgrade des Tests die Anzahl an Zellen der Häufigkeitstabelle minus 1 sind: <span class="math inline">\(df = n-1 = 6 - 1 = 5\)</span> und wir in der Zeile für das <span class="math inline">\(p\)</span>-Quantil von <span class="math inline">\(p = 1 - \alpha = 1 - .05 = .95\)</span> ablesen müssen. Mit diesen werten sollten Sie den kritischen Chi-Quadrat-Wert als: <span class="math inline">\(\chi^2_{krit}(df = 5) = 11.07\)</span> finden.</p>
-<p>Weil der empirische Chi-Quadrat Wert kleiner oder gleich dem kritischen Chi-Quadrat Wert ist, ist der Test nicht signifikant.</p>
-<p>In R könnten Sie den Test folgendermassen durchführen:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>theoretische_wahrscheinlichkeiten <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.08</span>, <span class="fl">0.25</span>, <span class="fl">0.30</span>, <span class="fl">0.12</span>, <span class="fl">0.18</span>, <span class="fl">0.07</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>beobachtete_häufigkeit <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">17</span>,<span class="dv">41</span>,<span class="dv">50</span>,<span class="dv">30</span>,<span class="dv">29</span>,<span class="dv">13</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">=</span> .<span class="dv">05</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># mit theoretischen wahrscheinlichkeiten</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(beobachtete_häufigkeit, <span class="at">p =</span> theoretische_wahrscheinlichkeiten, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># von Hand</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>erwartete_häufigkeiten <span class="ot">&lt;-</span> theoretische_wahrscheinlichkeiten <span class="sc">*</span> <span class="fu">sum</span>(beobachtete_häufigkeit)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>chisq_emp <span class="ot">&lt;-</span> <span class="fu">sum</span>((beobachtete_häufigkeit<span class="sc">-</span>erwartete_häufigkeiten)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>erwartete_häufigkeiten)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">length</span>(beobachtete_häufigkeit) <span class="sc">-</span> <span class="dv">1</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>chisq_krit <span class="ot">&lt;-</span> <span class="fu">qchisq</span>(<span class="at">p =</span> <span class="dv">1</span> <span class="sc">-</span> alpha, <span class="at">df =</span> df)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>chisq_emp</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>chisq_krit</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>df</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">ifelse</span>(chisq_emp <span class="sc">&gt;</span> chisq_krit, <span class="st">"signifikant"</span>, <span class="st">"nicht signifikant"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Für die Berechnung der empirischen Chi-Quadrat Wertes müssen wir zuerst wieder die Differenz zwischen beobachteten und erwarteten Häufigkeiten berechnen:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">männlich</th>
+<th style="text-align: right;">weiblich</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">bestanden</td>
+<td style="text-align: right;">7.54</td>
+<td style="text-align: right;">-7.54</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">nicht bestanden</td>
+<td style="text-align: right;">-7.54</td>
+<td style="text-align: right;">7.54</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>diese Abweichungen quadrieren wir dann wiederum und teilen Sie durch die erwarteten Häufigkeiten:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">männlich</th>
+<th style="text-align: right;">weiblich</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">bestanden</td>
+<td style="text-align: right;">1.81</td>
+<td style="text-align: right;">0.51</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">nicht bestanden</td>
+<td style="text-align: right;">4.53</td>
+<td style="text-align: right;">1.28</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Wenn wir diese Werte nun aufsummieren kommen wir auf den empirischen Chi-Quadrat Wert: <span class="math inline">\(\chi^2_{emp} = 8.13\)</span></p>
 </section>
 <section id="meta-information" class="level1">
 <h1>Meta-information</h1>
-<p>exname: chisq_onesample extype: mchoice exsolution: 1011 exshuffle: FALSE</p>
+<p>exname: chisq_twosample extype: cloze exsolution: 31.46|12.54|44|111.54|44.46|156|143|57|200|8.13 exclozetype: num|num|num|num|num|num|num|num|num|num extol: 0.05 exextra[numwidth,logical]: TRUE</p>
 
 
 </section>

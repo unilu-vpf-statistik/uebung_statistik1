@@ -547,6 +547,73 @@ $$
 \hat{\epsilon}_{ki} = \frac{n_k \cdot n_i}{N}
 $$
 
+## Zusammenhangsmasse
+
+### Kovarianz
+
+als deskriptive Statistik in einer Stichprobe mit $N$ Werten berechnet sich die Kovarianz zwischen zwei kontinuierlichen Zufallsvariablen $X$ und $Y$ wie folgt:
+
+$$
+s_{XY} = \frac{\sum_{i = 1}^N (x_i - \bar{x})(y_i - \bar{y})}{N}
+$$
+
+als Populationsschätzer für die Kovarianz in der Population:
+
+$$
+\hat{\sigma}_{XY} = \frac{\sum_{i = 1}^N (x_i - \bar{x})(y_i - \bar{y})}{N-1}
+$$
+
+### Produkt-Moment Korrelation
+
+in der Stichprobe berechnet sich die Produkt-Moment Korrelation zwischen zwei kontinuierlichen Zufallsvariablen $X$ und $Y$ folgendermassen:
+
+$$
+r_{XY}=\frac{s_{XY}}{s_X \cdot s_Y}
+$$
+
+der Populationsschätzer für die Korrelation in der Population ist:
+
+$$
+\hat{\rho}_{XY} = \frac{\hat{\sigma}_{XY}}{\hat{\sigma}_X \cdot \hat{\sigma}_Y}= \frac{\frac{N-1}{N} \cdot s_{XY}}{\sqrt{\frac{N-1}{N}}s_X \cdot \sqrt{\frac{N-1}{N}}s_Y} = \frac{s_{XY}}{s_X \cdot s_Y} = r_{XY}
+$$
+
+#### Teststatistik: Unkorreliertheit von zwei Variablen
+
+für einen Hypothesentest einer Korrelation $r_{XY}$ gegen null, d.h. $\rho_0 = 0$ können wir die folgenden Teststatistik berechnen:
+
+$$
+t_{} = \frac{r_{XY}\sqrt{N-2}}{\sqrt{1-r_{XY}^2}}
+$$
+
+mit den Freiheitsgraden: $df = N-2$
+
+#### Fisher's Z Transformation
+
+für den Vergleich von zwei Korrelationen aus unabhängigen Stichproben, wenden wir Fisher's Z Transformation an:
+
+$$
+Z_r = \frac{1}{2} \ln\left(\frac{1 + r_{XY}}{1-r_{XY}}\right)
+$$
+
+wobei Fisher's Z werte anhand der folgenden Formel in Korrelationswerte zurück transformiert werden können:
+
+$$
+r = \frac{e^{2 \cdot Z_r}-1}{e^{2 \cdot Z_r}+1}
+$$
+
+Fisher's Z Werte folgen approximativ einer Normalverteilung mit $Z_r \sim \mathcal{N}(\mu_r = Z_{\rho}, \sigma^2_Z = \frac{1}{N-3})$
+
+#### z-Test: Test einer Korrelation aus einer Stichprobe gegen ein
+
+Für 
+
+### Punkt-Biseriale Korrelation
+
+### Phi-Koeffizient
+
+### Cramer's V
+
+
 ## Fehler & Fragen
 
 Sollten Ihnen Fehler in der Formelsammlung auffallen, dann prüfen Sie diese bitte zuerst mit den Folien der Vorlesung, sowie den in der Pflichtliteratur angegebenen Formeln ab. Wenn diese Prüfung Ihre Fehlervermutung bestätigt, dann schreiben Sie bitte eine Mail unter der Angabe der Formel an: [gidon.frischkorn\@unilu.ch](mailto:gidon.frischkorn@unilu.ch)
