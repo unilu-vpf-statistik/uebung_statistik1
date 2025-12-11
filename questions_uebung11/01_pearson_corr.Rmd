@@ -1,5 +1,5 @@
 
-```{r}
+```{r solution_pearson}
 #| include: false
 library(exams2forms)
 correlation_data <- read.csv("correlation_data.csv")

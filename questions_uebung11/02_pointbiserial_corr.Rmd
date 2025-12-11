@@ -41,6 +41,6 @@ Meta-information
 exname: pearson_corr
 extype: cloze
 exsolution: `r paste(solution, collapse = "|")`
-exclozetype: num|num|num
+exclozetype: num|num
 extol: 0.05
 exextra[numwidth,logical]: TRUE

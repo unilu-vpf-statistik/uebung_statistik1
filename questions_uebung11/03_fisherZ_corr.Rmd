@@ -1,0 +1,53 @@
+
+```{r solution_fisherZ}
+#| include: false
+library(exams2forms)
+correlation_data <- read.csv("correlation_data.csv")
+rho_null <- 0.4
+
+corTest <- cor.test(correlation_data$groesse, correlation_data$alter)
+
+sd_Z <- 1/sqrt(nrow(correlation_data)-3)
+
+z_emp <- (psych::fisherz(corTest$estimate) - psych::fisherz(rho_null))/sd_Z
+
+solution <- c(round(psych::fisherz(corTest$estimate),3), round(psych::fisherz(rho_null),3), round(psych::fisherz(sd_Z),3), round(z_emp,2))
+```
+
+Question
+=======
+Sie wollen für die Stichprobe von N = 180 Personen aus dem Datensatz `correlation_data.csv` testen, ob die Korrelation zwischen `alter` und `groesse` von dem Wert $\rho_0 = .40$ unterschiedlich ist. Berechnen Sie dafür aus der Kovarianz der beiden Variablen ist $s_{XY} = `r round(cov(correlation_data$groesse, correlation_data$alter),2)`$, sowie deren Standardabweichungen $s_{X} = `r round(sd(correlation_data$alter),2)`$, und $s_{X} = `r round(sd(correlation_data$groesse),2)`$ die Korrelation.
+
+Zur Berechnung der z-Statistik für den Unterschied der beobachteten Korrelation müssen Sie als erstes den $Z$-Wert der beobachteten Korrelation berechnen: $Z_r =$ ##ANSWER1##
+
+Darüber hinaus müssen sie auch den $Z$-Wert der Korrelation unter der Nullhypothese berechnen (3-Nachkommastellen): $Z_{\rho_0} =$ ##ANSWER2##
+
+Dann müssen Sie noch die Standardabweichung der Stichprobenkennwerte Verteilung berechnen (3-Nachkommastellen): $\sigma_Z =$ ##ANSWER3##
+
+Berechnen Sie anhand dieser Werte den empirischen $z$-Wert für den Unterschied der beobachteten Korrelation von der Korrelation unter der Nullhypothese (2-Nachkommastellen): $z_{emp} =$ ##ANSWER4##
+
+```{r questionlist, echo = FALSE, results = "asis"}
+answerlist(rep("", length(solution)), markup = "markdown")
+```
+
+Solution
+========
+Als erstes berechnen wir aus den Statistiken die gegeben sind die Korrelation zwischen `groesse` und `alter`. Diese ist wie in einer vorherigen Übung $r_{XY} = `r round(corTest$estimate,2)`$.
+
+Mit dieser Korrelation können wir anhand der Formel für die Fisher's Z-Transformation $Z_r = \frac{1}{2} \cdot \text{ln} \left(\frac{1 + r}{1-r}\right)$ den $Z$-Wert der beobachteten Korrelation berechnen: $Z_r = `r solution[1]`$
+
+Entsprechend können wir auch den $Z$-Wert für die Korrelation unter der Nullhypothese berechnen: $Z_{\rho_0} = `r solution[2]`$
+
+Die Standardabweichung der Stichprobenkennwerteverteilung ergibt sich aus $\sigma_Z = \frac{1}{\sqrt{N-3}} = \frac{1}{\sqrt{180-3}}= `r solution[3]`$
+
+Auf Basis dieser Werte können wir den empirischen $z$-Wert für den Test aus $z_{emp} = \frac{Z_r - Z_{\rho_0}}{\sigma_Z} = `r solution[4]`$ berechnen.
+
+
+Meta-information
+=========
+exname: pearson_corr
+extype: cloze
+exsolution: `r paste(solution, collapse = "|")`
+exclozetype: num|num|num|num
+extol: 0.05
+exextra[numwidth,logical]: TRUE
