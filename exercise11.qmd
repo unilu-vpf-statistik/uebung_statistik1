@@ -1,5 +1,5 @@
 ---
-title: "Übung 10 - Gruppenvergleiche (diskrete Variablen)"
+title: "Übung 11 - Zusammenhangsmasse"
 subtitle: "HS 2025"
 author: "Gidon Frischkorn"
 format:
@@ -18,6 +18,9 @@ library(exams2forms)
 library(here)
 library(dplyr)
 
+gen_model <- ""
+
+cor_mat <- matrix(data = c(1, 0.7, 0.5, 0.3,  0.7, 1, 0.5, 0.5, 0.5, 0.5))
 # Laden des Datensatzes
 semester_data2 <- read.csv("semester_data2.csv")
 
@@ -26,14 +29,12 @@ exam_files <- list.files(here("questions_uebung10"), pattern = "*.Rmd", full.nam
 shuffeld_questions <- exam_files
 ```
 
-## Wiederholung & Vertiefung: Binomialtest & Chi-Quadrat-test
+## Wiederholung & Vertiefung: Zusammenhangsmasse
 
-In dieser Übung werden wir üben wie man von Hand und mit Hilfe von R einen Binomialtest und Chi-Quadrat test berechnet und die jeweiligen Ergebnisse interpretiert. Wenn Sie einige Inhalte der Vorlesung nochmal vertiefen wollen, oder nochmal eine ausführlichere Erklärung für die Anwendung des Binomialtests oder Chi-Quadrattests in R haben wollen, dann können Sie sich die folgenden Videos anschauen:
+In dieser Übung werden wir üben wie man von Hand und mit Hilfe von R Zusammenhangsmasse für metrische und diskrete Variablen berechnet. Wenn Sie einige Inhalte der Vorlesung nochmal vertiefen wollen, oder die Berechnung in R nachvollziehen wollen, dann können Sie sich die folgenden Vieoas anschauen:
 
-- [Ausführliche Erklärung der Grundlagen der Chi-Quadrat Verteilung](https://www.youtube.com/watch?v=80ffqpZdKiA)
-- [Thoeretische Erklärung: Chi-Quadrat Test für eine Stichprobe](https://www.youtube.com/watch?v=ZNXso_riZag) (**Achtung**: Funktionen sind aus Excel)
-- [Theoretische Erklärung: Chi-Quadrat Test für zwei Stichproben](https://www.youtube.com/watch?v=NTHA9Qa81R8&t=278s) (**Achtung**: Funktionen sind aus Excel)
-- [Chi-Quadrat Test in R](https://www.youtube.com/watch?v=YJUuyaC0x48)
+- [Grundkonzept: Korrelation](https://www.youtube.com/watch?v=dsyTQNUvqH0)
+- [Determinationskoeffizienten und Erklärte Varianz](https://www.youtube.com/watch?v=EhD_5uh9fss)
 
 ## Übungen
 
