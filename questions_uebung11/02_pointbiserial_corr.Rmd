@@ -22,7 +22,7 @@ Question
 =======
 Sie wollen für die Stichprobe von N = 180 Personen aus dem Datensatz `correlation_data.csv` berechnen, ob es einen Zusammenhang zwischen der `groesse` und dem `geschlecht` der Teilnehmer gibt. Der t-test für unabhängige Stichproben hat einen empirischen $t$-Wert von $t_{emp} = `r round(ttest$statistic,2)`$ ergeben.
 
-Berechnen Sie die Punkt-Biseriale-Korrelation (auf 2-stellen gerundet): ##ANSWER1##.
+Berechnen Sie den Betrag der Punkt-Biseriale-Korrelation (auf 2-stellen gerundet): $|r_{pb}| =$ ##ANSWER1##.
 
 Wie viel Varianz wird durch das Geschlecht an der Grösse erklärt (in Prozent mit keinen Nachkommastellen): ##ANSWER2##
 
