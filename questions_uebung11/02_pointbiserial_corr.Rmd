@@ -32,7 +32,7 @@ answerlist(rep("", length(solution)), markup = "markdown")
 
 Solution
 ========
-Mit Hilfe der Formel $r_{pb} = \frac{t}{\sqrt{t^2+df}}$ können wir den $t$-Wert in die Punkt-Biseriale Korrelation umrechnen. Die Freiheitsgrade ergeben sich dabei aus $df = N - 2 = 178$. Das Ergebnis ist dabei: $r_{pb} = `r solution[1]`$.
+Mit Hilfe der Formel $r_{pb} = \frac{t}{\sqrt{t^2+df}}$ können wir den $t$-Wert in die Punkt-Biseriale Korrelation umrechnen. Die Freiheitsgrade ergeben sich dabei aus $df = N - 2 = 178$. Wenn Sie dabei den negativen $t$-Werte von $t_{emp} = -9.24$ einsetzen sollten Sie dabei auf den Wert: $r_{pb} = `r -solution[1]`$ kommen. Da sie bei der Nominalskalierten Variable `geschlecht` nicht wirklich eine klare Ordnung haben, macht es mehr Sinn den absoluten Wert der punkt-biserialen Korrelation anzugeben: $|r_{pb}| = `r solution[1]`$
 
 Für die aufgeklärte Varianz können wir die Punkt-Biseriale Korrelation quadrieren: $r_{pb}^2 = `r solution[2]/100`$. Dieser Wert mal 100 gibt die aufgeklärte Varianz in Prozent
 
