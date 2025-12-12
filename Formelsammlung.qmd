@@ -472,7 +472,7 @@ $$
 mit:
 
 $$
-\sigma_{\bar{x}} = \frac{\hat{\sigma}_X}{\sqrt{N}}
+\hat{\sigma}_{\bar{x}} = \frac{\hat{\sigma}_X}{\sqrt{N}}
 $$
 
 und den Freiheitsgraden $df = N-1$
@@ -514,7 +514,7 @@ $$
 mit:
 
 $$
-\sigma_{\bar{x}_D} = \frac{\hat{\sigma}_{X_D}}{\sqrt{N}}
+\hat{\sigma}_{\bar{x}_D} = \frac{\hat{\sigma}_{X_D}}{\sqrt{N}}
 $$
 
 und den Freiheitsgraden $df = N-1$
