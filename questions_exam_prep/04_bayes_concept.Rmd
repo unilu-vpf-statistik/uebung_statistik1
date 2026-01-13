@@ -1,0 +1,29 @@
+Question
+========
+In der psychologischen Diagnostik wird in der Regel eine Anfangseinschätzung (z.B. zur Wahrscheinlichkeit einer Störung) auf Basis neuer Informationen (z. Bsp. Symptome oder Persönlichkeitseigenschaften) angepasst. Welche der folgenden Aussagen beschreiben zutreffend die Rolle des Bayes-Theorems in diesem Prozess?
+
+Beurteilen Sie für jede Aussage an, ob diese richtig (ankreuzen) oder falsch (nicht ankreuzen) ist.
+
+Answerlist
+---------
+- Das Bayes-Theorem beschreibt, wie eine anfängliche Wahrscheinlichkeit durch neue Evidenz systematisch aktualisiert wird.
+- Bayes-Theorem ersetzt fachliches Vorwissen durch eine rein datengetriebene Entscheidung.
+- Die Relevanz neuer Information hängt davon ab, wie häufig das betrachtete Merkmal oder Ereignis in der Population vorkommt.
+- Ohne Berücksichtigung der Ausgangswahrscheinlichkeit kann neue Evidenz leicht überschätzt werden.
+
+Solution
+=======
+Aussage 1 ist richtig: Die zentrale Funktion des Bayes-Theorems ist die Aktualisierung von Wahrscheinlichkeiten: Eine anfängliche Einschätzung (Prior) wird durch neue Information (Evidenz / Likelihoo) angepasst und führt zu einer aktualisierten Wahrscheinlichkeit (Posterior).
+
+Aussage 2 ist falsch: Das Bayes-Theorem integriert fachliches Vorwissen in Form der Anfangswahrscheinlichkeit mit neuen Daten. Es ersetzt Vorwissen also nicht, sondern macht dessen Einfluss transparent und formalisierbar.
+
+Aussage 3 ist richtig: Die Häufigkeit eines Merkmals in der Population (Basisrate) beeinflusst, wie stark neue Evidenz die Einschätzung verändern kann. Seltene Ereignisse bleiben selbst bei scheinbar starker Evidenz (hohe Sensitivität und Spezifität) oft unwahrscheinlich.
+
+Aussage 4 ist richtig: Wenn Basisraten ignoriert werden, wird die diagnostische Aussagekraft neuer Information häufig überschätzt. Dieses Phänomen ist als Basisratenfehler bekannt und ein zentrales Anwendungsargument für das Bayes-Theorem.
+
+Meta-information
+========
+exname: scale_levels
+extype: mchoice
+exsolution: 1011
+exshuffle: false

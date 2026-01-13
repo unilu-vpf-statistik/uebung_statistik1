@@ -6,7 +6,7 @@ Beurteilen Sie für jede Aussage an, ob diese richtig (ankreuzen) oder falsch (n
 
 Answerlist
 ---------
-- Für eine Variable `V` vom Typ `vector` ich Werte (z. Bsp. den dritten Wert) mit Hilfe von eckigen Klammern nach dem Variablennamen auswählen: `V[3]`
+- Für eine Variable `V` vom Typ `vector` können Werte (z. Bsp. den dritten Wert) mit Hilfe von eckigen Klammern nach dem Variablennamen ausgewählt werden: `V[3]`
 - Der `$`-Operator kann verwendet werden, um Elemente aus Listen oder Spalten aus Data Frames auszuwählen, sofern diese benannt sind.
 - Die zweidimensionale Indizierung mit eckigen Klammern `[Zeile, Spalte]` ist nur für Variablen vom Typ `matrix` sinnvoll, nicht jedoch für Variablen des Typs `data.frame`
 - Für eine Variable `M` vom Typ `matrix` erhalte ich mit der Indizierung `M[2,]` einen Vektor der alle Werte der zweiten Zeile der Matrix enthält.

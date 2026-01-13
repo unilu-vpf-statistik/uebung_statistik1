@@ -10,6 +10,8 @@ website:
         text: Übungen
       - href: Formelsammlung.qmd
         text: Formelsammlung
+      - href: Tabellen.qmd
+        text: Verteilungstabellen
       - href: about.qmd
         text: Hilfe & Kontakt
   sidebar:

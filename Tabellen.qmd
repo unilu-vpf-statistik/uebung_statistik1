@@ -1,0 +1,23 @@
+---
+title: "Verteilungstabellen"
+subtitle: "HS 2025"
+author: "Gidon Frischkorn"
+---
+
+# Verteilungstabellen
+
+Auf dieser Seite finden Sie Verteilungstabellen für unterschiedliche Wahrscheinlichkeitsfunktionen, die Sie nutzen wenn Sie keinen Zugang zu Software haben, die Ihnen eine akurate Berechnung der Verteilungsfunktionen erlaubt.
+
+Diese Verteilungsfunktionen nutzen sie üblicherweise zur Bestimmung der kritischen Testwerte für ein gewähltes Signifikanznivau $\alpha$ bei entsprechenden Verteilungsparmaetern (z. Bsp. Freiheitsgraden $df$), oder zur Bestimmung des $p$-Wertes für eine empirische Teststatistik.
+
+## Standardnormalverteilung
+
+![Tabelle der z-Werte für die Verteilungsfunktion der Standardnormalverteilung](./images/zTabelle_Normalverteilung.png)
+
+## $t$-Verteilung
+
+![Tabelle der p-Quantile der zentralen t-Verteilung](./images/pQuantile_tVerteilung.png)
+
+## $\chi^2$-Verteilung
+
+![Tabelle der p-Quantile der zentralen $\chi^2$-Verteilung](./images/Tabelle_pQuantile_ChiQuadrat.png)

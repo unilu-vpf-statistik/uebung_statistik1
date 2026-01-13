@@ -1,0 +1,29 @@
+Question
+========
+Welche der folgenden Aussagen zur Interpretation von Streuungsmassen sind korrekt?
+
+Beurteilen Sie für jede Aussage an, ob diese richtig (ankreuzen) oder falsch (nicht ankreuzen) ist.
+
+Answerlist
+---------
+- Ein größeres Streuungsmass bedeutet immer eine ungenaue Messung.
+- Streuungsmasse werden sinnvollerweise im Zusammenspiel mit einem Lagemass interpretiert.
+- Zwei Variablen mit identischem Mittelwert können sich in ihrer Streuung unterscheiden.
+- Die Standardabweichung von zwei Unterschiedlichen Variablen (z. Bsp. Alter und Gewicht) können gut miteinander verglichen werden.
+
+Solution
+=======
+Aussage 1 ist falsch: Ein großes Streuungsmass beschreibt zunächst nur, dass sich die beobachteten Werte stärker voneinander unterscheiden. Dies kann unterschiedliche Ursachen haben, z.B.: echte Unterschiede zwischen Personen, eine heterogene Stichprobe, oder tatsächlich eine ungenaue Messung. Aus der Streuung allein lässt sich daher nicht eindeutig auf Messgenauigkeit schließen.
+
+Aussage 2 ist richtig: Streuungsmasse geben an, wie stark die Werte um einen typischen Wert variieren, nicht aber, wo dieser typische Wert liegt. Erst zusammen mit einem Lagemass (z.B. Mittelwert oder Median) wird die Verteilung der Daten sinnvoll interpretierbar.
+
+Aussage 3 ist richtig: Der Mittelwert beschreibt nur die zentrale Lage der Daten. Unterschiedliche Verteilungen können denselben Mittelwert haben, sich aber stark darin unterscheiden, wie breit oder eng die Werte um diesen Mittelwert verteilt sind.
+
+Aussage 4 ist falsch: Die Standardabweichung wird in den Einheiten der jeweiligen Variable gemessen. Unterschiedliche Variablen (z.B. Jahre vs. Kilogramm) haben daher Standardabweichungen auf nicht vergleichbaren Skalen, sodass ein direkter Vergleich inhaltlich nicht sinnvoll ist.
+
+Meta-information
+========
+exname: scale_levels
+extype: mchoice
+exsolution: 0110
+exshuffle: false

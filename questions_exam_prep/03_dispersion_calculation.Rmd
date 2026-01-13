@@ -1,0 +1,49 @@
+Question
+========
+In einer Stichprobe wurden die folgenden Werte einer intervallskalierten Variable erhoben:
+
+$$
+X={4,6,8,10}
+$$
+
+Berechnen Sie den Populationsschätzer der Standardabweichung für die Variable X.
+
+Answerlist
+---------
+- $\hat{\sigma}_X = 2.00$
+- $\hat{\sigma}_X = 2.58$
+- $\hat{\sigma}_X = 3.00$
+- $\hat{\sigma}_X = 1.74$
+
+Solution
+=======
+Für die Berechnung des Populationsschätzers der Variable X müssen wir als erstes den Mittelwert berechnen:
+
+$$
+\bar{X}= \frac{\sum X_i}{N} = \frac{4 + 6 + 8 + 10}{4} = 7
+$$
+
+Dann können wir die Summe der Quadrierten Abweichungen berechnen, die im Zähler der Formel für den Populationsschätzer der Standardabweichung stehen:
+
+$$
+\sum_{i =1}^N (X_i - \bar{X})^2 = (4-7)^2 + (6-7)^2 + (8-7)^2 + (10-7)^2 = 20
+$$
+
+Die Summe der Quadrierten Abweichungen teilen wir nun durch die Stichprobengrösse minus 1 (N-1) um den Populationsschätzer der Varianz zu erhalten:
+
+$$
+\hat{\sigma}^2 = \frac{\sum_{i =1}^N (X_i - \bar{X})^2}{N-1} = \frac{20}{4-1} = 6.666... \approx 6.667
+$$
+
+Und als letztes müssen wir aus dem Populationsschätzer der Varianz noch die Wurzel ziehen um den Populationsschätzer der Standardabweichung zu erhalten:
+
+$$
+\hat{\sigma} = \sqrt{\hat{\sigma}^2} = \sqrt{6.667} = 2.5820... \approx 2.58
+$$
+
+Meta-information
+========
+exname: scale_levels
+extype: schoice
+exsolution: 0100
+exshuffle: true

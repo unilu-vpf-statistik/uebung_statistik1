@@ -1,0 +1,30 @@
+Question
+========
+Beurteilen Sie die folgenden Aussagen zur Verwendung von relationalen und logischen Operatoren in R.
+
+Beurteilen Sie für jede Aussage an, ob diese richtig (ankreuzen) oder falsch (nicht ankreuzen) ist.
+
+Answerlist
+---------
+- Relationale Operatoren vergleichen Werte miteinander und liefern als Ergebnis logische Werte (`TRUE` oder `FALSE`).
+- Der logische Operator `&` verknüpft zwei logische Ausdrücke und liefert nur dann `TRUE`, wenn beide Ausdrücke `TRUE` sind.
+- Der logische Operator `|` liefert `TRUE`, wenn mindestens einer der verknüpften logischen Ausdrücke `FALSE` ist.
+- Logische Operatoren können in R auf Vektoren angewendet werden, wobei die Auswertung standardmäßig elementweise erfolgt.
+
+Solution
+=======
+Aussage 1 ist richtig: Relationale Operatoren wie `<`, `>`, `<=`, `>=`, `==` oder `!=` prüfen Vergleiche zwischen Werten.
+Das Ergebnis eines solchen Vergleichs ist immer ein logischer Wert, der angibt, ob die jeweilige Bedingung erfüllt ist.
+
+Aussage 2 ist richtig: Der Operator `&` entspricht einer logischen UND-Verknüpfung. Nur wenn beide verknüpften logischen Ausdrücke den Wert `TRUE` haben, ist auch das Gesamtergebnis `TRUE`.
+
+Aussage 3 ist falsch: Der Operator `|` steht für eine logische ODER-Verknüpfung. Er liefert `TRUE`, wenn mindestens einer der verknüpften logischen Ausdrücke `TRUE` ist – nicht `FALSE`.
+
+Aussage 4 ist richtig: In R werden logische Operationen auf Vektoren standardmäßig elementweise ausgewertet. Das bedeutet, dass jedes Element eines Vektors separat mit dem entsprechenden Element eines anderen Vektors verglichen oder verknüpft wird.
+
+Meta-information
+========
+exname: logical_operators
+extype: mchoice
+exsolution: 1101
+exshuffle: false
