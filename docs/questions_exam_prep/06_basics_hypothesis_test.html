@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>kombinatorik_scenario – Übungen - VL: Statistik I</title>
+<title>basics_hypothesis_test – Übungen - VL: Statistik I</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -258,31 +258,28 @@ window.Quarto = {
 
 <section id="question" class="level1">
 <h1>Question</h1>
-<p>In einer psychologischen Studie nehmen 20 Versuchspersonen teil. Für eine aufwendige Zusatzaufgabe werden 3 Personen zufällig ausgewählt. Sie nehmen selbst an der Studie teil und hoffen, nicht ausgewählt zu werden. Beurteilen Sie die folgenden Aussagen.</p>
+<p>Beurteilen Sie die folgenden Aussagen zur Logik von statistischen Hypothesentests.</p>
 <p>Kreuzen Sie bei jeder Aussage an, ob sie richtig oder falsch ist.</p>
 <section id="answerlist" class="level2">
 <h2 class="anchored" data-anchor-id="answerlist">Answerlist</h2>
 <ul>
-<li>Für dieses Zufallsexperiment ist ein kombinatorisches Modell ohne Zurücklegen und ohne Berücksichtigung der Reihenfolge angemessen.</li>
-<li>Die Gesamtzahl möglicher Kombinationen an Personen die für das Zufallsexperiment ausgewählt werden lässt sich mit dem Binomialkoeffizienten <span class="math inline">\(\binom{20}{3}\)</span> berechnen.</li>
-<li>Haben bereits 10 Personen teilgenommen, wobei 2 Personen bereits für die Zusatzaufgabe ausgewählt wurden, so beträgt die Wahrscheinlichkeit, dass Sie noch ausgewählt werden <span class="math inline">\(\frac{1}{10}\)</span>.</li>
-<li>Die Wahrscheinlichkeit, dass sie nicht ausgewählt werden liegt bei 0.90</li>
+<li>Ein statistischer Hypothesentest prüft, wie wahrscheinlich die beobachteten Daten unter Annahme der Nullhypothese sind.</li>
+<li>Wird die Nullhypothese verworfen, gilt die Alternativhypothese mit Sicherheit als wahr.</li>
+<li>Die Testentscheidung bezieht sich immer auf ein vor der Berechnung des Tests festgelegtes Signifikanzniveau.</li>
+<li>Ein nicht signifikanter Test bedeutet, dass der Effekt in der Population gleich null ist.</li>
 </ul>
 </section>
 </section>
 <section id="solution" class="level1">
 <h1>Solution</h1>
-<p>Aussage 1 ist richtig: Jede Versuchsperson kann höchstens einmal für die Zusatzaufgabe ausgewählt werden (ohne Zurücklegen). Für die Frage, welche drei Personen ausgewählt werden, spielt die Reihenfolge der Auswahl keine Rolle (ohne Berücksichtigung der Reihenfolge).</p>
-<p>Aussage 2 ist richtig: Es werden drei Personen aus insgesamt 20 ausgewählt, ohne Zurücklegen und ohne Reihenfolge. Genau dieses Szenario wird durch den Binomialkoeffizienten <span class="math inline">\(\binom{20}{3}\)</span> beschrieben.</p>
-<p>Aussage 3 ist richtig: Insgesamt sollen drei Personen ausgewählt werden. Wenn bereits zwei Personen ausgewählt wurden, bleibt ein Platz für die Zusatzaufgabe. Sind noch 10 Personen im Pool, ist die Wahrscheinlichkeit, dass dieser letzte Platz auf Sie fällt <span class="math inline">\(\frac{1}{10}\)</span></p>
-<p>Aussage 4 ist falsch: Die Wahrscheinlichkeit nicht ausgewählt zu werden berechnet sich als LaPlace Wahrscheinlichkeit <span class="math inline">\(P(A) = \frac{N_A}{K}\)</span>aus der Gesamtzahl möglicher Personenkombinationen die aus der Gesamtstichprobe ausgewählt werden können: <span class="math inline">\(K = \binom{20}{3}\)</span>, während die Anzahl für Sie günstiger Ereignisse <span class="math inline">\(N_A\)</span> sich aus der Gesamtzahl an Personenkombinationen berechnet, wenn die Personen aus den anderen 19 Teilnehmern am Experiment gezogen werden: <span class="math inline">\(N_A = \binom{19}{3}\)</span>. Entsprechend gilt:</p>
-<p><span class="math display">\[
-P(A) = \frac{N_A}{K} = \frac{\binom{19}{3}}{\binom{20}{3}} = \frac{969}{1140} = 0.85
-\]</span></p>
+<p>Aussage 1 ist richtig: Sowohl bei Hypothesentest im Sinne von Fischer (Nullhypothesentest), wie auch nach dem Binären Entscheidungskonzept wird beurteilt, wie gut die beobachteten Daten mit der Annahme der Nullhypothese vereinbar sind. Der <span class="math inline">\(p\)</span>-Wert gibt dabei an, wie wahrscheinlich die beobachteten (oder extremere) Daten wären, wenn die Nullhypothese gilt. Zusätzlichen wird bei der Anwendung des Binären Entscheidungskonzepts der Stichprobenumfang auf Basis eines angenommenen Effekts so gewählt, dass man eine vorher festgesetzte Power (<span class="math inline">\(1 - \beta\)</span>) erreicht, und so auch die Wahrscheinlichkeit fälschlicherweise die Nullhypothese anzunehmen, obwohl in der Population die Alternativhypothese gilt zu kontrollieren.</p>
+<p>Aussage 2 ist falsch: Das Verwerfen der Nullhypothese bedeutet lediglich, dass die Daten unter Annahme der Nullhypothese unwahrscheinlich sind. Es liefert keinen sicheren Beweis für die Alternativhypothese.</p>
+<p>Aussage 3 ist richtig: Das Signifikanzniveau <span class="math inline">\(\alpha\)</span> wird vor der Testdurchführung festgelegt und definiert die Entscheidungsregel (z. B. Verwerfen der <span class="math inline">\(H_0\)</span>, wenn <span class="math inline">\(p &lt; \alpha\)</span>. Für die Gültigkeit der Testentscheidung ms das Signifikanzniveau a-priori also vor der Testung festgelegt werden.</p>
+<p>Aussage 4 ist falsch: Ein nicht signifikantes Ergebnis bedeutet lediglich, dass nicht genügend Evidenz gegen die Nullhypothese vorliegt. Es erlaubt keine Aussage, dass der Effekt in der Population tatsächlich null ist; der Effekt kann existieren, aber z. B. klein oder die Stichprobe zu klein sein.</p>
 </section>
 <section id="meta-information" class="level1">
 <h1>Meta-information</h1>
-<p>exname: scale_levels extype: mchoice exsolution: 1110 exshuffle: false</p>
+<p>exname: test_basics extype: mchoice exsolution: 1010 exshuffle: false</p>
 
 
 </section>

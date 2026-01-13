@@ -1,0 +1,58 @@
+Question
+========
+Beurteilen Sie die folgenden Aussagen zum Standardfehler des Mittelwertes.
+
+Kreuzen Sie bei jeder Aussage an, ob sie richtig oder falsch ist.
+
+Answerlist
+---------
+- Für eine Stichprobe von 50 Personen beträgt der Standardfehler des Mittelwertes $\sigma_{\bar{x}} = 1.41$, wenn die bei einer Populationsstandardabweichung $\sigma_x = 10$ beträgt.
+- Wird die Stichprobengrösse vervierfacht, so halbiert sich der Standardfehler des Mittelwertes, sofern die Streuung der Variable konstant bleibt.
+- Für eine Variable $X \sim \mathcal{N}(\mu = 10, \sigma = 2)$ ist im Mittel zu erwarten, dass aus 10 unabhängigen Stichproben mit $N = 10$ etwa eine Stichprobe einen Mittelwert grösser als $\bar{x} = 11.04$ aufweist. 
+- Wenn der Standardfehler des Mittelwert einer Variable X $\sigma_{\bar{x}} = 2$ beträgt und die Standardabweichung der Variable X $\sigma_x = 12$ ist, dann betrug die Stichprobengrösse $N = 64$.
+
+Solution
+=======
+**Aussage 1** ist richtig: Wenn wir den Standardfehler auf Basis der gegebene Werte berechnen, erhalten wir:
+
+$$
+\sigma_{\bar{x}}= \frac{10}{\sqrt{50}} = \frac{10}{7.071} = 1.4142... \approx 1.41
+$$
+was genau dem in der Aussage angegebenen Wert entspricht.
+ 
+**Aussage 2** ist richtig: Der Standardfehler ist proportional zu $\frac{1}{\sqrt{N}}$. Wird N vervierfacht, verdoppelt sich $\sqrt{N}$ und der Standardfehler halbiert sich entsprechend. Nehmen wir an der Standardfehler bei N = 20 ist 1, dann ist der Standardfehler bei N = 80:
+
+$$
+\sigma_{\bar{x}(N = 80)} = \frac{\sigma_x}{\sqrt{N_{20} \cdot 4}} = \frac{\sigma_x}{2 \cdot \sqrt{N_{20}}} = \frac{1}{2} \cdot \sigma_{\hat{x}(N=20)}
+$$
+
+**Aussage 3** ist falsch: Die Stichprobenmittelwerte im beschriebenen Szenario folgen einer Normalverteilung mit dem Standardfehler des Mittelwerts: 
+
+$$
+\sigma_{\bar{x}} = \frac{2}{\sqrt{10}} \approx 0.632
+$$ 
+
+Mit Hilfe der $z$-Standardisierung können wir den $z$-Wert für den im Szenario genannten Mittwert von $\bar{x} = 11.04$ berechnen: $z = \frac{11.04-10}{0.632} \approx 1.65$.
+
+Anhand der Verteilungsfunktion der Standardnormalverteilung können wir bestimmend, dass für diesen Wert nur 5% der Werte eine Wahrscheinlichkeit haben grösser als dieser Wert zu sein: 
+
+$$
+P (X > 11.04) = 1 - P(X \leq 11.04) = 1 - P(z \leq 1.65) = 1 - .95
+$$
+
+Die Erwartete Anzahl einer Stichprobe mit einem Mittelwert $\bar{x} \geq 11.04$ bei 10 unabhängigen Stichproben ist also $10 \cdot 0.05 = 0.5$. Es ist also nicht im Mittel eine, sondern eine halbe Stichprobe zu erwarten.
+
+**Aussage 4** ist falsch: Wenn wir aus der Formel des Standardfehlers und den gegebenen Werten die Stichprobengrösse berechnen ergibt sich:
+
+$$
+2 = \frac{12}{\sqrt{N}}; \quad \sqrt{N} = \frac{12}{2} = 6; \quad N = 6^2 = 36
+$$
+
+Die angegebene Stichprobengrösse $N=64$ ist daher falsch.
+
+Meta-information
+========
+exname: test_basics
+extype: mchoice
+exsolution: 1100
+exshuffle: false

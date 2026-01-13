@@ -1,0 +1,29 @@
+Question
+========
+Beurteilen Sie die folgenden Aussagen zur Logik von statistischen Hypothesentests.
+
+Kreuzen Sie bei jeder Aussage an, ob sie richtig oder falsch ist.
+
+Answerlist
+---------
+- Ein statistischer Hypothesentest prüft, wie wahrscheinlich die beobachteten Daten unter Annahme der Nullhypothese sind.
+- Wird die Nullhypothese verworfen, gilt die Alternativhypothese mit Sicherheit als wahr.
+- Die Testentscheidung bezieht sich immer auf ein vor der Berechnung des Tests festgelegtes Signifikanzniveau.
+- Ein nicht signifikanter Test bedeutet, dass der Effekt in der Population gleich null ist.
+
+Solution
+=======
+Aussage 1 ist richtig: Sowohl bei Hypothesentest im Sinne von Fischer (Nullhypothesentest), wie auch nach dem Binären Entscheidungskonzept wird beurteilt, wie gut die beobachteten Daten mit der Annahme der Nullhypothese vereinbar sind. Der $p$-Wert gibt dabei an, wie wahrscheinlich die beobachteten (oder extremere) Daten wären, wenn die Nullhypothese gilt. Zusätzlichen wird bei der Anwendung des Binären Entscheidungskonzepts der Stichprobenumfang auf Basis eines angenommenen Effekts so gewählt, dass man eine vorher festgesetzte Power ($1 - \beta$) erreicht, und so auch die Wahrscheinlichkeit fälschlicherweise die Nullhypothese anzunehmen, obwohl in der Population die Alternativhypothese gilt zu kontrollieren.
+
+Aussage 2 ist falsch: Das Verwerfen der Nullhypothese bedeutet lediglich, dass die Daten unter Annahme der Nullhypothese unwahrscheinlich sind. Es liefert keinen sicheren Beweis für die Alternativhypothese.
+
+Aussage 3 ist richtig: Das Signifikanzniveau $\alpha$ wird vor der Testdurchführung festgelegt und definiert die Entscheidungsregel (z. B. Verwerfen der $H_0$, wenn $p < \alpha$. Für die Gültigkeit der Testentscheidung ms das Signifikanzniveau a-priori also vor der Testung festgelegt werden.
+
+Aussage 4 ist falsch: Ein nicht signifikantes Ergebnis bedeutet lediglich, dass nicht genügend Evidenz gegen die Nullhypothese vorliegt. Es erlaubt keine Aussage, dass der Effekt in der Population tatsächlich null ist; der Effekt kann existieren, aber z. B. klein oder die Stichprobe zu klein sein.
+
+Meta-information
+========
+exname: test_basics
+extype: mchoice
+exsolution: 1010
+exshuffle: false

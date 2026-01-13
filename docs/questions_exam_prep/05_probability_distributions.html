@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>kombinatorik_scenario – Übungen - VL: Statistik I</title>
+<title>probability_distributions – Übungen - VL: Statistik I</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -258,31 +258,32 @@ window.Quarto = {
 
 <section id="question" class="level1">
 <h1>Question</h1>
-<p>In einer psychologischen Studie nehmen 20 Versuchspersonen teil. Für eine aufwendige Zusatzaufgabe werden 3 Personen zufällig ausgewählt. Sie nehmen selbst an der Studie teil und hoffen, nicht ausgewählt zu werden. Beurteilen Sie die folgenden Aussagen.</p>
+<p>Beurteilen Sie die folgenden Aussagen zu diskreten und kontinuierlichen Wahrscheinlichkeitsverteilungen.</p>
 <p>Kreuzen Sie bei jeder Aussage an, ob sie richtig oder falsch ist.</p>
 <section id="answerlist" class="level2">
 <h2 class="anchored" data-anchor-id="answerlist">Answerlist</h2>
 <ul>
-<li>Für dieses Zufallsexperiment ist ein kombinatorisches Modell ohne Zurücklegen und ohne Berücksichtigung der Reihenfolge angemessen.</li>
-<li>Die Gesamtzahl möglicher Kombinationen an Personen die für das Zufallsexperiment ausgewählt werden lässt sich mit dem Binomialkoeffizienten <span class="math inline">\(\binom{20}{3}\)</span> berechnen.</li>
-<li>Haben bereits 10 Personen teilgenommen, wobei 2 Personen bereits für die Zusatzaufgabe ausgewählt wurden, so beträgt die Wahrscheinlichkeit, dass Sie noch ausgewählt werden <span class="math inline">\(\frac{1}{10}\)</span>.</li>
-<li>Die Wahrscheinlichkeit, dass sie nicht ausgewählt werden liegt bei 0.90</li>
+<li>Bei diskreten Zufallsvariablen kann einzelnen Ausprägungen eine positive Wahrscheinlichkeit zugeordnet werden.</li>
+<li>Bei kontinuierlichen Zufallsvariablen ist die Wahrscheinlichkeit für einen einzelnen, exakt bestimmten Wert größer als null.</li>
+<li>Wahrscheinlichkeitsverteilungen beschreiben, wie wahrscheinlich unterschiedliche Ausprägungen einer Zufallsvariablen sind.</li>
+<li>Die Verteilungsfunktion gibt an, wie groß die Wahrscheinlichkeit ist, dass eine Zufallsvariable einen Wert kleiner oder gleich einem bestimmten Wert annimmt.</li>
 </ul>
 </section>
 </section>
 <section id="solution" class="level1">
 <h1>Solution</h1>
-<p>Aussage 1 ist richtig: Jede Versuchsperson kann höchstens einmal für die Zusatzaufgabe ausgewählt werden (ohne Zurücklegen). Für die Frage, welche drei Personen ausgewählt werden, spielt die Reihenfolge der Auswahl keine Rolle (ohne Berücksichtigung der Reihenfolge).</p>
-<p>Aussage 2 ist richtig: Es werden drei Personen aus insgesamt 20 ausgewählt, ohne Zurücklegen und ohne Reihenfolge. Genau dieses Szenario wird durch den Binomialkoeffizienten <span class="math inline">\(\binom{20}{3}\)</span> beschrieben.</p>
-<p>Aussage 3 ist richtig: Insgesamt sollen drei Personen ausgewählt werden. Wenn bereits zwei Personen ausgewählt wurden, bleibt ein Platz für die Zusatzaufgabe. Sind noch 10 Personen im Pool, ist die Wahrscheinlichkeit, dass dieser letzte Platz auf Sie fällt <span class="math inline">\(\frac{1}{10}\)</span></p>
-<p>Aussage 4 ist falsch: Die Wahrscheinlichkeit nicht ausgewählt zu werden berechnet sich als LaPlace Wahrscheinlichkeit <span class="math inline">\(P(A) = \frac{N_A}{K}\)</span>aus der Gesamtzahl möglicher Personenkombinationen die aus der Gesamtstichprobe ausgewählt werden können: <span class="math inline">\(K = \binom{20}{3}\)</span>, während die Anzahl für Sie günstiger Ereignisse <span class="math inline">\(N_A\)</span> sich aus der Gesamtzahl an Personenkombinationen berechnet, wenn die Personen aus den anderen 19 Teilnehmern am Experiment gezogen werden: <span class="math inline">\(N_A = \binom{19}{3}\)</span>. Entsprechend gilt:</p>
+<p>Aussage 1 ist richtig: Diskrete Zufallsvariablen besitzen eine abzählbare Menge möglicher Ausprägungen.Daher kann für jeden einzelnen Wert eine konkrete, positive Wahrscheinlichkeit angegeben werden (z.B. <span class="math inline">\(P(X=3)=0.2\)</span>)</p>
+<p>Aussage 2 ist richtig: Bei kontinuierlichen Zufallsvariablen ist die Wahrscheinlichkeit für einen exakt bestimmten Einzelwert immer null. Wahrscheinlichkeiten ergeben sich nur für Intervalle von Werten, nicht für einzelne Punkte.</p>
+<p>Aussage 3 ist richtig: Eine Wahrscheinlichkeitsverteilung ordnet möglichen Ausprägungen einer Zufallsvariablen Wahrscheinlichkeiten zu (bei diskreten Variablen) oder beschreibt die Wahrscheinlichkeitsdichte über Wertebereiche (bei kontinuierlichen Variablen).</p>
+<p>Aussage 4 ist falsch: Die Verteilungsfunktion <span class="math inline">\(F(x)\)</span> einer Wahrscheinlichkeitsfunktion <span class="math inline">\(f(x)\)</span> ist definiert als:</p>
 <p><span class="math display">\[
-P(A) = \frac{N_A}{K} = \frac{\binom{19}{3}}{\binom{20}{3}} = \frac{969}{1140} = 0.85
+F(x)=P(X≤x).
 \]</span></p>
+<p>Sie gibt die kumulierte Wahrscheinlichkeit bis zu einem bestimmten Wert an – unabhängig davon, ob die Zufallsvariable diskret oder kontinuierlich ist.</p>
 </section>
 <section id="meta-information" class="level1">
 <h1>Meta-information</h1>
-<p>exname: scale_levels extype: mchoice exsolution: 1110 exshuffle: false</p>
+<p>exname: prob_distributions extype: mchoice exsolution: 1011 exshuffle: false</p>
 
 
 </section>

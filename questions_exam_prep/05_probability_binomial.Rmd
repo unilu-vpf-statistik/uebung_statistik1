@@ -1,0 +1,29 @@
+Question
+========
+In einer Aufmerksamkeitsaufgabe muss eine Versuchsperson bei jedem Durchgang entscheiden, ob ein Zielreiz präsentiert wurde oder nicht. Die Wahrscheinlichkeit für eine korrekte Entscheidung bei reinem Raten beträgt $p = 0.5$. Die Aufgabe wird 4-mal durchgeführt.
+
+Wie groß ist die Wahrscheinlichkeit, dass die Versuchsperson die rät genau 2 richtige Entscheidungen trifft?
+
+Answerlist
+---------
+- $P(X = 2) = 0.125$
+- $P(X = 2) = 0.250$
+- $P(X = 2) = 0.375$
+- $P(X = 2) = 0.500$
+
+Solution
+=======
+Gesucht ist die Wahrscheinlichkeit, dass eine Versuchsperson bei 4 unabhängigen Durchgängen einer Aufmerksamkeitsaufgabe genau 2 richtige Entscheidungen trifft, wenn die Erfolgswahrscheinlichkeit pro Durchgang bei $p = 0.5$ liegt.
+
+Für die Berechnung dieser Wahrscheinlichkeit können wir die Binomialverteilung nutzen. Dabei müssen wir die entsprechenden Werte in die Wahrscheinlichkeitsfunktion der Binomialverteilung einsetzen:
+
+$$
+P(X = 2) = \binom{4}{2} \cdot 0.5^2 \cdot (1-0.5)^{4-2} = 6 \cdot 0.25 \cdot 0.25 = 0.375
+$$
+
+Meta-information
+========
+exname: scale_levels
+extype: schoice
+exsolution: 0010
+exshuffle: false

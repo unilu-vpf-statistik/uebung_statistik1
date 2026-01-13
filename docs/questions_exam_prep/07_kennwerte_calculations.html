@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>kombinatorik_scenario – Übungen - VL: Statistik I</title>
+<title>kennwerte_calculations – Übungen - VL: Statistik I</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -258,31 +258,38 @@ window.Quarto = {
 
 <section id="question" class="level1">
 <h1>Question</h1>
-<p>In einer psychologischen Studie nehmen 20 Versuchspersonen teil. Für eine aufwendige Zusatzaufgabe werden 3 Personen zufällig ausgewählt. Sie nehmen selbst an der Studie teil und hoffen, nicht ausgewählt zu werden. Beurteilen Sie die folgenden Aussagen.</p>
+<p>Beurteilen Sie die folgenden Aussagen zum Standardfehler des Mittelwertes.</p>
 <p>Kreuzen Sie bei jeder Aussage an, ob sie richtig oder falsch ist.</p>
 <section id="answerlist" class="level2">
 <h2 class="anchored" data-anchor-id="answerlist">Answerlist</h2>
 <ul>
-<li>Für dieses Zufallsexperiment ist ein kombinatorisches Modell ohne Zurücklegen und ohne Berücksichtigung der Reihenfolge angemessen.</li>
-<li>Die Gesamtzahl möglicher Kombinationen an Personen die für das Zufallsexperiment ausgewählt werden lässt sich mit dem Binomialkoeffizienten <span class="math inline">\(\binom{20}{3}\)</span> berechnen.</li>
-<li>Haben bereits 10 Personen teilgenommen, wobei 2 Personen bereits für die Zusatzaufgabe ausgewählt wurden, so beträgt die Wahrscheinlichkeit, dass Sie noch ausgewählt werden <span class="math inline">\(\frac{1}{10}\)</span>.</li>
-<li>Die Wahrscheinlichkeit, dass sie nicht ausgewählt werden liegt bei 0.90</li>
+<li>Für eine Stichprobe von 50 Personen beträgt der Standardfehler des Mittelwertes <span class="math inline">\(\sigma_{\bar{x}} = 1.41\)</span>, wenn die bei einer Populationsstandardabweichung <span class="math inline">\(\sigma_x = 10\)</span> beträgt.</li>
+<li>Wird die Stichprobengrösse vervierfacht, so halbiert sich der Standardfehler des Mittelwertes, sofern die Streuung der Variable konstant bleibt.</li>
+<li>Für eine Variable <span class="math inline">\(X \sim \mathcal{N}(\mu = 10, \sigma = 2)\)</span> ist im Mittel zu erwarten, dass aus 10 unabhängigen Stichproben mit <span class="math inline">\(N = 10\)</span> etwa eine Stichprobe einen Mittelwert grösser als <span class="math inline">\(\bar{x} = 11.04\)</span> aufweist.</li>
+<li>Wenn der Standardfehler des Mittelwert einer Variable X <span class="math inline">\(\sigma_{\bar{x}} = 2\)</span> beträgt und die Standardabweichung der Variable X <span class="math inline">\(\sigma_x = 12\)</span> ist, dann betrug die Stichprobengrösse <span class="math inline">\(N = 64\)</span>.</li>
 </ul>
 </section>
 </section>
 <section id="solution" class="level1">
 <h1>Solution</h1>
-<p>Aussage 1 ist richtig: Jede Versuchsperson kann höchstens einmal für die Zusatzaufgabe ausgewählt werden (ohne Zurücklegen). Für die Frage, welche drei Personen ausgewählt werden, spielt die Reihenfolge der Auswahl keine Rolle (ohne Berücksichtigung der Reihenfolge).</p>
-<p>Aussage 2 ist richtig: Es werden drei Personen aus insgesamt 20 ausgewählt, ohne Zurücklegen und ohne Reihenfolge. Genau dieses Szenario wird durch den Binomialkoeffizienten <span class="math inline">\(\binom{20}{3}\)</span> beschrieben.</p>
-<p>Aussage 3 ist richtig: Insgesamt sollen drei Personen ausgewählt werden. Wenn bereits zwei Personen ausgewählt wurden, bleibt ein Platz für die Zusatzaufgabe. Sind noch 10 Personen im Pool, ist die Wahrscheinlichkeit, dass dieser letzte Platz auf Sie fällt <span class="math inline">\(\frac{1}{10}\)</span></p>
-<p>Aussage 4 ist falsch: Die Wahrscheinlichkeit nicht ausgewählt zu werden berechnet sich als LaPlace Wahrscheinlichkeit <span class="math inline">\(P(A) = \frac{N_A}{K}\)</span>aus der Gesamtzahl möglicher Personenkombinationen die aus der Gesamtstichprobe ausgewählt werden können: <span class="math inline">\(K = \binom{20}{3}\)</span>, während die Anzahl für Sie günstiger Ereignisse <span class="math inline">\(N_A\)</span> sich aus der Gesamtzahl an Personenkombinationen berechnet, wenn die Personen aus den anderen 19 Teilnehmern am Experiment gezogen werden: <span class="math inline">\(N_A = \binom{19}{3}\)</span>. Entsprechend gilt:</p>
+<p>Aussage 1 ist richtig: Wenn wir den Standardfehler auf Basis der gegebene Werte berechnen, erhalten wir:</p>
 <p><span class="math display">\[
-P(A) = \frac{N_A}{K} = \frac{\binom{19}{3}}{\binom{20}{3}} = \frac{969}{1140} = 0.85
+\sigma_{\bar{x}}= \frac{10}{\sqrt{50}} = \frac{10}{7.071} = 1.4142... \approx 1.41
+\]</span> was genau dem in der Aussage angegebenen Wert entspricht.</p>
+<p>Aussage 2 ist richtig: Der Standardfehler ist proportional zu <span class="math inline">\(\frac{1}{\sqrt{N}}\)</span>. Wird N vervierfacht, verdoppelt sich <span class="math inline">\(\sqrt{N}\)</span> und der Standardfehler halbiert sich entsprechend. Nehmen wir an der Standardfehler bei N = 20 ist 1, dann ist der Standardfehler bei N = 80, <span class="math inline">\(\sigma_{\bar{x}(N = 80)} = \frac{\sigma_x}{\sqrt{N_{20} \cdot 4}} = \frac{\sigma_x}{2 \cdot \sqrt{N_{20}}} = \frac{1}{2} \cdot \sigma_{\hat{x}(N=20)}\)</span></p>
+<p>Aussage 3 ist falsch: Die Stichprobenmittelwerte im beschriebenen Szenario folgen einer Normalverteilung mit dem Standardfehler des Mittelwerts: <span class="math inline">\(\sigma_{\bar{x}} = \frac{2}{\sqrt{10}} \approx 0.632\)</span>.</p>
+<p>Mit Hilfe der <span class="math inline">\(z\)</span>-Standardisierung können wir den <span class="math inline">\(z\)</span>-Wert für den im Szenario genannten Mittwert von <span class="math inline">\(\bar{x} = 11.04\)</span> berechnen: <span class="math inline">\(z = \frac{11.04-10}{0.632} \approx 1.65\)</span>.</p>
+<p>Anhand der Verteilungsfunktion der Standardnormalverteilung können wir bestimmend, dass für diesen Wert nur 5% der Werte eine Wahrscheinlichkeit haben grösser als dieser Wert zu sein: <span class="math inline">\(P (X &gt; 11.04) = 1 - P(X \leq 11.04) = 1 - P(z \leq 1.65) = 1 - .95\)</span></p>
+<p>Die Erwartete Anzahl einer Stichprobe mit einem Mittelwert <span class="math inline">\(\bar{x} \geq 11.04\)</span> bei 10 unabhängigen Stichproben ist also <span class="math inline">\(10 \cdot 0.05 = 0.5\)</span>. Es ist also nicht im Mittel eine, sondern eine halbe Stichprobe zu erwarten.</p>
+<p>Aussage 4 ist falsch: Wenn wir aus der Formel des Standardfehlers und den gegebenen Werten die Stichprobengrösse berechnen ergibt sich:</p>
+<p><span class="math display">\[
+2 = \frac{12}{\sqrt{N}}; \quad \sqrt{N} = \frac{12}{2} = 6; \quad N = 6^2 = 36
 \]</span></p>
+<p>Die angegebene Stichprobengrösse <span class="math inline">\(N=64\)</span> ist daher falsch.</p>
 </section>
 <section id="meta-information" class="level1">
 <h1>Meta-information</h1>
-<p>exname: scale_levels extype: mchoice exsolution: 1110 exshuffle: false</p>
+<p>exname: test_basics extype: mchoice exsolution: 1011 exshuffle: false</p>
 
 
 </section>

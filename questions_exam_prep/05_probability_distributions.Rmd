@@ -1,0 +1,35 @@
+Question
+========
+Beurteilen Sie die folgenden Aussagen zu diskreten und kontinuierlichen Wahrscheinlichkeitsverteilungen.
+
+Kreuzen Sie bei jeder Aussage an, ob sie richtig oder falsch ist.
+
+Answerlist
+---------
+- Bei diskreten Zufallsvariablen kann einzelnen Ausprägungen eine positive Wahrscheinlichkeit zugeordnet werden.
+- Bei kontinuierlichen Zufallsvariablen ist die Wahrscheinlichkeit für einen einzelnen, exakt bestimmten Wert größer als null.
+- Wahrscheinlichkeitsverteilungen beschreiben, wie wahrscheinlich unterschiedliche Ausprägungen einer Zufallsvariablen sind.
+- Die Verteilungsfunktion gibt an, wie groß die Wahrscheinlichkeit ist, dass eine Zufallsvariable einen Wert kleiner oder gleich einem bestimmten Wert annimmt.
+
+Solution
+=======
+Aussage 1 ist richtig: Diskrete Zufallsvariablen besitzen eine abzählbare Menge möglicher Ausprägungen.Daher kann für jeden einzelnen Wert eine konkrete, positive Wahrscheinlichkeit angegeben werden (z.B. $P(X=3)=0.2$)
+
+Aussage 2 ist richtig: Bei kontinuierlichen Zufallsvariablen ist die Wahrscheinlichkeit für einen exakt bestimmten Einzelwert immer null. Wahrscheinlichkeiten ergeben sich nur für Intervalle von Werten, nicht für einzelne Punkte.
+
+Aussage 3 ist richtig: Eine Wahrscheinlichkeitsverteilung ordnet möglichen Ausprägungen einer Zufallsvariablen Wahrscheinlichkeiten zu (bei diskreten Variablen) oder beschreibt die Wahrscheinlichkeitsdichte über Wertebereiche (bei kontinuierlichen Variablen).
+
+Aussage 4 ist falsch: Die Verteilungsfunktion $F(x)$ einer Wahrscheinlichkeitsfunktion $f(x)$ ist definiert als:
+
+$$
+F(x)=P(X≤x).
+$$
+
+Sie gibt die kumulierte Wahrscheinlichkeit bis zu einem bestimmten Wert an – unabhängig davon, ob die Zufallsvariable diskret oder kontinuierlich ist.
+
+Meta-information
+========
+exname: prob_distributions
+extype: mchoice
+exsolution: 1011
+exshuffle: false

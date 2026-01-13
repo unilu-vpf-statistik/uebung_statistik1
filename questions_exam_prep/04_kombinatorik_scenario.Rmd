@@ -22,7 +22,7 @@ Aussage 3 ist richtig: Insgesamt sollen drei Personen ausgewählt werden. Wenn b
 
 Aussage 4 ist falsch: Die Wahrscheinlichkeit nicht ausgewählt zu werden berechnet sich als LaPlace Wahrscheinlichkeit $P(A) = \frac{N_A}{K}$aus der Gesamtzahl möglicher Personenkombinationen die aus der Gesamtstichprobe ausgewählt werden können: $K = \binom{20}{3}$, während die Anzahl für Sie günstiger Ereignisse $N_A$ sich aus der Gesamtzahl an Personenkombinationen berechnet, wenn die Personen aus den anderen 19 Teilnehmern am Experiment gezogen werden: $N_A = \binom{19}{3}$. Entsprechend gilt:
 
-$$f
+$$
 P(A) = \frac{N_A}{K} = \frac{\binom{19}{3}}{\binom{20}{3}} = \frac{969}{1140} = 0.85
 $$
 

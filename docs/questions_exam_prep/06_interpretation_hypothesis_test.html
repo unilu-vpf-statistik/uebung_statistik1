@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>kombinatorik_scenario – Übungen - VL: Statistik I</title>
+<title>interpretation_hypothesis_test – Übungen - VL: Statistik I</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -258,31 +258,28 @@ window.Quarto = {
 
 <section id="question" class="level1">
 <h1>Question</h1>
-<p>In einer psychologischen Studie nehmen 20 Versuchspersonen teil. Für eine aufwendige Zusatzaufgabe werden 3 Personen zufällig ausgewählt. Sie nehmen selbst an der Studie teil und hoffen, nicht ausgewählt zu werden. Beurteilen Sie die folgenden Aussagen.</p>
+<p>Ein statistischer Test ergibt ein signifikantes Ergebnis bei <span class="math inline">\(\alpha = .05\)</span></p>
 <p>Kreuzen Sie bei jeder Aussage an, ob sie richtig oder falsch ist.</p>
 <section id="answerlist" class="level2">
 <h2 class="anchored" data-anchor-id="answerlist">Answerlist</h2>
 <ul>
-<li>Für dieses Zufallsexperiment ist ein kombinatorisches Modell ohne Zurücklegen und ohne Berücksichtigung der Reihenfolge angemessen.</li>
-<li>Die Gesamtzahl möglicher Kombinationen an Personen die für das Zufallsexperiment ausgewählt werden lässt sich mit dem Binomialkoeffizienten <span class="math inline">\(\binom{20}{3}\)</span> berechnen.</li>
-<li>Haben bereits 10 Personen teilgenommen, wobei 2 Personen bereits für die Zusatzaufgabe ausgewählt wurden, so beträgt die Wahrscheinlichkeit, dass Sie noch ausgewählt werden <span class="math inline">\(\frac{1}{10}\)</span>.</li>
-<li>Die Wahrscheinlichkeit, dass sie nicht ausgewählt werden liegt bei 0.90</li>
+<li>Das Ergebnis ist statistisch bedeutsam im Sinne des gewählten Signifikanzniveaus.</li>
+<li>Die Wahrscheinlichkeit, dass die Nullhypothese wahr ist, beträgt weniger als 5 %.</li>
+<li>Bei einer Wiederholung der Studie wird das Ergebnis mit Sicherheit erneut signifikant ausfallen.</li>
+<li>Ein signifikanter Test sagt nichts über die Größe oder praktische Relevanz des Effekts aus.</li>
 </ul>
 </section>
 </section>
 <section id="solution" class="level1">
 <h1>Solution</h1>
-<p>Aussage 1 ist richtig: Jede Versuchsperson kann höchstens einmal für die Zusatzaufgabe ausgewählt werden (ohne Zurücklegen). Für die Frage, welche drei Personen ausgewählt werden, spielt die Reihenfolge der Auswahl keine Rolle (ohne Berücksichtigung der Reihenfolge).</p>
-<p>Aussage 2 ist richtig: Es werden drei Personen aus insgesamt 20 ausgewählt, ohne Zurücklegen und ohne Reihenfolge. Genau dieses Szenario wird durch den Binomialkoeffizienten <span class="math inline">\(\binom{20}{3}\)</span> beschrieben.</p>
-<p>Aussage 3 ist richtig: Insgesamt sollen drei Personen ausgewählt werden. Wenn bereits zwei Personen ausgewählt wurden, bleibt ein Platz für die Zusatzaufgabe. Sind noch 10 Personen im Pool, ist die Wahrscheinlichkeit, dass dieser letzte Platz auf Sie fällt <span class="math inline">\(\frac{1}{10}\)</span></p>
-<p>Aussage 4 ist falsch: Die Wahrscheinlichkeit nicht ausgewählt zu werden berechnet sich als LaPlace Wahrscheinlichkeit <span class="math inline">\(P(A) = \frac{N_A}{K}\)</span>aus der Gesamtzahl möglicher Personenkombinationen die aus der Gesamtstichprobe ausgewählt werden können: <span class="math inline">\(K = \binom{20}{3}\)</span>, während die Anzahl für Sie günstiger Ereignisse <span class="math inline">\(N_A\)</span> sich aus der Gesamtzahl an Personenkombinationen berechnet, wenn die Personen aus den anderen 19 Teilnehmern am Experiment gezogen werden: <span class="math inline">\(N_A = \binom{19}{3}\)</span>. Entsprechend gilt:</p>
-<p><span class="math display">\[
-P(A) = \frac{N_A}{K} = \frac{\binom{19}{3}}{\binom{20}{3}} = \frac{969}{1140} = 0.85
-\]</span></p>
+<p>Aussage 1 ist richtig: Ein signifikantes Testergebnis bei <span class="math inline">\(\alpha=.05\)</span> bedeutet, dass der berechnete p-Wert kleiner als das vorab festgelegte Signifikanzniveau ist. Damit ist das Ergebnis statistisch bedeutsam gemäß der Entscheidungsregel des Tests.</p>
+<p>Aussage 2 ist falsch: Der p-Wert (und damit auch das Signifikanzniveau) beschreibt die Wahrscheinlichkeit der Daten unter Annahme der Nullhypothese, nicht die Wahrscheinlichkeit, dass die Nullhypothese wahr ist. Aussagen über die Wahrscheinlichkeit der Hypothesen selbst sind im klassischen Hypothesentesten nicht möglich.</p>
+<p>Aussage 3 ist falsch: Das Ergebnis statistischer Tests sind Zufallsvariablen und damit kann ein erneuter Test auch bei identischem Studiendesign ein anderes Ergebnis liefern. Die Signifikanz eines Tests garantiert also keine Reproduzierbarkeit der Ergebnisse.</p>
+<p>Aussage 4 ist richtig: Die statistische Signifikanz gibt lediglich Auskunft darüber, ob ein Effekt unter der Nullhypothese als unwahrscheinlich gilt. Sie macht keine Aussage darüber, wie groß der Effekt ist oder ob er praktisch oder inhaltlich bedeutsam ist.</p>
 </section>
 <section id="meta-information" class="level1">
 <h1>Meta-information</h1>
-<p>exname: scale_levels extype: mchoice exsolution: 1110 exshuffle: false</p>
+<p>exname: test_interpretation extype: mchoice exsolution: 1001 exshuffle: false</p>
 
 
 </section>
