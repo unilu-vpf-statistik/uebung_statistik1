@@ -1,0 +1,25 @@
+Question
+========
+In einer Untersuchung erheben Sie die Anzahl an korrekt gelöster Aufgaben in einem Konzentrationstest. Die Verteilung der Werte ist stark rechtsschief, da einige wenige Personen extrem viele Aufgaben lösen.
+
+Welches Mass der zentralen Tendenz ist hier am sinnvollsten, um eine "typische" Leistung zu beschreiben?
+
+Answerlist
+---------
+- Der Modus, da dieser für Variablen jedes Skalenniveaus bestimmt werden kann.
+- Der Median, da dieser robust gegeüber Extremwerten ist
+- Der Mittelwert, da er alle Werte berücksichtigt
+- Der Mittelwert, ohne berücksichtigung der oberen 20% der Werte
+
+Solution
+=======
+Für dieses Szenario ist der Median die sinnvollste Wahl um die "typische" Leistung zu beschreiben, da dieser - im Gegensatz zum Mittelwert - kaum durch die extremen Leistung einiger weniger Personen beeinflusst wird.
+
+Das Filter (d.h. nicht berücksichtigen einiger Werte) ist in der Regel subjektiv, da der Cut Off ab dem Werte nicht berrücksichtig werden in der Regel nicht objektiv bestimmt werden kann.
+
+Meta-information
+========
+exname: scale_levels
+extype: schoice
+exsolution: 0100
+exshuffle: false

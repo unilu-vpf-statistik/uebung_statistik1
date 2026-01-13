@@ -1,0 +1,50 @@
+---
+title: "Übungsfragen: Klausurvorebeiteung"
+subtitle: "HS 2025"
+author: "Gidon Frischkorn"
+format:
+  html:
+    css: styles.css
+    include-after-body: webex.js
+filters:
+  - webr
+tbl-colwidths: [60,40]
+---
+
+```{r preparation}
+#| include: false
+library(exams)
+library(exams2forms)
+library(here)
+library(dplyr)
+```
+
+## Übungsfragen: Klausur
+
+Auf dieser Übungsseite finden Sie noch weitere Übugnsfragen zur Vorbereitung auf die Klausur. Die Fragen werden alle entweder Single-Choice oder K-Prim Fragen mit je 4 Antwortoptionen sein. Die Formatierung der Fragen ist nicht identisch mit der Klausur, das Frageformat ist jedoch identisch. Die Lösungen erklären die korrekten Antworten kurz, wiederholen aber nicht alle Details der jeweiligen Inhalte.
+
+### Skalenniveaus
+
+```{r print_questions_01}
+#| echo: false
+#| message: false
+#| results: "asis"
+exam_files_01 <- list.files(here("questions_exam_prep"), pattern = '^01_.*.Rmd$', full.names = TRUE)
+shuffeld_questions_01 <- exam_files_01
+exams2forms(shuffeld_questions_01, mathjax = TRUE)
+```
+
+### Masse der zentralen Tendenz
+
+```{r print_questions_02}
+#| echo: false
+#| message: false
+#| results: "asis"
+exam_files_02 <- list.files(here("questions_exam_prep"), pattern = '^02_.*.Rmd$', full.names = TRUE)
+shuffeld_questions_02 <- exam_files_02
+exams2forms(shuffeld_questions_02, mathjax = TRUE)
+```
+
+### Dispersionsmasse
+
+

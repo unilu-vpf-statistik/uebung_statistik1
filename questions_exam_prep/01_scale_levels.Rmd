@@ -1,0 +1,25 @@
+Question
+========
+In einer Studie bewerten Teilnehmer die Stimmung einer Person auf einem Foto auf einer Skala von 1 ("sehr schlecht") bis 7 ("sehr gut"). Welche der folgenden Aussagen beschreibt das Skalenniveau dieser Messung am treffendsten?
+
+Answerlist
+---------
+-   Nominalskala, da Stimmung ein qualitatives Merkmal
+-   Ordinalskala, da die Reihenfolge der Bewertungen interpretierbar ist.
+-   Intervallskala, da die Abstände zwischen den Bewertungen psychologisch gleich gross sind
+-   Verhältnisskala, da ein absoluter Nullpunkt existiert.
+
+Solution
+=======
+Die richtige Antwort ist: "**Ordinalskala, da die Reihenfolge der Bewertungen interpretierbar ist.**"
+
+Die Messung erlaub eine Ordnung der Stimmung ("besser" vs. "schlechter"), aber es ist nicht garantiert, dass die Teilnehmer gleiche Abstände zwischen den einzelnen Ratingstufen annehmen. Entsprechen solltend die Werte eher auf Ordinalskalenniveau interpretiert werden, auch wenn Zahlen für die Ratings verwendet werden.
+
+In der Praxis werden häufig mehrere Items solcher Rating-Skalen aggregiert. Die Summe dieser Werte bzw. der Mittelwert über mehrere solcher Items wird dann in der Regel mit einer Intervallskala interpretiert. Aus einer Methodischen Perspektive sollte dabei jedoch mit geeigneten Analysen (die wir nicht behandelt haben) getestet werden, ob diese Annahme gerechtfertigt ist.
+
+Meta-information
+========
+exname: scale_levels
+extype: schoice
+exsolution: 0100
+exshuffle: false

@@ -1,0 +1,27 @@
+Question
+========
+Welche der folgenden Transformationen erhalten das Skalenniveau einer ordinalskalierten Variablen (z. Bsp. Rangplätze bei einem Wettrennen)?
+
+Kreuzen Sie für jeden Antwort an, ob diese richtig (ankreuzen) oder falsch (nicht ankreuzen) ist.
+
+Answerlist
+---------
+-   Eine monotone Transformation; z. Bsp. $x' = log(x)$
+-   Eine positive-lineare Transformation; z. Bsp. $x' = 2x + 4$
+-   Eine beliebige eineindeutige Transformation.
+-   Eine Transformation, die die Rangordnung verändert
+
+Solution
+=======
+Für eine ordinalskalierte Variable müssen Transformationen mindestens streng monoton sein. Das heisst die Funktion der Transformation steigt entweder über den gesamten Werte bereich an, oder sie fällt ab. Wenn Sie abfällt, dann würde sich bei der Transformation die Richtung der Rangfolge jeweils umdrehen.
+
+Entsprechend erhalten **monotone Transformationen** und **positiv-lineare Transformationen** das Ordinalskalenniveau. Zweiteres ist eine strengere Transformation die sogar das Intervallskalenniveau erhalten würde. Diese Transformationen dürfen aber auch für niedrigere Skalenniveaus angewendet werden.
+
+Eineindeutige Transformationen erhalten nur das Nominalskalenniveau, aber reichen nicht aus um das Ordinalskalenniveau zu erhalten. Und Transformationen, die die Rangordnung verändern würden die Oridale Rangfolge auch nicht erhalten.
+
+Meta-information
+========
+exname: scale_levels
+extype: mchoice
+exsolution: 1100
+exshuffle: true

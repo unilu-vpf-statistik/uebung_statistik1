@@ -1,0 +1,23 @@
+Question
+========
+Das Alter von Frauen und Männern unter den Psychologiestudierenden im 1. Semester an der Uni Luzern hat für Frauen und Männern den Median von 22.5 und einen Mittelwert von 22.5.
+
+Welche der folgenden Aussagen lässt sich aus diesen Werten zwingend ableiten? Beurteilen Sie für jede Aussage an, ob diese richtig (ankreuzen) oder falsch (nicht ankreuzen) ist.
+
+Answerlist
+---------
+- Die Altersverteilung der Frauen und Männer sind identisch.
+- Die Streuung des Alters für Frauen und Männer ist gleich
+- Die Lage der Altersverteilung ist im Bezug auf die zentrale Tendenz gleich.
+- Die Altersverteilungden von Frauen und Männern sind symmetrisch.
+
+Solution
+=======
+Richtig sind Antworten 3 und 4. Der Median und Mittelwert ist für das Alter von Frauen und Männer identisch und somit sind die Altersverteilungen zumindest in Bezug auf die zentrale Tendenz gleich. Wir haben jedoch keine Information über die Streuung, weshalb wir Antworten 1 und 2 nicht eindeutig ableiten können. Zudem sind Median und Mittelwert identisch, daraus lässt sich ableiten, dass die Altersverteilungen symmetrisch sein müssen.
+
+Meta-information
+========
+exname: scale_levels
+extype: mchoice
+exsolution: 0011
+exshuffle: false

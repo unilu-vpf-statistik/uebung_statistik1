@@ -1,0 +1,29 @@
+Question
+========
+Welche der folgenden Aussagen zu unterschiedlichen Datenformaten in der Programmiersprache R sind korrekt.
+
+Kreuzen Sie für jeden Antwort an, ob diese richtig (ankreuzen) oder falsch (nicht ankreuzen) ist.
+
+Answerlist
+---------
+-   Eine Variable vom Typ `factor` speichert kategoriale Informationen. Intern kann diese numerisch kodiert sein, ohne dass diese Zahlen eine quantitative Bedeutung haben.
+-   Eine Variable vom Typ `vector` kann gleichzeitig mehrere Werte vom Typ `numeric`, `integer` oder `boolean` speichern, ohne das die unterschiedlichen Typen vorher umgewandelt werden müssen.
+-   Eine Variable vom Typ `matrix` kann gleichezeitig mehrere Werte nur eines Variablentyps  speichern und hat 2-Dimensionen, Zeilen & Spalten.
+-   Eine Variable vom Typ `boolean` kann sinnvoll verwendet werden, um beliebige ordinalskalierte Merkmale zu kodieren.
+
+Solution
+=======
+Eine Variable vom Typ `factor` dient der Repräsentation kategorialer Variablen; die interne numerische Codierung ist rein technisch und nicht inhaltlich interpretierbar.
+
+Eine Variable vom Typ `vector` muss homogen sein; Wenn man versucht unterschiedliche Variablentypen in dem gleichen Vektor zu speichert führt das zu einer impliziter Typkonversion (z.B. alle Werte werden zu `numeric` oder `character` konvertiert).
+
+Eine Variable vom Typ `matrix` ist eine 2-dimensionale Datenstruktur dim-Attribut und kann so wie ein `vector` nur einen Datentyp enthalten.
+
+Eine Variable vom Typ `boolean` kodiert logische Werte und erlaubt entsprechen nur zwei Ausprägungen (TRUE/FALSE). Daher kann eine solche Variable keine Ordnung mit mehr als zwei Stufen abbilden; Häufig erfordern ordinalskalierte Merkmale jedoch Ranginformation über mehrere Kategorien.
+
+Meta-information
+========
+exname: scale_levels
+extype: mchoice
+exsolution: 1010
+exshuffle: false

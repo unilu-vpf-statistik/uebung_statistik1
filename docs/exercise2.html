@@ -2150,22 +2150,24 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>Nutzen Sie eine <a href="https://unilu-vpf-statistik.github.io/uebung_statistik1/about.html#suchmaschinen">Suchmaschine</a>, wenn Sie nicht wissen welche Funktionen Ihnen ein bestimmtes Ergebnis liefern. Ausserdem können Sie in R immer die <a href="https://www.r-project.org/help.html">Hilfe</a> einer Funktion aufrufen, indem sie vor den Namen der Funktion ein Fragezeichen schreiben, z. Bsp <code>?median</code> oder die Hilfe-Funktion <code>help()</code> mit dem jeweligen Funktionsbefehl ausführen: <code>help(median)</code>.</p>
 <div class="webex-question">
 <div class="webex-check webex-box">
-<p>Wie hoch liegt der Anteil an Frauen und Männern in den Daten in Prozent?</p>
-<div id="webex-76ea1b03ac37a7a9c48dbc37cf2290d8" class="webex-checkboxgroup" data-answer="bAZJUR1SHANNUh8GPA==">
-<label><input type="checkbox" autocomplete="off" name="76ea1b03ac37a7a9c48dbc37cf2290d8"><span>26.2% Männer</span></label><label><input type="checkbox" autocomplete="off" name="76ea1b03ac37a7a9c48dbc37cf2290d8"><span>73.8% Frauen</span></label><label><input type="checkbox" autocomplete="off" name="76ea1b03ac37a7a9c48dbc37cf2290d8"><span>11.9% Männer</span></label><label><input type="checkbox" autocomplete="off" name="76ea1b03ac37a7a9c48dbc37cf2290d8"><span>88.1% Frauen</span></label><label><input type="checkbox" autocomplete="off" name="76ea1b03ac37a7a9c48dbc37cf2290d8"><span>82.5% Frauen</span></label><label><input type="checkbox" autocomplete="off" name="76ea1b03ac37a7a9c48dbc37cf2290d8"><span>17.5% Männer</span></label>
+<p>Was ist das mittlere Alter der Frauen und in Männer (gerundet auf eine Nachkommastelle) im Datensatz <code>semester_data</code>?</p>
+<div id="webex-2e4ee914f11b9fbc34b052921e49a280" class="webex-checkboxgroup" data-answer="aVUYVUkJHQVKAR1TZA==">
+<label><input type="checkbox" autocomplete="off" name="2e4ee914f11b9fbc34b052921e49a280"><span>M(männlich) = 22.1</span></label><label><input type="checkbox" autocomplete="off" name="2e4ee914f11b9fbc34b052921e49a280"><span>M(männlich) = 23.0</span></label><label><input type="checkbox" autocomplete="off" name="2e4ee914f11b9fbc34b052921e49a280"><span>M(weiblich) = 22.1</span></label><label><input type="checkbox" autocomplete="off" name="2e4ee914f11b9fbc34b052921e49a280"><span>M(männlich) = 23.2</span></label><label><input type="checkbox" autocomplete="off" name="2e4ee914f11b9fbc34b052921e49a280"><span>M(weiblich) = 23.2</span></label><label><input type="checkbox" autocomplete="off" name="2e4ee914f11b9fbc34b052921e49a280"><span>M(weiblich) = 23.0</span></label>
 </div>
 </div>
 <div class="webex-solution">
-<p>Um die relative Häufigkeitsverteilung von Frauen und Männern zu erlangen erstellen wir als erstes eine reguläre Häufigkeitsverteilung <code>table(semester_data$geschlecht)</code>.</p>
-<p>Um die absoluten Häufigkeiten in Prozentwerte umzurechnen müssen wir diese durch die Gesamtzahl an beobachtungen Teilen. Diese können Sie entweder erlangen, in dem sie die Summe der absoluten Häufigkeiten in der Häufigkeitstabelle berechnen: <code>sum(table(semester_data$geschlecht))</code> oder indem sie einfach die Zeilen des Datensatzes zählen: <code>nrow(semester_data)</code></p>
-<p>Die relative Häufigkeitstabelle multiplizieren wir dann noch mit 100 um Prozentwerte zu erlangen. Mit dieser Lösung sollten Sie heraus finden können das 82.5 % Frauen und 17.5% Männer in der Stichprobe enthalten sind</p>
+<p>Für diese Aufgabe müssen sie die Werte der variablen <code>alter</code> nach den Merkmalsausprägungen in der Variable <code>geschlecht</code> trennen. Dafür gibt es zwei Möglichkeiten:</p>
+<ol type="1">
+<li>Sie können logische Indizierung nutzen, indem sie eine logische Variable <code>is_weiblich &lt;- semester_data$geschlecht == "weiblich"</code> definieren und mit dieser nur die Werte der Frauen bzw. Männer auswählen: <code>semester_data$alter[is_weiblich]</code> bzw. <code>semester_data$alter[!is_weiblich]</code></li>
+<li>Es gibt in R einen Befehl zur Aggregation von Daten <code>aggregate()</code>, der Funktionen wie <code>mean</code> oder <code>median</code> auch für Variablenausprägungen gruppiert berechnen kann. Damit können Sie mit einer einzelnen Funktion die Mittelwerte für Frauen und Männer berechnen: <code>aggregate(semester_data$alter, list(semester_data$geschlecht), FUN = mean)</code></li>
+</ol>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Was ist der Modus der Häufigkeitsverteilung der Wohnorte im Datensatz <code>semester_data</code>?</p>
-<div id="webex-b20cae09b096a316bfd91cd8f690ad6e" class="webex-radiogroup" data-answer="OQIcU01VHAlOAWQ=">
-<label><input type="radio" autocomplete="off" name="b20cae09b096a316bfd91cd8f690ad6e"><span>Zuerich</span></label><label><input type="radio" autocomplete="off" name="b20cae09b096a316bfd91cd8f690ad6e"><span>Basel</span></label><label><input type="radio" autocomplete="off" name="b20cae09b096a316bfd91cd8f690ad6e"><span>Luzern</span></label><label><input type="radio" autocomplete="off" name="b20cae09b096a316bfd91cd8f690ad6e"><span>St.&nbsp;Gallen</span></label><label><input type="radio" autocomplete="off" name="b20cae09b096a316bfd91cd8f690ad6e"><span>Bern</span></label>
+<div id="webex-01d08280c5aeb92f9164fe008eea6f99" class="webex-radiogroup" data-answer="awFIABQCFABPBDw=">
+<label><input type="radio" autocomplete="off" name="01d08280c5aeb92f9164fe008eea6f99"><span>Zuerich</span></label><label><input type="radio" autocomplete="off" name="01d08280c5aeb92f9164fe008eea6f99"><span>Basel</span></label><label><input type="radio" autocomplete="off" name="01d08280c5aeb92f9164fe008eea6f99"><span>Luzern</span></label><label><input type="radio" autocomplete="off" name="01d08280c5aeb92f9164fe008eea6f99"><span>St.&nbsp;Gallen</span></label><label><input type="radio" autocomplete="off" name="01d08280c5aeb92f9164fe008eea6f99"><span>Bern</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -2175,22 +2177,9 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
-<p>Mit welcher Funktion können Sie ein Histogramm der Altersverteilung der Variable <code>alter</code> im Datensatz <code>semeseter_data</code> erstellen?</p>
-<div id="webex-d8f7ba6431b95b689b38bc4aecf67a98" class="webex-radiogroup" data-answer="PwhKBk5RGgQfAT8=">
-<label><input type="radio" autocomplete="off" name="d8f7ba6431b95b689b38bc4aecf67a98"><span><code>barplot(semester_data$alter)</code></span></label><label><input type="radio" autocomplete="off" name="d8f7ba6431b95b689b38bc4aecf67a98"><span><code>hist(semester_data$alter)</code></span></label><label><input type="radio" autocomplete="off" name="d8f7ba6431b95b689b38bc4aecf67a98"><span><code>histogram(semester_data$alter)</code></span></label><label><input type="radio" autocomplete="off" name="d8f7ba6431b95b689b38bc4aecf67a98"><span><code>pie(semester_data$alter)</code></span></label><label><input type="radio" autocomplete="off" name="d8f7ba6431b95b689b38bc4aecf67a98"><span><code>plot(semester_data$alter</code></span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Die Funktion <code>hist()</code> erstellt ein histogramm einer Variablen, die der Funktion übergeben wird. Um ein Histogram der Altersverteilung zu erstellen müssen sie also folgenden Befehl ausführen: <code>hist(semester_data$alter)</code></p>
-<p>Wenn Sie diese Funktion ausführen, dann wird das Histogramm direkt ausgegeben. Sie erhalten jedoch keine weiteren Informationen zu der sekundären Häufigkeitsverteilung, die dem Histogram zu Grunde liegt. Um diese Information zu erhalten, können Sie sich das Ergebniss der Funktion in einer neue Variable speichern: <code>Sek_Häufigkeiten_Alter &lt;- hist(semester_data$alter)</code>.</p>
-<p>Die Intervallgrenzen der sekundären Häufigkeitsverteilung können Sie mit <code>Sek_Häufigkeiten_Alter$breaks</code> erhalten. Die absoluten Häufigkeiten in den einzelnen Intervallen erhalten Sie mit <code>Sek_Häufigkeiten_Alter$counts</code>. Ebenso können Sie die Mitte der Intervalle mit <code>Sek_Häufigkeiten_Alter$mids</code> erhalten.</p>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
 <p>In der Variable <code>wissen_statistik</code> sollten die Studierenden zu Beginn der VL einschätzen, wie sie ihr Grundlagenwissen im Bereich Statistik einschätzen. Wie viel Prozent (gerundet) schätzen Ihr Wissen gleich oder besser als das Rating 4 ein?</p>
-<div id="webex-c0513cc5b05fd4c49964b6ef85df84a5" class="webex-radiogroup" data-answer="OAAZAR9STwVOAGg=">
-<label><input type="radio" autocomplete="off" name="c0513cc5b05fd4c49964b6ef85df84a5"><span>8 %</span></label><label><input type="radio" autocomplete="off" name="c0513cc5b05fd4c49964b6ef85df84a5"><span>15 %</span></label><label><input type="radio" autocomplete="off" name="c0513cc5b05fd4c49964b6ef85df84a5"><span>26 %</span></label><label><input type="radio" autocomplete="off" name="c0513cc5b05fd4c49964b6ef85df84a5"><span>32 %</span></label><label><input type="radio" autocomplete="off" name="c0513cc5b05fd4c49964b6ef85df84a5"><span>60 %</span></label>
+<div id="webex-9b6489d628a241f0fa4630debd86052c" class="webex-radiogroup" data-answer="YlIaBBQISAYeCDw=">
+<label><input type="radio" autocomplete="off" name="9b6489d628a241f0fa4630debd86052c"><span>8 %</span></label><label><input type="radio" autocomplete="off" name="9b6489d628a241f0fa4630debd86052c"><span>15 %</span></label><label><input type="radio" autocomplete="off" name="9b6489d628a241f0fa4630debd86052c"><span>26 %</span></label><label><input type="radio" autocomplete="off" name="9b6489d628a241f0fa4630debd86052c"><span>32 %</span></label><label><input type="radio" autocomplete="off" name="9b6489d628a241f0fa4630debd86052c"><span>60 %</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -2206,17 +2195,28 @@ cumsum(stat_wissen_rel_häufigkeit)</code></pre>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
-<p>Was ist das mittlere Alter der Frauen und in Männer (gerundet auf eine Nachkommastelle) im Datensatz <code>semester_data</code>?</p>
-<div id="webex-fd9b08dbb79f1d8f4254ccba8fd93ca3" class="webex-checkboxgroup" data-answer="PVUVUhwISFNOBxVWbA==">
-<label><input type="checkbox" autocomplete="off" name="fd9b08dbb79f1d8f4254ccba8fd93ca3"><span>M(männlich) = 23.2</span></label><label><input type="checkbox" autocomplete="off" name="fd9b08dbb79f1d8f4254ccba8fd93ca3"><span>M(männlich) = 23.0</span></label><label><input type="checkbox" autocomplete="off" name="fd9b08dbb79f1d8f4254ccba8fd93ca3"><span>M(weiblich) = 22.1</span></label><label><input type="checkbox" autocomplete="off" name="fd9b08dbb79f1d8f4254ccba8fd93ca3"><span>M(weiblich) = 23.0</span></label><label><input type="checkbox" autocomplete="off" name="fd9b08dbb79f1d8f4254ccba8fd93ca3"><span>M(männlich) = 22.1</span></label><label><input type="checkbox" autocomplete="off" name="fd9b08dbb79f1d8f4254ccba8fd93ca3"><span>M(weiblich) = 23.2</span></label>
+<p>Wie hoch liegt der Anteil an Frauen und Männern in den Daten in Prozent?</p>
+<div id="webex-8b70f4a218863400c570ce71d350ca0d" class="webex-checkboxgroup" data-answer="Y1IbAEoFTQIdCRQGbg==">
+<label><input type="checkbox" autocomplete="off" name="8b70f4a218863400c570ce71d350ca0d"><span>11.9% Männer</span></label><label><input type="checkbox" autocomplete="off" name="8b70f4a218863400c570ce71d350ca0d"><span>26.2% Männer</span></label><label><input type="checkbox" autocomplete="off" name="8b70f4a218863400c570ce71d350ca0d"><span>82.5% Frauen</span></label><label><input type="checkbox" autocomplete="off" name="8b70f4a218863400c570ce71d350ca0d"><span>88.1% Frauen</span></label><label><input type="checkbox" autocomplete="off" name="8b70f4a218863400c570ce71d350ca0d"><span>17.5% Männer</span></label><label><input type="checkbox" autocomplete="off" name="8b70f4a218863400c570ce71d350ca0d"><span>73.8% Frauen</span></label>
 </div>
 </div>
 <div class="webex-solution">
-<p>Für diese Aufgabe müssen sie die Werte der variablen <code>alter</code> nach den Merkmalsausprägungen in der Variable <code>geschlecht</code> trennen. Dafür gibt es zwei Möglichkeiten:</p>
-<ol type="1">
-<li>Sie können logische Indizierung nutzen, indem sie eine logische Variable <code>is_weiblich &lt;- semester_data$geschlecht == "weiblich"</code> definieren und mit dieser nur die Werte der Frauen bzw. Männer auswählen: <code>semester_data$alter[is_weiblich]</code> bzw. <code>semester_data$alter[!is_weiblich]</code></li>
-<li>Es gibt in R einen Befehl zur Aggregation von Daten <code>aggregate()</code>, der Funktionen wie <code>mean</code> oder <code>median</code> auch für Variablenausprägungen gruppiert berechnen kann. Damit können Sie mit einer einzelnen Funktion die Mittelwerte für Frauen und Männer berechnen: <code>aggregate(semester_data$alter, list(semester_data$geschlecht), FUN = mean)</code></li>
-</ol>
+<p>Um die relative Häufigkeitsverteilung von Frauen und Männern zu erlangen erstellen wir als erstes eine reguläre Häufigkeitsverteilung <code>table(semester_data$geschlecht)</code>.</p>
+<p>Um die absoluten Häufigkeiten in Prozentwerte umzurechnen müssen wir diese durch die Gesamtzahl an beobachtungen Teilen. Diese können Sie entweder erlangen, in dem sie die Summe der absoluten Häufigkeiten in der Häufigkeitstabelle berechnen: <code>sum(table(semester_data$geschlecht))</code> oder indem sie einfach die Zeilen des Datensatzes zählen: <code>nrow(semester_data)</code></p>
+<p>Die relative Häufigkeitstabelle multiplizieren wir dann noch mit 100 um Prozentwerte zu erlangen. Mit dieser Lösung sollten Sie heraus finden können das 82.5 % Frauen und 17.5% Männer in der Stichprobe enthalten sind</p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>Mit welcher Funktion können Sie ein Histogramm der Altersverteilung der Variable <code>alter</code> im Datensatz <code>semeseter_data</code> erstellen?</p>
+<div id="webex-f9a4f10cd1d5e2b2635c7b1ea2b252fd" class="webex-radiogroup" data-answer="PQlNBEoBHFJIATk=">
+<label><input type="radio" autocomplete="off" name="f9a4f10cd1d5e2b2635c7b1ea2b252fd"><span><code>histogram(semester_data$alter)</code></span></label><label><input type="radio" autocomplete="off" name="f9a4f10cd1d5e2b2635c7b1ea2b252fd"><span><code>plot(semester_data$alter</code></span></label><label><input type="radio" autocomplete="off" name="f9a4f10cd1d5e2b2635c7b1ea2b252fd"><span><code>barplot(semester_data$alter)</code></span></label><label><input type="radio" autocomplete="off" name="f9a4f10cd1d5e2b2635c7b1ea2b252fd"><span><code>hist(semester_data$alter)</code></span></label><label><input type="radio" autocomplete="off" name="f9a4f10cd1d5e2b2635c7b1ea2b252fd"><span><code>pie(semester_data$alter)</code></span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>Die Funktion <code>hist()</code> erstellt ein histogramm einer Variablen, die der Funktion übergeben wird. Um ein Histogram der Altersverteilung zu erstellen müssen sie also folgenden Befehl ausführen: <code>hist(semester_data$alter)</code></p>
+<p>Wenn Sie diese Funktion ausführen, dann wird das Histogramm direkt ausgegeben. Sie erhalten jedoch keine weiteren Informationen zu der sekundären Häufigkeitsverteilung, die dem Histogram zu Grunde liegt. Um diese Information zu erhalten, können Sie sich das Ergebniss der Funktion in einer neue Variable speichern: <code>Sek_Häufigkeiten_Alter &lt;- hist(semester_data$alter)</code>.</p>
+<p>Die Intervallgrenzen der sekundären Häufigkeitsverteilung können Sie mit <code>Sek_Häufigkeiten_Alter$breaks</code> erhalten. Die absoluten Häufigkeiten in den einzelnen Intervallen erhalten Sie mit <code>Sek_Häufigkeiten_Alter$counts</code>. Ebenso können Sie die Mitte der Intervalle mit <code>Sek_Häufigkeiten_Alter$mids</code> erhalten.</p>
 </div>
 </div>
 <hr>

@@ -8,7 +8,7 @@
 
 <meta name="author" content="Gidon Frischkorn">
 
-<title>Übung 1 - Skalenniveaus – Übungen - VL: Statistik I</title>
+<title>Übungsfragen: Klausurvorebeiteung – Übungen - VL: Statistik I</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -113,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./exercise1.html">Übung 1</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Übungsfragen: Klausurvorebeiteung</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -135,7 +164,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercise1.html" class="sidebar-item-text sidebar-link active">
+  <a href="./exercise1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Übung 1</span></a>
   </div>
 </li>
@@ -209,10 +238,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#erste-schritte-mit-r-rstudio" id="toc-erste-schritte-mit-r-rstudio" class="nav-link active" data-scroll-target="#erste-schritte-mit-r-rstudio">Erste Schritte mit R &amp; RStudio</a>
+  <li><a href="#übungsfragen-klausur" id="toc-übungsfragen-klausur" class="nav-link active" data-scroll-target="#übungsfragen-klausur">Übungsfragen: Klausur</a>
   <ul class="collapse">
-  <li><a href="#aufgaben" id="toc-aufgaben" class="nav-link" data-scroll-target="#aufgaben">Aufgaben</a></li>
-  <li><a href="#übungen" id="toc-übungen" class="nav-link" data-scroll-target="#übungen">Übungen</a></li>
+  <li><a href="#skalenniveaus" id="toc-skalenniveaus" class="nav-link" data-scroll-target="#skalenniveaus">Skalenniveaus</a></li>
+  <li><a href="#masse-der-zentralen-tendenz" id="toc-masse-der-zentralen-tendenz" class="nav-link" data-scroll-target="#masse-der-zentralen-tendenz">Masse der zentralen Tendenz</a></li>
+  <li><a href="#dispersionsmasse" id="toc-dispersionsmasse" class="nav-link" data-scroll-target="#dispersionsmasse">Dispersionsmasse</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -222,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Übung 1 - Skalenniveaus</h1>
+<h1 class="title">Übungsfragen: Klausurvorebeiteung</h1>
 <p class="subtitle lead">HS 2025</p>
 </div>
 
@@ -246,104 +276,98 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="erste-schritte-mit-r-rstudio" class="level2">
-<h2 class="anchored" data-anchor-id="erste-schritte-mit-r-rstudio">Erste Schritte mit R &amp; RStudio</h2>
-<p>In dieser Übung sollen Sie einen ersten <strong>Einstieg in die Programmiersprache R</strong> und RStudio bekommen. Dazu werden Sie zwei kurze Videos auf YouTube schauen.</p>
-<section id="aufgaben" class="level3">
-<h3 class="anchored" data-anchor-id="aufgaben">Aufgaben</h3>
-<ol type="1">
-<li><p>Schauen Sie sich das folgenden YouTube Video an, dass einen kurzen Überblick zum Aufbau von RStudio bietet: <a href="https://www.youtube.com/watch?v=tyvEHQszZJs" class="uri">https://www.youtube.com/watch?v=tyvEHQszZJs</a></p></li>
-<li><p>Schauen Sie sich das folgende YouTube Video an, dass eine Übersicht zu den unterschiedlichen Datentypen in R gibt: <a href="https://www.youtube.com/watch?v=VtUVQWl0aRA" class="uri">https://www.youtube.com/watch?v=VtUVQWl0aRA</a></p></li>
-</ol>
-<p>Das zweite Video ist auf Englisch. Wenn Sie Schwierigkeiten mit dem englischen Video haben, dann nutzen Sie die automatisch generierten Untertitel und deren Übersetzung auf Deutsch. Gewöhnen Sie sich jedoch daran, dass Sie immer wieder mit englischen Materialien Arbeiten werden.</p>
-<p>Nehmen Sie sich <strong>Zeit</strong> für die beiden Videos und <strong>machen Sie sich Notizen</strong> zu Inhalten, die für Sie kompliziert sind. Das Tempo der Videos ist relativ hoch. <strong>Stoppen und wiederholen</strong> Sie Abschnitte, wenn Ihnen Inhalte unklar sind.</p>
+<section id="übungsfragen-klausur" class="level2">
+<h2 class="anchored" data-anchor-id="übungsfragen-klausur">Übungsfragen: Klausur</h2>
+<p>Auf dieser Übungsseite finden Sie noch weitere Übugnsfragen zur Vorbereitung auf die Klausur. Die Fragen werden alle entweder Single-Choice oder K-Prim Fragen mit je 4 Antwortoptionen sein. Die Formatierung der Fragen ist nicht identisch mit der Klausur, das Frageformat ist jedoch identisch. Die Lösungen erklären die korrekten Antworten kurz, wiederholen aber nicht alle Details der jeweiligen Inhalte.</p>
+<section id="skalenniveaus" class="level3">
+<h3 class="anchored" data-anchor-id="skalenniveaus">Skalenniveaus</h3>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>In einer Studie bewerten Teilnehmer die Stimmung einer Person auf einem Foto auf einer Skala von 1 (“sehr schlecht”) bis 7 (“sehr gut”). Welche der folgenden Aussagen beschreibt das Skalenniveau dieser Messung am treffendsten?</p>
+<div id="webex-c7b299b25472b0efd6476daa228dc316" class="webex-radiogroup" data-answer="OAdOAxUJTgJo">
+<label><input type="radio" autocomplete="off" name="c7b299b25472b0efd6476daa228dc316"><span>Nominalskala, da Stimmung ein qualitatives Merkmal</span></label><label><input type="radio" autocomplete="off" name="c7b299b25472b0efd6476daa228dc316"><span>Ordinalskala, da die Reihenfolge der Bewertungen interpretierbar ist.</span></label><label><input type="radio" autocomplete="off" name="c7b299b25472b0efd6476daa228dc316"><span>Intervallskala, da die Abstände zwischen den Bewertungen psychologisch gleich gross sind</span></label><label><input type="radio" autocomplete="off" name="c7b299b25472b0efd6476daa228dc316"><span>Verhältnisskala, da ein absoluter Nullpunkt existiert.</span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>Die richtige Antwort ist: “<strong>Ordinalskala, da die Reihenfolge der Bewertungen interpretierbar ist.</strong>”</p>
+<p>Die Messung erlaub eine Ordnung der Stimmung (“besser” vs.&nbsp;“schlechter”), aber es ist nicht garantiert, dass die Teilnehmer gleiche Abstände zwischen den einzelnen Ratingstufen annehmen. Entsprechen solltend die Werte eher auf Ordinalskalenniveau interpretiert werden, auch wenn Zahlen für die Ratings verwendet werden.</p>
+<p>In der Praxis werden häufig mehrere Items solcher Rating-Skalen aggregiert. Die Summe dieser Werte bzw. der Mittelwert über mehrere solcher Items wird dann in der Regel mit einer Intervallskala interpretiert. Aus einer Methodischen Perspektive sollte dabei jedoch mit geeigneten Analysen (die wir nicht behandelt haben) getestet werden, ob diese Annahme gerechtfertigt ist.</p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>Welche der folgenden Transformationen erhalten das Skalenniveau einer ordinalskalierten Variablen (z. Bsp. Rangplätze bei einem Wettrennen)?</p>
+<p>Kreuzen Sie für jeden Antwort an, ob diese richtig (ankreuzen) oder falsch (nicht ankreuzen) ist.</p>
+<div id="webex-abf6d72cb67b973cf5b95d5c0b5600d0" class="webex-checkboxgroup" data-answer="OlJKB0gGHlM/">
+<label><input type="checkbox" autocomplete="off" name="abf6d72cb67b973cf5b95d5c0b5600d0"><span>Eine beliebige eineindeutige Transformation.</span></label><label><input type="checkbox" autocomplete="off" name="abf6d72cb67b973cf5b95d5c0b5600d0"><span>Eine monotone Transformation; z. Bsp. <span class="math inline">\(x' = log(x)\)</span></span></label><label><input type="checkbox" autocomplete="off" name="abf6d72cb67b973cf5b95d5c0b5600d0"><span>Eine positive-lineare Transformation; z. Bsp. <span class="math inline">\(x' = 2x + 4\)</span></span></label><label><input type="checkbox" autocomplete="off" name="abf6d72cb67b973cf5b95d5c0b5600d0"><span>Eine Transformation, die die Rangordnung verändert</span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>Für eine ordinalskalierte Variable müssen Transformationen mindestens streng monoton sein. Das heisst die Funktion der Transformation steigt entweder über den gesamten Werte bereich an, oder sie fällt ab. Wenn Sie abfällt, dann würde sich bei der Transformation die Richtung der Rangfolge jeweils umdrehen.</p>
+<p>Entsprechend erhalten <strong>monotone Transformationen</strong> und <strong>positiv-lineare Transformationen</strong> das Ordinalskalenniveau. Zweiteres ist eine strengere Transformation die sogar das Intervallskalenniveau erhalten würde. Diese Transformationen dürfen aber auch für niedrigere Skalenniveaus angewendet werden.</p>
+<p>Eineindeutige Transformationen erhalten nur das Nominalskalenniveau, aber reichen nicht aus um das Ordinalskalenniveau zu erhalten. Und Transformationen, die die Rangordnung verändern würden die Oridale Rangfolge auch nicht erhalten.</p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>Welche der folgenden Aussagen zu unterschiedlichen Datenformaten in der Programmiersprache R sind korrekt.</p>
+<p>Kreuzen Sie für jeden Antwort an, ob diese richtig (ankreuzen) oder falsch (nicht ankreuzen) ist.</p>
+<div id="webex-994d74d8aa3a55a3dadd3ee4c2bd734e" class="webex-checkboxgroup" data-answer="YggYVBsFSAg8">
+<label><input type="checkbox" autocomplete="off" name="994d74d8aa3a55a3dadd3ee4c2bd734e"><span>Eine Variable vom Typ <code>factor</code> speichert kategoriale Informationen. Intern kann diese numerisch kodiert sein, ohne dass diese Zahlen eine quantitative Bedeutung haben.</span></label><label><input type="checkbox" autocomplete="off" name="994d74d8aa3a55a3dadd3ee4c2bd734e"><span>Eine Variable vom Typ <code>vector</code> kann gleichzeitig mehrere Werte vom Typ <code>numeric</code>, <code>integer</code> oder <code>boolean</code> speichern, ohne das die unterschiedlichen Typen vorher umgewandelt werden müssen.</span></label><label><input type="checkbox" autocomplete="off" name="994d74d8aa3a55a3dadd3ee4c2bd734e"><span>Eine Variable vom Typ <code>matrix</code> kann gleichezeitig mehrere Werte nur eines Variablentyps speichern und hat 2-Dimensionen, Zeilen &amp; Spalten.</span></label><label><input type="checkbox" autocomplete="off" name="994d74d8aa3a55a3dadd3ee4c2bd734e"><span>Eine Variable vom Typ <code>boolean</code> kann sinnvoll verwendet werden, um beliebige ordinalskalierte Merkmale zu kodieren.</span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>Eine Variable vom Typ <code>factor</code> dient der Repräsentation kategorialer Variablen; die interne numerische Codierung ist rein technisch und nicht inhaltlich interpretierbar.</p>
+<p>Eine Variable vom Typ <code>vector</code> muss homogen sein; Wenn man versucht unterschiedliche Variablentypen in dem gleichen Vektor zu speichert führt das zu einer impliziter Typkonversion (z.B. alle Werte werden zu <code>numeric</code> oder <code>character</code> konvertiert).</p>
+<p>Eine Variable vom Typ <code>matrix</code> ist eine 2-dimensionale Datenstruktur dim-Attribut und kann so wie ein <code>vector</code> nur einen Datentyp enthalten.</p>
+<p>Eine Variable vom Typ <code>boolean</code> kodiert logische Werte und erlaubt entsprechen nur zwei Ausprägungen (TRUE/FALSE). Daher kann eine solche Variable keine Ordnung mit mehr als zwei Stufen abbilden; Häufig erfordern ordinalskalierte Merkmale jedoch Ranginformation über mehrere Kategorien.</p>
+</div>
+</div>
 </section>
-<section id="übungen" class="level3">
-<h3 class="anchored" data-anchor-id="übungen">Übungen</h3>
+<section id="masse-der-zentralen-tendenz" class="level3">
+<h3 class="anchored" data-anchor-id="masse-der-zentralen-tendenz">Masse der zentralen Tendenz</h3>
 <div class="webex-question">
 <div class="webex-check webex-box">
-<p>Mit welchen der folgenden Variablentypen in R kodiert man sinnvollerweise eine nominal skalierte Variable? (Mehrfachantworten Möglich)</p>
-<div id="webex-8d9b34d2676f4af2c4b35430e123be7e" class="webex-checkboxgroup" data-answer="Y1QVUh8ESAMaBms=">
-<label><input type="checkbox" autocomplete="off" name="8d9b34d2676f4af2c4b35430e123be7e"><span>integer</span></label><label><input type="checkbox" autocomplete="off" name="8d9b34d2676f4af2c4b35430e123be7e"><span>numeric</span></label><label><input type="checkbox" autocomplete="off" name="8d9b34d2676f4af2c4b35430e123be7e"><span>logical</span></label><label><input type="checkbox" autocomplete="off" name="8d9b34d2676f4af2c4b35430e123be7e"><span>factor</span></label><label><input type="checkbox" autocomplete="off" name="8d9b34d2676f4af2c4b35430e123be7e"><span>character</span></label>
+<p>Das Alter von Frauen und Männern unter den Psychologiestudierenden im 1. Semester an der Uni Luzern hat für Frauen und Männern den Median von 22.5 und einen Mittelwert von 22.5.</p>
+<p>Welche der folgenden Aussagen lässt sich aus diesen Werten zwingend ableiten? Beurteilen Sie für jede Aussage an, ob diese richtig (ankreuzen) oder falsch (nicht ankreuzen) ist.</p>
+<div id="webex-db1a722b7a65a6a20d77d312744ee919" class="webex-checkboxgroup" data-answer="P1IdURsDHlNq">
+<label><input type="checkbox" autocomplete="off" name="db1a722b7a65a6a20d77d312744ee919"><span>Die Altersverteilung der Frauen und Männer sind identisch.</span></label><label><input type="checkbox" autocomplete="off" name="db1a722b7a65a6a20d77d312744ee919"><span>Die Streuung des Alters für Frauen und Männer ist gleich</span></label><label><input type="checkbox" autocomplete="off" name="db1a722b7a65a6a20d77d312744ee919"><span>Die Lage der Altersverteilung ist im Bezug auf die zentrale Tendenz gleich.</span></label><label><input type="checkbox" autocomplete="off" name="db1a722b7a65a6a20d77d312744ee919"><span>Die Altersverteilungden von Frauen und Männern sind symmetrisch.</span></label>
 </div>
 </div>
 <div class="webex-solution">
-<p>Die Variablentypen <code>character</code> und <code>factor</code> eignen sich am ehesten um nominal skalierte Variablen zu kodieren. Dabei werden die Variablen zwar nicht direkt als numerische Werte gespeichert, aber die einzelnen Merkmalsausprägungen können so in den zugehörigen Kategorien gespeichert werden.</p>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>In einer empirischen Untersuchung haben Sie Reaktionszeiten in Millisekunden gemessen. Zur Auswertung hat ihr Kollege die Variablen in Sekunden transformiert und die minimal erlaubte Reaktionszeit von 300 Millisekunden von den gemessenen Variablen abgezogen. Welchen Einfluss hat die Transformation auf das Skalenniveau der resultierenden Variable?</p>
-<div id="webex-70e6ab9d5674fe16e08f44ee7fb60f22" class="webex-radiogroup" data-answer="bABJBk1SFVVo">
-<label><input type="radio" autocomplete="off" name="70e6ab9d5674fe16e08f44ee7fb60f22"><span>Wegen der Transformation kann ich die Variable grundsätzlich nicht mehr sinnvoll interpretieren</span></label><label><input type="radio" autocomplete="off" name="70e6ab9d5674fe16e08f44ee7fb60f22"><span>Variablen sollten grundsätzlich nicht transformiert werden</span></label><label><input type="radio" autocomplete="off" name="70e6ab9d5674fe16e08f44ee7fb60f22"><span>Die Transformation hat keinen Einfluss auf das Skalenniveau, bei Reaktionszeiten handelt es sich um absolut skalierte Variablen</span></label><label><input type="radio" autocomplete="off" name="70e6ab9d5674fe16e08f44ee7fb60f22"><span>Die Variable ist intervall skaliert statt der ursprünglich absolut skalierten Variable vor der Transformation</span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Die Transformation ist eine positiv lineare Transformation. Konkret ergibt sich die endgültige Variable aus der Formel: <code>Y = 1/1000 * (RTms - 300)</code>. Diese Transformation ist für intervall skalierte Variablen sinnvoll, durch die Subtraktion der minimalen Reaktionszeit verliert die Variable den absoluten Nullpunkt und ist deshalb noch intervall skaliert, statt der ursprünglichen absolut skalierten Reaktionszeit in Millisekunden.</p>
+<p>Richtig sind Antworten 3 und 4. Der Median und Mittelwert ist für das Alter von Frauen und Männer identisch und somit sind die Altersverteilungen zumindest in Bezug auf die zentrale Tendenz gleich. Wir haben jedoch keine Information über die Streuung, weshalb wir Antworten 1 und 2 nicht eindeutig ableiten können. Zudem sind Median und Mittelwert identisch, daraus lässt sich ableiten, dass die Altersverteilungen symmetrisch sein müssen.</p>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
-<p>Welche der folgenden Merkmale würde am ehesten auf einer Nominalskala gemessen?</p>
-<div id="webex-3acbfe9210ed04e5796b7fcf67114bfc" class="webex-checkboxgroup" data-answer="aFFPU0pVFQMdAElUbQ==">
-<label><input type="checkbox" autocomplete="off" name="3acbfe9210ed04e5796b7fcf67114bfc"><span>Datum</span></label><label><input type="checkbox" autocomplete="off" name="3acbfe9210ed04e5796b7fcf67114bfc"><span>Lieblingsfarbe</span></label><label><input type="checkbox" autocomplete="off" name="3acbfe9210ed04e5796b7fcf67114bfc"><span>Anzahl Stunden Schlaf in der letzten Nacht</span></label><label><input type="checkbox" autocomplete="off" name="3acbfe9210ed04e5796b7fcf67114bfc"><span>PLZ</span></label><label><input type="checkbox" autocomplete="off" name="3acbfe9210ed04e5796b7fcf67114bfc"><span>Höchster Schulabschluss</span></label><label><input type="checkbox" autocomplete="off" name="3acbfe9210ed04e5796b7fcf67114bfc"><span>Grösse</span></label>
+<p>In einer Untersuchung erheben Sie die Anzahl an korrekt gelöster Aufgaben in einem Konzentrationstest. Die Verteilung der Werte ist stark rechtsschief, da einige wenige Personen extrem viele Aufgaben lösen.</p>
+<p>Welches Mass der zentralen Tendenz ist hier am sinnvollsten, um eine “typische” Leistung zu beschreiben?</p>
+<div id="webex-b639c6c3a1600c49b65d89a8cfb4ab62" class="webex-radiogroup" data-answer="OQYfCE8GTwM8">
+<label><input type="radio" autocomplete="off" name="b639c6c3a1600c49b65d89a8cfb4ab62"><span>Der Modus, da dieser für Variablen jedes Skalenniveaus bestimmt werden kann.</span></label><label><input type="radio" autocomplete="off" name="b639c6c3a1600c49b65d89a8cfb4ab62"><span>Der Median, da dieser robust gegeüber Extremwerten ist</span></label><label><input type="radio" autocomplete="off" name="b639c6c3a1600c49b65d89a8cfb4ab62"><span>Der Mittelwert, da er alle Werte berücksichtigt</span></label><label><input type="radio" autocomplete="off" name="b639c6c3a1600c49b65d89a8cfb4ab62"><span>Der Mittelwert, ohne berücksichtigung der oberen 20% der Werte</span></label>
 </div>
 </div>
 <div class="webex-solution">
-<p>Das Merkmal PLZ und Lieblingsfarbe hat klar unterschiedlichen Kategorien, die sich nicht ordnen lassen und sollte deshalb unabhängig von der konkreten Messmethode bei der Messung in einer nominal skalierten Variable resultieren.</p>
+<p>Für dieses Szenario ist der Median die sinnvollste Wahl um die “typische” Leistung zu beschreiben, da dieser - im Gegensatz zum Mittelwert - kaum durch die extremen Leistung einiger weniger Personen beeinflusst wird.</p>
+<p>Das Filter (d.h. nicht berücksichtigen einiger Werte) ist in der Regel subjektiv, da der Cut Off ab dem Werte nicht berrücksichtig werden in der Regel nicht objektiv bestimmt werden kann.</p>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
-<p>Auf welchen Skalenniveaus können wir den Unterschied zwischen A und B sinnvoll mit dem Unterschied von B und C vergleichen</p>
-<div id="webex-728be447837f5484ef88b8880755abc4" class="webex-checkboxgroup" data-answer="bAMUUkkEGAZl">
-<label><input type="checkbox" autocomplete="off" name="728be447837f5484ef88b8880755abc4"><span>Absolutskala</span></label><label><input type="checkbox" autocomplete="off" name="728be447837f5484ef88b8880755abc4"><span>Nominalskala</span></label><label><input type="checkbox" autocomplete="off" name="728be447837f5484ef88b8880755abc4"><span>Ordinalskala</span></label><label><input type="checkbox" autocomplete="off" name="728be447837f5484ef88b8880755abc4"><span>Intervallskala</span></label>
+<p>Beurteilen Sie die folgenden Aussgane zur Indizierung und Auswahl von Werten aus einer Variable in R.</p>
+<p>Beurteilen Sie für jede Aussage an, ob diese richtig (ankreuzen) oder falsch (nicht ankreuzen) ist.</p>
+<div id="webex-2814b9baf8b2d2b2ae9ffc00f6e90d40" class="webex-checkboxgroup" data-answer="aQkdBU4JTlA7">
+<label><input type="checkbox" autocomplete="off" name="2814b9baf8b2d2b2ae9ffc00f6e90d40"><span>Für eine Variable <code>V</code> vom Typ <code>vector</code> ich Werte (z. Bsp. den dritten Wert) mit Hilfe von eckigen Klammern nach dem Variablennamen auswählen: <code>V[3]</code></span></label><label><input type="checkbox" autocomplete="off" name="2814b9baf8b2d2b2ae9ffc00f6e90d40"><span>Der <code>$</code>-Operator kann verwendet werden, um Elemente aus Listen oder Spalten aus Data Frames auszuwählen, sofern diese benannt sind.</span></label><label><input type="checkbox" autocomplete="off" name="2814b9baf8b2d2b2ae9ffc00f6e90d40"><span>Die zweidimensionale Indizierung mit eckigen Klammern <code>[Zeile, Spalte]</code> ist nur für Variablen vom Typ <code>matrix</code> sinnvoll, nicht jedoch für Variablen des Typs <code>data.frame</code></span></label><label><input type="checkbox" autocomplete="off" name="2814b9baf8b2d2b2ae9ffc00f6e90d40"><span>Für eine Variable <code>M</code> vom Typ <code>matrix</code> erhalte ich mit der Indizierung <code>M[2,]</code> einen Vektor der alle Werte der zweiten Zeile der Matrix enthält.</span></label>
 </div>
 </div>
 <div class="webex-solution">
-<p>Die Differenzen zwischen Merkmalsausprägungen können ab dem Intervallskalen Niveau sinnvoll miteinander verglichen werden. Da alle Eigenschaften von niedrigeren Skalenniveaus auch für höhere Skalenniveaus gelten, können wir die Differenzen auch auf der Absolutskala interpretieren.</p>
+<p>Vektoren sind eindimensionale Datenstrukturen, entsprechend werden einzelne Elemente über eckige Klammern und ihre Position ausgewählt -&gt; Antwort 1 ist richtig</p>
+<p>Der <code>$</code>-Operator greift auf benannte Komponenten von Listen und Data Frames zu, sofern diese benannte Elemente besitzen -&gt; Antwort 2 ist richtig</p>
+<p>Auch Data Frames unterstützen eine zweidimensionale Indizierung mit <code>[Zeile, Spalte]</code>. Intern werde Data Frames von R zwar als Listen gespeichert, bei der Auswahl von Zeilen und Spalten verhalten sie sich aber matrix-ähnlich.</p>
 </div>
 </div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Welche Aspekte bei der Messung von Merkmalen bestimmen das Skalenniveau der resultierenden Variable?</p>
-<div id="webex-d5a14de7b6ada58f5576d9b5f5f4130e" class="webex-checkboxgroup" data-answer="PwVNARhVSQZOBzw=">
-<label><input type="checkbox" autocomplete="off" name="d5a14de7b6ada58f5576d9b5f5f4130e"><span>Die Zahlen des numerischen Relativs die sich aus der Messmethode ergeben</span></label><label><input type="checkbox" autocomplete="off" name="d5a14de7b6ada58f5576d9b5f5f4130e"><span>Die Merkmalsausprägungen der empirischen Beobachtungen</span></label><label><input type="checkbox" autocomplete="off" name="d5a14de7b6ada58f5576d9b5f5f4130e"><span>Die Art der Messung bzw. die Messmethode</span></label><label><input type="checkbox" autocomplete="off" name="d5a14de7b6ada58f5576d9b5f5f4130e"><span>Das Merkmal selbst (z.Bsp. Grösse, Alter, Geschlecht)</span></label><label><input type="checkbox" autocomplete="off" name="d5a14de7b6ada58f5576d9b5f5f4130e"><span>Die Transformationen die ich mit der Variable nach der Messung durchführe</span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Für das Skalenniveau einer Variable sind die folgenden drei Aspekte der Messung relevant:</p>
-<ol type="1">
-<li>Das Merkmal das gemessen wird: Zu einem gewissen Grad bestimmt das Merkmal welche Ausprägungen durch die Messung sinnvoll erfasst werden können und bestimmt damit das Skalenniveau</li>
-<li>Die Art der Messung bzw. Messmethode: Wie im Beispiel aus der Vorlesung (Messung von Wassertemperatur) können unterschiedliche Messmethoden in Variablen mit unterschiedlichen Skalenniveaus resultieren</li>
-<li>Wenn nach der Messung noch Transformationen mit der gemessenen Variable durchgeführt werden, dann kann sich je nach gewählter Transformation das Skalenniveau ändern.</li>
-</ol>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Welche der folgenden Varriablen ist eine stetige quantitative Variable?</p>
-<div id="webex-bc06eb8dcd2bcf95c67449fb5ad49078" class="webex-checkboxgroup" data-answer="OVIcBklSFFVPVG8=">
-<label><input type="checkbox" autocomplete="off" name="bc06eb8dcd2bcf95c67449fb5ad49078"><span>Körpergrösse in cm</span></label><label><input type="checkbox" autocomplete="off" name="bc06eb8dcd2bcf95c67449fb5ad49078"><span>Hautfarbe</span></label><label><input type="checkbox" autocomplete="off" name="bc06eb8dcd2bcf95c67449fb5ad49078"><span>Anzahl korrekt gelöster Aufgaben in einem IQ-Test</span></label><label><input type="checkbox" autocomplete="off" name="bc06eb8dcd2bcf95c67449fb5ad49078"><span>Reaktionszeit in Sekunden</span></label><label><input type="checkbox" autocomplete="off" name="bc06eb8dcd2bcf95c67449fb5ad49078"><span>Rangplatz auf einer Bewerberliste</span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Die Variablen haben folgende Typen:</p>
-<ol type="1">
-<li>Anzahl korrekt gelöster Aufgaben in einem IQ-Test: diskrete quantitative Variable</li>
-<li>Körpergrösse in cm: stetige quantitative Variable</li>
-<li>Hautfarbe: diskrete qualitative Variable</li>
-<li>Reaktionszeit in Sekunden: stetige quantitative Variable</li>
-<li>Rangplatz auf einer Bewerberliste: diskrete quantitative Variable</li>
-</ol>
-</div>
-</div>
-<hr>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://www.unilu.ch/fakultaeten/vpf/uebersicht/"><img src="images/Logo_UniLu.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300"></a></p>
-</figure>
-</div>
+</section>
+<section id="dispersionsmasse" class="level3">
+<h3 class="anchored" data-anchor-id="dispersionsmasse">Dispersionsmasse</h3>
 
 
 </section>
