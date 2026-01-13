@@ -523,28 +523,28 @@ und den Freiheitsgraden $df = N-1$
 
 #### $\chi^2$-Test: Eine Stichprobe
 
-Für eine Häufigkeitsverteilung der beobachteten Häufigkeiten $n$ mit $j$ Kategorien:
+Für eine Häufigkeitsverteilung der beobachteten Häufigkeiten $n$ mit $k$ Kategorien:
 
 $$
-\chi^2 = \sum^j_{i = 1} \frac{(n_i - \epsilon_i)^2}{\epsilon_i}
+\chi^2 = \sum^k_{j = 1} \frac{(n_j - \epsilon_j)^2}{\epsilon_j}
 $$
 
-und den Freiheitsgraden: $df = j -1$
+und den Freiheitsgraden: $df = k -1$
 
 #### $\chi^2$-Test: Zwei Stichproben
 
-Für eine Häufigkeitsverteilung von beobachteten Häufigkeiten $n$ mit $j$ Kategorien und $p$ Gruppen berechnet sich der empirische $\chi^2$ Wert:
+Für eine Häufigkeitsverteilung von beobachteten Häufigkeiten $n$ mit $k$ Kategorien und $p$ Gruppen berechnet sich der empirische $\chi^2$ Wert:
 
 $$
-\chi^2 = \sum_{k = 1}^p \sum_{i = 1}^j \frac{(n_{ki}-\epsilon_{ki})^2}{\epsilon_{ki}}
+\chi^2 = \sum_{i = 1}^p \sum_{j = 1}^k \frac{(n_{ij}-\epsilon_{ij})^2}{\epsilon_{ij}}
 $$
 
-und den Freiheitsgraden: $df = (k-1) \cdot (j - 1)$
+und den Freiheitsgraden: $df = (p-1) \cdot (k - 1)$
 
 Unter der Annahme das die Merkmale der Kreuztabelle unabhängig sind berechnet sich die geschätzte erwartete Häufigkeit:
 
 $$
-\hat{\epsilon}_{ki} = \frac{n_k \cdot n_i}{N}
+\hat{\epsilon}_{ij} = \frac{n_i \cdot n_j}{N}
 $$
 
 ## Zusammenhangsmasse
