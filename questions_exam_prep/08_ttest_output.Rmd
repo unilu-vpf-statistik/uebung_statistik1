@@ -1,0 +1,49 @@
+Question
+========
+Sie haben einen $t$-Test mit R berechnet und erhalten folgenden Output.
+
+```{r simulate_ttest}
+#| echo: false
+data <- faux::rnorm_multi(n = 30,
+                          varnames = c("pre","post"),
+                          mu = c(6.7, 7.0),
+                          sd = c(0.7, 0.9),
+                          r = 0.6,
+                          empirical = TRUE)
+
+
+t.test(data$post, data$pre, paired = T, var.equal = T)
+```
+
+Beurteilen Sie die folgenden Aussagen zu dem R Output.
+Kreuzen Sie bei jeder Aussage an, ob sie richtig oder falsch ist.
+
+Answerlist
+---------
+- Es wurde ein Einstichproben $t$-Test durchgeführt.
+- Der empirische $t$-Wert für diesen Test, liegt bei $t_{emp} = 2.2278$ 
+- Der Test ist mit $\alpha = .01$ signifikant.
+-  
+
+Solution
+=======
+Aussage 1 ist richtig: Unabhängig von der Form der Populationsverteilung (vorausgesetzt, die Varianz ist endlich) wird die Verteilung des Stichprobenmittelwerts mit wachsender Stichprobengröße näherungsweise normalverteilt, das ist die Kernaussage des Zentralen Grenzwerttheorems
+
+Aussage 2 ist falsch: Das Zentrale Grenzwerttheorem bezieht sich nicht auf die Verteilung der Rohdaten, sondern auf die Verteilung eines Stichprobenkennwerts (typischerweise des Mittelwerts). Die Verteilung der Rohdaten bleibt auch bei großen Stichproben so geformt wie die zugrunde liegende Populationsverteilung.
+
+Aussage 3 ist richtig: Die Verteilung des Stichprobenmittelwerts beschreibt die zufallsbedingte Variation des geschätzten Mittelwerts über wiederholte Stichproben hinweg und damit die Unsicherheit der Parameterschätzung.
+
+Aussage 4 ist richtig: Die Streuung der Stichprobenmittelwertsverteilung ist der Standardfehler:
+
+$$
+SE = \frac{\sigma}{\sqrt{N}}
+$$
+
+Da durch die Streuung $\sigma$ durch Wurzel der Stichprobengrösse $N$ geteilt wird ist der Standardfehler stets kleiner (oder gleich bei N = 1) als die Populationsstandardabweichung.
+
+Meta-information
+========
+exname: test_basics
+extype: mchoice
+exsolution: 1011
+exshuffle: false
