@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>logical_operators – Übungen - VL: Statistik I</title>
+<title>ttest_concepts – Übungen - VL: Statistik I</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -68,6 +68,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -229,28 +258,28 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="question" class="level1">
 <h1>Question</h1>
-<p>Beurteilen Sie die folgenden Aussagen zur Verwendung von relationalen und logischen Operatoren in R.</p>
-<p>Beurteilen Sie für jede Aussage an, ob diese richtig (ankreuzen) oder falsch (nicht ankreuzen) ist.</p>
+<p>Beurteilen Sie die folgenden Aussagen zu <span class="math inline">\(t\)</span>-Tests für Gruppenvergleiche.</p>
+<p>Kreuzen Sie bei jeder Aussage an, ob sie richtig oder falsch ist.</p>
 <section id="answerlist" class="level2">
 <h2 class="anchored" data-anchor-id="answerlist">Answerlist</h2>
 <ul>
-<li>Relationale Operatoren vergleichen Werte miteinander und liefern als Ergebnis logische Werte (<code>TRUE</code> oder <code>FALSE</code>).</li>
-<li>Der logische Operator <code>&amp;</code> verknüpft zwei logische Ausdrücke und liefert nur dann <code>TRUE</code>, wenn beide Ausdrücke <code>TRUE</code> sind.</li>
-<li>Der logische Operator <code>|</code> liefert <code>TRUE</code>, wenn mindestens einer der verknüpften logischen Ausdrücke <code>FALSE</code> ist.</li>
-<li>Logische Operatoren können in R auf Vektoren angewendet werden, wobei die Auswertung standardmäßig elementweise erfolgt.</li>
+<li>Wenn die Populationsvarianz unbekannt ist, dann verwenden wir auf Grund der Kennwerteverteilung der geschätzten Populationsvarianz einen <span class="math inline">\(t\)</span>-Test statt eines <span class="math inline">\(z\)</span>-Tests.</li>
+<li>Die Wahl zwischen einem unabhängigen und abhängigen t-Test hängt vom Studiendesign bzw. Testszenario ab, nicht vom Skalenniveau der abhängigen Variable.</li>
+<li>Der t-Test für abhängige Stichproben ist konzeptuell äquivalent zu einem Ein-Stichproben-t-Test, da dabei der Mittelwert der Differenzvariable gegen den Referenzwert 0 getetstet wird.</li>
+<li>Für große Stichproben werden die Ergebnisse von <span class="math inline">\(z\)</span>-Test und <span class="math inline">\(t\)</span>-Test nahezu identisch.</li>
 </ul>
 </section>
 </section>
 <section id="solution" class="level1">
 <h1>Solution</h1>
-<p>Aussage 1 ist richtig: Relationale Operatoren wie <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>==</code> oder <code>!=</code> prüfen Vergleiche zwischen Werten. Das Ergebnis eines solchen Vergleichs ist immer ein logischer Wert, der angibt, ob die jeweilige Bedingung erfüllt ist.</p>
-<p>Aussage 2 ist richtig: Der Operator <code>&amp;</code> entspricht einer logischen UND-Verknüpfung. Nur wenn beide verknüpften logischen Ausdrücke den Wert <code>TRUE</code> haben, ist auch das Gesamtergebnis <code>TRUE</code>.</p>
-<p>Aussage 3 ist falsch: Der Operator <code>|</code> steht für eine logische ODER-Verknüpfung. Er liefert <code>TRUE</code>, wenn mindestens einer der verknüpften logischen Ausdrücke <code>TRUE</code> ist – nicht <code>FALSE</code>.</p>
-<p>Aussage 4 ist richtig: In R werden logische Operationen auf Vektoren standardmäßig elementweise ausgewertet. Das bedeutet, dass jedes Element eines Vektors separat mit dem entsprechenden Element eines anderen Vektors verglichen oder verknüpft wird.</p>
+<p>Aussage 1 ist richtig: Ist die Populationsvarianz unbekannt, wird sie aus der Stichprobe geschätzt. Diese zusätzliche Unsicherheit führt dazu, dass die standardisierte Teststatistik einer t-Verteilung folgt (statt der Normalverteilung). Der <span class="math inline">\(t\)</span>-Test berücksichtigt diese Unsicherheit korrekt.</p>
+<p>Aussage 2 ist richtig: Ob ein unabhängiger oder abhängiger t-Test verwendet wird, entscheidet sich danach, ob die Messungen zwischen verschiedenen Personen oder innerhalb derselben Personen (z. B. Vorher–Nachher) erfolgen. Das Skalenniveau der abhängigen Variable muss in beiden Fällen intervall- oder verhältnisskaliert sein, bestimmt aber nicht, welcher der beiden t-Tests zu wählen ist.</p>
+<p>Aussage 3 ist richtig: Beim t-Test für abhängige Stichproben werden zunächst Differenzen innerhalb der Paare gebildet. Anschließend wird geprüft, ob der Mittelwert dieser Differenzen signifikant von 0 abweicht. Damit ist der Test konzeptuell ein Ein-Stichproben-t-Test auf der Differenzvariable.</p>
+<p>Aussage 4 ist richtig: Mit wachsender Stichprobengröße konvergiert die t-Verteilung gegen die Normalverteilung. Der Einfluss der geschätzten Standardabweichung wird vernachlässigbar, sodass sich Teststatistiken, kritische Werte und <span class="math inline">\(p\)</span>-Werte von <span class="math inline">\(z\)</span>- und <span class="math inline">\(t\)</span>-Test praktisch nicht mehr unterscheiden.</p>
 </section>
 <section id="meta-information" class="level1">
 <h1>Meta-information</h1>
-<p>exname: logical_operators extype: mchoice exsolution: 1101 exshuffle: false</p>
+<p>exname: test_basics extype: mchoice exsolution: 1111 exshuffle: false</p>
 
 
 </section>

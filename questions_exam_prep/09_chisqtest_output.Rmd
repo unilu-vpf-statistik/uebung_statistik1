@@ -1,0 +1,39 @@
+Question
+========
+Sie haben einen $\chi^2$-Test mit R berechnet um eine Häufigkeitsverteilung gegen eine Gleichverteilung zu testen und erhalten folgenden Output.
+
+```{r simulate_ttest}
+#| echo: false
+frequency_table = c(14, 11, 6, 21, 12, 20)
+
+chisq.test(frequency_table, p = rep(1/length(frequency_table), length(frequency_table)))
+```
+
+Beurteilen Sie die folgenden Aussagen zu dem R Output.
+
+Kreuzen Sie bei jeder Aussage an, ob sie richtig oder falsch ist.
+
+Answerlist
+---------
+- Es gab 6 Kategorien der abhängigen Variable
+- Der kritische $\chi^2$-Wert für diesen Test, liegt bei $\chi^2_{krit} = 11.571$ 
+- Der Test ist mit $\alpha = .05$ signifikant.
+- Die Stichprobengrösse betrug $N = 100$
+
+
+Solution
+=======
+**Aussage 1** ist richtig: Mit Hilfe der im Output angegebenen Freiheitsgrade können Sie die Anzahl an Kategorien $k$ berechnen. Für die Freiheitsgrade gilt $df = k-1$, also ist die Anzahl der Kategorien $k = df + 1 = 5 + 1 = 6$. 
+
+**Aussage 2** ist falsch: Der im Output angegebene $\chi^2$-Wert bezieht sich auf den *empirischen* nicht den kritischen $\chi^2$-Wert. Der kritische $\chi^2$-Wert für $df = 5$ und das in Aussage 3 angegebene Signifikanzniveau $\alpha = .05$ wäre $\chi^2_{krit} = `r round(qchisq(p = .95, df = 5),3)`$
+
+**Aussage 3** ist richtig: Der $p$-Wert ist mit $p = 0.04116$ kleiner als das in der Aussage angegebene Signifikanzniveau $\alpha = .05$, also ist der Test signifikant.
+
+**Aussage 4** ist falsch: Aus dem R Output lassen sich keine Rückschlüsse auf die Stichprobengrösse ziehen.
+
+Meta-information
+========
+exname: test_basics
+extype: mchoice
+exsolution: 1010
+exshuffle: false

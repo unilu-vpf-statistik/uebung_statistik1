@@ -272,16 +272,25 @@ window.Quarto = {
 </section>
 <section id="solution" class="level1">
 <h1>Solution</h1>
-<p>Aussage 1 ist richtig: Wenn wir den Standardfehler auf Basis der gegebene Werte berechnen, erhalten wir:</p>
+<p><strong>Aussage 1</strong> ist richtig: Wenn wir den Standardfehler auf Basis der gegebene Werte berechnen, erhalten wir:</p>
 <p><span class="math display">\[
 \sigma_{\bar{x}}= \frac{10}{\sqrt{50}} = \frac{10}{7.071} = 1.4142... \approx 1.41
 \]</span> was genau dem in der Aussage angegebenen Wert entspricht.</p>
-<p>Aussage 2 ist richtig: Der Standardfehler ist proportional zu <span class="math inline">\(\frac{1}{\sqrt{N}}\)</span>. Wird N vervierfacht, verdoppelt sich <span class="math inline">\(\sqrt{N}\)</span> und der Standardfehler halbiert sich entsprechend. Nehmen wir an der Standardfehler bei N = 20 ist 1, dann ist der Standardfehler bei N = 80, <span class="math inline">\(\sigma_{\bar{x}(N = 80)} = \frac{\sigma_x}{\sqrt{N_{20} \cdot 4}} = \frac{\sigma_x}{2 \cdot \sqrt{N_{20}}} = \frac{1}{2} \cdot \sigma_{\hat{x}(N=20)}\)</span></p>
-<p>Aussage 3 ist falsch: Die Stichprobenmittelwerte im beschriebenen Szenario folgen einer Normalverteilung mit dem Standardfehler des Mittelwerts: <span class="math inline">\(\sigma_{\bar{x}} = \frac{2}{\sqrt{10}} \approx 0.632\)</span>.</p>
+<p><strong>Aussage 2</strong> ist richtig: Der Standardfehler ist proportional zu <span class="math inline">\(\frac{1}{\sqrt{N}}\)</span>. Wird N vervierfacht, verdoppelt sich <span class="math inline">\(\sqrt{N}\)</span> und der Standardfehler halbiert sich entsprechend. Nehmen wir an der Standardfehler bei N = 20 ist 1, dann ist der Standardfehler bei N = 80:</p>
+<p><span class="math display">\[
+\sigma_{\bar{x}(N = 80)} = \frac{\sigma_x}{\sqrt{N_{20} \cdot 4}} = \frac{\sigma_x}{2 \cdot \sqrt{N_{20}}} = \frac{1}{2} \cdot \sigma_{\hat{x}(N=20)}
+\]</span></p>
+<p><strong>Aussage 3</strong> ist falsch: Die Stichprobenmittelwerte im beschriebenen Szenario folgen einer Normalverteilung mit dem Standardfehler des Mittelwerts:</p>
+<p><span class="math display">\[
+\sigma_{\bar{x}} = \frac{2}{\sqrt{10}} \approx 0.632
+\]</span></p>
 <p>Mit Hilfe der <span class="math inline">\(z\)</span>-Standardisierung können wir den <span class="math inline">\(z\)</span>-Wert für den im Szenario genannten Mittwert von <span class="math inline">\(\bar{x} = 11.04\)</span> berechnen: <span class="math inline">\(z = \frac{11.04-10}{0.632} \approx 1.65\)</span>.</p>
-<p>Anhand der Verteilungsfunktion der Standardnormalverteilung können wir bestimmend, dass für diesen Wert nur 5% der Werte eine Wahrscheinlichkeit haben grösser als dieser Wert zu sein: <span class="math inline">\(P (X &gt; 11.04) = 1 - P(X \leq 11.04) = 1 - P(z \leq 1.65) = 1 - .95\)</span></p>
+<p>Anhand der Verteilungsfunktion der Standardnormalverteilung können wir bestimmend, dass für diesen Wert nur 5% der Werte eine Wahrscheinlichkeit haben grösser als dieser Wert zu sein:</p>
+<p><span class="math display">\[
+P (X &gt; 11.04) = 1 - P(X \leq 11.04) = 1 - P(z \leq 1.65) = 1 - .95
+\]</span></p>
 <p>Die Erwartete Anzahl einer Stichprobe mit einem Mittelwert <span class="math inline">\(\bar{x} \geq 11.04\)</span> bei 10 unabhängigen Stichproben ist also <span class="math inline">\(10 \cdot 0.05 = 0.5\)</span>. Es ist also nicht im Mittel eine, sondern eine halbe Stichprobe zu erwarten.</p>
-<p>Aussage 4 ist falsch: Wenn wir aus der Formel des Standardfehlers und den gegebenen Werten die Stichprobengrösse berechnen ergibt sich:</p>
+<p><strong>Aussage 4</strong> ist falsch: Wenn wir aus der Formel des Standardfehlers und den gegebenen Werten die Stichprobengrösse berechnen ergibt sich:</p>
 <p><span class="math display">\[
 2 = \frac{12}{\sqrt{N}}; \quad \sqrt{N} = \frac{12}{2} = 6; \quad N = 6^2 = 36
 \]</span></p>
@@ -289,7 +298,7 @@ window.Quarto = {
 </section>
 <section id="meta-information" class="level1">
 <h1>Meta-information</h1>
-<p>exname: test_basics extype: mchoice exsolution: 1011 exshuffle: false</p>
+<p>exname: test_basics extype: mchoice exsolution: 1100 exshuffle: false</p>
 
 
 </section>

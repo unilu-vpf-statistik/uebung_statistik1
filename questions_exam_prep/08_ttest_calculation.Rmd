@@ -1,0 +1,64 @@
+Question
+========
+Zwei unabhängige Gruppen werden hinsichtlich ihrer Gedächtnisleistung verglichen. Dabei erhalten Sie folgenden Ergebnisse:
+
+| Gruppe | N  | $\bar{x}$ | $\hat{\sigma}_x$   |
+|--------|----|------------|--------------------|
+| 1      | 16 | 52         | 8                  |
+| 2      | 16 | 48         | 8                  |
+
+Es wird ein **t-Test für unabhängige Stichproben** durchgeführt. Beurteilen Sie die folgenden Aussagen.
+
+Kreuzen Sie bei jeder Aussage an, ob sie richtig oder falsch ist.
+
+Answerlist
+---------
+- Aus den Freiheitsgraden können wir beim $t$-Test für unabhängige Stichproben direkt auf die Gruppengrössen in den beiden Gruppen schliessen.
+- Der kritische t-Wert für einen zweiseitigen Test bei $\alpha = .05$ liegt bei ungefähr \(t_{krit} = 2.04\).
+- Der Populationsschätzer des Standardfehlers der Mittelwertsdifferenz beträgt ungefähr $\hat{\sigma}_{\bar{x}_1 - \bar{x}_2} = 2.83$.
+- Der beobachtete Effekt liegt in dieser Studie bei $d = 0.5$
+
+Solution
+=======
+**Aussage 1** ist *falsch* ❌: Beim t-Test für unabhängige Stichproben gilt für die Freiheitsgrade $df = N_1 + N_2 -2$. Aus gegebenen \(df\) kann man nur die *Summe* \(N_1 + N_2\) bestimmen $N_1 + N_2 = df + 2$ Aber daraus folgt **nicht eindeutig**, wie groß die einzelnen Gruppen sind (z.B. könnten \(N_1=10, N_2=22\) oder \(N_1=16, N_2=16\) sein und denselben \(df\) liefern). Man kann also nicht „direkt“ auf beide Gruppengrößen schließen.
+
+**Aussage 2** ist *richtig* ✅: Als erstes bestimmen wir die Freiheitsgrade: $df = 16 + 16 - 2 = 30$. Für einen **zweiseitigen** Test mit $\alpha = .05$ schneiden wir je $0.025$ unterhalb und oberhalb der Verteilung ab, so dass: $t_{krit} = t_{0.975; df = 30}$  ist. Diesen Wert können wir aus der Verteilungstabelle der $t$-Verteilung ablesen und dabei ergibt sich $t_krit \approx 2.04$.
+
+**Aussage 3** ist *richtig* ✅: Der Standardfehler der Mittelwertsdifferent berechnet sich aus:
+
+$$
+\hat{\sigma}_{\bar{x}_1-\bar{x}_2} = \sqrt{\frac{\hat{\sigma}_{inn}^2}{N_1} + \frac{\hat{\sigma}_{inn}^2}{N_2}}
+$$
+
+als erstes müssen wir also die gepoolte Innerhalbvarianz bestimmen:
+
+$$
+\hat{\sigma}_{inn}^2 = \frac{\hat{\sigma}_{x1}^2(N_1 - 1) + \hat{\sigma}_{x2}^2(N_2 - 1)}{(N_1 -1) + (N_2 -1)} = \frac{8^2(16-1) + 8^2(16-1)}{(16-1) + (16-1)} = \frac{960 + 960}{30} = 64
+$$
+
+mit dieser gepoolten Innerhalbvarianz können wir nun den Standardfehler der Mittelwertsdifferenz berechnen:
+
+$$
+\hat{\sigma}_{\bar{x}_1-\bar{x}_2} = \sqrt{\frac{64}{16} + \frac{64}{16}} = \sqrt{4 + 4} = \sqrt{8} = 2.8284... \approx 2.83
+$$
+
+**Aussage 4** ist *richtig* ✅: Der standardisierte Effekt aus den beobachteten Daten berechnet sich als:
+
+$$
+\delta = \frac{\bar{x}_1 - \bar{x}_2}{\hat{\sigma}_x}
+$$
+
+für den $t$-Test für unabhängig Stichproben macht es dabei Sinn aus der gepoolten Innerhalbvarianz die gepoolte Standardabweichung zu berechnen. Bei gleichen Gruppengrössen und gleichen Varianzen entspricht die gepoolte Standardabweichung einfach der Standardabweichung in den Stichproben. Ziehen wir die Wurzel aus der gepoolten Innerhalbvarianz aus der Lösung für Aussage 3 erhalten wir $\hat{\sigma}_{inn} = \sqrt{\hat{\sigma}_{inn}^2}= \sqrt{64} = 8.$
+
+Entsprechen berechnen wir den beobachteten Effekt als:
+
+$$
+d = \frac{52 - 48}{8} = \frac{4}{8} = 0.5
+$$
+
+Meta-information
+========
+exname: ttest_calculations
+extype: mchoice
+exsolution: 0111
+exshuffle: false

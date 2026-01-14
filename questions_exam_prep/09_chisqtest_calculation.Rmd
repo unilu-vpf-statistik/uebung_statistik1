@@ -1,0 +1,48 @@
+Question
+========
+In einer Untersuchung wollen Sie prüfen, ob sie die Präferenz für bestimmte Eiscremsorten unter 4 bis 8 Jährigen Kindern von 1990 bis heute verändert hat. Aus einer Studie von 1990 haben Sie die folgenden Relativen Häufigkeiten für die Lieblingssorte von 4 bis 8 Jährigen Kindern.
+
+| Schokolade | Vanille  | Erdbeere | Straciatella   |
+|------------|----------|----------|----------------|
+| 0.34       | 0.31     | 0.14     |    0.21        |
+
+Aus einer Stichprobe die Sie in den letzten Woche erhoben haben ergab sich die folgende Häufigkeitstabelle:
+
+| Schokolade | Vanille  | Erdbeere | Straciatella   |
+|------------|----------|----------|----------------|
+| 25         | 20       | 17       |    28          |
+
+Berechnen Sie die erwarteten Häufigkeiten für die Hypothese, dass sich die Geschmackspräferenz von 1990 bis heute nicht verändert hat.
+
+Answerlist
+---------
+- Schokolade: 30.6; Vanille: 27.9; Erdbeere: 12.6; Straciatella: 18.9
+- Schokolade: 27.9; Vanille: 30.6; Erdbeere: 12.6; Straciatella: 18.9
+- Schokolade: 30.6; Vanille: 27.9; Erdbeere: 18.9; Straciatella: 12.6
+- Schokolade: 18.9; Vanille: 27.9; Erdbeere: 12.6; Straciatella: 30.6
+
+Solution
+=======
+Gesucht sind die **erwarteten Häufigkeiten** unter der Nullhypothese, dass sich die Geschmackspräferenzen seit 1990 **nicht verändert** haben.
+
+*Schritt 1*: Zunächst müssen wir den Gesamtumfang der aktuellen Stichprobe berechnet:
+
+$$
+N = 25 + 20 + 17 + 28 = 90
+$$
+
+*Schritt 2*: Unter der Nullhypothese entsprechen die erwarteten Häufigkeiten den relativen Häufigkeiten aus dem Jahr 1990 multipliziert mit dem aktuellen Stichprobenumfang: $\epsilon_i = h_i(1990) \cdot N$
+
+Wenn wir damit die Erwarten Häufigkeite für jede Sorte berechnen, ergibt sich:
+
+- Schokolade: $\epsilon_{Shokolade} = 0.34 \cdot 90 = 30.6$
+- Vanille: $\epsilon_{Shokolade} = 0.31 \cdot 90 = 27.9$
+- Erdbeere: $\epsilon_{Shokolade} = 0.14 \cdot 90 = 12.6$
+- Straciatelle: $\epsilon_{Shokolade} = 0.21 \cdot 90 = 18.9$
+
+Meta-information
+========
+exname: chisqtest_calculations
+extype: schoice
+exsolution: 1000
+exshuffle: true

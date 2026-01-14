@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>logical_operators – Übungen - VL: Statistik I</title>
+<title>ttest_output – Übungen - VL: Statistik I</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -68,6 +68,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -229,28 +258,47 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="question" class="level1">
 <h1>Question</h1>
-<p>Beurteilen Sie die folgenden Aussagen zur Verwendung von relationalen und logischen Operatoren in R.</p>
-<p>Beurteilen Sie für jede Aussage an, ob diese richtig (ankreuzen) oder falsch (nicht ankreuzen) ist.</p>
+<p>Sie haben einen <span class="math inline">\(t\)</span>-Test mit R berechnet und erhalten folgenden Output.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Paired t-test
+
+data:  data$post and data$pre
+t = 2.2278, df = 29, p-value = 0.03381
+alternative hypothesis: true mean difference is not equal to 0
+95 percent confidence interval:
+ 0.02458924 0.57541076
+sample estimates:
+mean difference 
+            0.3 </code></pre>
+</div>
+</div>
+<p>Beurteilen Sie die folgenden Aussagen zu dem R Output. Kreuzen Sie bei jeder Aussage an, ob sie richtig oder falsch ist.</p>
 <section id="answerlist" class="level2">
 <h2 class="anchored" data-anchor-id="answerlist">Answerlist</h2>
 <ul>
-<li>Relationale Operatoren vergleichen Werte miteinander und liefern als Ergebnis logische Werte (<code>TRUE</code> oder <code>FALSE</code>).</li>
-<li>Der logische Operator <code>&amp;</code> verknüpft zwei logische Ausdrücke und liefert nur dann <code>TRUE</code>, wenn beide Ausdrücke <code>TRUE</code> sind.</li>
-<li>Der logische Operator <code>|</code> liefert <code>TRUE</code>, wenn mindestens einer der verknüpften logischen Ausdrücke <code>FALSE</code> ist.</li>
-<li>Logische Operatoren können in R auf Vektoren angewendet werden, wobei die Auswertung standardmäßig elementweise erfolgt.</li>
+<li>Es wurde ein Einstichproben <span class="math inline">\(t\)</span>-Test durchgeführt.</li>
+<li>Der empirische <span class="math inline">\(t\)</span>-Wert für diesen Test, liegt bei <span class="math inline">\(t_{emp} = 2.2278\)</span></li>
+<li>Der Test ist mit <span class="math inline">\(\alpha = .01\)</span> signifikant.</li>
+<li></li>
 </ul>
 </section>
 </section>
 <section id="solution" class="level1">
 <h1>Solution</h1>
-<p>Aussage 1 ist richtig: Relationale Operatoren wie <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>==</code> oder <code>!=</code> prüfen Vergleiche zwischen Werten. Das Ergebnis eines solchen Vergleichs ist immer ein logischer Wert, der angibt, ob die jeweilige Bedingung erfüllt ist.</p>
-<p>Aussage 2 ist richtig: Der Operator <code>&amp;</code> entspricht einer logischen UND-Verknüpfung. Nur wenn beide verknüpften logischen Ausdrücke den Wert <code>TRUE</code> haben, ist auch das Gesamtergebnis <code>TRUE</code>.</p>
-<p>Aussage 3 ist falsch: Der Operator <code>|</code> steht für eine logische ODER-Verknüpfung. Er liefert <code>TRUE</code>, wenn mindestens einer der verknüpften logischen Ausdrücke <code>TRUE</code> ist – nicht <code>FALSE</code>.</p>
-<p>Aussage 4 ist richtig: In R werden logische Operationen auf Vektoren standardmäßig elementweise ausgewertet. Das bedeutet, dass jedes Element eines Vektors separat mit dem entsprechenden Element eines anderen Vektors verglichen oder verknüpft wird.</p>
+<p>Aussage 1 ist richtig: Unabhängig von der Form der Populationsverteilung (vorausgesetzt, die Varianz ist endlich) wird die Verteilung des Stichprobenmittelwerts mit wachsender Stichprobengröße näherungsweise normalverteilt, das ist die Kernaussage des Zentralen Grenzwerttheorems</p>
+<p>Aussage 2 ist falsch: Das Zentrale Grenzwerttheorem bezieht sich nicht auf die Verteilung der Rohdaten, sondern auf die Verteilung eines Stichprobenkennwerts (typischerweise des Mittelwerts). Die Verteilung der Rohdaten bleibt auch bei großen Stichproben so geformt wie die zugrunde liegende Populationsverteilung.</p>
+<p>Aussage 3 ist richtig: Die Verteilung des Stichprobenmittelwerts beschreibt die zufallsbedingte Variation des geschätzten Mittelwerts über wiederholte Stichproben hinweg und damit die Unsicherheit der Parameterschätzung.</p>
+<p>Aussage 4 ist richtig: Die Streuung der Stichprobenmittelwertsverteilung ist der Standardfehler:</p>
+<p><span class="math display">\[
+SE = \frac{\sigma}{\sqrt{N}}
+\]</span></p>
+<p>Da durch die Streuung <span class="math inline">\(\sigma\)</span> durch Wurzel der Stichprobengrösse <span class="math inline">\(N\)</span> geteilt wird ist der Standardfehler stets kleiner (oder gleich bei N = 1) als die Populationsstandardabweichung.</p>
 </section>
 <section id="meta-information" class="level1">
 <h1>Meta-information</h1>
-<p>exname: logical_operators extype: mchoice exsolution: 1101 exshuffle: false</p>
+<p>exname: test_basics extype: mchoice exsolution: 1011 exshuffle: false</p>
 
 
 </section>

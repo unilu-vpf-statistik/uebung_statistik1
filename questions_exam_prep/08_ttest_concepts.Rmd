@@ -1,0 +1,31 @@
+Question
+========
+Beurteilen Sie die folgenden Aussagen zu $t$-Tests für Gruppenvergleiche.
+
+Kreuzen Sie bei jeder Aussage an, ob sie richtig oder falsch ist.
+
+Answerlist
+---------
+- Wenn die Populationsvarianz unbekannt ist, dann verwenden wir auf Grund der Kennwerteverteilung der geschätzten Populationsvarianz einen $t$-Test statt eines $z$-Tests.
+- Die Wahl zwischen einem unabhängigen und abhängigen t-Test hängt vom Studiendesign bzw. Testszenario ab, nicht vom Skalenniveau der abhängigen Variable.
+- Der t-Test für abhängige Stichproben ist konzeptuell äquivalent zu einem Ein-Stichproben-t-Test, da dabei der Mittelwert der Differenzvariable 
+gegen den Referenzwert 0 getetstet wird.
+- Für große Stichproben werden die Ergebnisse von $z$-Test und $t$-Test nahezu identisch.
+
+Solution
+=======
+Aussage 1 ist richtig: Ist die Populationsvarianz unbekannt, wird sie aus der Stichprobe geschätzt. Diese zusätzliche Unsicherheit führt dazu, dass die standardisierte Teststatistik einer t-Verteilung folgt (statt der Normalverteilung). Der $t$-Test berücksichtigt diese Unsicherheit korrekt.
+
+Aussage 2 ist richtig: Ob ein unabhängiger oder abhängiger t-Test verwendet wird, entscheidet sich danach, ob die Messungen zwischen verschiedenen Personen oder innerhalb derselben Personen (z. B. Vorher–Nachher) erfolgen. Das Skalenniveau der abhängigen Variable muss in beiden Fällen intervall- oder verhältnisskaliert sein, bestimmt aber nicht, welcher der beiden t-Tests zu wählen ist.
+
+Aussage 3 ist richtig: Beim t-Test für abhängige Stichproben werden zunächst Differenzen innerhalb der Paare gebildet. Anschließend wird geprüft, ob der Mittelwert dieser Differenzen signifikant von 0 abweicht. Damit ist der Test konzeptuell ein Ein-Stichproben-t-Test auf der Differenzvariable.
+
+Aussage 4 ist richtig: Mit wachsender Stichprobengröße konvergiert die t-Verteilung gegen die Normalverteilung.
+Der Einfluss der geschätzten Standardabweichung wird vernachlässigbar, sodass sich Teststatistiken, kritische Werte und $p$-Werte von $z$- und $t$-Test praktisch nicht mehr unterscheiden.
+
+Meta-information
+========
+exname: test_basics
+extype: mchoice
+exsolution: 1111
+exshuffle: false

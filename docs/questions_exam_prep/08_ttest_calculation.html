@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>logical_operators – Übungen - VL: Statistik I</title>
+<title>ttest_calculation – Übungen - VL: Statistik I</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -68,6 +68,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -229,28 +258,72 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="question" class="level1">
 <h1>Question</h1>
-<p>Beurteilen Sie die folgenden Aussagen zur Verwendung von relationalen und logischen Operatoren in R.</p>
-<p>Beurteilen Sie für jede Aussage an, ob diese richtig (ankreuzen) oder falsch (nicht ankreuzen) ist.</p>
+<p>Zwei unabhängige Gruppen werden hinsichtlich ihrer Gedächtnisleistung verglichen. Dabei erhalten Sie folgenden Ergebnisse:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Gruppe</th>
+<th>N</th>
+<th><span class="math inline">\(\bar{x}\)</span></th>
+<th><span class="math inline">\(\hat{\sigma}_x\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>16</td>
+<td>52</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>16</td>
+<td>48</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<p>Es wird ein <strong>t-Test für unabhängige Stichproben</strong> durchgeführt. Beurteilen Sie die folgenden Aussagen.</p>
+<p>Kreuzen Sie bei jeder Aussage an, ob sie richtig oder falsch ist.</p>
 <section id="answerlist" class="level2">
 <h2 class="anchored" data-anchor-id="answerlist">Answerlist</h2>
 <ul>
-<li>Relationale Operatoren vergleichen Werte miteinander und liefern als Ergebnis logische Werte (<code>TRUE</code> oder <code>FALSE</code>).</li>
-<li>Der logische Operator <code>&amp;</code> verknüpft zwei logische Ausdrücke und liefert nur dann <code>TRUE</code>, wenn beide Ausdrücke <code>TRUE</code> sind.</li>
-<li>Der logische Operator <code>|</code> liefert <code>TRUE</code>, wenn mindestens einer der verknüpften logischen Ausdrücke <code>FALSE</code> ist.</li>
-<li>Logische Operatoren können in R auf Vektoren angewendet werden, wobei die Auswertung standardmäßig elementweise erfolgt.</li>
+<li>Aus den Freiheitsgraden können wir beim <span class="math inline">\(t\)</span>-Test für unabhängige Stichproben direkt auf die Gruppengrössen in den beiden Gruppen schliessen.</li>
+<li>Der kritische t-Wert für einen zweiseitigen Test bei <span class="math inline">\(\alpha = .05\)</span> liegt bei ungefähr (t_{krit} = 2.04).</li>
+<li>Der Populationsschätzer des Standardfehlers der Mittelwertsdifferenz beträgt ungefähr <span class="math inline">\(\hat{\sigma}_{\bar{x}_1 - \bar{x}_2} = 2.83\)</span>.</li>
+<li>Der beobachtete Effekt liegt in dieser Studie bei <span class="math inline">\(d = 0.5\)</span></li>
 </ul>
 </section>
 </section>
 <section id="solution" class="level1">
 <h1>Solution</h1>
-<p>Aussage 1 ist richtig: Relationale Operatoren wie <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>==</code> oder <code>!=</code> prüfen Vergleiche zwischen Werten. Das Ergebnis eines solchen Vergleichs ist immer ein logischer Wert, der angibt, ob die jeweilige Bedingung erfüllt ist.</p>
-<p>Aussage 2 ist richtig: Der Operator <code>&amp;</code> entspricht einer logischen UND-Verknüpfung. Nur wenn beide verknüpften logischen Ausdrücke den Wert <code>TRUE</code> haben, ist auch das Gesamtergebnis <code>TRUE</code>.</p>
-<p>Aussage 3 ist falsch: Der Operator <code>|</code> steht für eine logische ODER-Verknüpfung. Er liefert <code>TRUE</code>, wenn mindestens einer der verknüpften logischen Ausdrücke <code>TRUE</code> ist – nicht <code>FALSE</code>.</p>
-<p>Aussage 4 ist richtig: In R werden logische Operationen auf Vektoren standardmäßig elementweise ausgewertet. Das bedeutet, dass jedes Element eines Vektors separat mit dem entsprechenden Element eines anderen Vektors verglichen oder verknüpft wird.</p>
+<p><strong>Aussage 1</strong> ist <em>falsch</em> ❌: Beim t-Test für unabhängige Stichproben gilt für die Freiheitsgrade <span class="math inline">\(df = N_1 + N_2 -2\)</span>. Aus gegebenen (df) kann man nur die <em>Summe</em> (N_1 + N_2) bestimmen <span class="math inline">\(N_1 + N_2 = df + 2\)</span> Aber daraus folgt <strong>nicht eindeutig</strong>, wie groß die einzelnen Gruppen sind (z.B. könnten (N_1=10, N_2=22) oder (N_1=16, N_2=16) sein und denselben (df) liefern). Man kann also nicht „direkt“ auf beide Gruppengrößen schließen.</p>
+<p><strong>Aussage 2</strong> ist <em>richtig</em> ✅: Als erstes bestimmen wir die Freiheitsgrade: <span class="math inline">\(df = 16 + 16 - 2 = 30\)</span>. Für einen <strong>zweiseitigen</strong> Test mit <span class="math inline">\(\alpha = .05\)</span> schneiden wir je <span class="math inline">\(0.025\)</span> unterhalb und oberhalb der Verteilung ab, so dass: <span class="math inline">\(t_{krit} = t_{0.975; df = 30}\)</span> ist. Diesen Wert können wir aus der Verteilungstabelle der <span class="math inline">\(t\)</span>-Verteilung ablesen und dabei ergibt sich <span class="math inline">\(t_krit \approx 2.04\)</span>.</p>
+<p><strong>Aussage 3</strong> ist <em>richtig</em> ✅: Der Standardfehler der Mittelwertsdifferent berechnet sich aus:</p>
+<p><span class="math display">\[
+\hat{\sigma}_{\bar{x}_1-\bar{x}_2} = \sqrt{\frac{\hat{\sigma}_{inn}^2}{N_1} + \frac{\hat{\sigma}_{inn}^2}{N_2}}
+\]</span></p>
+<p>als erstes müssen wir also die gepoolte Innerhalbvarianz bestimmen:</p>
+<p><span class="math display">\[
+\hat{\sigma}_{inn}^2 = \frac{\hat{\sigma}_{x1}^2(N_1 - 1) + \hat{\sigma}_{x2}^2(N_2 - 1)}{(N_1 -1) + (N_2 -1)} = \frac{8^2(16-1) + 8^2(16-1)}{(16-1) + (16-1)} = \frac{960 + 960}{30} = 64
+\]</span></p>
+<p>mit dieser gepoolten Innerhalbvarianz können wir nun den Standardfehler der Mittelwertsdifferenz berechnen:</p>
+<p><span class="math display">\[
+\hat{\sigma}_{\bar{x}_1-\bar{x}_2} = \sqrt{\frac{64}{16} + \frac{64}{16}} = \sqrt{4 + 4} = \sqrt{8} = 2.8284... \approx 2.83
+\]</span></p>
+<p><strong>Aussage 4</strong> ist <em>richtig</em> ✅: Der standardisierte Effekt aus den beobachteten Daten berechnet sich als:</p>
+<p><span class="math display">\[
+\delta = \frac{\bar{x}_1 - \bar{x}_2}{\hat{\sigma}_x}
+\]</span></p>
+<p>für den <span class="math inline">\(t\)</span>-Test für unabhängig Stichproben macht es dabei Sinn aus der gepoolten Innerhalbvarianz die gepoolte Standardabweichung zu berechnen. Bei gleichen Gruppengrössen und gleichen Varianzen entspricht die gepoolte Standardabweichung einfach der Standardabweichung in den Stichproben. Ziehen wir die Wurzel aus der gepoolten Innerhalbvarianz aus der Lösung für Aussage 3 erhalten wir <span class="math inline">\(\hat{\sigma}_{inn} = \sqrt{\hat{\sigma}_{inn}^2}= \sqrt{64} = 8.\)</span></p>
+<p>Entsprechen berechnen wir den beobachteten Effekt als:</p>
+<p><span class="math display">\[
+d = \frac{52 - 48}{8} = \frac{4}{8} = 0.5
+\]</span></p>
 </section>
 <section id="meta-information" class="level1">
 <h1>Meta-information</h1>
-<p>exname: logical_operators extype: mchoice exsolution: 1101 exshuffle: false</p>
+<p>exname: ttest_calculations extype: mchoice exsolution: 0111 exshuffle: false</p>
 
 
 </section>

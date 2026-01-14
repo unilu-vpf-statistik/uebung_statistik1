@@ -23,27 +23,22 @@ Answerlist
 - Es wurde ein Einstichproben $t$-Test durchgeführt.
 - Der empirische $t$-Wert für diesen Test, liegt bei $t_{emp} = 2.2278$ 
 - Der Test ist mit $\alpha = .01$ signifikant.
--  
+- Das 95% Konfidenzintervall, dass für diesen Test bestimmt wurde, schliesst den Wert 0 nicht ein.
+
 
 Solution
 =======
-Aussage 1 ist richtig: Unabhängig von der Form der Populationsverteilung (vorausgesetzt, die Varianz ist endlich) wird die Verteilung des Stichprobenmittelwerts mit wachsender Stichprobengröße näherungsweise normalverteilt, das ist die Kernaussage des Zentralen Grenzwerttheorems
+Aussage 1 ist falsch: Es wurde eine $t$-Test für abhängige Stichproben berechnet. Das lässt sich an dem Titel `Paired t-test` ablesen.
 
-Aussage 2 ist falsch: Das Zentrale Grenzwerttheorem bezieht sich nicht auf die Verteilung der Rohdaten, sondern auf die Verteilung eines Stichprobenkennwerts (typischerweise des Mittelwerts). Die Verteilung der Rohdaten bleibt auch bei großen Stichproben so geformt wie die zugrunde liegende Populationsverteilung.
+Aussage 2 ist richtig: Der $t$-Wert der im Output angegeben wird ist der Wert, der auf Basis der Daten berechnet wurde und damit der empirische $t$-Wert. In der Regel werden in R keine kritischen Werte von Teststatistiken ausgegeben.
 
-Aussage 3 ist richtig: Die Verteilung des Stichprobenmittelwerts beschreibt die zufallsbedingte Variation des geschätzten Mittelwerts über wiederholte Stichproben hinweg und damit die Unsicherheit der Parameterschätzung.
+Aussage 3 ist falsch: Der $p$-Wert ist mit $p = 0.03381$ grösser als das in der Aussage angegebene Signifikanzniveau $\alpha = .01$, also ist der Test *nicht* signifikant.
 
-Aussage 4 ist richtig: Die Streuung der Stichprobenmittelwertsverteilung ist der Standardfehler:
-
-$$
-SE = \frac{\sigma}{\sqrt{N}}
-$$
-
-Da durch die Streuung $\sigma$ durch Wurzel der Stichprobengrösse $N$ geteilt wird ist der Standardfehler stets kleiner (oder gleich bei N = 1) als die Populationsstandardabweichung.
+Aussage 4 ist richtig: Das 95% Konfidenz Interval ist $95\%-KI = [0.0245...; 0.5754...]$ und schliesst den Wert 0 nicht mit ein.
 
 Meta-information
 ========
 exname: test_basics
 extype: mchoice
-exsolution: 1011
+exsolution: 0101
 exshuffle: false
