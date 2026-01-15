@@ -1,0 +1,31 @@
+Question
+========
+Beurteilen Sie die folgenden Aussagen zu Gruppenvergleichen mit kategorialen Variablen und $\chi^2$-Tests.  
+
+Kreuzen Sie bei jeder Aussage an, ob sie richtig oder falsch ist.
+
+Answerlist
+---------
+- Der $\chi^2$-Test prüft, ob sich empirisch beobachtete Häufigkeiten stärker von den auf Basis einer Nullhypothese erwarteten Häufigkeiten unterscheiden, als durch Zufallsschwankungen zu erwarten wäre.
+- Mit einem $\chi^2$-Test kann geprüft werden, ob zwei kategoriale Variablen statistisch unabhängig sind.
+- Ein signifikantes Ergebnis bei einem $\chi^2$-Test bedeutet, dass mindestens eine Kategorie häufiger oder seltener auftritt, als unter der Nullhypothese erwartet.
+- Der $\chi^2$-Test setzt voraus, dass die empirischen Häufigkeiten normalverteilt sind.
+
+
+Solution
+=======
+**Aussage 1** ist *richtig*: Der $\chi^2$-Test vergleicht beobachtete Häufigkeiten mit erwarteten Häufigkeiten, die aus einer Nullhypothese abgeleitet werden. Ein signifikanter Test zeigt an, dass die beobachteten Abweichungen größer sind, als man sie allein durch zufällige Schwankungen erwarten würde.
+
+**Aussage 2** ist *richtig*: Der $\chi^2$-Unabhängigkeitstest wird für den Vergleich von Häufigkeiten einer kategorialen Variablen in mehreren Gruppen verwendet, um zu prüfen, ob zwischen der Häufigkeitsverteilung der kategorialen Variablen ein statistischer Zusammenhang zu den Gruppen besteht oder ob sie unabhängig voneinander sind.
+
+**Aussage 3** ist *richtig*: Ein signifikanter $\chi^2$-Test zeigt, dass die Gesamtabweichung der beobachteten von den erwarteten Häufigkeiten statistisch bedeutsam ist. Daraus folgt, dass mindestens eine Kategorie stärker oder schwächer vertreten ist als unter der Nullhypothese angenommen. Für eine konkrete Aussage welche Kategorie abweicht müssen weitere Kennwerte berechnet werden. Diese haben wir in der Vorlesung nicht besprochen.
+
+**Aussage 4** ist *falsch*: Der $\chi^2$-Test stellt keine Normalverteilungsannahme an die Daten. Er basiert auf Häufigkeiten kategorialer Daten. Eine wichtige Voraussetzung ist stattdessen, dass die erwarteten Häufigkeiten in den Zellen ausreichend groß sind.
+
+
+Meta-information
+========
+exname: chisqtest_concepts
+extype: mchoice
+exsolution: 1110
+exshuffle: false
