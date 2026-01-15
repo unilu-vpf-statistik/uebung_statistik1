@@ -1,5 +1,5 @@
 ---
-title: "Übungsfragen: Klausurvorebeiteung"
+title: "Übungsfragen: Klausurvorbereitung"
 subtitle: "HS 2025"
 author: "Gidon Frischkorn"
 format:
