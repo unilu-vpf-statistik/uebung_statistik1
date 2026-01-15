@@ -22,7 +22,7 @@ Solution
 =======
 **Aussage 1** ist *falsch*: Beim t-Test für unabhängige Stichproben gilt für die Freiheitsgrade $df = N_1 + N_2 -2$. Aus gegebenen $df$ kann man nur die *Summe* $N_1 + N_2$ bestimmen $N_1 + N_2 = df + 2$ Aber daraus folgt **nicht eindeutig**, wie groß die einzelnen Gruppen sind (z.B. könnten $N_1=10, N_2=22$ oder $N_1=16, N_2=16$ sein und denselben $df$ liefern). Man kann also nicht „direkt“ auf beide Gruppengrößen schließen.
 
-**Aussage 2** ist *richtig*: Als erstes bestimmen wir die Freiheitsgrade: $df = 16 + 16 - 2 = 30$. Für einen **zweiseitigen** Test mit $\alpha = .05$ schneiden wir je $0.025$ unterhalb und oberhalb der Verteilung ab, so dass: $t_{krit} = t_{0.975; df = 30}$  ist. Diesen Wert können wir aus der Verteilungstabelle der $t$-Verteilung ablesen und dabei ergibt sich $t_krit \approx 2.04$.
+**Aussage 2** ist *richtig*: Als erstes bestimmen wir die Freiheitsgrade: $df = 16 + 16 - 2 = 30$. Für einen **zweiseitigen** Test mit $\alpha = .05$ schneiden wir je $0.025$ unterhalb und oberhalb der Verteilung ab, so dass: $t_{krit} = t_{0.975; df = 30}$  ist. Diesen Wert können wir aus der Verteilungstabelle der $t$-Verteilung ablesen und dabei ergibt sich $t_{krit} \approx 2.04$.
 
 **Aussage 3** ist *richtig*: Der Standardfehler der Mittelwertsdifferent berechnet sich aus:
 
