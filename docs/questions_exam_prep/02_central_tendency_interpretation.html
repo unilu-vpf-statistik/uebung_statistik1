@@ -68,6 +68,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -96,6 +125,10 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link" href="../Formelsammlung.html"> 
 <span class="menu-text">Formelsammlung</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../Tabellen.html"> 
+<span class="menu-text">Verteilungstabellen</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../about.html"> 
@@ -198,6 +231,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Übung 11</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../exam_prep.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Übung: Klausur</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -231,15 +270,18 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="answerlist">Answerlist</h2>
 <ul>
 <li>Die Altersverteilung der Frauen und Männer sind identisch.</li>
-<li>Die Streuung des Alters für Frauen und Männer ist gleich</li>
+<li>Da der Mittelwert in beiden Gruppen 22.5 beträgt, muss in beiden Gruppen mindestens eine Person genau 22.5 Jahre alt sein.</li>
 <li>Die Lage der Altersverteilung ist im Bezug auf die zentrale Tendenz gleich.</li>
-<li>Die Altersverteilungden von Frauen und Männern sind symmetrisch.</li>
+<li>Da der Median in beiden Gruppen 22.5 beträgt, sind in beiden Gruppen mindestens 50% der Personen höchstens 22.5 Jahre alt.</li>
 </ul>
 </section>
 </section>
 <section id="solution" class="level1">
 <h1>Solution</h1>
-<p>Richtig sind Antworten 3 und 4. Der Median und Mittelwert ist für das Alter von Frauen und Männer identisch und somit sind die Altersverteilungen zumindest in Bezug auf die zentrale Tendenz gleich. Wir haben jedoch keine Information über die Streuung, weshalb wir Antworten 1 und 2 nicht eindeutig ableiten können. Zudem sind Median und Mittelwert identisch, daraus lässt sich ableiten, dass die Altersverteilungen symmetrisch sein müssen.</p>
+<p><strong>Aussage 1</strong> ist <em>falsch</em>: Gleicher Mittelwert und gleicher Median reichen <strong>nicht</strong> aus, um zu schließen, dass die gesamten Verteilungen identisch sind. Die Gruppen könnten sich z. B. in <strong>Streuung</strong>, <strong>Form</strong> (Schiefe) oder <strong>Ausreißern</strong> unterscheiden und trotzdem denselben Median und Mittelwert haben.</p>
+<p><strong>Aussage 2</strong> ist <em>falsch</em>: Ein Mittelwert von 22.5 bedeutet nur, dass der Durchschnitt 22.5 ist. Es ist <strong>nicht notwendig</strong>, dass ein beobachteter Wert genau 22.5 vorkommt. Beispiel: Werte 22 und 23 haben einen Mittelwert von 22.5, ohne dass 22.5 beobachtet wird.</p>
+<p><strong>Aussage 3</strong> ist <em>richtig</em>: Mittelwert und Median sind beides <strong>Lagemaße</strong>. Wenn beide Gruppen denselben Mittelwert (22.5) und denselben Median (22.5) haben, ist die <strong>zentrale Lage</strong> (im Sinne dieser Lagemaße) in beiden Gruppen gleich.</p>
+<p><strong>Aussage 4</strong> ist <em>richtig</em>: Definition des Medians: Mindestens 50% der Beobachtungen liegen <strong>kleiner oder gleich</strong> dem Median und mindestens 50% liegen <strong>größer oder gleich</strong> dem Median. Daher gilt zwingend: Mindestens 50% sind <span class="math inline">\(\le 22.5\)</span>.</p>
 </section>
 <section id="meta-information" class="level1">
 <h1>Meta-information</h1>

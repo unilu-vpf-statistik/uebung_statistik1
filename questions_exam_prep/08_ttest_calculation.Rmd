@@ -14,17 +14,17 @@ Kreuzen Sie bei jeder Aussage an, ob sie richtig oder falsch ist.
 Answerlist
 ---------
 - Aus den Freiheitsgraden können wir beim $t$-Test für unabhängige Stichproben direkt auf die Gruppengrössen in den beiden Gruppen schliessen.
-- Der kritische t-Wert für einen zweiseitigen Test bei $\alpha = .05$ liegt bei ungefähr \(t_{krit} = 2.04\).
+- Der kritische t-Wert für einen zweiseitigen Test bei $\alpha = .05$ liegt bei ungefähr $t_{krit} = 2.04$.
 - Der Populationsschätzer des Standardfehlers der Mittelwertsdifferenz beträgt ungefähr $\hat{\sigma}_{\bar{x}_1 - \bar{x}_2} = 2.83$.
 - Der beobachtete Effekt liegt in dieser Studie bei $d = 0.5$
 
 Solution
 =======
-**Aussage 1** ist *falsch* ❌: Beim t-Test für unabhängige Stichproben gilt für die Freiheitsgrade $df = N_1 + N_2 -2$. Aus gegebenen \(df\) kann man nur die *Summe* \(N_1 + N_2\) bestimmen $N_1 + N_2 = df + 2$ Aber daraus folgt **nicht eindeutig**, wie groß die einzelnen Gruppen sind (z.B. könnten \(N_1=10, N_2=22\) oder \(N_1=16, N_2=16\) sein und denselben \(df\) liefern). Man kann also nicht „direkt“ auf beide Gruppengrößen schließen.
+**Aussage 1** ist *falsch*: Beim t-Test für unabhängige Stichproben gilt für die Freiheitsgrade $df = N_1 + N_2 -2$. Aus gegebenen \(df\) kann man nur die *Summe* \(N_1 + N_2\) bestimmen $N_1 + N_2 = df + 2$ Aber daraus folgt **nicht eindeutig**, wie groß die einzelnen Gruppen sind (z.B. könnten \(N_1=10, N_2=22\) oder \(N_1=16, N_2=16\) sein und denselben \(df\) liefern). Man kann also nicht „direkt“ auf beide Gruppengrößen schließen.
 
-**Aussage 2** ist *richtig* ✅: Als erstes bestimmen wir die Freiheitsgrade: $df = 16 + 16 - 2 = 30$. Für einen **zweiseitigen** Test mit $\alpha = .05$ schneiden wir je $0.025$ unterhalb und oberhalb der Verteilung ab, so dass: $t_{krit} = t_{0.975; df = 30}$  ist. Diesen Wert können wir aus der Verteilungstabelle der $t$-Verteilung ablesen und dabei ergibt sich $t_krit \approx 2.04$.
+**Aussage 2** ist *richtig*: Als erstes bestimmen wir die Freiheitsgrade: $df = 16 + 16 - 2 = 30$. Für einen **zweiseitigen** Test mit $\alpha = .05$ schneiden wir je $0.025$ unterhalb und oberhalb der Verteilung ab, so dass: $t_{krit} = t_{0.975; df = 30}$  ist. Diesen Wert können wir aus der Verteilungstabelle der $t$-Verteilung ablesen und dabei ergibt sich $t_krit \approx 2.04$.
 
-**Aussage 3** ist *richtig* ✅: Der Standardfehler der Mittelwertsdifferent berechnet sich aus:
+**Aussage 3** ist *richtig*: Der Standardfehler der Mittelwertsdifferent berechnet sich aus:
 
 $$
 \hat{\sigma}_{\bar{x}_1-\bar{x}_2} = \sqrt{\frac{\hat{\sigma}_{inn}^2}{N_1} + \frac{\hat{\sigma}_{inn}^2}{N_2}}
@@ -42,7 +42,7 @@ $$
 \hat{\sigma}_{\bar{x}_1-\bar{x}_2} = \sqrt{\frac{64}{16} + \frac{64}{16}} = \sqrt{4 + 4} = \sqrt{8} = 2.8284... \approx 2.83
 $$
 
-**Aussage 4** ist *richtig* ✅: Der standardisierte Effekt aus den beobachteten Daten berechnet sich als:
+**Aussage 4** ist *richtig*: Der standardisierte Effekt aus den beobachteten Daten berechnet sich als:
 
 $$
 \delta = \frac{\bar{x}_1 - \bar{x}_2}{\hat{\sigma}_x}

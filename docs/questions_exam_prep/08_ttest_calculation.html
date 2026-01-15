@@ -231,6 +231,12 @@ window.Quarto = {
  <span class="menu-text">Übung 11</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../exam_prep.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Übung: Klausur</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -289,7 +295,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="answerlist">Answerlist</h2>
 <ul>
 <li>Aus den Freiheitsgraden können wir beim <span class="math inline">\(t\)</span>-Test für unabhängige Stichproben direkt auf die Gruppengrössen in den beiden Gruppen schliessen.</li>
-<li>Der kritische t-Wert für einen zweiseitigen Test bei <span class="math inline">\(\alpha = .05\)</span> liegt bei ungefähr (t_{krit} = 2.04).</li>
+<li>Der kritische t-Wert für einen zweiseitigen Test bei <span class="math inline">\(\alpha = .05\)</span> liegt bei ungefähr <span class="math inline">\(t_{krit} = 2.04\)</span>.</li>
 <li>Der Populationsschätzer des Standardfehlers der Mittelwertsdifferenz beträgt ungefähr <span class="math inline">\(\hat{\sigma}_{\bar{x}_1 - \bar{x}_2} = 2.83\)</span>.</li>
 <li>Der beobachtete Effekt liegt in dieser Studie bei <span class="math inline">\(d = 0.5\)</span></li>
 </ul>
@@ -297,9 +303,9 @@ window.Quarto = {
 </section>
 <section id="solution" class="level1">
 <h1>Solution</h1>
-<p><strong>Aussage 1</strong> ist <em>falsch</em> ❌: Beim t-Test für unabhängige Stichproben gilt für die Freiheitsgrade <span class="math inline">\(df = N_1 + N_2 -2\)</span>. Aus gegebenen (df) kann man nur die <em>Summe</em> (N_1 + N_2) bestimmen <span class="math inline">\(N_1 + N_2 = df + 2\)</span> Aber daraus folgt <strong>nicht eindeutig</strong>, wie groß die einzelnen Gruppen sind (z.B. könnten (N_1=10, N_2=22) oder (N_1=16, N_2=16) sein und denselben (df) liefern). Man kann also nicht „direkt“ auf beide Gruppengrößen schließen.</p>
-<p><strong>Aussage 2</strong> ist <em>richtig</em> ✅: Als erstes bestimmen wir die Freiheitsgrade: <span class="math inline">\(df = 16 + 16 - 2 = 30\)</span>. Für einen <strong>zweiseitigen</strong> Test mit <span class="math inline">\(\alpha = .05\)</span> schneiden wir je <span class="math inline">\(0.025\)</span> unterhalb und oberhalb der Verteilung ab, so dass: <span class="math inline">\(t_{krit} = t_{0.975; df = 30}\)</span> ist. Diesen Wert können wir aus der Verteilungstabelle der <span class="math inline">\(t\)</span>-Verteilung ablesen und dabei ergibt sich <span class="math inline">\(t_krit \approx 2.04\)</span>.</p>
-<p><strong>Aussage 3</strong> ist <em>richtig</em> ✅: Der Standardfehler der Mittelwertsdifferent berechnet sich aus:</p>
+<p><strong>Aussage 1</strong> ist <em>falsch</em>: Beim t-Test für unabhängige Stichproben gilt für die Freiheitsgrade <span class="math inline">\(df = N_1 + N_2 -2\)</span>. Aus gegebenen (df) kann man nur die <em>Summe</em> (N_1 + N_2) bestimmen <span class="math inline">\(N_1 + N_2 = df + 2\)</span> Aber daraus folgt <strong>nicht eindeutig</strong>, wie groß die einzelnen Gruppen sind (z.B. könnten (N_1=10, N_2=22) oder (N_1=16, N_2=16) sein und denselben (df) liefern). Man kann also nicht „direkt“ auf beide Gruppengrößen schließen.</p>
+<p><strong>Aussage 2</strong> ist <em>richtig</em>: Als erstes bestimmen wir die Freiheitsgrade: <span class="math inline">\(df = 16 + 16 - 2 = 30\)</span>. Für einen <strong>zweiseitigen</strong> Test mit <span class="math inline">\(\alpha = .05\)</span> schneiden wir je <span class="math inline">\(0.025\)</span> unterhalb und oberhalb der Verteilung ab, so dass: <span class="math inline">\(t_{krit} = t_{0.975; df = 30}\)</span> ist. Diesen Wert können wir aus der Verteilungstabelle der <span class="math inline">\(t\)</span>-Verteilung ablesen und dabei ergibt sich <span class="math inline">\(t_krit \approx 2.04\)</span>.</p>
+<p><strong>Aussage 3</strong> ist <em>richtig</em>: Der Standardfehler der Mittelwertsdifferent berechnet sich aus:</p>
 <p><span class="math display">\[
 \hat{\sigma}_{\bar{x}_1-\bar{x}_2} = \sqrt{\frac{\hat{\sigma}_{inn}^2}{N_1} + \frac{\hat{\sigma}_{inn}^2}{N_2}}
 \]</span></p>
@@ -311,7 +317,7 @@ window.Quarto = {
 <p><span class="math display">\[
 \hat{\sigma}_{\bar{x}_1-\bar{x}_2} = \sqrt{\frac{64}{16} + \frac{64}{16}} = \sqrt{4 + 4} = \sqrt{8} = 2.8284... \approx 2.83
 \]</span></p>
-<p><strong>Aussage 4</strong> ist <em>richtig</em> ✅: Der standardisierte Effekt aus den beobachteten Daten berechnet sich als:</p>
+<p><strong>Aussage 4</strong> ist <em>richtig</em>: Der standardisierte Effekt aus den beobachteten Daten berechnet sich als:</p>
 <p><span class="math display">\[
 \delta = \frac{\bar{x}_1 - \bar{x}_2}{\hat{\sigma}_x}
 \]</span></p>
