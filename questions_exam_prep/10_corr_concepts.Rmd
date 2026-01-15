@@ -1,0 +1,32 @@
+Question
+========
+Beurteilen Sie die folgenden Aussagen zu Zusammenhangsmassen. 
+
+Kreuzen Sie bei jeder Aussage an, ob sie richtig oder falsch ist.
+
+Answerlist
+---------
+- Korrelationskoeffizienten messen die Stärke und Richtung eines statistischen Zusammenhangs zwischen zwei Variablen.
+- Eine Korrelation von $r = 0$ bedeutet, dass zwischen zwei Variablen kein Zusammenhang besteht.
+- Ein hoher Korrelationskoeffizient impliziert, dass eine Variable die Ursache der anderen ist.
+- Der Pearson-Korrelationskoeffizient erfasst nur lineare Zusammenhänge zwischen Variablen.
+
+Solution
+=======
+**Aussage 1** ist *richtig*: Korrelationskoeffizienten (z. B. Produkt-Moment Korrelation, Punkt-Biseriale Korrelation oder der $\phi$-Koeffizient ) quantifizieren, **wie stark** zwei Variablen zusammenhängen und (falls dies für die Variablen sinnvoll ist) **in welche Richtung** (positiv oder negativ) dieser Zusammenhang verläuft.
+
+
+**Aussage 2** ist *falsch*: Ein Korrelationskoeffizient von $r = 0$ bedeutet lediglich, dass **kein linearer Zusammenhang** vorliegt. Es können dennoch **nicht-lineare Zusammenhänge** zwischen den Variablen bestehen, die durch den Korrelationskoeffizienten nicht erfasst werden. Für Beispiele schauen Sie in die Folien der Vorlesung.
+
+
+**Aussage 3** ist *falsch*: Korrelation beschreibt einen statistischen Zusammenhang, erlaubt aber **keine kausalen Schlussfolgerungen**. Ein hoher Korrelationskoeffizient kann auch durch Drittvariablen oder zufällige Zusammenhänge entstehen.
+
+
+**Aussage 4** ist *richtig*: Der Pearson-Korrelationskoeffizient misst ausschließlich **lineare** Zusammenhänge.  Nicht-lineare Beziehungen können trotz eines starken Zusammenhangs zu einem niedrigen oder null Korrelationskoeffizienten führen.
+
+Meta-information
+========
+exname: corr_concepts
+extype: mchoice
+exsolution: 1001
+exshuffle: false

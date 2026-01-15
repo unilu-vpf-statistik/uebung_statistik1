@@ -1,0 +1,58 @@
+Question
+========
+In einer empirischen Untersuchung wollen sie den Zusammenhang zwischen Lebenszufriedenheit und monatlichem Einkommen untersuchen. Unten sehen sie den Scatterplot der die Daten der Studie zusammenfasst.
+
+```{r simulate_ttest}
+#| echo: false
+set.seed(2025)
+sample_size <- 150
+einkommen <- rnorm(sample_size, mean = 2500, sd = 500)
+
+lowerAsy <- 1
+upperAsy <- 7
+slope = 0.3
+
+x_scaled <- (einkommen - min(einkommen))/sd(einkommen)
+
+zufriedenheit <- upperAsy - (upperAsy-lowerAsy) * exp(-slope * x_scaled) + rnorm(sample_size, sd = 1.5) + 1
+
+plot(einkommen, zufriedenheit, col = "darkgreen", pch = 16,
+     xlab = "Monat. Einkommen (in CHF)", ylab = "Lebenszufriedenheit")
+```
+
+Der statistische Test, den Sie mit Hilfe von `R` duchführen liefert Ihnen folgendes Ergebnis:
+
+```{r}
+#| echo: false
+cor.test(einkommen, zufriedenheit)
+```
+
+Beurteilen Sie die folgenden Aussagen zu dem R Output.
+
+Kreuzen Sie bei jeder Aussage an, ob sie richtig oder falsch ist.
+
+Answerlist
+---------
+- In der Studie wurde eine Stichprobe mit $N = 148$ Personen erhoben.
+- Weil das Ergebnis auf einem Signifikanzniveau von $\alpha = .01$ signifkant ist, können wir schliessen, dass der Zusammenhang zwischen Lebenszufriedenheit und monatlichem Einkommen in der Population linear ist.
+- Die geteilte Varianz zwischen Lebenszufrieden heit und Einkommen ist ca. 33%.
+- Der empirische $t$-Wert für den Signifikanztest der Korrelation ist $t_{emp} \approx 8.56$
+
+Solution
+=======
+**Aussage 1** ist falsch: Bei der Produkt-Moment-(Pearson)-Korrelation gilt für die Freiheitsgrade $df = N - 2$. Lösen wir diese Gleichung nach der Stichprobengrösse auf ergibt sich: $ N = df + 2 = 148 + 2 = 150$. Die Stichprobe umfasst also **\(N = 150\)** Personen, nicht 148.
+
+**Aussage 2** ist falsch: Der durchgeführte Signifikanztest für die Korrelation prüft die Nullhypothese $H_0: \rho = 0$ also, ob **kein linearer Zusammenhang** zwischen den beiden Variablen in der Population besteht.
+
+Ein signifikantes Testergebnis zeigt, dass die beobachteten Daten unter Annahme der Nullhypothese unwahrscheinlich sind. **Aber:** Nur weil die Daten einen von Null unterschiedlichen Korrelationskoeffizienten indizieren, heißt das nicht, dass der Zusammenhang in der Population notwendigerweise linear ist, da der Test nur auf das Vorhandensein eines linearen Anteils prüft.
+
+**Aussage 3** ist richtig: Die geteilte Varianz können wir durch den Determinationskoeffizienten $r^2$ berechnen. Mit der aus dem Output gegebene Korrelation $r = 0.5756606$ ergibt sich: $r^2 = 0.5756606^2 \approx 0.331$. 
+
+**Aussage 4** ist richtig: Der `R`-Output berichtet den auf Basis der Daten bestimmten $t$-Wert für die Korrelation. Dieser ist $t_{emp} = 8.5646 \approx 8.56$
+
+Meta-information
+========
+exname: corr_output
+extype: mchoice
+exsolution: 0011
+exshuffle: false

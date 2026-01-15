@@ -159,3 +159,19 @@ exam_files_09 <- list.files(
 shuffeld_questions_09 <- exam_files_09
 exams2forms(shuffeld_questions_09, mathjax = TRUE)
 ```
+
+### Korrelation
+
+```{r print_questions_10}
+#| echo: false
+#| message: false
+#| results: "asis"
+exam_files_10 <- list.files(
+  here("questions_exam_prep"),
+  pattern = '^10_.*.Rmd$',
+  full.names = TRUE
+)
+shuffeld_questions_10 <- exam_files_10
+exams2forms(shuffeld_questions_10, mathjax = TRUE)
+```
+
