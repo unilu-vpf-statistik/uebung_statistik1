@@ -40,6 +40,8 @@ website:
         href: exercise10.qmd
       - text: "Übung 11"
         href: exercise11.qmd
+      - text: "Übung: Klausur"
+        href: exam_prep.qmd
   page-footer:
     left: "Copyright 2025, Gidon Frischkorn"
     right:
