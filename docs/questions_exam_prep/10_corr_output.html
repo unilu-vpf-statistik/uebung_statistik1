@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ttest_output – Übungen - VL: Statistik I</title>
+<title>corr_output – Übungen - VL: Statistik I</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -258,43 +258,55 @@ window.Quarto = {
 
 <section id="question" class="level1">
 <h1>Question</h1>
-<p>Sie haben einen <span class="math inline">\(t\)</span>-Test mit R berechnet und erhalten folgenden Output.</p>
+<p>In einer empirischen Untersuchung wollen sie den Zusammenhang zwischen Lebenszufriedenheit und monatlichem Einkommen untersuchen. Unten sehen sie den Scatterplot der die Daten der Studie zusammenfasst.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="10_corr_output_files/figure-html/simulate_ttest-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Der statistische Test, den Sie mit Hilfe von <code>R</code> duchführen liefert Ihnen folgendes Ergebnis:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>
-    Paired t-test
+    Pearson's product-moment correlation
 
-data:  data$post and data$pre
-t = 2.2278, df = 29, p-value = 0.03381
-alternative hypothesis: true mean difference is not equal to 0
+data:  einkommen and zufriedenheit
+t = 8.5646, df = 148, p-value = 1.298e-14
+alternative hypothesis: true correlation is not equal to 0
 95 percent confidence interval:
- 0.02458924 0.57541076
+ 0.4576171 0.6737632
 sample estimates:
-mean difference 
-            0.3 </code></pre>
+      cor 
+0.5756606 </code></pre>
 </div>
 </div>
-<p>Beurteilen Sie die folgenden Aussagen zu dem R Output. Kreuzen Sie bei jeder Aussage an, ob sie richtig oder falsch ist.</p>
+<p>Beurteilen Sie die folgenden Aussagen zu dem R Output.</p>
+<p>Kreuzen Sie bei jeder Aussage an, ob sie richtig oder falsch ist.</p>
 <section id="answerlist" class="level2">
 <h2 class="anchored" data-anchor-id="answerlist">Answerlist</h2>
 <ul>
-<li>Es wurde ein Einstichproben <span class="math inline">\(t\)</span>-Test durchgeführt.</li>
-<li>Der empirische <span class="math inline">\(t\)</span>-Wert für diesen Test, liegt bei <span class="math inline">\(t_{emp} = 2.2278\)</span></li>
-<li>Der Test ist mit <span class="math inline">\(\alpha = .01\)</span> signifikant.</li>
-<li>Das 95% Konfidenzintervall, dass für diesen Test bestimmt wurde, schliesst den Wert 0 nicht ein.</li>
+<li>In der Studie wurde eine Stichprobe mit <span class="math inline">\(N = 148\)</span> Personen erhoben.</li>
+<li>Weil das Ergebnis auf einem Signifikanzniveau von <span class="math inline">\(\alpha = .01\)</span> signifkant ist, können wir schliessen, dass der Zusammenhang zwischen Lebenszufriedenheit und monatlichem Einkommen in der Population linear ist.</li>
+<li>Die geteilte Varianz zwischen Lebenszufrieden heit und Einkommen ist ca. 33%.</li>
+<li>Der empirische <span class="math inline">\(t\)</span>-Wert für den Signifikanztest der Korrelation ist <span class="math inline">\(t_{emp} \approx 8.56\)</span></li>
 </ul>
 </section>
 </section>
 <section id="solution" class="level1">
 <h1>Solution</h1>
-<p>Aussage 1 ist falsch: Es wurde eine <span class="math inline">\(t\)</span>-Test für abhängige Stichproben berechnet. Das lässt sich an dem Titel <code>Paired t-test</code> ablesen.</p>
-<p>Aussage 2 ist richtig: Der <span class="math inline">\(t\)</span>-Wert der im Output angegeben wird ist der Wert, der auf Basis der Daten berechnet wurde und damit der empirische <span class="math inline">\(t\)</span>-Wert. In der Regel werden in R keine kritischen Werte von Teststatistiken ausgegeben.</p>
-<p>Aussage 3 ist falsch: Der <span class="math inline">\(p\)</span>-Wert ist mit <span class="math inline">\(p = 0.03381\)</span> grösser als das in der Aussage angegebene Signifikanzniveau <span class="math inline">\(\alpha = .01\)</span>, also ist der Test <em>nicht</em> signifikant.</p>
-<p>Aussage 4 ist richtig: Das 95% Konfidenz Interval ist <span class="math inline">\(95\%-KI = [0.0245...; 0.5754...]\)</span> und schliesst den Wert 0 nicht mit ein.</p>
+<p><strong>Aussage 1</strong> ist falsch: Bei der Produkt-Moment-(Pearson)-Korrelation gilt für die Freiheitsgrade <span class="math inline">\(df = N - 2\)</span>. Lösen wir diese Gleichung nach der Stichprobengrösse auf ergibt sich: $ N = df + 2 = 148 + 2 = 150$. Die Stichprobe umfasst also <strong>(N = 150)</strong> Personen, nicht 148.</p>
+<p><strong>Aussage 2</strong> ist falsch: Der durchgeführte Signifikanztest für die Korrelation prüft die Nullhypothese <span class="math inline">\(H_0: \rho = 0\)</span> also, ob <strong>kein linearer Zusammenhang</strong> zwischen den beiden Variablen in der Population besteht.</p>
+<p>Ein signifikantes Testergebnis zeigt, dass die beobachteten Daten unter Annahme der Nullhypothese unwahrscheinlich sind. <strong>Aber:</strong> Nur weil die Daten einen von Null unterschiedlichen Korrelationskoeffizienten indizieren, heißt das nicht, dass der Zusammenhang in der Population notwendigerweise linear ist, da der Test nur auf das Vorhandensein eines linearen Anteils prüft.</p>
+<p><strong>Aussage 3</strong> ist richtig: Die geteilte Varianz können wir durch den Determinationskoeffizienten <span class="math inline">\(r^2\)</span> berechnen. Mit der aus dem Output gegebene Korrelation <span class="math inline">\(r = 0.5756606\)</span> ergibt sich: <span class="math inline">\(r^2 = 0.5756606^2 \approx 0.331\)</span>.</p>
+<p><strong>Aussage 4</strong> ist richtig: Der <code>R</code>-Output berichtet den auf Basis der Daten bestimmten <span class="math inline">\(t\)</span>-Wert für die Korrelation. Dieser ist <span class="math inline">\(t_{emp} = 8.5646 \approx 8.56\)</span></p>
 </section>
 <section id="meta-information" class="level1">
 <h1>Meta-information</h1>
-<p>exname: test_basics extype: mchoice exsolution: 0101 exshuffle: false</p>
+<p>exname: corr_output extype: mchoice exsolution: 0011 exshuffle: false</p>
 
 
 </section>

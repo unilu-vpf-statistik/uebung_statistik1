@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ttest_output – Übungen - VL: Statistik I</title>
+<title>chisqtest_output – Übungen - VL: Statistik I</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -258,43 +258,38 @@ window.Quarto = {
 
 <section id="question" class="level1">
 <h1>Question</h1>
-<p>Sie haben einen <span class="math inline">\(t\)</span>-Test mit R berechnet und erhalten folgenden Output.</p>
+<p>Sie haben einen <span class="math inline">\(\chi^2\)</span>-Test mit R berechnet um eine Häufigkeitsverteilung gegen eine Gleichverteilung zu testen und erhalten folgenden Output.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>
-    Paired t-test
+    Chi-squared test for given probabilities
 
-data:  data$post and data$pre
-t = 2.2278, df = 29, p-value = 0.03381
-alternative hypothesis: true mean difference is not equal to 0
-95 percent confidence interval:
- 0.02458924 0.57541076
-sample estimates:
-mean difference 
-            0.3 </code></pre>
+data:  frequency_table
+X-squared = 11.571, df = 5, p-value = 0.04116</code></pre>
 </div>
 </div>
-<p>Beurteilen Sie die folgenden Aussagen zu dem R Output. Kreuzen Sie bei jeder Aussage an, ob sie richtig oder falsch ist.</p>
+<p>Beurteilen Sie die folgenden Aussagen zu dem R Output.</p>
+<p>Kreuzen Sie bei jeder Aussage an, ob sie richtig oder falsch ist.</p>
 <section id="answerlist" class="level2">
 <h2 class="anchored" data-anchor-id="answerlist">Answerlist</h2>
 <ul>
-<li>Es wurde ein Einstichproben <span class="math inline">\(t\)</span>-Test durchgeführt.</li>
-<li>Der empirische <span class="math inline">\(t\)</span>-Wert für diesen Test, liegt bei <span class="math inline">\(t_{emp} = 2.2278\)</span></li>
-<li>Der Test ist mit <span class="math inline">\(\alpha = .01\)</span> signifikant.</li>
-<li>Das 95% Konfidenzintervall, dass für diesen Test bestimmt wurde, schliesst den Wert 0 nicht ein.</li>
+<li>Es gab 6 Kategorien der abhängigen Variable</li>
+<li>Der kritische <span class="math inline">\(\chi^2\)</span>-Wert für diesen Test, liegt bei <span class="math inline">\(\chi^2_{krit} = 11.571\)</span></li>
+<li>Der Test ist mit <span class="math inline">\(\alpha = .05\)</span> signifikant.</li>
+<li>Die Stichprobengrösse betrug <span class="math inline">\(N = 100\)</span></li>
 </ul>
 </section>
 </section>
 <section id="solution" class="level1">
 <h1>Solution</h1>
-<p>Aussage 1 ist falsch: Es wurde eine <span class="math inline">\(t\)</span>-Test für abhängige Stichproben berechnet. Das lässt sich an dem Titel <code>Paired t-test</code> ablesen.</p>
-<p>Aussage 2 ist richtig: Der <span class="math inline">\(t\)</span>-Wert der im Output angegeben wird ist der Wert, der auf Basis der Daten berechnet wurde und damit der empirische <span class="math inline">\(t\)</span>-Wert. In der Regel werden in R keine kritischen Werte von Teststatistiken ausgegeben.</p>
-<p>Aussage 3 ist falsch: Der <span class="math inline">\(p\)</span>-Wert ist mit <span class="math inline">\(p = 0.03381\)</span> grösser als das in der Aussage angegebene Signifikanzniveau <span class="math inline">\(\alpha = .01\)</span>, also ist der Test <em>nicht</em> signifikant.</p>
-<p>Aussage 4 ist richtig: Das 95% Konfidenz Interval ist <span class="math inline">\(95\%-KI = [0.0245...; 0.5754...]\)</span> und schliesst den Wert 0 nicht mit ein.</p>
+<p><strong>Aussage 1</strong> ist richtig: Mit Hilfe der im Output angegebenen Freiheitsgrade können Sie die Anzahl an Kategorien <span class="math inline">\(k\)</span> berechnen. Für die Freiheitsgrade gilt <span class="math inline">\(df = k-1\)</span>, also ist die Anzahl der Kategorien <span class="math inline">\(k = df + 1 = 5 + 1 = 6\)</span>.</p>
+<p><strong>Aussage 2</strong> ist falsch: Der im Output angegebene <span class="math inline">\(\chi^2\)</span>-Wert bezieht sich auf den <em>empirischen</em> nicht den kritischen <span class="math inline">\(\chi^2\)</span>-Wert. Der kritische <span class="math inline">\(\chi^2\)</span>-Wert für <span class="math inline">\(df = 5\)</span> und das in Aussage 3 angegebene Signifikanzniveau <span class="math inline">\(\alpha = .05\)</span> wäre <span class="math inline">\(\chi^2_{krit} = 11.07\)</span></p>
+<p><strong>Aussage 3</strong> ist richtig: Der <span class="math inline">\(p\)</span>-Wert ist mit <span class="math inline">\(p = 0.04116\)</span> kleiner als das in der Aussage angegebene Signifikanzniveau <span class="math inline">\(\alpha = .05\)</span>, also ist der Test signifikant.</p>
+<p><strong>Aussage 4</strong> ist falsch: Aus dem R Output lassen sich keine Rückschlüsse auf die Stichprobengrösse ziehen.</p>
 </section>
 <section id="meta-information" class="level1">
 <h1>Meta-information</h1>
-<p>exname: test_basics extype: mchoice exsolution: 0101 exshuffle: false</p>
+<p>exname: test_basics extype: mchoice exsolution: 1010 exshuffle: false</p>
 
 
 </section>

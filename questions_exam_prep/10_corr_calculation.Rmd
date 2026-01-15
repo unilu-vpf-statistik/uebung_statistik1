@@ -1,0 +1,62 @@
+Question
+========
+In einer Stichprobe von **5 Personen** wurden die Variablen **Körpergröße** (in cm) und **Körpergewicht** (in kg) erhoben:
+
+| Person | Körpergröße (X) | Körpergewicht (Y) |
+|--------|------------------|-------------------|
+| 1 | 162 | 58 |
+| 2 | 168 | 63 |
+| 3 | 171 | 67 |
+| 4 | 176 | 72 |
+| 5 | 182 | 70 |
+
+Berechnen Sie die Kovarianz zwischen Körpergröße und Körpergewicht in der Stichprobe $s_{XY}$.
+
+Answerlist
+---------
+- $s_{XY} = 0$  
+- $s_{XY} = 31.00$
+- $s_{XY} = 38.75$
+- $s_{XY} = 62.25$
+
+Solution
+=======
+Gesucht ist die **Kovarianz in der Stichprobe**:
+
+$$
+s_{XY}=\frac{\sum_{i=1}^{N}(x_i-\bar{x})(y_i-\bar{y})}{N}
+$$
+
+*Schritt 1*: Mittelwerte der beiden Variablen berechnen:
+
+$$
+\bar{x}=\frac{162+168+171+176+182}{5}=\frac{859}{5}=171.8
+$$
+
+$$
+\bar{y}=\frac{58+63+67+72+70}{5}=\frac{330}{5}=66
+$$
+
+*Schritt 2*: Als nächstes berechnen wir die Abweichungen von Mittelwert und das Kreuzprodukt für jedes Messwertepaar
+
+
+| Person | $x_i-\bar{x}$ | $y_i-\bar{y}$ | Kreuzprodukt $(x_i-\bar{x})(y_i-\bar{y})$ |
+|---|---:|---:|---:|
+| 1 | $162-171.8=-9.8$ | $58-66=-8$ | $(-9.8)\cdot(-8)=78.4$ |
+| 2 | $168-171.8=-3.8$ | $63-66=-3$ | $(-3.8)\cdot(-3)=11.4$ |
+| 3 | $171-171.8=-0.8$ | $67-66=1$ | $(-0.8)\cdot 1=-0.8$ |
+| 4 | $176-171.8=4.2$ | $72-66=6$ | $4.2\cdot 6=25.2$ |
+| 5 | $182-171.8=10.2$ | $70-66=4$ | $10.2\cdot 4=40.8$ |
+
+*Schritt 3*: Mit diesen Informationen können wir nun die Summe der Kreuzprodukte durch die Stichprobengrösse teilen:
+
+$$
+s_{XY} = \frac{\sum_{i=1}^{N}(x_i-\bar{x})(y_i-\bar{y})}{N} = \frac{78.4+11.4-0.8+25.2+40.8}{5} = \frac{155.0}{5} = 31.00
+$$
+
+Meta-information
+========
+exname: chisqtest_calculations
+extype: schoice
+exsolution: 0100
+exshuffle: true

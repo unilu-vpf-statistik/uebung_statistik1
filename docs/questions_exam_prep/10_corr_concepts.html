@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ttest_output – Übungen - VL: Statistik I</title>
+<title>corr_concepts – Übungen - VL: Statistik I</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -258,43 +258,28 @@ window.Quarto = {
 
 <section id="question" class="level1">
 <h1>Question</h1>
-<p>Sie haben einen <span class="math inline">\(t\)</span>-Test mit R berechnet und erhalten folgenden Output.</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    Paired t-test
-
-data:  data$post and data$pre
-t = 2.2278, df = 29, p-value = 0.03381
-alternative hypothesis: true mean difference is not equal to 0
-95 percent confidence interval:
- 0.02458924 0.57541076
-sample estimates:
-mean difference 
-            0.3 </code></pre>
-</div>
-</div>
-<p>Beurteilen Sie die folgenden Aussagen zu dem R Output. Kreuzen Sie bei jeder Aussage an, ob sie richtig oder falsch ist.</p>
+<p>Beurteilen Sie die folgenden Aussagen zu Zusammenhangsmassen.</p>
+<p>Kreuzen Sie bei jeder Aussage an, ob sie richtig oder falsch ist.</p>
 <section id="answerlist" class="level2">
 <h2 class="anchored" data-anchor-id="answerlist">Answerlist</h2>
 <ul>
-<li>Es wurde ein Einstichproben <span class="math inline">\(t\)</span>-Test durchgeführt.</li>
-<li>Der empirische <span class="math inline">\(t\)</span>-Wert für diesen Test, liegt bei <span class="math inline">\(t_{emp} = 2.2278\)</span></li>
-<li>Der Test ist mit <span class="math inline">\(\alpha = .01\)</span> signifikant.</li>
-<li>Das 95% Konfidenzintervall, dass für diesen Test bestimmt wurde, schliesst den Wert 0 nicht ein.</li>
+<li>Korrelationskoeffizienten messen die Stärke und Richtung eines statistischen Zusammenhangs zwischen zwei Variablen.</li>
+<li>Eine Korrelation von <span class="math inline">\(r = 0\)</span> bedeutet, dass zwischen zwei Variablen kein Zusammenhang besteht.</li>
+<li>Ein hoher Korrelationskoeffizient impliziert, dass eine Variable die Ursache der anderen ist.</li>
+<li>Der Pearson-Korrelationskoeffizient erfasst nur lineare Zusammenhänge zwischen Variablen.</li>
 </ul>
 </section>
 </section>
 <section id="solution" class="level1">
 <h1>Solution</h1>
-<p>Aussage 1 ist falsch: Es wurde eine <span class="math inline">\(t\)</span>-Test für abhängige Stichproben berechnet. Das lässt sich an dem Titel <code>Paired t-test</code> ablesen.</p>
-<p>Aussage 2 ist richtig: Der <span class="math inline">\(t\)</span>-Wert der im Output angegeben wird ist der Wert, der auf Basis der Daten berechnet wurde und damit der empirische <span class="math inline">\(t\)</span>-Wert. In der Regel werden in R keine kritischen Werte von Teststatistiken ausgegeben.</p>
-<p>Aussage 3 ist falsch: Der <span class="math inline">\(p\)</span>-Wert ist mit <span class="math inline">\(p = 0.03381\)</span> grösser als das in der Aussage angegebene Signifikanzniveau <span class="math inline">\(\alpha = .01\)</span>, also ist der Test <em>nicht</em> signifikant.</p>
-<p>Aussage 4 ist richtig: Das 95% Konfidenz Interval ist <span class="math inline">\(95\%-KI = [0.0245...; 0.5754...]\)</span> und schliesst den Wert 0 nicht mit ein.</p>
+<p><strong>Aussage 1</strong> ist <em>richtig</em>: Korrelationskoeffizienten (z. B. Produkt-Moment Korrelation, Punkt-Biseriale Korrelation oder der <span class="math inline">\(\phi\)</span>-Koeffizient ) quantifizieren, <strong>wie stark</strong> zwei Variablen zusammenhängen und (falls dies für die Variablen sinnvoll ist) <strong>in welche Richtung</strong> (positiv oder negativ) dieser Zusammenhang verläuft.</p>
+<p><strong>Aussage 2</strong> ist <em>falsch</em>: Ein Korrelationskoeffizient von <span class="math inline">\(r = 0\)</span> bedeutet lediglich, dass <strong>kein linearer Zusammenhang</strong> vorliegt. Es können dennoch <strong>nicht-lineare Zusammenhänge</strong> zwischen den Variablen bestehen, die durch den Korrelationskoeffizienten nicht erfasst werden. Für Beispiele schauen Sie in die Folien der Vorlesung.</p>
+<p><strong>Aussage 3</strong> ist <em>falsch</em>: Korrelation beschreibt einen statistischen Zusammenhang, erlaubt aber <strong>keine kausalen Schlussfolgerungen</strong>. Ein hoher Korrelationskoeffizient kann auch durch Drittvariablen oder zufällige Zusammenhänge entstehen.</p>
+<p><strong>Aussage 4</strong> ist <em>richtig</em>: Der Pearson-Korrelationskoeffizient misst ausschließlich <strong>lineare</strong> Zusammenhänge. Nicht-lineare Beziehungen können trotz eines starken Zusammenhangs zu einem niedrigen oder null Korrelationskoeffizienten führen.</p>
 </section>
 <section id="meta-information" class="level1">
 <h1>Meta-information</h1>
-<p>exname: test_basics extype: mchoice exsolution: 0101 exshuffle: false</p>
+<p>exname: corr_concepts extype: mchoice exsolution: 1001 exshuffle: false</p>
 
 
 </section>
