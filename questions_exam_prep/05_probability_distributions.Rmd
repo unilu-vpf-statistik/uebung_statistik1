@@ -15,11 +15,11 @@ Solution
 =======
 Aussage 1 ist richtig: Diskrete Zufallsvariablen besitzen eine abzählbare Menge möglicher Ausprägungen.Daher kann für jeden einzelnen Wert eine konkrete, positive Wahrscheinlichkeit angegeben werden (z.B. $P(X=3)=0.2$)
 
-Aussage 2 ist richtig: Bei kontinuierlichen Zufallsvariablen ist die Wahrscheinlichkeit für einen exakt bestimmten Einzelwert immer null. Wahrscheinlichkeiten ergeben sich nur für Intervalle von Werten, nicht für einzelne Punkte.
+Aussage 2 ist falsch: Bei kontinuierlichen Zufallsvariablen ist die Wahrscheinlichkeit für einen exakt bestimmten Einzelwert immer null. Wahrscheinlichkeiten ergeben sich nur für Intervalle von Werten, nicht für einzelne Punkte.
 
 Aussage 3 ist richtig: Eine Wahrscheinlichkeitsverteilung ordnet möglichen Ausprägungen einer Zufallsvariablen Wahrscheinlichkeiten zu (bei diskreten Variablen) oder beschreibt die Wahrscheinlichkeitsdichte über Wertebereiche (bei kontinuierlichen Variablen).
 
-Aussage 4 ist falsch: Die Verteilungsfunktion $F(x)$ einer Wahrscheinlichkeitsfunktion $f(x)$ ist definiert als:
+Aussage 4 ist richtig: Die Verteilungsfunktion $F(x)$ einer Wahrscheinlichkeitsfunktion $f(x)$ ist definiert als:
 
 $$
 F(x)=P(X≤x).

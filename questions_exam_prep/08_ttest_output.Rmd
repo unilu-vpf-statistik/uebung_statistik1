@@ -28,13 +28,13 @@ Answerlist
 
 Solution
 =======
-Aussage 1 ist falsch: Es wurde eine $t$-Test für abhängige Stichproben berechnet. Das lässt sich an dem Titel `Paired t-test` ablesen.
+**Aussage 1** ist *falsch*: Es wurde eine $t$-Test für abhängige Stichproben berechnet. Das lässt sich an dem Titel `Paired t-test` ablesen.
 
-Aussage 2 ist richtig: Der $t$-Wert der im Output angegeben wird ist der Wert, der auf Basis der Daten berechnet wurde und damit der empirische $t$-Wert. In der Regel werden in R keine kritischen Werte von Teststatistiken ausgegeben.
+**Aussage 2** ist *richtig*: Der $t$-Wert der im Output angegeben wird ist der Wert, der auf Basis der Daten berechnet wurde und damit der empirische $t$-Wert. In der Regel werden in R keine kritischen Werte von Teststatistiken ausgegeben.
 
-Aussage 3 ist falsch: Der $p$-Wert ist mit $p = 0.03381$ grösser als das in der Aussage angegebene Signifikanzniveau $\alpha = .01$, also ist der Test *nicht* signifikant.
+**Aussage 3** ist *falsch*: Der $p$-Wert ist mit $p = 0.03381$ grösser als das in der Aussage angegebene Signifikanzniveau $\alpha = .01$, also ist der Test *nicht* signifikant.
 
-Aussage 4 ist richtig: Das 95% Konfidenz Interval ist $95\%-KI = [0.0245...; 0.5754...]$ und schliesst den Wert 0 nicht mit ein.
+**Aussage 4** ist *richtig*: Das 95% Konfidenz Interval ist $95\%-KI = [0.0245...; 0.5754...]$ und schliesst den Wert 0 nicht mit ein.
 
 Meta-information
 ========

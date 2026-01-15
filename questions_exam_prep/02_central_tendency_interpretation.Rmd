@@ -7,13 +7,19 @@ Welche der folgenden Aussagen lässt sich aus diesen Werten zwingend ableiten? B
 Answerlist
 ---------
 - Die Altersverteilung der Frauen und Männer sind identisch.
-- Die Streuung des Alters für Frauen und Männer ist gleich
+- Da der Mittelwert in beiden Gruppen 22.5 beträgt, muss in beiden Gruppen mindestens eine Person genau 22.5 Jahre alt sein.
 - Die Lage der Altersverteilung ist im Bezug auf die zentrale Tendenz gleich.
-- Die Altersverteilungden von Frauen und Männern sind symmetrisch.
+- Da der Median in beiden Gruppen 22.5 beträgt, sind in beiden Gruppen mindestens 50% der Personen höchstens 22.5 Jahre alt.
 
 Solution
 =======
-Richtig sind Antworten 3 und 4. Der Median und Mittelwert ist für das Alter von Frauen und Männer identisch und somit sind die Altersverteilungen zumindest in Bezug auf die zentrale Tendenz gleich. Wir haben jedoch keine Information über die Streuung, weshalb wir Antworten 1 und 2 nicht eindeutig ableiten können. Zudem sind Median und Mittelwert identisch, daraus lässt sich ableiten, dass die Altersverteilungen symmetrisch sein müssen.
+**Aussage 1** ist *falsch*: Gleicher Mittelwert und gleicher Median reichen **nicht** aus, um zu schließen, dass die gesamten Verteilungen identisch sind. Die Gruppen könnten sich z. B. in **Streuung**, **Form** (Schiefe) oder **Ausreißern** unterscheiden und trotzdem denselben Median und Mittelwert haben.
+
+**Aussage 2** ist *falsch*: Ein Mittelwert von 22.5 bedeutet nur, dass der Durchschnitt 22.5 ist. Es ist **nicht notwendig**, dass ein beobachteter Wert genau 22.5 vorkommt. Beispiel: Werte 22 und 23 haben einen Mittelwert von 22.5, ohne dass 22.5 beobachtet wird.
+
+**Aussage 3** ist *richtig*: Mittelwert und Median sind beides **Lagemaße**. Wenn beide Gruppen denselben Mittelwert (22.5) und denselben Median (22.5) haben, ist die **zentrale Lage** (im Sinne dieser Lagemaße) in beiden Gruppen gleich.
+
+**Aussage 4** ist *richtig*: Definition des Medians: Mindestens 50% der Beobachtungen liegen **kleiner oder gleich** dem Median und mindestens 50% liegen **größer oder gleich** dem Median. Daher gilt zwingend: Mindestens 50% sind $\le 22.5$.
 
 Meta-information
 ========
