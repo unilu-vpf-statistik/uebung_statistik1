@@ -40,7 +40,7 @@ Answerlist
 
 Solution
 =======
-**Aussage 1** ist falsch: Bei der Produkt-Moment-(Pearson)-Korrelation gilt für die Freiheitsgrade $df = N - 2$. Lösen wir diese Gleichung nach der Stichprobengrösse auf ergibt sich: $ N = df + 2 = 148 + 2 = 150$. Die Stichprobe umfasst also **\(N = 150\)** Personen, nicht 148.
+**Aussage 1** ist falsch: Bei der Produkt-Moment-(Pearson)-Korrelation gilt für die Freiheitsgrade $df = N - 2$. Lösen wir diese Gleichung nach der Stichprobengrösse auf ergibt sich: $ N = df + 2 = 148 + 2 = 150$. Die Stichprobe umfasst also **$N = 150$** Personen, nicht 148.
 
 **Aussage 2** ist falsch: Der durchgeführte Signifikanztest für die Korrelation prüft die Nullhypothese $H_0: \rho = 0$ also, ob **kein linearer Zusammenhang** zwischen den beiden Variablen in der Population besteht.
 
