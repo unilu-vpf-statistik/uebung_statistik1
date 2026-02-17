@@ -36,8 +36,8 @@ exam_files_01 <- list.files(
   pattern = '^01_.*.Rmd$',
   full.names = TRUE
 )
-shuffeld_questions_01 <- exam_files_01
-exams2forms(shuffeld_questions_01, mathjax = TRUE)
+shuffled_questions_01 <- sample(exam_files_01)
+exams2forms(shuffled_questions_01, mathjax = TRUE)
 ```
 
 ### Masse der zentralen Tendenz
@@ -51,8 +51,8 @@ exam_files_02 <- list.files(
   pattern = '^02_.*.Rmd$',
   full.names = TRUE
 )
-shuffeld_questions_02 <- exam_files_02
-exams2forms(shuffeld_questions_02, mathjax = TRUE)
+shuffled_questions_02 <- sample(exam_files_02)
+exams2forms(shuffled_questions_02, mathjax = TRUE)
 ```
 
 ### Dispersionsmasse
@@ -66,8 +66,8 @@ exam_files_03 <- list.files(
   pattern = '^03_.*.Rmd$',
   full.names = TRUE
 )
-shuffeld_questions_03 <- exam_files_03
-exams2forms(shuffeld_questions_03, mathjax = TRUE)
+shuffled_questions_03 <- sample(exam_files_03)
+exams2forms(shuffled_questions_03, mathjax = TRUE)
 ```
 
 ### Wahrscheinlichkeitstheorie
@@ -81,8 +81,8 @@ exam_files_04 <- list.files(
   pattern = '^04_.*.Rmd$',
   full.names = TRUE
 )
-shuffeld_questions_04 <- exam_files_04
-exams2forms(shuffeld_questions_04, mathjax = TRUE)
+shuffled_questions_04 <- sample(exam_files_04)
+exams2forms(shuffled_questions_04, mathjax = TRUE)
 ```
 
 ### Wahrscheinlichkeitsverteilungen
@@ -96,8 +96,8 @@ exam_files_05 <- list.files(
   pattern = '^05_.*.Rmd$',
   full.names = TRUE
 )
-shuffeld_questions_05 <- exam_files_05
-exams2forms(shuffeld_questions_05, mathjax = TRUE)
+shuffled_questions_05 <- sample(exam_files_05)
+exams2forms(shuffled_questions_05, mathjax = TRUE)
 ```
 
 ### Hypothesentests
@@ -111,8 +111,8 @@ exam_files_06 <- list.files(
   pattern = '^06_.*.Rmd$',
   full.names = TRUE
 )
-shuffeld_questions_06 <- exam_files_06
-exams2forms(shuffeld_questions_06, mathjax = TRUE)
+shuffled_questions_06 <- sample(exam_files_06)
+exams2forms(shuffled_questions_06, mathjax = TRUE)
 ```
 
 ### Parameterschätzung
@@ -126,8 +126,8 @@ exam_files_07 <- list.files(
   pattern = '^07_.*.Rmd$',
   full.names = TRUE
 )
-shuffeld_questions_07 <- exam_files_07
-exams2forms(shuffeld_questions_07, mathjax = TRUE)
+shuffled_questions_07 <- sample(exam_files_07)
+exams2forms(shuffled_questions_07, mathjax = TRUE)
 ```
 
 ### $t$-Test
@@ -141,8 +141,8 @@ exam_files_08 <- list.files(
   pattern = '^08_.*.Rmd$',
   full.names = TRUE
 )
-shuffeld_questions_08 <- exam_files_08
-exams2forms(shuffeld_questions_08, mathjax = TRUE)
+shuffled_questions_08 <- sample(exam_files_08)
+exams2forms(shuffled_questions_08, mathjax = TRUE)
 ```
 
 ### $\chi^2$-Test
@@ -156,8 +156,8 @@ exam_files_09 <- list.files(
   pattern = '^09_.*.Rmd$',
   full.names = TRUE
 )
-shuffeld_questions_09 <- exam_files_09
-exams2forms(shuffeld_questions_09, mathjax = TRUE)
+shuffled_questions_09 <- sample(exam_files_09)
+exams2forms(shuffled_questions_09, mathjax = TRUE)
 ```
 
 ### Korrelation
@@ -171,7 +171,7 @@ exam_files_10 <- list.files(
   pattern = '^10_.*.Rmd$',
   full.names = TRUE
 )
-shuffeld_questions_10 <- exam_files_10
-exams2forms(shuffeld_questions_10, mathjax = TRUE)
+shuffled_questions_10 <- sample(exam_files_10)
+exams2forms(shuffled_questions_10, mathjax = TRUE)
 ```
 

@@ -18,7 +18,7 @@ library(here)
 library(dplyr)
 
 exam_files <- list.files(here("questions_uebung5"), full.names = TRUE)
-shuffeld_questions <- sample(exam_files)
+shuffled_questions <- sample(exam_files)
 
 # Laden des Datensatzes
 semester_data2 <- read.csv("semester_data2.csv")
@@ -43,7 +43,7 @@ In diesem Abschnitt fasse ich die wichtigsten Informationen aus dem Video nochma
 
 ### Odds / Chancen
 
-Normalerweise schreiben wir eine Wahrscheinlichkeit als einen Bruch bzw. eine Zahl zwischen 0 und 1. Die Idee dabei ist, dass wir die Anzahl günstiger Ereignisse zur Gesamtzahhl an möglichen Ereignissen in Bezug setzen. Wenn, wir zum Beispiel die Wahrscheinlichkeit bei würfeln eines fairen Würfels eine 6 zu werfen beschreiben, dann ist diese $\frac{1}{6} = 0.16666 \dots$, weil ein Ergebnis der Zahl 6 enspricht, und es insgesamt 6 mögliche ergebnisse gibt.
+Normalerweise schreiben wir eine Wahrscheinlichkeit als einen Bruch bzw. eine Zahl zwischen 0 und 1. Die Idee dabei ist, dass wir die Anzahl günstiger Ereignisse zur Gesamtzahl an möglichen Ereignissen in Bezug setzen. Wenn, wir zum Beispiel die Wahrscheinlichkeit bei würfeln eines fairen Würfels eine 6 zu werfen beschreiben, dann ist diese $\frac{1}{6} = 0.16666 \dots$, weil ein Ergebnis der Zahl 6 enspricht, und es insgesamt 6 mögliche ergebnisse gibt.
 
 Alternativ können wir diese Wahrscheinlichkeit jedoch auch als Odds (bzw. Chancen) schreiben. Dabei setzen wir die Anzahl günstiger Ergebnisse zur Anzahl ungünstiger Ergebnisse in Bezug $1:5$. Um Odds (Chancen) von Wahrscheinlichkeiten in der Notation abzugrenzen wird dabei Häufig ein Doppelpunkt verwendet. Die Odds $1:5$ beschreiben dabei genau so die Wahrscheinlichkeit und können auch in diese Übertragen werden in dem man die erste Zahl durch die Summe beider Zahlen teilt $\frac{1}{1 + 5}$. Allgemein können wir also schreiben:
 
@@ -67,7 +67,7 @@ $$
 
 Der Index des Bayes Faktors gibt dabei an, welche bedingte Wahrscheinlichkeit im Zähler bzw. im Nenner steht. Die erste Zahl bezieht sich auf den Index der Hypothese im Zähler, die zweite Zahl auf den Index der Hypothese im Nenner.
 
-Im Bezug auf das Bayes Theorem ist die Berechnung des Bayes Faktors sehr hilfreich, da sie die Aktualisierungvon den Prior Beliefs, also unseres Wissens bevor wir die Daten gesehen haben, zu den Posterior Beliefs, also unserem Wissen nachdem wir die Daten gesehen haben, sehr klar und einfach darstellt. Stellen wir die Prior und Posterior Probability jeweils als Odds dar, gilt folgendes:
+Im Bezug auf das Bayes Theorem ist die Berechnung des Bayes Faktors sehr hilfreich, da sie die Aktualisierung von den Prior Beliefs, also unseres Wissens bevor wir die Daten gesehen haben, zu den Posterior Beliefs, also unserem Wissen nachdem wir die Daten gesehen haben, sehr klar und einfach darstellt. Stellen wir die Prior und Posterior Probability jeweils als Odds dar, gilt folgendes:
 
 $$
 O_{posterior} = BF \cdot O_{prior}
@@ -90,11 +90,11 @@ Wenn wir diese Posterior Odds $O(D | S)$ in eine Wahrscheinlichkeit umrechnen er
 
 ## Übungen
 
-In den folgenden Übungen nutzen Sie keinen Datensatz, sondern können R einfach als Taschenrechnen verwenden.
+In den folgenden Übungen nutzen Sie keinen Datensatz, sondern können R einfach als Taschenrechner verwenden.
 
 Wie in den bisherigen Übungen finden Sie hier über den Übungsaufgaben die `webr` Konsole, die Ihnen das Schreiben und Durchführen von R Code direkt auf der Website ermöglicht. Wenn viele Studierenden die Übungen parallel machen, dann kann es sein, dass `webr` sehr langsam wird.
 
-> Um den Code den Sie geschrieben haben auszuführen drücken Sie entwedern `Run Code`, damit der gesamte Code ausgeführt würde. Alternativ können Sie auch einzelne Zeilen ausführen, indem sie <kbd>CRTL</kbd>+<kbd>Enter</kbd> (Windows) oder <kbd>CMD</kbd>+<kbd>Enter</kbd> (Mac) drücken.
+> Um den Code den Sie geschrieben haben auszuführen drücken Sie entweder `Run Code`, damit der gesamte Code ausgeführt würde. Alternativ können Sie auch einzelne Zeilen ausführen, indem sie <kbd>CRTL</kbd>+<kbd>Enter</kbd> (Windows) oder <kbd>CMD</kbd>+<kbd>Enter</kbd> (Mac) drücken.
 
 ```{webr-r}
 # Schreiben Sie hier ihren Code um die Aufgaben zu lösen
@@ -103,13 +103,13 @@ Wie in den bisherigen Übungen finden Sie hier über den Übungsaufgaben die `we
 
 ```
 
-> Nutzen Sie eine [Suchmaschine](https://unilu-vpf-statistik.github.io/uebung_statistik1/about.html#suchmaschinen), wenn Sie nicht wissen welche Funktionen Ihnen ein bestimmtes Ergebnis liefern. Ausserdem können Sie in R immer die [Hilfe](https://www.r-project.org/help.html) einer Funktion aufrufen, indem sie vor den Namen der Funktion ein Fragezeichen schreiben, z. Bsp `?median` oder die Hilfe-Funktion `help()` mit dem jeweligen Funktionsbefehl ausführen: `help(median)`.
+> Nutzen Sie eine [Suchmaschine](https://unilu-vpf-statistik.github.io/uebung_statistik1/about.html#suchmaschinen), wenn Sie nicht wissen welche Funktionen Ihnen ein bestimmtes Ergebnis liefern. Ausserdem können Sie in R immer die [Hilfe](https://www.r-project.org/help.html) einer Funktion aufrufen, indem sie vor den Namen der Funktion ein Fragezeichen schreiben, z. Bsp `?median` oder die Hilfe-Funktion `help()` mit dem jeweiligen Funktionsbefehl ausführen: `help(median)`.
 
 ```{r print_questions}
 #| echo: false
 #| message: false
 #| results: "asis"
-exams2forms(shuffeld_questions)
+exams2forms(shuffled_questions)
 ```
 
 ------------------------------------------------------------------------

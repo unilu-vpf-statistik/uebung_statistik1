@@ -1,11 +1,11 @@
 Question
 =======
-Mit welcher Funktion können Sie ein Histogramm der Altersverteilung der Variable `alter` im Datensatz `semeseter_data` erstellen?
+Mit welcher Funktion können Sie ein Histogramm der Altersverteilung der Variable `alter` im Datensatz `semester_data` erstellen?
 
 Answerlist
 --------
 * `hist(semester_data$alter)`
-* `plot(semester_data$alter`
+* `plot(semester_data$alter)`
 * `pie(semester_data$alter)`
 * `barplot(semester_data$alter)`
 * `histogram(semester_data$alter)`

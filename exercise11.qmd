@@ -44,19 +44,19 @@ write.csv(correlation_data, "correlation_data.csv")
 
 # exercise questions
 exam_files <- list.files(here("questions_uebung11"), pattern = "*.Rmd", full.names = TRUE)
-shuffeld_questions <- exam_files
+shuffled_questions <- sample(exam_files)
 ```
 
 ## Wiederholung & Vertiefung: Zusammenhangsmasse
 
-In dieser Übung werden wir üben wie man von Hand und mit Hilfe von R Zusammenhangsmasse für metrische und diskrete Variablen berechnet. Wenn Sie einige Inhalte der Vorlesung nochmal vertiefen wollen, oder die Berechnung in R nachvollziehen wollen, dann können Sie sich die folgenden Vieoas anschauen:
+In dieser Übung werden wir üben wie man von Hand und mit Hilfe von R Zusammenhangsmasse für metrische und diskrete Variablen berechnet. Wenn Sie einige Inhalte der Vorlesung nochmal vertiefen wollen, oder die Berechnung in R nachvollziehen wollen, dann können Sie sich die folgenden Videos anschauen:
 
 - [Grundkonzept: Korrelation](https://www.youtube.com/watch?v=dsyTQNUvqH0)
 - [Determinationskoeffizienten und Erklärte Varianz](https://www.youtube.com/watch?v=EhD_5uh9fss)
 
 ## Übungen
 
-In den folgenden Übungen können Sie entweder den simulierten Datensatz [correlation_Data.csv](correlation_data.csv) nutzen, oder Sie können die in den Aufgaben angegebenen Deskriptiven Statistiken nutzen die auf Basis des Datensatzes ausgerechnet wurden verwenden um die jeweilgen Tests von Hand zu rechnen. Der Datensatz enthält die  Variablen: `geschlecht`, `groesse`, `alter`, `luzern`.
+In den folgenden Übungen können Sie entweder den simulierten Datensatz [correlation_data.csv](correlation_data.csv) nutzen, oder Sie können die in den Aufgaben angegebenen Deskriptiven Statistiken nutzen die auf Basis des Datensatzes ausgerechnet wurden verwenden um die jeweiligen Tests von Hand zu rechnen. Der Datensatz enthält die  Variablen: `geschlecht`, `groesse`, `alter`, `luzern`.
 
 ```{r}
 head(correlation_data)
@@ -72,7 +72,7 @@ Sowie die Tabelle der Verteilungsfunktion der Standardnormalverteilung:
 
 Wie in den bisherigen Übungen finden Sie über den Übungsaufgaben die `webr` Konsole, die Ihnen das Schreiben und Durchführen von R Code direkt auf der Website ermöglicht. Wenn viele Studierenden die Übungen parallel machen, dann kann es sein, dass `webr` langsam wird.
 
-> Um den Code den Sie geschrieben haben auszuführen drücken Sie entwedern `Run Code`, damit der gesamte Code ausgeführt würde. Alternativ können Sie auch einzelne Zeilen ausführen, indem sie <kbd>CRTL</kbd>+<kbd>Enter</kbd> (Windows) oder <kbd>CMD</kbd>+<kbd>Enter</kbd> (Mac) drücken.
+> Um den Code den Sie geschrieben haben auszuführen drücken Sie entweder `Run Code`, damit der gesamte Code ausgeführt würde. Alternativ können Sie auch einzelne Zeilen ausführen, indem sie <kbd>CRTL</kbd>+<kbd>Enter</kbd> (Windows) oder <kbd>CMD</kbd>+<kbd>Enter</kbd> (Mac) drücken.
 
 ```{webr-r}
 # Herunterladen der Daten um sie lokal verfügbar zu machen
@@ -91,12 +91,12 @@ head(correlation_data)
 
 ```
 
-> Nutzen Sie eine [Suchmaschine](https://unilu-vpf-statistik.github.io/uebung_statistik1/about.html#suchmaschinen), wenn Sie nicht wissen welche Funktionen Ihnen ein bestimmtes Ergebnis liefern. Ausserdem können Sie in R immer die [Hilfe](https://www.r-project.org/help.html) einer Funktion aufrufen, indem sie vor den Namen der Funktion ein Fragezeichen schreiben, z. Bsp `?median` oder die Hilfe-Funktion `help()` mit dem jeweligen Funktionsbefehl ausführen: `help(median)`.
+> Nutzen Sie eine [Suchmaschine](https://unilu-vpf-statistik.github.io/uebung_statistik1/about.html#suchmaschinen), wenn Sie nicht wissen welche Funktionen Ihnen ein bestimmtes Ergebnis liefern. Ausserdem können Sie in R immer die [Hilfe](https://www.r-project.org/help.html) einer Funktion aufrufen, indem sie vor den Namen der Funktion ein Fragezeichen schreiben, z. Bsp `?median` oder die Hilfe-Funktion `help()` mit dem jeweiligen Funktionsbefehl ausführen: `help(median)`.
 
 ```{r print_questions}
 #| echo: false
 #| message: false
 #| results: "asis"
-exams2forms(shuffeld_questions, mathjax = TRUE)
+exams2forms(shuffled_questions, mathjax = TRUE)
 ```
 

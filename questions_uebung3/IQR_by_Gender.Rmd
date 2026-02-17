@@ -1,6 +1,6 @@
 Question
 =======
-Was ist der Interquartilsabstand $IQR$ der Variable `grössse` für Frauen $w$ und Männer $m$?
+Was ist der Interquartilsabstand $IQR$ der Variable `grösse` für Frauen $w$ und Männer $m$?
 
 Answerlist
 --------

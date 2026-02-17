@@ -6,6 +6,8 @@ format:
   html:
     css: styles.css
     include-after-body: webex.js
+filters:
+  - webr
 ---
 
 ```{r}
@@ -15,7 +17,7 @@ library(exams2forms)
 library(here)
 
 exam_files <- list.files(here("questions_uebung1"), full.names = TRUE)
-shuffeld_questions <- sample(exam_files)
+shuffled_questions <- sample(exam_files)
 ```
 
 
@@ -39,7 +41,7 @@ Nehmen Sie sich **Zeit** für die beiden Videos und **machen Sie sich Notizen** 
 #| echo: false
 #| message: false
 #| results: "asis"
-exams2forms(shuffeld_questions)
+exams2forms(shuffled_questions)
 ```
 
 ------------------------------------------------------------------------

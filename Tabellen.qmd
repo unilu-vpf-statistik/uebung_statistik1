@@ -8,7 +8,7 @@ author: "Gidon Frischkorn"
 
 Auf dieser Seite finden Sie Verteilungstabellen für unterschiedliche Wahrscheinlichkeitsfunktionen, die Sie nutzen wenn Sie keinen Zugang zu Software haben, die Ihnen eine akurate Berechnung der Verteilungsfunktionen erlaubt.
 
-Diese Verteilungsfunktionen nutzen sie üblicherweise zur Bestimmung der kritischen Testwerte für ein gewähltes Signifikanznivau $\alpha$ bei entsprechenden Verteilungsparmaetern (z. Bsp. Freiheitsgraden $df$), oder zur Bestimmung des $p$-Wertes für eine empirische Teststatistik.
+Diese Verteilungsfunktionen nutzen sie üblicherweise zur Bestimmung der kritischen Testwerte für ein gewähltes Signifikanzniveau $\alpha$ bei entsprechenden Verteilungsparametern (z. Bsp. Freiheitsgraden $df$), oder zur Bestimmung des $p$-Wertes für eine empirische Teststatistik.
 
 ## Standardnormalverteilung
 

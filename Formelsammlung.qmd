@@ -17,7 +17,7 @@ Im Laufe des Semesters werden Schritt für Schritt weitere Formeln hinzugefügt 
 ### Summe
 
 $$
-\sum_{i = 1}^j x_j = x_1 + x_2 + x_3 + \cdots + x_j
+\sum_{i = 1}^j x_i = x_1 + x_2 + x_3 + \cdots + x_j
 $$
 
 Die Summe alle Werte der Variablen $x$ begonnen ab dem Startwert $i = 1$ bis zu dem Endwert $j$.

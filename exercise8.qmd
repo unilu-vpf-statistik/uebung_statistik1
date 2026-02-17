@@ -18,19 +18,19 @@ library(here)
 library(dplyr)
 
 exam_files <- list.files(here("questions_uebung8"), full.names = TRUE)
-shuffeld_questions <- exam_files
+shuffled_questions <- sample(exam_files)
 ```
 
 ## Wiederholung & Vertiefung: Parameterschätzung
 
-In dieser Übung werden wir Üben mit den Konzepten der Parameterschätzung und Konfidenzintervallen zu arbeiten. Wenn Sie die Inhalte der Vorlesung nochmal vertiefen wollen, dann empfehle ich Ihnen die folgenden Videos. Beachten Sie das das erste Videos etwas tiefer in die mathematischen Grundlagen des Zentralen Grenzwertsatzes und der Normalverteilung einsteigen. Dieses Video ist als Verteifung für interessierte Studierende gedacht, die konzeptuelle Grundlagen hinter der Normalverteilung besser verstehen wollen. Es wird nicht erwartet, dass Sie die mathematischen Ableitungen auswendig können und selbst anwenden können. Dennoch hilft Ihnen das Videos ein besseres Verstädnis für die Normalverteilung und ihre Relevanz in der Statistik zu bekommen:
+In dieser Übung werden wir Üben mit den Konzepten der Parameterschätzung und Konfidenzintervallen zu arbeiten. Wenn Sie die Inhalte der Vorlesung nochmal vertiefen wollen, dann empfehle ich Ihnen die folgenden Videos. Beachten Sie das das erste Videos etwas tiefer in die mathematischen Grundlagen des Zentralen Grenzwertsatzes und der Normalverteilung einsteigen. Dieses Video ist als Verteifung für interessierte Studierende gedacht, die konzeptuelle Grundlagen hinter der Normalverteilung besser verstehen wollen. Es wird nicht erwartet, dass Sie die mathematischen Ableitungen auswendig können und selbst anwenden können. Dennoch hilft Ihnen das Videos ein besseres Verständnis für die Normalverteilung und ihre Relevanz in der Statistik zu bekommen:
 
 - [Ausführliche Erklärung des Zentralen Grenzwertsatzes](https://www.youtube.com/watch?v=zeJD6dqJ5lo)
 - [Interpretation von Konfidenzintervallen](https://www.youtube.com/watch?v=ftYdEm6pEkE&t=31s)
 
 ## Übungen
 
-In den folgenden Übungen nutzen Sie keinen konkreten Datensatz, sondern werden anhand von Verteilungsannahmen und theoretischen Populationsparmaetern Hypothesen formulieren, Kritische Werte berechnen und Hypothesentests für Einzelfälle durchführen. Nutzen sie R dabei einfach als Taschenrechner.
+In den folgenden Übungen nutzen Sie keinen konkreten Datensatz, sondern werden anhand von Verteilungsannahmen und theoretischen Populationsparametern Hypothesen formulieren, Kritische Werte berechnen und Hypothesentests für Einzelfälle durchführen. Nutzen sie R dabei einfach als Taschenrechner.
 
 Falls Sie die Übungsfragen nicht mit R beantworten wollen, dann können Sie die hier gedruckte Tabelle der z-Werte der Verteilungsfunktion der Standardnormalverteilung nutzen um die Fragen zu beantworten.
 
@@ -46,7 +46,7 @@ Wie in den bisherigen Übungen finden Sie über den Übungsaufgaben die `webr` K
 
 Hinweis: Sie können üben die Berechnungen und Umformungen, die Sie in der Prüfung durchführen müssen, auch mit Hilfe von R durchzuführen. Wenn Sie dies machen wollen, dann erlauben Sie sich einfach nicht der Verteilungs- und Quantilfunktion der Normalverteilung (`pnorm` und `qnorm`) zusätzlich einen Mittelwert `mean` und eine Standardabweichung `sd` als Argumente zu übergeben. Damit dienen die Funktionen einfach dem Ablesen aus der Verteilungstabelle für die Standardnormalverteilung und sie müssen die Aufgaben trotzdem über die Berechnung von $z$-Werten lösen.
 
-> Um den Code den Sie geschrieben haben auszuführen drücken Sie entwedern `Run Code`, damit der gesamte Code ausgeführt würde. Alternativ können Sie auch einzelne Zeilen ausführen, indem sie <kbd>CRTL</kbd>+<kbd>Enter</kbd> (Windows) oder <kbd>CMD</kbd>+<kbd>Enter</kbd> (Mac) drücken.
+> Um den Code den Sie geschrieben haben auszuführen drücken Sie entweder `Run Code`, damit der gesamte Code ausgeführt würde. Alternativ können Sie auch einzelne Zeilen ausführen, indem sie <kbd>CRTL</kbd>+<kbd>Enter</kbd> (Windows) oder <kbd>CMD</kbd>+<kbd>Enter</kbd> (Mac) drücken.
 
 ```{webr-r}
 # Schreiben Sie hier ihren Code um die Aufgaben zu lösen
@@ -55,13 +55,13 @@ Hinweis: Sie können üben die Berechnungen und Umformungen, die Sie in der Prü
 
 ```
 
-> Nutzen Sie eine [Suchmaschine](https://unilu-vpf-statistik.github.io/uebung_statistik1/about.html#suchmaschinen), wenn Sie nicht wissen welche Funktionen Ihnen ein bestimmtes Ergebnis liefern. Ausserdem können Sie in R immer die [Hilfe](https://www.r-project.org/help.html) einer Funktion aufrufen, indem sie vor den Namen der Funktion ein Fragezeichen schreiben, z. Bsp `?median` oder die Hilfe-Funktion `help()` mit dem jeweligen Funktionsbefehl ausführen: `help(median)`.
+> Nutzen Sie eine [Suchmaschine](https://unilu-vpf-statistik.github.io/uebung_statistik1/about.html#suchmaschinen), wenn Sie nicht wissen welche Funktionen Ihnen ein bestimmtes Ergebnis liefern. Ausserdem können Sie in R immer die [Hilfe](https://www.r-project.org/help.html) einer Funktion aufrufen, indem sie vor den Namen der Funktion ein Fragezeichen schreiben, z. Bsp `?median` oder die Hilfe-Funktion `help()` mit dem jeweiligen Funktionsbefehl ausführen: `help(median)`.
 
 ```{r print_questions}
 #| echo: false
 #| message: false
 #| results: "asis"
-exams2forms(shuffeld_questions)
+exams2forms(shuffled_questions)
 ```
 
 ------------------------------------------------------------------------
