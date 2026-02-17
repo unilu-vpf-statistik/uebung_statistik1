@@ -272,42 +272,9 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="übungen">Übungen</h3>
 <div class="webex-question">
 <div class="webex-check webex-box">
-<p>Welche der folgenden Merkmale würde am ehesten auf einer Nominalskala gemessen?</p>
-<div id="webex-0a31d5d046a1d2632bbc6c238fab27eb" class="webex-checkboxgroup" data-answer="a1EfAUgESAEYBk0BOQ==">
-<label><input type="checkbox" autocomplete="off" name="0a31d5d046a1d2632bbc6c238fab27eb"><span>Grösse</span></label><label><input type="checkbox" autocomplete="off" name="0a31d5d046a1d2632bbc6c238fab27eb"><span>Datum</span></label><label><input type="checkbox" autocomplete="off" name="0a31d5d046a1d2632bbc6c238fab27eb"><span>Lieblingsfarbe</span></label><label><input type="checkbox" autocomplete="off" name="0a31d5d046a1d2632bbc6c238fab27eb"><span>PLZ</span></label><label><input type="checkbox" autocomplete="off" name="0a31d5d046a1d2632bbc6c238fab27eb"><span>Höchster Schulabschluss</span></label><label><input type="checkbox" autocomplete="off" name="0a31d5d046a1d2632bbc6c238fab27eb"><span>Anzahl Stunden Schlaf in der letzten Nacht</span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Das Merkmal PLZ und Lieblingsfarbe hat klar unterschiedlichen Kategorien, die sich nicht ordnen lassen und sollte deshalb unabhängig von der konkreten Messmethode bei der Messung in einer nominal skalierten Variable resultieren.</p>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Mit welchen der folgenden Variablentypen in R kodiert man sinnvollerweise eine nominal skalierte Variable? (Mehrfachantworten Möglich)</p>
-<div id="webex-5af6869860c51e1b7e20a29b7d4725b5" class="webex-checkboxgroup" data-answer="blFKBxQGFQkaAD4=">
-<label><input type="checkbox" autocomplete="off" name="5af6869860c51e1b7e20a29b7d4725b5"><span>numeric</span></label><label><input type="checkbox" autocomplete="off" name="5af6869860c51e1b7e20a29b7d4725b5"><span>factor</span></label><label><input type="checkbox" autocomplete="off" name="5af6869860c51e1b7e20a29b7d4725b5"><span>logical</span></label><label><input type="checkbox" autocomplete="off" name="5af6869860c51e1b7e20a29b7d4725b5"><span>character</span></label><label><input type="checkbox" autocomplete="off" name="5af6869860c51e1b7e20a29b7d4725b5"><span>integer</span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Die Variablentypen <code>character</code> und <code>factor</code> eignen sich am ehesten um nominal skalierte Variablen zu kodieren. Dabei werden die Variablen zwar nicht direkt als numerische Werte gespeichert, aber die einzelnen Merkmalsausprägungen können so in den zugehörigen Kategorien gespeichert werden.</p>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>In einer empirischen Untersuchung haben Sie Reaktionszeiten in Millisekunden gemessen. Zur Auswertung hat ihr Kollege die Variablen in Sekunden transformiert und die minimal erlaubte Reaktionszeit von 300 Millisekunden von den gemessenen Variablen abgezogen. Welchen Einfluss hat die Transformation auf das Skalenniveau der resultierenden Variable?</p>
-<div id="webex-9707243815fde0e6524897e6ea553839" class="webex-radiogroup" data-answer="YgccBh4EHwhs">
-<label><input type="radio" autocomplete="off" name="9707243815fde0e6524897e6ea553839"><span>Wegen der Transformation kann ich die Variable grundsätzlich nicht mehr sinnvoll interpretieren</span></label><label><input type="radio" autocomplete="off" name="9707243815fde0e6524897e6ea553839"><span>Die Variable ist intervall skaliert statt der ursprünglich absolut skalierten Variable vor der Transformation</span></label><label><input type="radio" autocomplete="off" name="9707243815fde0e6524897e6ea553839"><span>Die Transformation hat keinen Einfluss auf das Skalenniveau, bei Reaktionszeiten handelt es sich um absolut skalierte Variablen</span></label><label><input type="radio" autocomplete="off" name="9707243815fde0e6524897e6ea553839"><span>Variablen sollten grundsätzlich nicht transformiert werden</span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Die Transformation ist eine positiv lineare Transformation. Konkret ergibt sich die endgültige Variable aus der Formel: <code>Y = 1/1000 * (RTms - 300)</code>. Diese Transformation ist für intervall skalierte Variablen sinnvoll, durch die Subtraktion der minimalen Reaktionszeit verliert die Variable den absoluten Nullpunkt und ist deshalb noch intervall skaliert, statt der ursprünglichen absolut skalierten Reaktionszeit in Millisekunden.</p>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
 <p>Welche der folgenden Varriablen ist eine stetige quantitative Variable?</p>
-<div id="webex-f7f9ae8fb1b6dbb8a66b777a35f81b11" class="webex-checkboxgroup" data-answer="PQdKCU1UFFZOAD8=">
-<label><input type="checkbox" autocomplete="off" name="f7f9ae8fb1b6dbb8a66b777a35f81b11"><span>Hautfarbe</span></label><label><input type="checkbox" autocomplete="off" name="f7f9ae8fb1b6dbb8a66b777a35f81b11"><span>Rangplatz auf einer Bewerberliste</span></label><label><input type="checkbox" autocomplete="off" name="f7f9ae8fb1b6dbb8a66b777a35f81b11"><span>Reaktionszeit in Sekunden</span></label><label><input type="checkbox" autocomplete="off" name="f7f9ae8fb1b6dbb8a66b777a35f81b11"><span>Anzahl korrekt gelöster Aufgaben in einem IQ-Test</span></label><label><input type="checkbox" autocomplete="off" name="f7f9ae8fb1b6dbb8a66b777a35f81b11"><span>Körpergrösse in cm</span></label>
+<div id="webex-1ac36446477c4cce4a0426bdf92314f0" class="webex-checkboxgroup" data-answer="alFPAxoEGAcYBmo=">
+<label><input type="checkbox" autocomplete="off" name="1ac36446477c4cce4a0426bdf92314f0"><span>Hautfarbe</span></label><label><input type="checkbox" autocomplete="off" name="1ac36446477c4cce4a0426bdf92314f0"><span>Rangplatz auf einer Bewerberliste</span></label><label><input type="checkbox" autocomplete="off" name="1ac36446477c4cce4a0426bdf92314f0"><span>Anzahl korrekt gelöster Aufgaben in einem IQ-Test</span></label><label><input type="checkbox" autocomplete="off" name="1ac36446477c4cce4a0426bdf92314f0"><span>Reaktionszeit in Sekunden</span></label><label><input type="checkbox" autocomplete="off" name="1ac36446477c4cce4a0426bdf92314f0"><span>Körpergrösse in cm</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -323,9 +290,31 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
+<p>In einer empirischen Untersuchung haben Sie Reaktionszeiten in Millisekunden gemessen. Zur Auswertung hat ihr Kollege die Variablen in Sekunden transformiert und die minimal erlaubte Reaktionszeit von 300 Millisekunden von den gemessenen Variablen abgezogen. Welchen Einfluss hat die Transformation auf das Skalenniveau der resultierenden Variable?</p>
+<div id="webex-b8d5283c7b391c6bb87a13561e43a4fb" class="webex-radiogroup" data-answer="OQlIBR4IH1Nq">
+<label><input type="radio" autocomplete="off" name="b8d5283c7b391c6bb87a13561e43a4fb"><span>Die Variable ist intervall skaliert statt der ursprünglich absolut skalierten Variable vor der Transformation</span></label><label><input type="radio" autocomplete="off" name="b8d5283c7b391c6bb87a13561e43a4fb"><span>Wegen der Transformation kann ich die Variable grundsätzlich nicht mehr sinnvoll interpretieren</span></label><label><input type="radio" autocomplete="off" name="b8d5283c7b391c6bb87a13561e43a4fb"><span>Die Transformation hat keinen Einfluss auf das Skalenniveau, bei Reaktionszeiten handelt es sich um absolut skalierte Variablen</span></label><label><input type="radio" autocomplete="off" name="b8d5283c7b391c6bb87a13561e43a4fb"><span>Variablen sollten grundsätzlich nicht transformiert werden</span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>Die Transformation ist eine positiv lineare Transformation. Konkret ergibt sich die endgültige Variable aus der Formel: <code>Y = 1/1000 * (RTms - 300)</code>. Diese Transformation ist für intervall skalierte Variablen sinnvoll, durch die Subtraktion der minimalen Reaktionszeit verliert die Variable den absoluten Nullpunkt und ist deshalb noch intervall skaliert, statt der ursprünglichen absolut skalierten Reaktionszeit in Millisekunden.</p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>Welche der folgenden Merkmale würde am ehesten auf einer Nominalskala gemessen?</p>
+<div id="webex-140c8ae69bea3d3adb226b82488a89d8" class="webex-checkboxgroup" data-answer="agUcUhRRSQYVUklRbg==">
+<label><input type="checkbox" autocomplete="off" name="140c8ae69bea3d3adb226b82488a89d8"><span>Lieblingsfarbe</span></label><label><input type="checkbox" autocomplete="off" name="140c8ae69bea3d3adb226b82488a89d8"><span>PLZ</span></label><label><input type="checkbox" autocomplete="off" name="140c8ae69bea3d3adb226b82488a89d8"><span>Anzahl Stunden Schlaf in der letzten Nacht</span></label><label><input type="checkbox" autocomplete="off" name="140c8ae69bea3d3adb226b82488a89d8"><span>Höchster Schulabschluss</span></label><label><input type="checkbox" autocomplete="off" name="140c8ae69bea3d3adb226b82488a89d8"><span>Datum</span></label><label><input type="checkbox" autocomplete="off" name="140c8ae69bea3d3adb226b82488a89d8"><span>Grösse</span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>Das Merkmal PLZ und Lieblingsfarbe hat klar unterschiedlichen Kategorien, die sich nicht ordnen lassen und sollte deshalb unabhängig von der konkreten Messmethode bei der Messung in einer nominal skalierten Variable resultieren.</p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
 <p>Welche Aspekte bei der Messung von Merkmalen bestimmen das Skalenniveau der resultierenden Variable?</p>
-<div id="webex-cd5a8cf2b16201d50d6ae4952ddd59c6" class="webex-checkboxgroup" data-answer="OFUZURRSSgJOAGs=">
-<label><input type="checkbox" autocomplete="off" name="cd5a8cf2b16201d50d6ae4952ddd59c6"><span>Die Art der Messung bzw. die Messmethode</span></label><label><input type="checkbox" autocomplete="off" name="cd5a8cf2b16201d50d6ae4952ddd59c6"><span>Die Merkmalsausprägungen der empirischen Beobachtungen</span></label><label><input type="checkbox" autocomplete="off" name="cd5a8cf2b16201d50d6ae4952ddd59c6"><span>Das Merkmal selbst (z.Bsp. Grösse, Alter, Geschlecht)</span></label><label><input type="checkbox" autocomplete="off" name="cd5a8cf2b16201d50d6ae4952ddd59c6"><span>Die Zahlen des numerischen Relativs die sich aus der Messmethode ergeben</span></label><label><input type="checkbox" autocomplete="off" name="cd5a8cf2b16201d50d6ae4952ddd59c6"><span>Die Transformationen die ich mit der Variable nach der Messung durchführe</span></label>
+<div id="webex-69361d634c7d390c88dce02753566679" class="webex-checkboxgroup" data-answer="bQkfBx1UGgIYUmo=">
+<label><input type="checkbox" autocomplete="off" name="69361d634c7d390c88dce02753566679"><span>Die Zahlen des numerischen Relativs die sich aus der Messmethode ergeben</span></label><label><input type="checkbox" autocomplete="off" name="69361d634c7d390c88dce02753566679"><span>Die Transformationen die ich mit der Variable nach der Messung durchführe</span></label><label><input type="checkbox" autocomplete="off" name="69361d634c7d390c88dce02753566679"><span>Die Merkmalsausprägungen der empirischen Beobachtungen</span></label><label><input type="checkbox" autocomplete="off" name="69361d634c7d390c88dce02753566679"><span>Das Merkmal selbst (z.Bsp. Grösse, Alter, Geschlecht)</span></label><label><input type="checkbox" autocomplete="off" name="69361d634c7d390c88dce02753566679"><span>Die Art der Messung bzw. die Messmethode</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -340,12 +329,23 @@ ul.task-list li input[type="checkbox"] {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Auf welchen Skalenniveaus können wir den Unterschied zwischen A und B sinnvoll mit dem Unterschied von B und C vergleichen</p>
-<div id="webex-47147d8a475ddee12bdf8fa34fe0dc2a" class="webex-checkboxgroup" data-answer="bwYdBBtVFFFp">
-<label><input type="checkbox" autocomplete="off" name="47147d8a475ddee12bdf8fa34fe0dc2a"><span>Intervallskala</span></label><label><input type="checkbox" autocomplete="off" name="47147d8a475ddee12bdf8fa34fe0dc2a"><span>Ordinalskala</span></label><label><input type="checkbox" autocomplete="off" name="47147d8a475ddee12bdf8fa34fe0dc2a"><span>Absolutskala</span></label><label><input type="checkbox" autocomplete="off" name="47147d8a475ddee12bdf8fa34fe0dc2a"><span>Nominalskala</span></label>
+<div id="webex-3af7ba4090fc82a04c65afe9417ca777" class="webex-checkboxgroup" data-answer="aFBKB05QGABk">
+<label><input type="checkbox" autocomplete="off" name="3af7ba4090fc82a04c65afe9417ca777"><span>Absolutskala</span></label><label><input type="checkbox" autocomplete="off" name="3af7ba4090fc82a04c65afe9417ca777"><span>Nominalskala</span></label><label><input type="checkbox" autocomplete="off" name="3af7ba4090fc82a04c65afe9417ca777"><span>Intervallskala</span></label><label><input type="checkbox" autocomplete="off" name="3af7ba4090fc82a04c65afe9417ca777"><span>Ordinalskala</span></label>
 </div>
 </div>
 <div class="webex-solution">
 <p>Die Differenzen zwischen Merkmalsausprägungen können ab dem Intervallskalen Niveau sinnvoll miteinander verglichen werden. Da alle Eigenschaften von niedrigeren Skalenniveaus auch für höhere Skalenniveaus gelten, können wir die Differenzen auch auf der Absolutskala interpretieren.</p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>Mit welchen der folgenden Variablentypen in R kodiert man sinnvollerweise eine nominal skalierte Variable? (Mehrfachantworten Möglich)</p>
+<div id="webex-db89b21e869fa4fc17de388f9c354942" class="webex-checkboxgroup" data-answer="P1IUCU4DHVQUBmQ=">
+<label><input type="checkbox" autocomplete="off" name="db89b21e869fa4fc17de388f9c354942"><span>integer</span></label><label><input type="checkbox" autocomplete="off" name="db89b21e869fa4fc17de388f9c354942"><span>numeric</span></label><label><input type="checkbox" autocomplete="off" name="db89b21e869fa4fc17de388f9c354942"><span>character</span></label><label><input type="checkbox" autocomplete="off" name="db89b21e869fa4fc17de388f9c354942"><span>factor</span></label><label><input type="checkbox" autocomplete="off" name="db89b21e869fa4fc17de388f9c354942"><span>logical</span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>Die Variablentypen <code>character</code> und <code>factor</code> eignen sich am ehesten um nominal skalierte Variablen zu kodieren. Dabei werden die Variablen zwar nicht direkt als numerische Werte gespeichert, aber die einzelnen Merkmalsausprägungen können so in den zugehörigen Kategorien gespeichert werden.</p>
 </div>
 </div>
 <hr>

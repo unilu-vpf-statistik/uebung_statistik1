@@ -2156,7 +2156,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <section id="wiederholung-vertiefung-zusammenhangsmasse" class="level2">
 <h2 class="anchored" data-anchor-id="wiederholung-vertiefung-zusammenhangsmasse">Wiederholung &amp; Vertiefung: Zusammenhangsmasse</h2>
-<p>In dieser Übung werden wir üben wie man von Hand und mit Hilfe von R Zusammenhangsmasse für metrische und diskrete Variablen berechnet. Wenn Sie einige Inhalte der Vorlesung nochmal vertiefen wollen, oder die Berechnung in R nachvollziehen wollen, dann können Sie sich die folgenden Vieoas anschauen:</p>
+<p>In dieser Übung werden wir üben wie man von Hand und mit Hilfe von R Zusammenhangsmasse für metrische und diskrete Variablen berechnet. Wenn Sie einige Inhalte der Vorlesung nochmal vertiefen wollen, oder die Berechnung in R nachvollziehen wollen, dann können Sie sich die folgenden Videos anschauen:</p>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=dsyTQNUvqH0">Grundkonzept: Korrelation</a></li>
 <li><a href="https://www.youtube.com/watch?v=EhD_5uh9fss">Determinationskoeffizienten und Erklärte Varianz</a></li>
@@ -2164,7 +2164,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </section>
 <section id="übungen" class="level2">
 <h2 class="anchored" data-anchor-id="übungen">Übungen</h2>
-<p>In den folgenden Übungen können Sie entweder den simulierten Datensatz <a href="correlation_data.csv">correlation_Data.csv</a> nutzen, oder Sie können die in den Aufgaben angegebenen Deskriptiven Statistiken nutzen die auf Basis des Datensatzes ausgerechnet wurden verwenden um die jeweilgen Tests von Hand zu rechnen. Der Datensatz enthält die Variablen: <code>geschlecht</code>, <code>groesse</code>, <code>alter</code>, <code>luzern</code>.</p>
+<p>In den folgenden Übungen können Sie entweder den simulierten Datensatz <a href="correlation_data.csv">correlation_data.csv</a> nutzen, oder Sie können die in den Aufgaben angegebenen Deskriptiven Statistiken nutzen die auf Basis des Datensatzes ausgerechnet wurden verwenden um die jeweiligen Tests von Hand zu rechnen. Der Datensatz enthält die Variablen: <code>geschlecht</code>, <code>groesse</code>, <code>alter</code>, <code>luzern</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(correlation_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -2193,19 +2193,35 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 <p>Wie in den bisherigen Übungen finden Sie über den Übungsaufgaben die <code>webr</code> Konsole, die Ihnen das Schreiben und Durchführen von R Code direkt auf der Website ermöglicht. Wenn viele Studierenden die Übungen parallel machen, dann kann es sein, dass <code>webr</code> langsam wird.</p>
 <blockquote class="blockquote">
-<p>Um den Code den Sie geschrieben haben auszuführen drücken Sie entwedern <code>Run Code</code>, damit der gesamte Code ausgeführt würde. Alternativ können Sie auch einzelne Zeilen ausführen, indem sie <kbd>CRTL</kbd>+<kbd>Enter</kbd> (Windows) oder <kbd>CMD</kbd>+<kbd>Enter</kbd> (Mac) drücken.</p>
+<p>Um den Code den Sie geschrieben haben auszuführen drücken Sie entweder <code>Run Code</code>, damit der gesamte Code ausgeführt würde. Alternativ können Sie auch einzelne Zeilen ausführen, indem sie <kbd>CRTL</kbd>+<kbd>Enter</kbd> (Windows) oder <kbd>CMD</kbd>+<kbd>Enter</kbd> (Mac) drücken.</p>
 </blockquote>
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <blockquote class="blockquote">
-<p>Nutzen Sie eine <a href="https://unilu-vpf-statistik.github.io/uebung_statistik1/about.html#suchmaschinen">Suchmaschine</a>, wenn Sie nicht wissen welche Funktionen Ihnen ein bestimmtes Ergebnis liefern. Ausserdem können Sie in R immer die <a href="https://www.r-project.org/help.html">Hilfe</a> einer Funktion aufrufen, indem sie vor den Namen der Funktion ein Fragezeichen schreiben, z. Bsp <code>?median</code> oder die Hilfe-Funktion <code>help()</code> mit dem jeweligen Funktionsbefehl ausführen: <code>help(median)</code>.</p>
+<p>Nutzen Sie eine <a href="https://unilu-vpf-statistik.github.io/uebung_statistik1/about.html#suchmaschinen">Suchmaschine</a>, wenn Sie nicht wissen welche Funktionen Ihnen ein bestimmtes Ergebnis liefern. Ausserdem können Sie in R immer die <a href="https://www.r-project.org/help.html">Hilfe</a> einer Funktion aufrufen, indem sie vor den Namen der Funktion ein Fragezeichen schreiben, z. Bsp <code>?median</code> oder die Hilfe-Funktion <code>help()</code> mit dem jeweiligen Funktionsbefehl ausführen: <code>help(median)</code>.</p>
 </blockquote>
 <div class="webex-question">
 <div class="webex-check webex-box">
+<p>Sie wollen für die Stichprobe von N = 180 Personen aus dem Datensatz <code>correlation_data.csv</code> testen, ob die Korrelation zwischen <code>alter</code> und <code>groesse</code> von dem Wert <span class="math inline">\(\rho_0 = .40\)</span> unterschiedlich ist. Berechnen Sie dafür aus der Kovarianz der beiden Variablen ist <span class="math inline">\(s_{XY} = 4.48\)</span>, sowie deren Standardabweichungen <span class="math inline">\(s_{X} = 2.59\)</span>, und <span class="math inline">\(s_{X} = 6.86\)</span> die Korrelation.</p>
+<p>Zur Berechnung der z-Statistik für den Unterschied der beobachteten Korrelation müssen Sie als erstes den <span class="math inline">\(Z\)</span>-Wert der beobachteten Korrelation berechnen: <span class="math inline">\(Z_r =\)</span> <input class="webex-solveme nospaces" id="webex-c6bd70e11e0f8400dc5ccaf4a75ac4f1" data-tol="0.05" size="20" data-answer="OBRSSgUFUhNs"></p>
+<p>Darüber hinaus müssen sie auch den <span class="math inline">\(Z\)</span>-Wert der Korrelation unter der Nullhypothese berechnen (3-Nachkommastellen): <span class="math inline">\(Z_{\rho_0} =\)</span> <input class="webex-solveme nospaces" id="webex-09f72df0a08fd2c8568b20585e29e744" data-tol="0.05" size="20" data-answer="axtWGQZWUhI8"></p>
+<p>Dann müssen Sie noch die Standardabweichung der Stichprobenkennwerte Verteilung berechnen (3-Nachkommastellen): <span class="math inline">\(\sigma_Z =\)</span> <input class="webex-solveme nospaces" id="webex-c4c1481010970de7cc8ae2fe46e1cf37" data-tol="0.05" size="20" data-answer="OBZTHwQPBBJs"></p>
+<p>Berechnen Sie anhand dieser Werte den empirischen <span class="math inline">\(z\)</span>-Wert für den Unterschied der beobachteten Korrelation von der Korrelation unter der Nullhypothese (2-Nachkommastellen): <span class="math inline">\(z_{emp} =\)</span> <input class="webex-solveme nospaces" id="webex-ac60fab676dbee22cfb2769eec558733" data-tol="0.05" size="20" data-answer="OkEbAkhTUxRq"></p>
+</div>
+<div class="webex-solution">
+<p>Als erstes berechnen wir aus den Statistiken die gegeben sind die Korrelation zwischen <code>groesse</code> und <code>alter</code>. Diese ist wie in einer vorherigen Übung <span class="math inline">\(r_{XY} = 0.25\)</span>.</p>
+<p>Mit dieser Korrelation können wir anhand der Formel für die Fisher’s Z-Transformation <span class="math inline">\(Z_r = \frac{1}{2} \cdot \text{ln} \left(\frac{1 + r}{1-r}\right)\)</span> den <span class="math inline">\(Z\)</span>-Wert der beobachteten Korrelation berechnen: <span class="math inline">\(Z_r = 0.257\)</span></p>
+<p>Entsprechend können wir auch den <span class="math inline">\(Z\)</span>-Wert für die Korrelation unter der Nullhypothese berechnen: <span class="math inline">\(Z_{\rho_0} = 0.424\)</span></p>
+<p>Die Standardabweichung der Stichprobenkennwerteverteilung ergibt sich aus <span class="math inline">\(\sigma_Z = \frac{1}{\sqrt{N-3}} = \frac{1}{\sqrt{180-3}}= 0.075\)</span></p>
+<p>Auf Basis dieser Werte können wir den empirischen <span class="math inline">\(z\)</span>-Wert für den Test aus <span class="math inline">\(z_{emp} = \frac{Z_r - Z_{\rho_0}}{\sigma_Z} = -2.21\)</span> berechnen.</p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
 <p>Sie wollen für die Stichprobe von N = 180 Personen aus dem Datensatz <code>correlation_data.csv</code> testen, ob <code>alter</code> mit der <code>groesse</code> zusammenhängt. Dafür wollen Sie eine Produkt-Moment Korrelation berechnen. Die Kovarianz der beiden Variablen ist <span class="math inline">\(s_{XY} = 4.48\)</span>, die Standardabweichung des Alters ist <span class="math inline">\(s_{X} = 2.59\)</span>, und die Standardabweichung der Grösse ist <span class="math inline">\(s_{X} = 6.86\)</span>.</p>
-<p>Berechnen Sie die Produkt-Moment-Korrelation (auf 2-stellen gerunder): <input class="webex-solveme nospaces" id="webex-50f211a8146fee481c6bc8b424910491" data-tol="0.05" size="20" data-answer="bhJWHAMEQ2U="></p>
-<p>Berchnen Sie den empirischen <span class="math inline">\(t\)</span>-Wert für den Hypothesentest, ob die Korrelation bedeutsam von Null unterschiedlich ist <input class="webex-solveme nospaces" id="webex-0ecc0f04f15251f00d7f84a5a6be3f5c" data-tol="0.05" size="20" data-answer="a0dQTQRREmk="></p>
-<p>Bestimmen Sie den kritischen <span class="math inline">\(t\)</span>-Wert für eine ungerichtete Hypothese mit <span class="math inline">\(\alpha = .05\)</span>. Wegen der hohen Freiheitsgrade können Sie dafür näherungsweise die Tabelle der Standardnormalverteilung nutzen: <input class="webex-solveme nospaces" id="webex-50bfbe86f2859be6de2e7d677ca6c96c" data-tol="0.05" size="20" data-answer="bhJTSFtSGms="></p>
+<p>Berechnen Sie die Produkt-Moment-Korrelation (auf 2-stellen gerunder): <input class="webex-solveme nospaces" id="webex-871ac2d8a525fbaf4d8acebe6f2d37b4" data-tol="0.05" size="20" data-answer="YxUBT1EHRmU="></p>
+<p>Berchnen Sie den empirischen <span class="math inline">\(t\)</span>-Wert für den Hypothesentest, ob die Korrelation bedeutsam von Null unterschiedlich ist <input class="webex-solveme nospaces" id="webex-e4000e607d4031f5e1f60c2fa9e7aeda" data-tol="0.05" size="20" data-answer="PhYDHgRSFG0="></p>
+<p>Bestimmen Sie den kritischen <span class="math inline">\(t\)</span>-Wert für eine ungerichtete Hypothese mit <span class="math inline">\(\alpha = .05\)</span>. Wegen der hohen Freiheitsgrade können Sie dafür näherungsweise die Tabelle der Standardnormalverteilung nutzen: <input class="webex-solveme nospaces" id="webex-1f96ea50eb334cbb9c4f1b9dbd0eb9aa" data-tol="0.05" size="20" data-answer="akQIGFxWF20="></p>
 </div>
 <div class="webex-solution">
 <p>Die Korrelation können Sie anhand der Fromel <span class="math inline">\(r_{XY} = \frac{s_{XY}}{s_X \cdot s_Y}\)</span> aus den Werte in der Aufgabenstellung berechnen. Dabei sollten Sie auf den Wert <span class="math inline">\(0.25\)</span> kommen.</p>
@@ -2216,28 +2232,12 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Sie wollen für die Stichprobe von N = 180 Personen aus dem Datensatz <code>correlation_data.csv</code> berechnen, ob es einen Zusammenhang zwischen der <code>groesse</code> und dem <code>geschlecht</code> der Teilnehmer gibt. Der t-test für unabhängige Stichproben hat einen empirischen <span class="math inline">\(t\)</span>-Wert von <span class="math inline">\(t_{emp} = -9.24\)</span> ergeben.</p>
-<p>Berechnen Sie die Punkt-Biseriale-Korrelation (auf 2-stellen gerundet): <input class="webex-solveme nospaces" id="webex-20059314e6bfc539512d0c5e51211e59" data-tol="0.05" size="20" data-answer="aRIAGwwEE2k=">.</p>
-<p>Wie viel Varianz wird durch das Geschlecht an der Grösse erklärt (in Prozent mit keinen Nachkommastellen): <input class="webex-solveme nospaces" id="webex-d8532d6315a7bd4285b930d3bd4efe35" data-tol="0.05" size="20" data-answer="PxoGARA5"></p>
+<p>Berechnen Sie den Betrag der Punkt-Biseriale-Korrelation (auf 2-stellen gerundet): <span class="math inline">\(|r_{pb}| =\)</span> <input class="webex-solveme nospaces" id="webex-70d30341153243dca7e5727e3190f6ee" data-tol="0.05" size="20" data-answer="bBJUHQUEFmw=">.</p>
+<p>Wie viel Varianz wird durch das Geschlecht an der Grösse erklärt (in Prozent mit keinen Nachkommastellen): <input class="webex-solveme nospaces" id="webex-94bb87047f4be7b23226b7571d71af45" data-tol="0.05" size="20" data-answer="YhZRUBpq"></p>
 </div>
 <div class="webex-solution">
-<p>Mit Hilfe der Formel <span class="math inline">\(r_{pb} = \frac{t}{\sqrt{t^2+df}}\)</span> können wir den <span class="math inline">\(t\)</span>-Wert in die Punkt-Biseriale Korrelation umrechnen. Die Freiheitsgrade ergeben sich dabei aus <span class="math inline">\(df = N - 2 = 178\)</span>. Das Ergebnis ist dabei: <span class="math inline">\(r_{pb} = 0.57\)</span>.</p>
+<p>Mit Hilfe der Formel <span class="math inline">\(r_{pb} = \frac{t}{\sqrt{t^2+df}}\)</span> können wir den <span class="math inline">\(t\)</span>-Wert in die Punkt-Biseriale Korrelation umrechnen. Die Freiheitsgrade ergeben sich dabei aus <span class="math inline">\(df = N - 2 = 178\)</span>. Wenn Sie dabei den negativen <span class="math inline">\(t\)</span>-Werte von <span class="math inline">\(t_{emp} = -9.24\)</span> einsetzen sollten Sie dabei auf den Wert: <span class="math inline">\(r_{pb} = -0.57\)</span> kommen. Da sie bei der Nominalskalierten Variable <code>geschlecht</code> nicht wirklich eine klare Ordnung haben, macht es mehr Sinn den absoluten Wert der punkt-biserialen Korrelation anzugeben: <span class="math inline">\(|r_{pb}| = 0.57\)</span></p>
 <p>Für die aufgeklärte Varianz können wir die Punkt-Biseriale Korrelation quadrieren: <span class="math inline">\(r_{pb}^2 = 0.32\)</span>. Dieser Wert mal 100 gibt die aufgeklärte Varianz in Prozent</p>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Sie wollen für die Stichprobe von N = 180 Personen aus dem Datensatz <code>correlation_data.csv</code> testen, ob die Korrelation zwischen <code>alter</code> und <code>groesse</code> von dem Wert <span class="math inline">\(\rho_0 = .40\)</span> unterschiedlich ist. Berechnen Sie dafür aus der Kovarianz der beiden Variablen ist <span class="math inline">\(s_{XY} = 4.48\)</span>, sowie deren Standardabweichungen <span class="math inline">\(s_{X} = 2.59\)</span>, und <span class="math inline">\(s_{X} = 6.86\)</span> die Korrelation.</p>
-<p>Zur Berechnung der z-Statistik für den Unterschied der beobachteten Korrelation müssen Sie als erstes den <span class="math inline">\(Z\)</span>-Wert der beobachteten Korrelation berechnen: <span class="math inline">\(Z_r =\)</span> <input class="webex-solveme nospaces" id="webex-c8e244dbab495eff403957ee6c04d0a7" data-tol="0.05" size="20" data-answer="OBpVHAYBU0A8"></p>
-<p>Darüber hinaus müssen sie auch den <span class="math inline">\(Z\)</span>-Wert der Korrelation unter der Nullhypothese berechnen (3-Nachkommastellen): <span class="math inline">\(Z_{\rho_0} =\)</span> <input class="webex-solveme nospaces" id="webex-e7b9f18049235476d37a2bf2f33dea2f" data-tol="0.05" size="20" data-answer="PhVSF1IDDBJp"></p>
-<p>Dann müssen Sie noch die Standardabweichung der Stichprobenkennwerte Verteilung berechnen (3-Nachkommastellen): <span class="math inline">\(\sigma_Z =\)</span> <input class="webex-solveme nospaces" id="webex-99afa4148aeda18d5777015401ac7c28" data-tol="0.05" size="20" data-answer="YhtRSFEDBBZl"></p>
-<p>Berechnen Sie anhand dieser Werte den empirischen <span class="math inline">\(z\)</span>-Wert für den Unterschied der beobachteten Korrelation von der Korrelation unter der Nullhypothese (2-Nachkommastellen): <span class="math inline">\(z_{emp} =\)</span> <input class="webex-solveme nospaces" id="webex-6de4ad27a6d69db40ddc093d600d1bb3" data-tol="0.05" size="20" data-answer="bUZIBk9WAxU8"></p>
-</div>
-<div class="webex-solution">
-<p>Als erstes berechnen wir aus den Statistiken die gegeben sind die Korrelation zwischen <code>groesse</code> und <code>alter</code>. Diese ist wie in einer vorherigen Übung <span class="math inline">\(r_{XY} = 0.25\)</span>.</p>
-<p>Mit dieser Korrelation können wir anhand der Formel für die Fisher’s Z-Transformation <span class="math inline">\(Z_r = \frac{1}{2} \cdot \text{ln} \left(\frac{1 + r}{1-r}\right)\)</span> den <span class="math inline">\(Z\)</span>-Wert der beobachteten Korrelation berechnen: <span class="math inline">\(Z_r = 0.257\)</span></p>
-<p>Entsprechend können wir auch den <span class="math inline">\(Z\)</span>-Wert für die Korrelation unter der Nullhypothese berechnen: <span class="math inline">\(Z_{\rho_0} = 0.424\)</span></p>
-<p>Die Standardabweichung der Stichprobenkennwerteverteilung ergibt sich aus <span class="math inline">\(\sigma_Z = \frac{1}{\sqrt{N-3}} = \frac{1}{\sqrt{180-3}}= 0.075\)</span></p>
-<p>Auf Basis dieser Werte können wir den empirischen <span class="math inline">\(z\)</span>-Wert für den Test aus <span class="math inline">\(z_{emp} = \frac{Z_r - Z_{\rho_0}}{\sigma_Z} = -2.21\)</span> berechnen.</p>
 </div>
 </div>
 

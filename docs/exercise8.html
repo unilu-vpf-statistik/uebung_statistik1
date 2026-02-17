@@ -2156,7 +2156,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <section id="wiederholung-vertiefung-parameterschätzung" class="level2">
 <h2 class="anchored" data-anchor-id="wiederholung-vertiefung-parameterschätzung">Wiederholung &amp; Vertiefung: Parameterschätzung</h2>
-<p>In dieser Übung werden wir Üben mit den Konzepten der Parameterschätzung und Konfidenzintervallen zu arbeiten. Wenn Sie die Inhalte der Vorlesung nochmal vertiefen wollen, dann empfehle ich Ihnen die folgenden Videos. Beachten Sie das das erste Videos etwas tiefer in die mathematischen Grundlagen des Zentralen Grenzwertsatzes und der Normalverteilung einsteigen. Dieses Video ist als Verteifung für interessierte Studierende gedacht, die konzeptuelle Grundlagen hinter der Normalverteilung besser verstehen wollen. Es wird nicht erwartet, dass Sie die mathematischen Ableitungen auswendig können und selbst anwenden können. Dennoch hilft Ihnen das Videos ein besseres Verstädnis für die Normalverteilung und ihre Relevanz in der Statistik zu bekommen:</p>
+<p>In dieser Übung werden wir Üben mit den Konzepten der Parameterschätzung und Konfidenzintervallen zu arbeiten. Wenn Sie die Inhalte der Vorlesung nochmal vertiefen wollen, dann empfehle ich Ihnen die folgenden Videos. Beachten Sie das das erste Videos etwas tiefer in die mathematischen Grundlagen des Zentralen Grenzwertsatzes und der Normalverteilung einsteigen. Dieses Video ist als Verteifung für interessierte Studierende gedacht, die konzeptuelle Grundlagen hinter der Normalverteilung besser verstehen wollen. Es wird nicht erwartet, dass Sie die mathematischen Ableitungen auswendig können und selbst anwenden können. Dennoch hilft Ihnen das Videos ein besseres Verständnis für die Normalverteilung und ihre Relevanz in der Statistik zu bekommen:</p>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=zeJD6dqJ5lo">Ausführliche Erklärung des Zentralen Grenzwertsatzes</a></li>
 <li><a href="https://www.youtube.com/watch?v=ftYdEm6pEkE&amp;t=31s">Interpretation von Konfidenzintervallen</a></li>
@@ -2164,7 +2164,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </section>
 <section id="übungen" class="level2">
 <h2 class="anchored" data-anchor-id="übungen">Übungen</h2>
-<p>In den folgenden Übungen nutzen Sie keinen konkreten Datensatz, sondern werden anhand von Verteilungsannahmen und theoretischen Populationsparmaetern Hypothesen formulieren, Kritische Werte berechnen und Hypothesentests für Einzelfälle durchführen. Nutzen sie R dabei einfach als Taschenrechner.</p>
+<p>In den folgenden Übungen nutzen Sie keinen konkreten Datensatz, sondern werden anhand von Verteilungsannahmen und theoretischen Populationsparametern Hypothesen formulieren, Kritische Werte berechnen und Hypothesentests für Einzelfälle durchführen. Nutzen sie R dabei einfach als Taschenrechner.</p>
 <p>Falls Sie die Übungsfragen nicht mit R beantworten wollen, dann können Sie die hier gedruckte Tabelle der z-Werte der Verteilungsfunktion der Standardnormalverteilung nutzen um die Fragen zu beantworten.</p>
 <p>Beachten Sie, dass sie für die Nutzung der Tabelle der z-Werte ihre unstandardisierten Ergebnisse <span class="math inline">\(X\)</span>, für die wir in der Regel annehmen, dass sie einer Normalverteilung folgen, in <span class="math inline">\(z\)</span>-Werte transformieren müssen, die einer Standardnormalverteilung folgen.</p>
 <p><span class="math display">\[
@@ -2179,112 +2179,19 @@ z = \frac{X - \mu}{\sigma}
 <p>Wie in den bisherigen Übungen finden Sie über den Übungsaufgaben die <code>webr</code> Konsole, die Ihnen das Schreiben und Durchführen von R Code direkt auf der Website ermöglicht. Wenn viele Studierenden die Übungen parallel machen, dann kann es sein, dass <code>webr</code> langsam wird.</p>
 <p>Hinweis: Sie können üben die Berechnungen und Umformungen, die Sie in der Prüfung durchführen müssen, auch mit Hilfe von R durchzuführen. Wenn Sie dies machen wollen, dann erlauben Sie sich einfach nicht der Verteilungs- und Quantilfunktion der Normalverteilung (<code>pnorm</code> und <code>qnorm</code>) zusätzlich einen Mittelwert <code>mean</code> und eine Standardabweichung <code>sd</code> als Argumente zu übergeben. Damit dienen die Funktionen einfach dem Ablesen aus der Verteilungstabelle für die Standardnormalverteilung und sie müssen die Aufgaben trotzdem über die Berechnung von <span class="math inline">\(z\)</span>-Werten lösen.</p>
 <blockquote class="blockquote">
-<p>Um den Code den Sie geschrieben haben auszuführen drücken Sie entwedern <code>Run Code</code>, damit der gesamte Code ausgeführt würde. Alternativ können Sie auch einzelne Zeilen ausführen, indem sie <kbd>CRTL</kbd>+<kbd>Enter</kbd> (Windows) oder <kbd>CMD</kbd>+<kbd>Enter</kbd> (Mac) drücken.</p>
+<p>Um den Code den Sie geschrieben haben auszuführen drücken Sie entweder <code>Run Code</code>, damit der gesamte Code ausgeführt würde. Alternativ können Sie auch einzelne Zeilen ausführen, indem sie <kbd>CRTL</kbd>+<kbd>Enter</kbd> (Windows) oder <kbd>CMD</kbd>+<kbd>Enter</kbd> (Mac) drücken.</p>
 </blockquote>
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <blockquote class="blockquote">
-<p>Nutzen Sie eine <a href="https://unilu-vpf-statistik.github.io/uebung_statistik1/about.html#suchmaschinen">Suchmaschine</a>, wenn Sie nicht wissen welche Funktionen Ihnen ein bestimmtes Ergebnis liefern. Ausserdem können Sie in R immer die <a href="https://www.r-project.org/help.html">Hilfe</a> einer Funktion aufrufen, indem sie vor den Namen der Funktion ein Fragezeichen schreiben, z. Bsp <code>?median</code> oder die Hilfe-Funktion <code>help()</code> mit dem jeweligen Funktionsbefehl ausführen: <code>help(median)</code>.</p>
+<p>Nutzen Sie eine <a href="https://unilu-vpf-statistik.github.io/uebung_statistik1/about.html#suchmaschinen">Suchmaschine</a>, wenn Sie nicht wissen welche Funktionen Ihnen ein bestimmtes Ergebnis liefern. Ausserdem können Sie in R immer die <a href="https://www.r-project.org/help.html">Hilfe</a> einer Funktion aufrufen, indem sie vor den Namen der Funktion ein Fragezeichen schreiben, z. Bsp <code>?median</code> oder die Hilfe-Funktion <code>help()</code> mit dem jeweiligen Funktionsbefehl ausführen: <code>help(median)</code>.</p>
 </blockquote>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Sie werfen 30 mal einen fairen Würfel und zählen aller Ergebnisse zusammen. Bestimmen Sie das zweiseitige 90%-Konfidenzintervall für die Summe der Ergebnisse unter Annahme des Zentralen Grenzwerttheorems. Berechnen Sie dafür als erstes den Erwartungswert <span class="math inline">\(\mu\)</span> und die Varianz <span class="math inline">\(\sigma^2\)</span> der Wahrscheinlichkeitsverteilung für den fairen Würfel (siehe Vorlesung 5: Wahrscheinlichkeitstheorie 2).</p>
-<div id="webex-280fd62854e048fd3967878a9648909c" class="webex-radiogroup" data-answer="aQkcVkgGHgho">
-<label><input type="radio" autocomplete="off" name="280fd62854e048fd3967878a9648909c"><span>Das 90% Konfidenzintervall ist: <span class="math inline">\(90\% KI = [89.62, 120.38]\)</span></span></label><label><input type="radio" autocomplete="off" name="280fd62854e048fd3967878a9648909c"><span>Das 90% Konfidenzintervall ist: <span class="math inline">\(90\% KI = [78.73, 131.27]\)</span></span></label><label><input type="radio" autocomplete="off" name="280fd62854e048fd3967878a9648909c"><span>Das 90% Konfidenzintervall ist: <span class="math inline">\(90\% KI = [102.19, 107.81]\)</span></span></label><label><input type="radio" autocomplete="off" name="280fd62854e048fd3967878a9648909c"><span>Mit den angegebenen Werten kann man das gefragte Konfidenzintervall nicht berechnen.</span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Laut Zentralem Grenzwerttheorem folgt die Summe der Ergebnisse des widerholten Würfelwurfs einer Normalverteilung:</p>
-<p><span class="math display">\[
-\sum X \sim \mathcal{N}(N\cdot\mu, \sqrt{N} \cdot \sigma)
-\]</span></p>
-<p>Um den Erwartungswert und die Standardabweichung der Verteilung der Summe der Ergebnisse zu berechnen müssen wir also zuerst den Erwartungswert und die Standardabweichung der Wahrscheinlichkeitsverteilung für einen Würfelwurf berechnen. Für einen fairen Würfel haben alle Ergebnisse von 1 bis 6 die gleiche theoretische Warhscheinlichkeit <span class="math inline">\(\pi = \frac{1}{6}\)</span>. Asu diesen Werten ergibt sich:</p>
-<p><span class="math display">\[
-E(X) = \mu = \sum_{i = 1}^j X_j \cdot \pi_j = 1 \cdot \frac{1}{6} + 2 \cdot \frac{1}{6} + 3 \cdot \frac{1}{6} + \dots + 6 \cdot \frac{1}{6} = 3.5
-\]</span></p>
-<p><span class="math display">\[
-VAR(X) = \sigma^2 = \sum_{i = 1}^j (X_j - \mu)^2 \cdot \pi_j = (1−3.5)^2 \cdot \frac{1}{6} + (2−3.5)^2 \cdot \frac{1}{6}+ \dots + (6−3.5)^2 \cdot \frac{1}{6} = 2.916...
-\]</span></p>
-<p>Mit diesen Werten können wir nun den Erwartungswert und die Standardabweichung der Verteilung der Summe aus <span class="math inline">\(N = 30\)</span> Würfelwurfen berechnen:</p>
-<p><span class="math display">\[
-\mu_\sum = N \cdot \mu = 30 \cdot 3.5 = 105
-\]</span></p>
-<p><span class="math display">\[
-\sigma_\sum = \sqrt{N} \cdot \sigma = \sqrt{N} \cdot \sqrt{\sigma^2} = \sqrt{30} \cdot \sqrt{2.916} = 9.35...
-\]</span></p>
-<p>Mit diesen Werten können wir nun die Grenzen des Konfidenzintervalls berechnen</p>
-<p><span class="math display">\[
-90\% KI = [\mu_\sum - z_{0.95}\cdot \sigma_\sum, \mu_\sum + z_{0.95} \cdot \sigma_\sum]
-\]</span></p>
-<p>den relevanten <span class="math inline">\(z\)</span>-Wert können wir in der Tabelle auslesen, oder mit Hilfe der Quantilfunktion in <code>R</code> bestimmen: <code>qnorm(0.95)</code>, daraus ergibt sich <span class="math inline">\(z_{0.95} = 1.65\)</span>. Das Konfidenzintervall ist entsprechend:</p>
-<p><span class="math display">\[
-90\% KI = [105 - 1.65 \cdot 9.35, 105 + 1.65 \cdot 9.35]
-\]</span></p>
-<p><span class="math display">\[
-90\% KI = [89.62, 120.38]
-\]</span></p>
-<p>Beachten Sie, dass wir an dieser Stelle das Konfindezintervall mit Hilfe der Standardabweichung berechnen, weil es sich um ein Ergebnis handelt das wir durch 30 Mal Würfeln erhalten. Die Stichprobe für das relevante Zufallsexperiment ist also 1.</p>
-<p>Wenn Sie <code>R</code> als Taschenrechner nutzen, könnte eine Lösung folgendermassen aussehen:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ergebnisse <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>wahrscheinlichkeiten <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">/</span><span class="fu">length</span>(results), <span class="at">length =</span> <span class="fu">length</span>(results))</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Kennwerte der Wahrscheinlichkeitsverteilung eines Würfelwurfs</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>erwartungswert <span class="ot">&lt;-</span> <span class="fu">sum</span>(ergebnisse<span class="sc">*</span>wahrscheinlichkeiten)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>varianz <span class="ot">&lt;-</span> <span class="fu">sum</span>((ergebnisse<span class="sc">-</span>erwartungswert)<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> wahrscheinlichkeiten)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Kennwerte der Normalverteilung der Summe aus 30 Würfelwürfen</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>anzahl_würfe <span class="ot">&lt;-</span> <span class="dv">30</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>erwartungswert_summe <span class="ot">&lt;-</span> anzahl_würfe <span class="sc">*</span> erwartungswert</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>varianz_summe <span class="ot">&lt;-</span> anzahl_würfe <span class="sc">*</span> varianz</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>sd_summe <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(varianz_summe)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Berechnung des erforderlichen z-Werts</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>z_95prozent <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="fl">0.95</span>)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Berechnung der Grenzen des Konfidenzintervalls</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>untere_grenze <span class="ot">&lt;-</span> erwartungswert_summe <span class="sc">-</span> z_95prozent <span class="sc">*</span> sd_summe</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>obere_grenze <span class="ot">&lt;-</span> erwartungswert_summe <span class="sc">+</span> z_95prozent <span class="sc">*</span> sd_summe</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>untere_grenze</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>obere_grenze</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Bis auf kleine Rundungsfehler erhalten Sie damit die gleiche Lösung wie in den oben berechneten Gleichungen.</p>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Sie wollen den Mittelwert der Grösse von Psychologiestudentinnen bestimmen. Sie wissen, dass die Grösse von Frauen im Alter von 18 bis 30 in der Schweiz einer Normalverteilung mit dem Mittelwert <span class="math inline">\(\mu = 165\)</span> und der Standardabweichung <span class="math inline">\(\sigma = 7\)</span> folgt. Wie gross muss ihre Stichprobe sein, wenn der Standardfehler für die Schätzung der Durchschnittlichen Grösse von Psychologiestudentinnen <span class="math inline">\(\sigma_{\bar{x}} = 1\)</span> sein soll?</p>
-<div id="webex-f762be8644b9ea5ce9b290acaeca79b1" class="webex-radiogroup" data-answer="PQcaA05VFAZp">
-<label><input type="radio" autocomplete="off" name="f762be8644b9ea5ce9b290acaeca79b1"><span>Die Stichprobegrässe muss <span class="math inline">\(N = 30\)</span> gross sein.</span></label><label><input type="radio" autocomplete="off" name="f762be8644b9ea5ce9b290acaeca79b1"><span>Die Stichprobegrässe muss <span class="math inline">\(N = 49\)</span> gross sein.</span></label><label><input type="radio" autocomplete="off" name="f762be8644b9ea5ce9b290acaeca79b1"><span>Die Stichprobegrässe muss <span class="math inline">\(N = 7\)</span> gross sein.</span></label><label><input type="radio" autocomplete="off" name="f762be8644b9ea5ce9b290acaeca79b1"><span>Mit den angegebenen Werten kann man die erforderliche Stichprobengrösse nicht berechnen.</span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Um diese Frage zu beantworten müssen wir als erstes die Formel für den Standarfehler des Mittelwerts betrachten:</p>
-<p><span class="math display">\[
-\sigma_{\bar{x}} = \frac{\sigma_x}{\sqrt{N}}
-\]</span></p>
-<p>Die Standardabweichung in der Popultion <span class="math inline">\(\sigma_x\)</span> ist gegeben, ebenso ist angegeben, dass wir einen bestimmten Standardfehler <span class="math inline">\(\sigma_{\bar{x}}\)</span> erreichen wollen. Wir müssen diese Formel also nach der Stichprobengrösse <span class="math inline">\(N\)</span> auflösen.</p>
-<p>Um nach der gefragten Stichprobengrösse <span class="math inline">\(N\)</span> aufzulösen müssen wir die folgenden Schritte durchführen:</p>
-<ol type="1">
-<li>Beide Seiten mit der Wurzel der Stichprobengrösse <span class="math inline">\(\sqrt{N}\)</span> multiplizieren.</li>
-<li>Beide Seiten durch den Standardfehler des Mittelwerts <span class="math inline">\(\sigma_{\bar{x}}\)</span> teilen.</li>
-<li>Beide Seiten quadrieren.</li>
-</ol>
-<p><span class="math display">\[
-\sigma_{\bar{x}} \cdot \sqrt{N} = \sigma_x; \quad  \sqrt{N} = \frac{\sigma_x}{\sigma_{\bar{x}}}; \quad N = \left(\frac{\sigma_x}{\sigma_{\bar{x}}}\right)^2
-\]</span></p>
-<p>In diese umgeformte Formel, können wir nun die Werte aus der Fragestellung einsetzen. Wenn Sie dabei <code>R</code> als Taschenrechner nutzen wollen wäre den Code dafür:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>required_SE <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>population_sd <span class="ot">&lt;-</span> <span class="dv">7</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>required_Sample <span class="ot">&lt;-</span> (population_sd<span class="sc">/</span>required_SE)<span class="sc">^</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Damit sollten Sie auf eine Stichprobengrösse von <span class="math inline">\(N = 49\)</span> kommen, mit der Sie einen Standardfehler von <span class="math inline">\(\sigma_{\bar{x}} = 1\)</span> erreichen.</p>
-</div>
-</div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Sie wollen Testen, ob männliche Studierenden statistisch bedeutsam grösser sind als weibliche Studierende. Sie wählen dafür ein Signifkanzniveau von <span class="math inline">\(\alpha = .01\)</span>. Sie wissen, dass die Grösse von Frauen im Alter von 18 bis 30 in der Schweiz einer Normalverteilung mit dem Mittelwert <span class="math inline">\(\mu_W = 165\)</span> und der Standardabweichung <span class="math inline">\(\sigma_W = 7\)</span> folgt und nehmen an, dass das auch für weibliche Studierende gilt.</p>
 <p>Für die Planung der Untersuchung nehmen Sie an das männliche Studierende einer Normalverteilung mit Mittelwert <span class="math inline">\(\mu_M = 175\)</span> und Standardabweichung <span class="math inline">\(\sigma_M = 7\)</span> folgen. Wie gross muss ihre Stichprobe sein, damit das nach unten geschlossene Konfidenzintervall des Mittelwerts der Stichprobe der männlichen Studierenden, den Mittelwert der Verteilung der Frauen nicht einschliesst? Nehmen Sie dafür an, dass der beobachtete Mittelwert <span class="math inline">\(\bar{x}\)</span> dem Mittelwert der Populationsverteilung der Männer entspricht.</p>
-<div id="webex-af8e69b074250a6dd664616c6f20032e" class="webex-radiogroup" data-answer="OlcUVRoJTgBq">
-<label><input type="radio" autocomplete="off" name="af8e69b074250a6dd664616c6f20032e"><span>Die Stichprobegrässe muss <span class="math inline">\(N = 3\)</span> gross sein.</span></label><label><input type="radio" autocomplete="off" name="af8e69b074250a6dd664616c6f20032e"><span>Die Stichprobegrässe muss <span class="math inline">\(N = 10\)</span> gross sein.</span></label><label><input type="radio" autocomplete="off" name="af8e69b074250a6dd664616c6f20032e"><span>Die Stichprobegrässe muss <span class="math inline">\(N = 23\)</span> gross sein.</span></label><label><input type="radio" autocomplete="off" name="af8e69b074250a6dd664616c6f20032e"><span>Mit den angegebenen Werten kann man die erforderliche Stichprobengrösse nicht berechnen.</span></label>
+<div id="webex-56603eb4f4b3c7484b66b08da0af8dfd" class="webex-radiogroup" data-answer="bgcaAB9VTgQ7">
+<label><input type="radio" autocomplete="off" name="56603eb4f4b3c7484b66b08da0af8dfd"><span>Die Stichprobegrässe muss <span class="math inline">\(N = 3\)</span> gross sein.</span></label><label><input type="radio" autocomplete="off" name="56603eb4f4b3c7484b66b08da0af8dfd"><span>Die Stichprobegrässe muss <span class="math inline">\(N = 10\)</span> gross sein.</span></label><label><input type="radio" autocomplete="off" name="56603eb4f4b3c7484b66b08da0af8dfd"><span>Die Stichprobegrässe muss <span class="math inline">\(N = 23\)</span> gross sein.</span></label><label><input type="radio" autocomplete="off" name="56603eb4f4b3c7484b66b08da0af8dfd"><span>Mit den angegebenen Werten kann man die erforderliche Stichprobengrösse nicht berechnen.</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -2329,16 +2236,109 @@ VAR(X) = \sigma^2 = \sum_{i = 1}^j (X_j - \mu)^2 \cdot \pi_j = (1−3.5)^2 \cdot
 \]</span></p>
 <p>In diese umgeformte Ungleichung können wir nun die Werte aus der Aufgabenstellung, sowie den <span class="math inline">\(z\)</span>-Wert für die gewünscht Konfidenz einsetzen. Den <span class="math inline">\(z\)</span>-Wert können Sie entweder aus der Tabelle ablesen, indem sie den Wert für einen Wert grösser als .99 suchen. Oder Sie nutzen die Quantilfunktion in R für das gewünschte Konfidenzniveua <code>qnorm(p = .99)</code></p>
 <p>Wenn Sie die Berechnung in <code>R</code> durchführen ergibt sich dabei:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>z_confidence <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="at">p =</span> .<span class="dv">99</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sigma_male <span class="ot">&lt;-</span> <span class="dv">7</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>mean_male <span class="ot">&lt;-</span> <span class="dv">175</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>mu_female <span class="ot">&lt;-</span> <span class="dv">165</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>required_sample <span class="ot">&lt;-</span> ((z_confidence <span class="sc">*</span> sigma_male)<span class="sc">/</span>(mean_male <span class="sc">-</span> mu_female))<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># aufrunden um das ungleichheitszeichen zu beachten</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ceil</span>(required_sample)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>z_confidence <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="at">p =</span> .<span class="dv">99</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sigma_male <span class="ot">&lt;-</span> <span class="dv">7</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>mean_male <span class="ot">&lt;-</span> <span class="dv">175</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>mu_female <span class="ot">&lt;-</span> <span class="dv">165</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>required_sample <span class="ot">&lt;-</span> ((z_confidence <span class="sc">*</span> sigma_male)<span class="sc">/</span>(mean_male <span class="sc">-</span> mu_female))<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># aufrunden um das ungleichheitszeichen zu beachten</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ceil</span>(required_sample)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Damit kommen sie auf eine erfordeliche Stichprobengrösse von <span class="math inline">\(N = 3\)</span>. Sie müssen dabei jedoch beachten, dass wir hier angenommen haben, dass der Mittelwert der gezogenen Stichprobe dem Populationsmittelwert der Männer entspricht. In der Praxis ist es gut möglich, dass der Stichprobenmittelwert unter dem Populationsmittelwert liegt.</p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>Sie werfen 30 mal einen fairen Würfel und zählen aller Ergebnisse zusammen. Bestimmen Sie das zweiseitige 90%-Konfidenzintervall für die Summe der Ergebnisse unter Annahme des Zentralen Grenzwerttheorems. Berechnen Sie dafür als erstes den Erwartungswert <span class="math inline">\(\mu\)</span> und die Varianz <span class="math inline">\(\sigma^2\)</span> der Wahrscheinlichkeitsverteilung für den fairen Würfel (siehe Vorlesung 5: Wahrscheinlichkeitstheorie 2).</p>
+<div id="webex-fa4168b6cb230859f5b20f68cb02629d" class="webex-radiogroup" data-answer="PVEYARoJTgY+">
+<label><input type="radio" autocomplete="off" name="fa4168b6cb230859f5b20f68cb02629d"><span>Das 90% Konfidenzintervall ist: <span class="math inline">\(90\% KI = [102.19, 107.81]\)</span></span></label><label><input type="radio" autocomplete="off" name="fa4168b6cb230859f5b20f68cb02629d"><span>Mit den angegebenen Werten kann man das gefragte Konfidenzintervall nicht berechnen.</span></label><label><input type="radio" autocomplete="off" name="fa4168b6cb230859f5b20f68cb02629d"><span>Das 90% Konfidenzintervall ist: <span class="math inline">\(90\% KI = [89.62, 120.38]\)</span></span></label><label><input type="radio" autocomplete="off" name="fa4168b6cb230859f5b20f68cb02629d"><span>Das 90% Konfidenzintervall ist: <span class="math inline">\(90\% KI = [78.73, 131.27]\)</span></span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>Laut Zentralem Grenzwerttheorem folgt die Summe der Ergebnisse des widerholten Würfelwurfs einer Normalverteilung:</p>
+<p><span class="math display">\[
+\sum X \sim \mathcal{N}(N\cdot\mu, \sqrt{N} \cdot \sigma)
+\]</span></p>
+<p>Um den Erwartungswert und die Standardabweichung der Verteilung der Summe der Ergebnisse zu berechnen müssen wir also zuerst den Erwartungswert und die Standardabweichung der Wahrscheinlichkeitsverteilung für einen Würfelwurf berechnen. Für einen fairen Würfel haben alle Ergebnisse von 1 bis 6 die gleiche theoretische Warhscheinlichkeit <span class="math inline">\(\pi = \frac{1}{6}\)</span>. Asu diesen Werten ergibt sich:</p>
+<p><span class="math display">\[
+E(X) = \mu = \sum_{i = 1}^j X_j \cdot \pi_j = 1 \cdot \frac{1}{6} + 2 \cdot \frac{1}{6} + 3 \cdot \frac{1}{6} + \dots + 6 \cdot \frac{1}{6} = 3.5
+\]</span></p>
+<p><span class="math display">\[
+VAR(X) = \sigma^2 = \sum_{i = 1}^j (X_j - \mu)^2 \cdot \pi_j = (1−3.5)^2 \cdot \frac{1}{6} + (2−3.5)^2 \cdot \frac{1}{6}+ \dots + (6−3.5)^2 \cdot \frac{1}{6} = 2.916...
+\]</span></p>
+<p>Mit diesen Werten können wir nun den Erwartungswert und die Standardabweichung der Verteilung der Summe aus <span class="math inline">\(N = 30\)</span> Würfelwurfen berechnen:</p>
+<p><span class="math display">\[
+\mu_\sum = N \cdot \mu = 30 \cdot 3.5 = 105
+\]</span></p>
+<p><span class="math display">\[
+\sigma_\sum = \sqrt{N} \cdot \sigma = \sqrt{N} \cdot \sqrt{\sigma^2} = \sqrt{30} \cdot \sqrt{2.916} = 9.35...
+\]</span></p>
+<p>Mit diesen Werten können wir nun die Grenzen des Konfidenzintervalls berechnen</p>
+<p><span class="math display">\[
+90\% KI = [\mu_\sum - z_{0.95}\cdot \sigma_\sum, \mu_\sum + z_{0.95} \cdot \sigma_\sum]
+\]</span></p>
+<p>den relevanten <span class="math inline">\(z\)</span>-Wert können wir in der Tabelle auslesen, oder mit Hilfe der Quantilfunktion in <code>R</code> bestimmen: <code>qnorm(0.95)</code>, daraus ergibt sich <span class="math inline">\(z_{0.95} = 1.65\)</span>. Das Konfidenzintervall ist entsprechend:</p>
+<p><span class="math display">\[
+90\% KI = [105 - 1.65 \cdot 9.35, 105 + 1.65 \cdot 9.35]
+\]</span></p>
+<p><span class="math display">\[
+90\% KI = [89.62, 120.38]
+\]</span></p>
+<p>Beachten Sie, dass wir an dieser Stelle das Konfindezintervall mit Hilfe der Standardabweichung berechnen, weil es sich um ein Ergebnis handelt das wir durch 30 Mal Würfeln erhalten. Die Stichprobe für das relevante Zufallsexperiment ist also 1.</p>
+<p>Wenn Sie <code>R</code> als Taschenrechner nutzen, könnte eine Lösung folgendermassen aussehen:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ergebnisse <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>wahrscheinlichkeiten <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">/</span><span class="fu">length</span>(results), <span class="at">length =</span> <span class="fu">length</span>(results))</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Kennwerte der Wahrscheinlichkeitsverteilung eines Würfelwurfs</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>erwartungswert <span class="ot">&lt;-</span> <span class="fu">sum</span>(ergebnisse<span class="sc">*</span>wahrscheinlichkeiten)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>varianz <span class="ot">&lt;-</span> <span class="fu">sum</span>((ergebnisse<span class="sc">-</span>erwartungswert)<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> wahrscheinlichkeiten)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Kennwerte der Normalverteilung der Summe aus 30 Würfelwürfen</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>anzahl_würfe <span class="ot">&lt;-</span> <span class="dv">30</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>erwartungswert_summe <span class="ot">&lt;-</span> anzahl_würfe <span class="sc">*</span> erwartungswert</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>varianz_summe <span class="ot">&lt;-</span> anzahl_würfe <span class="sc">*</span> varianz</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>sd_summe <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(varianz_summe)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Berechnung des erforderlichen z-Werts</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>z_95prozent <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="fl">0.95</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Berechnung der Grenzen des Konfidenzintervalls</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>untere_grenze <span class="ot">&lt;-</span> erwartungswert_summe <span class="sc">-</span> z_95prozent <span class="sc">*</span> sd_summe</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>obere_grenze <span class="ot">&lt;-</span> erwartungswert_summe <span class="sc">+</span> z_95prozent <span class="sc">*</span> sd_summe</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>untere_grenze</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>obere_grenze</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Bis auf kleine Rundungsfehler erhalten Sie damit die gleiche Lösung wie in den oben berechneten Gleichungen.</p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>Sie wollen den Mittelwert der Grösse von Psychologiestudentinnen bestimmen. Sie wissen, dass die Grösse von Frauen im Alter von 18 bis 30 in der Schweiz einer Normalverteilung mit dem Mittelwert <span class="math inline">\(\mu = 165\)</span> und der Standardabweichung <span class="math inline">\(\sigma = 7\)</span> folgt. Wie gross muss ihre Stichprobe sein, wenn der Standardfehler für die Schätzung der Durchschnittlichen Grösse von Psychologiestudentinnen <span class="math inline">\(\sigma_{\bar{x}} = 1\)</span> sein soll?</p>
+<div id="webex-ec94fd9accb560875afa7a1cb95ead68" class="webex-radiogroup" data-answer="PlMVBUpUFVE+">
+<label><input type="radio" autocomplete="off" name="ec94fd9accb560875afa7a1cb95ead68"><span>Die Stichprobegrässe muss <span class="math inline">\(N = 30\)</span> gross sein.</span></label><label><input type="radio" autocomplete="off" name="ec94fd9accb560875afa7a1cb95ead68"><span>Die Stichprobegrässe muss <span class="math inline">\(N = 49\)</span> gross sein.</span></label><label><input type="radio" autocomplete="off" name="ec94fd9accb560875afa7a1cb95ead68"><span>Die Stichprobegrässe muss <span class="math inline">\(N = 7\)</span> gross sein.</span></label><label><input type="radio" autocomplete="off" name="ec94fd9accb560875afa7a1cb95ead68"><span>Mit den angegebenen Werten kann man die erforderliche Stichprobengrösse nicht berechnen.</span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>Um diese Frage zu beantworten müssen wir als erstes die Formel für den Standarfehler des Mittelwerts betrachten:</p>
+<p><span class="math display">\[
+\sigma_{\bar{x}} = \frac{\sigma_x}{\sqrt{N}}
+\]</span></p>
+<p>Die Standardabweichung in der Popultion <span class="math inline">\(\sigma_x\)</span> ist gegeben, ebenso ist angegeben, dass wir einen bestimmten Standardfehler <span class="math inline">\(\sigma_{\bar{x}}\)</span> erreichen wollen. Wir müssen diese Formel also nach der Stichprobengrösse <span class="math inline">\(N\)</span> auflösen.</p>
+<p>Um nach der gefragten Stichprobengrösse <span class="math inline">\(N\)</span> aufzulösen müssen wir die folgenden Schritte durchführen:</p>
+<ol type="1">
+<li>Beide Seiten mit der Wurzel der Stichprobengrösse <span class="math inline">\(\sqrt{N}\)</span> multiplizieren.</li>
+<li>Beide Seiten durch den Standardfehler des Mittelwerts <span class="math inline">\(\sigma_{\bar{x}}\)</span> teilen.</li>
+<li>Beide Seiten quadrieren.</li>
+</ol>
+<p><span class="math display">\[
+\sigma_{\bar{x}} \cdot \sqrt{N} = \sigma_x; \quad  \sqrt{N} = \frac{\sigma_x}{\sigma_{\bar{x}}}; \quad N = \left(\frac{\sigma_x}{\sigma_{\bar{x}}}\right)^2
+\]</span></p>
+<p>In diese umgeformte Formel, können wir nun die Werte aus der Fragestellung einsetzen. Wenn Sie dabei <code>R</code> als Taschenrechner nutzen wollen wäre den Code dafür:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>required_SE <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>population_sd <span class="ot">&lt;-</span> <span class="dv">7</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>required_Sample <span class="ot">&lt;-</span> (population_sd<span class="sc">/</span>required_SE)<span class="sc">^</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Damit sollten Sie auf eine Stichprobengrösse von <span class="math inline">\(N = 49\)</span> kommen, mit der Sie einen Standardfehler von <span class="math inline">\(\sigma_{\bar{x}} = 1\)</span> erreichen.</p>
 </div>
 </div>
 <hr>

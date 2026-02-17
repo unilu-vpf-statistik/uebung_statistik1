@@ -2171,7 +2171,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </section>
 <section id="übungen" class="level2">
 <h2 class="anchored" data-anchor-id="übungen">Übungen</h2>
-<p>In den folgenden Übungen können Sie entweder den simulierten Datensatz <a href="semester_data3.csv">semester_data3.csv</a>) nutzen, oder Sie können die in den Aufgaben angegebenen Kennwerte die auf Basis des Datensatzes ausgerechnet wurden verwenden um die jeweilgen Tests von Hand zu rechnen. Der Datensatz enthält die Variablen: <code>geschlecht</code>, <code>nationalität</code>, <code>wohnort</code>, <code>alter</code>, <code>wissen_statistik_start</code>, <code>wissen_statistik_end</code> und <code>grösse</code>.</p>
+<p>In den folgenden Übungen können Sie entweder den simulierten Datensatz <a href="semester_data3.csv">semester_data3.csv</a> nutzen, oder Sie können die in den Aufgaben angegebenen Kennwerte die auf Basis des Datensatzes ausgerechnet wurden verwenden um die jeweiligen Tests von Hand zu rechnen. Der Datensatz enthält die Variablen: <code>geschlecht</code>, <code>nationalität</code>, <code>wohnort</code>, <code>alter</code>, <code>wissen_statistik_start</code>, <code>wissen_statistik_end</code> und <code>grösse</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(semester_data3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -2200,20 +2200,45 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 <p>Wie in den bisherigen Übungen finden Sie über den Übungsaufgaben die <code>webr</code> Konsole, die Ihnen das Schreiben und Durchführen von R Code direkt auf der Website ermöglicht. Wenn viele Studierenden die Übungen parallel machen, dann kann es sein, dass <code>webr</code> langsam wird.</p>
 <blockquote class="blockquote">
-<p>Um den Code den Sie geschrieben haben auszuführen drücken Sie entwedern <code>Run Code</code>, damit der gesamte Code ausgeführt würde. Alternativ können Sie auch einzelne Zeilen ausführen, indem sie <kbd>CRTL</kbd>+<kbd>Enter</kbd> (Windows) oder <kbd>CMD</kbd>+<kbd>Enter</kbd> (Mac) drücken.</p>
+<p>Um den Code den Sie geschrieben haben auszuführen drücken Sie entweder <code>Run Code</code>, damit der gesamte Code ausgeführt würde. Alternativ können Sie auch einzelne Zeilen ausführen, indem sie <kbd>CRTL</kbd>+<kbd>Enter</kbd> (Windows) oder <kbd>CMD</kbd>+<kbd>Enter</kbd> (Mac) drücken.</p>
 </blockquote>
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <blockquote class="blockquote">
-<p>Nutzen Sie eine <a href="https://unilu-vpf-statistik.github.io/uebung_statistik1/about.html#suchmaschinen">Suchmaschine</a>, wenn Sie nicht wissen welche Funktionen Ihnen ein bestimmtes Ergebnis liefern. Ausserdem können Sie in R immer die <a href="https://www.r-project.org/help.html">Hilfe</a> einer Funktion aufrufen, indem sie vor den Namen der Funktion ein Fragezeichen schreiben, z. Bsp <code>?median</code> oder die Hilfe-Funktion <code>help()</code> mit dem jeweligen Funktionsbefehl ausführen: <code>help(median)</code>.</p>
+<p>Nutzen Sie eine <a href="https://unilu-vpf-statistik.github.io/uebung_statistik1/about.html#suchmaschinen">Suchmaschine</a>, wenn Sie nicht wissen welche Funktionen Ihnen ein bestimmtes Ergebnis liefern. Ausserdem können Sie in R immer die <a href="https://www.r-project.org/help.html">Hilfe</a> einer Funktion aufrufen, indem sie vor den Namen der Funktion ein Fragezeichen schreiben, z. Bsp <code>?median</code> oder die Hilfe-Funktion <code>help()</code> mit dem jeweiligen Funktionsbefehl ausführen: <code>help(median)</code>.</p>
 </blockquote>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>Sie haben in R mit der Funktion <code>t.test</code> berechnet ob sich das Alter zwischen den Weiblichen und Männlichen Studierenden in den Daten des Datensatzes <code>semester_data3</code> bedeutsam voneinander unterscheidet. Sie haben dabei folgenden Output erhalten.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/results_Interpretation.png" class="img-fluid figure-img"></p>
+<figcaption>Output des in R berechneten t-Tests</figcaption>
+</figure>
+</div>
+<p>Beurteilen, welche der folgenden Aussagen auf Basis des Outputs korrekt sind.</p>
+<div id="webex-c109476ef7c27db5dbf58e7fc6a9b149" class="webex-checkboxgroup" data-answer="OAEcCBgGGlRKB08Cag==">
+<label><input type="checkbox" autocomplete="off" name="c109476ef7c27db5dbf58e7fc6a9b149"><span>Bei dem Test handelt es sich um einen t-Test für anbhängige Stichproben</span></label><label><input type="checkbox" autocomplete="off" name="c109476ef7c27db5dbf58e7fc6a9b149"><span>Der empirische t-Wert liegt bei: <span class="math inline">\(t_{emp} \approx -.136\)</span></span></label><label><input type="checkbox" autocomplete="off" name="c109476ef7c27db5dbf58e7fc6a9b149"><span>Der <span class="math inline">\(p\)</span>-Wert für den Test ist grösser als <span class="math inline">\(\alpha = .05\)</span></span></label><label><input type="checkbox" autocomplete="off" name="c109476ef7c27db5dbf58e7fc6a9b149"><span>Das Mittlere Alter in der Gruppe der Männer ist <span class="math inline">\(\bar{x}_{M} = 22.3\)</span></span></label><label><input type="checkbox" autocomplete="off" name="c109476ef7c27db5dbf58e7fc6a9b149"><span>Die Menge an Beobchatungen in der Gruppe der Frauen ist <span class="math inline">\(N = 28\)</span></span></label><label><input type="checkbox" autocomplete="off" name="c109476ef7c27db5dbf58e7fc6a9b149"><span>Der t-Test hat eine gerichtete Hypotheses getestet</span></label>
+</div>
+</div>
+<div class="webex-solution">
+<ol type="1">
+<li><p>Der Titel des Outputs <code>Two Sample t-test</code> zeigt an, dass es sich um einen t-Test für unabhämngige Stichproben handelt. Für einen Einstichproben t-Test lautet der Title <code>One Sample t-test</code> und für einen t-Test für abhängige Stichproben <code>Paired Sample t-test</code>.</p></li>
+<li><p>Der empirische <span class="math inline">\(t\)</span>-Wert kann aus der zweiten Zeile des Outputs abgelesen werden und beträgt: <span class="math inline">\(t_{emp} = -0.13566\)</span></p></li>
+<li><p>Der exakte <span class="math inline">\(p\)</span>-Wert liegt bei <span class="math inline">\(p = 0.8931\)</span> was ebenfalls aus der zweiten Zeile des Outputs abgelesen werden kann. Dieser ist auch klar grösser als ein Signifkanzniveau von <span class="math inline">\(\alpha = .05\)</span></p></li>
+<li><p>Aus den letzten Zeilen des Outputs können Sie die Mittelwerte in den beiden Gruppen ablesen. Dabei liegt der Mittelwert der Männer bei <span class="math inline">\(\bar{x}_M = 22.3\)</span> und der Mittelwert der Frauen bei <span class="math inline">\(\bar{x}_F = 22.508\)</span></p></li>
+<li><p>Die Menge an Beobachtungen in den einzelnen Gruppen lässt sich aus dem Output nicht ablesen. Sie können allerdings auf Basis des Tests <span class="math inline">\(\rightarrow\)</span> <span class="math inline">\(t\)</span>-Test für unabhängige Stichproben; und den Freiheitsgrade <span class="math inline">\(df = 28\)</span> schliessen, dass die Gesamtstichprobengrösse der Gruppe der Männer und Frauen bei <span class="math inline">\(N = 30\)</span> liegt. Das folgt aus der Formel <span class="math inline">\(df = (N_1 -1) + (N_2 - 1) = N_1 + N_2 -2\)</span> für die Berechnung der Freiheitsgrade beim <span class="math inline">\(t\)</span>-Test für unabhängige Stichproben.</p></li>
+<li><p>Aus der dritten Zeile, die die <code>alternative hypothesis</code> angibt, können Sie ablesen, dass der Test ungerichtet durchgeführt wurde und die Alternativhypothese <span class="math inline">\(H_1: \mu1 \neq \mu2\)</span> testet, die keine Richtung anzeigt.</p></li>
+</ol>
+</div>
+</div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Sie wollen für die Stichprobe aus dem Datensatz <code>semester_data3.csv</code> testen, ob das Alter der Studierenden bedeutsam von dem Durchschnittlichen Alter aller Studierenden im Fach Psychologie <span class="math inline">\(\mu_0 = 23.5\)</span> abweicht. Der Datensatz enthälte Werte von <span class="math inline">\(N = 30\)</span> Studierenden. Der Mittelwert des Alters im Datensatz ist <span class="math inline">\(\bar{x} = 22.5\)</span> und der Populationsschätzer der Standardabweichung aus dem Datensatz ist <span class="math inline">\(\hat{\sigma} = 3.1\)</span>.</p>
 <p>Berechnen Sie den entsprechenden t-test um die zwei-seitige Hypothese zu prüfen, dass sich das Alter der Studierenden nicht bedeutsam von dem Wert <span class="math inline">\(\mu_0\)</span> unterscheidet. Kreuzen Sie an welche der folgenden Aussagen für den Test mit einem Signifikanzniveau von <span class="math inline">\(\alpha = .05\)</span> zutreffen.</p>
 <p><strong>Wichtig</strong>: Die Antworten beziehen sich auf die in der Aufgabe angegebenen gerundeten Werte. Wenn Sie den Test mit R auf Basis der Daten ausrechnen, werden Sie aufgrund von Rundungsfehlern auf leicht andere Werte kommen. Bei der Berechnung gehe ich davon aus, dass Sie Zwischenergebnisse auf 3-Nachkommastellen gerundet haben. Die Schlussfolgerung in Bezug auf die Signifikanz des Tests bleibt allerdings unverändert.</p>
-<div id="webex-9adbeb118cda29f8dc22f7a379a3edf0" class="webex-checkboxgroup" data-answer="YlFIU0lSHQFl">
-<label><input type="checkbox" autocomplete="off" name="9adbeb118cda29f8dc22f7a379a3edf0"><span>Der Betrage des kritische t-Werts liegt bei: <span class="math inline">\(|t_{krit}(\alpha = .05)| \approx |1.70|\)</span></span></label><label><input type="checkbox" autocomplete="off" name="9adbeb118cda29f8dc22f7a379a3edf0"><span>Der Betrag des empirische t-Werts liegt bei <span class="math inline">\(|t_{emp}| = 1.77\)</span></span></label><label><input type="checkbox" autocomplete="off" name="9adbeb118cda29f8dc22f7a379a3edf0"><span>Für den <span class="math inline">\(p\)</span>-Wert gilt, das <span class="math inline">\(p &lt; \alpha\)</span></span></label><label><input type="checkbox" autocomplete="off" name="9adbeb118cda29f8dc22f7a379a3edf0"><span>Die Freiheitsgrade des Tests sind <span class="math inline">\(df = 28\)</span></span></label>
+<div id="webex-fab8bef1ca631056a78089a44089e30e" class="webex-checkboxgroup" data-answer="PVFOCU5VSgE+">
+<label><input type="checkbox" autocomplete="off" name="fab8bef1ca631056a78089a44089e30e"><span>Der Betrage des kritische t-Werts liegt bei: <span class="math inline">\(|t_{krit}(\alpha = .05)| \approx |1.70|\)</span></span></label><label><input type="checkbox" autocomplete="off" name="fab8bef1ca631056a78089a44089e30e"><span>Der Betrag des empirische t-Werts liegt bei <span class="math inline">\(|t_{emp}| = 1.77\)</span></span></label><label><input type="checkbox" autocomplete="off" name="fab8bef1ca631056a78089a44089e30e"><span>Für den <span class="math inline">\(p\)</span>-Wert gilt, das <span class="math inline">\(p &lt; \alpha\)</span></span></label><label><input type="checkbox" autocomplete="off" name="fab8bef1ca631056a78089a44089e30e"><span>Die Freiheitsgrade des Tests sind <span class="math inline">\(df = 28\)</span></span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -2254,6 +2279,43 @@ t_{emp} = \frac{\bar{x} - \mu_0}{\hat{\sigma}_{\bar{x}}} = \frac{\bar{x} - \mu_0
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
+<p>Sie wollen testen, ob sich die Einschätzung des eigenen Wissens im Bezug auf das Fach Statistik von Beginn zum Ende des Semesters bei den Studierenden verändert hat. Dafür wollen Sie einen <span class="math inline">\(t\)</span>-Test für abhängige Stichproben rechnen. Aus den Daten haben Sie folgenden Kennwerte für die Differenz zwischen dem eingeschätzten Wissen am Ende <code>wissen_statistik_ende</code> und dem eingeschätzten Wissen am Anfang <code>wissen_statistik_start</code> berechnet:</p>
+<ul>
+<li>Mittelwert der Differenz: <span class="math inline">\(\bar{x}_D = 0.32\)</span></li>
+<li>Populationsschätzer der Standardabweichung der Differenz: <span class="math inline">\(\hat{\sigma}_D = 0.78\)</span></li>
+</ul>
+<p>Berechnen Sie den <span class="math inline">\(t\)</span>-Test für abhängige Stichproben aus den <span class="math inline">\(N = 30\)</span> Beobachtungen und nehmen Sie ein Signifikanzniveau von <span class="math inline">\(\alpha = .01\)</span> an. Sie testen die gerichtete Hypothese, dass das eingeschätzte Wissen am Ende des Semesters grösser als am Anfang ist</p>
+<div id="webex-b1a2a3bfd931e1eade8d976512ac36bd" class="webex-checkboxgroup" data-answer="OQFNAk0CTlc5">
+<label><input type="checkbox" autocomplete="off" name="b1a2a3bfd931e1eade8d976512ac36bd"><span>Bei den Test handelt es sich um einen Einstichproben <span class="math inline">\(t\)</span>-Test</span></label><label><input type="checkbox" autocomplete="off" name="b1a2a3bfd931e1eade8d976512ac36bd"><span>Der kritische <span class="math inline">\(t\)</span>-Wert liegt bei <span class="math inline">\(t_{krit}(\alpha = .01) = 1.6991\)</span></span></label><label><input type="checkbox" autocomplete="off" name="b1a2a3bfd931e1eade8d976512ac36bd"><span>Der empirische <span class="math inline">\(t\)</span>-Wert liegt bei <span class="math inline">\(t_{emp} = 2.25\)</span></span></label><label><input type="checkbox" autocomplete="off" name="b1a2a3bfd931e1eade8d976512ac36bd"><span>Der <span class="math inline">\(p\)</span>-Wert ist grösser als das Signifikanzniveau <span class="math inline">\(\alpha\)</span></span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>Bei diesem <span class="math inline">\(t\)</span>-Test handelt es sich um einen <span class="math inline">\(t\)</span>-Test für <em>abhängige</em> Stichproben. Die Freiheitsgrade des Test berechnen sich entsprechend als <span class="math inline">\(df = N-1 = 30-1 = 29\)</span></p>
+<p>Mit den Freiheitsgraden und dem Signifikanzniveau von <span class="math inline">\(\alpha = .01\)</span> können wir den kritischen <span class="math inline">\(t\)</span>-Wert aus der Tabelle der <span class="math inline">\(p\)</span>-Quantile ablesen. Dafür lesen wir den Wert aus der Zeile für <span class="math inline">\(df = 29\)</span> und dem <span class="math inline">\(p\)</span>-Quantil für <span class="math inline">\(p = 1 - \alpha = .99\)</span> ab. Dieser Werte ist <span class="math inline">\(t_{krit} (\alpha = .01) = 2.46\)</span></p>
+<blockquote class="blockquote">
+<p>Der in der zweiten Antwortalternative angegebene kritische <span class="math inline">\(t\)</span>-Wert ist für ein Signifikanzniveau von <span class="math inline">\(\alpha = .05\)</span>. Hier ist aber ein Signifkanzniveau von <span class="math inline">\(\alpha = .01\)</span> gewählt worden.</p>
+</blockquote>
+<p>Auf Basis der gegebenen Informationen aus der Aufgabe können wir auch den empirischen <span class="math inline">\(t\)</span>-Wert berechnen. Für den <span class="math inline">\(t\)</span>-Test für abhängige Stichproben ergibt sich dieser aus:</p>
+<p><span class="math display">\[
+t_{emp} = \frac{\bar{x}_D}{\hat{\sigma}_{\bar{x}_d}}= \frac{\bar{x}_D}{\frac{\hat{\sigma}_{D}}{\sqrt{N}}} = \frac{0.32}{\frac{0.78}{\sqrt{30}}} =
+\frac{0.32}{0.142} = 2.253
+\]</span></p>
+<p>Mit dem empirischen <span class="math inline">\(t\)</span>-Wert können wir aus der Tabelle der <span class="math inline">\(p\)</span>-Quantile auch das Intervall bestimmen in dem der <span class="math inline">\(p\)</span>-Wert liegt. Für die Zeile von <span class="math inline">\(df = 29\)</span> liegt <span class="math inline">\(t_{emp}\)</span> zwischen dem Wert des <span class="math inline">\(p\)</span>-Quantils <span class="math inline">\(p = .975 \rightarrow t = 2.04\)</span> und dem Wert des <span class="math inline">\(p\)</span>-Quantils für <span class="math inline">\(p = .99 \rightarrow t = 2.48\)</span>. Entsprechend ist der <span class="math inline">\(p\)</span>-Wert kleiner als .025 aber grösser als .01.</p>
+<p><strong>in <code>R</code></strong></p>
+<p>Wenn Sie den <span class="math inline">\(t\)</span>-Test in <code>R</code> direkt mit dem Datensatz ausrechnen, dann müssen Sie folgenden Befehl eingeben:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">x =</span> semester_data3<span class="sc">$</span>wissen_statistik_ende,</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> semester_data3<span class="sc">$</span>wissen_statistik_start,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">paired =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">conf.level =</span> .<span class="dv">01</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">alternative =</span> <span class="st">"greater"</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">var.equal =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>als Output sollten Sie dann folgendes Ergebnis erhalten:</p>
+<p><img src="./images/results_PairedSample.png" class="img-fluid"></p>
+<p>Die Werte imn Output unterscheiden sich auf Grund von Rundungsfehlern von den oben berechneten Werten kommen aber zum gleichen Ergebnis.</p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
 <p>Sie wollen auf Basis der Daten im Datensatz <code>semester_data3</code> testen, ob sich die Grösse zwischen weiblichen und männlichen Studierenden unterscheidet. Sie haben dafür folgende Werte Berechnet:</p>
 <ul>
 <li>Mittelwerte der Grösse nach Geschlecht: <span class="math inline">\(\bar{x}_W = 159.04\)</span>; <span class="math inline">\(\bar{x}_M = 179.00\)</span></li>
@@ -2262,8 +2324,8 @@ t_{emp} = \frac{\bar{x} - \mu_0}{\hat{\sigma}_{\bar{x}}} = \frac{\bar{x} - \mu_0
 </ul>
 <p>Sie testen eine gerichtete Hypothese die Prüft, ob männliche Studierende grösser als weibliche Studierende sind. Sie nutzen dafür ein Signifikanzniveau von <span class="math inline">\(\alpha = .05\)</span>. Beurteilen Sie für den Berechneten Test welche der folgenden Aussagen zutreffen.</p>
 <p><strong>Wichtig</strong>: Die Antworten beziehen sich auf die in der Aufgabe angegebenen gerundeten Werte. Wenn Sie den Test mit R auf Basis der Daten ausrechnen, werden Sie aufgrund von Rundungsfehlern auf leicht andere Werte kommen. Bei der Berechnung gehe ich davon aus, dass Sie Zwischenergebnisse auf 3-Nachkommastellen gerundet haben. Die Schlussfolgerung in Bezug auf die Signifikanz des Tests bleibt allerdings unverändert.</p>
-<div id="webex-f5d2b41b696f4106c86b5cafc772f0ce" class="webex-checkboxgroup" data-answer="PQRIAk4EHVNr">
-<label><input type="checkbox" autocomplete="off" name="f5d2b41b696f4106c86b5cafc772f0ce"><span>Bei den Test handelt es sich um einen <span class="math inline">\(t\)</span>-Test für unabhängige Stichproben</span></label><label><input type="checkbox" autocomplete="off" name="f5d2b41b696f4106c86b5cafc772f0ce"><span>Der kritische <span class="math inline">\(t\)</span>-Wert liegt bei <span class="math inline">\(t_{krit}(\alpha = .05) = 1.6991\)</span></span></label><label><input type="checkbox" autocomplete="off" name="f5d2b41b696f4106c86b5cafc772f0ce"><span>Der empirische <span class="math inline">\(t\)</span>-Wert liegt bei <span class="math inline">\(t_{emp} = 2.84\)</span></span></label><label><input type="checkbox" autocomplete="off" name="f5d2b41b696f4106c86b5cafc772f0ce"><span>Der <span class="math inline">\(p\)</span>-Wert ist kleiner als das Signifikanzniveau <span class="math inline">\(\alpha\)</span></span></label>
+<div id="webex-62cc91089f0831d23d1b96873512df16" class="webex-checkboxgroup" data-answer="bQNPUxUBHAlk">
+<label><input type="checkbox" autocomplete="off" name="62cc91089f0831d23d1b96873512df16"><span>Bei den Test handelt es sich um einen <span class="math inline">\(t\)</span>-Test für unabhängige Stichproben</span></label><label><input type="checkbox" autocomplete="off" name="62cc91089f0831d23d1b96873512df16"><span>Der kritische <span class="math inline">\(t\)</span>-Wert liegt bei <span class="math inline">\(t_{krit}(\alpha = .05) = 1.6991\)</span></span></label><label><input type="checkbox" autocomplete="off" name="62cc91089f0831d23d1b96873512df16"><span>Der empirische <span class="math inline">\(t\)</span>-Wert liegt bei <span class="math inline">\(t_{emp} = 2.84\)</span></span></label><label><input type="checkbox" autocomplete="off" name="62cc91089f0831d23d1b96873512df16"><span>Der <span class="math inline">\(p\)</span>-Wert ist kleiner als das Signifikanzniveau <span class="math inline">\(\alpha\)</span></span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -2296,74 +2358,12 @@ t_{emp} = \frac{\bar{x}_M - \bar{x}_w}{\hat{\sigma}_{\bar{x}_M - \bar{x}_W}} = \
 <p>Auf Basis des empirischen <span class="math inline">\(t\)</span>-Werts können wir nun anhand der Tabelle der <span class="math inline">\(p\)</span>-Quantile auch den <span class="math inline">\(p\)</span>-Wert bestimmen. Dabei sehen wir, dass der empirische <span class="math inline">\(t\)</span>-Wert grösser ist als der <span class="math inline">\(t\)</span>-Wert in der letzten Spalte für das <span class="math inline">\(p\)</span>-Quantil <span class="math inline">\(p = .995\)</span> <span class="math inline">\(\rightarrow t = 2.7633\)</span>, daraus können wir schliessen, dass der <span class="math inline">\(p\)</span>-Wert für die beobachtete Mittelwertsdifferent kleiner als <span class="math inline">\(p &lt; 1 - .995 = .005\)</span> ist. Damit ist der <span class="math inline">\(p\)</span>-Wert kleiner als das gewählte Signifikanzniveau <span class="math inline">\(\alpha = .05\)</span></p>
 <p><strong>in <code>R</code></strong></p>
 <p>Wenn Sie den <span class="math inline">\(t\)</span>-Test in <code>R</code> direkt mit dem Datensatz ausrechnen, dann müssen Sie folgenden Befehl eingeben:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(grösse <span class="sc">~</span> geschlecht,     <span class="co"># formelschreibweise: av ~ uv</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">alternative =</span> <span class="st">"greater"</span>, <span class="co"># gerichtete Hypothese</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">data =</span> semester_data3,   <span class="co"># Datensatz in dem die in der Formel angegebenen Variablen enthalten sind</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">var.equal =</span> <span class="cn">TRUE</span>).       <span class="co"># Annahme gleicher Varianzen</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(grösse <span class="sc">~</span> geschlecht,     <span class="co"># formelschreibweise: av ~ uv</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">alternative =</span> <span class="st">"greater"</span>, <span class="co"># gerichtete Hypothese</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">data =</span> semester_data3,   <span class="co"># Datensatz in dem die in der Formel angegebenen Variablen enthalten sind</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">var.equal =</span> <span class="cn">TRUE</span>).       <span class="co"># Annahme gleicher Varianzen</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>als Output sollten Sie dann folgendes Ergebnis erhalten:</p>
 <p><img src="./images/results_TwoSample.png" class="img-fluid"></p>
-<p>Die Werte imn Output unterscheiden sich auf Grund von Rundungsfehlern von den oben berechneten Werten kommen aber zum gleichen Ergebnis.</p>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Sie haben in R mit der Funktion <code>t.test</code> berechnet ob sich das Alter zwischen den Weiblichen und Männlichen Studierenden in den Daten des Datensatzes <code>semester_data3</code> bedeutsam voneinander unterscheidet. Sie haben dabei folgenden Output erhalten.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./images/results_Interpretation.png" class="img-fluid figure-img"></p>
-<figcaption>Output des in R berechneten t-Tests</figcaption>
-</figure>
-</div>
-<p>Beurteilen, welche der folgenden Aussagen auf Basis des Outputs korrekt sind.</p>
-<div id="webex-56ee0600bb082940d52acfec383a31ea" class="webex-checkboxgroup" data-answer="bgZJVBwHHAFOUhwIbw==">
-<label><input type="checkbox" autocomplete="off" name="56ee0600bb082940d52acfec383a31ea"><span>Bei dem Test handelt es sich um einen t-Test für anbhängige Stichproben</span></label><label><input type="checkbox" autocomplete="off" name="56ee0600bb082940d52acfec383a31ea"><span>Der empirische t-Wert liegt bei: <span class="math inline">\(t_{emp} \approx -.136\)</span></span></label><label><input type="checkbox" autocomplete="off" name="56ee0600bb082940d52acfec383a31ea"><span>Der <span class="math inline">\(p\)</span>-Wert für den Test ist grösser als <span class="math inline">\(\alpha = .05\)</span></span></label><label><input type="checkbox" autocomplete="off" name="56ee0600bb082940d52acfec383a31ea"><span>Das Mittlere Alter in der Gruppe der Männer ist <span class="math inline">\(\bar{x}_{M} = 22.3\)</span></span></label><label><input type="checkbox" autocomplete="off" name="56ee0600bb082940d52acfec383a31ea"><span>Die Menge an Beobchatungen in der Gruppe der Frauen ist <span class="math inline">\(N = 28\)</span></span></label><label><input type="checkbox" autocomplete="off" name="56ee0600bb082940d52acfec383a31ea"><span>Der t-Test hat eine gerichtete Hypotheses getestet</span></label>
-</div>
-</div>
-<div class="webex-solution">
-<ol type="1">
-<li><p>Der Titel des Outputs <code>Two Sample t-test</code> zeigt an, dass es sich um einen t-Test für unabhämngige Stichproben handelt. Für einen Einstichproben t-Test lautet der Title <code>One Sample t-test</code> und für einen t-Test für abhängige Stichproben <code>Paired Sample t-test</code>.</p></li>
-<li><p>Der empirische <span class="math inline">\(t\)</span>-Wert kann aus der zweiten Zeile des Outputs abgelesen werden und beträgt: <span class="math inline">\(t_{emp} = -0.13566\)</span></p></li>
-<li><p>Der exakte <span class="math inline">\(p\)</span>-Wert liegt bei <span class="math inline">\(p = 0.8931\)</span> was ebenfalls aus der zweiten Zeile des Outputs abgelesen werden kann. Dieser ist auch klar grösser als ein Signifkanzniveau von <span class="math inline">\(\alpha = .05\)</span></p></li>
-<li><p>Aus den letzten Zeilen des Outputs können Sie die Mittelwerte in den beiden Gruppen ablesen. Dabei liegt der Mittelwert der Männer bei <span class="math inline">\(\bar{x}_M = 22.3\)</span> und der Mittelwert der Frauen bei <span class="math inline">\(\bar{x}_F = 22.508\)</span></p></li>
-<li><p>Die Menge an Beobachtungen in den einzelnen Gruppen lässt sich aus dem Output nicht ablesen. Sie können allerdings auf Basis des Tests <span class="math inline">\(\rightarrow\)</span> <span class="math inline">\(t\)</span>-Test für unabhängige Stichproben; und den Freiheitsgrade <span class="math inline">\(df = 28\)</span> schliessen, dass die Gesamtstichprobengrösse der Gruppe der Männer und Frauen bei <span class="math inline">\(N = 30\)</span> liegt. Das folgt aus der Formel <span class="math inline">\(df = (N_1 -1) + (N_2 - 1) = N_1 + N_2 -2\)</span> für die Berechnung der Freiheitsgrade beim <span class="math inline">\(t\)</span>-Test für unabhängige Stichproben.</p></li>
-<li><p>Aus der dritten Zeile, die die <code>alternative hypothesis</code> angibt, können Sie ablesen, dass der Test ungerichtet durchgeführt wurde und die Alternativhypothese <span class="math inline">\(H_1: \mu1 \neq \mu2\)</span> testet, die keine Richtung anzeigt.</p></li>
-</ol>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Sie wollen testen, ob sich die Einschätzung des eigenen Wissens im Bezug auf das Fach Statistik von Beginn zum Ende des Semesters bei den Studierenden verändert hat. Dafür wollen Sie einen <span class="math inline">\(t\)</span>-Test für abhängige Stichproben rechnen. Aus den Daten haben Sie folgenden Kennwerte für die Differenz zwischen dem eingeschätzten Wissen am Ende <code>wissen_statistik_ende</code> und dem eingeschätzten Wissen am Anfang <code>wissen_statistik_start</code> berechnet:</p>
-<ul>
-<li>Mittelwert der Differenz: <span class="math inline">\(\bar{x}_D = 0.32\)</span></li>
-<li>Populationsschätzer der Standardabweichung der Differenz: <span class="math inline">\(\hat{\sigma}_D = 0.78\)</span></li>
-</ul>
-<p>Berechnen Sie den <span class="math inline">\(t\)</span>-Test für abhängige Stichproben aus den <span class="math inline">\(N = 30\)</span> Beobachtungen und nehmen Sie ein Signifikanzniveau von <span class="math inline">\(\alpha = .01\)</span> an. Sie testen die gerichtete Hypothese, dass das eingeschätzte Wissen am Ende des Semesters grösser als am Anfang ist</p>
-<div id="webex-37ae175be1e7471d2cd604727c19c07d" class="webex-checkboxgroup" data-answer="aAdNVR0GGVM4">
-<label><input type="checkbox" autocomplete="off" name="37ae175be1e7471d2cd604727c19c07d"><span>Bei den Test handelt es sich um einen Einstichproben <span class="math inline">\(t\)</span>-Test</span></label><label><input type="checkbox" autocomplete="off" name="37ae175be1e7471d2cd604727c19c07d"><span>Der kritische <span class="math inline">\(t\)</span>-Wert liegt bei <span class="math inline">\(t_{krit}(\alpha = .01) = 1.6991\)</span></span></label><label><input type="checkbox" autocomplete="off" name="37ae175be1e7471d2cd604727c19c07d"><span>Der empirische <span class="math inline">\(t\)</span>-Wert liegt bei <span class="math inline">\(t_{emp} = 2.25\)</span></span></label><label><input type="checkbox" autocomplete="off" name="37ae175be1e7471d2cd604727c19c07d"><span>Der <span class="math inline">\(p\)</span>-Wert ist grösser als das Signifikanzniveau <span class="math inline">\(\alpha\)</span></span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Bei diesem <span class="math inline">\(t\)</span>-Test handelt es sich um einen <span class="math inline">\(t\)</span>-Test für <em>abhängige</em> Stichproben. Die Freiheitsgrade des Test berechnen sich entsprechend als <span class="math inline">\(df = N-1 = 30-1 = 29\)</span></p>
-<p>Mit den Freiheitsgraden und dem Signifikanzniveau von <span class="math inline">\(\alpha = .01\)</span> können wir den kritischen <span class="math inline">\(t\)</span>-Wert aus der Tabelle der <span class="math inline">\(p\)</span>-Quantile ablesen. Dafür lesen wir den Wert aus der Zeile für <span class="math inline">\(df = 29\)</span> und dem <span class="math inline">\(p\)</span>-Quantil für <span class="math inline">\(p = 1 - \alpha = .99\)</span> ab. Dieser Werte ist <span class="math inline">\(t_{krit} (\alpha = .01) = 2.46\)</span></p>
-<blockquote class="blockquote">
-<p>Der in der zweiten Antwortalternative angegebene kritische <span class="math inline">\(t\)</span>-Wert ist für ein Signifikanzniveau von <span class="math inline">\(\alpha = .05\)</span>. Hier ist aber ein Signifkanzniveau von <span class="math inline">\(\alpha = .01\)</span> gewählt worden.</p>
-</blockquote>
-<p>Auf Basis der gegebenen Informationen aus der Aufgabe können wir auch den empirischen <span class="math inline">\(t\)</span>-Wert berechnen. Für den <span class="math inline">\(t\)</span>-Test für abhängige Stichproben ergibt sich dieser aus:</p>
-<p><span class="math display">\[
-t_{emp} = \frac{\bar{x}_D}{\hat{\sigma}_{\bar{x}_d}}= \frac{\bar{x}_D}{\frac{\hat{\sigma}_{D}}{\sqrt{N}}} = \frac{0.32}{\frac{0.78}{\sqrt{30}}} =
-\frac{0.32}{0.142} = 2.253
-\]</span></p>
-<p>Mit dem empirischen <span class="math inline">\(t\)</span>-Wert können wir aus der Tabelle der <span class="math inline">\(p\)</span>-Quantile auch das Intervall bestimmen in dem der <span class="math inline">\(p\)</span>-Wert liegt. Für die Zeile von <span class="math inline">\(df = 29\)</span> liegt <span class="math inline">\(t_{emp}\)</span> zwischen dem Wert des <span class="math inline">\(p\)</span>-Quantils <span class="math inline">\(p = .975 \rightarrow t = 2.04\)</span> und dem Wert des <span class="math inline">\(p\)</span>-Quantils für <span class="math inline">\(p = .99 \rightarrow t = 2.48\)</span>. Entsprechend ist der <span class="math inline">\(p\)</span>-Wert kleiner als .025 aber grösser als .01.</p>
-<p><strong>in <code>R</code></strong></p>
-<p>Wenn Sie den <span class="math inline">\(t\)</span>-Test in <code>R</code> direkt mit dem Datensatz ausrechnen, dann müssen Sie folgenden Befehl eingeben:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">x =</span> semester_data3<span class="sc">$</span>wissen_statistik_ende,</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> semester_data3<span class="sc">$</span>wissen_statistik_start,</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">paired =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">conf.level =</span> .<span class="dv">01</span>,</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">alternative =</span> <span class="st">"greater"</span>,</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">var.equal =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>als Output sollten Sie dann folgendes Ergebnis erhalten:</p>
-<p><img src="./images/results_PairedSample.png" class="img-fluid"></p>
 <p>Die Werte imn Output unterscheiden sich auf Grund von Rundungsfehlern von den oben berechneten Werten kommen aber zum gleichen Ergebnis.</p>
 </div>
 </div>

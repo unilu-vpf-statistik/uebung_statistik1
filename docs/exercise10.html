@@ -2159,14 +2159,14 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>In dieser Übung werden wir üben wie man von Hand und mit Hilfe von R einen Binomialtest und Chi-Quadrat test berechnet und die jeweiligen Ergebnisse interpretiert. Wenn Sie einige Inhalte der Vorlesung nochmal vertiefen wollen, oder nochmal eine ausführlichere Erklärung für die Anwendung des Binomialtests oder Chi-Quadrattests in R haben wollen, dann können Sie sich die folgenden Videos anschauen:</p>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=80ffqpZdKiA">Ausführliche Erklärung der Grundlagen der Chi-Quadrat Verteilung</a></li>
-<li><a href="https://www.youtube.com/watch?v=ZNXso_riZag">Thoeretische Erklärung: Chi-Quadrat Test für eine Stichprobe</a> (<strong>Achtung</strong>: Funktionen sind aus Excel)</li>
+<li><a href="https://www.youtube.com/watch?v=ZNXso_riZag">Theoretische Erklärung: Chi-Quadrat Test für eine Stichprobe</a> (<strong>Achtung</strong>: Funktionen sind aus Excel)</li>
 <li><a href="https://www.youtube.com/watch?v=NTHA9Qa81R8&amp;t=278s">Theoretische Erklärung: Chi-Quadrat Test für zwei Stichproben</a> (<strong>Achtung</strong>: Funktionen sind aus Excel)</li>
 <li><a href="https://www.youtube.com/watch?v=YJUuyaC0x48">Chi-Quadrat Test in R</a></li>
 </ul>
 </section>
 <section id="übungen" class="level2">
 <h2 class="anchored" data-anchor-id="übungen">Übungen</h2>
-<p>In den folgenden Übungen können Sie entweder den simulierten Datensatz <a href="semester_data2.csv">semester_data2.csv</a> nutzen, oder Sie können die in den Aufgaben angegebenen Häufigkeitstabellen die auf Basis des Datensatzes ausgerechnet wurden verwenden um die jeweilgen Tests von Hand zu rechnen. Der Datensatz enthält die Variablen: <code>geschlecht</code>, <code>nationalität</code>, <code>wohnort</code>, <code>alter</code>, <code>wissen_statistik_start</code>, <code>wissen_statistik_end</code> und <code>grösse</code>.</p>
+<p>In den folgenden Übungen können Sie entweder den simulierten Datensatz <a href="semester_data2.csv">semester_data2.csv</a> nutzen, oder Sie können die in den Aufgaben angegebenen Häufigkeitstabellen die auf Basis des Datensatzes ausgerechnet wurden verwenden um die jeweiligen Tests von Hand zu rechnen. Der Datensatz enthält die Variablen: <code>geschlecht</code>, <code>nationalität</code>, <code>wohnort</code>, <code>alter</code>, <code>wissen_statistik</code> und <code>grösse</code>.</p>
 <p>Zum Teil basieren die Werte auf simulierten Daten, die nicht in dem Datensatz enthalten sind.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(semester_data2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2189,237 +2189,13 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 <p>Wie in den bisherigen Übungen finden Sie über den Übungsaufgaben die <code>webr</code> Konsole, die Ihnen das Schreiben und Durchführen von R Code direkt auf der Website ermöglicht. Wenn viele Studierenden die Übungen parallel machen, dann kann es sein, dass <code>webr</code> langsam wird.</p>
 <blockquote class="blockquote">
-<p>Um den Code den Sie geschrieben haben auszuführen drücken Sie entwedern <code>Run Code</code>, damit der gesamte Code ausgeführt würde. Alternativ können Sie auch einzelne Zeilen ausführen, indem sie <kbd>CRTL</kbd>+<kbd>Enter</kbd> (Windows) oder <kbd>CMD</kbd>+<kbd>Enter</kbd> (Mac) drücken.</p>
+<p>Um den Code den Sie geschrieben haben auszuführen drücken Sie entweder <code>Run Code</code>, damit der gesamte Code ausgeführt würde. Alternativ können Sie auch einzelne Zeilen ausführen, indem sie <kbd>CRTL</kbd>+<kbd>Enter</kbd> (Windows) oder <kbd>CMD</kbd>+<kbd>Enter</kbd> (Mac) drücken.</p>
 </blockquote>
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <blockquote class="blockquote">
-<p>Nutzen Sie eine <a href="https://unilu-vpf-statistik.github.io/uebung_statistik1/about.html#suchmaschinen">Suchmaschine</a>, wenn Sie nicht wissen welche Funktionen Ihnen ein bestimmtes Ergebnis liefern. Ausserdem können Sie in R immer die <a href="https://www.r-project.org/help.html">Hilfe</a> einer Funktion aufrufen, indem sie vor den Namen der Funktion ein Fragezeichen schreiben, z. Bsp <code>?median</code> oder die Hilfe-Funktion <code>help()</code> mit dem jeweligen Funktionsbefehl ausführen: <code>help(median)</code>.</p>
+<p>Nutzen Sie eine <a href="https://unilu-vpf-statistik.github.io/uebung_statistik1/about.html#suchmaschinen">Suchmaschine</a>, wenn Sie nicht wissen welche Funktionen Ihnen ein bestimmtes Ergebnis liefern. Ausserdem können Sie in R immer die <a href="https://www.r-project.org/help.html">Hilfe</a> einer Funktion aufrufen, indem sie vor den Namen der Funktion ein Fragezeichen schreiben, z. Bsp <code>?median</code> oder die Hilfe-Funktion <code>help()</code> mit dem jeweiligen Funktionsbefehl ausführen: <code>help(median)</code>.</p>
 </blockquote>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Sie wollen für die Stichprobe aus dem Datensatz <code>semester_data2.csv</code> testen, ob die Wahrscheinlichkeit das eigenen Statistikwissen sehr hoch einzuschätzen (d.h mit einer 5 zu Bewerten) von 0.05 abweicht. Aus dem Datensatz haben Sie berechnet, dass 12 von 180 Personen ihr Statistikwissen sehr hoch einschätzen. Der Output des Binomialtests den Sie mit R berechnet haben sieht folgendermassen aus:</p>
-<p><img src="./images/Result_Binomialtest.png" class="img-fluid"></p>
-<p>Welche der folgenden Aussagen für einen Test mit dem Signifikanzniveau von <span class="math inline">\(\alpha = .10\)</span> ist korrekt?</p>
-<div id="webex-8982c57d75418cbeba01a8da33722e65" class="webex-checkboxgroup" data-answer="YwgUA08FG1Rq">
-<label><input type="checkbox" autocomplete="off" name="8982c57d75418cbeba01a8da33722e65"><span>Die aus den Daten geschätzte Wahrscheinlichkeit sein Statistikwissen hoch einzuschätzen ist <span class="math inline">\(P_{emp} = 0.067\)</span></span></label><label><input type="checkbox" autocomplete="off" name="8982c57d75418cbeba01a8da33722e65"><span>Der <span class="math inline">\(p\)</span>-Wert des Test ist grösser als das Signifikanzniveau <span class="math inline">\(\alpha\)</span> und deshalb ist der Test nicht signifikant.</span></label><label><input type="checkbox" autocomplete="off" name="8982c57d75418cbeba01a8da33722e65"><span>Die Wahrscheinlichkeit, dass die Nullhypothese in der Population gilt ist <span class="math inline">\(P_{H_0} = .302\)</span></span></label><label><input type="checkbox" autocomplete="off" name="8982c57d75418cbeba01a8da33722e65"><span>Der Binomialtest wurde mit einer gerichteten Hypothese durchgeführt.</span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Die letzte Zeile des Output gibt die Stichprobenschätzung <code>sample estimates</code> der Wahrscheinlichkeit sein Statistikwissen als hoch einzuschätzen wieder. Diese wird gerundet als <span class="math inline">\(P_{emp} = 0.067\)</span> angegeben.</p>
-<p>Der <span class="math inline">\(p\)</span>-Wert für das beobachtete oder extremere Ergebnisse unter Annahme der <span class="math inline">\(H_0\)</span> liegt laut dem Output bei <span class="math inline">\(p = .302\)</span>. Dieser Wert ist grösser als das Signifikanzniveau <span class="math inline">\(\alpha = .10\)</span>, entsprechend ist der Test nicht signifikant.</p>
-<p>Auch wenn der <span class="math inline">\(p\)</span>-Wert bei <span class="math inline">\(p = .302\)</span> liegt, kann dieser nicht als Wahrshceinlichkeit, dass die Nullhypothese in der Population gilt interpretiert werden. Der <span class="math inline">\(p\)</span>-Wert ist die Wahrscheinlichkeit das beobachtete oder extremere Ereignisse unter Annahme der <span class="math inline">\(H_0\)</span> zu erhalten.</p>
-<p>Auf Basis der Alternativhypothese <code>alternative hypothesis: true probability is not equal to 0.05</code> können wir schliessen, dass ein ungerichteter Test durchgeführt wurde. Wichtiges Stichwort ist <code>not eqaul</code> anstatt von <code>less</code> oder <code>greater</code> für gerichtete Hypothesen.</p>
-</div>
-</div>
-<div class="webex-question">
-<div class="webex-check webex-box">
-<p>Aus dem vorangegangen Semester wissen Sie das die Wahrscheinlichkeit für den Wohnort der Studierenden folgender Wahrscheinlichkeitsverteilung folgt:</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 23%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 15%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: right;">Basel</th>
-<th style="text-align: right;">Bern</th>
-<th style="text-align: right;">Luzern</th>
-<th style="text-align: right;">St.Gallen</th>
-<th style="text-align: right;">Zuerich</th>
-<th style="text-align: right;">Zug</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">0.08</td>
-<td style="text-align: right;">0.25</td>
-<td style="text-align: right;">0.3</td>
-<td style="text-align: right;">0.12</td>
-<td style="text-align: right;">0.18</td>
-<td style="text-align: right;">0.07</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>Im aktuellen Semester haben Sie von 180 Studierenden die folgenden Häufigkeiten des Wohnorts beobachtet:</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 23%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 15%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: right;">Basel</th>
-<th style="text-align: right;">Bern</th>
-<th style="text-align: right;">Luzern</th>
-<th style="text-align: right;">St.Gallen</th>
-<th style="text-align: right;">Zuerich</th>
-<th style="text-align: right;">Zug</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">17</td>
-<td style="text-align: right;">41</td>
-<td style="text-align: right;">50</td>
-<td style="text-align: right;">30</td>
-<td style="text-align: right;">29</td>
-<td style="text-align: right;">13</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>Berechnen Sie einen <span class="math inline">\(\chi^2\)</span>-Test mit Signifikanzniveau <span class="math inline">\(\alpha = .05\)</span> um zu Testen, ob die Häufigkeitsverteilung des aktuellen Semester sich statistisch bedeutsam von der Wahrscheinlichkeitsverteilung des letzten Semesters unterscheidet.</p>
-<p>Kreuzen Sie für den Test an welche der folgenden Antworten korrekt ist.</p>
-<div id="webex-99bc87bebd760da4a1ae1edc068ae599" class="webex-checkboxgroup" data-answer="YghOUxQGTlQ/">
-<label><input type="checkbox" autocomplete="off" name="99bc87bebd760da4a1ae1edc068ae599"><span>Der kritische Testwert für diesen Test bei <span class="math inline">\(\alpha = .05\)</span> ist: <span class="math inline">\(\chi_{krit}^2 = 11.07\)</span></span></label><label><input type="checkbox" autocomplete="off" name="99bc87bebd760da4a1ae1edc068ae599"><span>Die Freiheitsgrade des Test betragen <span class="math inline">\(df = 6\)</span></span></label><label><input type="checkbox" autocomplete="off" name="99bc87bebd760da4a1ae1edc068ae599"><span>Der empirische Testwert für diesen Test ist: <span class="math inline">\(\chi_{emp}^2 = 4.76\)</span></span></label><label><input type="checkbox" autocomplete="off" name="99bc87bebd760da4a1ae1edc068ae599"><span>Der Test ist nicht signifikant.</span></label>
-</div>
-</div>
-<div class="webex-solution">
-<p>Als erstes müssen wir die erwarteten Häufigkeiten aus der Wahrscheinlichkeitsverteilung und der Anzahl an Studierenden berechnen. Dafür müssen wir die Wahrscheinlichkeiten für jede Zelle mit der Stichprobengrösse multiplizieren.</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 23%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 15%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: right;">Basel</th>
-<th style="text-align: right;">Bern</th>
-<th style="text-align: right;">Luzern</th>
-<th style="text-align: right;">St.Gallen</th>
-<th style="text-align: right;">Zuerich</th>
-<th style="text-align: right;">Zug</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">14.4</td>
-<td style="text-align: right;">45</td>
-<td style="text-align: right;">54</td>
-<td style="text-align: right;">21.6</td>
-<td style="text-align: right;">32.4</td>
-<td style="text-align: right;">12.6</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>Mit diesen Werten können wir nun die quadrierten Abweichungen zwischen den beobachteten und erwarteten Häufigkeiten berechnen, durch die erwartete Häufigkeit teilen und entsprechend der Formel für den empirischen <span class="math inline">\(\chi^2\)</span>-Wert aufsummieren.</p>
-<p>Hier sehen Sie die Tabelle der quadrierten Abweichungen:</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 23%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 15%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: right;">Basel</th>
-<th style="text-align: right;">Bern</th>
-<th style="text-align: right;">Luzern</th>
-<th style="text-align: right;">St.Gallen</th>
-<th style="text-align: right;">Zuerich</th>
-<th style="text-align: right;">Zug</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">6.76</td>
-<td style="text-align: right;">16</td>
-<td style="text-align: right;">16</td>
-<td style="text-align: right;">70.56</td>
-<td style="text-align: right;">11.56</td>
-<td style="text-align: right;">0.16</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>und hier sind die Quadrierten Abweichungen durch die erwarteten Häufigkeiten geteilt:</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 23%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 15%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: right;">Basel</th>
-<th style="text-align: right;">Bern</th>
-<th style="text-align: right;">Luzern</th>
-<th style="text-align: right;">St.Gallen</th>
-<th style="text-align: right;">Zuerich</th>
-<th style="text-align: right;">Zug</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">0.469</td>
-<td style="text-align: right;">0.356</td>
-<td style="text-align: right;">0.296</td>
-<td style="text-align: right;">3.267</td>
-<td style="text-align: right;">0.357</td>
-<td style="text-align: right;">0.013</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>Wenn sie die Werte aus der letzten Tabelle aufsummieren erhalten sie den empirischen Chi-Quadrat wert: <span class="math inline">\(\chi^2_{emp} = 4.76\)</span>.</p>
-<p>Den kritischen Testwert können Sie aus der Tabelle der <span class="math inline">\(p\)</span>-Quantile der <span class="math inline">\(\chi^2\)</span>-Verteilung ablesen. Dafür müssen wir bestimmen, dass die Freiheitsgrade des Tests die Anzahl an Zellen der Häufigkeitstabelle minus 1 sind: <span class="math inline">\(df = n-1 = 6 - 1 = 5\)</span> und wir in der Zeile für das <span class="math inline">\(p\)</span>-Quantil von <span class="math inline">\(p = 1 - \alpha = 1 - .05 = .95\)</span> ablesen müssen. Mit diesen werten sollten Sie den kritischen Chi-Quadrat-Wert als: <span class="math inline">\(\chi^2_{krit}(df = 5) = 11.07\)</span> finden.</p>
-<p>Weil der empirische Chi-Quadrat Wert kleiner oder gleich dem kritischen Chi-Quadrat Wert ist, ist der Test nicht signifikant.</p>
-<p>In R könnten Sie den Test folgendermassen durchführen:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>theoretische_wahrscheinlichkeiten <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.08</span>, <span class="fl">0.25</span>, <span class="fl">0.30</span>, <span class="fl">0.12</span>, <span class="fl">0.18</span>, <span class="fl">0.07</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>beobachtete_häufigkeit <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">17</span>,<span class="dv">41</span>,<span class="dv">50</span>,<span class="dv">30</span>,<span class="dv">29</span>,<span class="dv">13</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">=</span> .<span class="dv">05</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># mit theoretischen wahrscheinlichkeiten</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(beobachtete_häufigkeit, <span class="at">p =</span> theoretische_wahrscheinlichkeiten, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># von Hand</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>erwartete_häufigkeiten <span class="ot">&lt;-</span> theoretische_wahrscheinlichkeiten <span class="sc">*</span> <span class="fu">sum</span>(beobachtete_häufigkeit)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>chisq_emp <span class="ot">&lt;-</span> <span class="fu">sum</span>((beobachtete_häufigkeit<span class="sc">-</span>erwartete_häufigkeiten)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>erwartete_häufigkeiten)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">length</span>(beobachtete_häufigkeit) <span class="sc">-</span> <span class="dv">1</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>chisq_krit <span class="ot">&lt;-</span> <span class="fu">qchisq</span>(<span class="at">p =</span> <span class="dv">1</span> <span class="sc">-</span> alpha, <span class="at">df =</span> df)</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>chisq_emp</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>chisq_krit</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>df</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="fu">ifelse</span>(chisq_emp <span class="sc">&gt;</span> chisq_krit, <span class="st">"signifikant"</span>, <span class="st">"nicht signifikant"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Sie haben die folgenden Kreuztabelle zu den Ergebnissen der Prüfung in Statistik 1 von 200 Studierenden.</p>
@@ -2472,25 +2248,25 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">bestanden</td>
-<td style="text-align: center;"><input class="webex-solveme nospaces" id="webex-3a1795d4c84047fad71c0f11e3775027" data-tol="0.05" size="20" data-answer="aEMCBhcBUhY+"></td>
-<td style="text-align: center;"><input class="webex-solveme nospaces" id="webex-86b096c7d37501a820fdf898f2a9797b" data-tol="0.05" size="20" data-answer="YxRTAQgYVgNGbg=="></td>
-<td style="text-align: center;"><input class="webex-solveme nospaces" id="webex-29f08b6660a7d59afd35cb0b582b7bb2" data-tol="0.05" size="20" data-answer="aRtXBAtAaw=="></td>
+<td style="text-align: center;"><input class="webex-solveme nospaces" id="webex-b300334f2b63a9a104b7e96f9bcc3619" data-tol="0.05" size="20" data-answer="OREDAR0HAkRv"></td>
+<td style="text-align: center;"><input class="webex-solveme nospaces" id="webex-ddc73fc1c230c779ad50c99a6ede19dd" data-tol="0.05" size="20" data-answer="P0ZSBgJIVgVBbw=="></td>
+<td style="text-align: center;"><input class="webex-solveme nospaces" id="webex-bb896e67fd4d10b72f0d4d36f38844cd" data-tol="0.05" size="20" data-answer="OUAJDQVHaw=="></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">nicht bestand.</td>
-<td style="text-align: center;"><input class="webex-solveme nospaces" id="webex-5307b0e4cab0f03dfb23fb5df7c709e6" data-tol="0.05" size="20" data-answer="bhEBBUwFURY+"></td>
-<td style="text-align: center;"><input class="webex-solveme nospaces" id="webex-27b8cca1e0eb10e95fe671a58978dbe5" data-tol="0.05" size="20" data-answer="aRVWDE1XVxM4"></td>
-<td style="text-align: center;"><input class="webex-solveme nospaces" id="webex-a619feb5a7b3b540ab87faafe42f95ab" data-tol="0.05" size="20" data-answer="OhQEDkQ4"></td>
+<td style="text-align: center;"><input class="webex-solveme nospaces" id="webex-a1d2ca699f7e5f43c1189c51b8610a38" data-tol="0.05" size="20" data-answer="OhNVAE1UAhtk"></td>
+<td style="text-align: center;"><input class="webex-solveme nospaces" id="webex-ce4e5059a558f73ad314947591e906b1" data-tol="0.05" size="20" data-answer="OEcAURsEAxs8"></td>
+<td style="text-align: center;"><input class="webex-solveme nospaces" id="webex-1160b1e7980de7a841e527b5e5727410" data-tol="0.05" size="20" data-answer="ahMDB0Bs"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Summe</td>
-<td style="text-align: center;"><input class="webex-solveme nospaces" id="webex-b6111a4eecf272a22b51c1bcfd400b7e" data-tol="0.05" size="20" data-answer="ORQFBRM8"></td>
-<td style="text-align: center;"><input class="webex-solveme nospaces" id="webex-6445252ac0b6a01096a74f039df5e8da" data-tol="0.05" size="20" data-answer="bRYFAAQXbw=="></td>
-<td style="text-align: center;"><input class="webex-solveme nospaces" id="webex-2f87118cb4fc5a6d4d8f168eafc276e9" data-tol="0.05" size="20" data-answer="aUQKBwETZQ=="></td>
+<td style="text-align: center;"><input class="webex-solveme nospaces" id="webex-91298c5ba3d692a5065dc8600cd755d9" data-tol="0.05" size="20" data-answer="YhMGDRo+"></td>
+<td style="text-align: center;"><input class="webex-solveme nospaces" id="webex-2f44f0e8c7e5838d6bf75ccf1cfa9c1c" data-tol="0.05" size="20" data-answer="aUQFAVASOA=="></td>
+<td style="text-align: center;"><input class="webex-solveme nospaces" id="webex-d90763adcc4e58a8a4be9d1eeb0ac729" data-tol="0.05" size="20" data-answer="PxsCBwYRPA=="></td>
 </tr>
 </tbody>
 </table>
-<p>Berechnen Sie zusätzlich auf Basis der erwarteten Häufigkeiten den empirischen Chi-Quadrat-Wert für den Test auf unabhängigkeit: <span class="math inline">\(\chi^2_{emp} =\)</span> <input class="webex-solveme nospaces" id="webex-5dabdfec225bf606ff0f361a2173c1cf" data-tol="0.05" size="20" data-answer="bkZZTFVVVVMCAgVSVgYABlZWAURu"></p>
+<p>Berechnen Sie zusätzlich auf Basis der erwarteten Häufigkeiten den empirischen Chi-Quadrat-Wert für den Test auf unabhängigkeit: <span class="math inline">\(\chi^2_{emp} =\)</span> <input class="webex-solveme nospaces" id="webex-9e29f3597101de7619345113d16554cd" data-tol="0.05" size="20" data-answer="YkcKF1cABQkHAQABVFUHBgEJAhZo"></p>
 </div>
 <div class="webex-solution">
 <p>Um die erwateten Häufigkeiten zu berechnen müssen wir zuerst die marginalen Häufigkeiten für die Zeilen und Spalten berechnen. Dabei ergibt sich für die Häufigkeiten die Prüfung zu bestehen oder nicht zu bestehen:</p>
@@ -2651,6 +2427,230 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 </div>
 <p>Wenn wir diese Werte nun aufsummieren kommen wir auf den empirischen Chi-Quadrat Wert: <span class="math inline">\(\chi^2_{emp} = 8.13\)</span></p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>Sie wollen für die Stichprobe aus dem Datensatz <code>semester_data2.csv</code> testen, ob die Wahrscheinlichkeit das eigenen Statistikwissen sehr hoch einzuschätzen (d.h mit einer 5 zu Bewerten) von 0.05 abweicht. Aus dem Datensatz haben Sie berechnet, dass 12 von 180 Personen ihr Statistikwissen sehr hoch einschätzen. Der Output des Binomialtests den Sie mit R berechnet haben sieht folgendermassen aus:</p>
+<p><img src="./images/Result_Binomialtest.png" class="img-fluid"></p>
+<p>Welche der folgenden Aussagen für einen Test mit dem Signifikanzniveau von <span class="math inline">\(\alpha = .10\)</span> ist korrekt?</p>
+<div id="webex-0f50feb22cbff2edba6ad510585d60e0" class="webex-checkboxgroup" data-answer="a1cZAUpVTgJv">
+<label><input type="checkbox" autocomplete="off" name="0f50feb22cbff2edba6ad510585d60e0"><span>Die aus den Daten geschätzte Wahrscheinlichkeit sein Statistikwissen hoch einzuschätzen ist <span class="math inline">\(P_{emp} = 0.067\)</span></span></label><label><input type="checkbox" autocomplete="off" name="0f50feb22cbff2edba6ad510585d60e0"><span>Der <span class="math inline">\(p\)</span>-Wert des Test ist grösser als das Signifikanzniveau <span class="math inline">\(\alpha\)</span> und deshalb ist der Test nicht signifikant.</span></label><label><input type="checkbox" autocomplete="off" name="0f50feb22cbff2edba6ad510585d60e0"><span>Die Wahrscheinlichkeit, dass die Nullhypothese in der Population gilt ist <span class="math inline">\(P_{H_0} = .302\)</span></span></label><label><input type="checkbox" autocomplete="off" name="0f50feb22cbff2edba6ad510585d60e0"><span>Der Binomialtest wurde mit einer gerichteten Hypothese durchgeführt.</span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>Die letzte Zeile des Output gibt die Stichprobenschätzung <code>sample estimates</code> der Wahrscheinlichkeit sein Statistikwissen als hoch einzuschätzen wieder. Diese wird gerundet als <span class="math inline">\(P_{emp} = 0.067\)</span> angegeben.</p>
+<p>Der <span class="math inline">\(p\)</span>-Wert für das beobachtete oder extremere Ergebnisse unter Annahme der <span class="math inline">\(H_0\)</span> liegt laut dem Output bei <span class="math inline">\(p = .302\)</span>. Dieser Wert ist grösser als das Signifikanzniveau <span class="math inline">\(\alpha = .10\)</span>, entsprechend ist der Test nicht signifikant.</p>
+<p>Auch wenn der <span class="math inline">\(p\)</span>-Wert bei <span class="math inline">\(p = .302\)</span> liegt, kann dieser nicht als Wahrshceinlichkeit, dass die Nullhypothese in der Population gilt interpretiert werden. Der <span class="math inline">\(p\)</span>-Wert ist die Wahrscheinlichkeit das beobachtete oder extremere Ereignisse unter Annahme der <span class="math inline">\(H_0\)</span> zu erhalten.</p>
+<p>Auf Basis der Alternativhypothese <code>alternative hypothesis: true probability is not equal to 0.05</code> können wir schliessen, dass ein ungerichteter Test durchgeführt wurde. Wichtiges Stichwort ist <code>not eqaul</code> anstatt von <code>less</code> oder <code>greater</code> für gerichtete Hypothesen.</p>
+</div>
+</div>
+<div class="webex-question">
+<div class="webex-check webex-box">
+<p>Aus dem vorangegangen Semester wissen Sie das die Wahrscheinlichkeit für den Wohnort der Studierenden folgender Wahrscheinlichkeitsverteilung folgt:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Basel</th>
+<th style="text-align: right;">Bern</th>
+<th style="text-align: right;">Luzern</th>
+<th style="text-align: right;">St.Gallen</th>
+<th style="text-align: right;">Zuerich</th>
+<th style="text-align: right;">Zug</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0.08</td>
+<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">0.3</td>
+<td style="text-align: right;">0.12</td>
+<td style="text-align: right;">0.18</td>
+<td style="text-align: right;">0.07</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Im aktuellen Semester haben Sie von 180 Studierenden die folgenden Häufigkeiten des Wohnorts beobachtet:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Basel</th>
+<th style="text-align: right;">Bern</th>
+<th style="text-align: right;">Luzern</th>
+<th style="text-align: right;">St.Gallen</th>
+<th style="text-align: right;">Zuerich</th>
+<th style="text-align: right;">Zug</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">41</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">13</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Berechnen Sie einen <span class="math inline">\(\chi^2\)</span>-Test mit Signifikanzniveau <span class="math inline">\(\alpha = .05\)</span> um zu Testen, ob die Häufigkeitsverteilung des aktuellen Semester sich statistisch bedeutsam von der Wahrscheinlichkeitsverteilung des letzten Semesters unterscheidet.</p>
+<p>Kreuzen Sie für den Test an welche der folgenden Antworten korrekt ist.</p>
+<div id="webex-8f25f73a2a90849bbb532f852919f7af" class="webex-checkboxgroup" data-answer="Y1ceBUoGH1Bv">
+<label><input type="checkbox" autocomplete="off" name="8f25f73a2a90849bbb532f852919f7af"><span>Der kritische Testwert für diesen Test bei <span class="math inline">\(\alpha = .05\)</span> ist: <span class="math inline">\(\chi_{krit}^2 = 11.07\)</span></span></label><label><input type="checkbox" autocomplete="off" name="8f25f73a2a90849bbb532f852919f7af"><span>Die Freiheitsgrade des Test betragen <span class="math inline">\(df = 6\)</span></span></label><label><input type="checkbox" autocomplete="off" name="8f25f73a2a90849bbb532f852919f7af"><span>Der empirische Testwert für diesen Test ist: <span class="math inline">\(\chi_{emp}^2 = 4.76\)</span></span></label><label><input type="checkbox" autocomplete="off" name="8f25f73a2a90849bbb532f852919f7af"><span>Der Test ist nicht signifikant.</span></label>
+</div>
+</div>
+<div class="webex-solution">
+<p>Als erstes müssen wir die erwarteten Häufigkeiten aus der Wahrscheinlichkeitsverteilung und der Anzahl an Studierenden berechnen. Dafür müssen wir die Wahrscheinlichkeiten für jede Zelle mit der Stichprobengrösse multiplizieren.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Basel</th>
+<th style="text-align: right;">Bern</th>
+<th style="text-align: right;">Luzern</th>
+<th style="text-align: right;">St.Gallen</th>
+<th style="text-align: right;">Zuerich</th>
+<th style="text-align: right;">Zug</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">14.4</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">54</td>
+<td style="text-align: right;">21.6</td>
+<td style="text-align: right;">32.4</td>
+<td style="text-align: right;">12.6</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Mit diesen Werten können wir nun die quadrierten Abweichungen zwischen den beobachteten und erwarteten Häufigkeiten berechnen, durch die erwartete Häufigkeit teilen und entsprechend der Formel für den empirischen <span class="math inline">\(\chi^2\)</span>-Wert aufsummieren.</p>
+<p>Hier sehen Sie die Tabelle der quadrierten Abweichungen:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Basel</th>
+<th style="text-align: right;">Bern</th>
+<th style="text-align: right;">Luzern</th>
+<th style="text-align: right;">St.Gallen</th>
+<th style="text-align: right;">Zuerich</th>
+<th style="text-align: right;">Zug</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">6.76</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">70.56</td>
+<td style="text-align: right;">11.56</td>
+<td style="text-align: right;">0.16</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>und hier sind die Quadrierten Abweichungen durch die erwarteten Häufigkeiten geteilt:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Basel</th>
+<th style="text-align: right;">Bern</th>
+<th style="text-align: right;">Luzern</th>
+<th style="text-align: right;">St.Gallen</th>
+<th style="text-align: right;">Zuerich</th>
+<th style="text-align: right;">Zug</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0.469</td>
+<td style="text-align: right;">0.356</td>
+<td style="text-align: right;">0.296</td>
+<td style="text-align: right;">3.267</td>
+<td style="text-align: right;">0.357</td>
+<td style="text-align: right;">0.013</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Wenn sie die Werte aus der letzten Tabelle aufsummieren erhalten sie den empirischen Chi-Quadrat wert: <span class="math inline">\(\chi^2_{emp} = 4.76\)</span>.</p>
+<p>Den kritischen Testwert können Sie aus der Tabelle der <span class="math inline">\(p\)</span>-Quantile der <span class="math inline">\(\chi^2\)</span>-Verteilung ablesen. Dafür müssen wir bestimmen, dass die Freiheitsgrade des Tests die Anzahl an Zellen der Häufigkeitstabelle minus 1 sind: <span class="math inline">\(df = n-1 = 6 - 1 = 5\)</span> und wir in der Zeile für das <span class="math inline">\(p\)</span>-Quantil von <span class="math inline">\(p = 1 - \alpha = 1 - .05 = .95\)</span> ablesen müssen. Mit diesen werten sollten Sie den kritischen Chi-Quadrat-Wert als: <span class="math inline">\(\chi^2_{krit}(df = 5) = 11.07\)</span> finden.</p>
+<p>Weil der empirische Chi-Quadrat Wert kleiner oder gleich dem kritischen Chi-Quadrat Wert ist, ist der Test nicht signifikant.</p>
+<p>In R könnten Sie den Test folgendermassen durchführen:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>theoretische_wahrscheinlichkeiten <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.08</span>, <span class="fl">0.25</span>, <span class="fl">0.30</span>, <span class="fl">0.12</span>, <span class="fl">0.18</span>, <span class="fl">0.07</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>beobachtete_häufigkeit <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">17</span>,<span class="dv">41</span>,<span class="dv">50</span>,<span class="dv">30</span>,<span class="dv">29</span>,<span class="dv">13</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">=</span> .<span class="dv">05</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># mit theoretischen wahrscheinlichkeiten</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(beobachtete_häufigkeit, <span class="at">p =</span> theoretische_wahrscheinlichkeiten, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># von Hand</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>erwartete_häufigkeiten <span class="ot">&lt;-</span> theoretische_wahrscheinlichkeiten <span class="sc">*</span> <span class="fu">sum</span>(beobachtete_häufigkeit)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>chisq_emp <span class="ot">&lt;-</span> <span class="fu">sum</span>((beobachtete_häufigkeit<span class="sc">-</span>erwartete_häufigkeiten)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>erwartete_häufigkeiten)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">length</span>(beobachtete_häufigkeit) <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>chisq_krit <span class="ot">&lt;-</span> <span class="fu">qchisq</span>(<span class="at">p =</span> <span class="dv">1</span> <span class="sc">-</span> alpha, <span class="at">df =</span> df)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>chisq_emp</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>chisq_krit</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>df</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="fu">ifelse</span>(chisq_emp <span class="sc">&gt;</span> chisq_krit, <span class="st">"signifikant"</span>, <span class="st">"nicht signifikant"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 
